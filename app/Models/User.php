@@ -11,11 +11,15 @@ class User extends Authenticatable implements MustVerifyEmail
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'phone', 'password',
     ];
 
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    protected $dates = [
+        'birth_date'
     ];
 
     public function priceLevel()
@@ -46,5 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function getNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }

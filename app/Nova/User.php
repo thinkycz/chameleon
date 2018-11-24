@@ -2,8 +2,12 @@
 
 namespace App\Nova;
 
+use App\Enums\Locale;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
@@ -30,7 +34,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'id', 'first_name', 'last_name', 'email',
     ];
 
     /**
@@ -47,8 +51,27 @@ class User extends Resource
             Gravatar::make(),
 
             Text::make('Name')
+                ->onlyOnIndex(),
+
+            Text::make('First Name')
                 ->sortable()
-                ->rules('required', 'max:255'),
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
+
+            Text::make('Last Name')
+                ->sortable()
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
+
+            Date::make('Birth Date')
+                ->format('DD.MM.YYYY'),
+
+            Number::make('Phone'),
+
+            Select::make('Locale')
+                ->options(Locale::getAllowedLocales())
+                ->displayUsingLabels()
+                ->hideFromIndex(),
 
             Text::make('Email')
                 ->sortable()

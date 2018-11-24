@@ -21,6 +21,17 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->date('birth_date')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('locale')->nullable();
+
+            $table->text('notes')->nullable();
+
+            $table->unsignedInteger('price_level_id')->nullable();
+            $table->foreign('price_level_id')->references('id')->on('price_levels')->onDelete('set null');
         });
     }
 

@@ -1,0 +1,37 @@
+.row {
+    @apply -mx-2 flex flex-wrap;
+    [class^='col'] {
+        @apply px-2;
+    }
+    .col-12,
+    .col-full {
+        @apply w-full;
+    }
+    .col-6 {
+        @apply w-1/2;
+    }
+    .col-4 {
+        @apply w-1/3;
+    }
+    .col-3 {
+        @apply w-1/4;
+    }
+    .col-half {
+        @apply w-full;
+        @screen lg {
+            @apply w-1/2;
+        }
+    }
+    .col-third {
+        @apply w-full;
+        @screen lg {
+            @apply w-1/3;
+        }
+    }
+    .col-fourth {
+        @apply w-1/2;
+        @screen lg {
+            @apply w-1/4;
+        }
+    }
+}

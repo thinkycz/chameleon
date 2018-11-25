@@ -2,8 +2,12 @@ html {
     @apply w-full h-full min-h-screen;
 }
 body {
-    @apply w-full h-full font-sans text-grey-darkest leading-tight bg-grey-lightest;
+    @apply w-full h-full font-sans text-grey-darkest leading-tight bg-grey-lightest border-t-2 border-primary text-base;
     -webkit-font-smoothing: antialiased;
+}
+main,
+aside {
+    min-height: calc(100vh - 250px);
 }
 h1,
 h2,
@@ -15,4 +19,15 @@ h6 {
 }
 a {
     text-decoration: none !important;
+}
+
+// Paragraphs
+p {
+    @apply leading-normal mb-4;
+    &.p-big {
+        @apply mb-1 leading-none font-semibold text-grey-darkest;
+    }
+    &.p-small {
+        @apply text-sm text-grey-darker mb-0;
+    }
 }

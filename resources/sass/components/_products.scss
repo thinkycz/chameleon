@@ -1,0 +1,35 @@
+.product-card {
+    @apply overflow-hidden relative;
+    .product-image {
+        @apply px-2 py-3 w-full text-center overflow-hidden;
+        img {
+            @apply w-full object-scale-down;
+            height: $product-image-height;
+        }
+    }
+    .product-data {
+        @apply relative px-4 py-2;
+        .badge {
+            @apply absolute;
+            top: -15px;
+            right: 5px;
+        }
+        h3 {
+            @apply text-center text-base font-normal text-black mb-3 mt-2 tracking-tight cursor-pointer;
+        }
+        .product-price {
+            @apply text-grey-darkest font-bold text-center;
+        }
+    }
+    .product-actions {
+        @apply text-center py-4 invisible opacity-0 absolute w-full pin-b bg-white shadow border-t;
+        transform: translateY(100%);
+        @include transition(transform, visibility, opacity);
+    }
+    &:hover {
+        .product-actions {
+            @apply visible opacity-100;
+            transform: translateY(0);
+        }
+    }
+}

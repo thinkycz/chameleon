@@ -1,0 +1,50 @@
+.input-wrap {
+    @apply mb-4 relative;
+    .input {
+        outline: none;
+        @apply shadow w-full rounded bg-white border pl-3 w-full h-10 text-sm text-grey-darkest;
+        @include placeholder {
+            @apply text-grey-darker opacity-100;
+        }
+        @include transition(border-color);
+        &:focus {
+            @apply border-primary;
+        }
+        &.invalid {
+            @apply border-danger;
+        }
+        &.valid {
+            @apply border-success;
+        }
+        &.has-btn {
+            @apply pr-12;
+        }
+    }
+    label {
+        @apply text-xs text-grey-darkest font-semibold mb-1 leading-loose;
+    }
+    &.has-icon {
+        .input {
+            @apply pl-10;
+        }
+        .icon {
+            @apply absolute;
+            top: 4px;
+            left: 4px;
+        }
+    }
+    select {
+        &.input {
+            @apply appearance-none pr-8;
+            background-repeat: no-repeat;
+            background-size: 10px 6px;
+            background-position: center right 0.75rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="%2335393C" fill-rule="nonzero" d="M8.293.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 1.707.293L5 3.586 8.293.293z"/></svg>');
+        }
+    }
+    textarea {
+        &.input {
+            @apply h-32 pt-4;
+        }
+    }
+}

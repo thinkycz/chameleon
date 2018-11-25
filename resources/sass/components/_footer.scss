@@ -1,0 +1,20 @@
+footer {
+    @apply bg-white shadow-lg py-6 w-full;
+    h4 {
+        @apply font-bold text-grey-darkest mb-4 text-lg;
+    }
+    ul {
+        @apply list-reset;
+        li {
+            @apply mb-2;
+        }
+        a {
+            @apply text-grey-darker text-sm;
+        }
+    }
+    .footer-info {
+        img {
+            width: $footer-logo-width;
+        }
+    }
+}

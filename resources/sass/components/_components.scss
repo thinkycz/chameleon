@@ -1,0 +1,125 @@
+// Buttons
+.btn {
+    @apply px-6 py-2 rounded-lg inline-block font-bold text-white text-sm;
+    line-height: 1.25rem;
+    outline: none !important;
+    @include transition(color, background-color);
+    &.btn-primary {
+        @apply bg-primary;
+        &:hover {
+            @apply bg-primary-dark;
+        }
+    }
+    &.btn-danger {
+        @apply bg-danger;
+        &:hover {
+            @apply bg-danger-dark;
+        }
+    }
+    &.btn-danger {
+        @apply bg-danger;
+        &:hover {
+            @apply bg-danger-dark;
+        }
+    }
+    &.btn-sm {
+        @apply h-8;
+        line-height: 2rem;
+    }
+    &.btn-lg {
+        @apply h-12 text-lg;
+        line-height: 2rem;
+    }
+}
+
+// Icons
+.icon-wrap {
+    @apply flex items-center;
+    .icon {
+        @apply mr-2 align-bottom;
+    }
+    &.right-icon {
+        .icon {
+            @apply mr-0 ml-1;
+        }
+    }
+}
+.icon {
+    @apply w-6 h-6 inline fill-current;
+}
+.icon-2x {
+    .icon {
+        @apply w-16 h-16;
+    }
+}
+.icon-4x {
+    .icon {
+        @apply w-24 h-24;
+    }
+}
+
+// Dropdown
+.dropdown {
+    @apply overflow-hidden absolute pin-t pin-l bg-white shadow-lg z-50 rounded border;
+    min-width: $dropdown-min-width;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    &.active {
+        max-height: 999px;
+        transition: max-height 1s ease-in-out;
+    }
+}
+
+// Card
+.card {
+    @apply shadow bg-white rounded;
+
+    .card-heading {
+        h3 {
+            @apply text-3xl font-bold text-black mb-4 tracking-tight;
+            span {
+                @apply text-grey-darker;
+            }
+        }
+        h4 {
+            @apply text-xl font-semibold text-black tracking-tight;
+        }
+        p {
+            @apply text-grey-darker;
+        }
+    }
+}
+
+// Badges
+.badge {
+    @apply px-2 py-1 text-white rounded-full text-sm tracking-wide font-semibold;
+
+    &.accent {
+        @apply bg-accent;
+    }
+
+    &.danger {
+        @apply bg-danger;
+    }
+
+    &.primary {
+        @apply bg-primary;
+    }
+
+    &.warning {
+        @apply bg-warning;
+    }
+
+    &.success {
+        @apply bg-success;
+    }
+}
+
+// Section
+.heading-title {
+    @apply text-center font-semibold text-grey-darkest tracking-tight mb-2;
+}
+.heading-subtitle {
+    @apply text-center mb-4;
+}

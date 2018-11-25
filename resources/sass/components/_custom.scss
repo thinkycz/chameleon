@@ -1,0 +1,9 @@
+.slide-enter-active,
+.slide-leave-active {
+    @include transition(opacity, transform);
+}
+.slide-enter,
+.slide-leave-to {
+    transform: translateY(-100%);
+    opacity: 0;
+}

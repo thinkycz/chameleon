@@ -14,11 +14,18 @@
     <link href="{{ mix('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" v-cloak>
+    <div id="app" v-cloak class="flex flex-wrap">
         @include('layouts.partials.header')
-        <main>
-            @yield('content')
-        </main>
+        <div class="container">
+            <div class="row">
+                <aside class="w-full lg:w-1/4 px-2 py-16">
+                    @yield('sidebar')
+                </aside>
+                <main class="w-full lg:w-3/4 px-2 py-16">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
         @include('layouts.partials.footer')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>

@@ -6,5 +6,12 @@
 @import './mixins';
 @import './components/typography';
 @import './components/app';
+@import './components/custom';
+@import './components/components';
+@import './components/products';
+@import './components/forms';
+@import './components/columns';
+@import './components/header';
+@import './components/footer';
 
 @tailwind utilities;

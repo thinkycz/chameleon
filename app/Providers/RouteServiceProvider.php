@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapTestRoutes();
     }
 
     /**
@@ -69,5 +69,14 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapTestRoutes()
+    {
+        if (config('app.env') == 'local' || config('app.debug') == true) {
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/test.php'));
+        }
     }
 }

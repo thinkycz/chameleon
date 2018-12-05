@@ -157,7 +157,7 @@ module.exports = {
   */
 
     fonts: {
-        sans: ['Open Sans', 'system-ui', 'BlinkMacSystemFont', '-apple-system', 'sans-serif'],
+        sans: ['system-ui', 'BlinkMacSystemFont', '-apple-system', 'sans-serif'],
         serif: ['serif'],
         mono: ['monospace'],
     },

@@ -1,0 +1,48 @@
+.user-bar {
+    @apply w-full flex flex-wrap justify-between px-4 py-2;
+    .user-image {
+        @apply w-full flex flex-wrap justify-start items-center;
+        @screen md {
+            @apply w-1/3;
+        }
+        .user-image__img {
+            img {
+                @apply rounded-full shadow h-16 w-16;
+            }
+        }
+        .user-image__data {
+            @apply ml-6;
+            p {
+                @apply mb-0;
+            }
+        }
+    }
+    .user-counters {
+        @apply w-full;
+        @screen md {
+            @apply w-1/3;
+        }
+    }
+    .user-graph {
+        @apply w-full;
+        @screen md {
+            @apply w-1/3;
+        }
+    }
+}
+
+.profile-sections {
+    .profile-header {
+        @apply w-full flex flex-wrap justify-between bg-grey-lightest;
+        a {
+            @apply text-grey-darkest font-bold p-4 flex-auto text-center border-t-2 border-grey-lightest;
+            @include transition(background-color, border-color);
+            &.active {
+                @apply bg-white border-primary;
+            }
+        }
+    }
+    .profile-body {
+        @apply w-full;
+    }
+}

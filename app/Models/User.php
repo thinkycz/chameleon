@@ -2,13 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
+use App\Traits\ModelHasDateFormatted;
+use App\Traits\User\UserHasMedia;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail, HasMedia
 {
     use Notifiable;
+    use UserHasMedia;
+    use ModelHasDateFormatted;
 
     protected $fillable = [
         'first_name', 'last_name', 'email', 'phone', 'password',
@@ -19,8 +24,13 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     protected $dates = [
-        'birth_date'
+        'birth_date',
     ];
+
+    public static function getAuthenticatedUser()
+    {
+        return auth()->user();
+    }
 
     public function priceLevel()
     {

@@ -7,3 +7,12 @@
     transform: translateY(-100%);
     opacity: 0;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+    @include transition(opacity);
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

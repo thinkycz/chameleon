@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./translations/translations');
 
 window.Vue = require('vue');
 
@@ -32,7 +33,7 @@ icons.keys().map(key => {
 });
 
 /**
- * Icons
+ * Components
  */
 const components = require.context('./components', true, /\.vue$/i);
 components.keys().map(key => {

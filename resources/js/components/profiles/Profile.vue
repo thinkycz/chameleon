@@ -7,7 +7,7 @@
                         v-for="partial in partials"
                         :key="partial"
                         @click.prevent="change(partial)"
-                        :class="{'active': partial == component}">{{ partial }}</a>
+                        :class="{'active': partial == component}">{{ $trans(`profiles.${partial}`) }}</a>
                 </div>
                 <transition name="fade"
                     mode="out-in">

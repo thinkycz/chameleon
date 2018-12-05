@@ -10,6 +10,7 @@
     <script>
         window.baseURL = '{{ url('/') }}';
         window.currentLocale = '{{ app()->getLocale() }}';
+        window.fallbackLocale = 'en';
     </script>
     <link href="{{ mix('css/app.css')}}" rel="stylesheet">
 </head>

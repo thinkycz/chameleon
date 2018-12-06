@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     public function show(User $user)
     {
-        $user->load('addresses');
+        $user->load('addresses', 'priceLevel');
 
         return view('profiles.show', compact('user'));
     }

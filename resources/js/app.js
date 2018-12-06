@@ -13,6 +13,7 @@ window.Vue = require('vue');
 /**
  * Dependencies
  */
+import 'babel-polyfill';
 import PortalVue from 'portal-vue';
 
 /**

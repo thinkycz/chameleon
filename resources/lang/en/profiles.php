@@ -19,6 +19,9 @@ return [
     'overview'                         => 'Your account overview',
     'overview_info'                    => 'Here we are going to show you the most important information about your account. You can click on any of the orders to see more details about it. ',
 
+    'your_price_level'                 => 'Your price level is <strong class="text-primary"> :level </strong>',
+    'your_total_orders' => 'You made total of <strong class="text-primary"> :total </strong> orders',
+
     'export_data'                      => 'Export data',
     'request_export'                   => 'This will pack all your data stored on our servers into an Excel file. When the process is done, we will send you an email with a link to download the file. That\'s it.',
     'request_download'                 => 'Request download',

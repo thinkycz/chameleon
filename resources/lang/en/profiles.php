@@ -13,6 +13,12 @@ return [
     'address_book'                => 'Your address book',
     'address_book_info'           => 'You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new by clicking on the blank address box.',
 
+    'privacy_policy'              => 'Privacy Policy',
+    'privacy_policy_info'         => 'In this section you can set your privacy policy settings, read our terms of usage, request exporting your account data that we store on our servers and also request account deletion. We care and respect your privacy.',
+
+    'overview'                    => 'Your account overview',
+    'overview_info'               => 'Here we are going to show you the most important information about your account. You can click on any of the orders to see more details about it. ',
+
     // Forms
     'first_name'                  => 'First name',
     'first_name_label'            => 'Your First name',

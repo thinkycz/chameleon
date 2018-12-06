@@ -22,6 +22,10 @@
                 return `${route}/${this.current.id}`;
             },
 
+            handleClickOnBack() {
+                this.current = null;
+            },
+
             handleAddressBoxDestroyed(route) {
                 axios.delete(route).then(({ data }) => {
                     window.location.href = data.redirect;

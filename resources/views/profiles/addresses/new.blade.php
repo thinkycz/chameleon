@@ -75,9 +75,10 @@
             </div>
         </div>
 
-        <div class="col-full">
+        <div class="col-full mt-8">
             <input type="hidden" name="current" value="address_book">
             <button type="submit" class="btn btn-primary">{{ trans('global.save') }}</button>
+            <a href="#!" @click.prevent="handleClickOnBack" class="text-grey-darker font-bold ml-4">{{ trans('global.back') }}</a>
         </div>
     </div>
 </form>

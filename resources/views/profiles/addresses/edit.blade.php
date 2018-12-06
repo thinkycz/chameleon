@@ -78,6 +78,7 @@
         <div class="col-full">
             <input type="hidden" name="current" value="address_book">
             <button type="submit" class="btn btn-primary">{{ trans('global.update') }}</button>
+            <a href="#!" @click.prevent="handleClickOnBack" class="text-grey-darker">{{ trans('global.back') }}</a>
         </div>
     </div>
 </form>

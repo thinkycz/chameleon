@@ -39,7 +39,7 @@
         },
         methods: {
             change(component) {
-                // TODO:: append to url the current view
+                window.updateQueryStringParam('current', component);
                 this.component = component;
             },
         },

@@ -860,6 +860,16 @@ p.p-small {
           box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, .5);
 }
 
+.circled-list {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.circled-list li {
+  font-size: .875rem;
+  list-style-type: circle;
+}
+
 .product-card {
   overflow: hidden;
   position: relative;

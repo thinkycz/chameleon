@@ -133,3 +133,11 @@
         box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, 0.5);
     }
 }
+
+.circled-list {
+    @apply pl-8 mb-4;
+    li {
+        @apply text-sm;
+        list-style-type: circle;
+    }
+}

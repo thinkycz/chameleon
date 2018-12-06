@@ -28,7 +28,13 @@
                             </span>
                         </p>
                     </div>
-                    <div class="user-graph"></div>
+                    <div class="user-graph">
+                        <div class="px-2">
+                            <p class="mb-0 text-center font-bold text-sm">{{ trans('profiles.your_past_orders') }}</p>
+                            <!-- TODO:: change currency -->
+                            <vue-profile-chart :currency="{{ json_encode(\App\Models\Currency::first()) }}"></vue-profile-chart>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

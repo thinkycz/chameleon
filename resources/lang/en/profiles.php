@@ -20,11 +20,13 @@ return [
     'overview_info'                    => 'Here we are going to show you the most important information about your account. You can click on any of the orders to see more details about it. ',
 
     'your_price_level'                 => 'Your price level is <strong class="text-primary"> :level </strong>',
-    'your_total_orders' => 'You made total of <strong class="text-primary"> :total </strong> orders',
+    'your_total_orders'                => 'You made total of <strong class="text-primary"> :total </strong> orders',
 
     'export_data'                      => 'Export data',
     'request_export'                   => 'This will pack all your data stored on our servers into an Excel file. When the process is done, we will send you an email with a link to download the file. That\'s it.',
     'request_download'                 => 'Request download',
+
+    'your_past_orders'                 => 'Your past order values',
 
     'permanently_delete_your_account'  => 'Permanently delete your account',
     'honor_your_right_to_be_forgotten' => 'We honor your right to be completely forgotten from our platform, including any third party services we share your information with. When you request a complete deletion of your account, we will:',

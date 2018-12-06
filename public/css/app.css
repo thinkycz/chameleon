@@ -870,6 +870,43 @@ p.p-small {
   list-style-type: circle;
 }
 
+.ct-series-a .ct-area {
+  fill: var(--primary) !important;
+}
+
+.ct-series-b .ct-area {
+  fill: var(--primary) !important;
+}
+
+.ct-series-a .ct-bar,
+.ct-series-a .ct-line,
+.ct-series-a .ct-point,
+.ct-series-a .ct-slice-donut {
+  stroke: var(--primary) !important;
+}
+
+.ct-series-b .ct-bar,
+.ct-series-b .ct-line,
+.ct-series-b .ct-point,
+.ct-series-b .ct-slice-donut {
+  stroke: var(--primary) !important;
+}
+
+.ct-chart .chartist-tooltip {
+  color: var(--white);
+  background-color: var(--primary-light);
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  border-radius: .5rem;
+  font-size: .875rem;
+}
+
+.ct-chart .chartist-tooltip:before {
+  border: 8px solid transparent;
+  border-top-color: var(--primary-light);
+  margin-left: -8px;
+}
+
 .product-card {
   overflow: hidden;
   position: relative;
@@ -1424,6 +1461,7 @@ footer .footer-info img {
 
 .user-bar .user-counters {
   width: 100%;
+  padding-top: .75rem;
 }
 
 @media (min-width: 768px) {
@@ -1434,12 +1472,21 @@ footer .footer-info img {
 
 .user-bar .user-graph {
   width: 100%;
+  position: relative;
 }
 
 @media (min-width: 768px) {
   .user-bar .user-graph {
     width: 33.33333%;
   }
+}
+
+.user-bar .user-graph .ct-point {
+  stroke-width: 6px;
+}
+
+.user-bar .user-graph .ct-line {
+  stroke-width: 2px;
 }
 
 .profile-sections .profile-header {

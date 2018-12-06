@@ -13,15 +13,21 @@
         }
     }
     .user-counters {
-        @apply w-full;
+        @apply w-full pt-3;
         @screen md {
             @apply w-1/3;
         }
     }
     .user-graph {
-        @apply w-full;
+        @apply w-full relative;
         @screen md {
             @apply w-1/3;
+        }
+        .ct-point {
+            stroke-width: 6px;
+        }
+        .ct-line {
+            stroke-width: 2px;
         }
     }
 }

@@ -22,6 +22,7 @@
     "dependencies": {
         "babel-polyfill": "^6.26.0",
         "chartist": "^0.11.0",
+        "chartist-plugin-tooltips": "^0.0.17",
         "portal-vue": "^1.4.0-beta.1",
         "query-string": "^6.2.0",
         "tailwindcss": "^0.7.2",

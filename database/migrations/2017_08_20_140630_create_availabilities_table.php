@@ -16,6 +16,8 @@ class CreateAvailabilitiesTable extends Migration
     {
         Schema::create('availabilities', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
+            $table->string('code')->nullable();
 
             $table->json('name');
             $table->text('name_v')->virtualAs('name');

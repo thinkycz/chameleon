@@ -53,8 +53,6 @@ class Currency extends Resource
 
             Text::make('Symbol'),
 
-            Text::make('Symbol'),
-
             Number::make('Exchange Rate'),
 
             Boolean::make('Symbol Is Before'),

@@ -22,8 +22,9 @@ class CreateCurrenciesTable extends Migration
 
             $table->string('isocode');
             $table->string('symbol')->nullable();
-            $table->boolean('symbol_is_before')->default(false);
             $table->decimal('exchange_rate');
+
+            $table->boolean('symbol_is_before')->default(false);
             $table->boolean('enabled')->default(false);
         });
     }

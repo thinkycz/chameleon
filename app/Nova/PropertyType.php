@@ -35,6 +35,11 @@ class PropertyType extends Resource
         'id',
     ];
 
+    public static function label()
+    {
+        return 'Property Types';
+    }
+
     /**
      * Get the fields displayed by the resource.
      *

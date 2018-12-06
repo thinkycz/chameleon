@@ -2,9 +2,9 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -35,6 +35,11 @@ class PriceLevel extends Resource
         'id',
     ];
 
+    public static function label()
+    {
+        return 'Price Levels';
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -48,9 +53,9 @@ class PriceLevel extends Resource
 
             Text::make('Name'),
 
-            Number::make('Enabled'),
+            Boolean::make('Enabled'),
 
-            Number::make('Has Quantity Discounts'),
+            Boolean::make('Has Quantity Discounts'),
         ];
     }
 

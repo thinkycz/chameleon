@@ -36,6 +36,11 @@ class DeliveryMethod extends Resource
         'id',
     ];
 
+    public static function label()
+    {
+        return 'Delivery Methods';
+    }
+
     /**
      * Get the fields displayed by the resource.
      *

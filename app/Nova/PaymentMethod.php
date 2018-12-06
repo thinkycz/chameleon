@@ -36,6 +36,11 @@ class PaymentMethod extends Resource
         'id',
     ];
 
+    public static function label()
+    {
+        return 'Payment Methods';
+    }
+
     /**
      * Get the fields displayed by the resource.
      *

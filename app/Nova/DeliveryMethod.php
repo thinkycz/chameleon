@@ -56,7 +56,7 @@ class DeliveryMethod extends Resource
 
             Number::make('Price'),
 
-            Number::make('Minimal Order Value'),
+            Number::make('Minimal Order Amount'),
 
             Boolean::make('Needs Shipping Address'),
 

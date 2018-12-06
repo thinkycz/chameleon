@@ -17,6 +17,7 @@ class CreateStatusesTable extends Migration
         Schema::create('statuses', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('code')->unique();
 
             $table->json('name');
             $table->text('name_v')->virtualAs('name');
@@ -24,7 +25,6 @@ class CreateStatusesTable extends Migration
             $table->json('description')->nullable();
             $table->text('description_v')->virtualAs('description');
 
-            $table->string('code')->unique();
             $table->string('color')->default('black');
             $table->boolean('is_final')->default(false);
         });

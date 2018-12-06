@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(AvailabilitySeeder::class);
         $this->call(CountrySeeder::class);
+        $this->call(PropertyTypeSeeder::class);
+        $this->call(StatusSeeder::class);
         $this->call(UnitSeeder::class);
     }
 }

@@ -18,6 +18,8 @@ class CreateCountriesTable extends Migration
             $table->timestamps();
 
             $table->json('name');
+            $table->text('name_v')->virtualAs('name');
+
             $table->string('isocode2');
             $table->string('isocode3');
             $table->boolean('enabled')->default(false);

@@ -18,7 +18,11 @@
                 this.current = address;
             },
 
-            destroy(route) {
+            updateAddressAction(route) {
+                return `${route}/${this.current.id}`;
+            },
+
+            handleAddressBoxDestroyed(route) {
                 axios.delete(route).then(({ data }) => {
                     window.location.href = data.redirect;
                 });

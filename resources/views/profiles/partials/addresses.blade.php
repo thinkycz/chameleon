@@ -18,6 +18,7 @@
                     </div>
                     <div class="addresses-form" v-else key="forms">
                         @include('profiles.addresses.new')
+                        @include('profiles.addresses.edit')
                     </div>
                 </transition>
             </vue-addresses>

@@ -2,34 +2,30 @@
 
 namespace App\Nova;
 
-use App\Enums\Locale;
-use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class User extends Resource
+class Availability extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static $model = \App\Models\Availability::class;
 
-    public static $group = 'Admin';
+    public static $group = 'Settings';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -37,7 +33,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'first_name', 'last_name', 'email',
+        'id',
     ];
 
     /**
@@ -51,43 +47,15 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make(),
+            Text::make('Name'),
 
-            Text::make('Name')
-                ->onlyOnIndex(),
+            Textarea::make('Description'),
 
-            Text::make('First Name')
-                ->sortable()
-                ->rules('required', 'max:255')
-                ->hideFromIndex(),
+            Boolean::make('Allow Orders'),
 
-            Text::make('Last Name')
-                ->sortable()
-                ->rules('required', 'max:255')
-                ->hideFromIndex(),
+            Boolean::make('Allow Negative Quantity'),
 
-            Date::make('Birth Date')
-                ->format('DD.MM.YYYY'),
-
-            Number::make('Phone'),
-
-            Select::make('Locale')
-                ->options(Locale::getAllowedLocales())
-                ->displayUsingLabels()
-                ->hideFromIndex(),
-
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
-
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:6')
-                ->updateRules('nullable', 'string', 'min:6'),
-
-            HasMany::make('Addresses')
+            Boolean::make('Products Visible'),
         ];
     }
 

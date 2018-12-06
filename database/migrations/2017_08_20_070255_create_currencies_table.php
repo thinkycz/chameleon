@@ -20,7 +20,6 @@ class CreateCurrenciesTable extends Migration
             $table->json('name');
             $table->text('name_v')->virtualAs('name');
 
-            $table->string('code');
             $table->string('isocode');
             $table->string('symbol')->nullable();
             $table->boolean('symbol_is_before')->default(false);

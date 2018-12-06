@@ -2,25 +2,23 @@
 
 namespace App\Nova;
 
-use App\Enums\Locale;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class User extends Resource
+class Order extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static $model = \App\Models\Order::class;
 
     public static $group = 'Admin';
 
@@ -29,7 +27,7 @@ class User extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -37,7 +35,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'first_name', 'last_name', 'email',
+        'id',
     ];
 
     /**
@@ -51,43 +49,37 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make(),
+            Date::make('Order Completed At'),
 
-            Text::make('Name')
-                ->onlyOnIndex(),
+            Text::make('Order Number'),
 
-            Text::make('First Name')
-                ->sortable()
-                ->rules('required', 'max:255')
-                ->hideFromIndex(),
+            Text::make('Invoice Number'),
 
-            Text::make('Last Name')
-                ->sortable()
-                ->rules('required', 'max:255')
-                ->hideFromIndex(),
+            Text::make('Variable Number'),
 
-            Date::make('Birth Date')
-                ->format('DD.MM.YYYY'),
+            Date::make('Tax Date'),
 
-            Number::make('Phone'),
+            Date::make('Due Date'),
 
-            Select::make('Locale')
-                ->options(Locale::getAllowedLocales())
-                ->displayUsingLabels()
-                ->hideFromIndex(),
+            Text::make('Email'),
 
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+            Text::make('Phone'),
 
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:6')
-                ->updateRules('nullable', 'string', 'min:6'),
+            Textarea::make('Notes'),
 
-            HasMany::make('Addresses')
+            Textarea::make('Customer Note'),
+
+            BelongsTo::make('User'),
+
+            BelongsTo::make('Status'),
+
+            BelongsTo::make('Shipping Details', 'shippingDetail'),
+
+            BelongsTo::make('Billing Details', 'billingDetail'),
+
+            BelongsTo::make('Delivery Method', 'deliveryMethod'),
+
+            BelongsTo::make('Payment Method', 'paymentMethod'),
         ];
     }
 

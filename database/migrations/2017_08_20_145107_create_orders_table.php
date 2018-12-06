@@ -22,15 +22,11 @@ class CreateOrdersTable extends Migration
             $table->string('invoice_number');
             $table->string('variable_symbol');
 
-            $table->date('issue_date');
             $table->date('tax_date');
             $table->date('due_date');
 
             $table->string('email');
             $table->string('phone');
-
-            $table->decimal('subtotal', 11, 2)->default(0);
-            $table->decimal('grandtotal', 11, 2)->default(0);
 
             $table->text('notes')->nullable();
             $table->text('customer_note')->nullable();

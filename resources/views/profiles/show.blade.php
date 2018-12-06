@@ -6,7 +6,7 @@
             <div class="col-full">
                 <div class="user-bar card">
                     <div class="user-image">
-                        <div class="user-image__img">
+                        <div class="rounded-img">
                             <img src="{{ $user->thumb }}" alt="{{ $user->name }}">
                         </div>
                         <div class="user-image__data">
@@ -22,12 +22,13 @@
             </div>
         </div>
 
-        <vue-profile current="{{ request()->get('current', 'account_overview') }}">
+        @include('partials.errors')
+
+        <vue-profile current="{{ getCurrentView('account_overview') }}">
             <template slot="account_overview"> @include('profiles.partials.overview') </template>
             <template slot="account_details"> @include('profiles.partials.details') </template>
             <template slot="address_book"> @include('profiles.partials.addresses') </template>
             <template slot="account_privacy"> @include('profiles.partials.privacy') </template>
-            <template slot="change_password"> @include('profiles.partials.password') </template>
         </vue-profile>
     </div>
 @stop

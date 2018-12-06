@@ -123,3 +123,13 @@
 .heading-subtitle {
     @apply text-center mb-4;
 }
+
+// Rounded image
+.rounded-img {
+    @apply rounded-full relative h-16 w-16 overflow-hidden;
+    &::after {
+        content: '';
+        @apply pointer-events-none absolute w-full h-full pin-t pin-l rounded-full;
+        box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, 0.5);
+    }
+}

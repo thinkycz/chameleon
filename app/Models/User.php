@@ -32,6 +32,15 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return auth()->user();
     }
 
+    public function changePassword($newPassword)
+    {
+        if (!empty($newPassword)) {
+            $this->update([
+                'password' => bcrypt($newPassword),
+            ]);
+        }
+    }
+
     public function priceLevel()
     {
         return $this->belongsTo(PriceLevel::class);

@@ -34,11 +34,12 @@
         data() {
             return {
                 component: this.current,
-                partials: ['account_overview', 'account_details', 'address_book', 'account_privacy', 'change_password'],
+                partials: ['account_overview', 'account_details', 'address_book', 'account_privacy'],
             };
         },
         methods: {
             change(component) {
+                // TODO:: append to url the current view
                 this.component = component;
             },
         },

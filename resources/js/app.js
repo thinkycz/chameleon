@@ -33,17 +33,20 @@ icons.keys().map(key => {
 });
 
 /**
- * Components
+ * Elements
  */
-const components = require.context('./components', true, /\.vue$/i);
-components.keys().map(key => {
+const elements = require.context('./components/elements', true, /\.vue$/i);
+elements.keys().map(key => {
     let component = key
         .split('/')
         .pop()
         .split('.')[0]
         .toLowerCase();
-    Vue.component(`vue-${component}`, components(key));
+    Vue.component(`vue-${component}`, elements(key));
 });
+
+Vue.component('vue-profile', require('./components/profiles/Profile.vue'));
+Vue.component('vue-addresses', require('./components/profiles/Addresses.vue'));
 
 const app = new Vue({
     el: '#app',

@@ -24,6 +24,8 @@ class Page extends Resource
      */
     public static $title = 'id';
 
+    public static $group = 'Admin';
+
     /**
      * The columns that should be searched.
      *

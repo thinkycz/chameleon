@@ -72,7 +72,7 @@ class User extends Resource
             Number::make('Phone'),
 
             Select::make('Locale')
-                ->options(Locale::getAllowedLocales())
+                ->options(Locale::all())
                 ->displayUsingLabels()
                 ->hideFromIndex(),
 

@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PropertyValue extends Resource
@@ -43,6 +44,8 @@ class PropertyValue extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Value'),
         ];
     }
 

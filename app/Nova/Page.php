@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Page extends Resource
@@ -41,6 +43,12 @@ class Page extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Title'),
+
+            Text::make('Slug'),
+
+            Trix::make('Content'),
         ];
     }
 

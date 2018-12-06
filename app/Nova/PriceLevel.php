@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PriceLevel extends Resource
@@ -43,6 +45,12 @@ class PriceLevel extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Name'),
+
+            Number::make('Enabled'),
+
+            Number::make('Has Quantity Discounts'),
         ];
     }
 

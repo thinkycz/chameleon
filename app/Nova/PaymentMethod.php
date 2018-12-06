@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PaymentMethod extends Resource
@@ -43,6 +46,17 @@ class PaymentMethod extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Name'),
+
+            Number::make('Price'),
+
+            Number::make('Minimal Order Amount'),
+
+            Boolean::make('Price Will Be Calculated'),
+
+            Boolean::make('Enabled')
+
         ];
     }
 

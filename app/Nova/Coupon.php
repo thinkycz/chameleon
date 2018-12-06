@@ -2,8 +2,14 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Code;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Coupon extends Resource
@@ -43,6 +49,28 @@ class Coupon extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Code'),
+
+            Text::make('Type'),
+
+            Textarea::make('Description'),
+
+            Code::make('Parameters')->json(),
+
+            Number::make('Times Used'),
+
+            Number::make('Max Usage'),
+
+            Date::make('Valid From'),
+
+            Date::make('Valid To'),
+
+            Boolean::make('Enabled'),
+
+            Boolean::make('Once Per User'),
+
+            Boolean::make('Can Be Combined'),
         ];
     }
 

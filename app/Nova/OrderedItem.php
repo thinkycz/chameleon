@@ -2,8 +2,13 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class OrderedItem extends Resource
@@ -43,6 +48,28 @@ class OrderedItem extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Name'),
+
+            Textarea::make('Description'),
+
+            Trix::make('Details'),
+
+            Number::make('Price'),
+
+            Number::make('VAT Rate', 'vatrate'),
+
+            Number::make('Quantity Ordered'),
+
+            Text::make('Barcode'),
+
+            Text::make('Catalogue Number'),
+
+            Text::make('Options'),
+
+            BelongsTo::make('Order'),
+
+            BelongsTo::make('Product'),
         ];
     }
 

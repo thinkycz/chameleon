@@ -23,7 +23,6 @@ class CreateOrderedItemsTable extends Migration
             $table->longText('details')->nullable();
 
             $table->decimal('price', 11, 2);
-            $table->decimal('discount', 11, 2)->nullable();
             $table->unsignedDecimal('vatrate')->default(21.00);
             $table->unsignedInteger('quantity_ordered')->default(0);
 

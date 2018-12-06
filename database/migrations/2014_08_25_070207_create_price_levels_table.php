@@ -20,7 +20,6 @@ class CreatePriceLevelsTable extends Migration
 
             $table->string('name');
             $table->boolean('enabled')->default(false);
-            $table->boolean('can_negotiate')->default(false);
             $table->boolean('has_quantity_discounts')->default(false);
         });
     }

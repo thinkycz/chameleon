@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Status extends Resource
@@ -43,6 +46,16 @@ class Status extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Name'),
+
+            Textarea::make('Description'),
+
+            Text::make('Code'),
+
+            Text::make('Color'),
+
+            Boolean::make('Is Final'),
         ];
     }
 

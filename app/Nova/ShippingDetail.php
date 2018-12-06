@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ShippingDetail extends Resource
@@ -43,6 +46,24 @@ class ShippingDetail extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Company Name'),
+
+            Text::make('First Name'),
+
+            Text::make('Last Name'),
+
+            Text::make('City'),
+
+            Text::make('Street'),
+
+            Text::make('Zipcode'),
+
+            Number::make('Phone'),
+
+            BelongsTo::make('Country'),
+
+            BelongsTo::make('User')
         ];
     }
 

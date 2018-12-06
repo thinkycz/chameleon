@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PropertyType extends Resource
@@ -43,6 +45,12 @@ class PropertyType extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Name'),
+
+            Boolean::make('Is Hidden'),
+
+            Boolean::make('Is Sortable'),
         ];
     }
 

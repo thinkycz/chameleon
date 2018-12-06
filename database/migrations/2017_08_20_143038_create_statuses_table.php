@@ -24,7 +24,7 @@ class CreateStatusesTable extends Migration
             $table->json('description')->nullable();
             $table->text('description_v')->virtualAs('description');
 
-            $table->string('code');
+            $table->string('code')->unique();
             $table->string('color')->default('black');
             $table->boolean('is_final')->default(false);
         });

@@ -10,14 +10,14 @@
                 <li v-for="item in formattedItems" class="text-xs text-80 leading-normal">
                     <span class="inline-block rounded-full w-2 h-2 mr-2" :style="{
                         backgroundColor: item.color
-                    }"/>{{ item.label }} ({{item.value}} - {{ (item.value * 100 / formattedTotal).toFixed(2) }}%)
+                    }"/>{{ item.label }} ({{ item.value }} - {{ item.percentage }}%)
                 </li>
             </ul>
         </div>
 
         <div
             ref="chart"
-            class="z-40 vertical-center rounded-b-lg ct-chart"
+            :class="chartClasses"
             style="width: 90px; height: 90px; right: 20px; bottom: 30px; top: calc(50% + 15px);"
         />
     </loading-card>
@@ -66,15 +66,29 @@ export default {
             startAngle: 270,
             showLabel: false,
         })
+
+        this.chartist.on('draw', context => {
+            if (context.type === 'slice') {
+                context.element.attr({ style: `fill: ${context.meta.color} !important` })
+            }
+        })
     },
 
     methods: {
         renderChart() {
             this.chartist.update(this.formattedChartData)
         },
+
+        getItemColor(item, index) {
+            return typeof item.color === 'string' ? item.color : colorForIndex(index)
+        },
     },
 
     computed: {
+        chartClasses() {
+            return ['z-40', 'vertical-center', 'rounded-b-lg', 'ct-chart', this.formattedTotal <= 0 ? 'invisible' : '']
+        },
+
         formattedChartData() {
             return { labels: this.formattedLabels, series: this.formattedData }
         },
@@ -85,7 +99,8 @@ export default {
                     return {
                         label: item.label,
                         value: item.value,
-                        color: colorForIndex(index),
+                        color: this.getItemColor(item, index),
+                        percentage: this.formattedTotal > 0 ? (item.value * 100 / this.formattedTotal).toFixed(2) : '0',
                     }
                 })
                 .value()
@@ -99,7 +114,12 @@ export default {
 
         formattedData() {
             return _(this.chartData)
-                .map(item => item.value)
+                .map((item, index) => {
+                    return {
+                        value: item.value,
+                        meta: { color: this.getItemColor(item, index) },
+                    }
+                })
                 .value()
         },
 

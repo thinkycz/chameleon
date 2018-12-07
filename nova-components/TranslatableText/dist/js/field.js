@@ -177,7 +177,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
-module.exports = __webpack_require__(13);
+module.exports = __webpack_require__(16);
 
 
 /***/ }),
@@ -188,7 +188,7 @@ Nova.booting(function (Vue, router) {
     Vue.component('index-translatable-text', __webpack_require__(3));
     Vue.component('detail-translatable-text', __webpack_require__(6));
     Vue.component('form-translatable-text', __webpack_require__(9));
-    Vue.component('dropdown-menu-translatable-text', __webpack_require__(22));
+    Vue.component('dropdown-menu-translatable-text', __webpack_require__(13));
 });
 
 /***/ }),
@@ -10721,28 +10721,14 @@ if (false) {
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(24)
+var __vue_script__ = __webpack_require__(14)
 /* template */
-var __vue_template__ = __webpack_require__(23)
+var __vue_template__ = __webpack_require__(15)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -10781,45 +10767,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "button",
-      {
-        staticClass:
-          "form-input-bordered rounded-l-none dropdown-toggle h-full",
-        attrs: { type: "button" }
-      },
-      [
-        _c("img", {
-          attrs: { src: _vm.getFlag(_vm.currentLocale), alt: _vm.currentLocale }
-        })
-      ]
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f0206e0a", module.exports)
-  }
-}
-
-/***/ }),
-/* 24 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10835,7 +10793,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             currentValues: {},
             locales: Nova.config.locales,
             currentLocale: Nova.config.currentLocale,
-            flagsPath: Nova.config.flagsPath
+            flagsPath: Nova.config.flagsPath,
+            active: false
         };
     },
 
@@ -10845,6 +10804,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         getContent: function getContent(locale) {
             return typeof this.value[locale] !== 'undefined' ? this.value[locale] : '';
+        },
+        toggleDropdown: function toggleDropdown() {
+            this.active = !this.active;
         }
     },
     created: function created() {
@@ -10855,6 +10817,92 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
     }
 });
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "relative" }, [
+    _c(
+      "button",
+      {
+        staticClass:
+          "form-input-bordered rounded-l-none dropdown-toggle h-full",
+        attrs: { type: "button" },
+        on: { click: _vm.toggleDropdown }
+      },
+      [
+        _c("img", {
+          attrs: { src: _vm.getFlag(_vm.currentLocale), alt: _vm.currentLocale }
+        })
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.active,
+            expression: "active"
+          }
+        ],
+        staticClass: "rounded shadow-md mt-8 absolute pin-t pin-r bg-white"
+      },
+      [_vm._m(0)]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "list-reset" }, [
+      _c("li", [
+        _c(
+          "a",
+          {
+            staticClass: "px-4 py-2 block text-black hover:bg-50 no-underline",
+            attrs: { href: "#" }
+          },
+          [_vm._v("My account")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c(
+          "a",
+          {
+            staticClass: "px-4 py-2 block text-black hover:bg-50 no-underline",
+            attrs: { href: "#" }
+          },
+          [_vm._v("Notifications")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-f0206e0a", module.exports)
+  }
+}
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

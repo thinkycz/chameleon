@@ -2,14 +2,16 @@
     <default-field :field="field" :errors="errors">
         <template slot="field">
             <div class="input-group">
-                <input :id="field.name" type="text"
+                <input v-for="(_, locale) in locales"
+                        v-show="locale === currentLocale"
+                        :id="field.name" type="text"
                         class="form-control form-input form-input-bordered flex-1 rounded-r-none"
                         :class="errorClasses"
                         :placeholder="field.name"
-                        v-model="value"
+                        v-model="value[locale]"
                 />
                 <div class="input-group-append">
-                    <dropdown-menu-translatable-text></dropdown-menu-translatable-text>
+                    <dropdown-menu-translatable-text v-model="currentLocale"></dropdown-menu-translatable-text>
                 </div>
             </div>
         </template>
@@ -24,26 +26,35 @@ export default {
 
     props: ['resourceName', 'resourceId', 'field'],
 
+    data() {
+        return {
+            locales: Nova.config.locales,
+            currentLocale: Nova.config.currentLocale,
+        }
+    },
+
     methods: {
         /*
          * Set the initial, internal value for the field.
          */
         setInitialValue() {
-            this.value = this.field.value || ''
+            this.value = this.field.value || {}
         },
 
         /**
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            formData.append(this.field.attribute, this.value || '')
+            Object.keys(this.value).forEach(locale => {
+                formData.append(this.field.attribute + '[' + locale + ']', this.value[locale] || '')
+            })
         },
 
         /**
          * Update the field's internal value.
          */
         handleChange(value) {
-            this.value = value
+            this.value[this.currentLocale] = value
         },
     },
 }

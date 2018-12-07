@@ -12,4 +12,9 @@ class TranslatableText extends Field
      * @var string
      */
     public $component = 'translatable-text';
+
+    protected function resolveAttribute($resource, $attribute)
+    {
+        return $resource->getTranslations($attribute);
+    }
 }

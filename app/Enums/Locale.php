@@ -26,4 +26,19 @@ abstract class Locale
     {
         return array_values(static::all());
     }
+
+    public static function current()
+    {
+        return session('lang') ?? static::app();
+    }
+
+    public static function app()
+    {
+        return config('app.locale', static::fallback());
+    }
+
+    public static function fallback()
+    {
+        return config('app.fallback_locale', static::ENGLISH);
+    }
 }

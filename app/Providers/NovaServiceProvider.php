@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Enums\Locale;
+use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
@@ -17,6 +19,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Nova::serving(function (ServingNova $event) {
+            Nova::provideToScript([
+                'locales' => Locale::all(),
+                'currentLocale' => Locale::current(),
+                'flagsPath' => asset('/images/flags')
+            ]);
+        });
     }
 
     /**

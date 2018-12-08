@@ -5,9 +5,9 @@ namespace App\Nova;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Nulisec\TranslatableText\TranslatableText;
 
 class Availability extends Resource
 {
@@ -47,7 +47,7 @@ class Availability extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name'),
+            TranslatableText::make('Name'),
 
             Textarea::make('Description'),
 

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Nulisec\TranslatableText\TranslatableText;
 
 class Currency extends Resource
 {
@@ -47,7 +48,7 @@ class Currency extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name'),
+            TranslatableText::make('Name'),
 
             Text::make('ISO Code', 'isocode'),
 

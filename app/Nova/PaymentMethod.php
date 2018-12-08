@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Nulisec\TranslatableText\TranslatableText;
 
 class PaymentMethod extends Resource
 {
@@ -52,7 +53,7 @@ class PaymentMethod extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name'),
+            TranslatableText::make('Name'),
 
             Number::make('Price'),
 

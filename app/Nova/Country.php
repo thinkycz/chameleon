@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Nulisec\TranslatableText\TranslatableText;
 
 class Country extends Resource
 {
@@ -46,7 +47,7 @@ class Country extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name'),
+            TranslatableText::make('Name'),
 
             Text::make('ISO Code 2', 'isocode2'),
 

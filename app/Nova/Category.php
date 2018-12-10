@@ -2,10 +2,10 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\ProductsPerCategory;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -46,13 +46,15 @@ class Category extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             TranslatableText::make('Name'),
 
             Text::make('Slug')->onlyOnDetail(),
 
             Number::make('Position'),
+
+            Number::make('Products Count', function () {
+                return $this->products->count();
+            }),
 
             BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
 
@@ -70,7 +72,9 @@ class Category extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new ProductsPerCategory)
+        ];
     }
 
     /**

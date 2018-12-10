@@ -67,6 +67,8 @@ return [
     'company_id_label'                 => 'Ex. 06359621',
     'vat_id'                           => 'VAT ID',
     'vat_id_label'                     => 'Ex. 1234567890',
+    'select_image'                     => 'Select image',
+    'no_image_selected_yet'            => 'No image selected',
 
     // Partials
     'account_overview'                 => 'Overview',

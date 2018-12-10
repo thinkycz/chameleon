@@ -17,10 +17,11 @@ class ProfileController extends Controller
     public function update(UpdateProfileRequest $request, User $user)
     {
         $user->update($request->except('password'));
+        $user->processImage($request->file('image'));
         $user->changePassword($request->get('password'));
 
         // snackbar()->success(trans('profiles.profile_updated'));
 
-        return redirect()->route('profiles.show', ['user' => $user, 'current' => 'account-details']);
+        return redirect()->route('profiles.show', ['user' => $user, 'current' => $request->get('current')]);
     }
 }

@@ -1,5 +1,5 @@
 <div class="p-8">
-    <form csrf method="patch" form-action="profiles.update" params="$user">
+    <form csrf method="patch" form-action="profiles.update" params="$user" files>
         <div class="row">
             <div class="col-half">
                 <h3 class="mb-2">{{ trans('profiles.your_personal_information') }}</h3>
@@ -45,6 +45,10 @@
                             <label for="password_confirmation">{{ trans('profiles.password_confirmation') }}</label>
                             <input type="password" id="password_confirmation" class="input" name="password_confirmation" placeholder="{{ trans('profiles.password_confirmation_label') }}">
                         </div>
+                    </div>
+
+                    <div class="col-full">
+                        <vue-fileinput></vue-fileinput>
                     </div>
                 </div>
 

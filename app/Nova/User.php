@@ -2,8 +2,13 @@
 
 namespace App\Nova;
 
+use App\Enums\Locale;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
@@ -15,7 +20,9 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = 'App\\User';
+    public static $model = \App\Models\User::class;
+
+    public static $group = 'Admin';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -30,7 +37,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'id', 'first_name', 'last_name', 'email',
     ];
 
     /**
@@ -47,8 +54,27 @@ class User extends Resource
             Gravatar::make(),
 
             Text::make('Name')
+                ->onlyOnIndex(),
+
+            Text::make('First Name')
                 ->sortable()
-                ->rules('required', 'max:255'),
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
+
+            Text::make('Last Name')
+                ->sortable()
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
+
+            Date::make('Birth Date')
+                ->format('DD.MM.YYYY'),
+
+            Number::make('Phone'),
+
+            Select::make('Locale')
+                ->options(Locale::all())
+                ->displayUsingLabels()
+                ->hideFromIndex(),
 
             Text::make('Email')
                 ->sortable()
@@ -60,6 +86,8 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            HasMany::make('Addresses')
         ];
     }
 

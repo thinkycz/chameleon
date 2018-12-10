@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41d86bec3b5a9ca8a6d9ffab7727dbc2",
+    "content-hash": "2e93963867eec84598890531d1662b18",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2317,16 +2317,16 @@
         },
         {
             "name": "martinlindhe/laravel-vue-i18n-generator",
-            "version": "0.1.34",
+            "version": "0.1.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/martinlindhe/laravel-vue-i18n-generator.git",
-                "reference": "2b26c09bcfa7ad995311006241346f2eb4252df6"
+                "reference": "55c2d33c0bd3c681f38dc683b6f4ac600b1da557"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/martinlindhe/laravel-vue-i18n-generator/zipball/2b26c09bcfa7ad995311006241346f2eb4252df6",
-                "reference": "2b26c09bcfa7ad995311006241346f2eb4252df6",
+                "url": "https://api.github.com/repos/martinlindhe/laravel-vue-i18n-generator/zipball/55c2d33c0bd3c681f38dc683b6f4ac600b1da557",
+                "reference": "55c2d33c0bd3c681f38dc683b6f4ac600b1da557",
                 "shasum": ""
             },
             "require": {
@@ -2366,7 +2366,7 @@
                 "laravel",
                 "vue-i18n"
             ],
-            "time": "2018-11-28T16:49:32+00:00"
+            "time": "2018-12-07T16:53:14+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -2736,6 +2736,40 @@
             "autoload": {
                 "psr-4": {
                     "Nulisec\\TranslatableText\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
+            "name": "nulisec/translatable-textarea",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/TranslatableTextarea",
+                "reference": "247523b0680b8aab8046d04bfc07605c22c3a923",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\TranslatableTextarea\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\TranslatableTextarea\\": "src/"
                 }
             },
             "license": [

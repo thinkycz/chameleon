@@ -22,7 +22,8 @@
         "nulisec/translatable-text": "*",
         "martinlindhe/laravel-vue-i18n-generator": "^0.1.34",
         "spatie/laravel-medialibrary": "^7.5",
-        "beyondcode/laravel-tag-helper": "^1.1"
+        "beyondcode/laravel-tag-helper": "^1.1",
+        "nulisec/translatable-textarea": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -44,11 +45,11 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/NovaFieldTranslatableText"
+            "url": "./nova-components/TranslatableText"
         },
         {
             "type": "path",
-            "url": "./nova-components/TranslatableText"
+            "url": "./nova-components/TranslatableTextarea"
         }
     ],
     "extra": {

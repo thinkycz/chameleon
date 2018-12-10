@@ -6,9 +6,9 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Nulisec\TranslatableText\TranslatableText;
+use Nulisec\TranslatableTextarea\TranslatableTextarea;
 
 class Status extends Resource
 {
@@ -50,7 +50,7 @@ class Status extends Resource
 
             TranslatableText::make('Name'),
 
-            Textarea::make('Description'),
+            TranslatableTextarea::make('Description'),
 
             Text::make('Code'),
 

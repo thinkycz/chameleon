@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Enums\Locale;
+use App\Nova\Metrics\NumberOfUsers;
+use App\Nova\Metrics\OrdersPerDay;
+use App\Nova\Metrics\ProductsPerCategory;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
-use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -66,7 +68,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            (new NumberOfUsers),
+            (new OrdersPerDay),
+            (new ProductsPerCategory),
         ];
     }
 

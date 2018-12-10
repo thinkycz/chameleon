@@ -2,6 +2,9 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NumberOfOrders;
+use App\Nova\Metrics\OrdersPerDay;
+use App\Nova\Metrics\OrdersPerStatus;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
@@ -112,7 +115,11 @@ class Order extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new NumberOfOrders),
+            (new OrdersPerDay),
+            (new OrdersPerStatus),
+        ];
     }
 
     /**

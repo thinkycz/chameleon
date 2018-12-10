@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NumberOfProducts;
+use App\Nova\Metrics\ProductsPerAvailability;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
@@ -124,7 +126,10 @@ class Product extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new NumberOfProducts),
+            (new ProductsPerAvailability),
+        ];
     }
 
     /**

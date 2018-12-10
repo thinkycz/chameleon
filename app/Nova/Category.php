@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\NumberOfCategories;
 use App\Nova\Metrics\ProductsPerCategory;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -73,7 +74,8 @@ class Category extends Resource
     public function cards(Request $request)
     {
         return [
-            (new ProductsPerCategory)
+            (new NumberOfCategories),
+            (new ProductsPerCategory),
         ];
     }
 

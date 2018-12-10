@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Enums\Locale;
+use App\Nova\Metrics\NumberOfUsers;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
@@ -105,7 +106,9 @@ class User extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new NumberOfUsers)
+        ];
     }
 
     /**

@@ -31,4 +31,5 @@ $factory->afterCreating(Order::class, function (Order $order, Faker $faker) {
     $order->status()->associate(Status::inRandomOrder()->first());
     $order->save();
     factory(OrderedItem::class, $faker->numberBetween(3, 5))->create(['order_id' => $order->id]);
+    $order->save();
 });

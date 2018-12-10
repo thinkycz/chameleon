@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Textarea;
@@ -49,6 +50,8 @@ class Comment extends Resource
             Textarea::make('Content'),
 
             BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
+
+            HasMany::make('Subcomments', 'children', static::class),
 
             BelongsTo::make('Product'),
 

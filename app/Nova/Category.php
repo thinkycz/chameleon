@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
@@ -56,6 +57,8 @@ class Category extends Resource
             Number::make('Position'),
 
             BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
+
+            HasMany::make('Subcategories', 'children', static::class),
 
             Boolean::make('Enabled')
         ];

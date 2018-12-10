@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Faker\Generator as Faker;
 
 /*
@@ -13,7 +14,7 @@ use Faker\Generator as Faker;
 |
  */
 
-$factory->define(\App\Models\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'first_name'        => $faker->firstName,
         'last_name'         => $faker->lastName,
@@ -24,6 +25,6 @@ $factory->define(\App\Models\User::class, function (Faker $faker) {
     ];
 });
 
-$factory->afterCreating(App\Models\User::class, function ($user, Faker $faker) {
+$factory->afterCreating(User::class, function ($user, Faker $faker) {
     $user->addMediaFromUrl($faker->imageUrl(800, 800, 'technics'))->toMediaCollection('images');
 });

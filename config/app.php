@@ -176,6 +176,7 @@ return [
         App\Providers\NovaServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
         App\Providers\TagHelperServiceProvider::class,
 
     ],

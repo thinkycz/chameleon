@@ -20,12 +20,25 @@ class ShippingDetail extends Resource
 
     public static $displayInNavigation = false;
 
+    public static $globallySearchable = false;
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
     public static $title = 'title';
+
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = [
+        'company_name',
+        'first_name',
+        'last_name',
+    ];
 
     /**
      * Get the fields displayed by the resource.

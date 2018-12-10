@@ -20,12 +20,21 @@ class Availability extends Resource
 
     public static $group = 'Settings';
 
+    public static $globallySearchable = false;
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
     public static $title = 'name';
+
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = ['name_v'];
 
     /**
      * Get the fields displayed by the resource.

@@ -18,6 +18,8 @@ class Property extends Resource
 
     public static $displayInNavigation = false;
 
+    public static $globallySearchable = false;
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *

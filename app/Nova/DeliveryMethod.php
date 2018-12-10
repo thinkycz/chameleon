@@ -20,12 +20,21 @@ class DeliveryMethod extends Resource
 
     public static $group = 'Checkout';
 
+    public static $globallySearchable = false;
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
     public static $title = 'name';
+
+    /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = ['name_v'];
 
     public static function label()
     {

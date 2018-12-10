@@ -32,4 +32,9 @@ class BillingDetail extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    public function getTitleAttribute()
+    {
+        return "{$this->street}, {$this->zipcode} {$this->city}";
+    }
 }

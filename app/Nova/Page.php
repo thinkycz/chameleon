@@ -22,7 +22,7 @@ class Page extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     public static $group = 'Admin';
 
@@ -31,9 +31,7 @@ class Page extends Resource
      *
      * @var array
      */
-    public static $search = [
-        'id',
-    ];
+    public static $search = ['title'];
 
     /**
      * Get the fields displayed by the resource.

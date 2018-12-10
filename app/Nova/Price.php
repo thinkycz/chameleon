@@ -27,15 +27,6 @@ class Price extends Resource
     public static $title = 'id';
 
     /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
-
-    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -44,15 +35,13 @@ class Price extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             Currency::make('Price'),
 
             Currency::make('Old Price'),
 
             BelongsTo::make('Product'),
 
-            BelongsTo::make('Price Level'),
+            BelongsTo::make('Price Level', 'priceLevel'),
         ];
     }
 

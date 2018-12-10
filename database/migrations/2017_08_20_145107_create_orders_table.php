@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->timestamp('order_completed_at')->nullable();
+            $table->timestamp('placed_at')->nullable();
 
             $table->string('order_number');
             $table->string('invoice_number');

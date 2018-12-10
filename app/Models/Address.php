@@ -28,4 +28,9 @@ class Address extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getTitleAttribute()
+    {
+        return "{$this->street}, {$this->zipcode} {$this->city}";
+    }
 }

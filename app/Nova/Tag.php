@@ -30,9 +30,7 @@ class Tag extends Resource
      *
      * @var array
      */
-    public static $search = [
-        'name',
-    ];
+    public static $search = ['name'];
 
     /**
      * Get the fields displayed by the resource.

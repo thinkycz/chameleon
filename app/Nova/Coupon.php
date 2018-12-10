@@ -28,16 +28,14 @@ class Coupon extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'code';
 
     /**
      * The columns that should be searched.
      *
      * @var array
      */
-    public static $search = [
-        'id',
-    ];
+    public static $search = ['code'];
 
     /**
      * Get the fields displayed by the resource.

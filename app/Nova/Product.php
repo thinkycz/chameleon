@@ -40,7 +40,20 @@ class Product extends Resource
      */
     public static $search = [
         'name',
+        'barcode',
+        'catalogue_number'
     ];
+
+    public function subtitle()
+    {
+        if ($this->barcode) {
+            return "EAN: {$this->barcode}";
+        } elseif ($this->catalogue_number) {
+            return "CAT: {$this->catalogue_number}";
+        } else {
+            return null;
+        }
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -63,15 +76,17 @@ class Product extends Resource
 
             Number::make('VAT Rate', 'vatrate')->hideFromIndex(),
 
-            BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
-
-            HasMany::make('Subproducts', 'children', static::class),
-
-            Boolean::make('Enabled'),
+            BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex()->nullable(),
 
             new Panel('Inventory Options', $this->inventoryOptionsFields()),
 
             new Panel('Stock Options', $this->stockOptionsFields()),
+
+            Boolean::make('Enabled'),
+
+            HasMany::make('Subproducts', 'children', static::class),
+
+            HasMany::make('Prices'),
         ];
     }
 

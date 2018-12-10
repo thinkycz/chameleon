@@ -25,16 +25,7 @@ class Country extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
-
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
+    public static $title = 'name';
 
     /**
      * Get the fields displayed by the resource.

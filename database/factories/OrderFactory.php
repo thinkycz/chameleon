@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
-        'order_completed_at' => Carbon::yesterday(),
+        'placed_at' => Carbon::yesterday(),
         'tax_date'           => Carbon::today()->addDays(5),
         'due_date'           => Carbon::today()->addDays(12),
         'email'              => $faker->email,
@@ -29,5 +29,6 @@ $factory->afterCreating(Order::class, function (Order $order, Faker $faker) {
     $order->deliveryMethod()->associate(DeliveryMethod::first());
     $order->paymentMethod()->associate(PaymentMethod::first());
     $order->status()->associate(Status::inRandomOrder()->first());
+    $order->save();
     factory(OrderedItem::class, $faker->numberBetween(3, 5))->create(['order_id' => $order->id]);
 });

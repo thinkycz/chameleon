@@ -25,16 +25,7 @@ class ShippingDetail extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
-
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
+    public static $title = 'title';
 
     /**
      * Get the fields displayed by the resource.

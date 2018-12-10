@@ -27,4 +27,5 @@ $factory->afterCreating(Product::class, function (Product $product, Faker $faker
 
     $categories = Category::inRandomOrder()->take($faker->numberBetween(1, 3))->pluck('id');
     $product->categories()->sync($categories);
+    $product->save();
 });

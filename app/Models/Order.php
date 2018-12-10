@@ -21,7 +21,7 @@ class Order extends Model
     ];
 
     protected $dates = [
-        'order_completed_at',
+        'placed_at',
         'tax_date',
         'due_date',
     ];

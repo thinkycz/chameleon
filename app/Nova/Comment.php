@@ -40,7 +40,7 @@ class Comment extends Resource
 
             Textarea::make('Content'),
 
-            BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
+            BelongsTo::make('Parent', 'parent', static::class)->nullable()->hideFromIndex(),
 
             HasMany::make('Subcomments', 'children', static::class),
 

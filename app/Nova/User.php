@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Enums\Locale;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -89,6 +90,8 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            BelongsTo::make('Price Level', 'priceLevel'),
 
             HasMany::make('Addresses')
         ];

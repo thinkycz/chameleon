@@ -5,9 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -73,6 +71,8 @@ class Order extends Resource
             BelongsTo::make('Status'),
 
             Textarea::make('Notes'),
+
+            HasMany::make('Items', 'orderedItems', OrderedItem::class),
         ];
     }
 

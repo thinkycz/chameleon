@@ -76,7 +76,7 @@ class Product extends Resource
 
             Number::make('VAT Rate', 'vatrate')->hideFromIndex(),
 
-            BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex()->nullable(),
+            BelongsTo::make('Parent', 'parent', static::class)->nullable()->hideFromIndex(),
 
             new Panel('Inventory Options', $this->inventoryOptionsFields()),
 
@@ -87,6 +87,8 @@ class Product extends Resource
             HasMany::make('Subproducts', 'children', static::class),
 
             HasMany::make('Prices'),
+
+            HasMany::make('Comments'),
         ];
     }
 

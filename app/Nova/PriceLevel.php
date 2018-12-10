@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -47,6 +48,8 @@ class PriceLevel extends Resource
             Boolean::make('Enabled'),
 
             Boolean::make('Has Quantity Discounts'),
+
+            HasMany::make('Users'),
         ];
     }
 

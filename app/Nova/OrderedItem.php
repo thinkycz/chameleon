@@ -3,13 +3,15 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Code;
+use Laravel\Nova\Fields\Currency;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 
 class OrderedItem extends Resource
 {
@@ -38,29 +40,34 @@ class OrderedItem extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
             Text::make('Name'),
 
             Textarea::make('Description'),
 
             Trix::make('Details'),
 
-            Number::make('Price'),
+            Number::make('Quantity Ordered'),
+
+            Currency::make('Price'),
 
             Number::make('VAT Rate', 'vatrate'),
 
-            Number::make('Quantity Ordered'),
-
-            Text::make('Barcode'),
-
-            Text::make('Catalogue Number'),
-
-            Text::make('Options'),
+            new Panel('Inventory Options', $this->inventoryOptionsFields()),
 
             BelongsTo::make('Order'),
 
             BelongsTo::make('Product'),
+
+            Code::make('Options'),
+        ];
+    }
+
+    protected function inventoryOptionsFields()
+    {
+        return [
+            Text::make('Catalogue Number'),
+
+            Text::make('Barcode'),
         ];
     }
 

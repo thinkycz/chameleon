@@ -28,7 +28,7 @@ class CreateOrderedItemsTable extends Migration
 
             $table->string('barcode')->nullable();
             $table->string('catalogue_number')->nullable();
-            $table->string('options')->nullable();
+            $table->json('options')->nullable();
             
             $table->unsignedInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

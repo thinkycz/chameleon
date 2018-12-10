@@ -6,6 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrderedItem extends Model
 {
+    protected $fillable = [
+        'name',
+        'description',
+        'details',
+        'price',
+        'vatrate',
+        'quantity_ordered',
+        'barcode',
+        'catalogue_number',
+        'options',
+    ];
+
     public function order()
     {
         return $this->belongsTo(Order::class);

@@ -28,5 +28,5 @@ $factory->afterCreating(Order::class, function (Order $order, Faker $faker) {
     $order->paymentMethod()->associate(PaymentMethod::first());
     $order->user()->associate(User::inRandomOrder()->first());
     $order->status()->associate(Status::inRandomOrder()->first());
-    factory(OrderedItem::class, random_int(3, 5))->create(['order_id' => $order->id]);
+    factory(OrderedItem::class, $faker->numberBetween(3, 5))->create(['order_id' => $order->id]);
 });

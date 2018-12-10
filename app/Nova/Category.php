@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class Category extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -34,7 +35,7 @@ class Category extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -53,6 +54,8 @@ class Category extends Resource
             Text::make('Slug')->onlyOnDetail(),
 
             Number::make('Position'),
+
+            BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
 
             Boolean::make('Enabled')
         ];

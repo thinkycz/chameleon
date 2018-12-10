@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Translatable\HasTranslations;
@@ -11,6 +12,7 @@ class Category extends Model
 {
     use HasSlug;
     use HasTranslations;
+    use NodeTrait;
 
     public $translatable = ['name'];
 

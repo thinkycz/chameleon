@@ -3,9 +3,9 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Price extends Resource
@@ -46,9 +46,9 @@ class Price extends Resource
         return [
             ID::make()->sortable(),
 
-            Number::make('Price'),
+            Currency::make('Price'),
 
-            Number::make('Old Price'),
+            Currency::make('Old Price'),
 
             BelongsTo::make('Product'),
 

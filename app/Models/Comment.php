@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 
 class Comment extends Model
 {
+    use NodeTrait;
+
     public function product()
     {
         return $this->belongsTo(Product::class);

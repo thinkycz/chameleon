@@ -48,6 +48,8 @@ class Comment extends Resource
 
             Textarea::make('Content'),
 
+            BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
+
             BelongsTo::make('Product'),
 
             BelongsTo::make('User'),

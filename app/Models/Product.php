@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
@@ -11,6 +12,7 @@ class Product extends Model
 {
     use HasTags;
     use HasSlug;
+    use NodeTrait;
 
     public function getSlugOptions(): SlugOptions
     {

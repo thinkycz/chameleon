@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 use Spatie\TagsField\Tags;
 
 class Product extends Resource
@@ -29,7 +30,7 @@ class Product extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -37,7 +38,7 @@ class Product extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -59,25 +60,39 @@ class Product extends Resource
 
             Trix::make('Details'),
 
-            Text::make('Catalogue Number'),
+            Number::make('VAT Rate', 'vatrate')->hideFromIndex(),
 
-            Text::make('Barcode'),
+            BelongsTo::make('Parent', 'parent', static::class)->hideFromIndex(),
 
+            Boolean::make('Enabled'),
+
+            new Panel('Inventory Options', $this->inventoryOptionsFields()),
+
+            new Panel('Stock Options', $this->stockOptionsFields()),
+        ];
+    }
+
+    protected function stockOptionsFields()
+    {
+        return [
             Number::make('Quantity In Stock'),
 
             Number::make('Minimum Order Quantity')->hideFromIndex(),
 
-            Number::make('VAT Rate', 'vatrate')->hideFromIndex(),
-
-            Tags::make('Tags')->hideFromIndex(),
-
-//            BelongsTo::make('Parent'),
-
             BelongsTo::make('Availability'),
 
             BelongsTo::make('Unit')->hideFromIndex(),
+        ];
+    }
 
-            Boolean::make('Enabled'),
+    protected function inventoryOptionsFields()
+    {
+        return [
+            Text::make('Catalogue Number'),
+
+            Text::make('Barcode'),
+
+            Tags::make('Tags')->hideFromIndex(),
         ];
     }
 

@@ -5,10 +5,11 @@
                 <textarea v-for="(_, locale) in locales"
                         v-show="locale === currentLocale"
                         :id="field.name"
-                        class="w-full form-control form-input form-input-bordered py-3 h-auto"
+                        class="form-control form-input form-input-bordered py-3 h-auto flex-1 rounded-r-none"
                         :class="errorClasses"
                         :placeholder="field.name"
                         v-model="value[locale]"
+                        v-bind="extraAttributes"
                 ></textarea>
                 <div class="input-group-append">
                     <dropdown-menu-translatable-textarea v-model="currentLocale"></dropdown-menu-translatable-textarea>
@@ -31,6 +32,25 @@
                 locales: Nova.config.locales,
                 currentLocale: Nova.config.currentLocale,
             }
+        },
+
+        computed: {
+            defaultAttributes() {
+                return {
+                    rows: this.field.rows,
+                    class: this.errorClasses,
+                    placeholder: this.field.name,
+                }
+            },
+
+            extraAttributes() {
+                const attrs = this.field.extraAttributes
+
+                return {
+                    ...this.defaultAttributes,
+                    ...attrs,
+                }
+            },
         },
 
         methods: {

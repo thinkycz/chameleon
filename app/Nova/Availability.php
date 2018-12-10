@@ -5,9 +5,9 @@ namespace App\Nova;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Nulisec\TranslatableText\TranslatableText;
+use Nulisec\TranslatableTextarea\TranslatableTextarea;
 
 class Availability extends Resource
 {
@@ -49,7 +49,7 @@ class Availability extends Resource
 
             TranslatableText::make('Name'),
 
-            Textarea::make('Description'),
+            TranslatableTextarea::make('Description'),
 
             Boolean::make('Allow Orders'),
 

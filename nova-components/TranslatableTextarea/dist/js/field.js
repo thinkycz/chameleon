@@ -185,95 +185,15 @@ module.exports = __webpack_require__(13);
 /***/ (function(module, exports, __webpack_require__) {
 
 Nova.booting(function (Vue, router) {
-    Vue.component('index-translatable-textarea', __webpack_require__(3));
     Vue.component('detail-translatable-textarea', __webpack_require__(6));
     Vue.component('form-translatable-textarea', __webpack_require__(9));
     Vue.component('dropdown-menu-translatable-textarea', __webpack_require__(18));
 });
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(4)
-/* template */
-var __vue_template__ = __webpack_require__(5)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/IndexField.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-9e63f81a", Component.options)
-  } else {
-    hotAPI.reload("data-v-9e63f81a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['resourceName', 'field']
-});
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("span", [_vm._v(_vm._s(_vm.field.value))])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-9e63f81a", module.exports)
-  }
-}
-
-/***/ }),
+/* 3 */,
+/* 4 */,
+/* 5 */,
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -330,9 +250,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['resource', 'resourceName', 'resourceId', 'field']
+    props: ['resource', 'resourceName', 'resourceId', 'field'],
+
+    data: function data() {
+        return {
+            currentLocale: Nova.config.currentLocale
+        };
+    }
 });
 
 /***/ }),
@@ -343,7 +273,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("panel-item", { attrs: { field: _vm.field } })
+  return _c(
+    "panel-item",
+    { attrs: { field: _vm.field } },
+    [
+      _c(
+        "template",
+        { slot: "value" },
+        [
+          _c("excerpt", {
+            attrs: {
+              content: _vm.field.value[_vm.currentLocale],
+              "should-show": _vm.field.shouldShow
+            }
+          })
+        ],
+        1
+      )
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -410,6 +359,9 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
 //
 //
 //
@@ -445,6 +397,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
+
+    computed: {
+        defaultAttributes: function defaultAttributes() {
+            return {
+                rows: this.field.rows,
+                class: this.errorClasses,
+                placeholder: this.field.name
+            };
+        },
+        extraAttributes: function extraAttributes() {
+            var attrs = this.field.extraAttributes;
+
+            return _extends({}, this.defaultAttributes, attrs);
+        }
+    },
 
     methods: {
         /*
@@ -10693,35 +10660,43 @@ var render = function() {
           { staticClass: "input-group" },
           [
             _vm._l(_vm.locales, function(_, locale) {
-              return _c("textarea", {
-                directives: [
+              return _c(
+                "textarea",
+                _vm._b(
                   {
-                    name: "show",
-                    rawName: "v-show",
-                    value: locale === _vm.currentLocale,
-                    expression: "locale === currentLocale"
-                  },
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.value[locale],
-                    expression: "value[locale]"
-                  }
-                ],
-                staticClass:
-                  "w-full form-control form-input form-input-bordered py-3 h-auto",
-                class: _vm.errorClasses,
-                attrs: { id: _vm.field.name, placeholder: _vm.field.name },
-                domProps: { value: _vm.value[locale] },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: locale === _vm.currentLocale,
+                        expression: "locale === currentLocale"
+                      },
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.value[locale],
+                        expression: "value[locale]"
+                      }
+                    ],
+                    staticClass:
+                      "form-control form-input form-input-bordered py-3 h-auto flex-1 rounded-r-none",
+                    class: _vm.errorClasses,
+                    attrs: { id: _vm.field.name, placeholder: _vm.field.name },
+                    domProps: { value: _vm.value[locale] },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.value, locale, $event.target.value)
+                      }
                     }
-                    _vm.$set(_vm.value, locale, $event.target.value)
-                  }
-                }
-              })
+                  },
+                  "textarea",
+                  _vm.extraAttributes,
+                  false
+                )
+              )
             }),
             _vm._v(" "),
             _c(

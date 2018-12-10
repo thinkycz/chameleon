@@ -15,6 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
 
             $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
@@ -24,6 +25,8 @@ class CreatePropertiesTable extends Migration
 
             $table->unsignedInteger('property_value_id');
             $table->foreign('property_value_id')->references('id')->on('property_values')->onDelete('cascade');
+
+            $table->boolean('is_option')->default(false);
         });
     }
 

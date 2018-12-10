@@ -15,9 +15,9 @@ class CreatePropertyValuesTable extends Migration
     {
         Schema::create('property_values', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
 
-            $table->json('value');
-            $table->text('value_v')->virtualAs('value');
+            $table->string('value');
         });
     }
 

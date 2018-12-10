@@ -2,10 +2,11 @@
 
 namespace App\Nova;
 
+use App\Nova\Fields\PropertyValue;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Property extends Resource
 {
@@ -28,6 +29,13 @@ class Property extends Resource
     public static $title = 'id';
 
     /**
+     * The columns that should be searched.
+     *
+     * @var array
+     */
+    public static $search = ['id'];
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -40,9 +48,11 @@ class Property extends Resource
 
             BelongsTo::make('Product'),
 
-            BelongsTo::make('Property Type'),
+            BelongsTo::make('Property Type', 'propertyType')->searchable(),
 
-            BelongsTo::make('Property Value'),
+            PropertyValue::make('Property Value'),
+
+            Boolean::make('Is Option'),
         ];
     }
 

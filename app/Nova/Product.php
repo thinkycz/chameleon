@@ -90,6 +90,8 @@ class Product extends Resource
 
             HasMany::make('Prices'),
 
+            HasMany::make('Properties'),
+
             HasMany::make('Comments'),
         ];
     }

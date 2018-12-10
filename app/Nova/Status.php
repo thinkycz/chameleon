@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Nulisec\TranslatableText\TranslatableText;
 use Nulisec\TranslatableTextarea\TranslatableTextarea;
+use Timothyasp\Color\Color;
 
 class Status extends Resource
 {
@@ -52,9 +53,9 @@ class Status extends Resource
 
             TranslatableTextarea::make('Description'),
 
-            Text::make('Code'),
+            Text::make('Code')->hideFromIndex(),
 
-            Text::make('Color'),
+            Color::make('Color'),
 
             Boolean::make('Is Final'),
         ];

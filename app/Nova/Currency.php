@@ -56,7 +56,7 @@ class Currency extends Resource
 
             Number::make('Exchange Rate'),
 
-            Boolean::make('Symbol Is Before'),
+            Boolean::make('Symbol Is Before')->hideFromIndex(),
 
             Boolean::make('Enabled'),
         ];

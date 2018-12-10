@@ -6,6 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class BillingDetail extends Model
 {
+    protected $fillable = [
+        'company_name',
+        'company_id',
+        'vat_id',
+        'first_name',
+        'last_name',
+        'city',
+        'street',
+        'zipcode',
+        'phone',
+    ];
+
     public function country()
     {
         return $this->belongsTo(Country::class);

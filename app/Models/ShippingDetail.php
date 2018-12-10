@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShippingDetail extends Model
 {
+    protected $fillable = [
+        'company_name',
+        'first_name',
+        'last_name',
+        'city',
+        'street',
+        'zipcode',
+        'phone',
+    ];
+
     public function country()
     {
         return $this->belongsTo(Country::class);

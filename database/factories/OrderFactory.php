@@ -22,11 +22,12 @@ $factory->define(Order::class, function (Faker $faker) {
 });
 
 $factory->afterCreating(Order::class, function (Order $order, Faker $faker) {
-    $order->shippingDetail()->associate(factory(ShippingDetail::class)->create());
-    $order->billingDetail()->associate(factory(BillingDetail::class)->create());
+    $user = User::inRandomOrder()->first();
+    $order->user()->associate($user);
+    $order->shippingDetail()->associate(factory(ShippingDetail::class)->create(['user_id' => $user->id]));
+    $order->billingDetail()->associate(factory(BillingDetail::class)->create(['user_id' => $user->id]));
     $order->deliveryMethod()->associate(DeliveryMethod::first());
     $order->paymentMethod()->associate(PaymentMethod::first());
-    $order->user()->associate(User::inRandomOrder()->first());
     $order->status()->associate(Status::inRandomOrder()->first());
     factory(OrderedItem::class, $faker->numberBetween(3, 5))->create(['order_id' => $order->id]);
 });

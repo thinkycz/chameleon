@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -21,7 +22,6 @@ class Order extends Model
 
     protected $dates = [
         'order_completed_at',
-        'issue_date',
         'tax_date',
         'due_date',
     ];
@@ -33,7 +33,6 @@ class Order extends Model
         $this->setAttribute('order_number', generator()->orderNumber());
         $this->setAttribute('invoice_number', generator()->invoiceNumber());
         $this->setAttribute('variable_symbol', generator()->variableSymbol());
-        $this->setAttribute('issue_date', Carbon::now());
         $this->setAttribute('tax_date', Carbon::now());
         $this->setAttribute('due_date', Carbon::now()->addDays(7));
     }

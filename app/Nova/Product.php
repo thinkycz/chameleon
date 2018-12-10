@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\TagsField\Tags;
 
 class Product extends Resource
 {
@@ -52,7 +53,7 @@ class Product extends Resource
 
             Text::make('Name'),
 
-            Text::make('Slug'),
+            Text::make('Slug')->onlyOnDetail(),
 
             Textarea::make('Description'),
 
@@ -64,17 +65,19 @@ class Product extends Resource
 
             Number::make('Quantity In Stock'),
 
-            Number::make('Minimum Order Quantity'),
+            Number::make('Minimum Order Quantity')->hideFromIndex(),
 
-            Number::make('VAT Rate', 'vatrate'),
+            Number::make('VAT Rate', 'vatrate')->hideFromIndex(),
 
-            Boolean::make('Enabled'),
+            Tags::make('Tags')->hideFromIndex(),
 
-            BelongsTo::make('Parent'),
+//            BelongsTo::make('Parent'),
 
             BelongsTo::make('Availability'),
 
-            BelongsTo::make('Unit')
+            BelongsTo::make('Unit')->hideFromIndex(),
+
+            Boolean::make('Enabled'),
         ];
     }
 

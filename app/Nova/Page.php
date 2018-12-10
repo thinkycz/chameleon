@@ -48,7 +48,7 @@ class Page extends Resource
 
             Text::make('Title'),
 
-            Text::make('Slug')->onlyOnForms(),
+            Text::make('Slug')->onlyOnDetail(),
 
             Trix::make('Content'),
         ];

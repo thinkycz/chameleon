@@ -50,6 +50,8 @@ class Category extends Resource
 
             TranslatableText::make('Name'),
 
+            Text::make('Slug')->onlyOnDetail(),
+
             Number::make('Position'),
 
             Boolean::make('Enabled')

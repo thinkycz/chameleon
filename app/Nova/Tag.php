@@ -14,14 +14,14 @@ class Tag extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Tag::class;
+    public static $model = \Spatie\Tags\Tag::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     public static $group = 'Admin';
 
@@ -31,7 +31,7 @@ class Tag extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -43,9 +43,7 @@ class Tag extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
-            Text::make('Name'),
+            Text::make('Name')->sortable(),
         ];
     }
 

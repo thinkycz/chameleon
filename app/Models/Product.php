@@ -3,9 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
+use Spatie\Tags\HasTags;
 
 class Product extends Model
 {
+    use HasTags;
+    use HasSlug;
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
+
     public function availability()
     {
         return $this->belongsTo(Availability::class);
@@ -39,10 +52,5 @@ class Product extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
-    }
-
-    public function tags()
-    {
-        return $this->morphToMany(Tag::class, 'taggable');
     }
 }

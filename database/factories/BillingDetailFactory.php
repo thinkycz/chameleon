@@ -13,7 +13,7 @@ $factory->define(BillingDetail::class, function (Faker $faker) {
         'street'       => $faker->address,
         'zipcode'      => $faker->postcode,
         'phone'        => $faker->phoneNumber,
-        'vat_number'   => $faker->ean8,
+        'vat_id'       => $faker->ean8,
         'company_id'   => $faker->isbn10,
         'country_id'   => Country::whereEnabled(true)->inRandomOrder()->first()->id,
     ];

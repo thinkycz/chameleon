@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Country;
 use App\Models\ShippingDetail;
 use Faker\Generator as Faker;
 

@@ -1,13 +1,13 @@
 <?php
 
+use App\Models\BillingDetail;
+use App\Models\DeliveryMethod;
 use App\Models\Order;
 use App\Models\OrderedItem;
 use App\Models\PaymentMethod;
 use App\Models\ShippingDetail;
 use App\Models\Status;
 use App\Models\User;
-use App\Nova\BillingDetail;
-use App\Nova\DeliveryMethod;
 use Carbon\Carbon;
 use Faker\Generator as Faker;
 

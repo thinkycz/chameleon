@@ -14,9 +14,9 @@ class SampleSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(UserSeeder::class);
         factory(Category::class, 5)->create();
         factory(Page::class, 5)->create();
         factory(Order::class, 5)->create();
-        $this->call(UserSeeder::class);
     }
 }

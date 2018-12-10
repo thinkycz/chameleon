@@ -14,6 +14,16 @@ class Product extends Model
     use HasSlug;
     use NodeTrait;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'details',
+        'catalogue_number',
+        'barcode',
+        'quantity_in_stock',
+        'minimum_order_quantity',
+    ];
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()

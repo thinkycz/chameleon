@@ -1,10 +1,26 @@
 <?php
 
+use App\Models\Availability;
 use App\Models\Product;
+use App\Models\Unit;
 use Faker\Generator as Faker;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
-        //
+        'name'                   => $faker->word,
+        'description'            => $faker->sentence,
+        'details'                => $faker->paragraphs(3, true),
+        'catalogue_number'       => $faker->randomNumber(9),
+        'barcode'                => $faker->randomNumber(8),
+        'quantity_in_stock'      => $faker->numberBetween(5, 100),
+        'minimum_order_quantity' => $faker->numberBetween(1, 5),
     ];
+});
+
+$factory->afterCreating(Product::class, function (Product $product, Faker $faker) {
+    $product->availability()->associate(Availability::inRandomOrder()->first());
+    $product->unit()->associate(Unit::inRandomOrder()->first());
+
+    $categories = Category::inRandomOrder()->take($faker->numberBetween(1, 3))->pluck('id');
+    $product->categories()->sync($categories);
 });

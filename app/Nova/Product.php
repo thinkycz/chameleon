@@ -76,7 +76,7 @@ class Product extends Resource
 
             Number::make('VAT Rate', 'vatrate')->hideFromIndex(),
 
-            BelongsTo::make('Parent', 'parent', static::class)->nullable()->hideFromIndex(),
+            BelongsTo::make('Parent', 'parent', static::class)->nullable()->searchable()->hideFromIndex(),
 
             new Panel('Inventory Options', $this->inventoryOptionsFields()),
 

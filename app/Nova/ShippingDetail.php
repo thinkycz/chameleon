@@ -44,17 +44,19 @@ class ShippingDetail extends Resource
 
             Text::make('Last Name'),
 
-            Text::make('City'),
+            Place::make('Street')
+                ->city('city')
+                ->postalCode('zipcode'),
 
-            Text::make('Street'),
+            Text::make('City'),
 
             Text::make('Zipcode'),
 
             Number::make('Phone'),
 
-            BelongsTo::make('Country'),
+            BelongsTo::make('Country')->searchable(),
 
-            BelongsTo::make('User')
+            BelongsTo::make('User')->searchable()
         ];
     }
 

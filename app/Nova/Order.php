@@ -90,7 +90,7 @@ class Order extends Resource
     protected function customerDetailsFields()
     {
         return [
-            BelongsTo::make('User'),
+            BelongsTo::make('User')->searchable(),
 
             Text::make('Email'),
 

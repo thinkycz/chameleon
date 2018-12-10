@@ -56,7 +56,7 @@ class Category extends Resource
                 return $this->products->count();
             }),
 
-            BelongsTo::make('Parent', 'parent', static::class)->nullable()->hideFromIndex(),
+            BelongsTo::make('Parent', 'parent', static::class)->nullable()->searchable()->hideFromIndex(),
 
             HasMany::make('Subcategories', 'children', static::class),
 

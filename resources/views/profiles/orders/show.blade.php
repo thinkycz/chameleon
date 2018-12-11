@@ -41,8 +41,8 @@
     </div>
     <div class="col-full">
         <div class="flex flex-wrap justify-between border-b pb-2 mb-2 text-sm">
-            <strong>{{ trans('profiles.payment_method') }}: @{{ current.payment_method.name[locale] }}</strong>
-            <strong>{{ trans('profiles.delivery_method') }}: @{{ current.delivery_method.name[locale] }}</strong>
+            <span class="icon-wrap text-grey-darker"><icon-card></icon-card>&nbsp;<span class="text-grey-darkest"> @{{ current.payment_method.name[locale] }}</span></span>
+            <span class="icon-wrap text-grey-darker"><icon-cube></icon-cube>&nbsp;<span class="text-grey-darkest"> @{{ current.delivery_method.name[locale] }}</span></span>
         </div>
     </div>
     <div class="col-full mt-4">
@@ -67,7 +67,7 @@
                     </tr>
                     <tr>
                         <td colspan="2"></td>
-                        <td colspan="2" class="font-bold">{{ trans('orders.grand_total') }} <span class="text-primary text-right">@{{ current.formatted_total_price }}</span></td>
+                        <td colspan="2" class="font-bold">{{ trans('orders.grand_total') }} <span class="text-primary float-right">@{{ current.formatted_total_price }}</span></td>
                     </tr>
                 </tbody>
             </table>

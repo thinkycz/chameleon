@@ -16,8 +16,8 @@ return [
     'billing_details'                  => 'Billing:',
     'shipping_details'                 => 'Shipping:',
 
-    'payment_method'                   => 'Payment Method',
-    'delivery_method'                  => 'Delivery Method',
+    'payment_method'                   => 'Payment by',
+    'delivery_method'                  => 'Delivery by',
     'ordered_items'                    => 'Ordered items',
 
     'privacy_policy'                   => 'Privacy Policy',
@@ -77,6 +77,7 @@ return [
     'select_image'                     => 'Select image',
     'no_image_selected_yet'            => 'No image selected',
     'total_ordered'                    => 'Total',
+    'ordered_at'                       => 'Ordered at',
 
     // Partials
     'account_overview'                 => 'Overview',

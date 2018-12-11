@@ -205,6 +205,7 @@ export default {
             "select_image": "Select image",
             "no_image_selected_yet": "No image selected",
             "total_ordered": "Total",
+            "ordered_at": "Ordered at",
             "account_overview": "Overview",
             "account_details": "Account Details",
             "account_privacy": "Account Privacy"

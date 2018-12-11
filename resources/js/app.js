@@ -15,6 +15,7 @@ window.Vue = require('vue');
  */
 import 'babel-polyfill';
 import PortalVue from 'portal-vue';
+import { store } from './store/store';
 
 /**
  * Use dependencies
@@ -55,6 +56,10 @@ Vue.component('vue-orders', require('./components/profiles/Orders.vue'));
 Vue.component('vue-order-box', require('./components/profiles/OrderBox.vue'));
 Vue.component('vue-profile-chart', require('./components/profiles/Chart.vue'));
 
+// Basket
+Vue.component('vue-basket', require('./components/basket/Basket.vue'));
+
 const app = new Vue({
     el: '#app',
+    store,
 });

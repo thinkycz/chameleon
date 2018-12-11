@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateOrdersTable extends Migration
 {
@@ -26,7 +26,7 @@ class CreateOrdersTable extends Migration
             $table->date('due_date');
 
             $table->string('email');
-            $table->string('phone');
+            $table->string('phone')->nullable();
 
             $table->text('notes')->nullable();
             $table->text('customer_note')->nullable();

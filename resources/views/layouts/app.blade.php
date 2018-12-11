@@ -19,6 +19,7 @@
         @include('layouts.partials.header')
         <main>
             @yield('content')
+            <vue-basket :basket="{{ json_encode(activeBasket()) }}"></vue-basket>
         </main>
         @include('layouts.partials.footer')
     </div>

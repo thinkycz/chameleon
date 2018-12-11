@@ -16,7 +16,7 @@ class Order extends Model
     ];
 
     protected $fillable = [
-        'order_completed_at',
+        'placed_at',
         'order_number',
         'invoice_number',
         'variable_symbol',

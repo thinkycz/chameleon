@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Laravel\Nova\Tools\Dashboard;
 use Laravel\Nova\Tools\ResourceManager;
+use MadWeb\NovaHorizonLink\HorizonLink;
 use Nulisec\Store\Store;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -89,7 +90,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             (new Dashboard),
             (new Store),
-            (new ResourceManager)
+            (new ResourceManager),
+            (new HorizonLink)
         ];
     }
 

@@ -6,6 +6,7 @@ use App\Enums\Locale;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\UsersPerDay;
 use App\Nova\Metrics\UsersPerPriceLevel;
+use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
@@ -83,8 +84,9 @@ class User extends Resource
                 ->displayUsingLabels()
                 ->hideFromIndex(),
 
-            Text::make('Email')
+            Email::make('Email')
                 ->sortable()
+                ->clickable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),

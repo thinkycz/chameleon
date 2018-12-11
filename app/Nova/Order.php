@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Metrics\NumberOfOrders;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\OrdersPerStatus;
+use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
@@ -95,7 +96,7 @@ class Order extends Resource
         return [
             BelongsTo::make('User')->searchable(),
 
-            Text::make('Email'),
+            Email::make('Email')->clickable(),
 
             Text::make('Phone'),
 

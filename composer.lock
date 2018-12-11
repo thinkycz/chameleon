@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49740630372074b362d3b133a12719ba",
+    "content-hash": "6ab58c831132e69bc079252819ccaf7f",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1390,6 +1390,50 @@
                 "url"
             ],
             "time": "2018-12-04T20:46:45+00:00"
+        },
+        {
+            "name": "inspheric/nova-email-field",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inspheric/nova-email-field.git",
+                "reference": "7251779223f14eecab9b764b88db51717b2b1043"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inspheric/nova-email-field/zipball/7251779223f14eecab9b764b88db51717b2b1043",
+                "reference": "7251779223f14eecab9b764b88db51717b2b1043",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Inspheric\\Fields\\EmailFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Inspheric\\Fields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova email field.",
+            "keywords": [
+                "email",
+                "field",
+                "laravel",
+                "mailto",
+                "nova"
+            ],
+            "time": "2018-10-14T14:04:09+00:00"
         },
         {
             "name": "intervention/image",

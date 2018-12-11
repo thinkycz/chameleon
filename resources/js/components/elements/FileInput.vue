@@ -5,8 +5,8 @@
             class="absolute pin-t pin-l w-full opacity-0 h-full z-20 cursor-pointer"
             @change="handleOnChange($event)"
             :accept="acceptedTypes" />
-        <span class="btn btn-primary shadow btn-sm z-10">{{ buttonLabel }}</span>
-        <span class="rounded bg-white block border pl-8 -ml-6 w-full truncate h-8 text-grey-500 text-sm leading-loose">{{ label }}</span>
+        <span class="btn btn-primary shadow btn-sm z-10 whitespace-no-wrap">{{ buttonLabel }}</span>
+        <span class="rounded bg-white shadow block border pl-8 -ml-6 w-full truncate h-8 text-grey-500 text-sm leading-loose">{{ label }}</span>
     </div>
 </template>
 

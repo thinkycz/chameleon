@@ -84,7 +84,7 @@
 .order-card {
     @apply mb-3;
     .order-card__inner {
-        @apply bg-grey-lightest relative p-4 h-32 shadow cursor-pointer rounded w-full justify-center items-center;
+        @apply bg-grey-lightest relative p-4 shadow cursor-pointer rounded w-full justify-center items-center;
         @include transition(background-color, color);
         strong {
             @include transition(color);

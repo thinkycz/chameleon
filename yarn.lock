@@ -5516,6 +5516,10 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+tailwindcss-tables@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-tables/-/tailwindcss-tables-0.2.0.tgz#41c2e1bb5d8a5f487d91ce48ad44a48bf2c1097c"
+
 tailwindcss@^0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-0.7.2.tgz#a81e0c532911ec665a749c03d821a17b49e30165"

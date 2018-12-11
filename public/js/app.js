@@ -41007,6 +41007,11 @@ var index_esm = {
             "address_deleted": "Address was deleted",
             "address_book": "Address Book",
             "address_book_info": "You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new by clicking on the blank address box.",
+            "billing_details": "Billing:",
+            "shipping_details": "Shipping:",
+            "payment_method": "Payment Method",
+            "delivery_method": "Delivery Method",
+            "ordered_items": "Ordered items",
             "privacy_policy": "Privacy Policy",
             "privacy_policy_info": "In this section you can set your privacy policy settings, read our terms of usage, request exporting your account data that we store on our servers and also request account deletion. We care about and respect your privacy.",
             "overview": "Your account overview",
@@ -41056,7 +41061,7 @@ var index_esm = {
             "vat_id_label": "Ex. 1234567890",
             "select_image": "Select image",
             "no_image_selected_yet": "No image selected",
-            "total_ordered": "Total amount ordered",
+            "total_ordered": "Total",
             "account_overview": "Overview",
             "account_details": "Account Details",
             "account_privacy": "Account Privacy"
@@ -48601,15 +48606,17 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _c("span", { staticClass: "btn btn-primary shadow btn-sm z-10" }, [
-      _vm._v(_vm._s(_vm.buttonLabel))
-    ]),
+    _c(
+      "span",
+      { staticClass: "btn btn-primary shadow btn-sm z-10 whitespace-no-wrap" },
+      [_vm._v(_vm._s(_vm.buttonLabel))]
+    ),
     _vm._v(" "),
     _c(
       "span",
       {
         staticClass:
-          "rounded bg-white block border pl-8 -ml-6 w-full truncate h-8 text-grey-500 text-sm leading-loose"
+          "rounded bg-white shadow block border pl-8 -ml-6 w-full truncate h-8 text-grey-500 text-sm leading-loose"
       },
       [_vm._v(_vm._s(_vm.label))]
     )
@@ -49201,6 +49208,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -49259,7 +49270,24 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("p", { staticClass: "text-sm" }, [
+        _c(
+          "p",
+          { staticClass: "icon-wrap text-xs mb-2 text-grey-500" },
+          [
+            _c("icon-calendar"),
+            _vm._v(" "),
+            _c("span", [
+              _vm._v(
+                _vm._s(_vm.$trans("profiles.ordered_at")) +
+                  " " +
+                  _vm._s(_vm.order.formatted_created_at)
+              )
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-sm mb-0" }, [
           _c("span", { staticClass: "badge accent text-xs" }, [
             _vm._v(_vm._s(_vm.order.status.name[_vm.locale]))
           ])

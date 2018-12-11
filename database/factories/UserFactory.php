@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\PriceLevel;
 use App\Models\User;
 use Faker\Generator as Faker;
 
@@ -27,4 +28,7 @@ $factory->define(User::class, function (Faker $faker) {
 
 $factory->afterCreating(User::class, function ($user, Faker $faker) {
     $user->addMediaFromUrl($faker->imageUrl(800, 800, 'technics'))->toMediaCollection('images');
+
+    $user->priceLevel()->associate(PriceLevel::first());
+    $user->save();
 });

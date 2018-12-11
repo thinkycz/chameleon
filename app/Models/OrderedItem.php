@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrderedItem extends Model
 {
+    protected $appends = [
+        'formatted_total_price',
+        'formatted_price',
+    ];
+
     protected $fillable = [
         'name',
         'description',
@@ -31,5 +36,15 @@ class OrderedItem extends Model
     public function getTotalPriceAttribute()
     {
         return $this->quantity_ordered * $this->price;
+    }
+
+    public function getFormattedTotalPriceAttribute()
+    {
+        return showPriceWithCurrency($this->total_price);
+    }
+
+    public function getFormattedPriceAttribute()
+    {
+        return showPriceWithCurrency($this->price);
     }
 }

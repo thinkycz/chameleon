@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Metrics\NumberOfCategories;
 use App\Nova\Metrics\ProductsPerCategory;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Illuminate\Http\Request;
@@ -61,7 +62,9 @@ class Category extends Resource
 
             HasMany::make('Subcategories', 'children', static::class),
 
-            Boolean::make('Enabled')
+            Boolean::make('Enabled'),
+
+            BelongsToMany::make('Products')
         ];
     }
 
@@ -75,7 +78,7 @@ class Category extends Resource
     {
         return [
             (new NumberOfCategories),
-            (new ProductsPerCategory),
+            (new ProductsPerCategory)->width('2/3'),
         ];
     }
 

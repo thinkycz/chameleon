@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Metrics\NumberOfProducts;
 use App\Nova\Metrics\ProductsPerAvailability;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -93,6 +94,8 @@ class Product extends Resource
             HasMany::make('Properties'),
 
             HasMany::make('Comments'),
+
+            BelongsToMany::make('Categories'),
         ];
     }
 
@@ -130,7 +133,7 @@ class Product extends Resource
     {
         return [
             (new NumberOfProducts),
-            (new ProductsPerAvailability),
+            (new ProductsPerAvailability)->width('2/3'),
         ];
     }
 

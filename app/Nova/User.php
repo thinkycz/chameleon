@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use App\Enums\Locale;
 use App\Nova\Metrics\NumberOfUsers;
+use App\Nova\Metrics\UsersPerDay;
+use App\Nova\Metrics\UsersPerPriceLevel;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
@@ -107,7 +109,9 @@ class User extends Resource
     public function cards(Request $request)
     {
         return [
-            (new NumberOfUsers)
+            (new NumberOfUsers),
+            (new UsersPerDay),
+            (new UsersPerPriceLevel)
         ];
     }
 

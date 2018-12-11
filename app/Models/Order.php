@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use App\Traits\ModelHasDateFormatted;
+use App\Traits\Order\OrderHasProducts;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
     use ModelHasDateFormatted;
+    use OrderHasProducts;
 
     protected $appends = [
         'formatted_created_at',

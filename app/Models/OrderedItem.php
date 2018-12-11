@@ -21,6 +21,11 @@ class OrderedItem extends Model
         'barcode',
         'catalogue_number',
         'options',
+        'product_id',
+    ];
+
+    protected $casts = [
+        'options' => 'array',
     ];
 
     public function order()

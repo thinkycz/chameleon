@@ -47,19 +47,20 @@
                     </div>
                 </div>
                 <div class="col-cart">
-                    <div class="header-cart">
-                        <icon-cart></icon-cart>
-                        <span class="cart-total">15</span>
-                    </div>
-                    <div class="user-dropdown">
-                        <div class="user-icon">
-                            <img src="https://www.w3schools.com/w3images/avatar2.png" alt="">
+                    @auth
+                        <vue-header-basket></vue-header-basket>
+                        <div class="user-dropdown">
+                            <div class="user-icon">
+                                <img src="{{ currentUser()->thumb }}" alt="">
+                            </div>
+                            <div class="user-info">
+                                <p class="p-big">{{ currentUser()->email }}</p>
+                                <p class="p-small">{{ trans('header.welcome', ['name' => currentUser()->last_name]) }}</p>
+                            </div>
                         </div>
-                        <div class="user-info">
-                            <p class="p-big">angjelkoski</p>
-                            <p class="p-small">Welcome back, Bojan</p>
-                        </div>
-                    </div>
+                    @else
+                        <!-- TODO:: guests -->
+                    @endauth
                 </div>
             </div>
         </div>

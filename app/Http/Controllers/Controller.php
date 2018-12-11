@@ -19,4 +19,13 @@ class Controller extends BaseController
 
         return redirect($redirect);
     }
+
+    protected function ajaxWithPayload($payload, $success = true, $message = '')
+    {
+        if (request()->ajax() || request()->wantsJson()) {
+            return compact('payload', 'success', 'message');
+        }
+
+        return response();
+    }
 }

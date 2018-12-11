@@ -4,15 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
 
-class Product extends Model
+class Product extends Model implements HasMedia
 {
     use HasTags;
     use HasSlug;
     use NodeTrait;
+    use HasMediaTrait;
 
     protected $fillable = [
         'name',
@@ -29,6 +33,39 @@ class Product extends Model
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
+    }
+
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('thumb')
+            ->width(300)
+            ->height(300)
+            ->optimize()
+            ->keepOriginalImageFormat()
+            ->nonQueued();
+
+        $this->addMediaConversion('optimized')
+            ->width(800)
+            ->height(800)
+            ->optimize()
+            ->keepOriginalImageFormat()
+            ->nonQueued();
+    }
+
+    public function getPrice()
+    {
+        // TODO:: implement for current user's price level
+        return $this->prices()->first()->price;
+    }
+
+    public function getImagesAttribute()
+    {
+        return $this->getMedia('images');
+    }
+
+    public function getThumbAttribute()
+    {
+        return $this->images->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumb') : placeholderImage();
     }
 
     public function availability()

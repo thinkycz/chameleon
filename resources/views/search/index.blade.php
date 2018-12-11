@@ -1,23 +1,13 @@
-@extends('layouts.sidebar')
-
-@section('sidebar')
-    <div class="card pt-2">
-        <div class="card-heading border-b px-4 py-2">
-            <div class="icon-wrap">
-                <icon-filter></icon-filter>
-                <h4>Filter</h3>
-            </div>
-        </div>
-        <div class="card-body p-4">
-            Some fiters here
-        </div>
-    </div>
-@stop
+@extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-third">
-            @include('products.partials.card')
+    <div class="container py-16">
+        <div class="row">
+            @foreach($products as $product)
+                <div class="col-third">
+                        @include('products.partials.card')
+                </div>
+            @endforeach
         </div>
     </div>
 @stop

@@ -1,13 +1,16 @@
 <div class="card product-card">
     <div class="product-image">
-        <img src="https://nulisec.com/storage/21831/conversions/optimized-thumb.jpg">
+        <img src="{{ $product->thumb }}">
     </div>
     <div class="product-data">
-        <span class="badge accent">In stock</span>
-        <h3>Bispol Svíčka ve skle SN72 Vintage (6/krt)</h3>
-        <p class="product-price">$42.00</p>
+        <span class="badge accent">{{ optional($product->availability)->name }}</span>
+        <h3>{{ $product->name }}</h3>
+        <p class="product-price">{{ $product->formatted_price }}</p>
     </div>
     <div class="product-actions">
-        <a class="btn btn-primary" href="#!">Add to Basket</a>
+        <!-- TODO:: change -->
+        <form method="post" csrf form-action="products.add_to_basket" params="$product">
+            <button type="submit" class="btn btn-primary">Add to Basket</button>
+        </form>
     </div>
 </div>

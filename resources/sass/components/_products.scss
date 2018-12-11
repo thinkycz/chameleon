@@ -1,5 +1,5 @@
 .product-card {
-    @apply overflow-hidden relative;
+    @apply overflow-hidden relative mb-4;
     .product-image {
         @apply px-2 py-3 w-full text-center overflow-hidden;
         img {

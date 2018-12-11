@@ -61,6 +61,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return $this->hasMany(Order::class)->whereNotNull('placed_at');
     }
 
+    public function allOrders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function addresses()
     {
         return $this->hasMany(Address::class);
@@ -83,12 +88,9 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
 
     public function getBasket()
     {
-        return $this->orders()
+        return $this->allOrders()
             ->with('orderedItems.product')
             ->whereNull('placed_at')
-            ->firstOrCreate([
-                'email' => $this->email,
-                'phone' => $this->phone,
-            ]);
+            ->firstOrCreate([]);
     }
 }

@@ -58,6 +58,7 @@ Vue.component('vue-profile-chart', require('./components/profiles/Chart.vue'));
 
 // Basket
 Vue.component('vue-basket', require('./components/basket/Basket.vue'));
+Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue'));
 
 const app = new Vue({
     el: '#app',

@@ -1,7 +1,27 @@
 <?php
 
-if (!function_exists('getPlaceholderImg')) {
-    function getPlaceholderImg()
+/**
+ * @return array
+ */
+if (!function_exists('iterable')) {
+    function iterable($object)
+    {
+        return is_array($object) ? $object : [$object];
+    }
+}
+
+/*
+ * @return array
+ */
+if (!function_exists('nullable')) {
+    function nullable($object, $value = 'null')
+    {
+        return is_null($object) ? $value : $object;
+    }
+}
+
+if (!function_exists('placeholderImage')) {
+    function placeholderImage()
     {
         return asset('images/no_image.jpg');
     }

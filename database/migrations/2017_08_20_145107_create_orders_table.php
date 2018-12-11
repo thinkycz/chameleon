@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->date('tax_date');
             $table->date('due_date');
 
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('phone')->nullable();
 
             $table->text('notes')->nullable();

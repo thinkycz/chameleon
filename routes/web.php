@@ -12,12 +12,12 @@
  */
 
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/login', function () {
     return view('auth.login');
 });
 Route::get('/register', function () {
     return view('auth.register');
 });
-Route::get('/search', function () {
-    return view('search.index');
-});
+
+Route::get('search', 'SearchController@index');

@@ -1222,6 +1222,7 @@ p.p-small {
 .product-card {
   overflow: hidden;
   position: relative;
+  margin-bottom: .75rem;
 }
 
 .product-card .product-image {

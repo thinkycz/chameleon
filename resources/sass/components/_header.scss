@@ -94,6 +94,7 @@ header {
                         @apply absolute p-1 border-white border-2 rounded-full bg-danger text-white text-xs;
                         top: -5px;
                         right: -10px;
+                        min-width: 25px;
                     }
                 }
                 .user-dropdown {

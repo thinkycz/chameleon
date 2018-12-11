@@ -37,6 +37,6 @@ trait UserHasMedia
     {
         $images = $this->getMedia('images');
 
-        return $images->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumb') : getPlaceholderImg();
+        return $images->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumb') : placeholderImage();
     }
 }

@@ -18,6 +18,10 @@ class Product extends Model implements HasMedia
     use NodeTrait;
     use HasMediaTrait;
 
+    protected $appends = [
+        'thumb',
+    ];
+
     protected $fillable = [
         'name',
         'description',

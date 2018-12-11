@@ -1,0 +1,66 @@
+.basket {
+    @apply z-20 absolute pin-r h-full overflow-y-hidden;
+    min-width: 35%;
+    top: -1px;
+
+    .basket-overlay {
+        @apply fixed min-h-full w-full pin-t pin-l cursor-pointer z-20 hidden;
+        margin-top: 120px;
+        background: var(--black-transparent-50);
+    }
+
+    .basket-wrapper {
+        @apply bg-white h-full z-30 relative w-full shadow;
+        @include transition(right);
+        right: -100%;
+        .basket-wrapper__inner {
+            @apply overflow-y-auto;
+
+            .basket-items {
+                @apply list-reset;
+                li {
+                    @apply px-6 py-4 border-t relative;
+
+                    .item-price {
+                        @apply mt-1 mb-0 text-grey-darkest;
+                    }
+
+                    .item-remove {
+                        @apply absolute;
+                        right: 25px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        @include transition(color);
+                        &:hover {
+                            @apply text-danger;
+                        }
+                    }
+                }
+            }
+
+            .basket-total {
+                @apply px-6 text-lg text-black flex border-t py-4 mb-4 justify-between flex-wrap;
+            }
+        }
+    }
+
+    &.active {
+        .basket-overlay {
+            @apply block;
+            animation: basket-fade-in 0.3s;
+        }
+        .basket-wrapper {
+            right: 0;
+        }
+    }
+}
+
+@keyframes basket-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

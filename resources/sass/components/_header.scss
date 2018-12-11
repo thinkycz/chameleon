@@ -86,7 +86,7 @@ header {
                     @apply text-right w-1/4;
                 }
                 .header-cart {
-                    @apply relative text-center ml-6;
+                    @apply relative text-center ml-6 cursor-pointer select-none;
                     .icon {
                         @apply w-10 h-10 text-primary;
                     }

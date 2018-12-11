@@ -6,6 +6,9 @@ $product-image-height: 225px;
 // Color variables
 :root {
     --black: #18191a;
+    --black-transparent-25: rgba(24, 25, 26, 0.25);
+    --black-transparent-50: rgba(24, 25, 26, 0.5);
+    --black-transparent-75: rgba(24, 25, 26, 0.75);
     --grey-darkest: #383b3e;
     --grey-darker: #70767b;
     --grey-dark: #a7b0b9;
@@ -51,6 +54,9 @@ $product-image-height: 225px;
     --primary-darker: #1d4f78;
     --primary-dark: #2c76b4;
     --primary: #3183c8;
+    --primary-transparent-25: rgba(49, 131, 200, 0.25);
+    --primary-transparent-50: rgba(49, 131, 200, 0.5);
+    --primary-transparent-75: rgba(49, 131, 200, 0.75);
     --primary-light: #6fa8d9;
     --primary-lighter: #adcde9;
     --primary-lightest: #eaf3fa;

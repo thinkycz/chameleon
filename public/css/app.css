@@ -839,6 +839,9 @@ th {
 
 :root {
   --black: #18191a;
+  --black-transparent-25: rgba(24, 25, 26, .25);
+  --black-transparent-50: rgba(24, 25, 26, .5);
+  --black-transparent-75: rgba(24, 25, 26, .75);
   --grey-darkest: #383b3e;
   --grey-darker: #70767b;
   --grey-dark: #a7b0b9;
@@ -879,6 +882,9 @@ th {
   --primary-darker: #1d4f78;
   --primary-dark: #2c76b4;
   --primary: #3183c8;
+  --primary-transparent-25: rgba(49, 131, 200, .25);
+  --primary-transparent-50: rgba(49, 131, 200, .5);
+  --primary-transparent-75: rgba(49, 131, 200, .75);
   --primary-light: #6fa8d9;
   --primary-lighter: #adcde9;
   --primary-lightest: #eaf3fa;
@@ -905,6 +911,7 @@ body {
 
 main,
 aside {
+  position: relative;
   min-height: calc(100vh - 250px);
 }
 
@@ -1222,7 +1229,7 @@ p.p-small {
 .product-card {
   overflow: hidden;
   position: relative;
-  margin-bottom: .75rem;
+  margin-bottom: 1rem;
 }
 
 .product-card .product-image {
@@ -1639,6 +1646,11 @@ header #header .row .col-cart .header-cart {
   position: relative;
   text-align: center;
   margin-left: 1.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 header #header .row .col-cart .header-cart .icon {
@@ -1658,6 +1670,7 @@ header #header .row .col-cart .header-cart .cart-total {
   font-size: .75rem;
   top: -5px;
   right: -10px;
+  min-width: 25px;
 }
 
 header #header .row .col-cart .user-dropdown {
@@ -1948,6 +1961,129 @@ footer .footer-info img {
 
 .order-card:hover .order-card__inner .text-primary {
   color: var(--white);
+}
+
+.basket {
+  z-index: 20;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  overflow-y: hidden;
+  min-width: 35%;
+  top: -1px;
+}
+
+.basket .basket-overlay {
+  position: fixed;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 20;
+  display: none;
+  margin-top: 120px;
+  background: var(--black-transparent-50);
+}
+
+.basket .basket-wrapper {
+  background-color: var(--white);
+  height: 100%;
+  z-index: 30;
+  position: relative;
+  width: 100%;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  -webkit-transition: right .3s ease-in-out;
+  transition: right .3s ease-in-out;
+  right: -100%;
+}
+
+.basket .basket-wrapper .basket-wrapper__inner {
+  overflow-y: auto;
+}
+
+.basket .basket-wrapper .basket-wrapper__inner .basket-items {
+  list-style: none;
+  padding: 0;
+}
+
+.basket .basket-wrapper .basket-wrapper__inner .basket-items li {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top-width: 1px;
+  position: relative;
+}
+
+.basket .basket-wrapper .basket-wrapper__inner .basket-items li .item-price {
+  margin-top: .25rem;
+  margin-bottom: 0;
+  color: var(--grey-darkest);
+}
+
+.basket .basket-wrapper .basket-wrapper__inner .basket-items li .item-remove {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.basket .basket-wrapper .basket-wrapper__inner .basket-items li .item-remove:hover {
+  color: var(--danger);
+}
+
+.basket .basket-wrapper .basket-wrapper__inner .basket-total {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--black);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.basket.active .basket-overlay {
+  display: block;
+  -webkit-animation: basket-fade-in .3s;
+          animation: basket-fade-in .3s;
+}
+
+.basket.active .basket-wrapper {
+  right: 0;
+}
+
+@-webkit-keyframes basket-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes basket-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .list-reset {

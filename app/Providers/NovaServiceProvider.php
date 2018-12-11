@@ -6,6 +6,7 @@ use App\Enums\Locale;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\ProductsPerCategory;
+use Kristories\Novassport\Novassport;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Gate;
@@ -91,7 +92,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new Dashboard),
             (new Store),
             (new ResourceManager),
-            (new HorizonLink)
+            (new Novassport),
+            (new HorizonLink),
         ];
     }
 

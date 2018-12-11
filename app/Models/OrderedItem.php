@@ -27,4 +27,9 @@ class OrderedItem extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function getTotalPriceAttribute()
+    {
+        return $this->quantity_ordered * $this->price;
+    }
 }

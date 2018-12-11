@@ -2,11 +2,19 @@
 
 namespace App\Models;
 
+use App\Traits\ModelHasDateFormatted;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    use ModelHasDateFormatted;
+
+    protected $appends = [
+        'formatted_created_at',
+        'formatted_total_price',
+    ];
+
     protected $fillable = [
         'order_completed_at',
         'order_number',
@@ -70,5 +78,17 @@ class Order extends Model
     public function orderedItems()
     {
         return $this->hasMany(OrderedItem::class);
+    }
+
+    public function getTotalPriceAttribute()
+    {
+        return $this->orderedItems->sum(function ($item) {
+            return $item->total_price;
+        });
+    }
+
+    public function getFormattedTotalPriceAttribute()
+    {
+        return showPriceWithCurrency($this->total_price);
     }
 }

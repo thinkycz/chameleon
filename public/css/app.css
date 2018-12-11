@@ -1525,6 +1525,10 @@ footer .footer-info img {
   width: 100%;
 }
 
+.address-card {
+  margin-bottom: .75rem;
+}
+
 .address-card .address-card__inner {
   background-color: var(--grey-lightest);
   position: relative;
@@ -1587,6 +1591,50 @@ footer .footer-info img {
 
 .address-card:hover .address-card__inner {
   background-color: var(--primary);
+  color: var(--white);
+}
+
+.order-card {
+  margin-bottom: .75rem;
+}
+
+.order-card .order-card__inner {
+  background-color: var(--grey-lightest);
+  position: relative;
+  padding: 1rem;
+  height: 8rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  cursor: pointer;
+  border-radius: .25rem;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.order-card .order-card__inner strong {
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .order-card {
+    width: 50%;
+  }
+}
+
+.order-card:hover .order-card__inner {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.order-card:hover .order-card__inner .text-primary {
   color: var(--white);
 }
 

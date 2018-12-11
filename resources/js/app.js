@@ -51,6 +51,8 @@ elements.keys().map(key => {
 Vue.component('vue-profile', require('./components/profiles/Profile.vue'));
 Vue.component('vue-addresses', require('./components/profiles/Addresses.vue'));
 Vue.component('vue-address-box', require('./components/profiles/AddressBox.vue'));
+Vue.component('vue-orders', require('./components/profiles/Orders.vue'));
+Vue.component('vue-order-box', require('./components/profiles/OrderBox.vue'));
 Vue.component('vue-profile-chart', require('./components/profiles/Chart.vue'));
 
 const app = new Vue({

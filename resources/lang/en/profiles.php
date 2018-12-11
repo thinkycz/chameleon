@@ -13,6 +13,13 @@ return [
     'address_book'                     => 'Your address book',
     'address_book_info'                => 'You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new by clicking on the blank address box.',
 
+    'billing_details'                  => 'Billing:',
+    'shipping_details'                 => 'Shipping:',
+
+    'payment_method'                   => 'Payment Method',
+    'delivery_method'                  => 'Delivery Method',
+    'ordered_items'                    => 'Ordered items',
+
     'privacy_policy'                   => 'Privacy Policy',
     'privacy_policy_info'              => 'In this section you can set your privacy policy settings, read our terms of usage, request exporting your account data that we store on our servers and also request account deletion. We care about and respect your privacy.',
 
@@ -69,6 +76,7 @@ return [
     'vat_id_label'                     => 'Ex. 1234567890',
     'select_image'                     => 'Select image',
     'no_image_selected_yet'            => 'No image selected',
+    'total_ordered'                    => 'Total',
 
     // Partials
     'account_overview'                 => 'Overview',

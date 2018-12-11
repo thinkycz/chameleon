@@ -49,6 +49,7 @@
 }
 
 .address-card {
+    @apply mb-3;
     .address-card__inner {
         @apply bg-grey-lightest relative p-4 h-32 shadow cursor-pointer rounded w-full justify-center items-center;
         @include transition(background-color, color);
@@ -76,6 +77,28 @@
     &:hover {
         .address-card__inner {
             @apply bg-primary text-white;
+        }
+    }
+}
+
+.order-card {
+    @apply mb-3;
+    .order-card__inner {
+        @apply bg-grey-lightest relative p-4 h-32 shadow cursor-pointer rounded w-full justify-center items-center;
+        @include transition(background-color, color);
+        strong {
+            @include transition(color);
+        }
+    }
+    @screen md {
+        @apply w-1/2;
+    }
+    &:hover {
+        .order-card__inner {
+            @apply bg-primary text-white;
+            .text-primary {
+                @apply text-white;
+            }
         }
     }
 }

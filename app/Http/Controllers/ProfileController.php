@@ -9,7 +9,14 @@ class ProfileController extends Controller
 {
     public function show(User $user)
     {
-        $user->load('addresses', 'priceLevel');
+        $user->load('addresses',
+            'priceLevel',
+            'orders.orderedItems.product',
+            'orders.status',
+            'orders.deliveryMethod',
+            'orders.billingDetail',
+            'orders.paymentMethod',
+            'orders.shippingDetail');
 
         return view('profiles.show', compact('user'));
     }

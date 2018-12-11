@@ -2,11 +2,11 @@
 
 namespace App\Nova;
 
+use Bissolli\NovaPhoneField\PhoneNumber;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Place;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -67,7 +67,7 @@ class Address extends Resource
 
             Text::make('Zipcode'),
 
-            Number::make('Phone'),
+            PhoneNumber::make('Phone'),
 
             Text::make('Company ID'),
 

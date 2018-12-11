@@ -6,13 +6,13 @@ use App\Enums\Locale;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\UsersPerDay;
 use App\Nova\Metrics\UsersPerPriceLevel;
+use Bissolli\NovaPhoneField\PhoneNumber;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
@@ -77,7 +77,7 @@ class User extends Resource
             Date::make('Birth Date')
                 ->format('DD.MM.YYYY'),
 
-            Number::make('Phone'),
+            PhoneNumber::make('Phone'),
 
             Select::make('Locale')
                 ->options(Locale::all())

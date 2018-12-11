@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Metrics\NumberOfOrders;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\OrdersPerStatus;
+use Bissolli\NovaPhoneField\PhoneNumber;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
@@ -98,7 +99,7 @@ class Order extends Resource
 
             Email::make('Email')->clickable(),
 
-            Text::make('Phone'),
+            PhoneNumber::make('Phone'),
 
             BelongsTo::make('Shipping Details', 'shippingDetail')->onlyOnDetail(),
 

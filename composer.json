@@ -12,6 +12,7 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-ide-helper": "^2.5",
         "beyondcode/laravel-tag-helper": "^1.1",
+        "bissolli/nova-phone-field": "^0.0.1",
         "doctrine/dbal": "^2.8",
         "fideloper/proxy": "^4.0",
         "inspheric/nova-email-field": "^1.3",

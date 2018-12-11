@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65b8af0a7aa8a403c9198a3e5146d6cd",
+    "content-hash": "49740630372074b362d3b133a12719ba",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2712,6 +2712,40 @@
                 "php"
             ],
             "time": "2018-10-10T09:24:14+00:00"
+        },
+        {
+            "name": "nulisec/store",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Store",
+                "reference": "537306870de12dfd357efc2e47d7fab71614ffe3",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\Store\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\Store\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
         },
         {
             "name": "nulisec/translatable-text",

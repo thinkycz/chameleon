@@ -10,6 +10,9 @@ use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Laravel\Nova\Tools\Dashboard;
+use Laravel\Nova\Tools\ResourceManager;
+use Nulisec\Store\Store;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -81,7 +84,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        Nova::$tools = [];
+
+        return [
+            (new Dashboard),
+            (new Store),
+            (new ResourceManager)
+        ];
     }
 
     /**

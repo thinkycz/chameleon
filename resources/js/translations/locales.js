@@ -21,6 +21,13 @@ export default {
             "previous": "&laquo; Previous",
             "next": "Next &raquo;"
         },
+        "header": {
+            "welcome": "Welcome back, {name}",
+            "your_basket": "Your basket",
+            "basket_total": "Basket total",
+            "checkout": "Checkout",
+            "view_basket": "View Basket"
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -201,6 +208,14 @@ export default {
             "account_overview": "Overview",
             "account_details": "Account Details",
             "account_privacy": "Account Privacy"
+        },
+        "orders": {
+            "name": "Name",
+            "price": "Price",
+            "quantity": "Quantity",
+            "total": "Total",
+            "grand_total": "Grand Total",
+            "excl_vat": "Excl. vat"
         }
     }
 }

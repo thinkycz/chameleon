@@ -4,8 +4,8 @@
     <div class="container py-16">
         <div class="row">
             @foreach($products as $product)
-                <div class="col-third">
-                        @include('products.partials.card')
+                <div class="col-fourth">
+                    @include('products.partials.card')
                 </div>
             @endforeach
         </div>

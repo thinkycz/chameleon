@@ -1,11 +1,10 @@
 .basket {
-    @apply z-20 absolute pin-r h-full overflow-y-hidden;
+    @apply z-20 absolute pin-r h-full pin-t overflow-y-hidden invisible opacity-0;
+    @include transition(opacity, visibility);
     min-width: 35%;
-    top: -1px;
 
     .basket-overlay {
         @apply fixed min-h-full w-full pin-t pin-l cursor-pointer z-20 hidden;
-        margin-top: 120px;
         background: var(--black-transparent-50);
     }
 
@@ -45,6 +44,7 @@
     }
 
     &.active {
+        @apply visible opacity-100;
         .basket-overlay {
             @apply block;
             animation: basket-fade-in 0.3s;

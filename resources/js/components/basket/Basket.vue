@@ -34,9 +34,9 @@
                     <a href="/checkout"
                         class="font-bold text-white">{{ $trans('header.checkout') }}</a>
                 </div>
-                <div class="text-center mt-3">
+                <div class="text-center mt-2">
                     <a href="/basket"
-                        class="underline text-grey-darkest">{{ $trans('header.view_basket') }}</a>
+                        class="text-grey-darkest">{{ $trans('header.view_basket') }}</a>
                 </div>
             </div>
         </div>
@@ -80,12 +80,14 @@
             toggle() {
                 this.isVisible = !this.isVisible;
                 document.body.classList.toggle('overflow-hidden');
+                document.querySelector('header').classList.toggle('z-50');
             },
 
             close() {
                 if (this.isVisible) {
                     this.isVisible = false;
                     document.body.classList.remove('overflow-hidden');
+                    document.querySelector('header').classList.remove('z-50');
                 }
             },
 

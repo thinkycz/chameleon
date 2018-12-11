@@ -40913,6 +40913,13 @@ var index_esm = {
             "previous": "&laquo; Previous",
             "next": "Next &raquo;"
         },
+        "header": {
+            "welcome": "Welcome back, {name}",
+            "your_basket": "Your basket",
+            "basket_total": "Basket total",
+            "checkout": "Checkout",
+            "view_basket": "View Basket"
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -41093,6 +41100,14 @@ var index_esm = {
             "account_overview": "Overview",
             "account_details": "Account Details",
             "account_privacy": "Account Privacy"
+        },
+        "orders": {
+            "name": "Name",
+            "price": "Price",
+            "quantity": "Quantity",
+            "total": "Total",
+            "grand_total": "Grand Total",
+            "excl_vat": "Excl. vat"
         }
     }
 });
@@ -50198,11 +50213,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         toggle: function toggle() {
             this.isVisible = !this.isVisible;
             document.body.classList.toggle('overflow-hidden');
+            document.querySelector('header').classList.toggle('z-50');
         },
         close: function close() {
             if (this.isVisible) {
                 this.isVisible = false;
                 document.body.classList.remove('overflow-hidden');
+                document.querySelector('header').classList.remove('z-50');
             }
         },
         updateStore: function updateStore(basket) {
@@ -50302,13 +50319,10 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "text-center mt-3" }, [
+          _c("div", { staticClass: "text-center mt-2" }, [
             _c(
               "a",
-              {
-                staticClass: "underline text-grey-darkest",
-                attrs: { href: "/basket" }
-              },
+              { staticClass: "text-grey-darkest", attrs: { href: "/basket" } },
               [_vm._v(_vm._s(_vm.$trans("header.view_basket")))]
             )
           ])

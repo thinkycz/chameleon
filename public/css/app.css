@@ -1968,9 +1968,13 @@ footer .footer-info img {
   position: absolute;
   right: 0;
   height: 100%;
+  top: 0;
   overflow-y: hidden;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
   min-width: 35%;
-  top: -1px;
 }
 
 .basket .basket-overlay {
@@ -1982,7 +1986,6 @@ footer .footer-info img {
   cursor: pointer;
   z-index: 20;
   display: none;
-  margin-top: 120px;
   background: var(--black-transparent-50);
 }
 
@@ -2054,6 +2057,11 @@ footer .footer-info img {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.basket.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .basket.active .basket-overlay {

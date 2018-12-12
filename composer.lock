@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa9cc6220d98a533a150dd38945f2dbe",
+    "content-hash": "82039d23c550e4627ffecbb0ae9cb711",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -4281,6 +4281,56 @@
             "time": "2015-10-13T18:44:15+00:00"
         },
         {
+            "name": "spatie/db-dumper",
+            "version": "2.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/db-dumper.git",
+                "reference": "61cf73e3b53e163d6e888a0013b9df6bb235752c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/61cf73e3b53e163d6e888a0013b9df6bb235752c",
+                "reference": "61cf73e3b53e163d6e888a0013b9df6bb235752c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/process": "^3.0|^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\DbDumper\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dump databases",
+            "homepage": "https://github.com/spatie/db-dumper",
+            "keywords": [
+                "database",
+                "db-dumper",
+                "dump",
+                "mysqldump",
+                "spatie"
+            ],
+            "time": "2018-12-10T10:41:18+00:00"
+        },
+        {
             "name": "spatie/eloquent-sortable",
             "version": "3.4.3",
             "source": {
@@ -4431,6 +4481,74 @@
                 "spatie"
             ],
             "time": "2018-11-19T22:17:30+00:00"
+        },
+        {
+            "name": "spatie/laravel-backup",
+            "version": "5.11.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-backup.git",
+                "reference": "ff06262cfa2fa1104f727e758fc4111a6f7413da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/ff06262cfa2fa1104f727e758fc4111a6f7413da",
+                "reference": "ff06262cfa2fa1104f727e758fc4111a6f7413da",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0",
+                "league/flysystem": "^1.0.27",
+                "php": "^7.1",
+                "spatie/db-dumper": "^2.11.1",
+                "spatie/temporary-directory": "^1.1",
+                "symfony/finder": "^3.3|^4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+                "phpunit/phpunit": "^7.3"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Allows notifications to be sent via Slack"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Backup\\BackupServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Backup\\": "src"
+                },
+                "files": [
+                    "src/Helpers/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel 5 package to backup your application",
+            "homepage": "https://github.com/spatie/laravel-backup",
+            "keywords": [
+                "backup",
+                "database",
+                "laravel-backup",
+                "spatie"
+            ],
+            "time": "2018-11-05T13:09:53+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
@@ -4692,6 +4810,64 @@
                 "translate"
             ],
             "time": "2018-11-29T16:18:01+00:00"
+        },
+        {
+            "name": "spatie/nova-backup-tool",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/nova-backup-tool.git",
+                "reference": "da2bdce6a92071474f1d325ab0bee2250e4f36d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/nova-backup-tool/zipball/da2bdce6a92071474f1d325ab0bee2250e4f36d7",
+                "reference": "da2bdce6a92071474f1d325ab0bee2250e4f36d7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.1.0",
+                "spatie/laravel-backup": "^5.10.0",
+                "symfony/process": "^4.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "7.1",
+                "spatie/phpunit-snapshot-assertions": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\BackupTool\\BackupToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\BackupTool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova tool to backup your application.",
+            "homepage": "https://github.com/spatie/nova-backup-tool",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-10-29T11:24:00+00:00"
         },
         {
             "name": "spatie/nova-tags-field",

@@ -54,6 +54,11 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            'dump' => [
+                'dump_binary_path' => env('DB_DUMP_PATH', '/usr/bin'),
+                'use_single_transaction',
+                'timeout' => 60 * 5,
+            ]
         ],
 
         'pgsql' => [

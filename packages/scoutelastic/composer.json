@@ -1,0 +1,32 @@
+{
+    "name": "nulisec/scoutelastic",
+    "description": "Elasticsearch implementation for Laravel Scout",
+    "keywords": ["elasticsearch", "scout"],
+    "license": "proprietary",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Long Do",
+            "email": "leo@nulisec.com",
+            "homepage": "https://nulisec.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Nulisec\\ScoutElastic\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "elasticsearch/elasticsearch": "^6.0",
+        "laravel/scout": "^5.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nulisec\\ScoutElastic\\ElasticServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

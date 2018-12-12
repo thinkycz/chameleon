@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Enums\Locale;
+use App\Models\User;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\ProductsPerCategory;
@@ -16,7 +17,6 @@ use Laravel\Nova\Tools\ResourceManager;
 use MadWeb\NovaHorizonLink\HorizonLink;
 use Nulisec\Store\Store;
 use Silvanite\NovaToolPermissions\NovaToolPermissions;
-use Spatie\BackupTool\BackupTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -60,10 +60,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function gate()
     {
-        Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+        Gate::define('viewNova', function (User $user) {
+            return $user->hasRoleWithPermission('viewNova');
         });
     }
 

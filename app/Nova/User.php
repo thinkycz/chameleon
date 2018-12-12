@@ -9,6 +9,7 @@ use App\Nova\Metrics\UsersPerPriceLevel;
 use Bissolli\NovaPhoneField\PhoneNumber;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -17,6 +18,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
+use Silvanite\NovaToolPermissions\Role;
 
 class User extends Resource
 {
@@ -98,7 +100,9 @@ class User extends Resource
 
             BelongsTo::make('Price Level', 'priceLevel'),
 
-            HasMany::make('Addresses')
+            HasMany::make('Addresses'),
+
+            BelongsToMany::make('Roles', 'roles', Role::class),
         ];
     }
 

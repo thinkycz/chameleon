@@ -87,15 +87,15 @@ class Product extends Resource
 
             Boolean::make('Enabled'),
 
-            HasMany::make('Subproducts', 'children', static::class),
+            BelongsToMany::make('Categories'),
 
             HasMany::make('Prices'),
 
             HasMany::make('Properties'),
 
-            HasMany::make('Comments'),
+//            HasMany::make('Subproducts', 'children', static::class),
 
-            BelongsToMany::make('Categories'),
+//            HasMany::make('Comments'),
         ];
     }
 

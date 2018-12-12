@@ -85,6 +85,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return "{$this->first_name} {$this->last_name}";
     }
 
+    public function getIsActiveAttribute()
+    {
+        return !! $this->activated_at;
+    }
+
     public static function getActiveBasket()
     {
         return auth()->check() ? static::getAuthenticatedUser()->getBasket() : null;

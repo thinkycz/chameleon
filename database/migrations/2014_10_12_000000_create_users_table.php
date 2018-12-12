@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
+            $table->timestamp('activated_at')->nullable();
+            $table->boolean('pending_activation')->default(false);
+
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->date('birth_date')->nullable();

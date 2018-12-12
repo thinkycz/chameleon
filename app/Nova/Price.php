@@ -43,13 +43,13 @@ class Price extends Resource
     public function fields(Request $request)
     {
         return [
-            Currency::make('Price'),
-
-            Currency::make('Old Price'),
-
             BelongsTo::make('Product'),
 
             BelongsTo::make('Price Level', 'priceLevel'),
+
+            Currency::make('Price'),
+
+            Currency::make('Old Price'),
         ];
     }
 

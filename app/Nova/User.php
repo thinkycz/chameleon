@@ -10,7 +10,9 @@ use Bissolli\NovaPhoneField\PhoneNumber;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -77,13 +79,7 @@ class User extends Resource
                 ->hideFromIndex(),
 
             Date::make('Birth Date')
-                ->format('DD.MM.YYYY'),
-
-            PhoneNumber::make('Phone'),
-
-            Select::make('Locale')
-                ->options(Locale::all())
-                ->displayUsingLabels()
+                ->format('DD.MM.YYYY')
                 ->hideFromIndex(),
 
             Email::make('Email')
@@ -93,12 +89,25 @@ class User extends Resource
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
+            PhoneNumber::make('Phone'),
+
+            Select::make('Locale')
+                ->options(Locale::all())
+                ->displayUsingLabels()
+                ->hideFromIndex(),
+
             Password::make('Password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
 
             BelongsTo::make('Price Level', 'priceLevel'),
+
+            Boolean::make('Is Active')->onlyOnIndex(),
+
+            DateTime::make('Activated At')->hideFromIndex(),
+
+            Boolean::make('Pending Activation')->hideFromIndex(),
 
             HasMany::make('Addresses'),
 

@@ -77,8 +77,28 @@ module.exports = __webpack_require__(11);
 
 Nova.booting(function (Vue, router) {
     router.addRoutes([{
-        name: 'store',
-        path: '/store',
+        name: 'store-activate-users',
+        path: '/store/activate-users',
+        component: __webpack_require__(2)
+    }]);
+    router.addRoutes([{
+        name: 'store-process-orders',
+        path: '/store/process-orders',
+        component: __webpack_require__(2)
+    }]);
+    router.addRoutes([{
+        name: 'store-import-products',
+        path: '/store/import-products',
+        component: __webpack_require__(2)
+    }]);
+    router.addRoutes([{
+        name: 'store-export-products',
+        path: '/store/export-products',
+        component: __webpack_require__(2)
+    }]);
+    router.addRoutes([{
+        name: 'store-bulk-image-upload',
+        path: '/store/bulk-image-upload',
         component: __webpack_require__(2)
     }]);
 });

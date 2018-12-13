@@ -44,6 +44,13 @@
         }
     }
 }
+.icon-wrapped {
+    @apply rounded-full w-6 h-6 ml-2 text-white;
+    background: var(--black-transparent-25);
+    .icon {
+        @apply w-4 h-4 mx-auto;
+    }
+}
 .icon {
     @apply w-6 h-6 inline fill-current;
 }
@@ -93,7 +100,7 @@
 
 // Badges
 .badge {
-    @apply px-2 py-1 text-white rounded-full text-sm tracking-wide font-semibold;
+    @apply px-2 py-1 text-white rounded-full inline-block text-sm tracking-wide font-semibold;
 
     &.accent {
         @apply bg-accent;

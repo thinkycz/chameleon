@@ -1046,6 +1046,22 @@ p.p-small {
   margin-left: .25rem;
 }
 
+.icon-wrapped {
+  border-radius: 9999px;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: .5rem;
+  color: var(--white);
+  background: var(--black-transparent-25);
+}
+
+.icon-wrapped .icon {
+  width: 1rem;
+  height: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .icon {
   width: 1.5rem;
   height: 1.5rem;
@@ -1124,6 +1140,7 @@ p.p-small {
   padding-bottom: .25rem;
   color: var(--white);
   border-radius: 9999px;
+  display: inline-block;
   font-size: .875rem;
   letter-spacing: .05em;
   font-weight: 600;
@@ -1230,27 +1247,72 @@ p.p-small {
   margin-left: -8px;
 }
 
+.row .col-product {
+  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .row .col-product {
+    width: 33.33333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .row .col-product {
+    width: 25%;
+  }
+}
+
+.row.has-sidebar .col-product {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .row.has-sidebar .col-product {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.has-sidebar .col-product {
+    width: 33.33333%;
+  }
+}
+
 .product-card {
   overflow: hidden;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .product-card .product-image {
-  padding-left: .5rem;
-  padding-right: .5rem;
-  padding-top: .75rem;
-  padding-bottom: .75rem;
   width: 100%;
   text-align: center;
   overflow: hidden;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  position: relative;
+  height: 175px;
 }
 
 .product-card .product-image img {
   width: 100%;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
-  height: 225px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 175px;
+}
+
+.product-card .product-image .badge {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: .25rem;
+  position: absolute;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  right: 5px;
+  top: 5px;
+  max-width: 125px;
 }
 
 .product-card .product-data {
@@ -1258,7 +1320,6 @@ p.p-small {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: .5rem;
-  padding-bottom: .5rem;
 }
 
 .product-card .product-data .badge {
@@ -1268,48 +1329,47 @@ p.p-small {
 }
 
 .product-card .product-data h3 {
-  text-align: center;
+  text-align: left;
   font-size: 1rem;
   font-weight: 400;
-  color: var(--black);
-  margin-bottom: .75rem;
-  margin-top: .5rem;
+  color: var(--grey-darkest);
+  padding-top: .5rem;
   letter-spacing: -0.05em;
   cursor: pointer;
 }
 
-.product-card .product-data .product-price {
+.product-card .product-price {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.product-card .product-price .price {
   color: var(--grey-darkest);
   font-weight: 700;
-  text-align: center;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.product-card .product-price .price-excl-vat {
+  font-size: .75rem;
+  color: var(--grey-darker);
+  margin-bottom: 0;
+}
+
+.product-card .product-stock {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: .75rem;
+  margin-bottom: 1rem;
 }
 
 .product-card .product-actions {
   text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  background-color: var(--white);
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
-  border-top-width: 1px;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-transition: visibility .3s ease-in-out, opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
-  transition: visibility .3s ease-in-out, opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, visibility .3s ease-in-out, opacity .3s ease-in-out;
-  transition: transform .3s ease-in-out, visibility .3s ease-in-out, opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
-}
-
-.product-card:hover .product-actions {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: var(--grey-lightest);
 }
 
 .product-gallery .thumbs {
@@ -1777,6 +1837,7 @@ header #header .row .col-cart .user-dropdown .user-dropdown-menu li a {
   font-weight: 700;
   text-transform: uppercase;
   font-size: .75rem;
+  width: 100%;
 }
 
 header #header .row .col-cart .user-dropdown .user-dropdown-menu svg {

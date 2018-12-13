@@ -62,6 +62,11 @@ class Product extends Model implements HasMedia
         return $this->prices()->first()->price;
     }
 
+    public function getFormattedPriceAttribute()
+    {
+        return showPriceWithCurrency($this->getPrice());
+    }
+
     public function getImagesAttribute()
     {
         return $this->getMedia('images');

@@ -86,7 +86,7 @@ header {
                     @apply text-right w-1/4;
                 }
                 .header-cart {
-                    @apply relative text-center ml-6 cursor-pointer select-none;
+                    @apply relative text-center ml-2 cursor-pointer select-none;
                     .icon {
                         @apply w-10 h-10 text-primary;
                     }
@@ -110,6 +110,34 @@ header {
                     }
                     .user-info {
                         @apply text-left;
+                    }
+
+                    .user-dropdown-menu {
+                        @apply absolute pin-l bg-white shadow z-50 rounded border;
+                        min-width: 175px;
+                        top: calc(100% + 10px);
+
+                        li {
+                            @apply w-full px-3 py-2 text-left;
+                            @include transition(background-color);
+                            &:hover {
+                                @apply bg-grey-lightest;
+                            }
+                            a {
+                                @apply text-grey-darker font-bold uppercase text-xs w-full;
+                            }
+                        }
+
+                        svg {
+                            width: 46px;
+                            height: 23px;
+                            @apply absolute z-50;
+                            top: -1.35rem;
+                            right: 2rem;
+                            .dropdown-svg-path {
+                                stroke: var(--grey-light);
+                            }
+                        }
                     }
                 }
             }

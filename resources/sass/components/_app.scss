@@ -5,6 +5,11 @@ body {
     @apply w-full h-full font-sans text-grey-darkest leading-tight bg-grey-lightest border-t-2 border-primary text-base;
     -webkit-font-smoothing: antialiased;
 }
+
+[v-cloak] {
+    display: none;
+}
+
 main,
 aside {
     @apply relative;

@@ -33,3 +33,27 @@
         }
     }
 }
+
+.product-gallery {
+    .thumbs {
+        @apply mr-4 w-full flex flex-wrap justify-center;
+        .product-thumb {
+            @apply mr-2 overflow-hidden w-16;
+
+            img {
+                @apply border-2 border-transparent;
+                @include transition(border-color);
+            }
+
+            &:last-of-type {
+                @apply mr-0;
+            }
+
+            &.active {
+                img {
+                    @apply border-primary;
+                }
+            }
+        }
+    }
+}

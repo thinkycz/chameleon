@@ -55,10 +55,14 @@ Vue.component('vue-address-box', require('./components/profiles/AddressBox.vue')
 Vue.component('vue-orders', require('./components/profiles/Orders.vue'));
 Vue.component('vue-order-box', require('./components/profiles/OrderBox.vue'));
 Vue.component('vue-profile-chart', require('./components/profiles/Chart.vue'));
+Vue.component('vue-dropdown-menu', require('./components/profiles/Dropdown.vue'));
 
 // Basket
 Vue.component('vue-basket', require('./components/basket/Basket.vue'));
 Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue'));
+
+// Product
+Vue.component('vue-product-gallery', require('./components/product/Gallery.vue'));
 
 const app = new Vue({
     el: '#app',

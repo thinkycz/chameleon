@@ -49,17 +49,38 @@
                 <div class="col-cart">
                     @auth
                         <vue-header-basket></vue-header-basket>
-                        <div class="user-dropdown">
-                            <div class="user-icon">
-                                <img src="{{ currentUser()->thumb }}" alt="">
+
+                        <vue-dropdown-menu inline-template>
+                            <div class="user-dropdown relative" @click.stop="toggle">
+                                <div class="user-icon">
+                                    <img src="{{ currentUser()->thumb }}"
+                                        alt="">
+                                </div>
+                                <div class="user-info">
+                                    <p class="p-big">{{ currentUser()->email }}</p>
+                                    <p class="p-small">{{ trans('header.welcome', ['name' => currentUser()->last_name]) }}</p>
+                                </div>
+
+                                <transition name="fade">
+                                    <div class="user-dropdown-menu" v-if="visible" v-click-outside="close">
+                                        <icon-dropdown></icon-dropdown>
+                                        <ul class="list-reset">
+                                            <li>
+                                                <a href="{{ route('profiles.show', currentUser()->id) }}">{{ trans('header.my_profile') }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('logout') }}">{{ trans('header.logout') }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </transition>
                             </div>
-                            <div class="user-info">
-                                <p class="p-big">{{ currentUser()->email }}</p>
-                                <p class="p-small">{{ trans('header.welcome', ['name' => currentUser()->last_name]) }}</p>
-                            </div>
-                        </div>
+                        </vue-dropdown-menu>
                     @else
-                        <!-- TODO:: guests -->
+                        <div class="text-center w-full">
+                            <a href="{{ route('login') }}" class="btn btn-primary btn-sm mr-2">{{ trans('header.login') }}</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary btn-sm">{{ trans('header.register') }}</a>
+                        </div>
                     @endauth
                 </div>
             </div>

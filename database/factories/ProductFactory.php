@@ -24,7 +24,11 @@ $factory->afterCreating(Product::class, function (Product $product, Faker $faker
     $product->unit()->associate(Unit::inRandomOrder()->first());
 
     factory(Price::class)->create(['product_id' => $product->id]);
-    $product->addMediaFromUrl($faker->imageUrl(800, 800))->toMediaCollection('images');
+
+    $numberOfImages = $faker->numberBetween(0, 3);
+    for ($i = 0; $i < $numberOfImages; $i++) {
+        $product->addMediaFromUrl($faker->imageUrl(800, 800))->toMediaCollection('images');
+    }
 
     $categories = Category::inRandomOrder()->take($faker->numberBetween(1, 3))->pluck('id');
     $product->categories()->sync($categories);

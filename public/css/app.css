@@ -1332,7 +1332,7 @@ p.p-small {
   text-align: left;
   font-size: 1rem;
   font-weight: 400;
-  color: var(--grey-darkest);
+  color: var(--black);
   padding-top: .5rem;
   letter-spacing: -0.05em;
   cursor: pointer;
@@ -1370,6 +1370,26 @@ p.p-small {
   padding-top: .75rem;
   padding-bottom: .75rem;
   background-color: var(--grey-lightest);
+}
+
+.product-card .product-actions .mini .icon {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .product-card .product-actions .mini .icon {
+    margin-right: .5rem;
+  }
+}
+
+.product-card .product-actions .mini span {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .product-card .product-actions .mini span {
+    display: inline-block;
+  }
 }
 
 .product-gallery .thumbs {

@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrderedItem extends Model
 {
+    protected $with = [
+        'product',
+    ];
+
     protected $appends = [
         'formatted_total_price',
         'formatted_price',

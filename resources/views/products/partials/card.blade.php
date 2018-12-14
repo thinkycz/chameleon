@@ -21,10 +21,10 @@
             </span>
         </span>
     </div>
+    <!-- TODO:: add eligibility -->
+    @auth
     <div class="product-actions">
-        <!-- TODO:: change -->
-        <form method="post" csrf form-action="products.add_to_basket" params="$product">
-            <button type="submit" class="btn btn-primary icon-wrap mx-auto uppercase text-xs">{{ trans('products.add_to_basket') }} <span class="icon-wrapped"><icon-cart></icon-cart></span></button>
-        </form>
+        <vue-add-to-basket :product="{{ json_encode($product) }}"></vue-add-to-basket>
     </div>
+    @endauth
 </div>

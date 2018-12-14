@@ -23,10 +23,20 @@ export default {
         },
         "header": {
             "welcome": "Welcome back, {name}",
+            "login": "Login",
+            "register": "Register",
+            "my_profile": "My profile",
+            "logout": "Logout",
             "your_basket": "Your basket",
             "basket_total": "Basket total",
             "checkout": "Checkout",
             "view_basket": "View Basket"
+        },
+        "products": {
+            "add_to_basket": "Add to basket",
+            "update_quantity": "Update quantity",
+            "excl_vat": "excl. vat",
+            "in_stock_moq": "There are <strong> {stock} </strong> {unit} in stock, and minimum order quantity is <strong> {moq}.</strong>"
         },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
@@ -152,8 +162,8 @@ export default {
             "address_book_info": "You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new by clicking on the blank address box.",
             "billing_details": "Billing:",
             "shipping_details": "Shipping:",
-            "payment_method": "Payment Method",
-            "delivery_method": "Delivery Method",
+            "payment_method": "Payment by",
+            "delivery_method": "Delivery by",
             "ordered_items": "Ordered items",
             "privacy_policy": "Privacy Policy",
             "privacy_policy_info": "In this section you can set your privacy policy settings, read our terms of usage, request exporting your account data that we store on our servers and also request account deletion. We care about and respect your privacy.",

@@ -18,11 +18,10 @@
     <div id="app" v-cloak>
         @include('layouts.partials.header')
         <main>
-            @yield('content')
-
             @auth
                 <vue-basket :basket="{{ json_encode(activeBasket()) }}"></vue-basket>
             @endauth
+            @yield('content')
         </main>
         @include('layouts.partials.footer')
     </div>

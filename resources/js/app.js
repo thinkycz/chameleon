@@ -16,6 +16,15 @@ window.Vue = require('vue');
 import 'babel-polyfill';
 import PortalVue from 'portal-vue';
 import { store } from './store/store';
+import Toasted from 'vue-toasted';
+
+// Toast snackbar
+window.Toasted = Toasted;
+Vue.use(Toasted, {
+    position: 'bottom-right',
+    duration: 6000,
+    theme: 'bubble',
+});
 
 /**
  * Use dependencies
@@ -60,6 +69,7 @@ Vue.component('vue-dropdown-menu', require('./components/profiles/Dropdown.vue')
 // Basket
 Vue.component('vue-basket', require('./components/basket/Basket.vue'));
 Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue'));
+Vue.component('vue-add-to-basket', require('./components/basket/AddToBasket.vue'));
 
 // Product
 Vue.component('vue-product-gallery', require('./components/product/Gallery.vue'));

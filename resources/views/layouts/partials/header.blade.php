@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="user-info">
                                     <p class="p-big">{{ currentUser()->email }}</p>
-                                    <p class="p-small">{{ trans('header.welcome', ['name' => currentUser()->last_name]) }}</p>
+                                    <p class="p-small truncate" style="max-width: 150px">{{ trans('header.welcome', ['name' => currentUser()->last_name]) }}</p>
                                 </div>
 
                                 <transition name="fade">

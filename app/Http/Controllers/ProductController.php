@@ -21,10 +21,8 @@ class ProductController extends Controller
         // TODO:: check eligibility
         $basket->addProduct($product, $quantity ?? 1, $options);
 
-        return redirect()->back();
-
-        /* return $this->ajaxWithPayload([
-    'basket' => $basket->fresh(),
-    ]); */
+        return $this->ajaxWithPayload([
+            'basket' => $basket->fresh(),
+        ]);
     }
 }

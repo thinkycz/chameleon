@@ -50,7 +50,7 @@
             right: 5px;
         }
         h3 {
-            @apply text-left text-base font-normal text-grey-darkest pt-2 tracking-tight cursor-pointer;
+            @apply text-left text-base font-normal text-black pt-2 tracking-tight cursor-pointer;
         }
     }
     .product-price {
@@ -68,6 +68,20 @@
     .product-actions {
         @apply text-center py-3 bg-grey-lightest;
 
+        .mini {
+            .icon {
+                @apply mr-0;
+                @screen md {
+                    @apply mr-2;
+                }
+            }
+            span {
+                @apply hidden;
+                @screen md {
+                    @apply inline-block;
+                }
+            }
+        }
         &:hover {
         }
     }

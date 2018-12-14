@@ -23,8 +23,6 @@
     </div>
     <!-- TODO:: add eligibility -->
     @auth
-    <div class="product-actions">
         <vue-add-to-basket :product="{{ json_encode($product) }}"></vue-add-to-basket>
-    </div>
     @endauth
 </div>

@@ -66,7 +66,7 @@
         @apply px-4 text-xs mb-4;
     }
     .product-actions {
-        @apply text-center py-3 bg-grey-lightest;
+        @apply text-center py-3 bg-grey-lightest flex justify-between px-4;
 
         .mini {
             .icon {
@@ -82,7 +82,8 @@
                 }
             }
         }
-        &:hover {
+        .btn {
+            @apply flex-grow flex justify-center;
         }
     }
 }

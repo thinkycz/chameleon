@@ -1,5 +1,5 @@
 .basket {
-    @apply z-20 absolute pin-r h-full pin-t overflow-y-hidden invisible opacity-0;
+    @apply z-20 absolute pin-r h-full pin-t overflow-y-auto invisible opacity-0;
     @include transition(opacity, visibility);
     min-width: 35%;
 
@@ -62,5 +62,50 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+.quantity {
+    @apply flex select-none relative;
+    @include transition(all);
+
+    .overlay {
+        @apply z-10 absolute w-full h-full select-none;
+        background: rgba(0, 0, 0, 0.02);
+    }
+
+    .increment,
+    .decrement {
+        @apply text-center float-left cursor-pointer text-lg bg-white border text-grey-darkest;
+        width: 30px;
+        vertical-align: middle;
+        line-height: 15px;
+        height: 20px;
+    }
+
+    .increment {
+        @apply border-b-0 rounded-tr;
+    }
+
+    .decrement {
+        @apply rounded-br;
+    }
+
+    .quantity-nav {
+        @apply inline-block w-full;
+        height: 40px;
+        max-width: 30px;
+    }
+
+    input[type='number'] {
+        @apply text-center border border-r-0 px-2 appearance-none m-0 outline-none;
+        width: 50px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: -5px;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
     }
 }

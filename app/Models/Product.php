@@ -20,6 +20,7 @@ class Product extends Model implements HasMedia
 
     protected $appends = [
         'thumb',
+        'purchasable',
     ];
 
     protected $fillable = [
@@ -65,6 +66,12 @@ class Product extends Model implements HasMedia
     public function getFormattedPriceAttribute()
     {
         return showPriceWithCurrency($this->getPrice());
+    }
+
+    public function getPurchasableAttribute()
+    {
+        // TODO:: implement
+        return true;
     }
 
     public function getImagesAttribute()

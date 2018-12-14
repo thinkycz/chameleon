@@ -1,14 +1,20 @@
 <template>
-    <button type="button"
-        class="btn btn-primary icon-wrap mx-auto uppercase text-xs"
-        :class="{'mini': isMini}"
-        :disabled="disabled"
-        @click="handleButtonClicked">
-        <component :is="icon"></component><span>{{ label }}</span>
-    </button>
+    <div class="product-actions">
+        <button type="button"
+            class="btn btn-primary icon-wrap mx-auto uppercase text-xs"
+            :class="{'mini': isMini}"
+            :disabled="disabled"
+            @click="handleButtonClicked">
+            <component :is="icon"></component><span v-if="!isMini">{{ label }}</span>
+        </button>
+        <quantity :product="product"
+            :quantity="quantity"></quantity>
+    </div>
 </template>
 
 <script>
+    import Quantity from './Quantity';
+
     export default {
         props: {
             product: {
@@ -91,6 +97,10 @@
                 this.$store.commit('setBasketItems', basket.ordered_items);
                 this.$store.commit('setBasketTotal', basket.formatted_total_price);
             },
+        },
+
+        components: {
+            Quantity,
         },
 
         created() {

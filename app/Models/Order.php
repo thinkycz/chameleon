@@ -28,6 +28,7 @@ class Order extends Model
         'phone',
         'noted',
         'customer_note',
+        'status_id'
     ];
 
     protected $dates = [

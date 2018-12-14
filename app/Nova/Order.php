@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\Order\ChangeOrderStatus;
 use App\Nova\Metrics\NumberOfOrders;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\OrdersPerStatus;
@@ -154,6 +155,8 @@ class Order extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new ChangeOrderStatus)
+        ];
     }
 }

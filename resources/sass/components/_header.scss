@@ -118,13 +118,13 @@ header {
                         top: calc(100% + 10px);
 
                         li {
-                            @apply w-full px-3 py-2 text-left;
+                            @apply w-full text-left;
                             @include transition(background-color);
                             &:hover {
                                 @apply bg-grey-lightest;
                             }
                             a {
-                                @apply text-grey-darker font-bold uppercase text-xs w-full;
+                                @apply px-4 py-3 text-grey-darker block font-bold uppercase text-xs w-full;
                             }
                         }
 

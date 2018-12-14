@@ -1866,10 +1866,6 @@ header #header .row .col-cart .user-dropdown .user-dropdown-menu {
 
 header #header .row .col-cart .user-dropdown .user-dropdown-menu li {
   width: 100%;
-  padding-left: .75rem;
-  padding-right: .75rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
   text-align: left;
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
@@ -1880,7 +1876,12 @@ header #header .row .col-cart .user-dropdown .user-dropdown-menu li:hover {
 }
 
 header #header .row .col-cart .user-dropdown .user-dropdown-menu li a {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
   color: var(--grey-darker);
+  display: block;
   font-weight: 700;
   text-transform: uppercase;
   font-size: .75rem;

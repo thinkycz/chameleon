@@ -40,13 +40,3 @@ if (!function_exists('selectedIf')) {
         return $boolean ? $text : '';
     }
 }
-
-/**
- * TODO:: Replace when Currency is properly implemented
- */
-if (!function_exists('showPriceWithCurrency')) {
-    function showPriceWithCurrency($price, $currency = null, $noPrice = null)
-    {
-        return "{$price} Kč";
-    }
-}

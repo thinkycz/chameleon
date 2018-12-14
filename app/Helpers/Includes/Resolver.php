@@ -19,3 +19,23 @@ if (!function_exists('generator')) {
         return App::make('Generator');
     }
 }
+
+/*
+ * @return \App\Services\InstanceCache
+ */
+if (!function_exists('instanceCache')) {
+    function instanceCache()
+    {
+        return App::make('InstanceCache');
+    }
+}
+
+/*
+ * @return \App\Repositories\PreferenceRepository
+ */
+if (!function_exists('preferenceRepository')) {
+    function preferenceRepository()
+    {
+        return App::make('PreferenceRepository');
+    }
+}

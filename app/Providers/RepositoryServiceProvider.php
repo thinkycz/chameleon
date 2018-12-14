@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Repositories\OrderRepository;
+use App\Repositories\PreferenceRepository;
+use App\Services\InstanceCache;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -16,6 +18,14 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->singleton('OrderRepository', function () {
             return new OrderRepository();
+        });
+
+        $this->app->singleton('InstanceCache', function () {
+            return new InstanceCache();
+        });
+
+        $this->app->singleton('PreferenceRepository', function () {
+            return new PreferenceRepository();
         });
     }
 }

@@ -49,11 +49,11 @@ class OrderedItem extends Model
 
     public function getFormattedTotalPriceAttribute()
     {
-        return showPriceWithCurrency($this->total_price);
+        return showPriceWithCurrency($this->total_price, currentCurrency());
     }
 
     public function getFormattedPriceAttribute()
     {
-        return showPriceWithCurrency($this->price);
+        return showPriceWithCurrency($this->price, currentCurrency());
     }
 }

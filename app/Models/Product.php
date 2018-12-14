@@ -60,12 +60,27 @@ class Product extends Model implements HasMedia
     public function getPrice()
     {
         // TODO:: implement for current user's price level
-        return $this->prices()->first()->price;
+        return $this->prices()->first();
+    }
+
+    public function getPriceAttribute()
+    {
+        return optional($this->getPrice())->price;
     }
 
     public function getFormattedPriceAttribute()
     {
-        return showPriceWithCurrency($this->getPrice());
+        return showPriceWithCurrency($this->price, currentCurrency());
+    }
+
+    public function getPriceExclVatAttribute()
+    {
+        return getPriceExclVat($this->price, $this->vatrate, currentCurrency());
+    }
+
+    public function getFormattedPriceExclVatAttribute()
+    {
+        return showPriceWithCurrency($this->price_excl_vat, currentCurrency());
     }
 
     public function getPurchasableAttribute()

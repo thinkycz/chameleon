@@ -8,7 +8,7 @@
     </div>
     <div class="product-price">
         <p class="price">{{ $product->formatted_price }}</p>
-        <p class="price-excl-vat">{{ $product->formatted_price . ' ' .trans('products.excl_vat') }}</p>
+        <p class="price-excl-vat">{{ $product->formatted_price_excl_vat . ' ' .trans('products.excl_vat') }}</p>
     </div>
     <div class="product-stock">
         <span class="icon-wrap">

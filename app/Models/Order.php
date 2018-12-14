@@ -92,6 +92,6 @@ class Order extends Model
 
     public function getFormattedTotalPriceAttribute()
     {
-        return showPriceWithCurrency($this->total_price);
+        return showPriceWithCurrency($this->total_price, currentCurrency());
     }
 }

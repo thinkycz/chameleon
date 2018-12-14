@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Currency;
 use App\Models\User;
 
 /**
@@ -19,5 +20,16 @@ if (!function_exists('activeBasket')) {
     function activeBasket()
     {
         return User::getActiveBasket();
+    }
+}
+
+/**
+ * @return \App\Models\Basket
+ */
+if (!function_exists('currentCurrency')) {
+    function currentCurrency()
+    {
+        // TODO:: implement
+        return Currency::whereEnabled(true)->first();
     }
 }

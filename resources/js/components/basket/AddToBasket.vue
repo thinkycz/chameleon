@@ -8,7 +8,8 @@
             <component :is="icon"></component><span v-if="!isMini">{{ label }}</span>
         </button>
         <quantity :product="product"
-            :quantity="quantity"></quantity>
+            :quantity="quantity"
+            @input="quantity = $event"></quantity>
     </div>
 </template>
 
@@ -58,18 +59,18 @@
 
         methods: {
             handleButtonClicked() {
-                if (this.isInBasket) {
-                    this.update();
-                } else {
-                    this.add();
-                }
-            },
-
-            add() {
                 this.disabled = true;
 
+                /**
+                 * Dont do anything if the quantity is 0
+                 * and the product is not in the basket
+                 */
+                if (!this.isInBasket && !parseInt(this.quantity)) {
+                    return;
+                }
+
                 axios
-                    .post(`products/${this.product.id}/add-to-basket`, {
+                    .post(`products/${this.product.id}/basket`, {
                         quantity: this.quantity,
                     })
                     .then(({ data }) => {
@@ -83,14 +84,6 @@
                     .then(() => {
                         this.disabled = false;
                     });
-            },
-
-            update() {
-                //
-            },
-
-            remove() {
-                //
             },
 
             updateStore(basket) {

@@ -50,7 +50,10 @@
             right: 5px;
         }
         h3 {
-            @apply text-left text-base font-normal text-black pt-2 tracking-tight cursor-pointer;
+            @apply text-left text-base pt-2 tracking-tight cursor-pointer;
+            a {
+                @apply font-normal text-black;
+            }
         }
     }
     .product-price {
@@ -63,7 +66,7 @@
         }
     }
     .product-stock {
-        @apply px-4 text-xs mb-4;
+        @apply px-4 text-xs mb-4 select-none;
     }
     .product-actions {
         @apply text-center py-3 bg-grey-lightest flex justify-between px-4;

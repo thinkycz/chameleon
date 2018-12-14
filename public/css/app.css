@@ -1331,11 +1331,14 @@ p.p-small {
 .product-card .product-data h3 {
   text-align: left;
   font-size: 1rem;
-  font-weight: 400;
-  color: var(--black);
   padding-top: .5rem;
   letter-spacing: -0.05em;
   cursor: pointer;
+}
+
+.product-card .product-data h3 a {
+  font-weight: 400;
+  color: var(--black);
 }
 
 .product-card .product-price {
@@ -1363,6 +1366,10 @@ p.p-small {
   padding-right: 1rem;
   font-size: .75rem;
   margin-bottom: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .product-card .product-actions {

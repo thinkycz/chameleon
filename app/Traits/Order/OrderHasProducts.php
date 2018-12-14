@@ -7,7 +7,7 @@ use App\Models\Product;
 
 trait OrderHasProducts
 {
-    public function addProduct(Product $product, $quantity = 1, $options = [])
+    public function addOrUpdateProduct(Product $product, $quantity = 1, $options = [])
     {
         $this->createOrUpdateOrderedItem($product, $quantity, $options);
 
@@ -54,8 +54,8 @@ trait OrderHasProducts
             'vatrate',
         ]))->merge([
             'product_id'       => $product->id,
-            'price'            => $product->getPrice(),
-            'options'          => $options ?? null,
+            'price'            => $product->price,
+            'options'          => !empty($options) ? $options : [],
             'quantity_ordered' => $quantity,
         ]);
 

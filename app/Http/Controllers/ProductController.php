@@ -12,14 +12,25 @@ class ProductController extends Controller
         return view('products.show', compact('product'));
     }
 
-    public function addToBasket(Request $request, Product $product)
+    public function basket(Request $request, Product $product)
     {
         $basket = activeBasket();
         $quantity = $request->get('quantity');
-        $options = iterable($request->get('options'));
+        $options = $request->get('options') ? iterable($request->get('options')) : [];
 
         // TODO:: check eligibility
-        $basket->addProduct($product, $quantity ?? 1, $options);
+        $basket->addOrUpdateProduct($product, $quantity ?? 1, $options);
+
+        return $this->ajaxWithPayload([
+            'basket' => $basket->fresh(),
+        ]);
+    }
+
+    public function removeFromBasket(BasketItem $basketItem)
+    {
+        $basket = activeBasket();
+
+        $basket->removeBasketItem($basketItem);
 
         return $this->ajaxWithPayload([
             'basket' => $basket->fresh(),

@@ -4,7 +4,7 @@
         <span class="badge accent text-xs">{{ optional($product->availability)->name }}</span>
     </div>
     <div class="product-data">
-        <h3>{{ $product->name }}</h3>
+        <h3><a href="{{ route('products.show', $product) }}">{{ $product->name }}</a></h3>
     </div>
     <div class="product-price">
         <p class="price">{{ $product->formatted_price }}</p>

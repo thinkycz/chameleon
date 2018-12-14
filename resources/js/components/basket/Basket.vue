@@ -91,6 +91,22 @@
                 }
             },
 
+            remove() {
+                axios
+                    .post(`products/${this.item.id}/remove-from-basket`)
+                    .then(({ data }) => {
+                        this.updateStore(data.payload.basket);
+                    })
+                    .catch(({ response }) => {
+                        this.$toasted.show(response.data.message, {
+                            type: 'error',
+                        });
+                    })
+                    .then(() => {
+                        this.disabled = false;
+                    });
+            },
+
             updateStore(basket) {
                 this.$store.commit('setBasketItems', basket.ordered_items);
                 this.$store.commit('setBasketTotal', basket.formatted_total_price);

@@ -50760,6 +50760,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 document.querySelector('header').classList.remove('z-50');
             }
         },
+        remove: function remove() {
+            var _this = this;
+
+            axios.post('products/' + this.item.id + '/remove-from-basket').then(function (_ref) {
+                var data = _ref.data;
+
+                _this.updateStore(data.payload.basket);
+            }).catch(function (_ref2) {
+                var response = _ref2.response;
+
+                _this.$toasted.show(response.data.message, {
+                    type: 'error'
+                });
+            }).then(function () {
+                _this.disabled = false;
+            });
+        },
         updateStore: function updateStore(basket) {
             this.$store.commit('setBasketItems', basket.ordered_items);
             this.$store.commit('setBasketTotal', basket.formatted_total_price);
@@ -51056,6 +51073,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -51102,18 +51120,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         handleButtonClicked: function handleButtonClicked() {
-            if (this.isInBasket) {
-                this.update();
-            } else {
-                this.add();
-            }
-        },
-        add: function add() {
             var _this2 = this;
 
             this.disabled = true;
 
-            axios.post('products/' + this.product.id + '/add-to-basket', {
+            /**
+             * Dont do anything if the quantity is 0
+             * and the product is not in the basket
+             */
+            if (!this.isInBasket && !parseInt(this.quantity)) {
+                return;
+            }
+
+            axios.post('products/' + this.product.id + '/basket', {
                 quantity: this.quantity
             }).then(function (_ref) {
                 var data = _ref.data;
@@ -51128,12 +51147,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function () {
                 _this2.disabled = false;
             });
-        },
-        update: function update() {
-            //
-        },
-        remove: function remove() {
-            //
         },
         updateStore: function updateStore(basket) {
             this.$store.commit('setBasketItems', basket.ordered_items);
@@ -51363,7 +51376,12 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("quantity", {
-        attrs: { product: _vm.product, quantity: _vm.quantity }
+        attrs: { product: _vm.product, quantity: _vm.quantity },
+        on: {
+          input: function($event) {
+            _vm.quantity = $event
+          }
+        }
       })
     ],
     1

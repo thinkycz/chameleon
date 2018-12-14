@@ -91,7 +91,7 @@ header {
                         @apply w-10 h-10 text-primary;
                     }
                     .cart-total {
-                        @apply absolute p-1 border-white border-2 rounded-full bg-danger text-white text-xs;
+                        @apply absolute p-1 font-bold border-white border-2 rounded-full bg-danger text-white text-xs;
                         top: -5px;
                         right: -10px;
                         min-width: 25px;

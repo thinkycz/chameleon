@@ -66,7 +66,7 @@
 }
 
 .quantity {
-    @apply flex select-none relative shadow;
+    @apply flex select-none relative shadow rounded-r-lg;
     margin-left: -10px;
     @include transition(all);
 
@@ -85,11 +85,11 @@
     }
 
     .increment {
-        @apply border-b-0 rounded-tr;
+        @apply border-b-0 rounded-tr-lg;
     }
 
     .decrement {
-        @apply rounded-br;
+        @apply rounded-br-lg;
     }
 
     .quantity-nav {

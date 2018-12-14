@@ -1813,6 +1813,7 @@ header #header .row .col-cart .header-cart .icon {
 header #header .row .col-cart .header-cart .cart-total {
   position: absolute;
   padding: .25rem;
+  font-weight: 700;
   border-color: var(--white);
   border-width: 2px;
   border-radius: 9999px;
@@ -2306,6 +2307,8 @@ footer .footer-info img {
   position: relative;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
   margin-left: -10px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -2340,11 +2343,11 @@ footer .footer-info img {
 
 .quantity .increment {
   border-bottom-width: 0;
-  border-top-right-radius: .25rem;
+  border-top-right-radius: .5rem;
 }
 
 .quantity .decrement {
-  border-bottom-right-radius: .25rem;
+  border-bottom-right-radius: .5rem;
 }
 
 .quantity .quantity-nav {

@@ -106,6 +106,8 @@ class Product extends Resource
 
             Number::make('Minimum Order Quantity')->hideFromIndex(),
 
+            Boolean::make('Multiply of MOQ only'),
+
             BelongsTo::make('Availability'),
 
             BelongsTo::make('Unit')->hideFromIndex(),

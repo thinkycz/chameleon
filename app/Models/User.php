@@ -20,7 +20,12 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     use ModelHasDateFormatted;
 
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'phone', 'password',
+        'first_name',
+        'last_name',
+        'email',
+        'phone',
+        'password',
+        'activated_at'
     ];
 
     protected $hidden = [
@@ -29,6 +34,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
 
     protected $dates = [
         'birth_date',
+        'activated_at'
     ];
 
     public static function getAuthenticatedUser()

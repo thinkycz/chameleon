@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Enums\Locale;
+use App\Nova\Actions\User\ChangeUserActivationStatus;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\UsersPerDay;
 use App\Nova\Metrics\UsersPerPriceLevel;
@@ -160,6 +161,8 @@ class User extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new ChangeUserActivationStatus)
+        ];
     }
 }

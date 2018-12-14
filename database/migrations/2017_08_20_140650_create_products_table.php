@@ -30,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->integer('minimum_order_quantity')->default(1);
             $table->unsignedDecimal('vatrate')->default(21.00);
             $table->boolean('enabled')->default(true);
+            $table->boolean('multiply_of_moq_only')->default(false);
 
             $table->unsignedInteger('availability_id')->nullable();
             $table->foreign('availability_id')->references('id')->on('availabilities')->onDelete('set null');

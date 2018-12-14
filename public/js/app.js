@@ -51129,7 +51129,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
              * and the product is not in the basket
              */
             if (!this.isInBasket && !parseInt(this.quantity)) {
-                return;
+                return this.$toasted.show(this.$trans('products.increase_the_quantity'), {
+                    type: 'info'
+                });
             }
 
             axios.post('products/' + this.product.id + '/basket', {

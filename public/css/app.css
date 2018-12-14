@@ -2290,6 +2290,9 @@ footer .footer-info img {
       -ms-user-select: none;
           user-select: none;
   position: relative;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  margin-left: -10px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
@@ -2351,7 +2354,6 @@ footer .footer-info img {
   width: 50px;
   height: 40px;
   line-height: 40px;
-  margin-left: -5px;
 }
 
 .quantity input[type='number']::-webkit-outer-spin-button,

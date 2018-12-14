@@ -66,7 +66,8 @@
 }
 
 .quantity {
-    @apply flex select-none relative;
+    @apply flex select-none relative shadow;
+    margin-left: -10px;
     @include transition(all);
 
     .overlay {
@@ -102,7 +103,6 @@
         width: 50px;
         height: 40px;
         line-height: 40px;
-        margin-left: -5px;
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
             -webkit-appearance: none;

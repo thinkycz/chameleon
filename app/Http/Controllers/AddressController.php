@@ -19,7 +19,7 @@ class AddressController extends Controller
     {
         $user->addresses()->create($request->all());
 
-        // snackbar()->success(trans('profiles.address_created'));
+        snackbar()->success(trans('profiles.address_created'));
 
         return redirect()->route('profiles.show', ['user' => $user, 'current' => 'address_book']);
     }
@@ -36,7 +36,7 @@ class AddressController extends Controller
     {
         $address->update($request->all());
 
-        // snackbar()->success(trans('profiles.address_updated'));
+        snackbar()->success(trans('profiles.address_updated'));
 
         return redirect()->route('profiles.show', ['user' => $user, 'current' => 'address_book']);
     }
@@ -51,7 +51,7 @@ class AddressController extends Controller
     {
         $address->delete();
 
-        // snackbar()->success(trans('profiles.address_deleted'));
+        snackbar()->success(trans('profiles.address_deleted'));
 
         return $this->ajaxOrRedirect(route('profiles.show', ['user' => $user, 'current' => 'address_book']));
     }

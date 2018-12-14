@@ -27,7 +27,7 @@ class ProfileController extends Controller
         $user->processImage($request->file('image'));
         $user->changePassword($request->get('password'));
 
-        // snackbar()->success(trans('profiles.profile_updated'));
+        snackbar()->success(trans('profiles.profile_updated'));
 
         return redirect()->route('profiles.show', ['user' => $user, 'current' => $request->get('current')]);
     }

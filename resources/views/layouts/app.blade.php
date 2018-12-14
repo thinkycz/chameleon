@@ -24,6 +24,7 @@
             @yield('content')
         </main>
         @include('layouts.partials.footer')
+        @include('partials.snackbar')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

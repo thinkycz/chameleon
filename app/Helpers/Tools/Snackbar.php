@@ -21,14 +21,9 @@ class Snackbar
         return $this->make($text, $type);
     }
 
-    public function white($text)
+    public function info($text)
     {
-        return $this->bar($text, 'white');
-    }
-
-    public function primary($text)
-    {
-        return $this->bar($text, 'primary');
+        return $this->bar($text, 'info');
     }
 
     public function success($text)
@@ -36,18 +31,9 @@ class Snackbar
         return $this->bar($text, 'success');
     }
 
-    public function warning($text)
+    public function error($text)
     {
-        return $this->bar($text, 'warning');
+        return $this->bar($text, 'error');
     }
 
-    public function danger($text)
-    {
-        return $this->bar($text, 'danger');
-    }
-
-    public function dark($text)
-    {
-        return $this->bar($text, 'dark');
-    }
 }

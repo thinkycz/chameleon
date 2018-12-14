@@ -1,3 +1,6 @@
+/**
+ * Window (global) Functions
+ */
 window.updateQueryStringParam = function(key, value) {
     var baseUrl = [location.protocol, '//', location.host, location.pathname].join(''),
         urlQueryString = document.location.search,
@@ -26,4 +29,13 @@ window.updateQueryStringParam = function(key, value) {
     params = params == '?' ? '' : params;
 
     window.history.replaceState({}, '', baseUrl + params);
+};
+
+/**
+ * Vue prototypes
+ */
+import Vue from 'vue';
+
+Vue.prototype.$snack = (msg, type = 'success') => {
+    return Vue.toasted.show(msg, { type });
 };

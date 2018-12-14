@@ -30,6 +30,10 @@
         @apply h-12 text-lg;
         line-height: 2rem;
     }
+
+    &[disabled] {
+        @apply opacity-75 pointer-events-none cursor-not-allowed;
+    }
 }
 
 // Icons

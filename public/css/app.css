@@ -1027,6 +1027,12 @@ p.p-small {
   line-height: 2rem;
 }
 
+.btn[disabled] {
+  opacity: .75;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .icon-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2116,7 +2122,7 @@ footer .footer-info img {
 }
 
 .order-card {
-  margin-bottom: .75rem;
+  margin-bottom: 1rem;
 }
 
 .order-card .order-card__inner {

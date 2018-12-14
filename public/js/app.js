@@ -38818,8 +38818,15 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 163 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/**
+ * Window (global) Functions
+ */
 window.updateQueryStringParam = function (key, value) {
     var baseUrl = [location.protocol, '//', location.host, location.pathname].join(''),
         urlQueryString = document.location.search,
@@ -38848,6 +38855,17 @@ window.updateQueryStringParam = function (key, value) {
     params = params == '?' ? '' : params;
 
     window.history.replaceState({}, '', baseUrl + params);
+};
+
+/**
+ * Vue prototypes
+ */
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$snack = function (msg) {
+    var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'success';
+
+    return __WEBPACK_IMPORTED_MODULE_0_vue___default.a.toasted.show(msg, { type: type });
 };
 
 /***/ }),
@@ -51119,21 +51137,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        message: function message(quantity) {
+            // Deleted
+            if (this.isInBasket && !quantity) {
+                return this.$trans('products.product_deleted');
+            }
+
+            // Updated
+            if (this.isInBasket && quantity) {
+                return this.$trans('products.quantity_updated');
+            }
+
+            // Created
+            if (!this.isInBasket && quantity) {
+                return this.$trans('products.added_to_basket');
+            }
+        },
         handleButtonClicked: function handleButtonClicked() {
             var _this2 = this;
 
-            this.disabled = true;
+            var quantity = parseInt(this.quantity);
 
-            /**
-             * Dont do anything if the quantity is 0
-             * and the product is not in the basket
-             */
-            if (!this.isInBasket && !parseInt(this.quantity)) {
-                return this.$toasted.show(this.$trans('products.increase_the_quantity'), {
-                    type: 'info'
-                });
+            if (!this.isInBasket && !quantity) {
+                return this.$snack(this.$trans('products.increase_the_quantity'), 'info');
             }
 
+            var message = this.message(quantity);
+            this.disabled = true;
             axios.post('products/' + this.product.id + '/basket', {
                 quantity: this.quantity
             }).then(function (_ref) {
@@ -51143,11 +51173,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (_ref2) {
                 var response = _ref2.response;
 
-                _this2.$toasted.show(response.data.message, {
-                    type: 'error'
-                });
+                _this2.$snack(response.data.message, 'error');
             }).then(function () {
                 _this2.disabled = false;
+                _this2.$snack(message);
             });
         },
         updateStore: function updateStore(basket) {

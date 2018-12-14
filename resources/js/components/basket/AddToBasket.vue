@@ -5,7 +5,9 @@
             :class="{'mini': isMini}"
             :disabled="disabled"
             @click="handleButtonClicked">
-            <component :is="icon"></component><span v-if="!isMini">{{ label }}</span>
+            <component :is="icon"
+                transition="fade"
+                transition-mode="out-in"></component><span v-if="!isMini">{{ label }}</span>
         </button>
         <quantity :product="product"
             :quantity="quantity"
@@ -58,19 +60,32 @@
         },
 
         methods: {
-            handleButtonClicked() {
-                this.disabled = true;
-
-                /**
-                 * Dont do anything if the quantity is 0
-                 * and the product is not in the basket
-                 */
-                if (!this.isInBasket && !parseInt(this.quantity)) {
-                    return this.$toasted.show(this.$trans('products.increase_the_quantity'), {
-                        type: 'info',
-                    });
+            message(quantity) {
+                // Deleted
+                if (this.isInBasket && !quantity) {
+                    return this.$trans('products.product_deleted');
                 }
 
+                // Updated
+                if (this.isInBasket && quantity) {
+                    return this.$trans('products.quantity_updated');
+                }
+
+                // Created
+                if (!this.isInBasket && quantity) {
+                    return this.$trans('products.added_to_basket');
+                }
+            },
+
+            handleButtonClicked() {
+                let quantity = parseInt(this.quantity);
+
+                if (!this.isInBasket && !quantity) {
+                    return this.$snack(this.$trans('products.increase_the_quantity'), 'info');
+                }
+
+                let message = this.message(quantity);
+                this.disabled = true;
                 axios
                     .post(`products/${this.product.id}/basket`, {
                         quantity: this.quantity,
@@ -79,12 +94,11 @@
                         this.updateStore(data.payload.basket);
                     })
                     .catch(({ response }) => {
-                        this.$toasted.show(response.data.message, {
-                            type: 'error',
-                        });
+                        this.$snack(response.data.message, 'error');
                     })
                     .then(() => {
                         this.disabled = false;
+                        this.$snack(message);
                     });
             },
 

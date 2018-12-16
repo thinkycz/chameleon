@@ -5,10 +5,10 @@ namespace App\Nova;
 use App\Nova\Fields\CenteredText;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Code;
-use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Nulisec\JsonSchema\JsonSchema;
 
 class Setting extends Resource
 {
@@ -46,15 +46,17 @@ class Setting extends Resource
         return [
             Text::make('Name', function () { return $this->name; }),
 
-            $this->getValue(),
+            JsonSchema::make('Data', $this->schema),
+
+            Code::make('RAW Data', 'data')->json()
+                ->rules('json')
+                ->onlyOnDetail(),
 
             Code::make('Schema')->json()
                 ->rules('json')
                 ->hideWhenUpdating(),
 
-            Code::make('Data')->json()
-                ->rules('json')
-                ->onlyOnDetail(),
+            $this->getValue()->onlyOnIndex(),
         ];
     }
 

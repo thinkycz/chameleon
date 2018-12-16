@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b003031cca1e89b4218a61f535f60899",
+    "content-hash": "e94ef7e0f7c742f1e8cd981862a71714",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3552,6 +3552,40 @@
                 "php"
             ],
             "time": "2018-10-10T09:24:14+00:00"
+        },
+        {
+            "name": "nulisec/json-schema",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/JsonSchema",
+                "reference": "3564eab20d1f9b37ad23945995ab7c33d1b179b4",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\JsonSchema\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\JsonSchema\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
         },
         {
             "name": "nulisec/scoutelastic",

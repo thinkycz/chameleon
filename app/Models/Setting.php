@@ -20,6 +20,6 @@ class Setting extends Model
 
     public function getValueAttribute()
     {
-        return json_decode($this->data)->value ?? __('settings.object');
+        return $this->data['value'] ?? __('settings.object');
     }
 }

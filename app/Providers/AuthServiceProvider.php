@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Order;
 use App\Models\User;
+use App\Policies\OrderPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
@@ -18,7 +20,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        Order::class => OrderPolicy::class,
     ];
 
     protected $permissions = [

@@ -131,7 +131,7 @@ class SettingSeeder extends Seeder
                     'enabled'  => ['type' => 'boolean'],
                     'image'    => ['type' => 'string'],
                     'opacity'  => ['type' => 'number'],
-                    'position' => ['type' => 'boolean'],
+                    'position' => ['type' => 'string'],
                 ]
             ],
             'data'   => [

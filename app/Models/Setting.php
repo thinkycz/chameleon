@@ -10,7 +10,7 @@ class Setting extends Model
 
     protected $casts = [
         'schema' => 'array',
-        'data' => 'array'
+        'data'   => 'array'
     ];
 
     public function getNameAttribute()
@@ -21,5 +21,20 @@ class Setting extends Model
     public function getValueAttribute()
     {
         return $this->data['value'] ?? __('settings.object');
+    }
+
+    public function setDataAttribute($data)
+    {
+        foreach ($this->schema['properties'] as $name => $property) {
+            if ($property['type'] == 'boolean') {
+                $data[$name] = $data[$name] == 'true';
+            } elseif ($property['type'] == 'number') {
+                $data[$name] = floatval($data[$name]);
+            } else {
+                $data[$name] = trim($data[$name]);
+            }
+        }
+
+        $this->attributes['data'] = json_encode($data);
     }
 }

@@ -24,11 +24,4 @@ class JsonSchema extends Code
     {
         return $this->options(compact('schema'));
     }
-
-    protected function resolveAttribute($resource, $attribute)
-    {
-        $value = parent::resolveAttribute($resource, $attribute);
-
-        return $value;
-    }
 }

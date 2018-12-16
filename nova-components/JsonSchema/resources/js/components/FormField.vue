@@ -5,11 +5,26 @@
                 {{ this._.capitalize(key) }}
             </form-label>
             <template slot="field">
-                <input :id="key" type="text"
+                <input v-if="property.type === 'string'"
+                        :id="key" type="text"
                         class="w-full form-control form-input form-input-bordered"
                         :class="errorClasses"
                         :placeholder="this._.capitalize(key)"
                         v-model="value[key]"
+                />
+                <input v-if="property.type === 'number'"
+                        :id="key" type="number" step="0.01"
+                        class="w-full form-control form-input form-input-bordered"
+                        :class="errorClasses"
+                        :placeholder="this._.capitalize(key)"
+                        v-model="value[key]"
+                />
+                <checkbox v-if="property.type === 'boolean'"
+                        class="py-2"
+                        @input="toggle(key)"
+                        :id="field.attribute"
+                        :name="field.name"
+                        :checked="Boolean(value[key])"
                 />
             </template>
         </default-field>
@@ -46,6 +61,10 @@
              */
             handleChange(value) {
                 this.value = value
+            },
+
+            toggle(key) {
+                this.value[key] = !this.value[key]
             },
         },
 

@@ -408,6 +408,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -442,6 +457,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          */
         handleChange: function handleChange(value) {
             this.value = value;
+        },
+        toggle: function toggle(key) {
+            this.value[key] = !this.value[key];
         }
     },
 
@@ -10673,34 +10691,89 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("template", { slot: "field" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.value[key],
-                  expression: "value[key]"
-                }
-              ],
-              staticClass: "w-full form-control form-input form-input-bordered",
-              class: _vm.errorClasses,
-              attrs: {
-                id: key,
-                type: "text",
-                placeholder: this._.capitalize(key)
-              },
-              domProps: { value: _vm.value[key] },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.value, key, $event.target.value)
-                }
-              }
-            })
-          ])
+          _c(
+            "template",
+            { slot: "field" },
+            [
+              property.type === "string"
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.value[key],
+                        expression: "value[key]"
+                      }
+                    ],
+                    staticClass:
+                      "w-full form-control form-input form-input-bordered",
+                    class: _vm.errorClasses,
+                    attrs: {
+                      id: key,
+                      type: "text",
+                      placeholder: this._.capitalize(key)
+                    },
+                    domProps: { value: _vm.value[key] },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.value, key, $event.target.value)
+                      }
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              property.type === "number"
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.value[key],
+                        expression: "value[key]"
+                      }
+                    ],
+                    staticClass:
+                      "w-full form-control form-input form-input-bordered",
+                    class: _vm.errorClasses,
+                    attrs: {
+                      id: key,
+                      type: "number",
+                      step: "0.01",
+                      placeholder: this._.capitalize(key)
+                    },
+                    domProps: { value: _vm.value[key] },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.value, key, $event.target.value)
+                      }
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              property.type === "boolean"
+                ? _c("checkbox", {
+                    staticClass: "py-2",
+                    attrs: {
+                      id: _vm.field.attribute,
+                      name: _vm.field.name,
+                      checked: Boolean(_vm.value[key])
+                    },
+                    on: {
+                      input: function($event) {
+                        _vm.toggle(key)
+                      }
+                    }
+                  })
+                : _vm._e()
+            ],
+            1
+          )
         ],
         2
       )

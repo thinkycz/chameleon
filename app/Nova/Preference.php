@@ -4,9 +4,8 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphTo;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Nulisec\TranslatableText\TranslatableText;
-use Nulisec\TranslatableTextarea\TranslatableTextarea;
 
 class Preference extends Resource
 {
@@ -42,9 +41,9 @@ class Preference extends Resource
     public function fields(Request $request)
     {
         return [
-            TranslatableText::make('Name'),
+            Text::make('Name', function () { return $this->name; }),
 
-            TranslatableTextarea::make('Description'),
+            Text::make('Description', function () { return $this->description; })->onlyOnDetail(),
 
             MorphTo::make('Preferable')->types([
                 Availability::class,

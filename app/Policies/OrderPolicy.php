@@ -78,6 +78,6 @@ class OrderPolicy
      */
     public function forceDelete(User $user, Order $order)
     {
-        return false;
+        return true;
     }
 }

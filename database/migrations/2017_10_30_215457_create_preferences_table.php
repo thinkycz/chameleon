@@ -17,12 +17,6 @@ class CreatePreferencesTable extends Migration
             $table->increments('id');
             $table->string('code');
 
-            $table->json('name');
-            $table->text('name_v')->virtualAs('name');
-
-            $table->json('description')->nullable();
-            $table->text('description_v')->virtualAs('description');
-
             $table->unsignedInteger('preferable_id');
             $table->string('preferable_type');
         });

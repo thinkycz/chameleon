@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Order;
+use App\Models\Preference;
 use App\Models\Setting;
 use App\Models\User;
 use App\Policies\OrderPolicy;
+use App\Policies\PreferencePolicy;
 use App\Policies\SettingPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -22,8 +24,9 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        Order::class   => OrderPolicy::class,
-        Setting::class => SettingPolicy::class
+        Order::class      => OrderPolicy::class,
+        Preference::class => PreferencePolicy::class,
+        Setting::class    => SettingPolicy::class
     ];
 
     protected $permissions = [

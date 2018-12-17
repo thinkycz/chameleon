@@ -8,7 +8,7 @@
 }
 
 .search-suggestions {
-    @apply hidden flex justify-between absolute pin-l w-full m-0 z-75 bg-white shadow opacity-0 invisible shadow rounded-lg;
+    @apply hidden flex justify-between absolute pin-l w-full m-0 z-75 bg-white shadow opacity-0 invisible shadow rounded;
     @include transition(opacity, visibility);
 
     @screen md {
@@ -37,7 +37,7 @@
         }
 
         h3 {
-            @apply text-left mb-2 uppercase text-primary-light text-sm font-bold tracking-wide;
+            @apply text-left mb-2 uppercase text-grey-darkest text-xs font-bold tracking-wide;
         }
 
         h4 {
@@ -96,7 +96,7 @@
         }
 
         .quick-links a {
-            @apply px-2 text-sm;
+            @apply pr-2 text-sm;
             line-height: 1.2;
         }
 

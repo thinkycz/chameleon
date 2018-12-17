@@ -2,7 +2,7 @@
     <div class="search-suggestions"
         :class="{'show': show}">
         <div class="search-items">
-            <h3>{{ $trans('header.search_products') }}</h3>
+            <h3>{{ $trans('header.product_results') }}</h3>
             <ul>
                 <transition mode="out-in"
                     name="fade">

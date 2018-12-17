@@ -13,7 +13,7 @@ return [
     'what_are_you_looking' => 'What are you looking for?',
     'products'             => 'Products',
     'quick_links'          => 'Quick Links',
-    'search_products'      => 'Search for Products',
+    'product_results'      => 'Results',
     'no_results_found'     => 'No results have been found',
 
     // Basket

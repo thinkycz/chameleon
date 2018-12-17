@@ -27,6 +27,11 @@ export default {
             "register": "Register",
             "my_profile": "My profile",
             "logout": "Logout",
+            "what_are_you_looking": "What are you looking for?",
+            "products": "Products",
+            "quick_links": "Quick Links",
+            "product_results": "Results",
+            "no_results_found": "No results have been found",
             "your_basket": "Your basket",
             "basket_total": "Basket total",
             "checkout": "Checkout",
@@ -36,6 +41,10 @@ export default {
             "add_to_basket": "Add to basket",
             "update_quantity": "Update quantity",
             "excl_vat": "excl. vat",
+            "product_deleted": "Product deleted from basket",
+            "quantity_updated": "Product quantity updated",
+            "added_to_basket": "Product added to basket",
+            "increase_the_quantity": "Please increase the quantity.",
             "in_stock_moq": "There are <strong> {stock} </strong> {unit} in stock, and minimum order quantity is <strong> {moq}.</strong>"
         },
         "validation": {

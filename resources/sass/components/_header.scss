@@ -109,7 +109,11 @@ header {
                         }
                     }
                     .user-info {
-                        @apply text-left;
+                        @apply text-left cursor-pointer select-none;
+                        p {
+                            @apply truncate;
+                            max-width: 155px;
+                        }
                     }
 
                     .user-dropdown-menu {

@@ -60,12 +60,11 @@
                         <vue-dropdown-menu inline-template>
                             <div class="user-dropdown relative" @click.stop="toggle">
                                 <div class="user-icon">
-                                    <img src="{{ currentUser()->thumb }}"
-                                        alt="">
+                                    <img src="{{ currentUser()->thumb }}" alt="{{ currentUser()->name }}">
                                 </div>
                                 <div class="user-info">
                                     <p class="p-big">{{ currentUser()->email }}</p>
-                                    <p class="p-small truncate" style="max-width: 150px">{{ trans('header.welcome', ['name' => currentUser()->last_name]) }}</p>
+                                    <p class="p-small">{{ trans('header.welcome', ['name' => currentUser()->last_name]) }}</p>
                                 </div>
 
                                 <transition name="fade">
@@ -73,7 +72,7 @@
                                         <icon-dropdown></icon-dropdown>
                                         <ul class="list-reset">
                                             <li>
-                                                <a href="{{ route('profiles.show', currentUser()->id) }}">{{ trans('header.my_profile') }}</a>
+                                                <a href="{{ route('profiles.show', currentUser()->id) }}"">{{ trans('header.my_profile') }}</a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('logout') }}">{{ trans('header.logout') }}</a>

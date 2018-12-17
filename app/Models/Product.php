@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\ReusableScopes\ScopeWhereLike;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 use Laravel\Scout\Searchable;
@@ -19,10 +20,12 @@ class Product extends Model implements HasMedia
     use NodeTrait;
     use HasMediaTrait;
     use Searchable;
+    use ScopeWhereLike;
 
     protected $appends = [
         'thumb',
         'purchasable',
+        'show_path',
     ];
 
     protected $fillable = [
@@ -89,6 +92,11 @@ class Product extends Model implements HasMedia
     {
         // TODO:: implement
         return true;
+    }
+
+    public function getShowPathAttribute()
+    {
+        return route('products.show', $this);
     }
 
     public function getImagesAttribute()

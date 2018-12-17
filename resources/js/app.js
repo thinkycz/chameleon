@@ -74,6 +74,9 @@ Vue.component('vue-add-to-basket', require('./components/basket/AddToBasket.vue'
 // Product
 Vue.component('vue-product-gallery', require('./components/product/Gallery.vue'));
 
+// Search
+Vue.component('vue-search', require('./components/search/Search.vue'));
+
 const app = new Vue({
     el: '#app',
     store,

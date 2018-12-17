@@ -11,6 +11,8 @@
 |
  */
 
+Auth::routes();
+
 Route::get('/', 'HomeController@index')->name('home');
 
 // TODO:: Auth
@@ -24,5 +26,7 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-Route::get('search', 'SearchController@index');
+Route::get('search', 'SearchController@index')->name('search');
 Route::resource('products', 'ProductController')->only('show');
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,0 +1,132 @@
+.search-overlay {
+    @apply block fixed z-50 pin-l pin-t h-full w-full opacity-0 invisible;
+    background: var(--black-transparent-50);
+    @include transition(opacity, visibility);
+    &.show {
+        @apply opacity-100 visible;
+    }
+}
+
+.search-suggestions {
+    @apply hidden flex justify-between absolute pin-l w-full m-0 z-75 bg-white shadow opacity-0 invisible shadow rounded-lg;
+    @include transition(opacity, visibility);
+
+    @screen md {
+        @apply block;
+        top: 50px;
+        padding: 1.2em;
+
+        ul {
+            @apply list-reset;
+        }
+
+        .quick-links,
+        .search-items {
+            @apply text-left inline-block;
+        }
+
+        .quick-links {
+            @apply text-left w-1/4;
+            h3 {
+                @apply text-left;
+            }
+        }
+
+        .search-items {
+            @apply float-left w-3/4;
+        }
+
+        h3 {
+            @apply text-left mb-2 uppercase text-primary-light text-sm font-bold tracking-wide;
+        }
+
+        h4 {
+            @apply font-bold text-sm;
+
+            a {
+                @apply truncate max-w-full py-1;
+            }
+        }
+
+        a {
+            @apply text-primary inline-block;
+
+            .no-touch &:hover {
+                @apply opacity-75;
+            }
+        }
+
+        .time,
+        .type,
+        .price {
+            @apply text-xs;
+        }
+        .time {
+            @apply text-primary-light;
+        }
+
+        .type,
+        .price {
+            @apply px-2 py-px text-white rounded;
+        }
+        .type {
+            @apply bg-primary;
+        }
+        .price {
+            @apply bg-accent;
+        }
+
+        .search-items li {
+            @apply relative mb-1;
+            padding: 0.625em 0.75em 0.75em 4em;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .image-wrapper {
+            @apply absolute pin-l;
+            width: 50px;
+            height: 50px;
+
+            img {
+                @apply max-w-full max-h-full block mx-auto;
+            }
+        }
+
+        .quick-links a {
+            @apply px-2 text-sm;
+            line-height: 1.2;
+        }
+
+        &.show {
+            @apply opacity-100 visible;
+            transform-origin: center top;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            animation: search-3d-rotation 0.5s 0.3s;
+            animation-fill-mode: backwards;
+        }
+    }
+}
+
+@keyframes (slide-in) {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes (search-3d-rotation) {
+    0% {
+        transform: perspective(1000px) rotateX(-90deg);
+    }
+
+    100% {
+        transform: perspective(1000px) translateY(0);
+    }
+}

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 139);
+/******/ 	return __webpack_require__(__webpack_require__.s = 141);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -298,7 +298,7 @@ module.exports = !__webpack_require__(4)(function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(2);
-var IE8_DOM_DEFINE = __webpack_require__(102);
+var IE8_DOM_DEFINE = __webpack_require__(103);
 var toPrimitive = __webpack_require__(24);
 var dP = Object.defineProperty;
 
@@ -431,8 +431,8 @@ module.exports = function (NAME, exec) {
 "use strict";
 
 
-var bind = __webpack_require__(95);
-var isBuffer = __webpack_require__(146);
+var bind = __webpack_require__(96);
+var isBuffer = __webpack_require__(147);
 
 /*global toString:true*/
 
@@ -765,7 +765,7 @@ var createDesc = __webpack_require__(34);
 var toIObject = __webpack_require__(17);
 var toPrimitive = __webpack_require__(24);
 var has = __webpack_require__(16);
-var IE8_DOM_DEFINE = __webpack_require__(102);
+var IE8_DOM_DEFINE = __webpack_require__(103);
 var gOPD = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(7) ? gOPD : function getOwnPropertyDescriptor(O, P) {
@@ -985,7 +985,7 @@ if (__webpack_require__(7)) {
   var redefineAll = __webpack_require__(43);
   var toInteger = __webpack_require__(26);
   var toLength = __webpack_require__(9);
-  var toIndex = __webpack_require__(128);
+  var toIndex = __webpack_require__(129);
   var toAbsoluteIndex = __webpack_require__(37);
   var toPrimitive = __webpack_require__(24);
   var has = __webpack_require__(16);
@@ -1007,7 +1007,7 @@ if (__webpack_require__(7)) {
   var $iterDetect = __webpack_require__(58);
   var setSpecies = __webpack_require__(40);
   var arrayFill = __webpack_require__(89);
-  var arrayCopyWithin = __webpack_require__(118);
+  var arrayCopyWithin = __webpack_require__(119);
   var $DP = __webpack_require__(8);
   var $GOPD = __webpack_require__(18);
   var dP = $DP.f;
@@ -1456,10 +1456,10 @@ if (__webpack_require__(7)) {
 /* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Map = __webpack_require__(123);
+var Map = __webpack_require__(124);
 var $export = __webpack_require__(0);
 var shared = __webpack_require__(53)('metadata');
-var store = shared.store || (shared.store = new (__webpack_require__(126))());
+var store = shared.store || (shared.store = new (__webpack_require__(127))());
 
 var getOrCreateMetadataMap = function (target, targetKey, create) {
   var targetMetadata = store.get(target);
@@ -1618,7 +1618,7 @@ module.exports = function (key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(104);
+var $keys = __webpack_require__(105);
 var enumBugKeys = __webpack_require__(72);
 
 module.exports = Object.keys || function keys(O) {
@@ -1645,7 +1645,7 @@ module.exports = function (index, length) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(2);
-var dPs = __webpack_require__(105);
+var dPs = __webpack_require__(106);
 var enumBugKeys = __webpack_require__(72);
 var IE_PROTO = __webpack_require__(71)('IE_PROTO');
 var Empty = function () { /* empty */ };
@@ -1691,7 +1691,7 @@ module.exports = Object.create || function create(O, Properties) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(104);
+var $keys = __webpack_require__(105);
 var hiddenKeys = __webpack_require__(72).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
@@ -1735,7 +1735,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(21);
-var call = __webpack_require__(116);
+var call = __webpack_require__(117);
 var isArrayIter = __webpack_require__(85);
 var anObject = __webpack_require__(2);
 var toLength = __webpack_require__(9);
@@ -12830,7 +12830,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44), __webpack_require__(164).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44), __webpack_require__(165).setImmediate))
 
 /***/ }),
 /* 50 */
@@ -13271,7 +13271,7 @@ module.exports = function (COLLECTION) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(15);
-var normalizeHeaderName = __webpack_require__(148);
+var normalizeHeaderName = __webpack_require__(149);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -13287,10 +13287,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(97);
+    adapter = __webpack_require__(98);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(97);
+    adapter = __webpack_require__(98);
   }
   return adapter;
 }
@@ -13365,7 +13365,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(96)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(97)))
 
 /***/ }),
 /* 69 */
@@ -13387,7 +13387,7 @@ module.exports = function (it) {
 var global = __webpack_require__(3);
 var core = __webpack_require__(20);
 var LIBRARY = __webpack_require__(32);
-var wksExt = __webpack_require__(103);
+var wksExt = __webpack_require__(104);
 var defineProperty = __webpack_require__(8).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -13723,7 +13723,7 @@ module.exports = __webpack_require__(20).getIteratorMethod = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(262);
+var speciesConstructor = __webpack_require__(263);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -13759,7 +13759,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 "use strict";
 
 var addToUnscopables = __webpack_require__(33);
-var step = __webpack_require__(119);
+var step = __webpack_require__(120);
 var Iterators = __webpack_require__(47);
 var toIObject = __webpack_require__(17);
 
@@ -13798,7 +13798,7 @@ addToUnscopables('entries');
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(21);
-var invoke = __webpack_require__(109);
+var invoke = __webpack_require__(110);
 var html = __webpack_require__(73);
 var cel = __webpack_require__(69);
 var global = __webpack_require__(3);
@@ -13999,7 +13999,7 @@ var fails = __webpack_require__(4);
 var anInstance = __webpack_require__(41);
 var toInteger = __webpack_require__(26);
 var toLength = __webpack_require__(9);
-var toIndex = __webpack_require__(128);
+var toIndex = __webpack_require__(129);
 var gOPN = __webpack_require__(39).f;
 var dP = __webpack_require__(8).f;
 var arrayFill = __webpack_require__(89);
@@ -14268,6525 +14268,6 @@ exports[DATA_VIEW] = $DataView;
 
 /***/ }),
 /* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function bind(fn, thisArg) {
-  return function wrap() {
-    var args = new Array(arguments.length);
-    for (var i = 0; i < args.length; i++) {
-      args[i] = arguments[i];
-    }
-    return fn.apply(thisArg, args);
-  };
-};
-
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(15);
-var settle = __webpack_require__(149);
-var buildURL = __webpack_require__(151);
-var parseHeaders = __webpack_require__(152);
-var isURLSameOrigin = __webpack_require__(153);
-var createError = __webpack_require__(98);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(154);
-
-module.exports = function xhrAdapter(config) {
-  return new Promise(function dispatchXhrRequest(resolve, reject) {
-    var requestData = config.data;
-    var requestHeaders = config.headers;
-
-    if (utils.isFormData(requestData)) {
-      delete requestHeaders['Content-Type']; // Let the browser set it
-    }
-
-    var request = new XMLHttpRequest();
-    var loadEvent = 'onreadystatechange';
-    var xDomain = false;
-
-    // For IE 8/9 CORS support
-    // Only supports POST and GET calls and doesn't returns the response headers.
-    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-    if ("development" !== 'test' &&
-        typeof window !== 'undefined' &&
-        window.XDomainRequest && !('withCredentials' in request) &&
-        !isURLSameOrigin(config.url)) {
-      request = new window.XDomainRequest();
-      loadEvent = 'onload';
-      xDomain = true;
-      request.onprogress = function handleProgress() {};
-      request.ontimeout = function handleTimeout() {};
-    }
-
-    // HTTP basic authentication
-    if (config.auth) {
-      var username = config.auth.username || '';
-      var password = config.auth.password || '';
-      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
-    }
-
-    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
-
-    // Set the request timeout in MS
-    request.timeout = config.timeout;
-
-    // Listen for ready state
-    request[loadEvent] = function handleLoad() {
-      if (!request || (request.readyState !== 4 && !xDomain)) {
-        return;
-      }
-
-      // The request errored out and we didn't get a response, this will be
-      // handled by onerror instead
-      // With one exception: request that using file: protocol, most browsers
-      // will return status as 0 even though it's a successful request
-      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
-        return;
-      }
-
-      // Prepare the response
-      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
-      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
-      var response = {
-        data: responseData,
-        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
-        status: request.status === 1223 ? 204 : request.status,
-        statusText: request.status === 1223 ? 'No Content' : request.statusText,
-        headers: responseHeaders,
-        config: config,
-        request: request
-      };
-
-      settle(resolve, reject, response);
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle low level network errors
-    request.onerror = function handleError() {
-      // Real errors are hidden from us by the browser
-      // onerror should only fire if it's a network error
-      reject(createError('Network Error', config, null, request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Handle timeout
-    request.ontimeout = function handleTimeout() {
-      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
-        request));
-
-      // Clean up request
-      request = null;
-    };
-
-    // Add xsrf header
-    // This is only done if running in a standard browser environment.
-    // Specifically not if we're in a web worker, or react-native.
-    if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(155);
-
-      // Add xsrf header
-      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
-          cookies.read(config.xsrfCookieName) :
-          undefined;
-
-      if (xsrfValue) {
-        requestHeaders[config.xsrfHeaderName] = xsrfValue;
-      }
-    }
-
-    // Add headers to the request
-    if ('setRequestHeader' in request) {
-      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
-        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
-          // Remove Content-Type if data is undefined
-          delete requestHeaders[key];
-        } else {
-          // Otherwise add header to the request
-          request.setRequestHeader(key, val);
-        }
-      });
-    }
-
-    // Add withCredentials to request if needed
-    if (config.withCredentials) {
-      request.withCredentials = true;
-    }
-
-    // Add responseType to request if needed
-    if (config.responseType) {
-      try {
-        request.responseType = config.responseType;
-      } catch (e) {
-        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
-        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
-        if (config.responseType !== 'json') {
-          throw e;
-        }
-      }
-    }
-
-    // Handle progress if needed
-    if (typeof config.onDownloadProgress === 'function') {
-      request.addEventListener('progress', config.onDownloadProgress);
-    }
-
-    // Not all browsers support upload events
-    if (typeof config.onUploadProgress === 'function' && request.upload) {
-      request.upload.addEventListener('progress', config.onUploadProgress);
-    }
-
-    if (config.cancelToken) {
-      // Handle cancellation
-      config.cancelToken.promise.then(function onCanceled(cancel) {
-        if (!request) {
-          return;
-        }
-
-        request.abort();
-        reject(cancel);
-        // Clean up request
-        request = null;
-      });
-    }
-
-    if (requestData === undefined) {
-      requestData = null;
-    }
-
-    // Send the request
-    request.send(requestData);
-  });
-};
-
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var enhanceError = __webpack_require__(150);
-
-/**
- * Create an Error with the specified message, config, error code, request and response.
- *
- * @param {string} message The error message.
- * @param {Object} config The config.
- * @param {string} [code] The error code (for example, 'ECONNABORTED').
- * @param {Object} [request] The request.
- * @param {Object} [response] The response.
- * @returns {Error} The created error.
- */
-module.exports = function createError(message, config, code, request, response) {
-  var error = new Error(message);
-  return enhanceError(error, config, code, request, response);
-};
-
-
-/***/ }),
-/* 99 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function isCancel(value) {
-  return !!(value && value.__CANCEL__);
-};
-
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * A `Cancel` is an object that is thrown when an operation is canceled.
- *
- * @class
- * @param {string=} message The message.
- */
-function Cancel(message) {
-  this.message = message;
-}
-
-Cancel.prototype.toString = function toString() {
-  return 'Cancel' + (this.message ? ': ' + this.message : '');
-};
-
-Cancel.prototype.__CANCEL__ = true;
-
-module.exports = Cancel;
-
-
-/***/ }),
-/* 101 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(168);
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
-
-var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
-    state: {
-        basketItems: [],
-        basketTotal: 0
-    },
-    getters: {
-        getBasketItems: function getBasketItems(state) {
-            return state.basketItems;
-        },
-        getBasketTotal: function getBasketTotal(state) {
-            return state.basketTotal ? state.basketTotal : '';
-        }
-    },
-    mutations: {
-        setBasketItems: function setBasketItems(state, basketItems) {
-            state.basketItems = basketItems;
-        },
-        setBasketTotal: function setBasketTotal(state, total) {
-            state.basketTotal = total;
-        }
-    }
-});
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = !__webpack_require__(7) && !__webpack_require__(4)(function () {
-  return Object.defineProperty(__webpack_require__(69)('div'), 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports.f = __webpack_require__(6);
-
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var has = __webpack_require__(16);
-var toIObject = __webpack_require__(17);
-var arrayIndexOf = __webpack_require__(54)(false);
-var IE_PROTO = __webpack_require__(71)('IE_PROTO');
-
-module.exports = function (object, names) {
-  var O = toIObject(object);
-  var i = 0;
-  var result = [];
-  var key;
-  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
-  // Don't enum bug & hidden keys
-  while (names.length > i) if (has(O, key = names[i++])) {
-    ~arrayIndexOf(result, key) || result.push(key);
-  }
-  return result;
-};
-
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var dP = __webpack_require__(8);
-var anObject = __webpack_require__(2);
-var getKeys = __webpack_require__(36);
-
-module.exports = __webpack_require__(7) ? Object.defineProperties : function defineProperties(O, Properties) {
-  anObject(O);
-  var keys = getKeys(Properties);
-  var length = keys.length;
-  var i = 0;
-  var P;
-  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
-  return O;
-};
-
-
-/***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(17);
-var gOPN = __webpack_require__(39).f;
-var toString = {}.toString;
-
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
-  ? Object.getOwnPropertyNames(window) : [];
-
-var getWindowNames = function (it) {
-  try {
-    return gOPN(it);
-  } catch (e) {
-    return windowNames.slice();
-  }
-};
-
-module.exports.f = function getOwnPropertyNames(it) {
-  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
-};
-
-
-/***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(36);
-var gOPS = __webpack_require__(55);
-var pIE = __webpack_require__(51);
-var toObject = __webpack_require__(10);
-var IObject = __webpack_require__(50);
-var $assign = Object.assign;
-
-// should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(4)(function () {
-  var A = {};
-  var B = {};
-  // eslint-disable-next-line no-undef
-  var S = Symbol();
-  var K = 'abcdefghijklmnopqrst';
-  A[S] = 7;
-  K.split('').forEach(function (k) { B[k] = k; });
-  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
-  var T = toObject(target);
-  var aLen = arguments.length;
-  var index = 1;
-  var getSymbols = gOPS.f;
-  var isEnum = pIE.f;
-  while (aLen > index) {
-    var S = IObject(arguments[index++]);
-    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
-    var length = keys.length;
-    var j = 0;
-    var key;
-    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
-  } return T;
-} : $assign;
-
-
-/***/ }),
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var aFunction = __webpack_require__(11);
-var isObject = __webpack_require__(5);
-var invoke = __webpack_require__(109);
-var arraySlice = [].slice;
-var factories = {};
-
-var construct = function (F, len, args) {
-  if (!(len in factories)) {
-    for (var n = [], i = 0; i < len; i++) n[i] = 'a[' + i + ']';
-    // eslint-disable-next-line no-new-func
-    factories[len] = Function('F,a', 'return new F(' + n.join(',') + ')');
-  } return factories[len](F, args);
-};
-
-module.exports = Function.bind || function bind(that /* , ...args */) {
-  var fn = aFunction(this);
-  var partArgs = arraySlice.call(arguments, 1);
-  var bound = function (/* args... */) {
-    var args = partArgs.concat(arraySlice.call(arguments));
-    return this instanceof bound ? construct(fn, args.length, args) : invoke(fn, args, that);
-  };
-  if (isObject(fn.prototype)) bound.prototype = fn.prototype;
-  return bound;
-};
-
-
-/***/ }),
-/* 109 */
-/***/ (function(module, exports) {
-
-// fast apply, http://jsperf.lnkit.com/fast-apply/5
-module.exports = function (fn, args, that) {
-  var un = that === undefined;
-  switch (args.length) {
-    case 0: return un ? fn()
-                      : fn.call(that);
-    case 1: return un ? fn(args[0])
-                      : fn.call(that, args[0]);
-    case 2: return un ? fn(args[0], args[1])
-                      : fn.call(that, args[0], args[1]);
-    case 3: return un ? fn(args[0], args[1], args[2])
-                      : fn.call(that, args[0], args[1], args[2]);
-    case 4: return un ? fn(args[0], args[1], args[2], args[3])
-                      : fn.call(that, args[0], args[1], args[2], args[3]);
-  } return fn.apply(that, args);
-};
-
-
-/***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $parseInt = __webpack_require__(3).parseInt;
-var $trim = __webpack_require__(46).trim;
-var ws = __webpack_require__(75);
-var hex = /^[-+]?0[xX]/;
-
-module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
-  var string = $trim(String(str), 3);
-  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
-} : $parseInt;
-
-
-/***/ }),
-/* 111 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $parseFloat = __webpack_require__(3).parseFloat;
-var $trim = __webpack_require__(46).trim;
-
-module.exports = 1 / $parseFloat(__webpack_require__(75) + '-0') !== -Infinity ? function parseFloat(str) {
-  var string = $trim(String(str), 3);
-  var result = $parseFloat(string);
-  return result === 0 && string.charAt(0) == '-' ? -0 : result;
-} : $parseFloat;
-
-
-/***/ }),
-/* 112 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var cof = __webpack_require__(22);
-module.exports = function (it, msg) {
-  if (typeof it != 'number' && cof(it) != 'Number') throw TypeError(msg);
-  return +it;
-};
-
-
-/***/ }),
-/* 113 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 20.1.2.3 Number.isInteger(number)
-var isObject = __webpack_require__(5);
-var floor = Math.floor;
-module.exports = function isInteger(it) {
-  return !isObject(it) && isFinite(it) && floor(it) === it;
-};
-
-
-/***/ }),
-/* 114 */
-/***/ (function(module, exports) {
-
-// 20.2.2.20 Math.log1p(x)
-module.exports = Math.log1p || function log1p(x) {
-  return (x = +x) > -1e-8 && x < 1e-8 ? x - x * x / 2 : Math.log(1 + x);
-};
-
-
-/***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 20.2.2.16 Math.fround(x)
-var sign = __webpack_require__(78);
-var pow = Math.pow;
-var EPSILON = pow(2, -52);
-var EPSILON32 = pow(2, -23);
-var MAX32 = pow(2, 127) * (2 - EPSILON32);
-var MIN32 = pow(2, -126);
-
-var roundTiesToEven = function (n) {
-  return n + 1 / EPSILON - 1 / EPSILON;
-};
-
-module.exports = Math.fround || function fround(x) {
-  var $abs = Math.abs(x);
-  var $sign = sign(x);
-  var a, result;
-  if ($abs < MIN32) return $sign * roundTiesToEven($abs / MIN32 / EPSILON32) * MIN32 * EPSILON32;
-  a = (1 + EPSILON32 / EPSILON) * $abs;
-  result = a - (a - $abs);
-  // eslint-disable-next-line no-self-compare
-  if (result > MAX32 || result != result) return $sign * Infinity;
-  return $sign * result;
-};
-
-
-/***/ }),
-/* 116 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// call something on iterator step with safe closing on error
-var anObject = __webpack_require__(2);
-module.exports = function (iterator, fn, value, entries) {
-  try {
-    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-  // 7.4.6 IteratorClose(iterator, completion)
-  } catch (e) {
-    var ret = iterator['return'];
-    if (ret !== undefined) anObject(ret.call(iterator));
-    throw e;
-  }
-};
-
-
-/***/ }),
-/* 117 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var aFunction = __webpack_require__(11);
-var toObject = __webpack_require__(10);
-var IObject = __webpack_require__(50);
-var toLength = __webpack_require__(9);
-
-module.exports = function (that, callbackfn, aLen, memo, isRight) {
-  aFunction(callbackfn);
-  var O = toObject(that);
-  var self = IObject(O);
-  var length = toLength(O.length);
-  var index = isRight ? length - 1 : 0;
-  var i = isRight ? -1 : 1;
-  if (aLen < 2) for (;;) {
-    if (index in self) {
-      memo = self[index];
-      index += i;
-      break;
-    }
-    index += i;
-    if (isRight ? index < 0 : length <= index) {
-      throw TypeError('Reduce of empty array with no initial value');
-    }
-  }
-  for (;isRight ? index >= 0 : length > index; index += i) if (index in self) {
-    memo = callbackfn(memo, self[index], index, O);
-  }
-  return memo;
-};
-
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-// 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
-
-var toObject = __webpack_require__(10);
-var toAbsoluteIndex = __webpack_require__(37);
-var toLength = __webpack_require__(9);
-
-module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /* = 0, end = @length */) {
-  var O = toObject(this);
-  var len = toLength(O.length);
-  var to = toAbsoluteIndex(target, len);
-  var from = toAbsoluteIndex(start, len);
-  var end = arguments.length > 2 ? arguments[2] : undefined;
-  var count = Math.min((end === undefined ? len : toAbsoluteIndex(end, len)) - from, len - to);
-  var inc = 1;
-  if (from < to && to < from + count) {
-    inc = -1;
-    from += count - 1;
-    to += count - 1;
-  }
-  while (count-- > 0) {
-    if (from in O) O[to] = O[from];
-    else delete O[to];
-    to += inc;
-    from += inc;
-  } return O;
-};
-
-
-/***/ }),
-/* 119 */
-/***/ (function(module, exports) {
-
-module.exports = function (done, value) {
-  return { value: value, done: !!done };
-};
-
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 21.2.5.3 get RegExp.prototype.flags()
-if (__webpack_require__(7) && /./g.flags != 'g') __webpack_require__(8).f(RegExp.prototype, 'flags', {
-  configurable: true,
-  get: __webpack_require__(59)
-});
-
-
-/***/ }),
-/* 121 */
-/***/ (function(module, exports) {
-
-module.exports = function (exec) {
-  try {
-    return { e: false, v: exec() };
-  } catch (e) {
-    return { e: true, v: e };
-  }
-};
-
-
-/***/ }),
-/* 122 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(2);
-var isObject = __webpack_require__(5);
-var newPromiseCapability = __webpack_require__(93);
-
-module.exports = function (C, x) {
-  anObject(C);
-  if (isObject(x) && x.constructor === C) return x;
-  var promiseCapability = newPromiseCapability.f(C);
-  var resolve = promiseCapability.resolve;
-  resolve(x);
-  return promiseCapability.promise;
-};
-
-
-/***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var strong = __webpack_require__(124);
-var validate = __webpack_require__(48);
-var MAP = 'Map';
-
-// 23.1 Map Objects
-module.exports = __webpack_require__(63)(MAP, function (get) {
-  return function Map() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
-}, {
-  // 23.1.3.6 Map.prototype.get(key)
-  get: function get(key) {
-    var entry = strong.getEntry(validate(this, MAP), key);
-    return entry && entry.v;
-  },
-  // 23.1.3.9 Map.prototype.set(key, value)
-  set: function set(key, value) {
-    return strong.def(validate(this, MAP), key === 0 ? 0 : key, value);
-  }
-}, strong, true);
-
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var dP = __webpack_require__(8).f;
-var create = __webpack_require__(38);
-var redefineAll = __webpack_require__(43);
-var ctx = __webpack_require__(21);
-var anInstance = __webpack_require__(41);
-var forOf = __webpack_require__(42);
-var $iterDefine = __webpack_require__(81);
-var step = __webpack_require__(119);
-var setSpecies = __webpack_require__(40);
-var DESCRIPTORS = __webpack_require__(7);
-var fastKey = __webpack_require__(31).fastKey;
-var validate = __webpack_require__(48);
-var SIZE = DESCRIPTORS ? '_s' : 'size';
-
-var getEntry = function (that, key) {
-  // fast case
-  var index = fastKey(key);
-  var entry;
-  if (index !== 'F') return that._i[index];
-  // frozen object case
-  for (entry = that._f; entry; entry = entry.n) {
-    if (entry.k == key) return entry;
-  }
-};
-
-module.exports = {
-  getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
-    var C = wrapper(function (that, iterable) {
-      anInstance(that, C, NAME, '_i');
-      that._t = NAME;         // collection type
-      that._i = create(null); // index
-      that._f = undefined;    // first entry
-      that._l = undefined;    // last entry
-      that[SIZE] = 0;         // size
-      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
-    });
-    redefineAll(C.prototype, {
-      // 23.1.3.1 Map.prototype.clear()
-      // 23.2.3.2 Set.prototype.clear()
-      clear: function clear() {
-        for (var that = validate(this, NAME), data = that._i, entry = that._f; entry; entry = entry.n) {
-          entry.r = true;
-          if (entry.p) entry.p = entry.p.n = undefined;
-          delete data[entry.i];
-        }
-        that._f = that._l = undefined;
-        that[SIZE] = 0;
-      },
-      // 23.1.3.3 Map.prototype.delete(key)
-      // 23.2.3.4 Set.prototype.delete(value)
-      'delete': function (key) {
-        var that = validate(this, NAME);
-        var entry = getEntry(that, key);
-        if (entry) {
-          var next = entry.n;
-          var prev = entry.p;
-          delete that._i[entry.i];
-          entry.r = true;
-          if (prev) prev.n = next;
-          if (next) next.p = prev;
-          if (that._f == entry) that._f = next;
-          if (that._l == entry) that._l = prev;
-          that[SIZE]--;
-        } return !!entry;
-      },
-      // 23.2.3.6 Set.prototype.forEach(callbackfn, thisArg = undefined)
-      // 23.1.3.5 Map.prototype.forEach(callbackfn, thisArg = undefined)
-      forEach: function forEach(callbackfn /* , that = undefined */) {
-        validate(this, NAME);
-        var f = ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3);
-        var entry;
-        while (entry = entry ? entry.n : this._f) {
-          f(entry.v, entry.k, this);
-          // revert to the last existing entry
-          while (entry && entry.r) entry = entry.p;
-        }
-      },
-      // 23.1.3.7 Map.prototype.has(key)
-      // 23.2.3.7 Set.prototype.has(value)
-      has: function has(key) {
-        return !!getEntry(validate(this, NAME), key);
-      }
-    });
-    if (DESCRIPTORS) dP(C.prototype, 'size', {
-      get: function () {
-        return validate(this, NAME)[SIZE];
-      }
-    });
-    return C;
-  },
-  def: function (that, key, value) {
-    var entry = getEntry(that, key);
-    var prev, index;
-    // change existing entry
-    if (entry) {
-      entry.v = value;
-    // create new entry
-    } else {
-      that._l = entry = {
-        i: index = fastKey(key, true), // <- index
-        k: key,                        // <- key
-        v: value,                      // <- value
-        p: prev = that._l,             // <- previous entry
-        n: undefined,                  // <- next entry
-        r: false                       // <- removed
-      };
-      if (!that._f) that._f = entry;
-      if (prev) prev.n = entry;
-      that[SIZE]++;
-      // add to index
-      if (index !== 'F') that._i[index] = entry;
-    } return that;
-  },
-  getEntry: getEntry,
-  setStrong: function (C, NAME, IS_MAP) {
-    // add .keys, .values, .entries, [@@iterator]
-    // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
-    $iterDefine(C, NAME, function (iterated, kind) {
-      this._t = validate(iterated, NAME); // target
-      this._k = kind;                     // kind
-      this._l = undefined;                // previous
-    }, function () {
-      var that = this;
-      var kind = that._k;
-      var entry = that._l;
-      // revert to the last existing entry
-      while (entry && entry.r) entry = entry.p;
-      // get next entry
-      if (!that._t || !(that._l = entry = entry ? entry.n : that._t._f)) {
-        // or finish the iteration
-        that._t = undefined;
-        return step(1);
-      }
-      // return step by kind
-      if (kind == 'keys') return step(0, entry.k);
-      if (kind == 'values') return step(0, entry.v);
-      return step(0, [entry.k, entry.v]);
-    }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
-
-    // add [@@species], 23.1.2.2, 23.2.2.2
-    setSpecies(NAME);
-  }
-};
-
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var strong = __webpack_require__(124);
-var validate = __webpack_require__(48);
-var SET = 'Set';
-
-// 23.2 Set Objects
-module.exports = __webpack_require__(63)(SET, function (get) {
-  return function Set() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
-}, {
-  // 23.2.3.1 Set.prototype.add(value)
-  add: function add(value) {
-    return strong.def(validate(this, SET), value = value === 0 ? 0 : value, value);
-  }
-}, strong);
-
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var each = __webpack_require__(28)(0);
-var redefine = __webpack_require__(13);
-var meta = __webpack_require__(31);
-var assign = __webpack_require__(107);
-var weak = __webpack_require__(127);
-var isObject = __webpack_require__(5);
-var fails = __webpack_require__(4);
-var validate = __webpack_require__(48);
-var WEAK_MAP = 'WeakMap';
-var getWeak = meta.getWeak;
-var isExtensible = Object.isExtensible;
-var uncaughtFrozenStore = weak.ufstore;
-var tmp = {};
-var InternalMap;
-
-var wrapper = function (get) {
-  return function WeakMap() {
-    return get(this, arguments.length > 0 ? arguments[0] : undefined);
-  };
-};
-
-var methods = {
-  // 23.3.3.3 WeakMap.prototype.get(key)
-  get: function get(key) {
-    if (isObject(key)) {
-      var data = getWeak(key);
-      if (data === true) return uncaughtFrozenStore(validate(this, WEAK_MAP)).get(key);
-      return data ? data[this._i] : undefined;
-    }
-  },
-  // 23.3.3.5 WeakMap.prototype.set(key, value)
-  set: function set(key, value) {
-    return weak.def(validate(this, WEAK_MAP), key, value);
-  }
-};
-
-// 23.3 WeakMap Objects
-var $WeakMap = module.exports = __webpack_require__(63)(WEAK_MAP, wrapper, methods, weak, true, true);
-
-// IE11 WeakMap frozen keys fix
-if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7; })) {
-  InternalMap = weak.getConstructor(wrapper, WEAK_MAP);
-  assign(InternalMap.prototype, methods);
-  meta.NEED = true;
-  each(['delete', 'has', 'get', 'set'], function (key) {
-    var proto = $WeakMap.prototype;
-    var method = proto[key];
-    redefine(proto, key, function (a, b) {
-      // store frozen objects on internal weakmap shim
-      if (isObject(a) && !isExtensible(a)) {
-        if (!this._f) this._f = new InternalMap();
-        var result = this._f[key](a, b);
-        return key == 'set' ? this : result;
-      // store all the rest on native weakmap
-      } return method.call(this, a, b);
-    });
-  });
-}
-
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var redefineAll = __webpack_require__(43);
-var getWeak = __webpack_require__(31).getWeak;
-var anObject = __webpack_require__(2);
-var isObject = __webpack_require__(5);
-var anInstance = __webpack_require__(41);
-var forOf = __webpack_require__(42);
-var createArrayMethod = __webpack_require__(28);
-var $has = __webpack_require__(16);
-var validate = __webpack_require__(48);
-var arrayFind = createArrayMethod(5);
-var arrayFindIndex = createArrayMethod(6);
-var id = 0;
-
-// fallback for uncaught frozen keys
-var uncaughtFrozenStore = function (that) {
-  return that._l || (that._l = new UncaughtFrozenStore());
-};
-var UncaughtFrozenStore = function () {
-  this.a = [];
-};
-var findUncaughtFrozen = function (store, key) {
-  return arrayFind(store.a, function (it) {
-    return it[0] === key;
-  });
-};
-UncaughtFrozenStore.prototype = {
-  get: function (key) {
-    var entry = findUncaughtFrozen(this, key);
-    if (entry) return entry[1];
-  },
-  has: function (key) {
-    return !!findUncaughtFrozen(this, key);
-  },
-  set: function (key, value) {
-    var entry = findUncaughtFrozen(this, key);
-    if (entry) entry[1] = value;
-    else this.a.push([key, value]);
-  },
-  'delete': function (key) {
-    var index = arrayFindIndex(this.a, function (it) {
-      return it[0] === key;
-    });
-    if (~index) this.a.splice(index, 1);
-    return !!~index;
-  }
-};
-
-module.exports = {
-  getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
-    var C = wrapper(function (that, iterable) {
-      anInstance(that, C, NAME, '_i');
-      that._t = NAME;      // collection type
-      that._i = id++;      // collection id
-      that._l = undefined; // leak store for uncaught frozen objects
-      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
-    });
-    redefineAll(C.prototype, {
-      // 23.3.3.2 WeakMap.prototype.delete(key)
-      // 23.4.3.3 WeakSet.prototype.delete(value)
-      'delete': function (key) {
-        if (!isObject(key)) return false;
-        var data = getWeak(key);
-        if (data === true) return uncaughtFrozenStore(validate(this, NAME))['delete'](key);
-        return data && $has(data, this._i) && delete data[this._i];
-      },
-      // 23.3.3.4 WeakMap.prototype.has(key)
-      // 23.4.3.4 WeakSet.prototype.has(value)
-      has: function has(key) {
-        if (!isObject(key)) return false;
-        var data = getWeak(key);
-        if (data === true) return uncaughtFrozenStore(validate(this, NAME)).has(key);
-        return data && $has(data, this._i);
-      }
-    });
-    return C;
-  },
-  def: function (that, key, value) {
-    var data = getWeak(anObject(key), true);
-    if (data === true) uncaughtFrozenStore(that).set(key, value);
-    else data[that._i] = value;
-    return that;
-  },
-  ufstore: uncaughtFrozenStore
-};
-
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://tc39.github.io/ecma262/#sec-toindex
-var toInteger = __webpack_require__(26);
-var toLength = __webpack_require__(9);
-module.exports = function (it) {
-  if (it === undefined) return 0;
-  var number = toInteger(it);
-  var length = toLength(number);
-  if (number !== length) throw RangeError('Wrong length!');
-  return length;
-};
-
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// all object keys, includes non-enumerable and symbols
-var gOPN = __webpack_require__(39);
-var gOPS = __webpack_require__(55);
-var anObject = __webpack_require__(2);
-var Reflect = __webpack_require__(3).Reflect;
-module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
-  var keys = gOPN.f(anObject(it));
-  var getSymbols = gOPS.f;
-  return getSymbols ? keys.concat(getSymbols(it)) : keys;
-};
-
-
-/***/ }),
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
-var isArray = __webpack_require__(56);
-var isObject = __webpack_require__(5);
-var toLength = __webpack_require__(9);
-var ctx = __webpack_require__(21);
-var IS_CONCAT_SPREADABLE = __webpack_require__(6)('isConcatSpreadable');
-
-function flattenIntoArray(target, original, source, sourceLen, start, depth, mapper, thisArg) {
-  var targetIndex = start;
-  var sourceIndex = 0;
-  var mapFn = mapper ? ctx(mapper, thisArg, 3) : false;
-  var element, spreadable;
-
-  while (sourceIndex < sourceLen) {
-    if (sourceIndex in source) {
-      element = mapFn ? mapFn(source[sourceIndex], sourceIndex, original) : source[sourceIndex];
-
-      spreadable = false;
-      if (isObject(element)) {
-        spreadable = element[IS_CONCAT_SPREADABLE];
-        spreadable = spreadable !== undefined ? !!spreadable : isArray(element);
-      }
-
-      if (spreadable && depth > 0) {
-        targetIndex = flattenIntoArray(target, original, element, toLength(element.length), targetIndex, depth - 1) - 1;
-      } else {
-        if (targetIndex >= 0x1fffffffffffff) throw TypeError();
-        target[targetIndex] = element;
-      }
-
-      targetIndex++;
-    }
-    sourceIndex++;
-  }
-  return targetIndex;
-}
-
-module.exports = flattenIntoArray;
-
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/tc39/proposal-string-pad-start-end
-var toLength = __webpack_require__(9);
-var repeat = __webpack_require__(77);
-var defined = __webpack_require__(25);
-
-module.exports = function (that, maxLength, fillString, left) {
-  var S = String(defined(that));
-  var stringLength = S.length;
-  var fillStr = fillString === undefined ? ' ' : String(fillString);
-  var intMaxLength = toLength(maxLength);
-  if (intMaxLength <= stringLength || fillStr == '') return S;
-  var fillLen = intMaxLength - stringLength;
-  var stringFiller = repeat.call(fillStr, Math.ceil(fillLen / fillStr.length));
-  if (stringFiller.length > fillLen) stringFiller = stringFiller.slice(0, fillLen);
-  return left ? stringFiller + S : S + stringFiller;
-};
-
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getKeys = __webpack_require__(36);
-var toIObject = __webpack_require__(17);
-var isEnum = __webpack_require__(51).f;
-module.exports = function (isEntries) {
-  return function (it) {
-    var O = toIObject(it);
-    var keys = getKeys(O);
-    var length = keys.length;
-    var i = 0;
-    var result = [];
-    var key;
-    while (length > i) if (isEnum.call(O, key = keys[i++])) {
-      result.push(isEntries ? [key, O[key]] : O[key]);
-    } return result;
-  };
-};
-
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var classof = __webpack_require__(52);
-var from = __webpack_require__(134);
-module.exports = function (NAME) {
-  return function toJSON() {
-    if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
-    return from(this);
-  };
-};
-
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var forOf = __webpack_require__(42);
-
-module.exports = function (iter, ITERATOR) {
-  var result = [];
-  forOf(iter, false, result.push, result, ITERATOR);
-  return result;
-};
-
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports) {
-
-// https://rwaldron.github.io/proposal-math-extensions/
-module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh) {
-  if (
-    arguments.length === 0
-      // eslint-disable-next-line no-self-compare
-      || x != x
-      // eslint-disable-next-line no-self-compare
-      || inLow != inLow
-      // eslint-disable-next-line no-self-compare
-      || inHigh != inHigh
-      // eslint-disable-next-line no-self-compare
-      || outLow != outLow
-      // eslint-disable-next-line no-self-compare
-      || outHigh != outHigh
-  ) return NaN;
-  if (x === Infinity || x === -Infinity) return x;
-  return (x - inLow) * (outHigh - outLow) / (inHigh - inLow) + outLow;
-};
-
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
-  if (true) {
-    // AMD. Register as an anonymous module unless amdModuleId is set
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-      return (root['Chartist'] = factory());
-    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else if (typeof module === 'object' && module.exports) {
-    // Node. Does not work with strict CommonJS, but
-    // only CommonJS-like environments that support module.exports,
-    // like Node.
-    module.exports = factory();
-  } else {
-    root['Chartist'] = factory();
-  }
-}(this, function () {
-
-/* Chartist.js 0.11.0
- * Copyright © 2017 Gion Kunz
- * Free to use under either the WTFPL license or the MIT license.
- * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-WTFPL
- * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-MIT
- */
-/**
- * The core module of Chartist that is mainly providing static functions and higher level functions for chart modules.
- *
- * @module Chartist.Core
- */
-var Chartist = {
-  version: '0.11.0'
-};
-
-(function (window, document, Chartist) {
-  'use strict';
-
-  /**
-   * This object contains all namespaces used within Chartist.
-   *
-   * @memberof Chartist.Core
-   * @type {{svg: string, xmlns: string, xhtml: string, xlink: string, ct: string}}
-   */
-  Chartist.namespaces = {
-    svg: 'http://www.w3.org/2000/svg',
-    xmlns: 'http://www.w3.org/2000/xmlns/',
-    xhtml: 'http://www.w3.org/1999/xhtml',
-    xlink: 'http://www.w3.org/1999/xlink',
-    ct: 'http://gionkunz.github.com/chartist-js/ct'
-  };
-
-  /**
-   * Helps to simplify functional style code
-   *
-   * @memberof Chartist.Core
-   * @param {*} n This exact value will be returned by the noop function
-   * @return {*} The same value that was provided to the n parameter
-   */
-  Chartist.noop = function (n) {
-    return n;
-  };
-
-  /**
-   * Generates a-z from a number 0 to 26
-   *
-   * @memberof Chartist.Core
-   * @param {Number} n A number from 0 to 26 that will result in a letter a-z
-   * @return {String} A character from a-z based on the input number n
-   */
-  Chartist.alphaNumerate = function (n) {
-    // Limit to a-z
-    return String.fromCharCode(97 + n % 26);
-  };
-
-  /**
-   * Simple recursive object extend
-   *
-   * @memberof Chartist.Core
-   * @param {Object} target Target object where the source will be merged into
-   * @param {Object...} sources This object (objects) will be merged into target and then target is returned
-   * @return {Object} An object that has the same reference as target but is extended and merged with the properties of source
-   */
-  Chartist.extend = function (target) {
-    var i, source, sourceProp;
-    target = target || {};
-
-    for (i = 1; i < arguments.length; i++) {
-      source = arguments[i];
-      for (var prop in source) {
-        sourceProp = source[prop];
-        if (typeof sourceProp === 'object' && sourceProp !== null && !(sourceProp instanceof Array)) {
-          target[prop] = Chartist.extend(target[prop], sourceProp);
-        } else {
-          target[prop] = sourceProp;
-        }
-      }
-    }
-
-    return target;
-  };
-
-  /**
-   * Replaces all occurrences of subStr in str with newSubStr and returns a new string.
-   *
-   * @memberof Chartist.Core
-   * @param {String} str
-   * @param {String} subStr
-   * @param {String} newSubStr
-   * @return {String}
-   */
-  Chartist.replaceAll = function(str, subStr, newSubStr) {
-    return str.replace(new RegExp(subStr, 'g'), newSubStr);
-  };
-
-  /**
-   * Converts a number to a string with a unit. If a string is passed then this will be returned unmodified.
-   *
-   * @memberof Chartist.Core
-   * @param {Number} value
-   * @param {String} unit
-   * @return {String} Returns the passed number value with unit.
-   */
-  Chartist.ensureUnit = function(value, unit) {
-    if(typeof value === 'number') {
-      value = value + unit;
-    }
-
-    return value;
-  };
-
-  /**
-   * Converts a number or string to a quantity object.
-   *
-   * @memberof Chartist.Core
-   * @param {String|Number} input
-   * @return {Object} Returns an object containing the value as number and the unit as string.
-   */
-  Chartist.quantity = function(input) {
-    if (typeof input === 'string') {
-      var match = (/^(\d+)\s*(.*)$/g).exec(input);
-      return {
-        value : +match[1],
-        unit: match[2] || undefined
-      };
-    }
-    return { value: input };
-  };
-
-  /**
-   * This is a wrapper around document.querySelector that will return the query if it's already of type Node
-   *
-   * @memberof Chartist.Core
-   * @param {String|Node} query The query to use for selecting a Node or a DOM node that will be returned directly
-   * @return {Node}
-   */
-  Chartist.querySelector = function(query) {
-    return query instanceof Node ? query : document.querySelector(query);
-  };
-
-  /**
-   * Functional style helper to produce array with given length initialized with undefined values
-   *
-   * @memberof Chartist.Core
-   * @param length
-   * @return {Array}
-   */
-  Chartist.times = function(length) {
-    return Array.apply(null, new Array(length));
-  };
-
-  /**
-   * Sum helper to be used in reduce functions
-   *
-   * @memberof Chartist.Core
-   * @param previous
-   * @param current
-   * @return {*}
-   */
-  Chartist.sum = function(previous, current) {
-    return previous + (current ? current : 0);
-  };
-
-  /**
-   * Multiply helper to be used in `Array.map` for multiplying each value of an array with a factor.
-   *
-   * @memberof Chartist.Core
-   * @param {Number} factor
-   * @returns {Function} Function that can be used in `Array.map` to multiply each value in an array
-   */
-  Chartist.mapMultiply = function(factor) {
-    return function(num) {
-      return num * factor;
-    };
-  };
-
-  /**
-   * Add helper to be used in `Array.map` for adding a addend to each value of an array.
-   *
-   * @memberof Chartist.Core
-   * @param {Number} addend
-   * @returns {Function} Function that can be used in `Array.map` to add a addend to each value in an array
-   */
-  Chartist.mapAdd = function(addend) {
-    return function(num) {
-      return num + addend;
-    };
-  };
-
-  /**
-   * Map for multi dimensional arrays where their nested arrays will be mapped in serial. The output array will have the length of the largest nested array. The callback function is called with variable arguments where each argument is the nested array value (or undefined if there are no more values).
-   *
-   * @memberof Chartist.Core
-   * @param arr
-   * @param cb
-   * @return {Array}
-   */
-  Chartist.serialMap = function(arr, cb) {
-    var result = [],
-        length = Math.max.apply(null, arr.map(function(e) {
-          return e.length;
-        }));
-
-    Chartist.times(length).forEach(function(e, index) {
-      var args = arr.map(function(e) {
-        return e[index];
-      });
-
-      result[index] = cb.apply(null, args);
-    });
-
-    return result;
-  };
-
-  /**
-   * This helper function can be used to round values with certain precision level after decimal. This is used to prevent rounding errors near float point precision limit.
-   *
-   * @memberof Chartist.Core
-   * @param {Number} value The value that should be rounded with precision
-   * @param {Number} [digits] The number of digits after decimal used to do the rounding
-   * @returns {number} Rounded value
-   */
-  Chartist.roundWithPrecision = function(value, digits) {
-    var precision = Math.pow(10, digits || Chartist.precision);
-    return Math.round(value * precision) / precision;
-  };
-
-  /**
-   * Precision level used internally in Chartist for rounding. If you require more decimal places you can increase this number.
-   *
-   * @memberof Chartist.Core
-   * @type {number}
-   */
-  Chartist.precision = 8;
-
-  /**
-   * A map with characters to escape for strings to be safely used as attribute values.
-   *
-   * @memberof Chartist.Core
-   * @type {Object}
-   */
-  Chartist.escapingMap = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    '\'': '&#039;'
-  };
-
-  /**
-   * This function serializes arbitrary data to a string. In case of data that can't be easily converted to a string, this function will create a wrapper object and serialize the data using JSON.stringify. The outcoming string will always be escaped using Chartist.escapingMap.
-   * If called with null or undefined the function will return immediately with null or undefined.
-   *
-   * @memberof Chartist.Core
-   * @param {Number|String|Object} data
-   * @return {String}
-   */
-  Chartist.serialize = function(data) {
-    if(data === null || data === undefined) {
-      return data;
-    } else if(typeof data === 'number') {
-      data = ''+data;
-    } else if(typeof data === 'object') {
-      data = JSON.stringify({data: data});
-    }
-
-    return Object.keys(Chartist.escapingMap).reduce(function(result, key) {
-      return Chartist.replaceAll(result, key, Chartist.escapingMap[key]);
-    }, data);
-  };
-
-  /**
-   * This function de-serializes a string previously serialized with Chartist.serialize. The string will always be unescaped using Chartist.escapingMap before it's returned. Based on the input value the return type can be Number, String or Object. JSON.parse is used with try / catch to see if the unescaped string can be parsed into an Object and this Object will be returned on success.
-   *
-   * @memberof Chartist.Core
-   * @param {String} data
-   * @return {String|Number|Object}
-   */
-  Chartist.deserialize = function(data) {
-    if(typeof data !== 'string') {
-      return data;
-    }
-
-    data = Object.keys(Chartist.escapingMap).reduce(function(result, key) {
-      return Chartist.replaceAll(result, Chartist.escapingMap[key], key);
-    }, data);
-
-    try {
-      data = JSON.parse(data);
-      data = data.data !== undefined ? data.data : data;
-    } catch(e) {}
-
-    return data;
-  };
-
-  /**
-   * Create or reinitialize the SVG element for the chart
-   *
-   * @memberof Chartist.Core
-   * @param {Node} container The containing DOM Node object that will be used to plant the SVG element
-   * @param {String} width Set the width of the SVG element. Default is 100%
-   * @param {String} height Set the height of the SVG element. Default is 100%
-   * @param {String} className Specify a class to be added to the SVG element
-   * @return {Object} The created/reinitialized SVG element
-   */
-  Chartist.createSvg = function (container, width, height, className) {
-    var svg;
-
-    width = width || '100%';
-    height = height || '100%';
-
-    // Check if there is a previous SVG element in the container that contains the Chartist XML namespace and remove it
-    // Since the DOM API does not support namespaces we need to manually search the returned list http://www.w3.org/TR/selectors-api/
-    Array.prototype.slice.call(container.querySelectorAll('svg')).filter(function filterChartistSvgObjects(svg) {
-      return svg.getAttributeNS(Chartist.namespaces.xmlns, 'ct');
-    }).forEach(function removePreviousElement(svg) {
-      container.removeChild(svg);
-    });
-
-    // Create svg object with width and height or use 100% as default
-    svg = new Chartist.Svg('svg').attr({
-      width: width,
-      height: height
-    }).addClass(className);
-
-    svg._node.style.width = width;
-    svg._node.style.height = height;
-
-    // Add the DOM node to our container
-    container.appendChild(svg._node);
-
-    return svg;
-  };
-
-  /**
-   * Ensures that the data object passed as second argument to the charts is present and correctly initialized.
-   *
-   * @param  {Object} data The data object that is passed as second argument to the charts
-   * @return {Object} The normalized data object
-   */
-  Chartist.normalizeData = function(data, reverse, multi) {
-    var labelCount;
-    var output = {
-      raw: data,
-      normalized: {}
-    };
-
-    // Check if we should generate some labels based on existing series data
-    output.normalized.series = Chartist.getDataArray({
-      series: data.series || []
-    }, reverse, multi);
-
-    // If all elements of the normalized data array are arrays we're dealing with
-    // multi series data and we need to find the largest series if they are un-even
-    if (output.normalized.series.every(function(value) {
-        return value instanceof Array;
-      })) {
-      // Getting the series with the the most elements
-      labelCount = Math.max.apply(null, output.normalized.series.map(function(series) {
-        return series.length;
-      }));
-    } else {
-      // We're dealing with Pie data so we just take the normalized array length
-      labelCount = output.normalized.series.length;
-    }
-
-    output.normalized.labels = (data.labels || []).slice();
-    // Padding the labels to labelCount with empty strings
-    Array.prototype.push.apply(
-      output.normalized.labels,
-      Chartist.times(Math.max(0, labelCount - output.normalized.labels.length)).map(function() {
-        return '';
-      })
-    );
-
-    if(reverse) {
-      Chartist.reverseData(output.normalized);
-    }
-
-    return output;
-  };
-
-  /**
-   * This function safely checks if an objects has an owned property.
-   *
-   * @param {Object} object The object where to check for a property
-   * @param {string} property The property name
-   * @returns {boolean} Returns true if the object owns the specified property
-   */
-  Chartist.safeHasProperty = function(object, property) {
-    return object !== null &&
-      typeof object === 'object' &&
-      object.hasOwnProperty(property);
-  };
-
-  /**
-   * Checks if a value is considered a hole in the data series.
-   *
-   * @param {*} value
-   * @returns {boolean} True if the value is considered a data hole
-   */
-  Chartist.isDataHoleValue = function(value) {
-    return value === null ||
-      value === undefined ||
-      (typeof value === 'number' && isNaN(value));
-  };
-
-  /**
-   * Reverses the series, labels and series data arrays.
-   *
-   * @memberof Chartist.Core
-   * @param data
-   */
-  Chartist.reverseData = function(data) {
-    data.labels.reverse();
-    data.series.reverse();
-    for (var i = 0; i < data.series.length; i++) {
-      if(typeof(data.series[i]) === 'object' && data.series[i].data !== undefined) {
-        data.series[i].data.reverse();
-      } else if(data.series[i] instanceof Array) {
-        data.series[i].reverse();
-      }
-    }
-  };
-
-  /**
-   * Convert data series into plain array
-   *
-   * @memberof Chartist.Core
-   * @param {Object} data The series object that contains the data to be visualized in the chart
-   * @param {Boolean} [reverse] If true the whole data is reversed by the getDataArray call. This will modify the data object passed as first parameter. The labels as well as the series order is reversed. The whole series data arrays are reversed too.
-   * @param {Boolean} [multi] Create a multi dimensional array from a series data array where a value object with `x` and `y` values will be created.
-   * @return {Array} A plain array that contains the data to be visualized in the chart
-   */
-  Chartist.getDataArray = function(data, reverse, multi) {
-    // Recursively walks through nested arrays and convert string values to numbers and objects with value properties
-    // to values. Check the tests in data core -> data normalization for a detailed specification of expected values
-    function recursiveConvert(value) {
-      if(Chartist.safeHasProperty(value, 'value')) {
-        // We are dealing with value object notation so we need to recurse on value property
-        return recursiveConvert(value.value);
-      } else if(Chartist.safeHasProperty(value, 'data')) {
-        // We are dealing with series object notation so we need to recurse on data property
-        return recursiveConvert(value.data);
-      } else if(value instanceof Array) {
-        // Data is of type array so we need to recurse on the series
-        return value.map(recursiveConvert);
-      } else if(Chartist.isDataHoleValue(value)) {
-        // We're dealing with a hole in the data and therefore need to return undefined
-        // We're also returning undefined for multi value output
-        return undefined;
-      } else {
-        // We need to prepare multi value output (x and y data)
-        if(multi) {
-          var multiValue = {};
-
-          // Single series value arrays are assumed to specify the Y-Axis value
-          // For example: [1, 2] => [{x: undefined, y: 1}, {x: undefined, y: 2}]
-          // If multi is a string then it's assumed that it specified which dimension should be filled as default
-          if(typeof multi === 'string') {
-            multiValue[multi] = Chartist.getNumberOrUndefined(value);
-          } else {
-            multiValue.y = Chartist.getNumberOrUndefined(value);
-          }
-
-          multiValue.x = value.hasOwnProperty('x') ? Chartist.getNumberOrUndefined(value.x) : multiValue.x;
-          multiValue.y = value.hasOwnProperty('y') ? Chartist.getNumberOrUndefined(value.y) : multiValue.y;
-
-          return multiValue;
-
-        } else {
-          // We can return simple data
-          return Chartist.getNumberOrUndefined(value);
-        }
-      }
-    }
-
-    return data.series.map(recursiveConvert);
-  };
-
-  /**
-   * Converts a number into a padding object.
-   *
-   * @memberof Chartist.Core
-   * @param {Object|Number} padding
-   * @param {Number} [fallback] This value is used to fill missing values if a incomplete padding object was passed
-   * @returns {Object} Returns a padding object containing top, right, bottom, left properties filled with the padding number passed in as argument. If the argument is something else than a number (presumably already a correct padding object) then this argument is directly returned.
-   */
-  Chartist.normalizePadding = function(padding, fallback) {
-    fallback = fallback || 0;
-
-    return typeof padding === 'number' ? {
-      top: padding,
-      right: padding,
-      bottom: padding,
-      left: padding
-    } : {
-      top: typeof padding.top === 'number' ? padding.top : fallback,
-      right: typeof padding.right === 'number' ? padding.right : fallback,
-      bottom: typeof padding.bottom === 'number' ? padding.bottom : fallback,
-      left: typeof padding.left === 'number' ? padding.left : fallback
-    };
-  };
-
-  Chartist.getMetaData = function(series, index) {
-    var value = series.data ? series.data[index] : series[index];
-    return value ? value.meta : undefined;
-  };
-
-  /**
-   * Calculate the order of magnitude for the chart scale
-   *
-   * @memberof Chartist.Core
-   * @param {Number} value The value Range of the chart
-   * @return {Number} The order of magnitude
-   */
-  Chartist.orderOfMagnitude = function (value) {
-    return Math.floor(Math.log(Math.abs(value)) / Math.LN10);
-  };
-
-  /**
-   * Project a data length into screen coordinates (pixels)
-   *
-   * @memberof Chartist.Core
-   * @param {Object} axisLength The svg element for the chart
-   * @param {Number} length Single data value from a series array
-   * @param {Object} bounds All the values to set the bounds of the chart
-   * @return {Number} The projected data length in pixels
-   */
-  Chartist.projectLength = function (axisLength, length, bounds) {
-    return length / bounds.range * axisLength;
-  };
-
-  /**
-   * Get the height of the area in the chart for the data series
-   *
-   * @memberof Chartist.Core
-   * @param {Object} svg The svg element for the chart
-   * @param {Object} options The Object that contains all the optional values for the chart
-   * @return {Number} The height of the area in the chart for the data series
-   */
-  Chartist.getAvailableHeight = function (svg, options) {
-    return Math.max((Chartist.quantity(options.height).value || svg.height()) - (options.chartPadding.top +  options.chartPadding.bottom) - options.axisX.offset, 0);
-  };
-
-  /**
-   * Get highest and lowest value of data array. This Array contains the data that will be visualized in the chart.
-   *
-   * @memberof Chartist.Core
-   * @param {Array} data The array that contains the data to be visualized in the chart
-   * @param {Object} options The Object that contains the chart options
-   * @param {String} dimension Axis dimension 'x' or 'y' used to access the correct value and high / low configuration
-   * @return {Object} An object that contains the highest and lowest value that will be visualized on the chart.
-   */
-  Chartist.getHighLow = function (data, options, dimension) {
-    // TODO: Remove workaround for deprecated global high / low config. Axis high / low configuration is preferred
-    options = Chartist.extend({}, options, dimension ? options['axis' + dimension.toUpperCase()] : {});
-
-    var highLow = {
-        high: options.high === undefined ? -Number.MAX_VALUE : +options.high,
-        low: options.low === undefined ? Number.MAX_VALUE : +options.low
-      };
-    var findHigh = options.high === undefined;
-    var findLow = options.low === undefined;
-
-    // Function to recursively walk through arrays and find highest and lowest number
-    function recursiveHighLow(data) {
-      if(data === undefined) {
-        return undefined;
-      } else if(data instanceof Array) {
-        for (var i = 0; i < data.length; i++) {
-          recursiveHighLow(data[i]);
-        }
-      } else {
-        var value = dimension ? +data[dimension] : +data;
-
-        if (findHigh && value > highLow.high) {
-          highLow.high = value;
-        }
-
-        if (findLow && value < highLow.low) {
-          highLow.low = value;
-        }
-      }
-    }
-
-    // Start to find highest and lowest number recursively
-    if(findHigh || findLow) {
-      recursiveHighLow(data);
-    }
-
-    // Overrides of high / low based on reference value, it will make sure that the invisible reference value is
-    // used to generate the chart. This is useful when the chart always needs to contain the position of the
-    // invisible reference value in the view i.e. for bipolar scales.
-    if (options.referenceValue || options.referenceValue === 0) {
-      highLow.high = Math.max(options.referenceValue, highLow.high);
-      highLow.low = Math.min(options.referenceValue, highLow.low);
-    }
-
-    // If high and low are the same because of misconfiguration or flat data (only the same value) we need
-    // to set the high or low to 0 depending on the polarity
-    if (highLow.high <= highLow.low) {
-      // If both values are 0 we set high to 1
-      if (highLow.low === 0) {
-        highLow.high = 1;
-      } else if (highLow.low < 0) {
-        // If we have the same negative value for the bounds we set bounds.high to 0
-        highLow.high = 0;
-      } else if (highLow.high > 0) {
-        // If we have the same positive value for the bounds we set bounds.low to 0
-        highLow.low = 0;
-      } else {
-        // If data array was empty, values are Number.MAX_VALUE and -Number.MAX_VALUE. Set bounds to prevent errors
-        highLow.high = 1;
-        highLow.low = 0;
-      }
-    }
-
-    return highLow;
-  };
-
-  /**
-   * Checks if a value can be safely coerced to a number. This includes all values except null which result in finite numbers when coerced. This excludes NaN, since it's not finite.
-   *
-   * @memberof Chartist.Core
-   * @param value
-   * @returns {Boolean}
-   */
-  Chartist.isNumeric = function(value) {
-    return value === null ? false : isFinite(value);
-  };
-
-  /**
-   * Returns true on all falsey values except the numeric value 0.
-   *
-   * @memberof Chartist.Core
-   * @param value
-   * @returns {boolean}
-   */
-  Chartist.isFalseyButZero = function(value) {
-    return !value && value !== 0;
-  };
-
-  /**
-   * Returns a number if the passed parameter is a valid number or the function will return undefined. On all other values than a valid number, this function will return undefined.
-   *
-   * @memberof Chartist.Core
-   * @param value
-   * @returns {*}
-   */
-  Chartist.getNumberOrUndefined = function(value) {
-    return Chartist.isNumeric(value) ? +value : undefined;
-  };
-
-  /**
-   * Checks if provided value object is multi value (contains x or y properties)
-   *
-   * @memberof Chartist.Core
-   * @param value
-   */
-  Chartist.isMultiValue = function(value) {
-    return typeof value === 'object' && ('x' in value || 'y' in value);
-  };
-
-  /**
-   * Gets a value from a dimension `value.x` or `value.y` while returning value directly if it's a valid numeric value. If the value is not numeric and it's falsey this function will return `defaultValue`.
-   *
-   * @memberof Chartist.Core
-   * @param value
-   * @param dimension
-   * @param defaultValue
-   * @returns {*}
-   */
-  Chartist.getMultiValue = function(value, dimension) {
-    if(Chartist.isMultiValue(value)) {
-      return Chartist.getNumberOrUndefined(value[dimension || 'y']);
-    } else {
-      return Chartist.getNumberOrUndefined(value);
-    }
-  };
-
-  /**
-   * Pollard Rho Algorithm to find smallest factor of an integer value. There are more efficient algorithms for factorization, but this one is quite efficient and not so complex.
-   *
-   * @memberof Chartist.Core
-   * @param {Number} num An integer number where the smallest factor should be searched for
-   * @returns {Number} The smallest integer factor of the parameter num.
-   */
-  Chartist.rho = function(num) {
-    if(num === 1) {
-      return num;
-    }
-
-    function gcd(p, q) {
-      if (p % q === 0) {
-        return q;
-      } else {
-        return gcd(q, p % q);
-      }
-    }
-
-    function f(x) {
-      return x * x + 1;
-    }
-
-    var x1 = 2, x2 = 2, divisor;
-    if (num % 2 === 0) {
-      return 2;
-    }
-
-    do {
-      x1 = f(x1) % num;
-      x2 = f(f(x2)) % num;
-      divisor = gcd(Math.abs(x1 - x2), num);
-    } while (divisor === 1);
-
-    return divisor;
-  };
-
-  /**
-   * Calculate and retrieve all the bounds for the chart and return them in one array
-   *
-   * @memberof Chartist.Core
-   * @param {Number} axisLength The length of the Axis used for
-   * @param {Object} highLow An object containing a high and low property indicating the value range of the chart.
-   * @param {Number} scaleMinSpace The minimum projected length a step should result in
-   * @param {Boolean} onlyInteger
-   * @return {Object} All the values to set the bounds of the chart
-   */
-  Chartist.getBounds = function (axisLength, highLow, scaleMinSpace, onlyInteger) {
-    var i,
-      optimizationCounter = 0,
-      newMin,
-      newMax,
-      bounds = {
-        high: highLow.high,
-        low: highLow.low
-      };
-
-    bounds.valueRange = bounds.high - bounds.low;
-    bounds.oom = Chartist.orderOfMagnitude(bounds.valueRange);
-    bounds.step = Math.pow(10, bounds.oom);
-    bounds.min = Math.floor(bounds.low / bounds.step) * bounds.step;
-    bounds.max = Math.ceil(bounds.high / bounds.step) * bounds.step;
-    bounds.range = bounds.max - bounds.min;
-    bounds.numberOfSteps = Math.round(bounds.range / bounds.step);
-
-    // Optimize scale step by checking if subdivision is possible based on horizontalGridMinSpace
-    // If we are already below the scaleMinSpace value we will scale up
-    var length = Chartist.projectLength(axisLength, bounds.step, bounds);
-    var scaleUp = length < scaleMinSpace;
-    var smallestFactor = onlyInteger ? Chartist.rho(bounds.range) : 0;
-
-    // First check if we should only use integer steps and if step 1 is still larger than scaleMinSpace so we can use 1
-    if(onlyInteger && Chartist.projectLength(axisLength, 1, bounds) >= scaleMinSpace) {
-      bounds.step = 1;
-    } else if(onlyInteger && smallestFactor < bounds.step && Chartist.projectLength(axisLength, smallestFactor, bounds) >= scaleMinSpace) {
-      // If step 1 was too small, we can try the smallest factor of range
-      // If the smallest factor is smaller than the current bounds.step and the projected length of smallest factor
-      // is larger than the scaleMinSpace we should go for it.
-      bounds.step = smallestFactor;
-    } else {
-      // Trying to divide or multiply by 2 and find the best step value
-      while (true) {
-        if (scaleUp && Chartist.projectLength(axisLength, bounds.step, bounds) <= scaleMinSpace) {
-          bounds.step *= 2;
-        } else if (!scaleUp && Chartist.projectLength(axisLength, bounds.step / 2, bounds) >= scaleMinSpace) {
-          bounds.step /= 2;
-          if(onlyInteger && bounds.step % 1 !== 0) {
-            bounds.step *= 2;
-            break;
-          }
-        } else {
-          break;
-        }
-
-        if(optimizationCounter++ > 1000) {
-          throw new Error('Exceeded maximum number of iterations while optimizing scale step!');
-        }
-      }
-    }
-
-    var EPSILON = 2.221E-16;
-    bounds.step = Math.max(bounds.step, EPSILON);
-    function safeIncrement(value, increment) {
-      // If increment is too small use *= (1+EPSILON) as a simple nextafter
-      if (value === (value += increment)) {
-      	value *= (1 + (increment > 0 ? EPSILON : -EPSILON));
-      }
-      return value;
-    }
-
-    // Narrow min and max based on new step
-    newMin = bounds.min;
-    newMax = bounds.max;
-    while (newMin + bounds.step <= bounds.low) {
-    	newMin = safeIncrement(newMin, bounds.step);
-    }
-    while (newMax - bounds.step >= bounds.high) {
-    	newMax = safeIncrement(newMax, -bounds.step);
-    }
-    bounds.min = newMin;
-    bounds.max = newMax;
-    bounds.range = bounds.max - bounds.min;
-
-    var values = [];
-    for (i = bounds.min; i <= bounds.max; i = safeIncrement(i, bounds.step)) {
-      var value = Chartist.roundWithPrecision(i);
-      if (value !== values[values.length - 1]) {
-        values.push(value);
-      }
-    }
-    bounds.values = values;
-    return bounds;
-  };
-
-  /**
-   * Calculate cartesian coordinates of polar coordinates
-   *
-   * @memberof Chartist.Core
-   * @param {Number} centerX X-axis coordinates of center point of circle segment
-   * @param {Number} centerY X-axis coordinates of center point of circle segment
-   * @param {Number} radius Radius of circle segment
-   * @param {Number} angleInDegrees Angle of circle segment in degrees
-   * @return {{x:Number, y:Number}} Coordinates of point on circumference
-   */
-  Chartist.polarToCartesian = function (centerX, centerY, radius, angleInDegrees) {
-    var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
-
-    return {
-      x: centerX + (radius * Math.cos(angleInRadians)),
-      y: centerY + (radius * Math.sin(angleInRadians))
-    };
-  };
-
-  /**
-   * Initialize chart drawing rectangle (area where chart is drawn) x1,y1 = bottom left / x2,y2 = top right
-   *
-   * @memberof Chartist.Core
-   * @param {Object} svg The svg element for the chart
-   * @param {Object} options The Object that contains all the optional values for the chart
-   * @param {Number} [fallbackPadding] The fallback padding if partial padding objects are used
-   * @return {Object} The chart rectangles coordinates inside the svg element plus the rectangles measurements
-   */
-  Chartist.createChartRect = function (svg, options, fallbackPadding) {
-    var hasAxis = !!(options.axisX || options.axisY);
-    var yAxisOffset = hasAxis ? options.axisY.offset : 0;
-    var xAxisOffset = hasAxis ? options.axisX.offset : 0;
-    // If width or height results in invalid value (including 0) we fallback to the unitless settings or even 0
-    var width = svg.width() || Chartist.quantity(options.width).value || 0;
-    var height = svg.height() || Chartist.quantity(options.height).value || 0;
-    var normalizedPadding = Chartist.normalizePadding(options.chartPadding, fallbackPadding);
-
-    // If settings were to small to cope with offset (legacy) and padding, we'll adjust
-    width = Math.max(width, yAxisOffset + normalizedPadding.left + normalizedPadding.right);
-    height = Math.max(height, xAxisOffset + normalizedPadding.top + normalizedPadding.bottom);
-
-    var chartRect = {
-      padding: normalizedPadding,
-      width: function () {
-        return this.x2 - this.x1;
-      },
-      height: function () {
-        return this.y1 - this.y2;
-      }
-    };
-
-    if(hasAxis) {
-      if (options.axisX.position === 'start') {
-        chartRect.y2 = normalizedPadding.top + xAxisOffset;
-        chartRect.y1 = Math.max(height - normalizedPadding.bottom, chartRect.y2 + 1);
-      } else {
-        chartRect.y2 = normalizedPadding.top;
-        chartRect.y1 = Math.max(height - normalizedPadding.bottom - xAxisOffset, chartRect.y2 + 1);
-      }
-
-      if (options.axisY.position === 'start') {
-        chartRect.x1 = normalizedPadding.left + yAxisOffset;
-        chartRect.x2 = Math.max(width - normalizedPadding.right, chartRect.x1 + 1);
-      } else {
-        chartRect.x1 = normalizedPadding.left;
-        chartRect.x2 = Math.max(width - normalizedPadding.right - yAxisOffset, chartRect.x1 + 1);
-      }
-    } else {
-      chartRect.x1 = normalizedPadding.left;
-      chartRect.x2 = Math.max(width - normalizedPadding.right, chartRect.x1 + 1);
-      chartRect.y2 = normalizedPadding.top;
-      chartRect.y1 = Math.max(height - normalizedPadding.bottom, chartRect.y2 + 1);
-    }
-
-    return chartRect;
-  };
-
-  /**
-   * Creates a grid line based on a projected value.
-   *
-   * @memberof Chartist.Core
-   * @param position
-   * @param index
-   * @param axis
-   * @param offset
-   * @param length
-   * @param group
-   * @param classes
-   * @param eventEmitter
-   */
-  Chartist.createGrid = function(position, index, axis, offset, length, group, classes, eventEmitter) {
-    var positionalData = {};
-    positionalData[axis.units.pos + '1'] = position;
-    positionalData[axis.units.pos + '2'] = position;
-    positionalData[axis.counterUnits.pos + '1'] = offset;
-    positionalData[axis.counterUnits.pos + '2'] = offset + length;
-
-    var gridElement = group.elem('line', positionalData, classes.join(' '));
-
-    // Event for grid draw
-    eventEmitter.emit('draw',
-      Chartist.extend({
-        type: 'grid',
-        axis: axis,
-        index: index,
-        group: group,
-        element: gridElement
-      }, positionalData)
-    );
-  };
-
-  /**
-   * Creates a grid background rect and emits the draw event.
-   *
-   * @memberof Chartist.Core
-   * @param gridGroup
-   * @param chartRect
-   * @param className
-   * @param eventEmitter
-   */
-  Chartist.createGridBackground = function (gridGroup, chartRect, className, eventEmitter) {
-    var gridBackground = gridGroup.elem('rect', {
-        x: chartRect.x1,
-        y: chartRect.y2,
-        width: chartRect.width(),
-        height: chartRect.height(),
-      }, className, true);
-
-      // Event for grid background draw
-      eventEmitter.emit('draw', {
-        type: 'gridBackground',
-        group: gridGroup,
-        element: gridBackground
-      });
-  };
-
-  /**
-   * Creates a label based on a projected value and an axis.
-   *
-   * @memberof Chartist.Core
-   * @param position
-   * @param length
-   * @param index
-   * @param labels
-   * @param axis
-   * @param axisOffset
-   * @param labelOffset
-   * @param group
-   * @param classes
-   * @param useForeignObject
-   * @param eventEmitter
-   */
-  Chartist.createLabel = function(position, length, index, labels, axis, axisOffset, labelOffset, group, classes, useForeignObject, eventEmitter) {
-    var labelElement;
-    var positionalData = {};
-
-    positionalData[axis.units.pos] = position + labelOffset[axis.units.pos];
-    positionalData[axis.counterUnits.pos] = labelOffset[axis.counterUnits.pos];
-    positionalData[axis.units.len] = length;
-    positionalData[axis.counterUnits.len] = Math.max(0, axisOffset - 10);
-
-    if(useForeignObject) {
-      // We need to set width and height explicitly to px as span will not expand with width and height being
-      // 100% in all browsers
-      var content = document.createElement('span');
-      content.className = classes.join(' ');
-      content.setAttribute('xmlns', Chartist.namespaces.xhtml);
-      content.innerText = labels[index];
-      content.style[axis.units.len] = Math.round(positionalData[axis.units.len]) + 'px';
-      content.style[axis.counterUnits.len] = Math.round(positionalData[axis.counterUnits.len]) + 'px';
-
-      labelElement = group.foreignObject(content, Chartist.extend({
-        style: 'overflow: visible;'
-      }, positionalData));
-    } else {
-      labelElement = group.elem('text', positionalData, classes.join(' ')).text(labels[index]);
-    }
-
-    eventEmitter.emit('draw', Chartist.extend({
-      type: 'label',
-      axis: axis,
-      index: index,
-      group: group,
-      element: labelElement,
-      text: labels[index]
-    }, positionalData));
-  };
-
-  /**
-   * Helper to read series specific options from options object. It automatically falls back to the global option if
-   * there is no option in the series options.
-   *
-   * @param {Object} series Series object
-   * @param {Object} options Chartist options object
-   * @param {string} key The options key that should be used to obtain the options
-   * @returns {*}
-   */
-  Chartist.getSeriesOption = function(series, options, key) {
-    if(series.name && options.series && options.series[series.name]) {
-      var seriesOptions = options.series[series.name];
-      return seriesOptions.hasOwnProperty(key) ? seriesOptions[key] : options[key];
-    } else {
-      return options[key];
-    }
-  };
-
-  /**
-   * Provides options handling functionality with callback for options changes triggered by responsive options and media query matches
-   *
-   * @memberof Chartist.Core
-   * @param {Object} options Options set by user
-   * @param {Array} responsiveOptions Optional functions to add responsive behavior to chart
-   * @param {Object} eventEmitter The event emitter that will be used to emit the options changed events
-   * @return {Object} The consolidated options object from the defaults, base and matching responsive options
-   */
-  Chartist.optionsProvider = function (options, responsiveOptions, eventEmitter) {
-    var baseOptions = Chartist.extend({}, options),
-      currentOptions,
-      mediaQueryListeners = [],
-      i;
-
-    function updateCurrentOptions(mediaEvent) {
-      var previousOptions = currentOptions;
-      currentOptions = Chartist.extend({}, baseOptions);
-
-      if (responsiveOptions) {
-        for (i = 0; i < responsiveOptions.length; i++) {
-          var mql = window.matchMedia(responsiveOptions[i][0]);
-          if (mql.matches) {
-            currentOptions = Chartist.extend(currentOptions, responsiveOptions[i][1]);
-          }
-        }
-      }
-
-      if(eventEmitter && mediaEvent) {
-        eventEmitter.emit('optionsChanged', {
-          previousOptions: previousOptions,
-          currentOptions: currentOptions
-        });
-      }
-    }
-
-    function removeMediaQueryListeners() {
-      mediaQueryListeners.forEach(function(mql) {
-        mql.removeListener(updateCurrentOptions);
-      });
-    }
-
-    if (!window.matchMedia) {
-      throw 'window.matchMedia not found! Make sure you\'re using a polyfill.';
-    } else if (responsiveOptions) {
-
-      for (i = 0; i < responsiveOptions.length; i++) {
-        var mql = window.matchMedia(responsiveOptions[i][0]);
-        mql.addListener(updateCurrentOptions);
-        mediaQueryListeners.push(mql);
-      }
-    }
-    // Execute initially without an event argument so we get the correct options
-    updateCurrentOptions();
-
-    return {
-      removeMediaQueryListeners: removeMediaQueryListeners,
-      getCurrentOptions: function getCurrentOptions() {
-        return Chartist.extend({}, currentOptions);
-      }
-    };
-  };
-
-
-  /**
-   * Splits a list of coordinates and associated values into segments. Each returned segment contains a pathCoordinates
-   * valueData property describing the segment.
-   *
-   * With the default options, segments consist of contiguous sets of points that do not have an undefined value. Any
-   * points with undefined values are discarded.
-   *
-   * **Options**
-   * The following options are used to determine how segments are formed
-   * ```javascript
-   * var options = {
-   *   // If fillHoles is true, undefined values are simply discarded without creating a new segment. Assuming other options are default, this returns single segment.
-   *   fillHoles: false,
-   *   // If increasingX is true, the coordinates in all segments have strictly increasing x-values.
-   *   increasingX: false
-   * };
-   * ```
-   *
-   * @memberof Chartist.Core
-   * @param {Array} pathCoordinates List of point coordinates to be split in the form [x1, y1, x2, y2 ... xn, yn]
-   * @param {Array} values List of associated point values in the form [v1, v2 .. vn]
-   * @param {Object} options Options set by user
-   * @return {Array} List of segments, each containing a pathCoordinates and valueData property.
-   */
-  Chartist.splitIntoSegments = function(pathCoordinates, valueData, options) {
-    var defaultOptions = {
-      increasingX: false,
-      fillHoles: false
-    };
-
-    options = Chartist.extend({}, defaultOptions, options);
-
-    var segments = [];
-    var hole = true;
-
-    for(var i = 0; i < pathCoordinates.length; i += 2) {
-      // If this value is a "hole" we set the hole flag
-      if(Chartist.getMultiValue(valueData[i / 2].value) === undefined) {
-      // if(valueData[i / 2].value === undefined) {
-        if(!options.fillHoles) {
-          hole = true;
-        }
-      } else {
-        if(options.increasingX && i >= 2 && pathCoordinates[i] <= pathCoordinates[i-2]) {
-          // X is not increasing, so we need to make sure we start a new segment
-          hole = true;
-        }
-
-
-        // If it's a valid value we need to check if we're coming out of a hole and create a new empty segment
-        if(hole) {
-          segments.push({
-            pathCoordinates: [],
-            valueData: []
-          });
-          // As we have a valid value now, we are not in a "hole" anymore
-          hole = false;
-        }
-
-        // Add to the segment pathCoordinates and valueData
-        segments[segments.length - 1].pathCoordinates.push(pathCoordinates[i], pathCoordinates[i + 1]);
-        segments[segments.length - 1].valueData.push(valueData[i / 2]);
-      }
-    }
-
-    return segments;
-  };
-}(window, document, Chartist));
-;/**
- * Chartist path interpolation functions.
- *
- * @module Chartist.Interpolation
- */
-/* global Chartist */
-(function(window, document, Chartist) {
-  'use strict';
-
-  Chartist.Interpolation = {};
-
-  /**
-   * This interpolation function does not smooth the path and the result is only containing lines and no curves.
-   *
-   * @example
-   * var chart = new Chartist.Line('.ct-chart', {
-   *   labels: [1, 2, 3, 4, 5],
-   *   series: [[1, 2, 8, 1, 7]]
-   * }, {
-   *   lineSmooth: Chartist.Interpolation.none({
-   *     fillHoles: false
-   *   })
-   * });
-   *
-   *
-   * @memberof Chartist.Interpolation
-   * @return {Function}
-   */
-  Chartist.Interpolation.none = function(options) {
-    var defaultOptions = {
-      fillHoles: false
-    };
-    options = Chartist.extend({}, defaultOptions, options);
-    return function none(pathCoordinates, valueData) {
-      var path = new Chartist.Svg.Path();
-      var hole = true;
-
-      for(var i = 0; i < pathCoordinates.length; i += 2) {
-        var currX = pathCoordinates[i];
-        var currY = pathCoordinates[i + 1];
-        var currData = valueData[i / 2];
-
-        if(Chartist.getMultiValue(currData.value) !== undefined) {
-
-          if(hole) {
-            path.move(currX, currY, false, currData);
-          } else {
-            path.line(currX, currY, false, currData);
-          }
-
-          hole = false;
-        } else if(!options.fillHoles) {
-          hole = true;
-        }
-      }
-
-      return path;
-    };
-  };
-
-  /**
-   * Simple smoothing creates horizontal handles that are positioned with a fraction of the length between two data points. You can use the divisor option to specify the amount of smoothing.
-   *
-   * Simple smoothing can be used instead of `Chartist.Smoothing.cardinal` if you'd like to get rid of the artifacts it produces sometimes. Simple smoothing produces less flowing lines but is accurate by hitting the points and it also doesn't swing below or above the given data point.
-   *
-   * All smoothing functions within Chartist are factory functions that accept an options parameter. The simple interpolation function accepts one configuration parameter `divisor`, between 1 and ∞, which controls the smoothing characteristics.
-   *
-   * @example
-   * var chart = new Chartist.Line('.ct-chart', {
-   *   labels: [1, 2, 3, 4, 5],
-   *   series: [[1, 2, 8, 1, 7]]
-   * }, {
-   *   lineSmooth: Chartist.Interpolation.simple({
-   *     divisor: 2,
-   *     fillHoles: false
-   *   })
-   * });
-   *
-   *
-   * @memberof Chartist.Interpolation
-   * @param {Object} options The options of the simple interpolation factory function.
-   * @return {Function}
-   */
-  Chartist.Interpolation.simple = function(options) {
-    var defaultOptions = {
-      divisor: 2,
-      fillHoles: false
-    };
-    options = Chartist.extend({}, defaultOptions, options);
-
-    var d = 1 / Math.max(1, options.divisor);
-
-    return function simple(pathCoordinates, valueData) {
-      var path = new Chartist.Svg.Path();
-      var prevX, prevY, prevData;
-
-      for(var i = 0; i < pathCoordinates.length; i += 2) {
-        var currX = pathCoordinates[i];
-        var currY = pathCoordinates[i + 1];
-        var length = (currX - prevX) * d;
-        var currData = valueData[i / 2];
-
-        if(currData.value !== undefined) {
-
-          if(prevData === undefined) {
-            path.move(currX, currY, false, currData);
-          } else {
-            path.curve(
-              prevX + length,
-              prevY,
-              currX - length,
-              currY,
-              currX,
-              currY,
-              false,
-              currData
-            );
-          }
-
-          prevX = currX;
-          prevY = currY;
-          prevData = currData;
-        } else if(!options.fillHoles) {
-          prevX = currX = prevData = undefined;
-        }
-      }
-
-      return path;
-    };
-  };
-
-  /**
-   * Cardinal / Catmull-Rome spline interpolation is the default smoothing function in Chartist. It produces nice results where the splines will always meet the points. It produces some artifacts though when data values are increased or decreased rapidly. The line may not follow a very accurate path and if the line should be accurate this smoothing function does not produce the best results.
-   *
-   * Cardinal splines can only be created if there are more than two data points. If this is not the case this smoothing will fallback to `Chartist.Smoothing.none`.
-   *
-   * All smoothing functions within Chartist are factory functions that accept an options parameter. The cardinal interpolation function accepts one configuration parameter `tension`, between 0 and 1, which controls the smoothing intensity.
-   *
-   * @example
-   * var chart = new Chartist.Line('.ct-chart', {
-   *   labels: [1, 2, 3, 4, 5],
-   *   series: [[1, 2, 8, 1, 7]]
-   * }, {
-   *   lineSmooth: Chartist.Interpolation.cardinal({
-   *     tension: 1,
-   *     fillHoles: false
-   *   })
-   * });
-   *
-   * @memberof Chartist.Interpolation
-   * @param {Object} options The options of the cardinal factory function.
-   * @return {Function}
-   */
-  Chartist.Interpolation.cardinal = function(options) {
-    var defaultOptions = {
-      tension: 1,
-      fillHoles: false
-    };
-
-    options = Chartist.extend({}, defaultOptions, options);
-
-    var t = Math.min(1, Math.max(0, options.tension)),
-      c = 1 - t;
-
-    return function cardinal(pathCoordinates, valueData) {
-      // First we try to split the coordinates into segments
-      // This is necessary to treat "holes" in line charts
-      var segments = Chartist.splitIntoSegments(pathCoordinates, valueData, {
-        fillHoles: options.fillHoles
-      });
-
-      if(!segments.length) {
-        // If there were no segments return 'Chartist.Interpolation.none'
-        return Chartist.Interpolation.none()([]);
-      } else if(segments.length > 1) {
-        // If the split resulted in more that one segment we need to interpolate each segment individually and join them
-        // afterwards together into a single path.
-          var paths = [];
-        // For each segment we will recurse the cardinal function
-        segments.forEach(function(segment) {
-          paths.push(cardinal(segment.pathCoordinates, segment.valueData));
-        });
-        // Join the segment path data into a single path and return
-        return Chartist.Svg.Path.join(paths);
-      } else {
-        // If there was only one segment we can proceed regularly by using pathCoordinates and valueData from the first
-        // segment
-        pathCoordinates = segments[0].pathCoordinates;
-        valueData = segments[0].valueData;
-
-        // If less than two points we need to fallback to no smoothing
-        if(pathCoordinates.length <= 4) {
-          return Chartist.Interpolation.none()(pathCoordinates, valueData);
-        }
-
-        var path = new Chartist.Svg.Path().move(pathCoordinates[0], pathCoordinates[1], false, valueData[0]),
-          z;
-
-        for (var i = 0, iLen = pathCoordinates.length; iLen - 2 * !z > i; i += 2) {
-          var p = [
-            {x: +pathCoordinates[i - 2], y: +pathCoordinates[i - 1]},
-            {x: +pathCoordinates[i], y: +pathCoordinates[i + 1]},
-            {x: +pathCoordinates[i + 2], y: +pathCoordinates[i + 3]},
-            {x: +pathCoordinates[i + 4], y: +pathCoordinates[i + 5]}
-          ];
-          if (z) {
-            if (!i) {
-              p[0] = {x: +pathCoordinates[iLen - 2], y: +pathCoordinates[iLen - 1]};
-            } else if (iLen - 4 === i) {
-              p[3] = {x: +pathCoordinates[0], y: +pathCoordinates[1]};
-            } else if (iLen - 2 === i) {
-              p[2] = {x: +pathCoordinates[0], y: +pathCoordinates[1]};
-              p[3] = {x: +pathCoordinates[2], y: +pathCoordinates[3]};
-            }
-          } else {
-            if (iLen - 4 === i) {
-              p[3] = p[2];
-            } else if (!i) {
-              p[0] = {x: +pathCoordinates[i], y: +pathCoordinates[i + 1]};
-            }
-          }
-
-          path.curve(
-            (t * (-p[0].x + 6 * p[1].x + p[2].x) / 6) + (c * p[2].x),
-            (t * (-p[0].y + 6 * p[1].y + p[2].y) / 6) + (c * p[2].y),
-            (t * (p[1].x + 6 * p[2].x - p[3].x) / 6) + (c * p[2].x),
-            (t * (p[1].y + 6 * p[2].y - p[3].y) / 6) + (c * p[2].y),
-            p[2].x,
-            p[2].y,
-            false,
-            valueData[(i + 2) / 2]
-          );
-        }
-
-        return path;
-      }
-    };
-  };
-
-  /**
-   * Monotone Cubic spline interpolation produces a smooth curve which preserves monotonicity. Unlike cardinal splines, the curve will not extend beyond the range of y-values of the original data points.
-   *
-   * Monotone Cubic splines can only be created if there are more than two data points. If this is not the case this smoothing will fallback to `Chartist.Smoothing.none`.
-   *
-   * The x-values of subsequent points must be increasing to fit a Monotone Cubic spline. If this condition is not met for a pair of adjacent points, then there will be a break in the curve between those data points.
-   *
-   * All smoothing functions within Chartist are factory functions that accept an options parameter.
-   *
-   * @example
-   * var chart = new Chartist.Line('.ct-chart', {
-   *   labels: [1, 2, 3, 4, 5],
-   *   series: [[1, 2, 8, 1, 7]]
-   * }, {
-   *   lineSmooth: Chartist.Interpolation.monotoneCubic({
-   *     fillHoles: false
-   *   })
-   * });
-   *
-   * @memberof Chartist.Interpolation
-   * @param {Object} options The options of the monotoneCubic factory function.
-   * @return {Function}
-   */
-  Chartist.Interpolation.monotoneCubic = function(options) {
-    var defaultOptions = {
-      fillHoles: false
-    };
-
-    options = Chartist.extend({}, defaultOptions, options);
-
-    return function monotoneCubic(pathCoordinates, valueData) {
-      // First we try to split the coordinates into segments
-      // This is necessary to treat "holes" in line charts
-      var segments = Chartist.splitIntoSegments(pathCoordinates, valueData, {
-        fillHoles: options.fillHoles,
-        increasingX: true
-      });
-
-      if(!segments.length) {
-        // If there were no segments return 'Chartist.Interpolation.none'
-        return Chartist.Interpolation.none()([]);
-      } else if(segments.length > 1) {
-        // If the split resulted in more that one segment we need to interpolate each segment individually and join them
-        // afterwards together into a single path.
-          var paths = [];
-        // For each segment we will recurse the monotoneCubic fn function
-        segments.forEach(function(segment) {
-          paths.push(monotoneCubic(segment.pathCoordinates, segment.valueData));
-        });
-        // Join the segment path data into a single path and return
-        return Chartist.Svg.Path.join(paths);
-      } else {
-        // If there was only one segment we can proceed regularly by using pathCoordinates and valueData from the first
-        // segment
-        pathCoordinates = segments[0].pathCoordinates;
-        valueData = segments[0].valueData;
-
-        // If less than three points we need to fallback to no smoothing
-        if(pathCoordinates.length <= 4) {
-          return Chartist.Interpolation.none()(pathCoordinates, valueData);
-        }
-
-        var xs = [],
-          ys = [],
-          i,
-          n = pathCoordinates.length / 2,
-          ms = [],
-          ds = [], dys = [], dxs = [],
-          path;
-
-        // Populate x and y coordinates into separate arrays, for readability
-
-        for(i = 0; i < n; i++) {
-          xs[i] = pathCoordinates[i * 2];
-          ys[i] = pathCoordinates[i * 2 + 1];
-        }
-
-        // Calculate deltas and derivative
-
-        for(i = 0; i < n - 1; i++) {
-          dys[i] = ys[i + 1] - ys[i];
-          dxs[i] = xs[i + 1] - xs[i];
-          ds[i] = dys[i] / dxs[i];
-        }
-
-        // Determine desired slope (m) at each point using Fritsch-Carlson method
-        // See: http://math.stackexchange.com/questions/45218/implementation-of-monotone-cubic-interpolation
-
-        ms[0] = ds[0];
-        ms[n - 1] = ds[n - 2];
-
-        for(i = 1; i < n - 1; i++) {
-          if(ds[i] === 0 || ds[i - 1] === 0 || (ds[i - 1] > 0) !== (ds[i] > 0)) {
-            ms[i] = 0;
-          } else {
-            ms[i] = 3 * (dxs[i - 1] + dxs[i]) / (
-              (2 * dxs[i] + dxs[i - 1]) / ds[i - 1] +
-              (dxs[i] + 2 * dxs[i - 1]) / ds[i]);
-
-            if(!isFinite(ms[i])) {
-              ms[i] = 0;
-            }
-          }
-        }
-
-        // Now build a path from the slopes
-
-        path = new Chartist.Svg.Path().move(xs[0], ys[0], false, valueData[0]);
-
-        for(i = 0; i < n - 1; i++) {
-          path.curve(
-            // First control point
-            xs[i] + dxs[i] / 3,
-            ys[i] + ms[i] * dxs[i] / 3,
-            // Second control point
-            xs[i + 1] - dxs[i] / 3,
-            ys[i + 1] - ms[i + 1] * dxs[i] / 3,
-            // End point
-            xs[i + 1],
-            ys[i + 1],
-
-            false,
-            valueData[i + 1]
-          );
-        }
-
-        return path;
-      }
-    };
-  };
-
-  /**
-   * Step interpolation will cause the line chart to move in steps rather than diagonal or smoothed lines. This interpolation will create additional points that will also be drawn when the `showPoint` option is enabled.
-   *
-   * All smoothing functions within Chartist are factory functions that accept an options parameter. The step interpolation function accepts one configuration parameter `postpone`, that can be `true` or `false`. The default value is `true` and will cause the step to occur where the value actually changes. If a different behaviour is needed where the step is shifted to the left and happens before the actual value, this option can be set to `false`.
-   *
-   * @example
-   * var chart = new Chartist.Line('.ct-chart', {
-   *   labels: [1, 2, 3, 4, 5],
-   *   series: [[1, 2, 8, 1, 7]]
-   * }, {
-   *   lineSmooth: Chartist.Interpolation.step({
-   *     postpone: true,
-   *     fillHoles: false
-   *   })
-   * });
-   *
-   * @memberof Chartist.Interpolation
-   * @param options
-   * @returns {Function}
-   */
-  Chartist.Interpolation.step = function(options) {
-    var defaultOptions = {
-      postpone: true,
-      fillHoles: false
-    };
-
-    options = Chartist.extend({}, defaultOptions, options);
-
-    return function step(pathCoordinates, valueData) {
-      var path = new Chartist.Svg.Path();
-
-      var prevX, prevY, prevData;
-
-      for (var i = 0; i < pathCoordinates.length; i += 2) {
-        var currX = pathCoordinates[i];
-        var currY = pathCoordinates[i + 1];
-        var currData = valueData[i / 2];
-
-        // If the current point is also not a hole we can draw the step lines
-        if(currData.value !== undefined) {
-          if(prevData === undefined) {
-            path.move(currX, currY, false, currData);
-          } else {
-            if(options.postpone) {
-              // If postponed we should draw the step line with the value of the previous value
-              path.line(currX, prevY, false, prevData);
-            } else {
-              // If not postponed we should draw the step line with the value of the current value
-              path.line(prevX, currY, false, currData);
-            }
-            // Line to the actual point (this should only be a Y-Axis movement
-            path.line(currX, currY, false, currData);
-          }
-
-          prevX = currX;
-          prevY = currY;
-          prevData = currData;
-        } else if(!options.fillHoles) {
-          prevX = prevY = prevData = undefined;
-        }
-      }
-
-      return path;
-    };
-  };
-
-}(window, document, Chartist));
-;/**
- * A very basic event module that helps to generate and catch events.
- *
- * @module Chartist.Event
- */
-/* global Chartist */
-(function (window, document, Chartist) {
-  'use strict';
-
-  Chartist.EventEmitter = function () {
-    var handlers = [];
-
-    /**
-     * Add an event handler for a specific event
-     *
-     * @memberof Chartist.Event
-     * @param {String} event The event name
-     * @param {Function} handler A event handler function
-     */
-    function addEventHandler(event, handler) {
-      handlers[event] = handlers[event] || [];
-      handlers[event].push(handler);
-    }
-
-    /**
-     * Remove an event handler of a specific event name or remove all event handlers for a specific event.
-     *
-     * @memberof Chartist.Event
-     * @param {String} event The event name where a specific or all handlers should be removed
-     * @param {Function} [handler] An optional event handler function. If specified only this specific handler will be removed and otherwise all handlers are removed.
-     */
-    function removeEventHandler(event, handler) {
-      // Only do something if there are event handlers with this name existing
-      if(handlers[event]) {
-        // If handler is set we will look for a specific handler and only remove this
-        if(handler) {
-          handlers[event].splice(handlers[event].indexOf(handler), 1);
-          if(handlers[event].length === 0) {
-            delete handlers[event];
-          }
-        } else {
-          // If no handler is specified we remove all handlers for this event
-          delete handlers[event];
-        }
-      }
-    }
-
-    /**
-     * Use this function to emit an event. All handlers that are listening for this event will be triggered with the data parameter.
-     *
-     * @memberof Chartist.Event
-     * @param {String} event The event name that should be triggered
-     * @param {*} data Arbitrary data that will be passed to the event handler callback functions
-     */
-    function emit(event, data) {
-      // Only do something if there are event handlers with this name existing
-      if(handlers[event]) {
-        handlers[event].forEach(function(handler) {
-          handler(data);
-        });
-      }
-
-      // Emit event to star event handlers
-      if(handlers['*']) {
-        handlers['*'].forEach(function(starHandler) {
-          starHandler(event, data);
-        });
-      }
-    }
-
-    return {
-      addEventHandler: addEventHandler,
-      removeEventHandler: removeEventHandler,
-      emit: emit
-    };
-  };
-
-}(window, document, Chartist));
-;/**
- * This module provides some basic prototype inheritance utilities.
- *
- * @module Chartist.Class
- */
-/* global Chartist */
-(function(window, document, Chartist) {
-  'use strict';
-
-  function listToArray(list) {
-    var arr = [];
-    if (list.length) {
-      for (var i = 0; i < list.length; i++) {
-        arr.push(list[i]);
-      }
-    }
-    return arr;
-  }
-
-  /**
-   * Method to extend from current prototype.
-   *
-   * @memberof Chartist.Class
-   * @param {Object} properties The object that serves as definition for the prototype that gets created for the new class. This object should always contain a constructor property that is the desired constructor for the newly created class.
-   * @param {Object} [superProtoOverride] By default extens will use the current class prototype or Chartist.class. With this parameter you can specify any super prototype that will be used.
-   * @return {Function} Constructor function of the new class
-   *
-   * @example
-   * var Fruit = Class.extend({
-     * color: undefined,
-     *   sugar: undefined,
-     *
-     *   constructor: function(color, sugar) {
-     *     this.color = color;
-     *     this.sugar = sugar;
-     *   },
-     *
-     *   eat: function() {
-     *     this.sugar = 0;
-     *     return this;
-     *   }
-     * });
-   *
-   * var Banana = Fruit.extend({
-     *   length: undefined,
-     *
-     *   constructor: function(length, sugar) {
-     *     Banana.super.constructor.call(this, 'Yellow', sugar);
-     *     this.length = length;
-     *   }
-     * });
-   *
-   * var banana = new Banana(20, 40);
-   * console.log('banana instanceof Fruit', banana instanceof Fruit);
-   * console.log('Fruit is prototype of banana', Fruit.prototype.isPrototypeOf(banana));
-   * console.log('bananas prototype is Fruit', Object.getPrototypeOf(banana) === Fruit.prototype);
-   * console.log(banana.sugar);
-   * console.log(banana.eat().sugar);
-   * console.log(banana.color);
-   */
-  function extend(properties, superProtoOverride) {
-    var superProto = superProtoOverride || this.prototype || Chartist.Class;
-    var proto = Object.create(superProto);
-
-    Chartist.Class.cloneDefinitions(proto, properties);
-
-    var constr = function() {
-      var fn = proto.constructor || function () {},
-        instance;
-
-      // If this is linked to the Chartist namespace the constructor was not called with new
-      // To provide a fallback we will instantiate here and return the instance
-      instance = this === Chartist ? Object.create(proto) : this;
-      fn.apply(instance, Array.prototype.slice.call(arguments, 0));
-
-      // If this constructor was not called with new we need to return the instance
-      // This will not harm when the constructor has been called with new as the returned value is ignored
-      return instance;
-    };
-
-    constr.prototype = proto;
-    constr.super = superProto;
-    constr.extend = this.extend;
-
-    return constr;
-  }
-
-  // Variable argument list clones args > 0 into args[0] and retruns modified args[0]
-  function cloneDefinitions() {
-    var args = listToArray(arguments);
-    var target = args[0];
-
-    args.splice(1, args.length - 1).forEach(function (source) {
-      Object.getOwnPropertyNames(source).forEach(function (propName) {
-        // If this property already exist in target we delete it first
-        delete target[propName];
-        // Define the property with the descriptor from source
-        Object.defineProperty(target, propName,
-          Object.getOwnPropertyDescriptor(source, propName));
-      });
-    });
-
-    return target;
-  }
-
-  Chartist.Class = {
-    extend: extend,
-    cloneDefinitions: cloneDefinitions
-  };
-
-}(window, document, Chartist));
-;/**
- * Base for all chart types. The methods in Chartist.Base are inherited to all chart types.
- *
- * @module Chartist.Base
- */
-/* global Chartist */
-(function(window, document, Chartist) {
-  'use strict';
-
-  // TODO: Currently we need to re-draw the chart on window resize. This is usually very bad and will affect performance.
-  // This is done because we can't work with relative coordinates when drawing the chart because SVG Path does not
-  // work with relative positions yet. We need to check if we can do a viewBox hack to switch to percentage.
-  // See http://mozilla.6506.n7.nabble.com/Specyfing-paths-with-percentages-unit-td247474.html
-  // Update: can be done using the above method tested here: http://codepen.io/gionkunz/pen/KDvLj
-  // The problem is with the label offsets that can't be converted into percentage and affecting the chart container
-  /**
-   * Updates the chart which currently does a full reconstruction of the SVG DOM
-   *
-   * @param {Object} [data] Optional data you'd like to set for the chart before it will update. If not specified the update method will use the data that is already configured with the chart.
-   * @param {Object} [options] Optional options you'd like to add to the previous options for the chart before it will update. If not specified the update method will use the options that have been already configured with the chart.
-   * @param {Boolean} [override] If set to true, the passed options will be used to extend the options that have been configured already. Otherwise the chart default options will be used as the base
-   * @memberof Chartist.Base
-   */
-  function update(data, options, override) {
-    if(data) {
-      this.data = data || {};
-      this.data.labels = this.data.labels || [];
-      this.data.series = this.data.series || [];
-      // Event for data transformation that allows to manipulate the data before it gets rendered in the charts
-      this.eventEmitter.emit('data', {
-        type: 'update',
-        data: this.data
-      });
-    }
-
-    if(options) {
-      this.options = Chartist.extend({}, override ? this.options : this.defaultOptions, options);
-
-      // If chartist was not initialized yet, we just set the options and leave the rest to the initialization
-      // Otherwise we re-create the optionsProvider at this point
-      if(!this.initializeTimeoutId) {
-        this.optionsProvider.removeMediaQueryListeners();
-        this.optionsProvider = Chartist.optionsProvider(this.options, this.responsiveOptions, this.eventEmitter);
-      }
-    }
-
-    // Only re-created the chart if it has been initialized yet
-    if(!this.initializeTimeoutId) {
-      this.createChart(this.optionsProvider.getCurrentOptions());
-    }
-
-    // Return a reference to the chart object to chain up calls
-    return this;
-  }
-
-  /**
-   * This method can be called on the API object of each chart and will un-register all event listeners that were added to other components. This currently includes a window.resize listener as well as media query listeners if any responsive options have been provided. Use this function if you need to destroy and recreate Chartist charts dynamically.
-   *
-   * @memberof Chartist.Base
-   */
-  function detach() {
-    // Only detach if initialization already occurred on this chart. If this chart still hasn't initialized (therefore
-    // the initializationTimeoutId is still a valid timeout reference, we will clear the timeout
-    if(!this.initializeTimeoutId) {
-      window.removeEventListener('resize', this.resizeListener);
-      this.optionsProvider.removeMediaQueryListeners();
-    } else {
-      window.clearTimeout(this.initializeTimeoutId);
-    }
-
-    return this;
-  }
-
-  /**
-   * Use this function to register event handlers. The handler callbacks are synchronous and will run in the main thread rather than the event loop.
-   *
-   * @memberof Chartist.Base
-   * @param {String} event Name of the event. Check the examples for supported events.
-   * @param {Function} handler The handler function that will be called when an event with the given name was emitted. This function will receive a data argument which contains event data. See the example for more details.
-   */
-  function on(event, handler) {
-    this.eventEmitter.addEventHandler(event, handler);
-    return this;
-  }
-
-  /**
-   * Use this function to un-register event handlers. If the handler function parameter is omitted all handlers for the given event will be un-registered.
-   *
-   * @memberof Chartist.Base
-   * @param {String} event Name of the event for which a handler should be removed
-   * @param {Function} [handler] The handler function that that was previously used to register a new event handler. This handler will be removed from the event handler list. If this parameter is omitted then all event handlers for the given event are removed from the list.
-   */
-  function off(event, handler) {
-    this.eventEmitter.removeEventHandler(event, handler);
-    return this;
-  }
-
-  function initialize() {
-    // Add window resize listener that re-creates the chart
-    window.addEventListener('resize', this.resizeListener);
-
-    // Obtain current options based on matching media queries (if responsive options are given)
-    // This will also register a listener that is re-creating the chart based on media changes
-    this.optionsProvider = Chartist.optionsProvider(this.options, this.responsiveOptions, this.eventEmitter);
-    // Register options change listener that will trigger a chart update
-    this.eventEmitter.addEventHandler('optionsChanged', function() {
-      this.update();
-    }.bind(this));
-
-    // Before the first chart creation we need to register us with all plugins that are configured
-    // Initialize all relevant plugins with our chart object and the plugin options specified in the config
-    if(this.options.plugins) {
-      this.options.plugins.forEach(function(plugin) {
-        if(plugin instanceof Array) {
-          plugin[0](this, plugin[1]);
-        } else {
-          plugin(this);
-        }
-      }.bind(this));
-    }
-
-    // Event for data transformation that allows to manipulate the data before it gets rendered in the charts
-    this.eventEmitter.emit('data', {
-      type: 'initial',
-      data: this.data
-    });
-
-    // Create the first chart
-    this.createChart(this.optionsProvider.getCurrentOptions());
-
-    // As chart is initialized from the event loop now we can reset our timeout reference
-    // This is important if the chart gets initialized on the same element twice
-    this.initializeTimeoutId = undefined;
-  }
-
-  /**
-   * Constructor of chart base class.
-   *
-   * @param query
-   * @param data
-   * @param defaultOptions
-   * @param options
-   * @param responsiveOptions
-   * @constructor
-   */
-  function Base(query, data, defaultOptions, options, responsiveOptions) {
-    this.container = Chartist.querySelector(query);
-    this.data = data || {};
-    this.data.labels = this.data.labels || [];
-    this.data.series = this.data.series || [];
-    this.defaultOptions = defaultOptions;
-    this.options = options;
-    this.responsiveOptions = responsiveOptions;
-    this.eventEmitter = Chartist.EventEmitter();
-    this.supportsForeignObject = Chartist.Svg.isSupported('Extensibility');
-    this.supportsAnimations = Chartist.Svg.isSupported('AnimationEventsAttribute');
-    this.resizeListener = function resizeListener(){
-      this.update();
-    }.bind(this);
-
-    if(this.container) {
-      // If chartist was already initialized in this container we are detaching all event listeners first
-      if(this.container.__chartist__) {
-        this.container.__chartist__.detach();
-      }
-
-      this.container.__chartist__ = this;
-    }
-
-    // Using event loop for first draw to make it possible to register event listeners in the same call stack where
-    // the chart was created.
-    this.initializeTimeoutId = setTimeout(initialize.bind(this), 0);
-  }
-
-  // Creating the chart base class
-  Chartist.Base = Chartist.Class.extend({
-    constructor: Base,
-    optionsProvider: undefined,
-    container: undefined,
-    svg: undefined,
-    eventEmitter: undefined,
-    createChart: function() {
-      throw new Error('Base chart type can\'t be instantiated!');
-    },
-    update: update,
-    detach: detach,
-    on: on,
-    off: off,
-    version: Chartist.version,
-    supportsForeignObject: false
-  });
-
-}(window, document, Chartist));
-;/**
- * Chartist SVG module for simple SVG DOM abstraction
- *
- * @module Chartist.Svg
- */
-/* global Chartist */
-(function(window, document, Chartist) {
-  'use strict';
-
-  /**
-   * Chartist.Svg creates a new SVG object wrapper with a starting element. You can use the wrapper to fluently create sub-elements and modify them.
-   *
-   * @memberof Chartist.Svg
-   * @constructor
-   * @param {String|Element} name The name of the SVG element to create or an SVG dom element which should be wrapped into Chartist.Svg
-   * @param {Object} attributes An object with properties that will be added as attributes to the SVG element that is created. Attributes with undefined values will not be added.
-   * @param {String} className This class or class list will be added to the SVG element
-   * @param {Object} parent The parent SVG wrapper object where this newly created wrapper and it's element will be attached to as child
-   * @param {Boolean} insertFirst If this param is set to true in conjunction with a parent element the newly created element will be added as first child element in the parent element
-   */
-  function Svg(name, attributes, className, parent, insertFirst) {
-    // If Svg is getting called with an SVG element we just return the wrapper
-    if(name instanceof Element) {
-      this._node = name;
-    } else {
-      this._node = document.createElementNS(Chartist.namespaces.svg, name);
-
-      // If this is an SVG element created then custom namespace
-      if(name === 'svg') {
-        this.attr({
-          'xmlns:ct': Chartist.namespaces.ct
-        });
-      }
-    }
-
-    if(attributes) {
-      this.attr(attributes);
-    }
-
-    if(className) {
-      this.addClass(className);
-    }
-
-    if(parent) {
-      if (insertFirst && parent._node.firstChild) {
-        parent._node.insertBefore(this._node, parent._node.firstChild);
-      } else {
-        parent._node.appendChild(this._node);
-      }
-    }
-  }
-
-  /**
-   * Set attributes on the current SVG element of the wrapper you're currently working on.
-   *
-   * @memberof Chartist.Svg
-   * @param {Object|String} attributes An object with properties that will be added as attributes to the SVG element that is created. Attributes with undefined values will not be added. If this parameter is a String then the function is used as a getter and will return the attribute value.
-   * @param {String} [ns] If specified, the attribute will be obtained using getAttributeNs. In order to write namepsaced attributes you can use the namespace:attribute notation within the attributes object.
-   * @return {Object|String} The current wrapper object will be returned so it can be used for chaining or the attribute value if used as getter function.
-   */
-  function attr(attributes, ns) {
-    if(typeof attributes === 'string') {
-      if(ns) {
-        return this._node.getAttributeNS(ns, attributes);
-      } else {
-        return this._node.getAttribute(attributes);
-      }
-    }
-
-    Object.keys(attributes).forEach(function(key) {
-      // If the attribute value is undefined we can skip this one
-      if(attributes[key] === undefined) {
-        return;
-      }
-
-      if (key.indexOf(':') !== -1) {
-        var namespacedAttribute = key.split(':');
-        this._node.setAttributeNS(Chartist.namespaces[namespacedAttribute[0]], key, attributes[key]);
-      } else {
-        this._node.setAttribute(key, attributes[key]);
-      }
-    }.bind(this));
-
-    return this;
-  }
-
-  /**
-   * Create a new SVG element whose wrapper object will be selected for further operations. This way you can also create nested groups easily.
-   *
-   * @memberof Chartist.Svg
-   * @param {String} name The name of the SVG element that should be created as child element of the currently selected element wrapper
-   * @param {Object} [attributes] An object with properties that will be added as attributes to the SVG element that is created. Attributes with undefined values will not be added.
-   * @param {String} [className] This class or class list will be added to the SVG element
-   * @param {Boolean} [insertFirst] If this param is set to true in conjunction with a parent element the newly created element will be added as first child element in the parent element
-   * @return {Chartist.Svg} Returns a Chartist.Svg wrapper object that can be used to modify the containing SVG data
-   */
-  function elem(name, attributes, className, insertFirst) {
-    return new Chartist.Svg(name, attributes, className, this, insertFirst);
-  }
-
-  /**
-   * Returns the parent Chartist.SVG wrapper object
-   *
-   * @memberof Chartist.Svg
-   * @return {Chartist.Svg} Returns a Chartist.Svg wrapper around the parent node of the current node. If the parent node is not existing or it's not an SVG node then this function will return null.
-   */
-  function parent() {
-    return this._node.parentNode instanceof SVGElement ? new Chartist.Svg(this._node.parentNode) : null;
-  }
-
-  /**
-   * This method returns a Chartist.Svg wrapper around the root SVG element of the current tree.
-   *
-   * @memberof Chartist.Svg
-   * @return {Chartist.Svg} The root SVG element wrapped in a Chartist.Svg element
-   */
-  function root() {
-    var node = this._node;
-    while(node.nodeName !== 'svg') {
-      node = node.parentNode;
-    }
-    return new Chartist.Svg(node);
-  }
-
-  /**
-   * Find the first child SVG element of the current element that matches a CSS selector. The returned object is a Chartist.Svg wrapper.
-   *
-   * @memberof Chartist.Svg
-   * @param {String} selector A CSS selector that is used to query for child SVG elements
-   * @return {Chartist.Svg} The SVG wrapper for the element found or null if no element was found
-   */
-  function querySelector(selector) {
-    var foundNode = this._node.querySelector(selector);
-    return foundNode ? new Chartist.Svg(foundNode) : null;
-  }
-
-  /**
-   * Find the all child SVG elements of the current element that match a CSS selector. The returned object is a Chartist.Svg.List wrapper.
-   *
-   * @memberof Chartist.Svg
-   * @param {String} selector A CSS selector that is used to query for child SVG elements
-   * @return {Chartist.Svg.List} The SVG wrapper list for the element found or null if no element was found
-   */
-  function querySelectorAll(selector) {
-    var foundNodes = this._node.querySelectorAll(selector);
-    return foundNodes.length ? new Chartist.Svg.List(foundNodes) : null;
-  }
-
-  /**
-   * Returns the underlying SVG node for the current element.
-   *
-   * @memberof Chartist.Svg
-   * @returns {Node}
-   */
-  function getNode() {
-    return this._node;
-  }
-
-  /**
-   * This method creates a foreignObject (see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject) that allows to embed HTML content into a SVG graphic. With the help of foreignObjects you can enable the usage of regular HTML elements inside of SVG where they are subject for SVG positioning and transformation but the Browser will use the HTML rendering capabilities for the containing DOM.
-   *
-   * @memberof Chartist.Svg
-   * @param {Node|String} content The DOM Node, or HTML string that will be converted to a DOM Node, that is then placed into and wrapped by the foreignObject
-   * @param {String} [attributes] An object with properties that will be added as attributes to the foreignObject element that is created. Attributes with undefined values will not be added.
-   * @param {String} [className] This class or class list will be added to the SVG element
-   * @param {Boolean} [insertFirst] Specifies if the foreignObject should be inserted as first child
-   * @return {Chartist.Svg} New wrapper object that wraps the foreignObject element
-   */
-  function foreignObject(content, attributes, className, insertFirst) {
-    // If content is string then we convert it to DOM
-    // TODO: Handle case where content is not a string nor a DOM Node
-    if(typeof content === 'string') {
-      var container = document.createElement('div');
-      container.innerHTML = content;
-      content = container.firstChild;
-    }
-
-    // Adding namespace to content element
-    content.setAttribute('xmlns', Chartist.namespaces.xmlns);
-
-    // Creating the foreignObject without required extension attribute (as described here
-    // http://www.w3.org/TR/SVG/extend.html#ForeignObjectElement)
-    var fnObj = this.elem('foreignObject', attributes, className, insertFirst);
-
-    // Add content to foreignObjectElement
-    fnObj._node.appendChild(content);
-
-    return fnObj;
-  }
-
-  /**
-   * This method adds a new text element to the current Chartist.Svg wrapper.
-   *
-   * @memberof Chartist.Svg
-   * @param {String} t The text that should be added to the text element that is created
-   * @return {Chartist.Svg} The same wrapper object that was used to add the newly created element
-   */
-  function text(t) {
-    this._node.appendChild(document.createTextNode(t));
-    return this;
-  }
-
-  /**
-   * This method will clear all child nodes of the current wrapper object.
-   *
-   * @memberof Chartist.Svg
-   * @return {Chartist.Svg} The same wrapper object that got emptied
-   */
-  function empty() {
-    while (this._node.firstChild) {
-      this._node.removeChild(this._node.firstChild);
-    }
-
-    return this;
-  }
-
-  /**
-   * This method will cause the current wrapper to remove itself from its parent wrapper. Use this method if you'd like to get rid of an element in a given DOM structure.
-   *
-   * @memberof Chartist.Svg
-   * @return {Chartist.Svg} The parent wrapper object of the element that got removed
-   */
-  function remove() {
-    this._node.parentNode.removeChild(this._node);
-    return this.parent();
-  }
-
-  /**
-   * This method will replace the element with a new element that can be created outside of the current DOM.
-   *
-   * @memberof Chartist.Svg
-   * @param {Chartist.Svg} newElement The new Chartist.Svg object that will be used to replace the current wrapper object
-   * @return {Chartist.Svg} The wrapper of the new element
-   */
-  function replace(newElement) {
-    this._node.parentNode.replaceChild(newElement._node, this._node);
-    return newElement;
-  }
-
-  /**
-   * This method will append an element to the current element as a child.
-   *
-   * @memberof Chartist.Svg
-   * @param {Chartist.Svg} element The Chartist.Svg element that should be added as a child
-   * @param {Boolean} [insertFirst] Specifies if the element should be inserted as first child
-   * @return {Chartist.Svg} The wrapper of the appended object
-   */
-  function append(element, insertFirst) {
-    if(insertFirst && this._node.firstChild) {
-      this._node.insertBefore(element._node, this._node.firstChild);
-    } else {
-      this._node.appendChild(element._node);
-    }
-
-    return this;
-  }
-
-  /**
-   * Returns an array of class names that are attached to the current wrapper element. This method can not be chained further.
-   *
-   * @memberof Chartist.Svg
-   * @return {Array} A list of classes or an empty array if there are no classes on the current element
-   */
-  function classes() {
-    return this._node.getAttribute('class') ? this._node.getAttribute('class').trim().split(/\s+/) : [];
-  }
-
-  /**
-   * Adds one or a space separated list of classes to the current element and ensures the classes are only existing once.
-   *
-   * @memberof Chartist.Svg
-   * @param {String} names A white space separated list of class names
-   * @return {Chartist.Svg} The wrapper of the current element
-   */
-  function addClass(names) {
-    this._node.setAttribute('class',
-      this.classes(this._node)
-        .concat(names.trim().split(/\s+/))
-        .filter(function(elem, pos, self) {
-          return self.indexOf(elem) === pos;
-        }).join(' ')
-    );
-
-    return this;
-  }
-
-  /**
-   * Removes one or a space separated list of classes from the current element.
-   *
-   * @memberof Chartist.Svg
-   * @param {String} names A white space separated list of class names
-   * @return {Chartist.Svg} The wrapper of the current element
-   */
-  function removeClass(names) {
-    var removedClasses = names.trim().split(/\s+/);
-
-    this._node.setAttribute('class', this.classes(this._node).filter(function(name) {
-      return removedClasses.indexOf(name) === -1;
-    }).join(' '));
-
-    return this;
-  }
-
-  /**
-   * Removes all classes from the current element.
-   *
-   * @memberof Chartist.Svg
-   * @return {Chartist.Svg} The wrapper of the current element
-   */
-  function removeAllClasses() {
-    this._node.setAttribute('class', '');
-
-    return this;
-  }
-
-  /**
-   * Get element height using `getBoundingClientRect`
-   *
-   * @memberof Chartist.Svg
-   * @return {Number} The elements height in pixels
-   */
-  function height() {
-    return this._node.getBoundingClientRect().height;
-  }
-
-  /**
-   * Get element width using `getBoundingClientRect`
-   *
-   * @memberof Chartist.Core
-   * @return {Number} The elements width in pixels
-   */
-  function width() {
-    return this._node.getBoundingClientRect().width;
-  }
-
-  /**
-   * The animate function lets you animate the current element with SMIL animations. You can add animations for multiple attributes at the same time by using an animation definition object. This object should contain SMIL animation attributes. Please refer to http://www.w3.org/TR/SVG/animate.html for a detailed specification about the available animation attributes. Additionally an easing property can be passed in the animation definition object. This can be a string with a name of an easing function in `Chartist.Svg.Easing` or an array with four numbers specifying a cubic Bézier curve.
-   * **An animations object could look like this:**
-   * ```javascript
-   * element.animate({
-   *   opacity: {
-   *     dur: 1000,
-   *     from: 0,
-   *     to: 1
-   *   },
-   *   x1: {
-   *     dur: '1000ms',
-   *     from: 100,
-   *     to: 200,
-   *     easing: 'easeOutQuart'
-   *   },
-   *   y1: {
-   *     dur: '2s',
-   *     from: 0,
-   *     to: 100
-   *   }
-   * });
-   * ```
-   * **Automatic unit conversion**
-   * For the `dur` and the `begin` animate attribute you can also omit a unit by passing a number. The number will automatically be converted to milli seconds.
-   * **Guided mode**
-   * The default behavior of SMIL animations with offset using the `begin` attribute is that the attribute will keep it's original value until the animation starts. Mostly this behavior is not desired as you'd like to have your element attributes already initialized with the animation `from` value even before the animation starts. Also if you don't specify `fill="freeze"` on an animate element or if you delete the animation after it's done (which is done in guided mode) the attribute will switch back to the initial value. This behavior is also not desired when performing simple one-time animations. For one-time animations you'd want to trigger animations immediately instead of relative to the document begin time. That's why in guided mode Chartist.Svg will also use the `begin` property to schedule a timeout and manually start the animation after the timeout. If you're using multiple SMIL definition objects for an attribute (in an array), guided mode will be disabled for this attribute, even if you explicitly enabled it.
-   * If guided mode is enabled the following behavior is added:
-   * - Before the animation starts (even when delayed with `begin`) the animated attribute will be set already to the `from` value of the animation
-   * - `begin` is explicitly set to `indefinite` so it can be started manually without relying on document begin time (creation)
-   * - The animate element will be forced to use `fill="freeze"`
-   * - The animation will be triggered with `beginElement()` in a timeout where `begin` of the definition object is interpreted in milli seconds. If no `begin` was specified the timeout is triggered immediately.
-   * - After the animation the element attribute value will be set to the `to` value of the animation
-   * - The animate element is deleted from the DOM
-   *
-   * @memberof Chartist.Svg
-   * @param {Object} animations An animations object where the property keys are the attributes you'd like to animate. The properties should be objects again that contain the SMIL animation attributes (usually begin, dur, from, and to). The property begin and dur is auto converted (see Automatic unit conversion). You can also schedule multiple animations for the same attribute by passing an Array of SMIL definition objects. Attributes that contain an array of SMIL definition objects will not be executed in guided mode.
-   * @param {Boolean} guided Specify if guided mode should be activated for this animation (see Guided mode). If not otherwise specified, guided mode will be activated.
-   * @param {Object} eventEmitter If specified, this event emitter will be notified when an animation starts or ends.
-   * @return {Chartist.Svg} The current element where the animation was added
-   */
-  function animate(animations, guided, eventEmitter) {
-    if(guided === undefined) {
-      guided = true;
-    }
-
-    Object.keys(animations).forEach(function createAnimateForAttributes(attribute) {
-
-      function createAnimate(animationDefinition, guided) {
-        var attributeProperties = {},
-          animate,
-          timeout,
-          easing;
-
-        // Check if an easing is specified in the definition object and delete it from the object as it will not
-        // be part of the animate element attributes.
-        if(animationDefinition.easing) {
-          // If already an easing Bézier curve array we take it or we lookup a easing array in the Easing object
-          easing = animationDefinition.easing instanceof Array ?
-            animationDefinition.easing :
-            Chartist.Svg.Easing[animationDefinition.easing];
-          delete animationDefinition.easing;
-        }
-
-        // If numeric dur or begin was provided we assume milli seconds
-        animationDefinition.begin = Chartist.ensureUnit(animationDefinition.begin, 'ms');
-        animationDefinition.dur = Chartist.ensureUnit(animationDefinition.dur, 'ms');
-
-        if(easing) {
-          animationDefinition.calcMode = 'spline';
-          animationDefinition.keySplines = easing.join(' ');
-          animationDefinition.keyTimes = '0;1';
-        }
-
-        // Adding "fill: freeze" if we are in guided mode and set initial attribute values
-        if(guided) {
-          animationDefinition.fill = 'freeze';
-          // Animated property on our element should already be set to the animation from value in guided mode
-          attributeProperties[attribute] = animationDefinition.from;
-          this.attr(attributeProperties);
-
-          // In guided mode we also set begin to indefinite so we can trigger the start manually and put the begin
-          // which needs to be in ms aside
-          timeout = Chartist.quantity(animationDefinition.begin || 0).value;
-          animationDefinition.begin = 'indefinite';
-        }
-
-        animate = this.elem('animate', Chartist.extend({
-          attributeName: attribute
-        }, animationDefinition));
-
-        if(guided) {
-          // If guided we take the value that was put aside in timeout and trigger the animation manually with a timeout
-          setTimeout(function() {
-            // If beginElement fails we set the animated attribute to the end position and remove the animate element
-            // This happens if the SMIL ElementTimeControl interface is not supported or any other problems occured in
-            // the browser. (Currently FF 34 does not support animate elements in foreignObjects)
-            try {
-              animate._node.beginElement();
-            } catch(err) {
-              // Set animated attribute to current animated value
-              attributeProperties[attribute] = animationDefinition.to;
-              this.attr(attributeProperties);
-              // Remove the animate element as it's no longer required
-              animate.remove();
-            }
-          }.bind(this), timeout);
-        }
-
-        if(eventEmitter) {
-          animate._node.addEventListener('beginEvent', function handleBeginEvent() {
-            eventEmitter.emit('animationBegin', {
-              element: this,
-              animate: animate._node,
-              params: animationDefinition
-            });
-          }.bind(this));
-        }
-
-        animate._node.addEventListener('endEvent', function handleEndEvent() {
-          if(eventEmitter) {
-            eventEmitter.emit('animationEnd', {
-              element: this,
-              animate: animate._node,
-              params: animationDefinition
-            });
-          }
-
-          if(guided) {
-            // Set animated attribute to current animated value
-            attributeProperties[attribute] = animationDefinition.to;
-            this.attr(attributeProperties);
-            // Remove the animate element as it's no longer required
-            animate.remove();
-          }
-        }.bind(this));
-      }
-
-      // If current attribute is an array of definition objects we create an animate for each and disable guided mode
-      if(animations[attribute] instanceof Array) {
-        animations[attribute].forEach(function(animationDefinition) {
-          createAnimate.bind(this)(animationDefinition, false);
-        }.bind(this));
-      } else {
-        createAnimate.bind(this)(animations[attribute], guided);
-      }
-
-    }.bind(this));
-
-    return this;
-  }
-
-  Chartist.Svg = Chartist.Class.extend({
-    constructor: Svg,
-    attr: attr,
-    elem: elem,
-    parent: parent,
-    root: root,
-    querySelector: querySelector,
-    querySelectorAll: querySelectorAll,
-    getNode: getNode,
-    foreignObject: foreignObject,
-    text: text,
-    empty: empty,
-    remove: remove,
-    replace: replace,
-    append: append,
-    classes: classes,
-    addClass: addClass,
-    removeClass: removeClass,
-    removeAllClasses: removeAllClasses,
-    height: height,
-    width: width,
-    animate: animate
-  });
-
-  /**
-   * This method checks for support of a given SVG feature like Extensibility, SVG-animation or the like. Check http://www.w3.org/TR/SVG11/feature for a detailed list.
-   *
-   * @memberof Chartist.Svg
-   * @param {String} feature The SVG 1.1 feature that should be checked for support.
-   * @return {Boolean} True of false if the feature is supported or not
-   */
-  Chartist.Svg.isSupported = function(feature) {
-    return document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#' + feature, '1.1');
-  };
-
-  /**
-   * This Object contains some standard easing cubic bezier curves. Then can be used with their name in the `Chartist.Svg.animate`. You can also extend the list and use your own name in the `animate` function. Click the show code button to see the available bezier functions.
-   *
-   * @memberof Chartist.Svg
-   */
-  var easingCubicBeziers = {
-    easeInSine: [0.47, 0, 0.745, 0.715],
-    easeOutSine: [0.39, 0.575, 0.565, 1],
-    easeInOutSine: [0.445, 0.05, 0.55, 0.95],
-    easeInQuad: [0.55, 0.085, 0.68, 0.53],
-    easeOutQuad: [0.25, 0.46, 0.45, 0.94],
-    easeInOutQuad: [0.455, 0.03, 0.515, 0.955],
-    easeInCubic: [0.55, 0.055, 0.675, 0.19],
-    easeOutCubic: [0.215, 0.61, 0.355, 1],
-    easeInOutCubic: [0.645, 0.045, 0.355, 1],
-    easeInQuart: [0.895, 0.03, 0.685, 0.22],
-    easeOutQuart: [0.165, 0.84, 0.44, 1],
-    easeInOutQuart: [0.77, 0, 0.175, 1],
-    easeInQuint: [0.755, 0.05, 0.855, 0.06],
-    easeOutQuint: [0.23, 1, 0.32, 1],
-    easeInOutQuint: [0.86, 0, 0.07, 1],
-    easeInExpo: [0.95, 0.05, 0.795, 0.035],
-    easeOutExpo: [0.19, 1, 0.22, 1],
-    easeInOutExpo: [1, 0, 0, 1],
-    easeInCirc: [0.6, 0.04, 0.98, 0.335],
-    easeOutCirc: [0.075, 0.82, 0.165, 1],
-    easeInOutCirc: [0.785, 0.135, 0.15, 0.86],
-    easeInBack: [0.6, -0.28, 0.735, 0.045],
-    easeOutBack: [0.175, 0.885, 0.32, 1.275],
-    easeInOutBack: [0.68, -0.55, 0.265, 1.55]
-  };
-
-  Chartist.Svg.Easing = easingCubicBeziers;
-
-  /**
-   * This helper class is to wrap multiple `Chartist.Svg` elements into a list where you can call the `Chartist.Svg` functions on all elements in the list with one call. This is helpful when you'd like to perform calls with `Chartist.Svg` on multiple elements.
-   * An instance of this class is also returned by `Chartist.Svg.querySelectorAll`.
-   *
-   * @memberof Chartist.Svg
-   * @param {Array<Node>|NodeList} nodeList An Array of SVG DOM nodes or a SVG DOM NodeList (as returned by document.querySelectorAll)
-   * @constructor
-   */
-  function SvgList(nodeList) {
-    var list = this;
-
-    this.svgElements = [];
-    for(var i = 0; i < nodeList.length; i++) {
-      this.svgElements.push(new Chartist.Svg(nodeList[i]));
-    }
-
-    // Add delegation methods for Chartist.Svg
-    Object.keys(Chartist.Svg.prototype).filter(function(prototypeProperty) {
-      return ['constructor',
-          'parent',
-          'querySelector',
-          'querySelectorAll',
-          'replace',
-          'append',
-          'classes',
-          'height',
-          'width'].indexOf(prototypeProperty) === -1;
-    }).forEach(function(prototypeProperty) {
-      list[prototypeProperty] = function() {
-        var args = Array.prototype.slice.call(arguments, 0);
-        list.svgElements.forEach(function(element) {
-          Chartist.Svg.prototype[prototypeProperty].apply(element, args);
-        });
-        return list;
-      };
-    });
-  }
-
-  Chartist.Svg.List = Chartist.Class.extend({
-    constructor: SvgList
-  });
-}(window, document, Chartist));
-;/**
- * Chartist SVG path module for SVG path description creation and modification.
- *
- * @module Chartist.Svg.Path
- */
-/* global Chartist */
-(function(window, document, Chartist) {
-  'use strict';
-
-  /**
-   * Contains the descriptors of supported element types in a SVG path. Currently only move, line and curve are supported.
-   *
-   * @memberof Chartist.Svg.Path
-   * @type {Object}
-   */
-  var elementDescriptions = {
-    m: ['x', 'y'],
-    l: ['x', 'y'],
-    c: ['x1', 'y1', 'x2', 'y2', 'x', 'y'],
-    a: ['rx', 'ry', 'xAr', 'lAf', 'sf', 'x', 'y']
-  };
-
-  /**
-   * Default options for newly created SVG path objects.
-   *
-   * @memberof Chartist.Svg.Path
-   * @type {Object}
-   */
-  var defaultOptions = {
-    // The accuracy in digit count after the decimal point. This will be used to round numbers in the SVG path. If this option is set to false then no rounding will be performed.
-    accuracy: 3
-  };
-
-  function element(command, params, pathElements, pos, relative, data) {
-    var pathElement = Chartist.extend({
-      command: relative ? command.toLowerCase() : command.toUpperCase()
-    }, params, data ? { data: data } : {} );
-
-    pathElements.splice(pos, 0, pathElement);
-  }
-
-  function forEachParam(pathElements, cb) {
-    pathElements.forEach(function(pathElement, pathElementIndex) {
-      elementDescriptions[pathElement.command.toLowerCase()].forEach(function(paramName, paramIndex) {
-        cb(pathElement, paramName, pathElementIndex, paramIndex, pathElements);
-      });
-    });
-  }
-
-  /**
-   * Used to construct a new path object.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Boolean} close If set to true then this path will be closed when stringified (with a Z at the end)
-   * @param {Object} options Options object that overrides the default objects. See default options for more details.
-   * @constructor
-   */
-  function SvgPath(close, options) {
-    this.pathElements = [];
-    this.pos = 0;
-    this.close = close;
-    this.options = Chartist.extend({}, defaultOptions, options);
-  }
-
-  /**
-   * Gets or sets the current position (cursor) inside of the path. You can move around the cursor freely but limited to 0 or the count of existing elements. All modifications with element functions will insert new elements at the position of this cursor.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} [pos] If a number is passed then the cursor is set to this position in the path element array.
-   * @return {Chartist.Svg.Path|Number} If the position parameter was passed then the return value will be the path object for easy call chaining. If no position parameter was passed then the current position is returned.
-   */
-  function position(pos) {
-    if(pos !== undefined) {
-      this.pos = Math.max(0, Math.min(this.pathElements.length, pos));
-      return this;
-    } else {
-      return this.pos;
-    }
-  }
-
-  /**
-   * Removes elements from the path starting at the current position.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} count Number of path elements that should be removed from the current position.
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function remove(count) {
-    this.pathElements.splice(this.pos, count);
-    return this;
-  }
-
-  /**
-   * Use this function to add a new move SVG path element.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} x The x coordinate for the move element.
-   * @param {Number} y The y coordinate for the move element.
-   * @param {Boolean} [relative] If set to true the move element will be created with relative coordinates (lowercase letter)
-   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function move(x, y, relative, data) {
-    element('M', {
-      x: +x,
-      y: +y
-    }, this.pathElements, this.pos++, relative, data);
-    return this;
-  }
-
-  /**
-   * Use this function to add a new line SVG path element.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} x The x coordinate for the line element.
-   * @param {Number} y The y coordinate for the line element.
-   * @param {Boolean} [relative] If set to true the line element will be created with relative coordinates (lowercase letter)
-   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function line(x, y, relative, data) {
-    element('L', {
-      x: +x,
-      y: +y
-    }, this.pathElements, this.pos++, relative, data);
-    return this;
-  }
-
-  /**
-   * Use this function to add a new curve SVG path element.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} x1 The x coordinate for the first control point of the bezier curve.
-   * @param {Number} y1 The y coordinate for the first control point of the bezier curve.
-   * @param {Number} x2 The x coordinate for the second control point of the bezier curve.
-   * @param {Number} y2 The y coordinate for the second control point of the bezier curve.
-   * @param {Number} x The x coordinate for the target point of the curve element.
-   * @param {Number} y The y coordinate for the target point of the curve element.
-   * @param {Boolean} [relative] If set to true the curve element will be created with relative coordinates (lowercase letter)
-   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function curve(x1, y1, x2, y2, x, y, relative, data) {
-    element('C', {
-      x1: +x1,
-      y1: +y1,
-      x2: +x2,
-      y2: +y2,
-      x: +x,
-      y: +y
-    }, this.pathElements, this.pos++, relative, data);
-    return this;
-  }
-
-  /**
-   * Use this function to add a new non-bezier curve SVG path element.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} rx The radius to be used for the x-axis of the arc.
-   * @param {Number} ry The radius to be used for the y-axis of the arc.
-   * @param {Number} xAr Defines the orientation of the arc
-   * @param {Number} lAf Large arc flag
-   * @param {Number} sf Sweep flag
-   * @param {Number} x The x coordinate for the target point of the curve element.
-   * @param {Number} y The y coordinate for the target point of the curve element.
-   * @param {Boolean} [relative] If set to true the curve element will be created with relative coordinates (lowercase letter)
-   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function arc(rx, ry, xAr, lAf, sf, x, y, relative, data) {
-    element('A', {
-      rx: +rx,
-      ry: +ry,
-      xAr: +xAr,
-      lAf: +lAf,
-      sf: +sf,
-      x: +x,
-      y: +y
-    }, this.pathElements, this.pos++, relative, data);
-    return this;
-  }
-
-  /**
-   * Parses an SVG path seen in the d attribute of path elements, and inserts the parsed elements into the existing path object at the current cursor position. Any closing path indicators (Z at the end of the path) will be ignored by the parser as this is provided by the close option in the options of the path object.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {String} path Any SVG path that contains move (m), line (l) or curve (c) components.
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function parse(path) {
-    // Parsing the SVG path string into an array of arrays [['M', '10', '10'], ['L', '100', '100']]
-    var chunks = path.replace(/([A-Za-z])([0-9])/g, '$1 $2')
-      .replace(/([0-9])([A-Za-z])/g, '$1 $2')
-      .split(/[\s,]+/)
-      .reduce(function(result, element) {
-        if(element.match(/[A-Za-z]/)) {
-          result.push([]);
-        }
-
-        result[result.length - 1].push(element);
-        return result;
-      }, []);
-
-    // If this is a closed path we remove the Z at the end because this is determined by the close option
-    if(chunks[chunks.length - 1][0].toUpperCase() === 'Z') {
-      chunks.pop();
-    }
-
-    // Using svgPathElementDescriptions to map raw path arrays into objects that contain the command and the parameters
-    // For example {command: 'M', x: '10', y: '10'}
-    var elements = chunks.map(function(chunk) {
-        var command = chunk.shift(),
-          description = elementDescriptions[command.toLowerCase()];
-
-        return Chartist.extend({
-          command: command
-        }, description.reduce(function(result, paramName, index) {
-          result[paramName] = +chunk[index];
-          return result;
-        }, {}));
-      });
-
-    // Preparing a splice call with the elements array as var arg params and insert the parsed elements at the current position
-    var spliceArgs = [this.pos, 0];
-    Array.prototype.push.apply(spliceArgs, elements);
-    Array.prototype.splice.apply(this.pathElements, spliceArgs);
-    // Increase the internal position by the element count
-    this.pos += elements.length;
-
-    return this;
-  }
-
-  /**
-   * This function renders to current SVG path object into a final SVG string that can be used in the d attribute of SVG path elements. It uses the accuracy option to round big decimals. If the close parameter was set in the constructor of this path object then a path closing Z will be appended to the output string.
-   *
-   * @memberof Chartist.Svg.Path
-   * @return {String}
-   */
-  function stringify() {
-    var accuracyMultiplier = Math.pow(10, this.options.accuracy);
-
-    return this.pathElements.reduce(function(path, pathElement) {
-        var params = elementDescriptions[pathElement.command.toLowerCase()].map(function(paramName) {
-          return this.options.accuracy ?
-            (Math.round(pathElement[paramName] * accuracyMultiplier) / accuracyMultiplier) :
-            pathElement[paramName];
-        }.bind(this));
-
-        return path + pathElement.command + params.join(',');
-      }.bind(this), '') + (this.close ? 'Z' : '');
-  }
-
-  /**
-   * Scales all elements in the current SVG path object. There is an individual parameter for each coordinate. Scaling will also be done for control points of curves, affecting the given coordinate.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} x The number which will be used to scale the x, x1 and x2 of all path elements.
-   * @param {Number} y The number which will be used to scale the y, y1 and y2 of all path elements.
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function scale(x, y) {
-    forEachParam(this.pathElements, function(pathElement, paramName) {
-      pathElement[paramName] *= paramName[0] === 'x' ? x : y;
-    });
-    return this;
-  }
-
-  /**
-   * Translates all elements in the current SVG path object. The translation is relative and there is an individual parameter for each coordinate. Translation will also be done for control points of curves, affecting the given coordinate.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Number} x The number which will be used to translate the x, x1 and x2 of all path elements.
-   * @param {Number} y The number which will be used to translate the y, y1 and y2 of all path elements.
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function translate(x, y) {
-    forEachParam(this.pathElements, function(pathElement, paramName) {
-      pathElement[paramName] += paramName[0] === 'x' ? x : y;
-    });
-    return this;
-  }
-
-  /**
-   * This function will run over all existing path elements and then loop over their attributes. The callback function will be called for every path element attribute that exists in the current path.
-   * The method signature of the callback function looks like this:
-   * ```javascript
-   * function(pathElement, paramName, pathElementIndex, paramIndex, pathElements)
-   * ```
-   * If something else than undefined is returned by the callback function, this value will be used to replace the old value. This allows you to build custom transformations of path objects that can't be achieved using the basic transformation functions scale and translate.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Function} transformFnc The callback function for the transformation. Check the signature in the function description.
-   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
-   */
-  function transform(transformFnc) {
-    forEachParam(this.pathElements, function(pathElement, paramName, pathElementIndex, paramIndex, pathElements) {
-      var transformed = transformFnc(pathElement, paramName, pathElementIndex, paramIndex, pathElements);
-      if(transformed || transformed === 0) {
-        pathElement[paramName] = transformed;
-      }
-    });
-    return this;
-  }
-
-  /**
-   * This function clones a whole path object with all its properties. This is a deep clone and path element objects will also be cloned.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Boolean} [close] Optional option to set the new cloned path to closed. If not specified or false, the original path close option will be used.
-   * @return {Chartist.Svg.Path}
-   */
-  function clone(close) {
-    var c = new Chartist.Svg.Path(close || this.close);
-    c.pos = this.pos;
-    c.pathElements = this.pathElements.slice().map(function cloneElements(pathElement) {
-      return Chartist.extend({}, pathElement);
-    });
-    c.options = Chartist.extend({}, this.options);
-    return c;
-  }
-
-  /**
-   * Split a Svg.Path object by a specific command in the path chain. The path chain will be split and an array of newly created paths objects will be returned. This is useful if you'd like to split an SVG path by it's move commands, for example, in order to isolate chunks of drawings.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {String} command The command you'd like to use to split the path
-   * @return {Array<Chartist.Svg.Path>}
-   */
-  function splitByCommand(command) {
-    var split = [
-      new Chartist.Svg.Path()
-    ];
-
-    this.pathElements.forEach(function(pathElement) {
-      if(pathElement.command === command.toUpperCase() && split[split.length - 1].pathElements.length !== 0) {
-        split.push(new Chartist.Svg.Path());
-      }
-
-      split[split.length - 1].pathElements.push(pathElement);
-    });
-
-    return split;
-  }
-
-  /**
-   * This static function on `Chartist.Svg.Path` is joining multiple paths together into one paths.
-   *
-   * @memberof Chartist.Svg.Path
-   * @param {Array<Chartist.Svg.Path>} paths A list of paths to be joined together. The order is important.
-   * @param {boolean} close If the newly created path should be a closed path
-   * @param {Object} options Path options for the newly created path.
-   * @return {Chartist.Svg.Path}
-   */
-
-  function join(paths, close, options) {
-    var joinedPath = new Chartist.Svg.Path(close, options);
-    for(var i = 0; i < paths.length; i++) {
-      var path = paths[i];
-      for(var j = 0; j < path.pathElements.length; j++) {
-        joinedPath.pathElements.push(path.pathElements[j]);
-      }
-    }
-    return joinedPath;
-  }
-
-  Chartist.Svg.Path = Chartist.Class.extend({
-    constructor: SvgPath,
-    position: position,
-    remove: remove,
-    move: move,
-    line: line,
-    curve: curve,
-    arc: arc,
-    scale: scale,
-    translate: translate,
-    transform: transform,
-    parse: parse,
-    stringify: stringify,
-    clone: clone,
-    splitByCommand: splitByCommand
-  });
-
-  Chartist.Svg.Path.elementDescriptions = elementDescriptions;
-  Chartist.Svg.Path.join = join;
-}(window, document, Chartist));
-;/* global Chartist */
-(function (window, document, Chartist) {
-  'use strict';
-
-  var axisUnits = {
-    x: {
-      pos: 'x',
-      len: 'width',
-      dir: 'horizontal',
-      rectStart: 'x1',
-      rectEnd: 'x2',
-      rectOffset: 'y2'
-    },
-    y: {
-      pos: 'y',
-      len: 'height',
-      dir: 'vertical',
-      rectStart: 'y2',
-      rectEnd: 'y1',
-      rectOffset: 'x1'
-    }
-  };
-
-  function Axis(units, chartRect, ticks, options) {
-    this.units = units;
-    this.counterUnits = units === axisUnits.x ? axisUnits.y : axisUnits.x;
-    this.chartRect = chartRect;
-    this.axisLength = chartRect[units.rectEnd] - chartRect[units.rectStart];
-    this.gridOffset = chartRect[units.rectOffset];
-    this.ticks = ticks;
-    this.options = options;
-  }
-
-  function createGridAndLabels(gridGroup, labelGroup, useForeignObject, chartOptions, eventEmitter) {
-    var axisOptions = chartOptions['axis' + this.units.pos.toUpperCase()];
-    var projectedValues = this.ticks.map(this.projectValue.bind(this));
-    var labelValues = this.ticks.map(axisOptions.labelInterpolationFnc);
-
-    projectedValues.forEach(function(projectedValue, index) {
-      var labelOffset = {
-        x: 0,
-        y: 0
-      };
-
-      // TODO: Find better solution for solving this problem
-      // Calculate how much space we have available for the label
-      var labelLength;
-      if(projectedValues[index + 1]) {
-        // If we still have one label ahead, we can calculate the distance to the next tick / label
-        labelLength = projectedValues[index + 1] - projectedValue;
-      } else {
-        // If we don't have a label ahead and we have only two labels in total, we just take the remaining distance to
-        // on the whole axis length. We limit that to a minimum of 30 pixel, so that labels close to the border will
-        // still be visible inside of the chart padding.
-        labelLength = Math.max(this.axisLength - projectedValue, 30);
-      }
-
-      // Skip grid lines and labels where interpolated label values are falsey (execpt for 0)
-      if(Chartist.isFalseyButZero(labelValues[index]) && labelValues[index] !== '') {
-        return;
-      }
-
-      // Transform to global coordinates using the chartRect
-      // We also need to set the label offset for the createLabel function
-      if(this.units.pos === 'x') {
-        projectedValue = this.chartRect.x1 + projectedValue;
-        labelOffset.x = chartOptions.axisX.labelOffset.x;
-
-        // If the labels should be positioned in start position (top side for vertical axis) we need to set a
-        // different offset as for positioned with end (bottom)
-        if(chartOptions.axisX.position === 'start') {
-          labelOffset.y = this.chartRect.padding.top + chartOptions.axisX.labelOffset.y + (useForeignObject ? 5 : 20);
-        } else {
-          labelOffset.y = this.chartRect.y1 + chartOptions.axisX.labelOffset.y + (useForeignObject ? 5 : 20);
-        }
-      } else {
-        projectedValue = this.chartRect.y1 - projectedValue;
-        labelOffset.y = chartOptions.axisY.labelOffset.y - (useForeignObject ? labelLength : 0);
-
-        // If the labels should be positioned in start position (left side for horizontal axis) we need to set a
-        // different offset as for positioned with end (right side)
-        if(chartOptions.axisY.position === 'start') {
-          labelOffset.x = useForeignObject ? this.chartRect.padding.left + chartOptions.axisY.labelOffset.x : this.chartRect.x1 - 10;
-        } else {
-          labelOffset.x = this.chartRect.x2 + chartOptions.axisY.labelOffset.x + 10;
-        }
-      }
-
-      if(axisOptions.showGrid) {
-        Chartist.createGrid(projectedValue, index, this, this.gridOffset, this.chartRect[this.counterUnits.len](), gridGroup, [
-          chartOptions.classNames.grid,
-          chartOptions.classNames[this.units.dir]
-        ], eventEmitter);
-      }
-
-      if(axisOptions.showLabel) {
-        Chartist.createLabel(projectedValue, labelLength, index, labelValues, this, axisOptions.offset, labelOffset, labelGroup, [
-          chartOptions.classNames.label,
-          chartOptions.classNames[this.units.dir],
-          (axisOptions.position === 'start' ? chartOptions.classNames[axisOptions.position] : chartOptions.classNames['end'])
-        ], useForeignObject, eventEmitter);
-      }
-    }.bind(this));
-  }
-
-  Chartist.Axis = Chartist.Class.extend({
-    constructor: Axis,
-    createGridAndLabels: createGridAndLabels,
-    projectValue: function(value, index, data) {
-      throw new Error('Base axis can\'t be instantiated!');
-    }
-  });
-
-  Chartist.Axis.units = axisUnits;
-
-}(window, document, Chartist));
-;/**
- * The auto scale axis uses standard linear scale projection of values along an axis. It uses order of magnitude to find a scale automatically and evaluates the available space in order to find the perfect amount of ticks for your chart.
- * **Options**
- * The following options are used by this axis in addition to the default axis options outlined in the axis configuration of the chart default settings.
- * ```javascript
- * var options = {
- *   // If high is specified then the axis will display values explicitly up to this value and the computed maximum from the data is ignored
- *   high: 100,
- *   // If low is specified then the axis will display values explicitly down to this value and the computed minimum from the data is ignored
- *   low: 0,
- *   // This option will be used when finding the right scale division settings. The amount of ticks on the scale will be determined so that as many ticks as possible will be displayed, while not violating this minimum required space (in pixel).
- *   scaleMinSpace: 20,
- *   // Can be set to true or false. If set to true, the scale will be generated with whole numbers only.
- *   onlyInteger: true,
- *   // The reference value can be used to make sure that this value will always be on the chart. This is especially useful on bipolar charts where the bipolar center always needs to be part of the chart.
- *   referenceValue: 5
- * };
- * ```
- *
- * @module Chartist.AutoScaleAxis
- */
-/* global Chartist */
-(function (window, document, Chartist) {
-  'use strict';
-
-  function AutoScaleAxis(axisUnit, data, chartRect, options) {
-    // Usually we calculate highLow based on the data but this can be overriden by a highLow object in the options
-    var highLow = options.highLow || Chartist.getHighLow(data, options, axisUnit.pos);
-    this.bounds = Chartist.getBounds(chartRect[axisUnit.rectEnd] - chartRect[axisUnit.rectStart], highLow, options.scaleMinSpace || 20, options.onlyInteger);
-    this.range = {
-      min: this.bounds.min,
-      max: this.bounds.max
-    };
-
-    Chartist.AutoScaleAxis.super.constructor.call(this,
-      axisUnit,
-      chartRect,
-      this.bounds.values,
-      options);
-  }
-
-  function projectValue(value) {
-    return this.axisLength * (+Chartist.getMultiValue(value, this.units.pos) - this.bounds.min) / this.bounds.range;
-  }
-
-  Chartist.AutoScaleAxis = Chartist.Axis.extend({
-    constructor: AutoScaleAxis,
-    projectValue: projectValue
-  });
-
-}(window, document, Chartist));
-;/**
- * The fixed scale axis uses standard linear projection of values along an axis. It makes use of a divisor option to divide the range provided from the minimum and maximum value or the options high and low that will override the computed minimum and maximum.
- * **Options**
- * The following options are used by this axis in addition to the default axis options outlined in the axis configuration of the chart default settings.
- * ```javascript
- * var options = {
- *   // If high is specified then the axis will display values explicitly up to this value and the computed maximum from the data is ignored
- *   high: 100,
- *   // If low is specified then the axis will display values explicitly down to this value and the computed minimum from the data is ignored
- *   low: 0,
- *   // If specified then the value range determined from minimum to maximum (or low and high) will be divided by this number and ticks will be generated at those division points. The default divisor is 1.
- *   divisor: 4,
- *   // If ticks is explicitly set, then the axis will not compute the ticks with the divisor, but directly use the data in ticks to determine at what points on the axis a tick need to be generated.
- *   ticks: [1, 10, 20, 30]
- * };
- * ```
- *
- * @module Chartist.FixedScaleAxis
- */
-/* global Chartist */
-(function (window, document, Chartist) {
-  'use strict';
-
-  function FixedScaleAxis(axisUnit, data, chartRect, options) {
-    var highLow = options.highLow || Chartist.getHighLow(data, options, axisUnit.pos);
-    this.divisor = options.divisor || 1;
-    this.ticks = options.ticks || Chartist.times(this.divisor).map(function(value, index) {
-      return highLow.low + (highLow.high - highLow.low) / this.divisor * index;
-    }.bind(this));
-    this.ticks.sort(function(a, b) {
-      return a - b;
-    });
-    this.range = {
-      min: highLow.low,
-      max: highLow.high
-    };
-
-    Chartist.FixedScaleAxis.super.constructor.call(this,
-      axisUnit,
-      chartRect,
-      this.ticks,
-      options);
-
-    this.stepLength = this.axisLength / this.divisor;
-  }
-
-  function projectValue(value) {
-    return this.axisLength * (+Chartist.getMultiValue(value, this.units.pos) - this.range.min) / (this.range.max - this.range.min);
-  }
-
-  Chartist.FixedScaleAxis = Chartist.Axis.extend({
-    constructor: FixedScaleAxis,
-    projectValue: projectValue
-  });
-
-}(window, document, Chartist));
-;/**
- * The step axis for step based charts like bar chart or step based line charts. It uses a fixed amount of ticks that will be equally distributed across the whole axis length. The projection is done using the index of the data value rather than the value itself and therefore it's only useful for distribution purpose.
- * **Options**
- * The following options are used by this axis in addition to the default axis options outlined in the axis configuration of the chart default settings.
- * ```javascript
- * var options = {
- *   // Ticks to be used to distribute across the axis length. As this axis type relies on the index of the value rather than the value, arbitrary data that can be converted to a string can be used as ticks.
- *   ticks: ['One', 'Two', 'Three'],
- *   // If set to true the full width will be used to distribute the values where the last value will be at the maximum of the axis length. If false the spaces between the ticks will be evenly distributed instead.
- *   stretch: true
- * };
- * ```
- *
- * @module Chartist.StepAxis
- */
-/* global Chartist */
-(function (window, document, Chartist) {
-  'use strict';
-
-  function StepAxis(axisUnit, data, chartRect, options) {
-    Chartist.StepAxis.super.constructor.call(this,
-      axisUnit,
-      chartRect,
-      options.ticks,
-      options);
-
-    var calc = Math.max(1, options.ticks.length - (options.stretch ? 1 : 0));
-    this.stepLength = this.axisLength / calc;
-  }
-
-  function projectValue(value, index) {
-    return this.stepLength * index;
-  }
-
-  Chartist.StepAxis = Chartist.Axis.extend({
-    constructor: StepAxis,
-    projectValue: projectValue
-  });
-
-}(window, document, Chartist));
-;/**
- * The Chartist line chart can be used to draw Line or Scatter charts. If used in the browser you can access the global `Chartist` namespace where you find the `Line` function as a main entry point.
- *
- * For examples on how to use the line chart please check the examples of the `Chartist.Line` method.
- *
- * @module Chartist.Line
- */
-/* global Chartist */
-(function(window, document, Chartist){
-  'use strict';
-
-  /**
-   * Default options in line charts. Expand the code view to see a detailed list of options with comments.
-   *
-   * @memberof Chartist.Line
-   */
-  var defaultOptions = {
-    // Options for X-Axis
-    axisX: {
-      // The offset of the labels to the chart area
-      offset: 30,
-      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
-      position: 'end',
-      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
-      labelOffset: {
-        x: 0,
-        y: 0
-      },
-      // If labels should be shown or not
-      showLabel: true,
-      // If the axis grid should be drawn or not
-      showGrid: true,
-      // Interpolation function that allows you to intercept the value from the axis label
-      labelInterpolationFnc: Chartist.noop,
-      // Set the axis type to be used to project values on this axis. If not defined, Chartist.StepAxis will be used for the X-Axis, where the ticks option will be set to the labels in the data and the stretch option will be set to the global fullWidth option. This type can be changed to any axis constructor available (e.g. Chartist.FixedScaleAxis), where all axis options should be present here.
-      type: undefined
-    },
-    // Options for Y-Axis
-    axisY: {
-      // The offset of the labels to the chart area
-      offset: 40,
-      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
-      position: 'start',
-      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
-      labelOffset: {
-        x: 0,
-        y: 0
-      },
-      // If labels should be shown or not
-      showLabel: true,
-      // If the axis grid should be drawn or not
-      showGrid: true,
-      // Interpolation function that allows you to intercept the value from the axis label
-      labelInterpolationFnc: Chartist.noop,
-      // Set the axis type to be used to project values on this axis. If not defined, Chartist.AutoScaleAxis will be used for the Y-Axis, where the high and low options will be set to the global high and low options. This type can be changed to any axis constructor available (e.g. Chartist.FixedScaleAxis), where all axis options should be present here.
-      type: undefined,
-      // This value specifies the minimum height in pixel of the scale steps
-      scaleMinSpace: 20,
-      // Use only integer values (whole numbers) for the scale steps
-      onlyInteger: false
-    },
-    // Specify a fixed width for the chart as a string (i.e. '100px' or '50%')
-    width: undefined,
-    // Specify a fixed height for the chart as a string (i.e. '100px' or '50%')
-    height: undefined,
-    // If the line should be drawn or not
-    showLine: true,
-    // If dots should be drawn or not
-    showPoint: true,
-    // If the line chart should draw an area
-    showArea: false,
-    // The base for the area chart that will be used to close the area shape (is normally 0)
-    areaBase: 0,
-    // Specify if the lines should be smoothed. This value can be true or false where true will result in smoothing using the default smoothing interpolation function Chartist.Interpolation.cardinal and false results in Chartist.Interpolation.none. You can also choose other smoothing / interpolation functions available in the Chartist.Interpolation module, or write your own interpolation function. Check the examples for a brief description.
-    lineSmooth: true,
-    // If the line chart should add a background fill to the .ct-grids group.
-    showGridBackground: false,
-    // Overriding the natural low of the chart allows you to zoom in or limit the charts lowest displayed value
-    low: undefined,
-    // Overriding the natural high of the chart allows you to zoom in or limit the charts highest displayed value
-    high: undefined,
-    // Padding of the chart drawing area to the container element and labels as a number or padding object {top: 5, right: 5, bottom: 5, left: 5}
-    chartPadding: {
-      top: 15,
-      right: 15,
-      bottom: 5,
-      left: 10
-    },
-    // When set to true, the last grid line on the x-axis is not drawn and the chart elements will expand to the full available width of the chart. For the last label to be drawn correctly you might need to add chart padding or offset the last label with a draw event handler.
-    fullWidth: false,
-    // If true the whole data is reversed including labels, the series order as well as the whole series data arrays.
-    reverseData: false,
-    // Override the class names that get used to generate the SVG structure of the chart
-    classNames: {
-      chart: 'ct-chart-line',
-      label: 'ct-label',
-      labelGroup: 'ct-labels',
-      series: 'ct-series',
-      line: 'ct-line',
-      point: 'ct-point',
-      area: 'ct-area',
-      grid: 'ct-grid',
-      gridGroup: 'ct-grids',
-      gridBackground: 'ct-grid-background',
-      vertical: 'ct-vertical',
-      horizontal: 'ct-horizontal',
-      start: 'ct-start',
-      end: 'ct-end'
-    }
-  };
-
-  /**
-   * Creates a new chart
-   *
-   */
-  function createChart(options) {
-    var data = Chartist.normalizeData(this.data, options.reverseData, true);
-
-    // Create new svg object
-    this.svg = Chartist.createSvg(this.container, options.width, options.height, options.classNames.chart);
-    // Create groups for labels, grid and series
-    var gridGroup = this.svg.elem('g').addClass(options.classNames.gridGroup);
-    var seriesGroup = this.svg.elem('g');
-    var labelGroup = this.svg.elem('g').addClass(options.classNames.labelGroup);
-
-    var chartRect = Chartist.createChartRect(this.svg, options, defaultOptions.padding);
-    var axisX, axisY;
-
-    if(options.axisX.type === undefined) {
-      axisX = new Chartist.StepAxis(Chartist.Axis.units.x, data.normalized.series, chartRect, Chartist.extend({}, options.axisX, {
-        ticks: data.normalized.labels,
-        stretch: options.fullWidth
-      }));
-    } else {
-      axisX = options.axisX.type.call(Chartist, Chartist.Axis.units.x, data.normalized.series, chartRect, options.axisX);
-    }
-
-    if(options.axisY.type === undefined) {
-      axisY = new Chartist.AutoScaleAxis(Chartist.Axis.units.y, data.normalized.series, chartRect, Chartist.extend({}, options.axisY, {
-        high: Chartist.isNumeric(options.high) ? options.high : options.axisY.high,
-        low: Chartist.isNumeric(options.low) ? options.low : options.axisY.low
-      }));
-    } else {
-      axisY = options.axisY.type.call(Chartist, Chartist.Axis.units.y, data.normalized.series, chartRect, options.axisY);
-    }
-
-    axisX.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
-    axisY.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
-
-    if (options.showGridBackground) {
-      Chartist.createGridBackground(gridGroup, chartRect, options.classNames.gridBackground, this.eventEmitter);
-    }
-
-    // Draw the series
-    data.raw.series.forEach(function(series, seriesIndex) {
-      var seriesElement = seriesGroup.elem('g');
-
-      // Write attributes to series group element. If series name or meta is undefined the attributes will not be written
-      seriesElement.attr({
-        'ct:series-name': series.name,
-        'ct:meta': Chartist.serialize(series.meta)
-      });
-
-      // Use series class from series data or if not set generate one
-      seriesElement.addClass([
-        options.classNames.series,
-        (series.className || options.classNames.series + '-' + Chartist.alphaNumerate(seriesIndex))
-      ].join(' '));
-
-      var pathCoordinates = [],
-        pathData = [];
-
-      data.normalized.series[seriesIndex].forEach(function(value, valueIndex) {
-        var p = {
-          x: chartRect.x1 + axisX.projectValue(value, valueIndex, data.normalized.series[seriesIndex]),
-          y: chartRect.y1 - axisY.projectValue(value, valueIndex, data.normalized.series[seriesIndex])
-        };
-        pathCoordinates.push(p.x, p.y);
-        pathData.push({
-          value: value,
-          valueIndex: valueIndex,
-          meta: Chartist.getMetaData(series, valueIndex)
-        });
-      }.bind(this));
-
-      var seriesOptions = {
-        lineSmooth: Chartist.getSeriesOption(series, options, 'lineSmooth'),
-        showPoint: Chartist.getSeriesOption(series, options, 'showPoint'),
-        showLine: Chartist.getSeriesOption(series, options, 'showLine'),
-        showArea: Chartist.getSeriesOption(series, options, 'showArea'),
-        areaBase: Chartist.getSeriesOption(series, options, 'areaBase')
-      };
-
-      var smoothing = typeof seriesOptions.lineSmooth === 'function' ?
-        seriesOptions.lineSmooth : (seriesOptions.lineSmooth ? Chartist.Interpolation.monotoneCubic() : Chartist.Interpolation.none());
-      // Interpolating path where pathData will be used to annotate each path element so we can trace back the original
-      // index, value and meta data
-      var path = smoothing(pathCoordinates, pathData);
-
-      // If we should show points we need to create them now to avoid secondary loop
-      // Points are drawn from the pathElements returned by the interpolation function
-      // Small offset for Firefox to render squares correctly
-      if (seriesOptions.showPoint) {
-
-        path.pathElements.forEach(function(pathElement) {
-          var point = seriesElement.elem('line', {
-            x1: pathElement.x,
-            y1: pathElement.y,
-            x2: pathElement.x + 0.01,
-            y2: pathElement.y
-          }, options.classNames.point).attr({
-            'ct:value': [pathElement.data.value.x, pathElement.data.value.y].filter(Chartist.isNumeric).join(','),
-            'ct:meta': Chartist.serialize(pathElement.data.meta)
-          });
-
-          this.eventEmitter.emit('draw', {
-            type: 'point',
-            value: pathElement.data.value,
-            index: pathElement.data.valueIndex,
-            meta: pathElement.data.meta,
-            series: series,
-            seriesIndex: seriesIndex,
-            axisX: axisX,
-            axisY: axisY,
-            group: seriesElement,
-            element: point,
-            x: pathElement.x,
-            y: pathElement.y
-          });
-        }.bind(this));
-      }
-
-      if(seriesOptions.showLine) {
-        var line = seriesElement.elem('path', {
-          d: path.stringify()
-        }, options.classNames.line, true);
-
-        this.eventEmitter.emit('draw', {
-          type: 'line',
-          values: data.normalized.series[seriesIndex],
-          path: path.clone(),
-          chartRect: chartRect,
-          index: seriesIndex,
-          series: series,
-          seriesIndex: seriesIndex,
-          seriesMeta: series.meta,
-          axisX: axisX,
-          axisY: axisY,
-          group: seriesElement,
-          element: line
-        });
-      }
-
-      // Area currently only works with axes that support a range!
-      if(seriesOptions.showArea && axisY.range) {
-        // If areaBase is outside the chart area (< min or > max) we need to set it respectively so that
-        // the area is not drawn outside the chart area.
-        var areaBase = Math.max(Math.min(seriesOptions.areaBase, axisY.range.max), axisY.range.min);
-
-        // We project the areaBase value into screen coordinates
-        var areaBaseProjected = chartRect.y1 - axisY.projectValue(areaBase);
-
-        // In order to form the area we'll first split the path by move commands so we can chunk it up into segments
-        path.splitByCommand('M').filter(function onlySolidSegments(pathSegment) {
-          // We filter only "solid" segments that contain more than one point. Otherwise there's no need for an area
-          return pathSegment.pathElements.length > 1;
-        }).map(function convertToArea(solidPathSegments) {
-          // Receiving the filtered solid path segments we can now convert those segments into fill areas
-          var firstElement = solidPathSegments.pathElements[0];
-          var lastElement = solidPathSegments.pathElements[solidPathSegments.pathElements.length - 1];
-
-          // Cloning the solid path segment with closing option and removing the first move command from the clone
-          // We then insert a new move that should start at the area base and draw a straight line up or down
-          // at the end of the path we add an additional straight line to the projected area base value
-          // As the closing option is set our path will be automatically closed
-          return solidPathSegments.clone(true)
-            .position(0)
-            .remove(1)
-            .move(firstElement.x, areaBaseProjected)
-            .line(firstElement.x, firstElement.y)
-            .position(solidPathSegments.pathElements.length + 1)
-            .line(lastElement.x, areaBaseProjected);
-
-        }).forEach(function createArea(areaPath) {
-          // For each of our newly created area paths, we'll now create path elements by stringifying our path objects
-          // and adding the created DOM elements to the correct series group
-          var area = seriesElement.elem('path', {
-            d: areaPath.stringify()
-          }, options.classNames.area, true);
-
-          // Emit an event for each area that was drawn
-          this.eventEmitter.emit('draw', {
-            type: 'area',
-            values: data.normalized.series[seriesIndex],
-            path: areaPath.clone(),
-            series: series,
-            seriesIndex: seriesIndex,
-            axisX: axisX,
-            axisY: axisY,
-            chartRect: chartRect,
-            index: seriesIndex,
-            group: seriesElement,
-            element: area
-          });
-        }.bind(this));
-      }
-    }.bind(this));
-
-    this.eventEmitter.emit('created', {
-      bounds: axisY.bounds,
-      chartRect: chartRect,
-      axisX: axisX,
-      axisY: axisY,
-      svg: this.svg,
-      options: options
-    });
-  }
-
-  /**
-   * This method creates a new line chart.
-   *
-   * @memberof Chartist.Line
-   * @param {String|Node} query A selector query string or directly a DOM element
-   * @param {Object} data The data object that needs to consist of a labels and a series array
-   * @param {Object} [options] The options object with options that override the default options. Check the examples for a detailed list.
-   * @param {Array} [responsiveOptions] Specify an array of responsive option arrays which are a media query and options object pair => [[mediaQueryString, optionsObject],[more...]]
-   * @return {Object} An object which exposes the API for the created chart
-   *
-   * @example
-   * // Create a simple line chart
-   * var data = {
-   *   // A labels array that can contain any sort of values
-   *   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-   *   // Our series array that contains series objects or in this case series data arrays
-   *   series: [
-   *     [5, 2, 4, 2, 0]
-   *   ]
-   * };
-   *
-   * // As options we currently only set a static size of 300x200 px
-   * var options = {
-   *   width: '300px',
-   *   height: '200px'
-   * };
-   *
-   * // In the global name space Chartist we call the Line function to initialize a line chart. As a first parameter we pass in a selector where we would like to get our chart created. Second parameter is the actual data object and as a third parameter we pass in our options
-   * new Chartist.Line('.ct-chart', data, options);
-   *
-   * @example
-   * // Use specific interpolation function with configuration from the Chartist.Interpolation module
-   *
-   * var chart = new Chartist.Line('.ct-chart', {
-   *   labels: [1, 2, 3, 4, 5],
-   *   series: [
-   *     [1, 1, 8, 1, 7]
-   *   ]
-   * }, {
-   *   lineSmooth: Chartist.Interpolation.cardinal({
-   *     tension: 0.2
-   *   })
-   * });
-   *
-   * @example
-   * // Create a line chart with responsive options
-   *
-   * var data = {
-   *   // A labels array that can contain any sort of values
-   *   labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-   *   // Our series array that contains series objects or in this case series data arrays
-   *   series: [
-   *     [5, 2, 4, 2, 0]
-   *   ]
-   * };
-   *
-   * // In addition to the regular options we specify responsive option overrides that will override the default configutation based on the matching media queries.
-   * var responsiveOptions = [
-   *   ['screen and (min-width: 641px) and (max-width: 1024px)', {
-   *     showPoint: false,
-   *     axisX: {
-   *       labelInterpolationFnc: function(value) {
-   *         // Will return Mon, Tue, Wed etc. on medium screens
-   *         return value.slice(0, 3);
-   *       }
-   *     }
-   *   }],
-   *   ['screen and (max-width: 640px)', {
-   *     showLine: false,
-   *     axisX: {
-   *       labelInterpolationFnc: function(value) {
-   *         // Will return M, T, W etc. on small screens
-   *         return value[0];
-   *       }
-   *     }
-   *   }]
-   * ];
-   *
-   * new Chartist.Line('.ct-chart', data, null, responsiveOptions);
-   *
-   */
-  function Line(query, data, options, responsiveOptions) {
-    Chartist.Line.super.constructor.call(this,
-      query,
-      data,
-      defaultOptions,
-      Chartist.extend({}, defaultOptions, options),
-      responsiveOptions);
-  }
-
-  // Creating line chart type in Chartist namespace
-  Chartist.Line = Chartist.Base.extend({
-    constructor: Line,
-    createChart: createChart
-  });
-
-}(window, document, Chartist));
-;/**
- * The bar chart module of Chartist that can be used to draw unipolar or bipolar bar and grouped bar charts.
- *
- * @module Chartist.Bar
- */
-/* global Chartist */
-(function(window, document, Chartist){
-  'use strict';
-
-  /**
-   * Default options in bar charts. Expand the code view to see a detailed list of options with comments.
-   *
-   * @memberof Chartist.Bar
-   */
-  var defaultOptions = {
-    // Options for X-Axis
-    axisX: {
-      // The offset of the chart drawing area to the border of the container
-      offset: 30,
-      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
-      position: 'end',
-      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
-      labelOffset: {
-        x: 0,
-        y: 0
-      },
-      // If labels should be shown or not
-      showLabel: true,
-      // If the axis grid should be drawn or not
-      showGrid: true,
-      // Interpolation function that allows you to intercept the value from the axis label
-      labelInterpolationFnc: Chartist.noop,
-      // This value specifies the minimum width in pixel of the scale steps
-      scaleMinSpace: 30,
-      // Use only integer values (whole numbers) for the scale steps
-      onlyInteger: false
-    },
-    // Options for Y-Axis
-    axisY: {
-      // The offset of the chart drawing area to the border of the container
-      offset: 40,
-      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
-      position: 'start',
-      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
-      labelOffset: {
-        x: 0,
-        y: 0
-      },
-      // If labels should be shown or not
-      showLabel: true,
-      // If the axis grid should be drawn or not
-      showGrid: true,
-      // Interpolation function that allows you to intercept the value from the axis label
-      labelInterpolationFnc: Chartist.noop,
-      // This value specifies the minimum height in pixel of the scale steps
-      scaleMinSpace: 20,
-      // Use only integer values (whole numbers) for the scale steps
-      onlyInteger: false
-    },
-    // Specify a fixed width for the chart as a string (i.e. '100px' or '50%')
-    width: undefined,
-    // Specify a fixed height for the chart as a string (i.e. '100px' or '50%')
-    height: undefined,
-    // Overriding the natural high of the chart allows you to zoom in or limit the charts highest displayed value
-    high: undefined,
-    // Overriding the natural low of the chart allows you to zoom in or limit the charts lowest displayed value
-    low: undefined,
-    // Unless low/high are explicitly set, bar chart will be centered at zero by default. Set referenceValue to null to auto scale.
-    referenceValue: 0,
-    // Padding of the chart drawing area to the container element and labels as a number or padding object {top: 5, right: 5, bottom: 5, left: 5}
-    chartPadding: {
-      top: 15,
-      right: 15,
-      bottom: 5,
-      left: 10
-    },
-    // Specify the distance in pixel of bars in a group
-    seriesBarDistance: 15,
-    // If set to true this property will cause the series bars to be stacked. Check the `stackMode` option for further stacking options.
-    stackBars: false,
-    // If set to 'overlap' this property will force the stacked bars to draw from the zero line.
-    // If set to 'accumulate' this property will form a total for each series point. This will also influence the y-axis and the overall bounds of the chart. In stacked mode the seriesBarDistance property will have no effect.
-    stackMode: 'accumulate',
-    // Inverts the axes of the bar chart in order to draw a horizontal bar chart. Be aware that you also need to invert your axis settings as the Y Axis will now display the labels and the X Axis the values.
-    horizontalBars: false,
-    // If set to true then each bar will represent a series and the data array is expected to be a one dimensional array of data values rather than a series array of series. This is useful if the bar chart should represent a profile rather than some data over time.
-    distributeSeries: false,
-    // If true the whole data is reversed including labels, the series order as well as the whole series data arrays.
-    reverseData: false,
-    // If the bar chart should add a background fill to the .ct-grids group.
-    showGridBackground: false,
-    // Override the class names that get used to generate the SVG structure of the chart
-    classNames: {
-      chart: 'ct-chart-bar',
-      horizontalBars: 'ct-horizontal-bars',
-      label: 'ct-label',
-      labelGroup: 'ct-labels',
-      series: 'ct-series',
-      bar: 'ct-bar',
-      grid: 'ct-grid',
-      gridGroup: 'ct-grids',
-      gridBackground: 'ct-grid-background',
-      vertical: 'ct-vertical',
-      horizontal: 'ct-horizontal',
-      start: 'ct-start',
-      end: 'ct-end'
-    }
-  };
-
-  /**
-   * Creates a new chart
-   *
-   */
-  function createChart(options) {
-    var data;
-    var highLow;
-
-    if(options.distributeSeries) {
-      data = Chartist.normalizeData(this.data, options.reverseData, options.horizontalBars ? 'x' : 'y');
-      data.normalized.series = data.normalized.series.map(function(value) {
-        return [value];
-      });
-    } else {
-      data = Chartist.normalizeData(this.data, options.reverseData, options.horizontalBars ? 'x' : 'y');
-    }
-
-    // Create new svg element
-    this.svg = Chartist.createSvg(
-      this.container,
-      options.width,
-      options.height,
-      options.classNames.chart + (options.horizontalBars ? ' ' + options.classNames.horizontalBars : '')
-    );
-
-    // Drawing groups in correct order
-    var gridGroup = this.svg.elem('g').addClass(options.classNames.gridGroup);
-    var seriesGroup = this.svg.elem('g');
-    var labelGroup = this.svg.elem('g').addClass(options.classNames.labelGroup);
-
-    if(options.stackBars && data.normalized.series.length !== 0) {
-
-      // If stacked bars we need to calculate the high low from stacked values from each series
-      var serialSums = Chartist.serialMap(data.normalized.series, function serialSums() {
-        return Array.prototype.slice.call(arguments).map(function(value) {
-          return value;
-        }).reduce(function(prev, curr) {
-          return {
-            x: prev.x + (curr && curr.x) || 0,
-            y: prev.y + (curr && curr.y) || 0
-          };
-        }, {x: 0, y: 0});
-      });
-
-      highLow = Chartist.getHighLow([serialSums], options, options.horizontalBars ? 'x' : 'y');
-
-    } else {
-
-      highLow = Chartist.getHighLow(data.normalized.series, options, options.horizontalBars ? 'x' : 'y');
-    }
-
-    // Overrides of high / low from settings
-    highLow.high = +options.high || (options.high === 0 ? 0 : highLow.high);
-    highLow.low = +options.low || (options.low === 0 ? 0 : highLow.low);
-
-    var chartRect = Chartist.createChartRect(this.svg, options, defaultOptions.padding);
-
-    var valueAxis,
-      labelAxisTicks,
-      labelAxis,
-      axisX,
-      axisY;
-
-    // We need to set step count based on some options combinations
-    if(options.distributeSeries && options.stackBars) {
-      // If distributed series are enabled and bars need to be stacked, we'll only have one bar and therefore should
-      // use only the first label for the step axis
-      labelAxisTicks = data.normalized.labels.slice(0, 1);
-    } else {
-      // If distributed series are enabled but stacked bars aren't, we should use the series labels
-      // If we are drawing a regular bar chart with two dimensional series data, we just use the labels array
-      // as the bars are normalized
-      labelAxisTicks = data.normalized.labels;
-    }
-
-    // Set labelAxis and valueAxis based on the horizontalBars setting. This setting will flip the axes if necessary.
-    if(options.horizontalBars) {
-      if(options.axisX.type === undefined) {
-        valueAxis = axisX = new Chartist.AutoScaleAxis(Chartist.Axis.units.x, data.normalized.series, chartRect, Chartist.extend({}, options.axisX, {
-          highLow: highLow,
-          referenceValue: 0
-        }));
-      } else {
-        valueAxis = axisX = options.axisX.type.call(Chartist, Chartist.Axis.units.x, data.normalized.series, chartRect, Chartist.extend({}, options.axisX, {
-          highLow: highLow,
-          referenceValue: 0
-        }));
-      }
-
-      if(options.axisY.type === undefined) {
-        labelAxis = axisY = new Chartist.StepAxis(Chartist.Axis.units.y, data.normalized.series, chartRect, {
-          ticks: labelAxisTicks
-        });
-      } else {
-        labelAxis = axisY = options.axisY.type.call(Chartist, Chartist.Axis.units.y, data.normalized.series, chartRect, options.axisY);
-      }
-    } else {
-      if(options.axisX.type === undefined) {
-        labelAxis = axisX = new Chartist.StepAxis(Chartist.Axis.units.x, data.normalized.series, chartRect, {
-          ticks: labelAxisTicks
-        });
-      } else {
-        labelAxis = axisX = options.axisX.type.call(Chartist, Chartist.Axis.units.x, data.normalized.series, chartRect, options.axisX);
-      }
-
-      if(options.axisY.type === undefined) {
-        valueAxis = axisY = new Chartist.AutoScaleAxis(Chartist.Axis.units.y, data.normalized.series, chartRect, Chartist.extend({}, options.axisY, {
-          highLow: highLow,
-          referenceValue: 0
-        }));
-      } else {
-        valueAxis = axisY = options.axisY.type.call(Chartist, Chartist.Axis.units.y, data.normalized.series, chartRect, Chartist.extend({}, options.axisY, {
-          highLow: highLow,
-          referenceValue: 0
-        }));
-      }
-    }
-
-    // Projected 0 point
-    var zeroPoint = options.horizontalBars ? (chartRect.x1 + valueAxis.projectValue(0)) : (chartRect.y1 - valueAxis.projectValue(0));
-    // Used to track the screen coordinates of stacked bars
-    var stackedBarValues = [];
-
-    labelAxis.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
-    valueAxis.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
-
-    if (options.showGridBackground) {
-      Chartist.createGridBackground(gridGroup, chartRect, options.classNames.gridBackground, this.eventEmitter);
-    }
-
-    // Draw the series
-    data.raw.series.forEach(function(series, seriesIndex) {
-      // Calculating bi-polar value of index for seriesOffset. For i = 0..4 biPol will be -1.5, -0.5, 0.5, 1.5 etc.
-      var biPol = seriesIndex - (data.raw.series.length - 1) / 2;
-      // Half of the period width between vertical grid lines used to position bars
-      var periodHalfLength;
-      // Current series SVG element
-      var seriesElement;
-
-      // We need to set periodHalfLength based on some options combinations
-      if(options.distributeSeries && !options.stackBars) {
-        // If distributed series are enabled but stacked bars aren't, we need to use the length of the normaizedData array
-        // which is the series count and divide by 2
-        periodHalfLength = labelAxis.axisLength / data.normalized.series.length / 2;
-      } else if(options.distributeSeries && options.stackBars) {
-        // If distributed series and stacked bars are enabled we'll only get one bar so we should just divide the axis
-        // length by 2
-        periodHalfLength = labelAxis.axisLength / 2;
-      } else {
-        // On regular bar charts we should just use the series length
-        periodHalfLength = labelAxis.axisLength / data.normalized.series[seriesIndex].length / 2;
-      }
-
-      // Adding the series group to the series element
-      seriesElement = seriesGroup.elem('g');
-
-      // Write attributes to series group element. If series name or meta is undefined the attributes will not be written
-      seriesElement.attr({
-        'ct:series-name': series.name,
-        'ct:meta': Chartist.serialize(series.meta)
-      });
-
-      // Use series class from series data or if not set generate one
-      seriesElement.addClass([
-        options.classNames.series,
-        (series.className || options.classNames.series + '-' + Chartist.alphaNumerate(seriesIndex))
-      ].join(' '));
-
-      data.normalized.series[seriesIndex].forEach(function(value, valueIndex) {
-        var projected,
-          bar,
-          previousStack,
-          labelAxisValueIndex;
-
-        // We need to set labelAxisValueIndex based on some options combinations
-        if(options.distributeSeries && !options.stackBars) {
-          // If distributed series are enabled but stacked bars aren't, we can use the seriesIndex for later projection
-          // on the step axis for label positioning
-          labelAxisValueIndex = seriesIndex;
-        } else if(options.distributeSeries && options.stackBars) {
-          // If distributed series and stacked bars are enabled, we will only get one bar and therefore always use
-          // 0 for projection on the label step axis
-          labelAxisValueIndex = 0;
-        } else {
-          // On regular bar charts we just use the value index to project on the label step axis
-          labelAxisValueIndex = valueIndex;
-        }
-
-        // We need to transform coordinates differently based on the chart layout
-        if(options.horizontalBars) {
-          projected = {
-            x: chartRect.x1 + valueAxis.projectValue(value && value.x ? value.x : 0, valueIndex, data.normalized.series[seriesIndex]),
-            y: chartRect.y1 - labelAxis.projectValue(value && value.y ? value.y : 0, labelAxisValueIndex, data.normalized.series[seriesIndex])
-          };
-        } else {
-          projected = {
-            x: chartRect.x1 + labelAxis.projectValue(value && value.x ? value.x : 0, labelAxisValueIndex, data.normalized.series[seriesIndex]),
-            y: chartRect.y1 - valueAxis.projectValue(value && value.y ? value.y : 0, valueIndex, data.normalized.series[seriesIndex])
-          }
-        }
-
-        // If the label axis is a step based axis we will offset the bar into the middle of between two steps using
-        // the periodHalfLength value. Also we do arrange the different series so that they align up to each other using
-        // the seriesBarDistance. If we don't have a step axis, the bar positions can be chosen freely so we should not
-        // add any automated positioning.
-        if(labelAxis instanceof Chartist.StepAxis) {
-          // Offset to center bar between grid lines, but only if the step axis is not stretched
-          if(!labelAxis.options.stretch) {
-            projected[labelAxis.units.pos] += periodHalfLength * (options.horizontalBars ? -1 : 1);
-          }
-          // Using bi-polar offset for multiple series if no stacked bars or series distribution is used
-          projected[labelAxis.units.pos] += (options.stackBars || options.distributeSeries) ? 0 : biPol * options.seriesBarDistance * (options.horizontalBars ? -1 : 1);
-        }
-
-        // Enter value in stacked bar values used to remember previous screen value for stacking up bars
-        previousStack = stackedBarValues[valueIndex] || zeroPoint;
-        stackedBarValues[valueIndex] = previousStack - (zeroPoint - projected[labelAxis.counterUnits.pos]);
-
-        // Skip if value is undefined
-        if(value === undefined) {
-          return;
-        }
-
-        var positions = {};
-        positions[labelAxis.units.pos + '1'] = projected[labelAxis.units.pos];
-        positions[labelAxis.units.pos + '2'] = projected[labelAxis.units.pos];
-
-        if(options.stackBars && (options.stackMode === 'accumulate' || !options.stackMode)) {
-          // Stack mode: accumulate (default)
-          // If bars are stacked we use the stackedBarValues reference and otherwise base all bars off the zero line
-          // We want backwards compatibility, so the expected fallback without the 'stackMode' option
-          // to be the original behaviour (accumulate)
-          positions[labelAxis.counterUnits.pos + '1'] = previousStack;
-          positions[labelAxis.counterUnits.pos + '2'] = stackedBarValues[valueIndex];
-        } else {
-          // Draw from the zero line normally
-          // This is also the same code for Stack mode: overlap
-          positions[labelAxis.counterUnits.pos + '1'] = zeroPoint;
-          positions[labelAxis.counterUnits.pos + '2'] = projected[labelAxis.counterUnits.pos];
-        }
-
-        // Limit x and y so that they are within the chart rect
-        positions.x1 = Math.min(Math.max(positions.x1, chartRect.x1), chartRect.x2);
-        positions.x2 = Math.min(Math.max(positions.x2, chartRect.x1), chartRect.x2);
-        positions.y1 = Math.min(Math.max(positions.y1, chartRect.y2), chartRect.y1);
-        positions.y2 = Math.min(Math.max(positions.y2, chartRect.y2), chartRect.y1);
-
-        var metaData = Chartist.getMetaData(series, valueIndex);
-
-        // Create bar element
-        bar = seriesElement.elem('line', positions, options.classNames.bar).attr({
-          'ct:value': [value.x, value.y].filter(Chartist.isNumeric).join(','),
-          'ct:meta': Chartist.serialize(metaData)
-        });
-
-        this.eventEmitter.emit('draw', Chartist.extend({
-          type: 'bar',
-          value: value,
-          index: valueIndex,
-          meta: metaData,
-          series: series,
-          seriesIndex: seriesIndex,
-          axisX: axisX,
-          axisY: axisY,
-          chartRect: chartRect,
-          group: seriesElement,
-          element: bar
-        }, positions));
-      }.bind(this));
-    }.bind(this));
-
-    this.eventEmitter.emit('created', {
-      bounds: valueAxis.bounds,
-      chartRect: chartRect,
-      axisX: axisX,
-      axisY: axisY,
-      svg: this.svg,
-      options: options
-    });
-  }
-
-  /**
-   * This method creates a new bar chart and returns API object that you can use for later changes.
-   *
-   * @memberof Chartist.Bar
-   * @param {String|Node} query A selector query string or directly a DOM element
-   * @param {Object} data The data object that needs to consist of a labels and a series array
-   * @param {Object} [options] The options object with options that override the default options. Check the examples for a detailed list.
-   * @param {Array} [responsiveOptions] Specify an array of responsive option arrays which are a media query and options object pair => [[mediaQueryString, optionsObject],[more...]]
-   * @return {Object} An object which exposes the API for the created chart
-   *
-   * @example
-   * // Create a simple bar chart
-   * var data = {
-   *   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-   *   series: [
-   *     [5, 2, 4, 2, 0]
-   *   ]
-   * };
-   *
-   * // In the global name space Chartist we call the Bar function to initialize a bar chart. As a first parameter we pass in a selector where we would like to get our chart created and as a second parameter we pass our data object.
-   * new Chartist.Bar('.ct-chart', data);
-   *
-   * @example
-   * // This example creates a bipolar grouped bar chart where the boundaries are limitted to -10 and 10
-   * new Chartist.Bar('.ct-chart', {
-   *   labels: [1, 2, 3, 4, 5, 6, 7],
-   *   series: [
-   *     [1, 3, 2, -5, -3, 1, -6],
-   *     [-5, -2, -4, -1, 2, -3, 1]
-   *   ]
-   * }, {
-   *   seriesBarDistance: 12,
-   *   low: -10,
-   *   high: 10
-   * });
-   *
-   */
-  function Bar(query, data, options, responsiveOptions) {
-    Chartist.Bar.super.constructor.call(this,
-      query,
-      data,
-      defaultOptions,
-      Chartist.extend({}, defaultOptions, options),
-      responsiveOptions);
-  }
-
-  // Creating bar chart type in Chartist namespace
-  Chartist.Bar = Chartist.Base.extend({
-    constructor: Bar,
-    createChart: createChart
-  });
-
-}(window, document, Chartist));
-;/**
- * The pie chart module of Chartist that can be used to draw pie, donut or gauge charts
- *
- * @module Chartist.Pie
- */
-/* global Chartist */
-(function(window, document, Chartist) {
-  'use strict';
-
-  /**
-   * Default options in line charts. Expand the code view to see a detailed list of options with comments.
-   *
-   * @memberof Chartist.Pie
-   */
-  var defaultOptions = {
-    // Specify a fixed width for the chart as a string (i.e. '100px' or '50%')
-    width: undefined,
-    // Specify a fixed height for the chart as a string (i.e. '100px' or '50%')
-    height: undefined,
-    // Padding of the chart drawing area to the container element and labels as a number or padding object {top: 5, right: 5, bottom: 5, left: 5}
-    chartPadding: 5,
-    // Override the class names that are used to generate the SVG structure of the chart
-    classNames: {
-      chartPie: 'ct-chart-pie',
-      chartDonut: 'ct-chart-donut',
-      series: 'ct-series',
-      slicePie: 'ct-slice-pie',
-      sliceDonut: 'ct-slice-donut',
-      sliceDonutSolid: 'ct-slice-donut-solid',
-      label: 'ct-label'
-    },
-    // The start angle of the pie chart in degrees where 0 points north. A higher value offsets the start angle clockwise.
-    startAngle: 0,
-    // An optional total you can specify. By specifying a total value, the sum of the values in the series must be this total in order to draw a full pie. You can use this parameter to draw only parts of a pie or gauge charts.
-    total: undefined,
-    // If specified the donut CSS classes will be used and strokes will be drawn instead of pie slices.
-    donut: false,
-    // If specified the donut segments will be drawn as shapes instead of strokes.
-    donutSolid: false,
-    // Specify the donut stroke width, currently done in javascript for convenience. May move to CSS styles in the future.
-    // This option can be set as number or string to specify a relative width (i.e. 100 or '30%').
-    donutWidth: 60,
-    // If a label should be shown or not
-    showLabel: true,
-    // Label position offset from the standard position which is half distance of the radius. This value can be either positive or negative. Positive values will position the label away from the center.
-    labelOffset: 0,
-    // This option can be set to 'inside', 'outside' or 'center'. Positioned with 'inside' the labels will be placed on half the distance of the radius to the border of the Pie by respecting the 'labelOffset'. The 'outside' option will place the labels at the border of the pie and 'center' will place the labels in the absolute center point of the chart. The 'center' option only makes sense in conjunction with the 'labelOffset' option.
-    labelPosition: 'inside',
-    // An interpolation function for the label value
-    labelInterpolationFnc: Chartist.noop,
-    // Label direction can be 'neutral', 'explode' or 'implode'. The labels anchor will be positioned based on those settings as well as the fact if the labels are on the right or left side of the center of the chart. Usually explode is useful when labels are positioned far away from the center.
-    labelDirection: 'neutral',
-    // If true the whole data is reversed including labels, the series order as well as the whole series data arrays.
-    reverseData: false,
-    // If true empty values will be ignored to avoid drawing unncessary slices and labels
-    ignoreEmptyValues: false
-  };
-
-  /**
-   * Determines SVG anchor position based on direction and center parameter
-   *
-   * @param center
-   * @param label
-   * @param direction
-   * @return {string}
-   */
-  function determineAnchorPosition(center, label, direction) {
-    var toTheRight = label.x > center.x;
-
-    if(toTheRight && direction === 'explode' ||
-      !toTheRight && direction === 'implode') {
-      return 'start';
-    } else if(toTheRight && direction === 'implode' ||
-      !toTheRight && direction === 'explode') {
-      return 'end';
-    } else {
-      return 'middle';
-    }
-  }
-
-  /**
-   * Creates the pie chart
-   *
-   * @param options
-   */
-  function createChart(options) {
-    var data = Chartist.normalizeData(this.data);
-    var seriesGroups = [],
-      labelsGroup,
-      chartRect,
-      radius,
-      labelRadius,
-      totalDataSum,
-      startAngle = options.startAngle;
-
-    // Create SVG.js draw
-    this.svg = Chartist.createSvg(this.container, options.width, options.height,options.donut ? options.classNames.chartDonut : options.classNames.chartPie);
-    // Calculate charting rect
-    chartRect = Chartist.createChartRect(this.svg, options, defaultOptions.padding);
-    // Get biggest circle radius possible within chartRect
-    radius = Math.min(chartRect.width() / 2, chartRect.height() / 2);
-    // Calculate total of all series to get reference value or use total reference from optional options
-    totalDataSum = options.total || data.normalized.series.reduce(function(previousValue, currentValue) {
-      return previousValue + currentValue;
-    }, 0);
-
-    var donutWidth = Chartist.quantity(options.donutWidth);
-    if (donutWidth.unit === '%') {
-      donutWidth.value *= radius / 100;
-    }
-
-    // If this is a donut chart we need to adjust our radius to enable strokes to be drawn inside
-    // Unfortunately this is not possible with the current SVG Spec
-    // See this proposal for more details: http://lists.w3.org/Archives/Public/www-svg/2003Oct/0000.html
-    radius -= options.donut && !options.donutSolid ? donutWidth.value / 2  : 0;
-
-    // If labelPosition is set to `outside` or a donut chart is drawn then the label position is at the radius,
-    // if regular pie chart it's half of the radius
-    if(options.labelPosition === 'outside' || options.donut && !options.donutSolid) {
-      labelRadius = radius;
-    } else if(options.labelPosition === 'center') {
-      // If labelPosition is center we start with 0 and will later wait for the labelOffset
-      labelRadius = 0;
-    } else if(options.donutSolid) {
-      labelRadius = radius - donutWidth.value / 2;
-    } else {
-      // Default option is 'inside' where we use half the radius so the label will be placed in the center of the pie
-      // slice
-      labelRadius = radius / 2;
-    }
-    // Add the offset to the labelRadius where a negative offset means closed to the center of the chart
-    labelRadius += options.labelOffset;
-
-    // Calculate end angle based on total sum and current data value and offset with padding
-    var center = {
-      x: chartRect.x1 + chartRect.width() / 2,
-      y: chartRect.y2 + chartRect.height() / 2
-    };
-
-    // Check if there is only one non-zero value in the series array.
-    var hasSingleValInSeries = data.raw.series.filter(function(val) {
-      return val.hasOwnProperty('value') ? val.value !== 0 : val !== 0;
-    }).length === 1;
-
-    // Creating the series groups
-    data.raw.series.forEach(function(series, index) {
-      seriesGroups[index] = this.svg.elem('g', null, null);
-    }.bind(this));
-    //if we need to show labels we create the label group now
-    if(options.showLabel) {
-      labelsGroup = this.svg.elem('g', null, null);
-    }
-
-    // Draw the series
-    // initialize series groups
-    data.raw.series.forEach(function(series, index) {
-      // If current value is zero and we are ignoring empty values then skip to next value
-      if (data.normalized.series[index] === 0 && options.ignoreEmptyValues) return;
-
-      // If the series is an object and contains a name or meta data we add a custom attribute
-      seriesGroups[index].attr({
-        'ct:series-name': series.name
-      });
-
-      // Use series class from series data or if not set generate one
-      seriesGroups[index].addClass([
-        options.classNames.series,
-        (series.className || options.classNames.series + '-' + Chartist.alphaNumerate(index))
-      ].join(' '));
-
-      // If the whole dataset is 0 endAngle should be zero. Can't divide by 0.
-      var endAngle = (totalDataSum > 0 ? startAngle + data.normalized.series[index] / totalDataSum * 360 : 0);
-
-      // Use slight offset so there are no transparent hairline issues
-      var overlappigStartAngle = Math.max(0, startAngle - (index === 0 || hasSingleValInSeries ? 0 : 0.2));
-
-      // If we need to draw the arc for all 360 degrees we need to add a hack where we close the circle
-      // with Z and use 359.99 degrees
-      if(endAngle - overlappigStartAngle >= 359.99) {
-        endAngle = overlappigStartAngle + 359.99;
-      }
-
-      var start = Chartist.polarToCartesian(center.x, center.y, radius, overlappigStartAngle),
-        end = Chartist.polarToCartesian(center.x, center.y, radius, endAngle);
-
-      var innerStart,
-        innerEnd,
-        donutSolidRadius;
-
-      // Create a new path element for the pie chart. If this isn't a donut chart we should close the path for a correct stroke
-      var path = new Chartist.Svg.Path(!options.donut || options.donutSolid)
-        .move(end.x, end.y)
-        .arc(radius, radius, 0, endAngle - startAngle > 180, 0, start.x, start.y);
-
-      // If regular pie chart (no donut) we add a line to the center of the circle for completing the pie
-      if(!options.donut) {
-        path.line(center.x, center.y);
-      } else if (options.donutSolid) {
-        donutSolidRadius = radius - donutWidth.value;
-        innerStart = Chartist.polarToCartesian(center.x, center.y, donutSolidRadius, startAngle - (index === 0 || hasSingleValInSeries ? 0 : 0.2));
-        innerEnd = Chartist.polarToCartesian(center.x, center.y, donutSolidRadius, endAngle);
-        path.line(innerStart.x, innerStart.y);
-        path.arc(donutSolidRadius, donutSolidRadius, 0, endAngle - startAngle  > 180, 1, innerEnd.x, innerEnd.y);
-      }
-
-      // Create the SVG path
-      // If this is a donut chart we add the donut class, otherwise just a regular slice
-      var pathClassName = options.classNames.slicePie;
-      if (options.donut) {
-        pathClassName = options.classNames.sliceDonut;
-        if (options.donutSolid) {
-          pathClassName = options.classNames.sliceDonutSolid;
-        }
-      }
-      var pathElement = seriesGroups[index].elem('path', {
-        d: path.stringify()
-      }, pathClassName);
-
-      // Adding the pie series value to the path
-      pathElement.attr({
-        'ct:value': data.normalized.series[index],
-        'ct:meta': Chartist.serialize(series.meta)
-      });
-
-      // If this is a donut, we add the stroke-width as style attribute
-      if(options.donut && !options.donutSolid) {
-        pathElement._node.style.strokeWidth = donutWidth.value + 'px';
-      }
-
-      // Fire off draw event
-      this.eventEmitter.emit('draw', {
-        type: 'slice',
-        value: data.normalized.series[index],
-        totalDataSum: totalDataSum,
-        index: index,
-        meta: series.meta,
-        series: series,
-        group: seriesGroups[index],
-        element: pathElement,
-        path: path.clone(),
-        center: center,
-        radius: radius,
-        startAngle: startAngle,
-        endAngle: endAngle
-      });
-
-      // If we need to show labels we need to add the label for this slice now
-      if(options.showLabel) {
-        var labelPosition;
-        if(data.raw.series.length === 1) {
-          // If we have only 1 series, we can position the label in the center of the pie
-          labelPosition = {
-            x: center.x,
-            y: center.y
-          };
-        } else {
-          // Position at the labelRadius distance from center and between start and end angle
-          labelPosition = Chartist.polarToCartesian(
-            center.x,
-            center.y,
-            labelRadius,
-            startAngle + (endAngle - startAngle) / 2
-          );
-        }
-
-        var rawValue;
-        if(data.normalized.labels && !Chartist.isFalseyButZero(data.normalized.labels[index])) {
-          rawValue = data.normalized.labels[index];
-        } else {
-          rawValue = data.normalized.series[index];
-        }
-
-        var interpolatedValue = options.labelInterpolationFnc(rawValue, index);
-
-        if(interpolatedValue || interpolatedValue === 0) {
-          var labelElement = labelsGroup.elem('text', {
-            dx: labelPosition.x,
-            dy: labelPosition.y,
-            'text-anchor': determineAnchorPosition(center, labelPosition, options.labelDirection)
-          }, options.classNames.label).text('' + interpolatedValue);
-
-          // Fire off draw event
-          this.eventEmitter.emit('draw', {
-            type: 'label',
-            index: index,
-            group: labelsGroup,
-            element: labelElement,
-            text: '' + interpolatedValue,
-            x: labelPosition.x,
-            y: labelPosition.y
-          });
-        }
-      }
-
-      // Set next startAngle to current endAngle.
-      // (except for last slice)
-      startAngle = endAngle;
-    }.bind(this));
-
-    this.eventEmitter.emit('created', {
-      chartRect: chartRect,
-      svg: this.svg,
-      options: options
-    });
-  }
-
-  /**
-   * This method creates a new pie chart and returns an object that can be used to redraw the chart.
-   *
-   * @memberof Chartist.Pie
-   * @param {String|Node} query A selector query string or directly a DOM element
-   * @param {Object} data The data object in the pie chart needs to have a series property with a one dimensional data array. The values will be normalized against each other and don't necessarily need to be in percentage. The series property can also be an array of value objects that contain a value property and a className property to override the CSS class name for the series group.
-   * @param {Object} [options] The options object with options that override the default options. Check the examples for a detailed list.
-   * @param {Array} [responsiveOptions] Specify an array of responsive option arrays which are a media query and options object pair => [[mediaQueryString, optionsObject],[more...]]
-   * @return {Object} An object with a version and an update method to manually redraw the chart
-   *
-   * @example
-   * // Simple pie chart example with four series
-   * new Chartist.Pie('.ct-chart', {
-   *   series: [10, 2, 4, 3]
-   * });
-   *
-   * @example
-   * // Drawing a donut chart
-   * new Chartist.Pie('.ct-chart', {
-   *   series: [10, 2, 4, 3]
-   * }, {
-   *   donut: true
-   * });
-   *
-   * @example
-   * // Using donut, startAngle and total to draw a gauge chart
-   * new Chartist.Pie('.ct-chart', {
-   *   series: [20, 10, 30, 40]
-   * }, {
-   *   donut: true,
-   *   donutWidth: 20,
-   *   startAngle: 270,
-   *   total: 200
-   * });
-   *
-   * @example
-   * // Drawing a pie chart with padding and labels that are outside the pie
-   * new Chartist.Pie('.ct-chart', {
-   *   series: [20, 10, 30, 40]
-   * }, {
-   *   chartPadding: 30,
-   *   labelOffset: 50,
-   *   labelDirection: 'explode'
-   * });
-   *
-   * @example
-   * // Overriding the class names for individual series as well as a name and meta data.
-   * // The name will be written as ct:series-name attribute and the meta data will be serialized and written
-   * // to a ct:meta attribute.
-   * new Chartist.Pie('.ct-chart', {
-   *   series: [{
-   *     value: 20,
-   *     name: 'Series 1',
-   *     className: 'my-custom-class-one',
-   *     meta: 'Meta One'
-   *   }, {
-   *     value: 10,
-   *     name: 'Series 2',
-   *     className: 'my-custom-class-two',
-   *     meta: 'Meta Two'
-   *   }, {
-   *     value: 70,
-   *     name: 'Series 3',
-   *     className: 'my-custom-class-three',
-   *     meta: 'Meta Three'
-   *   }]
-   * });
-   */
-  function Pie(query, data, options, responsiveOptions) {
-    Chartist.Pie.super.constructor.call(this,
-      query,
-      data,
-      defaultOptions,
-      Chartist.extend({}, defaultOptions, options),
-      responsiveOptions);
-  }
-
-  // Creating pie chart type in Chartist namespace
-  Chartist.Pie = Chartist.Base.extend({
-    constructor: Pie,
-    createChart: createChart,
-    determineAnchorPosition: determineAnchorPosition
-  });
-
-}(window, document, Chartist));
-
-return Chartist;
-
-}));
-
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-
-var stylesInDom = {};
-
-var	memoize = function (fn) {
-	var memo;
-
-	return function () {
-		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-		return memo;
-	};
-};
-
-var isOldIE = memoize(function () {
-	// Test for IE <= 9 as proposed by Browserhacks
-	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-	// Tests for existence of standard globals is to allow style-loader
-	// to operate correctly into non-standard environments
-	// @see https://github.com/webpack-contrib/style-loader/issues/177
-	return window && document && document.all && !window.atob;
-});
-
-var getElement = (function (fn) {
-	var memo = {};
-
-	return function(selector) {
-		if (typeof memo[selector] === "undefined") {
-			memo[selector] = fn.call(this, selector);
-		}
-
-		return memo[selector]
-	};
-})(function (target) {
-	return document.querySelector(target)
-});
-
-var singleton = null;
-var	singletonCounter = 0;
-var	stylesInsertedAtTop = [];
-
-var	fixUrls = __webpack_require__(446);
-
-module.exports = function(list, options) {
-	if (typeof DEBUG !== "undefined" && DEBUG) {
-		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-	}
-
-	options = options || {};
-
-	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
-
-	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-	// tags it will allow on a page
-	if (!options.singleton) options.singleton = isOldIE();
-
-	// By default, add <style> tags to the <head> element
-	if (!options.insertInto) options.insertInto = "head";
-
-	// By default, add <style> tags to the bottom of the target
-	if (!options.insertAt) options.insertAt = "bottom";
-
-	var styles = listToStyles(list, options);
-
-	addStylesToDom(styles, options);
-
-	return function update (newList) {
-		var mayRemove = [];
-
-		for (var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-
-			domStyle.refs--;
-			mayRemove.push(domStyle);
-		}
-
-		if(newList) {
-			var newStyles = listToStyles(newList, options);
-			addStylesToDom(newStyles, options);
-		}
-
-		for (var i = 0; i < mayRemove.length; i++) {
-			var domStyle = mayRemove[i];
-
-			if(domStyle.refs === 0) {
-				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
-
-				delete stylesInDom[domStyle.id];
-			}
-		}
-	};
-};
-
-function addStylesToDom (styles, options) {
-	for (var i = 0; i < styles.length; i++) {
-		var item = styles[i];
-		var domStyle = stylesInDom[item.id];
-
-		if(domStyle) {
-			domStyle.refs++;
-
-			for(var j = 0; j < domStyle.parts.length; j++) {
-				domStyle.parts[j](item.parts[j]);
-			}
-
-			for(; j < item.parts.length; j++) {
-				domStyle.parts.push(addStyle(item.parts[j], options));
-			}
-		} else {
-			var parts = [];
-
-			for(var j = 0; j < item.parts.length; j++) {
-				parts.push(addStyle(item.parts[j], options));
-			}
-
-			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-		}
-	}
-}
-
-function listToStyles (list, options) {
-	var styles = [];
-	var newStyles = {};
-
-	for (var i = 0; i < list.length; i++) {
-		var item = list[i];
-		var id = options.base ? item[0] + options.base : item[0];
-		var css = item[1];
-		var media = item[2];
-		var sourceMap = item[3];
-		var part = {css: css, media: media, sourceMap: sourceMap};
-
-		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
-		else newStyles[id].parts.push(part);
-	}
-
-	return styles;
-}
-
-function insertStyleElement (options, style) {
-	var target = getElement(options.insertInto)
-
-	if (!target) {
-		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
-	}
-
-	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
-
-	if (options.insertAt === "top") {
-		if (!lastStyleElementInsertedAtTop) {
-			target.insertBefore(style, target.firstChild);
-		} else if (lastStyleElementInsertedAtTop.nextSibling) {
-			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
-		} else {
-			target.appendChild(style);
-		}
-		stylesInsertedAtTop.push(style);
-	} else if (options.insertAt === "bottom") {
-		target.appendChild(style);
-	} else {
-		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-	}
-}
-
-function removeStyleElement (style) {
-	if (style.parentNode === null) return false;
-	style.parentNode.removeChild(style);
-
-	var idx = stylesInsertedAtTop.indexOf(style);
-	if(idx >= 0) {
-		stylesInsertedAtTop.splice(idx, 1);
-	}
-}
-
-function createStyleElement (options) {
-	var style = document.createElement("style");
-
-	options.attrs.type = "text/css";
-
-	addAttrs(style, options.attrs);
-	insertStyleElement(options, style);
-
-	return style;
-}
-
-function createLinkElement (options) {
-	var link = document.createElement("link");
-
-	options.attrs.type = "text/css";
-	options.attrs.rel = "stylesheet";
-
-	addAttrs(link, options.attrs);
-	insertStyleElement(options, link);
-
-	return link;
-}
-
-function addAttrs (el, attrs) {
-	Object.keys(attrs).forEach(function (key) {
-		el.setAttribute(key, attrs[key]);
-	});
-}
-
-function addStyle (obj, options) {
-	var style, update, remove, result;
-
-	// If a transform function was defined, run it on the css
-	if (options.transform && obj.css) {
-	    result = options.transform(obj.css);
-
-	    if (result) {
-	    	// If transform returns a value, use that instead of the original css.
-	    	// This allows running runtime transformations on the css.
-	    	obj.css = result;
-	    } else {
-	    	// If the transform function returns a falsy value, don't add this css.
-	    	// This allows conditional loading of css
-	    	return function() {
-	    		// noop
-	    	};
-	    }
-	}
-
-	if (options.singleton) {
-		var styleIndex = singletonCounter++;
-
-		style = singleton || (singleton = createStyleElement(options));
-
-		update = applyToSingletonTag.bind(null, style, styleIndex, false);
-		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-
-	} else if (
-		obj.sourceMap &&
-		typeof URL === "function" &&
-		typeof URL.createObjectURL === "function" &&
-		typeof URL.revokeObjectURL === "function" &&
-		typeof Blob === "function" &&
-		typeof btoa === "function"
-	) {
-		style = createLinkElement(options);
-		update = updateLink.bind(null, style, options);
-		remove = function () {
-			removeStyleElement(style);
-
-			if(style.href) URL.revokeObjectURL(style.href);
-		};
-	} else {
-		style = createStyleElement(options);
-		update = applyToTag.bind(null, style);
-		remove = function () {
-			removeStyleElement(style);
-		};
-	}
-
-	update(obj);
-
-	return function updateStyle (newObj) {
-		if (newObj) {
-			if (
-				newObj.css === obj.css &&
-				newObj.media === obj.media &&
-				newObj.sourceMap === obj.sourceMap
-			) {
-				return;
-			}
-
-			update(obj = newObj);
-		} else {
-			remove();
-		}
-	};
-}
-
-var replaceText = (function () {
-	var textStore = [];
-
-	return function (index, replacement) {
-		textStore[index] = replacement;
-
-		return textStore.filter(Boolean).join('\n');
-	};
-})();
-
-function applyToSingletonTag (style, index, remove, obj) {
-	var css = remove ? "" : obj.css;
-
-	if (style.styleSheet) {
-		style.styleSheet.cssText = replaceText(index, css);
-	} else {
-		var cssNode = document.createTextNode(css);
-		var childNodes = style.childNodes;
-
-		if (childNodes[index]) style.removeChild(childNodes[index]);
-
-		if (childNodes.length) {
-			style.insertBefore(cssNode, childNodes[index]);
-		} else {
-			style.appendChild(cssNode);
-		}
-	}
-}
-
-function applyToTag (style, obj) {
-	var css = obj.css;
-	var media = obj.media;
-
-	if(media) {
-		style.setAttribute("media", media)
-	}
-
-	if(style.styleSheet) {
-		style.styleSheet.cssText = css;
-	} else {
-		while(style.firstChild) {
-			style.removeChild(style.firstChild);
-		}
-
-		style.appendChild(document.createTextNode(css));
-	}
-}
-
-function updateLink (link, options, obj) {
-	var css = obj.css;
-	var sourceMap = obj.sourceMap;
-
-	/*
-		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
-		and there is no publicPath defined then lets turn convertToAbsoluteUrls
-		on by default.  Otherwise default to the convertToAbsoluteUrls option
-		directly
-	*/
-	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
-
-	if (options.convertToAbsoluteUrls || autoFixUrls) {
-		css = fixUrls(css);
-	}
-
-	if (sourceMap) {
-		// http://stackoverflow.com/a/26603875
-		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-	}
-
-	var blob = new Blob([css], { type: "text/css" });
-
-	var oldSrc = link.href;
-
-	link.href = URL.createObjectURL(blob);
-
-	if(oldSrc) URL.revokeObjectURL(oldSrc);
-}
-
-
-/***/ }),
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(140);
-module.exports = __webpack_require__(469);
-
-
-/***/ }),
-/* 140 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_portal_vue__ = __webpack_require__(372);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_portal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_portal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_store__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toasted__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toasted___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_toasted__);
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-__webpack_require__(141);
-__webpack_require__(163);
-__webpack_require__(166);
-
-window.Vue = __webpack_require__(49);
-
-/**
- * Dependencies
- */
-
-
-
-
-
-// Toast snackbar
-window.Toasted = __WEBPACK_IMPORTED_MODULE_3_vue_toasted___default.a;
-Vue.use(__WEBPACK_IMPORTED_MODULE_3_vue_toasted___default.a, {
-    position: 'bottom-right',
-    duration: 6000,
-    theme: 'bubble'
-});
-
-/**
- * Use dependencies
- */
-Vue.use(__WEBPACK_IMPORTED_MODULE_1_portal_vue___default.a);
-
-/**
- * Icons
- */
-var icons = __webpack_require__(374);
-icons.keys().map(function (key) {
-    var icon = key.split('/').pop().split('.')[0].toLowerCase();
-    Vue.component('icon-' + icon, icons(key));
-});
-
-/**
- * Elements
- */
-var elements = __webpack_require__(419);
-elements.keys().map(function (key) {
-    var component = key.split('/').pop().split('.')[0].toLowerCase();
-    Vue.component('vue-' + component, elements(key));
-});
-
-// Profile
-Vue.component('vue-profile', __webpack_require__(426));
-Vue.component('vue-addresses', __webpack_require__(429));
-Vue.component('vue-address-box', __webpack_require__(431));
-Vue.component('vue-orders', __webpack_require__(434));
-Vue.component('vue-order-box', __webpack_require__(436));
-Vue.component('vue-profile-chart', __webpack_require__(439));
-Vue.component('vue-dropdown-menu', __webpack_require__(451));
-
-// Basket
-Vue.component('vue-basket', __webpack_require__(454));
-Vue.component('vue-header-basket', __webpack_require__(457));
-Vue.component('vue-add-to-basket', __webpack_require__(460));
-
-// Product
-Vue.component('vue-product-gallery', __webpack_require__(466));
-
-var app = new Vue({
-    el: '#app',
-    store: __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* store */]
-});
-
-/***/ }),
-/* 141 */
-/***/ (function(module, exports, __webpack_require__) {
-
-window._ = __webpack_require__(142);
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-  // window.Popper = require('popper.js').default;
-  // window.$ = window.jQuery = require('jquery');
-  // require('bootstrap');
-} catch (e) {}
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = __webpack_require__(144);
-
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Next we will register the CSRF Token as a common header with Axios so that
- * all outgoing HTTP requests automatically have it attached. This is just
- * a simple convenience so we don't have to attach every token manually.
- */
-
-var token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from 'laravel-echo'
-
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     encrypted: true
-// });
-
-/***/ }),
-/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -37898,10 +31379,6552 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44), __webpack_require__(143)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44), __webpack_require__(144)(module)))
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(15);
+var settle = __webpack_require__(150);
+var buildURL = __webpack_require__(152);
+var parseHeaders = __webpack_require__(153);
+var isURLSameOrigin = __webpack_require__(154);
+var createError = __webpack_require__(99);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(155);
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
+
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if ("development" !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(156);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(151);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(169);
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
+
+var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
+    state: {
+        basketItems: [],
+        basketTotal: 0
+    },
+    getters: {
+        getBasketItems: function getBasketItems(state) {
+            return state.basketItems;
+        },
+        getBasketTotal: function getBasketTotal(state) {
+            return state.basketTotal ? state.basketTotal : '';
+        }
+    },
+    mutations: {
+        setBasketItems: function setBasketItems(state, basketItems) {
+            state.basketItems = basketItems;
+        },
+        setBasketTotal: function setBasketTotal(state, total) {
+            state.basketTotal = total;
+        }
+    }
+});
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__(7) && !__webpack_require__(4)(function () {
+  return Object.defineProperty(__webpack_require__(69)('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports.f = __webpack_require__(6);
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var has = __webpack_require__(16);
+var toIObject = __webpack_require__(17);
+var arrayIndexOf = __webpack_require__(54)(false);
+var IE_PROTO = __webpack_require__(71)('IE_PROTO');
+
+module.exports = function (object, names) {
+  var O = toIObject(object);
+  var i = 0;
+  var result = [];
+  var key;
+  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
+  // Don't enum bug & hidden keys
+  while (names.length > i) if (has(O, key = names[i++])) {
+    ~arrayIndexOf(result, key) || result.push(key);
+  }
+  return result;
+};
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(8);
+var anObject = __webpack_require__(2);
+var getKeys = __webpack_require__(36);
+
+module.exports = __webpack_require__(7) ? Object.defineProperties : function defineProperties(O, Properties) {
+  anObject(O);
+  var keys = getKeys(Properties);
+  var length = keys.length;
+  var i = 0;
+  var P;
+  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
+  return O;
+};
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
+var toIObject = __webpack_require__(17);
+var gOPN = __webpack_require__(39).f;
+var toString = {}.toString;
+
+var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
+  ? Object.getOwnPropertyNames(window) : [];
+
+var getWindowNames = function (it) {
+  try {
+    return gOPN(it);
+  } catch (e) {
+    return windowNames.slice();
+  }
+};
+
+module.exports.f = function getOwnPropertyNames(it) {
+  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
+};
+
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+var getKeys = __webpack_require__(36);
+var gOPS = __webpack_require__(55);
+var pIE = __webpack_require__(51);
+var toObject = __webpack_require__(10);
+var IObject = __webpack_require__(50);
+var $assign = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__(4)(function () {
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var S = Symbol();
+  var K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function (k) { B[k] = k; });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
+  var T = toObject(target);
+  var aLen = arguments.length;
+  var index = 1;
+  var getSymbols = gOPS.f;
+  var isEnum = pIE.f;
+  while (aLen > index) {
+    var S = IObject(arguments[index++]);
+    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+  } return T;
+} : $assign;
+
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var aFunction = __webpack_require__(11);
+var isObject = __webpack_require__(5);
+var invoke = __webpack_require__(110);
+var arraySlice = [].slice;
+var factories = {};
+
+var construct = function (F, len, args) {
+  if (!(len in factories)) {
+    for (var n = [], i = 0; i < len; i++) n[i] = 'a[' + i + ']';
+    // eslint-disable-next-line no-new-func
+    factories[len] = Function('F,a', 'return new F(' + n.join(',') + ')');
+  } return factories[len](F, args);
+};
+
+module.exports = Function.bind || function bind(that /* , ...args */) {
+  var fn = aFunction(this);
+  var partArgs = arraySlice.call(arguments, 1);
+  var bound = function (/* args... */) {
+    var args = partArgs.concat(arraySlice.call(arguments));
+    return this instanceof bound ? construct(fn, args.length, args) : invoke(fn, args, that);
+  };
+  if (isObject(fn.prototype)) bound.prototype = fn.prototype;
+  return bound;
+};
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports) {
+
+// fast apply, http://jsperf.lnkit.com/fast-apply/5
+module.exports = function (fn, args, that) {
+  var un = that === undefined;
+  switch (args.length) {
+    case 0: return un ? fn()
+                      : fn.call(that);
+    case 1: return un ? fn(args[0])
+                      : fn.call(that, args[0]);
+    case 2: return un ? fn(args[0], args[1])
+                      : fn.call(that, args[0], args[1]);
+    case 3: return un ? fn(args[0], args[1], args[2])
+                      : fn.call(that, args[0], args[1], args[2]);
+    case 4: return un ? fn(args[0], args[1], args[2], args[3])
+                      : fn.call(that, args[0], args[1], args[2], args[3]);
+  } return fn.apply(that, args);
+};
+
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $parseInt = __webpack_require__(3).parseInt;
+var $trim = __webpack_require__(46).trim;
+var ws = __webpack_require__(75);
+var hex = /^[-+]?0[xX]/;
+
+module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
+  var string = $trim(String(str), 3);
+  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
+} : $parseInt;
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $parseFloat = __webpack_require__(3).parseFloat;
+var $trim = __webpack_require__(46).trim;
+
+module.exports = 1 / $parseFloat(__webpack_require__(75) + '-0') !== -Infinity ? function parseFloat(str) {
+  var string = $trim(String(str), 3);
+  var result = $parseFloat(string);
+  return result === 0 && string.charAt(0) == '-' ? -0 : result;
+} : $parseFloat;
+
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var cof = __webpack_require__(22);
+module.exports = function (it, msg) {
+  if (typeof it != 'number' && cof(it) != 'Number') throw TypeError(msg);
+  return +it;
+};
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 20.1.2.3 Number.isInteger(number)
+var isObject = __webpack_require__(5);
+var floor = Math.floor;
+module.exports = function isInteger(it) {
+  return !isObject(it) && isFinite(it) && floor(it) === it;
+};
+
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports) {
+
+// 20.2.2.20 Math.log1p(x)
+module.exports = Math.log1p || function log1p(x) {
+  return (x = +x) > -1e-8 && x < 1e-8 ? x - x * x / 2 : Math.log(1 + x);
+};
+
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 20.2.2.16 Math.fround(x)
+var sign = __webpack_require__(78);
+var pow = Math.pow;
+var EPSILON = pow(2, -52);
+var EPSILON32 = pow(2, -23);
+var MAX32 = pow(2, 127) * (2 - EPSILON32);
+var MIN32 = pow(2, -126);
+
+var roundTiesToEven = function (n) {
+  return n + 1 / EPSILON - 1 / EPSILON;
+};
+
+module.exports = Math.fround || function fround(x) {
+  var $abs = Math.abs(x);
+  var $sign = sign(x);
+  var a, result;
+  if ($abs < MIN32) return $sign * roundTiesToEven($abs / MIN32 / EPSILON32) * MIN32 * EPSILON32;
+  a = (1 + EPSILON32 / EPSILON) * $abs;
+  result = a - (a - $abs);
+  // eslint-disable-next-line no-self-compare
+  if (result > MAX32 || result != result) return $sign * Infinity;
+  return $sign * result;
+};
+
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// call something on iterator step with safe closing on error
+var anObject = __webpack_require__(2);
+module.exports = function (iterator, fn, value, entries) {
+  try {
+    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+  // 7.4.6 IteratorClose(iterator, completion)
+  } catch (e) {
+    var ret = iterator['return'];
+    if (ret !== undefined) anObject(ret.call(iterator));
+    throw e;
+  }
+};
+
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var aFunction = __webpack_require__(11);
+var toObject = __webpack_require__(10);
+var IObject = __webpack_require__(50);
+var toLength = __webpack_require__(9);
+
+module.exports = function (that, callbackfn, aLen, memo, isRight) {
+  aFunction(callbackfn);
+  var O = toObject(that);
+  var self = IObject(O);
+  var length = toLength(O.length);
+  var index = isRight ? length - 1 : 0;
+  var i = isRight ? -1 : 1;
+  if (aLen < 2) for (;;) {
+    if (index in self) {
+      memo = self[index];
+      index += i;
+      break;
+    }
+    index += i;
+    if (isRight ? index < 0 : length <= index) {
+      throw TypeError('Reduce of empty array with no initial value');
+    }
+  }
+  for (;isRight ? index >= 0 : length > index; index += i) if (index in self) {
+    memo = callbackfn(memo, self[index], index, O);
+  }
+  return memo;
+};
+
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
+
+var toObject = __webpack_require__(10);
+var toAbsoluteIndex = __webpack_require__(37);
+var toLength = __webpack_require__(9);
+
+module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /* = 0, end = @length */) {
+  var O = toObject(this);
+  var len = toLength(O.length);
+  var to = toAbsoluteIndex(target, len);
+  var from = toAbsoluteIndex(start, len);
+  var end = arguments.length > 2 ? arguments[2] : undefined;
+  var count = Math.min((end === undefined ? len : toAbsoluteIndex(end, len)) - from, len - to);
+  var inc = 1;
+  if (from < to && to < from + count) {
+    inc = -1;
+    from += count - 1;
+    to += count - 1;
+  }
+  while (count-- > 0) {
+    if (from in O) O[to] = O[from];
+    else delete O[to];
+    to += inc;
+    from += inc;
+  } return O;
+};
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, exports) {
+
+module.exports = function (done, value) {
+  return { value: value, done: !!done };
+};
+
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 21.2.5.3 get RegExp.prototype.flags()
+if (__webpack_require__(7) && /./g.flags != 'g') __webpack_require__(8).f(RegExp.prototype, 'flags', {
+  configurable: true,
+  get: __webpack_require__(59)
+});
+
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return { e: false, v: exec() };
+  } catch (e) {
+    return { e: true, v: e };
+  }
+};
+
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(2);
+var isObject = __webpack_require__(5);
+var newPromiseCapability = __webpack_require__(93);
+
+module.exports = function (C, x) {
+  anObject(C);
+  if (isObject(x) && x.constructor === C) return x;
+  var promiseCapability = newPromiseCapability.f(C);
+  var resolve = promiseCapability.resolve;
+  resolve(x);
+  return promiseCapability.promise;
+};
+
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var strong = __webpack_require__(125);
+var validate = __webpack_require__(48);
+var MAP = 'Map';
+
+// 23.1 Map Objects
+module.exports = __webpack_require__(63)(MAP, function (get) {
+  return function Map() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
+}, {
+  // 23.1.3.6 Map.prototype.get(key)
+  get: function get(key) {
+    var entry = strong.getEntry(validate(this, MAP), key);
+    return entry && entry.v;
+  },
+  // 23.1.3.9 Map.prototype.set(key, value)
+  set: function set(key, value) {
+    return strong.def(validate(this, MAP), key === 0 ? 0 : key, value);
+  }
+}, strong, true);
+
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var dP = __webpack_require__(8).f;
+var create = __webpack_require__(38);
+var redefineAll = __webpack_require__(43);
+var ctx = __webpack_require__(21);
+var anInstance = __webpack_require__(41);
+var forOf = __webpack_require__(42);
+var $iterDefine = __webpack_require__(81);
+var step = __webpack_require__(120);
+var setSpecies = __webpack_require__(40);
+var DESCRIPTORS = __webpack_require__(7);
+var fastKey = __webpack_require__(31).fastKey;
+var validate = __webpack_require__(48);
+var SIZE = DESCRIPTORS ? '_s' : 'size';
+
+var getEntry = function (that, key) {
+  // fast case
+  var index = fastKey(key);
+  var entry;
+  if (index !== 'F') return that._i[index];
+  // frozen object case
+  for (entry = that._f; entry; entry = entry.n) {
+    if (entry.k == key) return entry;
+  }
+};
+
+module.exports = {
+  getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
+    var C = wrapper(function (that, iterable) {
+      anInstance(that, C, NAME, '_i');
+      that._t = NAME;         // collection type
+      that._i = create(null); // index
+      that._f = undefined;    // first entry
+      that._l = undefined;    // last entry
+      that[SIZE] = 0;         // size
+      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
+    });
+    redefineAll(C.prototype, {
+      // 23.1.3.1 Map.prototype.clear()
+      // 23.2.3.2 Set.prototype.clear()
+      clear: function clear() {
+        for (var that = validate(this, NAME), data = that._i, entry = that._f; entry; entry = entry.n) {
+          entry.r = true;
+          if (entry.p) entry.p = entry.p.n = undefined;
+          delete data[entry.i];
+        }
+        that._f = that._l = undefined;
+        that[SIZE] = 0;
+      },
+      // 23.1.3.3 Map.prototype.delete(key)
+      // 23.2.3.4 Set.prototype.delete(value)
+      'delete': function (key) {
+        var that = validate(this, NAME);
+        var entry = getEntry(that, key);
+        if (entry) {
+          var next = entry.n;
+          var prev = entry.p;
+          delete that._i[entry.i];
+          entry.r = true;
+          if (prev) prev.n = next;
+          if (next) next.p = prev;
+          if (that._f == entry) that._f = next;
+          if (that._l == entry) that._l = prev;
+          that[SIZE]--;
+        } return !!entry;
+      },
+      // 23.2.3.6 Set.prototype.forEach(callbackfn, thisArg = undefined)
+      // 23.1.3.5 Map.prototype.forEach(callbackfn, thisArg = undefined)
+      forEach: function forEach(callbackfn /* , that = undefined */) {
+        validate(this, NAME);
+        var f = ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3);
+        var entry;
+        while (entry = entry ? entry.n : this._f) {
+          f(entry.v, entry.k, this);
+          // revert to the last existing entry
+          while (entry && entry.r) entry = entry.p;
+        }
+      },
+      // 23.1.3.7 Map.prototype.has(key)
+      // 23.2.3.7 Set.prototype.has(value)
+      has: function has(key) {
+        return !!getEntry(validate(this, NAME), key);
+      }
+    });
+    if (DESCRIPTORS) dP(C.prototype, 'size', {
+      get: function () {
+        return validate(this, NAME)[SIZE];
+      }
+    });
+    return C;
+  },
+  def: function (that, key, value) {
+    var entry = getEntry(that, key);
+    var prev, index;
+    // change existing entry
+    if (entry) {
+      entry.v = value;
+    // create new entry
+    } else {
+      that._l = entry = {
+        i: index = fastKey(key, true), // <- index
+        k: key,                        // <- key
+        v: value,                      // <- value
+        p: prev = that._l,             // <- previous entry
+        n: undefined,                  // <- next entry
+        r: false                       // <- removed
+      };
+      if (!that._f) that._f = entry;
+      if (prev) prev.n = entry;
+      that[SIZE]++;
+      // add to index
+      if (index !== 'F') that._i[index] = entry;
+    } return that;
+  },
+  getEntry: getEntry,
+  setStrong: function (C, NAME, IS_MAP) {
+    // add .keys, .values, .entries, [@@iterator]
+    // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
+    $iterDefine(C, NAME, function (iterated, kind) {
+      this._t = validate(iterated, NAME); // target
+      this._k = kind;                     // kind
+      this._l = undefined;                // previous
+    }, function () {
+      var that = this;
+      var kind = that._k;
+      var entry = that._l;
+      // revert to the last existing entry
+      while (entry && entry.r) entry = entry.p;
+      // get next entry
+      if (!that._t || !(that._l = entry = entry ? entry.n : that._t._f)) {
+        // or finish the iteration
+        that._t = undefined;
+        return step(1);
+      }
+      // return step by kind
+      if (kind == 'keys') return step(0, entry.k);
+      if (kind == 'values') return step(0, entry.v);
+      return step(0, [entry.k, entry.v]);
+    }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
+
+    // add [@@species], 23.1.2.2, 23.2.2.2
+    setSpecies(NAME);
+  }
+};
+
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var strong = __webpack_require__(125);
+var validate = __webpack_require__(48);
+var SET = 'Set';
+
+// 23.2 Set Objects
+module.exports = __webpack_require__(63)(SET, function (get) {
+  return function Set() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
+}, {
+  // 23.2.3.1 Set.prototype.add(value)
+  add: function add(value) {
+    return strong.def(validate(this, SET), value = value === 0 ? 0 : value, value);
+  }
+}, strong);
+
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var each = __webpack_require__(28)(0);
+var redefine = __webpack_require__(13);
+var meta = __webpack_require__(31);
+var assign = __webpack_require__(108);
+var weak = __webpack_require__(128);
+var isObject = __webpack_require__(5);
+var fails = __webpack_require__(4);
+var validate = __webpack_require__(48);
+var WEAK_MAP = 'WeakMap';
+var getWeak = meta.getWeak;
+var isExtensible = Object.isExtensible;
+var uncaughtFrozenStore = weak.ufstore;
+var tmp = {};
+var InternalMap;
+
+var wrapper = function (get) {
+  return function WeakMap() {
+    return get(this, arguments.length > 0 ? arguments[0] : undefined);
+  };
+};
+
+var methods = {
+  // 23.3.3.3 WeakMap.prototype.get(key)
+  get: function get(key) {
+    if (isObject(key)) {
+      var data = getWeak(key);
+      if (data === true) return uncaughtFrozenStore(validate(this, WEAK_MAP)).get(key);
+      return data ? data[this._i] : undefined;
+    }
+  },
+  // 23.3.3.5 WeakMap.prototype.set(key, value)
+  set: function set(key, value) {
+    return weak.def(validate(this, WEAK_MAP), key, value);
+  }
+};
+
+// 23.3 WeakMap Objects
+var $WeakMap = module.exports = __webpack_require__(63)(WEAK_MAP, wrapper, methods, weak, true, true);
+
+// IE11 WeakMap frozen keys fix
+if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7; })) {
+  InternalMap = weak.getConstructor(wrapper, WEAK_MAP);
+  assign(InternalMap.prototype, methods);
+  meta.NEED = true;
+  each(['delete', 'has', 'get', 'set'], function (key) {
+    var proto = $WeakMap.prototype;
+    var method = proto[key];
+    redefine(proto, key, function (a, b) {
+      // store frozen objects on internal weakmap shim
+      if (isObject(a) && !isExtensible(a)) {
+        if (!this._f) this._f = new InternalMap();
+        var result = this._f[key](a, b);
+        return key == 'set' ? this : result;
+      // store all the rest on native weakmap
+      } return method.call(this, a, b);
+    });
+  });
+}
+
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var redefineAll = __webpack_require__(43);
+var getWeak = __webpack_require__(31).getWeak;
+var anObject = __webpack_require__(2);
+var isObject = __webpack_require__(5);
+var anInstance = __webpack_require__(41);
+var forOf = __webpack_require__(42);
+var createArrayMethod = __webpack_require__(28);
+var $has = __webpack_require__(16);
+var validate = __webpack_require__(48);
+var arrayFind = createArrayMethod(5);
+var arrayFindIndex = createArrayMethod(6);
+var id = 0;
+
+// fallback for uncaught frozen keys
+var uncaughtFrozenStore = function (that) {
+  return that._l || (that._l = new UncaughtFrozenStore());
+};
+var UncaughtFrozenStore = function () {
+  this.a = [];
+};
+var findUncaughtFrozen = function (store, key) {
+  return arrayFind(store.a, function (it) {
+    return it[0] === key;
+  });
+};
+UncaughtFrozenStore.prototype = {
+  get: function (key) {
+    var entry = findUncaughtFrozen(this, key);
+    if (entry) return entry[1];
+  },
+  has: function (key) {
+    return !!findUncaughtFrozen(this, key);
+  },
+  set: function (key, value) {
+    var entry = findUncaughtFrozen(this, key);
+    if (entry) entry[1] = value;
+    else this.a.push([key, value]);
+  },
+  'delete': function (key) {
+    var index = arrayFindIndex(this.a, function (it) {
+      return it[0] === key;
+    });
+    if (~index) this.a.splice(index, 1);
+    return !!~index;
+  }
+};
+
+module.exports = {
+  getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
+    var C = wrapper(function (that, iterable) {
+      anInstance(that, C, NAME, '_i');
+      that._t = NAME;      // collection type
+      that._i = id++;      // collection id
+      that._l = undefined; // leak store for uncaught frozen objects
+      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
+    });
+    redefineAll(C.prototype, {
+      // 23.3.3.2 WeakMap.prototype.delete(key)
+      // 23.4.3.3 WeakSet.prototype.delete(value)
+      'delete': function (key) {
+        if (!isObject(key)) return false;
+        var data = getWeak(key);
+        if (data === true) return uncaughtFrozenStore(validate(this, NAME))['delete'](key);
+        return data && $has(data, this._i) && delete data[this._i];
+      },
+      // 23.3.3.4 WeakMap.prototype.has(key)
+      // 23.4.3.4 WeakSet.prototype.has(value)
+      has: function has(key) {
+        if (!isObject(key)) return false;
+        var data = getWeak(key);
+        if (data === true) return uncaughtFrozenStore(validate(this, NAME)).has(key);
+        return data && $has(data, this._i);
+      }
+    });
+    return C;
+  },
+  def: function (that, key, value) {
+    var data = getWeak(anObject(key), true);
+    if (data === true) uncaughtFrozenStore(that).set(key, value);
+    else data[that._i] = value;
+    return that;
+  },
+  ufstore: uncaughtFrozenStore
+};
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://tc39.github.io/ecma262/#sec-toindex
+var toInteger = __webpack_require__(26);
+var toLength = __webpack_require__(9);
+module.exports = function (it) {
+  if (it === undefined) return 0;
+  var number = toInteger(it);
+  var length = toLength(number);
+  if (number !== length) throw RangeError('Wrong length!');
+  return length;
+};
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// all object keys, includes non-enumerable and symbols
+var gOPN = __webpack_require__(39);
+var gOPS = __webpack_require__(55);
+var anObject = __webpack_require__(2);
+var Reflect = __webpack_require__(3).Reflect;
+module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
+  var keys = gOPN.f(anObject(it));
+  var getSymbols = gOPS.f;
+  return getSymbols ? keys.concat(getSymbols(it)) : keys;
+};
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
+var isArray = __webpack_require__(56);
+var isObject = __webpack_require__(5);
+var toLength = __webpack_require__(9);
+var ctx = __webpack_require__(21);
+var IS_CONCAT_SPREADABLE = __webpack_require__(6)('isConcatSpreadable');
+
+function flattenIntoArray(target, original, source, sourceLen, start, depth, mapper, thisArg) {
+  var targetIndex = start;
+  var sourceIndex = 0;
+  var mapFn = mapper ? ctx(mapper, thisArg, 3) : false;
+  var element, spreadable;
+
+  while (sourceIndex < sourceLen) {
+    if (sourceIndex in source) {
+      element = mapFn ? mapFn(source[sourceIndex], sourceIndex, original) : source[sourceIndex];
+
+      spreadable = false;
+      if (isObject(element)) {
+        spreadable = element[IS_CONCAT_SPREADABLE];
+        spreadable = spreadable !== undefined ? !!spreadable : isArray(element);
+      }
+
+      if (spreadable && depth > 0) {
+        targetIndex = flattenIntoArray(target, original, element, toLength(element.length), targetIndex, depth - 1) - 1;
+      } else {
+        if (targetIndex >= 0x1fffffffffffff) throw TypeError();
+        target[targetIndex] = element;
+      }
+
+      targetIndex++;
+    }
+    sourceIndex++;
+  }
+  return targetIndex;
+}
+
+module.exports = flattenIntoArray;
+
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/tc39/proposal-string-pad-start-end
+var toLength = __webpack_require__(9);
+var repeat = __webpack_require__(77);
+var defined = __webpack_require__(25);
+
+module.exports = function (that, maxLength, fillString, left) {
+  var S = String(defined(that));
+  var stringLength = S.length;
+  var fillStr = fillString === undefined ? ' ' : String(fillString);
+  var intMaxLength = toLength(maxLength);
+  if (intMaxLength <= stringLength || fillStr == '') return S;
+  var fillLen = intMaxLength - stringLength;
+  var stringFiller = repeat.call(fillStr, Math.ceil(fillLen / fillStr.length));
+  if (stringFiller.length > fillLen) stringFiller = stringFiller.slice(0, fillLen);
+  return left ? stringFiller + S : S + stringFiller;
+};
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getKeys = __webpack_require__(36);
+var toIObject = __webpack_require__(17);
+var isEnum = __webpack_require__(51).f;
+module.exports = function (isEntries) {
+  return function (it) {
+    var O = toIObject(it);
+    var keys = getKeys(O);
+    var length = keys.length;
+    var i = 0;
+    var result = [];
+    var key;
+    while (length > i) if (isEnum.call(O, key = keys[i++])) {
+      result.push(isEntries ? [key, O[key]] : O[key]);
+    } return result;
+  };
+};
+
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
+var classof = __webpack_require__(52);
+var from = __webpack_require__(135);
+module.exports = function (NAME) {
+  return function toJSON() {
+    if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
+    return from(this);
+  };
+};
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var forOf = __webpack_require__(42);
+
+module.exports = function (iter, ITERATOR) {
+  var result = [];
+  forOf(iter, false, result.push, result, ITERATOR);
+  return result;
+};
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports) {
+
+// https://rwaldron.github.io/proposal-math-extensions/
+module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh) {
+  if (
+    arguments.length === 0
+      // eslint-disable-next-line no-self-compare
+      || x != x
+      // eslint-disable-next-line no-self-compare
+      || inLow != inLow
+      // eslint-disable-next-line no-self-compare
+      || inHigh != inHigh
+      // eslint-disable-next-line no-self-compare
+      || outLow != outLow
+      // eslint-disable-next-line no-self-compare
+      || outHigh != outHigh
+  ) return NaN;
+  if (x === Infinity || x === -Infinity) return x;
+  return (x - inLow) * (outHigh - outLow) / (inHigh - inLow) + outLow;
+};
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
+  if (true) {
+    // AMD. Register as an anonymous module unless amdModuleId is set
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+      return (root['Chartist'] = factory());
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if (typeof module === 'object' && module.exports) {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    root['Chartist'] = factory();
+  }
+}(this, function () {
+
+/* Chartist.js 0.11.0
+ * Copyright © 2017 Gion Kunz
+ * Free to use under either the WTFPL license or the MIT license.
+ * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-WTFPL
+ * https://raw.githubusercontent.com/gionkunz/chartist-js/master/LICENSE-MIT
+ */
+/**
+ * The core module of Chartist that is mainly providing static functions and higher level functions for chart modules.
+ *
+ * @module Chartist.Core
+ */
+var Chartist = {
+  version: '0.11.0'
+};
+
+(function (window, document, Chartist) {
+  'use strict';
+
+  /**
+   * This object contains all namespaces used within Chartist.
+   *
+   * @memberof Chartist.Core
+   * @type {{svg: string, xmlns: string, xhtml: string, xlink: string, ct: string}}
+   */
+  Chartist.namespaces = {
+    svg: 'http://www.w3.org/2000/svg',
+    xmlns: 'http://www.w3.org/2000/xmlns/',
+    xhtml: 'http://www.w3.org/1999/xhtml',
+    xlink: 'http://www.w3.org/1999/xlink',
+    ct: 'http://gionkunz.github.com/chartist-js/ct'
+  };
+
+  /**
+   * Helps to simplify functional style code
+   *
+   * @memberof Chartist.Core
+   * @param {*} n This exact value will be returned by the noop function
+   * @return {*} The same value that was provided to the n parameter
+   */
+  Chartist.noop = function (n) {
+    return n;
+  };
+
+  /**
+   * Generates a-z from a number 0 to 26
+   *
+   * @memberof Chartist.Core
+   * @param {Number} n A number from 0 to 26 that will result in a letter a-z
+   * @return {String} A character from a-z based on the input number n
+   */
+  Chartist.alphaNumerate = function (n) {
+    // Limit to a-z
+    return String.fromCharCode(97 + n % 26);
+  };
+
+  /**
+   * Simple recursive object extend
+   *
+   * @memberof Chartist.Core
+   * @param {Object} target Target object where the source will be merged into
+   * @param {Object...} sources This object (objects) will be merged into target and then target is returned
+   * @return {Object} An object that has the same reference as target but is extended and merged with the properties of source
+   */
+  Chartist.extend = function (target) {
+    var i, source, sourceProp;
+    target = target || {};
+
+    for (i = 1; i < arguments.length; i++) {
+      source = arguments[i];
+      for (var prop in source) {
+        sourceProp = source[prop];
+        if (typeof sourceProp === 'object' && sourceProp !== null && !(sourceProp instanceof Array)) {
+          target[prop] = Chartist.extend(target[prop], sourceProp);
+        } else {
+          target[prop] = sourceProp;
+        }
+      }
+    }
+
+    return target;
+  };
+
+  /**
+   * Replaces all occurrences of subStr in str with newSubStr and returns a new string.
+   *
+   * @memberof Chartist.Core
+   * @param {String} str
+   * @param {String} subStr
+   * @param {String} newSubStr
+   * @return {String}
+   */
+  Chartist.replaceAll = function(str, subStr, newSubStr) {
+    return str.replace(new RegExp(subStr, 'g'), newSubStr);
+  };
+
+  /**
+   * Converts a number to a string with a unit. If a string is passed then this will be returned unmodified.
+   *
+   * @memberof Chartist.Core
+   * @param {Number} value
+   * @param {String} unit
+   * @return {String} Returns the passed number value with unit.
+   */
+  Chartist.ensureUnit = function(value, unit) {
+    if(typeof value === 'number') {
+      value = value + unit;
+    }
+
+    return value;
+  };
+
+  /**
+   * Converts a number or string to a quantity object.
+   *
+   * @memberof Chartist.Core
+   * @param {String|Number} input
+   * @return {Object} Returns an object containing the value as number and the unit as string.
+   */
+  Chartist.quantity = function(input) {
+    if (typeof input === 'string') {
+      var match = (/^(\d+)\s*(.*)$/g).exec(input);
+      return {
+        value : +match[1],
+        unit: match[2] || undefined
+      };
+    }
+    return { value: input };
+  };
+
+  /**
+   * This is a wrapper around document.querySelector that will return the query if it's already of type Node
+   *
+   * @memberof Chartist.Core
+   * @param {String|Node} query The query to use for selecting a Node or a DOM node that will be returned directly
+   * @return {Node}
+   */
+  Chartist.querySelector = function(query) {
+    return query instanceof Node ? query : document.querySelector(query);
+  };
+
+  /**
+   * Functional style helper to produce array with given length initialized with undefined values
+   *
+   * @memberof Chartist.Core
+   * @param length
+   * @return {Array}
+   */
+  Chartist.times = function(length) {
+    return Array.apply(null, new Array(length));
+  };
+
+  /**
+   * Sum helper to be used in reduce functions
+   *
+   * @memberof Chartist.Core
+   * @param previous
+   * @param current
+   * @return {*}
+   */
+  Chartist.sum = function(previous, current) {
+    return previous + (current ? current : 0);
+  };
+
+  /**
+   * Multiply helper to be used in `Array.map` for multiplying each value of an array with a factor.
+   *
+   * @memberof Chartist.Core
+   * @param {Number} factor
+   * @returns {Function} Function that can be used in `Array.map` to multiply each value in an array
+   */
+  Chartist.mapMultiply = function(factor) {
+    return function(num) {
+      return num * factor;
+    };
+  };
+
+  /**
+   * Add helper to be used in `Array.map` for adding a addend to each value of an array.
+   *
+   * @memberof Chartist.Core
+   * @param {Number} addend
+   * @returns {Function} Function that can be used in `Array.map` to add a addend to each value in an array
+   */
+  Chartist.mapAdd = function(addend) {
+    return function(num) {
+      return num + addend;
+    };
+  };
+
+  /**
+   * Map for multi dimensional arrays where their nested arrays will be mapped in serial. The output array will have the length of the largest nested array. The callback function is called with variable arguments where each argument is the nested array value (or undefined if there are no more values).
+   *
+   * @memberof Chartist.Core
+   * @param arr
+   * @param cb
+   * @return {Array}
+   */
+  Chartist.serialMap = function(arr, cb) {
+    var result = [],
+        length = Math.max.apply(null, arr.map(function(e) {
+          return e.length;
+        }));
+
+    Chartist.times(length).forEach(function(e, index) {
+      var args = arr.map(function(e) {
+        return e[index];
+      });
+
+      result[index] = cb.apply(null, args);
+    });
+
+    return result;
+  };
+
+  /**
+   * This helper function can be used to round values with certain precision level after decimal. This is used to prevent rounding errors near float point precision limit.
+   *
+   * @memberof Chartist.Core
+   * @param {Number} value The value that should be rounded with precision
+   * @param {Number} [digits] The number of digits after decimal used to do the rounding
+   * @returns {number} Rounded value
+   */
+  Chartist.roundWithPrecision = function(value, digits) {
+    var precision = Math.pow(10, digits || Chartist.precision);
+    return Math.round(value * precision) / precision;
+  };
+
+  /**
+   * Precision level used internally in Chartist for rounding. If you require more decimal places you can increase this number.
+   *
+   * @memberof Chartist.Core
+   * @type {number}
+   */
+  Chartist.precision = 8;
+
+  /**
+   * A map with characters to escape for strings to be safely used as attribute values.
+   *
+   * @memberof Chartist.Core
+   * @type {Object}
+   */
+  Chartist.escapingMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    '\'': '&#039;'
+  };
+
+  /**
+   * This function serializes arbitrary data to a string. In case of data that can't be easily converted to a string, this function will create a wrapper object and serialize the data using JSON.stringify. The outcoming string will always be escaped using Chartist.escapingMap.
+   * If called with null or undefined the function will return immediately with null or undefined.
+   *
+   * @memberof Chartist.Core
+   * @param {Number|String|Object} data
+   * @return {String}
+   */
+  Chartist.serialize = function(data) {
+    if(data === null || data === undefined) {
+      return data;
+    } else if(typeof data === 'number') {
+      data = ''+data;
+    } else if(typeof data === 'object') {
+      data = JSON.stringify({data: data});
+    }
+
+    return Object.keys(Chartist.escapingMap).reduce(function(result, key) {
+      return Chartist.replaceAll(result, key, Chartist.escapingMap[key]);
+    }, data);
+  };
+
+  /**
+   * This function de-serializes a string previously serialized with Chartist.serialize. The string will always be unescaped using Chartist.escapingMap before it's returned. Based on the input value the return type can be Number, String or Object. JSON.parse is used with try / catch to see if the unescaped string can be parsed into an Object and this Object will be returned on success.
+   *
+   * @memberof Chartist.Core
+   * @param {String} data
+   * @return {String|Number|Object}
+   */
+  Chartist.deserialize = function(data) {
+    if(typeof data !== 'string') {
+      return data;
+    }
+
+    data = Object.keys(Chartist.escapingMap).reduce(function(result, key) {
+      return Chartist.replaceAll(result, Chartist.escapingMap[key], key);
+    }, data);
+
+    try {
+      data = JSON.parse(data);
+      data = data.data !== undefined ? data.data : data;
+    } catch(e) {}
+
+    return data;
+  };
+
+  /**
+   * Create or reinitialize the SVG element for the chart
+   *
+   * @memberof Chartist.Core
+   * @param {Node} container The containing DOM Node object that will be used to plant the SVG element
+   * @param {String} width Set the width of the SVG element. Default is 100%
+   * @param {String} height Set the height of the SVG element. Default is 100%
+   * @param {String} className Specify a class to be added to the SVG element
+   * @return {Object} The created/reinitialized SVG element
+   */
+  Chartist.createSvg = function (container, width, height, className) {
+    var svg;
+
+    width = width || '100%';
+    height = height || '100%';
+
+    // Check if there is a previous SVG element in the container that contains the Chartist XML namespace and remove it
+    // Since the DOM API does not support namespaces we need to manually search the returned list http://www.w3.org/TR/selectors-api/
+    Array.prototype.slice.call(container.querySelectorAll('svg')).filter(function filterChartistSvgObjects(svg) {
+      return svg.getAttributeNS(Chartist.namespaces.xmlns, 'ct');
+    }).forEach(function removePreviousElement(svg) {
+      container.removeChild(svg);
+    });
+
+    // Create svg object with width and height or use 100% as default
+    svg = new Chartist.Svg('svg').attr({
+      width: width,
+      height: height
+    }).addClass(className);
+
+    svg._node.style.width = width;
+    svg._node.style.height = height;
+
+    // Add the DOM node to our container
+    container.appendChild(svg._node);
+
+    return svg;
+  };
+
+  /**
+   * Ensures that the data object passed as second argument to the charts is present and correctly initialized.
+   *
+   * @param  {Object} data The data object that is passed as second argument to the charts
+   * @return {Object} The normalized data object
+   */
+  Chartist.normalizeData = function(data, reverse, multi) {
+    var labelCount;
+    var output = {
+      raw: data,
+      normalized: {}
+    };
+
+    // Check if we should generate some labels based on existing series data
+    output.normalized.series = Chartist.getDataArray({
+      series: data.series || []
+    }, reverse, multi);
+
+    // If all elements of the normalized data array are arrays we're dealing with
+    // multi series data and we need to find the largest series if they are un-even
+    if (output.normalized.series.every(function(value) {
+        return value instanceof Array;
+      })) {
+      // Getting the series with the the most elements
+      labelCount = Math.max.apply(null, output.normalized.series.map(function(series) {
+        return series.length;
+      }));
+    } else {
+      // We're dealing with Pie data so we just take the normalized array length
+      labelCount = output.normalized.series.length;
+    }
+
+    output.normalized.labels = (data.labels || []).slice();
+    // Padding the labels to labelCount with empty strings
+    Array.prototype.push.apply(
+      output.normalized.labels,
+      Chartist.times(Math.max(0, labelCount - output.normalized.labels.length)).map(function() {
+        return '';
+      })
+    );
+
+    if(reverse) {
+      Chartist.reverseData(output.normalized);
+    }
+
+    return output;
+  };
+
+  /**
+   * This function safely checks if an objects has an owned property.
+   *
+   * @param {Object} object The object where to check for a property
+   * @param {string} property The property name
+   * @returns {boolean} Returns true if the object owns the specified property
+   */
+  Chartist.safeHasProperty = function(object, property) {
+    return object !== null &&
+      typeof object === 'object' &&
+      object.hasOwnProperty(property);
+  };
+
+  /**
+   * Checks if a value is considered a hole in the data series.
+   *
+   * @param {*} value
+   * @returns {boolean} True if the value is considered a data hole
+   */
+  Chartist.isDataHoleValue = function(value) {
+    return value === null ||
+      value === undefined ||
+      (typeof value === 'number' && isNaN(value));
+  };
+
+  /**
+   * Reverses the series, labels and series data arrays.
+   *
+   * @memberof Chartist.Core
+   * @param data
+   */
+  Chartist.reverseData = function(data) {
+    data.labels.reverse();
+    data.series.reverse();
+    for (var i = 0; i < data.series.length; i++) {
+      if(typeof(data.series[i]) === 'object' && data.series[i].data !== undefined) {
+        data.series[i].data.reverse();
+      } else if(data.series[i] instanceof Array) {
+        data.series[i].reverse();
+      }
+    }
+  };
+
+  /**
+   * Convert data series into plain array
+   *
+   * @memberof Chartist.Core
+   * @param {Object} data The series object that contains the data to be visualized in the chart
+   * @param {Boolean} [reverse] If true the whole data is reversed by the getDataArray call. This will modify the data object passed as first parameter. The labels as well as the series order is reversed. The whole series data arrays are reversed too.
+   * @param {Boolean} [multi] Create a multi dimensional array from a series data array where a value object with `x` and `y` values will be created.
+   * @return {Array} A plain array that contains the data to be visualized in the chart
+   */
+  Chartist.getDataArray = function(data, reverse, multi) {
+    // Recursively walks through nested arrays and convert string values to numbers and objects with value properties
+    // to values. Check the tests in data core -> data normalization for a detailed specification of expected values
+    function recursiveConvert(value) {
+      if(Chartist.safeHasProperty(value, 'value')) {
+        // We are dealing with value object notation so we need to recurse on value property
+        return recursiveConvert(value.value);
+      } else if(Chartist.safeHasProperty(value, 'data')) {
+        // We are dealing with series object notation so we need to recurse on data property
+        return recursiveConvert(value.data);
+      } else if(value instanceof Array) {
+        // Data is of type array so we need to recurse on the series
+        return value.map(recursiveConvert);
+      } else if(Chartist.isDataHoleValue(value)) {
+        // We're dealing with a hole in the data and therefore need to return undefined
+        // We're also returning undefined for multi value output
+        return undefined;
+      } else {
+        // We need to prepare multi value output (x and y data)
+        if(multi) {
+          var multiValue = {};
+
+          // Single series value arrays are assumed to specify the Y-Axis value
+          // For example: [1, 2] => [{x: undefined, y: 1}, {x: undefined, y: 2}]
+          // If multi is a string then it's assumed that it specified which dimension should be filled as default
+          if(typeof multi === 'string') {
+            multiValue[multi] = Chartist.getNumberOrUndefined(value);
+          } else {
+            multiValue.y = Chartist.getNumberOrUndefined(value);
+          }
+
+          multiValue.x = value.hasOwnProperty('x') ? Chartist.getNumberOrUndefined(value.x) : multiValue.x;
+          multiValue.y = value.hasOwnProperty('y') ? Chartist.getNumberOrUndefined(value.y) : multiValue.y;
+
+          return multiValue;
+
+        } else {
+          // We can return simple data
+          return Chartist.getNumberOrUndefined(value);
+        }
+      }
+    }
+
+    return data.series.map(recursiveConvert);
+  };
+
+  /**
+   * Converts a number into a padding object.
+   *
+   * @memberof Chartist.Core
+   * @param {Object|Number} padding
+   * @param {Number} [fallback] This value is used to fill missing values if a incomplete padding object was passed
+   * @returns {Object} Returns a padding object containing top, right, bottom, left properties filled with the padding number passed in as argument. If the argument is something else than a number (presumably already a correct padding object) then this argument is directly returned.
+   */
+  Chartist.normalizePadding = function(padding, fallback) {
+    fallback = fallback || 0;
+
+    return typeof padding === 'number' ? {
+      top: padding,
+      right: padding,
+      bottom: padding,
+      left: padding
+    } : {
+      top: typeof padding.top === 'number' ? padding.top : fallback,
+      right: typeof padding.right === 'number' ? padding.right : fallback,
+      bottom: typeof padding.bottom === 'number' ? padding.bottom : fallback,
+      left: typeof padding.left === 'number' ? padding.left : fallback
+    };
+  };
+
+  Chartist.getMetaData = function(series, index) {
+    var value = series.data ? series.data[index] : series[index];
+    return value ? value.meta : undefined;
+  };
+
+  /**
+   * Calculate the order of magnitude for the chart scale
+   *
+   * @memberof Chartist.Core
+   * @param {Number} value The value Range of the chart
+   * @return {Number} The order of magnitude
+   */
+  Chartist.orderOfMagnitude = function (value) {
+    return Math.floor(Math.log(Math.abs(value)) / Math.LN10);
+  };
+
+  /**
+   * Project a data length into screen coordinates (pixels)
+   *
+   * @memberof Chartist.Core
+   * @param {Object} axisLength The svg element for the chart
+   * @param {Number} length Single data value from a series array
+   * @param {Object} bounds All the values to set the bounds of the chart
+   * @return {Number} The projected data length in pixels
+   */
+  Chartist.projectLength = function (axisLength, length, bounds) {
+    return length / bounds.range * axisLength;
+  };
+
+  /**
+   * Get the height of the area in the chart for the data series
+   *
+   * @memberof Chartist.Core
+   * @param {Object} svg The svg element for the chart
+   * @param {Object} options The Object that contains all the optional values for the chart
+   * @return {Number} The height of the area in the chart for the data series
+   */
+  Chartist.getAvailableHeight = function (svg, options) {
+    return Math.max((Chartist.quantity(options.height).value || svg.height()) - (options.chartPadding.top +  options.chartPadding.bottom) - options.axisX.offset, 0);
+  };
+
+  /**
+   * Get highest and lowest value of data array. This Array contains the data that will be visualized in the chart.
+   *
+   * @memberof Chartist.Core
+   * @param {Array} data The array that contains the data to be visualized in the chart
+   * @param {Object} options The Object that contains the chart options
+   * @param {String} dimension Axis dimension 'x' or 'y' used to access the correct value and high / low configuration
+   * @return {Object} An object that contains the highest and lowest value that will be visualized on the chart.
+   */
+  Chartist.getHighLow = function (data, options, dimension) {
+    // TODO: Remove workaround for deprecated global high / low config. Axis high / low configuration is preferred
+    options = Chartist.extend({}, options, dimension ? options['axis' + dimension.toUpperCase()] : {});
+
+    var highLow = {
+        high: options.high === undefined ? -Number.MAX_VALUE : +options.high,
+        low: options.low === undefined ? Number.MAX_VALUE : +options.low
+      };
+    var findHigh = options.high === undefined;
+    var findLow = options.low === undefined;
+
+    // Function to recursively walk through arrays and find highest and lowest number
+    function recursiveHighLow(data) {
+      if(data === undefined) {
+        return undefined;
+      } else if(data instanceof Array) {
+        for (var i = 0; i < data.length; i++) {
+          recursiveHighLow(data[i]);
+        }
+      } else {
+        var value = dimension ? +data[dimension] : +data;
+
+        if (findHigh && value > highLow.high) {
+          highLow.high = value;
+        }
+
+        if (findLow && value < highLow.low) {
+          highLow.low = value;
+        }
+      }
+    }
+
+    // Start to find highest and lowest number recursively
+    if(findHigh || findLow) {
+      recursiveHighLow(data);
+    }
+
+    // Overrides of high / low based on reference value, it will make sure that the invisible reference value is
+    // used to generate the chart. This is useful when the chart always needs to contain the position of the
+    // invisible reference value in the view i.e. for bipolar scales.
+    if (options.referenceValue || options.referenceValue === 0) {
+      highLow.high = Math.max(options.referenceValue, highLow.high);
+      highLow.low = Math.min(options.referenceValue, highLow.low);
+    }
+
+    // If high and low are the same because of misconfiguration or flat data (only the same value) we need
+    // to set the high or low to 0 depending on the polarity
+    if (highLow.high <= highLow.low) {
+      // If both values are 0 we set high to 1
+      if (highLow.low === 0) {
+        highLow.high = 1;
+      } else if (highLow.low < 0) {
+        // If we have the same negative value for the bounds we set bounds.high to 0
+        highLow.high = 0;
+      } else if (highLow.high > 0) {
+        // If we have the same positive value for the bounds we set bounds.low to 0
+        highLow.low = 0;
+      } else {
+        // If data array was empty, values are Number.MAX_VALUE and -Number.MAX_VALUE. Set bounds to prevent errors
+        highLow.high = 1;
+        highLow.low = 0;
+      }
+    }
+
+    return highLow;
+  };
+
+  /**
+   * Checks if a value can be safely coerced to a number. This includes all values except null which result in finite numbers when coerced. This excludes NaN, since it's not finite.
+   *
+   * @memberof Chartist.Core
+   * @param value
+   * @returns {Boolean}
+   */
+  Chartist.isNumeric = function(value) {
+    return value === null ? false : isFinite(value);
+  };
+
+  /**
+   * Returns true on all falsey values except the numeric value 0.
+   *
+   * @memberof Chartist.Core
+   * @param value
+   * @returns {boolean}
+   */
+  Chartist.isFalseyButZero = function(value) {
+    return !value && value !== 0;
+  };
+
+  /**
+   * Returns a number if the passed parameter is a valid number or the function will return undefined. On all other values than a valid number, this function will return undefined.
+   *
+   * @memberof Chartist.Core
+   * @param value
+   * @returns {*}
+   */
+  Chartist.getNumberOrUndefined = function(value) {
+    return Chartist.isNumeric(value) ? +value : undefined;
+  };
+
+  /**
+   * Checks if provided value object is multi value (contains x or y properties)
+   *
+   * @memberof Chartist.Core
+   * @param value
+   */
+  Chartist.isMultiValue = function(value) {
+    return typeof value === 'object' && ('x' in value || 'y' in value);
+  };
+
+  /**
+   * Gets a value from a dimension `value.x` or `value.y` while returning value directly if it's a valid numeric value. If the value is not numeric and it's falsey this function will return `defaultValue`.
+   *
+   * @memberof Chartist.Core
+   * @param value
+   * @param dimension
+   * @param defaultValue
+   * @returns {*}
+   */
+  Chartist.getMultiValue = function(value, dimension) {
+    if(Chartist.isMultiValue(value)) {
+      return Chartist.getNumberOrUndefined(value[dimension || 'y']);
+    } else {
+      return Chartist.getNumberOrUndefined(value);
+    }
+  };
+
+  /**
+   * Pollard Rho Algorithm to find smallest factor of an integer value. There are more efficient algorithms for factorization, but this one is quite efficient and not so complex.
+   *
+   * @memberof Chartist.Core
+   * @param {Number} num An integer number where the smallest factor should be searched for
+   * @returns {Number} The smallest integer factor of the parameter num.
+   */
+  Chartist.rho = function(num) {
+    if(num === 1) {
+      return num;
+    }
+
+    function gcd(p, q) {
+      if (p % q === 0) {
+        return q;
+      } else {
+        return gcd(q, p % q);
+      }
+    }
+
+    function f(x) {
+      return x * x + 1;
+    }
+
+    var x1 = 2, x2 = 2, divisor;
+    if (num % 2 === 0) {
+      return 2;
+    }
+
+    do {
+      x1 = f(x1) % num;
+      x2 = f(f(x2)) % num;
+      divisor = gcd(Math.abs(x1 - x2), num);
+    } while (divisor === 1);
+
+    return divisor;
+  };
+
+  /**
+   * Calculate and retrieve all the bounds for the chart and return them in one array
+   *
+   * @memberof Chartist.Core
+   * @param {Number} axisLength The length of the Axis used for
+   * @param {Object} highLow An object containing a high and low property indicating the value range of the chart.
+   * @param {Number} scaleMinSpace The minimum projected length a step should result in
+   * @param {Boolean} onlyInteger
+   * @return {Object} All the values to set the bounds of the chart
+   */
+  Chartist.getBounds = function (axisLength, highLow, scaleMinSpace, onlyInteger) {
+    var i,
+      optimizationCounter = 0,
+      newMin,
+      newMax,
+      bounds = {
+        high: highLow.high,
+        low: highLow.low
+      };
+
+    bounds.valueRange = bounds.high - bounds.low;
+    bounds.oom = Chartist.orderOfMagnitude(bounds.valueRange);
+    bounds.step = Math.pow(10, bounds.oom);
+    bounds.min = Math.floor(bounds.low / bounds.step) * bounds.step;
+    bounds.max = Math.ceil(bounds.high / bounds.step) * bounds.step;
+    bounds.range = bounds.max - bounds.min;
+    bounds.numberOfSteps = Math.round(bounds.range / bounds.step);
+
+    // Optimize scale step by checking if subdivision is possible based on horizontalGridMinSpace
+    // If we are already below the scaleMinSpace value we will scale up
+    var length = Chartist.projectLength(axisLength, bounds.step, bounds);
+    var scaleUp = length < scaleMinSpace;
+    var smallestFactor = onlyInteger ? Chartist.rho(bounds.range) : 0;
+
+    // First check if we should only use integer steps and if step 1 is still larger than scaleMinSpace so we can use 1
+    if(onlyInteger && Chartist.projectLength(axisLength, 1, bounds) >= scaleMinSpace) {
+      bounds.step = 1;
+    } else if(onlyInteger && smallestFactor < bounds.step && Chartist.projectLength(axisLength, smallestFactor, bounds) >= scaleMinSpace) {
+      // If step 1 was too small, we can try the smallest factor of range
+      // If the smallest factor is smaller than the current bounds.step and the projected length of smallest factor
+      // is larger than the scaleMinSpace we should go for it.
+      bounds.step = smallestFactor;
+    } else {
+      // Trying to divide or multiply by 2 and find the best step value
+      while (true) {
+        if (scaleUp && Chartist.projectLength(axisLength, bounds.step, bounds) <= scaleMinSpace) {
+          bounds.step *= 2;
+        } else if (!scaleUp && Chartist.projectLength(axisLength, bounds.step / 2, bounds) >= scaleMinSpace) {
+          bounds.step /= 2;
+          if(onlyInteger && bounds.step % 1 !== 0) {
+            bounds.step *= 2;
+            break;
+          }
+        } else {
+          break;
+        }
+
+        if(optimizationCounter++ > 1000) {
+          throw new Error('Exceeded maximum number of iterations while optimizing scale step!');
+        }
+      }
+    }
+
+    var EPSILON = 2.221E-16;
+    bounds.step = Math.max(bounds.step, EPSILON);
+    function safeIncrement(value, increment) {
+      // If increment is too small use *= (1+EPSILON) as a simple nextafter
+      if (value === (value += increment)) {
+      	value *= (1 + (increment > 0 ? EPSILON : -EPSILON));
+      }
+      return value;
+    }
+
+    // Narrow min and max based on new step
+    newMin = bounds.min;
+    newMax = bounds.max;
+    while (newMin + bounds.step <= bounds.low) {
+    	newMin = safeIncrement(newMin, bounds.step);
+    }
+    while (newMax - bounds.step >= bounds.high) {
+    	newMax = safeIncrement(newMax, -bounds.step);
+    }
+    bounds.min = newMin;
+    bounds.max = newMax;
+    bounds.range = bounds.max - bounds.min;
+
+    var values = [];
+    for (i = bounds.min; i <= bounds.max; i = safeIncrement(i, bounds.step)) {
+      var value = Chartist.roundWithPrecision(i);
+      if (value !== values[values.length - 1]) {
+        values.push(value);
+      }
+    }
+    bounds.values = values;
+    return bounds;
+  };
+
+  /**
+   * Calculate cartesian coordinates of polar coordinates
+   *
+   * @memberof Chartist.Core
+   * @param {Number} centerX X-axis coordinates of center point of circle segment
+   * @param {Number} centerY X-axis coordinates of center point of circle segment
+   * @param {Number} radius Radius of circle segment
+   * @param {Number} angleInDegrees Angle of circle segment in degrees
+   * @return {{x:Number, y:Number}} Coordinates of point on circumference
+   */
+  Chartist.polarToCartesian = function (centerX, centerY, radius, angleInDegrees) {
+    var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+
+    return {
+      x: centerX + (radius * Math.cos(angleInRadians)),
+      y: centerY + (radius * Math.sin(angleInRadians))
+    };
+  };
+
+  /**
+   * Initialize chart drawing rectangle (area where chart is drawn) x1,y1 = bottom left / x2,y2 = top right
+   *
+   * @memberof Chartist.Core
+   * @param {Object} svg The svg element for the chart
+   * @param {Object} options The Object that contains all the optional values for the chart
+   * @param {Number} [fallbackPadding] The fallback padding if partial padding objects are used
+   * @return {Object} The chart rectangles coordinates inside the svg element plus the rectangles measurements
+   */
+  Chartist.createChartRect = function (svg, options, fallbackPadding) {
+    var hasAxis = !!(options.axisX || options.axisY);
+    var yAxisOffset = hasAxis ? options.axisY.offset : 0;
+    var xAxisOffset = hasAxis ? options.axisX.offset : 0;
+    // If width or height results in invalid value (including 0) we fallback to the unitless settings or even 0
+    var width = svg.width() || Chartist.quantity(options.width).value || 0;
+    var height = svg.height() || Chartist.quantity(options.height).value || 0;
+    var normalizedPadding = Chartist.normalizePadding(options.chartPadding, fallbackPadding);
+
+    // If settings were to small to cope with offset (legacy) and padding, we'll adjust
+    width = Math.max(width, yAxisOffset + normalizedPadding.left + normalizedPadding.right);
+    height = Math.max(height, xAxisOffset + normalizedPadding.top + normalizedPadding.bottom);
+
+    var chartRect = {
+      padding: normalizedPadding,
+      width: function () {
+        return this.x2 - this.x1;
+      },
+      height: function () {
+        return this.y1 - this.y2;
+      }
+    };
+
+    if(hasAxis) {
+      if (options.axisX.position === 'start') {
+        chartRect.y2 = normalizedPadding.top + xAxisOffset;
+        chartRect.y1 = Math.max(height - normalizedPadding.bottom, chartRect.y2 + 1);
+      } else {
+        chartRect.y2 = normalizedPadding.top;
+        chartRect.y1 = Math.max(height - normalizedPadding.bottom - xAxisOffset, chartRect.y2 + 1);
+      }
+
+      if (options.axisY.position === 'start') {
+        chartRect.x1 = normalizedPadding.left + yAxisOffset;
+        chartRect.x2 = Math.max(width - normalizedPadding.right, chartRect.x1 + 1);
+      } else {
+        chartRect.x1 = normalizedPadding.left;
+        chartRect.x2 = Math.max(width - normalizedPadding.right - yAxisOffset, chartRect.x1 + 1);
+      }
+    } else {
+      chartRect.x1 = normalizedPadding.left;
+      chartRect.x2 = Math.max(width - normalizedPadding.right, chartRect.x1 + 1);
+      chartRect.y2 = normalizedPadding.top;
+      chartRect.y1 = Math.max(height - normalizedPadding.bottom, chartRect.y2 + 1);
+    }
+
+    return chartRect;
+  };
+
+  /**
+   * Creates a grid line based on a projected value.
+   *
+   * @memberof Chartist.Core
+   * @param position
+   * @param index
+   * @param axis
+   * @param offset
+   * @param length
+   * @param group
+   * @param classes
+   * @param eventEmitter
+   */
+  Chartist.createGrid = function(position, index, axis, offset, length, group, classes, eventEmitter) {
+    var positionalData = {};
+    positionalData[axis.units.pos + '1'] = position;
+    positionalData[axis.units.pos + '2'] = position;
+    positionalData[axis.counterUnits.pos + '1'] = offset;
+    positionalData[axis.counterUnits.pos + '2'] = offset + length;
+
+    var gridElement = group.elem('line', positionalData, classes.join(' '));
+
+    // Event for grid draw
+    eventEmitter.emit('draw',
+      Chartist.extend({
+        type: 'grid',
+        axis: axis,
+        index: index,
+        group: group,
+        element: gridElement
+      }, positionalData)
+    );
+  };
+
+  /**
+   * Creates a grid background rect and emits the draw event.
+   *
+   * @memberof Chartist.Core
+   * @param gridGroup
+   * @param chartRect
+   * @param className
+   * @param eventEmitter
+   */
+  Chartist.createGridBackground = function (gridGroup, chartRect, className, eventEmitter) {
+    var gridBackground = gridGroup.elem('rect', {
+        x: chartRect.x1,
+        y: chartRect.y2,
+        width: chartRect.width(),
+        height: chartRect.height(),
+      }, className, true);
+
+      // Event for grid background draw
+      eventEmitter.emit('draw', {
+        type: 'gridBackground',
+        group: gridGroup,
+        element: gridBackground
+      });
+  };
+
+  /**
+   * Creates a label based on a projected value and an axis.
+   *
+   * @memberof Chartist.Core
+   * @param position
+   * @param length
+   * @param index
+   * @param labels
+   * @param axis
+   * @param axisOffset
+   * @param labelOffset
+   * @param group
+   * @param classes
+   * @param useForeignObject
+   * @param eventEmitter
+   */
+  Chartist.createLabel = function(position, length, index, labels, axis, axisOffset, labelOffset, group, classes, useForeignObject, eventEmitter) {
+    var labelElement;
+    var positionalData = {};
+
+    positionalData[axis.units.pos] = position + labelOffset[axis.units.pos];
+    positionalData[axis.counterUnits.pos] = labelOffset[axis.counterUnits.pos];
+    positionalData[axis.units.len] = length;
+    positionalData[axis.counterUnits.len] = Math.max(0, axisOffset - 10);
+
+    if(useForeignObject) {
+      // We need to set width and height explicitly to px as span will not expand with width and height being
+      // 100% in all browsers
+      var content = document.createElement('span');
+      content.className = classes.join(' ');
+      content.setAttribute('xmlns', Chartist.namespaces.xhtml);
+      content.innerText = labels[index];
+      content.style[axis.units.len] = Math.round(positionalData[axis.units.len]) + 'px';
+      content.style[axis.counterUnits.len] = Math.round(positionalData[axis.counterUnits.len]) + 'px';
+
+      labelElement = group.foreignObject(content, Chartist.extend({
+        style: 'overflow: visible;'
+      }, positionalData));
+    } else {
+      labelElement = group.elem('text', positionalData, classes.join(' ')).text(labels[index]);
+    }
+
+    eventEmitter.emit('draw', Chartist.extend({
+      type: 'label',
+      axis: axis,
+      index: index,
+      group: group,
+      element: labelElement,
+      text: labels[index]
+    }, positionalData));
+  };
+
+  /**
+   * Helper to read series specific options from options object. It automatically falls back to the global option if
+   * there is no option in the series options.
+   *
+   * @param {Object} series Series object
+   * @param {Object} options Chartist options object
+   * @param {string} key The options key that should be used to obtain the options
+   * @returns {*}
+   */
+  Chartist.getSeriesOption = function(series, options, key) {
+    if(series.name && options.series && options.series[series.name]) {
+      var seriesOptions = options.series[series.name];
+      return seriesOptions.hasOwnProperty(key) ? seriesOptions[key] : options[key];
+    } else {
+      return options[key];
+    }
+  };
+
+  /**
+   * Provides options handling functionality with callback for options changes triggered by responsive options and media query matches
+   *
+   * @memberof Chartist.Core
+   * @param {Object} options Options set by user
+   * @param {Array} responsiveOptions Optional functions to add responsive behavior to chart
+   * @param {Object} eventEmitter The event emitter that will be used to emit the options changed events
+   * @return {Object} The consolidated options object from the defaults, base and matching responsive options
+   */
+  Chartist.optionsProvider = function (options, responsiveOptions, eventEmitter) {
+    var baseOptions = Chartist.extend({}, options),
+      currentOptions,
+      mediaQueryListeners = [],
+      i;
+
+    function updateCurrentOptions(mediaEvent) {
+      var previousOptions = currentOptions;
+      currentOptions = Chartist.extend({}, baseOptions);
+
+      if (responsiveOptions) {
+        for (i = 0; i < responsiveOptions.length; i++) {
+          var mql = window.matchMedia(responsiveOptions[i][0]);
+          if (mql.matches) {
+            currentOptions = Chartist.extend(currentOptions, responsiveOptions[i][1]);
+          }
+        }
+      }
+
+      if(eventEmitter && mediaEvent) {
+        eventEmitter.emit('optionsChanged', {
+          previousOptions: previousOptions,
+          currentOptions: currentOptions
+        });
+      }
+    }
+
+    function removeMediaQueryListeners() {
+      mediaQueryListeners.forEach(function(mql) {
+        mql.removeListener(updateCurrentOptions);
+      });
+    }
+
+    if (!window.matchMedia) {
+      throw 'window.matchMedia not found! Make sure you\'re using a polyfill.';
+    } else if (responsiveOptions) {
+
+      for (i = 0; i < responsiveOptions.length; i++) {
+        var mql = window.matchMedia(responsiveOptions[i][0]);
+        mql.addListener(updateCurrentOptions);
+        mediaQueryListeners.push(mql);
+      }
+    }
+    // Execute initially without an event argument so we get the correct options
+    updateCurrentOptions();
+
+    return {
+      removeMediaQueryListeners: removeMediaQueryListeners,
+      getCurrentOptions: function getCurrentOptions() {
+        return Chartist.extend({}, currentOptions);
+      }
+    };
+  };
+
+
+  /**
+   * Splits a list of coordinates and associated values into segments. Each returned segment contains a pathCoordinates
+   * valueData property describing the segment.
+   *
+   * With the default options, segments consist of contiguous sets of points that do not have an undefined value. Any
+   * points with undefined values are discarded.
+   *
+   * **Options**
+   * The following options are used to determine how segments are formed
+   * ```javascript
+   * var options = {
+   *   // If fillHoles is true, undefined values are simply discarded without creating a new segment. Assuming other options are default, this returns single segment.
+   *   fillHoles: false,
+   *   // If increasingX is true, the coordinates in all segments have strictly increasing x-values.
+   *   increasingX: false
+   * };
+   * ```
+   *
+   * @memberof Chartist.Core
+   * @param {Array} pathCoordinates List of point coordinates to be split in the form [x1, y1, x2, y2 ... xn, yn]
+   * @param {Array} values List of associated point values in the form [v1, v2 .. vn]
+   * @param {Object} options Options set by user
+   * @return {Array} List of segments, each containing a pathCoordinates and valueData property.
+   */
+  Chartist.splitIntoSegments = function(pathCoordinates, valueData, options) {
+    var defaultOptions = {
+      increasingX: false,
+      fillHoles: false
+    };
+
+    options = Chartist.extend({}, defaultOptions, options);
+
+    var segments = [];
+    var hole = true;
+
+    for(var i = 0; i < pathCoordinates.length; i += 2) {
+      // If this value is a "hole" we set the hole flag
+      if(Chartist.getMultiValue(valueData[i / 2].value) === undefined) {
+      // if(valueData[i / 2].value === undefined) {
+        if(!options.fillHoles) {
+          hole = true;
+        }
+      } else {
+        if(options.increasingX && i >= 2 && pathCoordinates[i] <= pathCoordinates[i-2]) {
+          // X is not increasing, so we need to make sure we start a new segment
+          hole = true;
+        }
+
+
+        // If it's a valid value we need to check if we're coming out of a hole and create a new empty segment
+        if(hole) {
+          segments.push({
+            pathCoordinates: [],
+            valueData: []
+          });
+          // As we have a valid value now, we are not in a "hole" anymore
+          hole = false;
+        }
+
+        // Add to the segment pathCoordinates and valueData
+        segments[segments.length - 1].pathCoordinates.push(pathCoordinates[i], pathCoordinates[i + 1]);
+        segments[segments.length - 1].valueData.push(valueData[i / 2]);
+      }
+    }
+
+    return segments;
+  };
+}(window, document, Chartist));
+;/**
+ * Chartist path interpolation functions.
+ *
+ * @module Chartist.Interpolation
+ */
+/* global Chartist */
+(function(window, document, Chartist) {
+  'use strict';
+
+  Chartist.Interpolation = {};
+
+  /**
+   * This interpolation function does not smooth the path and the result is only containing lines and no curves.
+   *
+   * @example
+   * var chart = new Chartist.Line('.ct-chart', {
+   *   labels: [1, 2, 3, 4, 5],
+   *   series: [[1, 2, 8, 1, 7]]
+   * }, {
+   *   lineSmooth: Chartist.Interpolation.none({
+   *     fillHoles: false
+   *   })
+   * });
+   *
+   *
+   * @memberof Chartist.Interpolation
+   * @return {Function}
+   */
+  Chartist.Interpolation.none = function(options) {
+    var defaultOptions = {
+      fillHoles: false
+    };
+    options = Chartist.extend({}, defaultOptions, options);
+    return function none(pathCoordinates, valueData) {
+      var path = new Chartist.Svg.Path();
+      var hole = true;
+
+      for(var i = 0; i < pathCoordinates.length; i += 2) {
+        var currX = pathCoordinates[i];
+        var currY = pathCoordinates[i + 1];
+        var currData = valueData[i / 2];
+
+        if(Chartist.getMultiValue(currData.value) !== undefined) {
+
+          if(hole) {
+            path.move(currX, currY, false, currData);
+          } else {
+            path.line(currX, currY, false, currData);
+          }
+
+          hole = false;
+        } else if(!options.fillHoles) {
+          hole = true;
+        }
+      }
+
+      return path;
+    };
+  };
+
+  /**
+   * Simple smoothing creates horizontal handles that are positioned with a fraction of the length between two data points. You can use the divisor option to specify the amount of smoothing.
+   *
+   * Simple smoothing can be used instead of `Chartist.Smoothing.cardinal` if you'd like to get rid of the artifacts it produces sometimes. Simple smoothing produces less flowing lines but is accurate by hitting the points and it also doesn't swing below or above the given data point.
+   *
+   * All smoothing functions within Chartist are factory functions that accept an options parameter. The simple interpolation function accepts one configuration parameter `divisor`, between 1 and ∞, which controls the smoothing characteristics.
+   *
+   * @example
+   * var chart = new Chartist.Line('.ct-chart', {
+   *   labels: [1, 2, 3, 4, 5],
+   *   series: [[1, 2, 8, 1, 7]]
+   * }, {
+   *   lineSmooth: Chartist.Interpolation.simple({
+   *     divisor: 2,
+   *     fillHoles: false
+   *   })
+   * });
+   *
+   *
+   * @memberof Chartist.Interpolation
+   * @param {Object} options The options of the simple interpolation factory function.
+   * @return {Function}
+   */
+  Chartist.Interpolation.simple = function(options) {
+    var defaultOptions = {
+      divisor: 2,
+      fillHoles: false
+    };
+    options = Chartist.extend({}, defaultOptions, options);
+
+    var d = 1 / Math.max(1, options.divisor);
+
+    return function simple(pathCoordinates, valueData) {
+      var path = new Chartist.Svg.Path();
+      var prevX, prevY, prevData;
+
+      for(var i = 0; i < pathCoordinates.length; i += 2) {
+        var currX = pathCoordinates[i];
+        var currY = pathCoordinates[i + 1];
+        var length = (currX - prevX) * d;
+        var currData = valueData[i / 2];
+
+        if(currData.value !== undefined) {
+
+          if(prevData === undefined) {
+            path.move(currX, currY, false, currData);
+          } else {
+            path.curve(
+              prevX + length,
+              prevY,
+              currX - length,
+              currY,
+              currX,
+              currY,
+              false,
+              currData
+            );
+          }
+
+          prevX = currX;
+          prevY = currY;
+          prevData = currData;
+        } else if(!options.fillHoles) {
+          prevX = currX = prevData = undefined;
+        }
+      }
+
+      return path;
+    };
+  };
+
+  /**
+   * Cardinal / Catmull-Rome spline interpolation is the default smoothing function in Chartist. It produces nice results where the splines will always meet the points. It produces some artifacts though when data values are increased or decreased rapidly. The line may not follow a very accurate path and if the line should be accurate this smoothing function does not produce the best results.
+   *
+   * Cardinal splines can only be created if there are more than two data points. If this is not the case this smoothing will fallback to `Chartist.Smoothing.none`.
+   *
+   * All smoothing functions within Chartist are factory functions that accept an options parameter. The cardinal interpolation function accepts one configuration parameter `tension`, between 0 and 1, which controls the smoothing intensity.
+   *
+   * @example
+   * var chart = new Chartist.Line('.ct-chart', {
+   *   labels: [1, 2, 3, 4, 5],
+   *   series: [[1, 2, 8, 1, 7]]
+   * }, {
+   *   lineSmooth: Chartist.Interpolation.cardinal({
+   *     tension: 1,
+   *     fillHoles: false
+   *   })
+   * });
+   *
+   * @memberof Chartist.Interpolation
+   * @param {Object} options The options of the cardinal factory function.
+   * @return {Function}
+   */
+  Chartist.Interpolation.cardinal = function(options) {
+    var defaultOptions = {
+      tension: 1,
+      fillHoles: false
+    };
+
+    options = Chartist.extend({}, defaultOptions, options);
+
+    var t = Math.min(1, Math.max(0, options.tension)),
+      c = 1 - t;
+
+    return function cardinal(pathCoordinates, valueData) {
+      // First we try to split the coordinates into segments
+      // This is necessary to treat "holes" in line charts
+      var segments = Chartist.splitIntoSegments(pathCoordinates, valueData, {
+        fillHoles: options.fillHoles
+      });
+
+      if(!segments.length) {
+        // If there were no segments return 'Chartist.Interpolation.none'
+        return Chartist.Interpolation.none()([]);
+      } else if(segments.length > 1) {
+        // If the split resulted in more that one segment we need to interpolate each segment individually and join them
+        // afterwards together into a single path.
+          var paths = [];
+        // For each segment we will recurse the cardinal function
+        segments.forEach(function(segment) {
+          paths.push(cardinal(segment.pathCoordinates, segment.valueData));
+        });
+        // Join the segment path data into a single path and return
+        return Chartist.Svg.Path.join(paths);
+      } else {
+        // If there was only one segment we can proceed regularly by using pathCoordinates and valueData from the first
+        // segment
+        pathCoordinates = segments[0].pathCoordinates;
+        valueData = segments[0].valueData;
+
+        // If less than two points we need to fallback to no smoothing
+        if(pathCoordinates.length <= 4) {
+          return Chartist.Interpolation.none()(pathCoordinates, valueData);
+        }
+
+        var path = new Chartist.Svg.Path().move(pathCoordinates[0], pathCoordinates[1], false, valueData[0]),
+          z;
+
+        for (var i = 0, iLen = pathCoordinates.length; iLen - 2 * !z > i; i += 2) {
+          var p = [
+            {x: +pathCoordinates[i - 2], y: +pathCoordinates[i - 1]},
+            {x: +pathCoordinates[i], y: +pathCoordinates[i + 1]},
+            {x: +pathCoordinates[i + 2], y: +pathCoordinates[i + 3]},
+            {x: +pathCoordinates[i + 4], y: +pathCoordinates[i + 5]}
+          ];
+          if (z) {
+            if (!i) {
+              p[0] = {x: +pathCoordinates[iLen - 2], y: +pathCoordinates[iLen - 1]};
+            } else if (iLen - 4 === i) {
+              p[3] = {x: +pathCoordinates[0], y: +pathCoordinates[1]};
+            } else if (iLen - 2 === i) {
+              p[2] = {x: +pathCoordinates[0], y: +pathCoordinates[1]};
+              p[3] = {x: +pathCoordinates[2], y: +pathCoordinates[3]};
+            }
+          } else {
+            if (iLen - 4 === i) {
+              p[3] = p[2];
+            } else if (!i) {
+              p[0] = {x: +pathCoordinates[i], y: +pathCoordinates[i + 1]};
+            }
+          }
+
+          path.curve(
+            (t * (-p[0].x + 6 * p[1].x + p[2].x) / 6) + (c * p[2].x),
+            (t * (-p[0].y + 6 * p[1].y + p[2].y) / 6) + (c * p[2].y),
+            (t * (p[1].x + 6 * p[2].x - p[3].x) / 6) + (c * p[2].x),
+            (t * (p[1].y + 6 * p[2].y - p[3].y) / 6) + (c * p[2].y),
+            p[2].x,
+            p[2].y,
+            false,
+            valueData[(i + 2) / 2]
+          );
+        }
+
+        return path;
+      }
+    };
+  };
+
+  /**
+   * Monotone Cubic spline interpolation produces a smooth curve which preserves monotonicity. Unlike cardinal splines, the curve will not extend beyond the range of y-values of the original data points.
+   *
+   * Monotone Cubic splines can only be created if there are more than two data points. If this is not the case this smoothing will fallback to `Chartist.Smoothing.none`.
+   *
+   * The x-values of subsequent points must be increasing to fit a Monotone Cubic spline. If this condition is not met for a pair of adjacent points, then there will be a break in the curve between those data points.
+   *
+   * All smoothing functions within Chartist are factory functions that accept an options parameter.
+   *
+   * @example
+   * var chart = new Chartist.Line('.ct-chart', {
+   *   labels: [1, 2, 3, 4, 5],
+   *   series: [[1, 2, 8, 1, 7]]
+   * }, {
+   *   lineSmooth: Chartist.Interpolation.monotoneCubic({
+   *     fillHoles: false
+   *   })
+   * });
+   *
+   * @memberof Chartist.Interpolation
+   * @param {Object} options The options of the monotoneCubic factory function.
+   * @return {Function}
+   */
+  Chartist.Interpolation.monotoneCubic = function(options) {
+    var defaultOptions = {
+      fillHoles: false
+    };
+
+    options = Chartist.extend({}, defaultOptions, options);
+
+    return function monotoneCubic(pathCoordinates, valueData) {
+      // First we try to split the coordinates into segments
+      // This is necessary to treat "holes" in line charts
+      var segments = Chartist.splitIntoSegments(pathCoordinates, valueData, {
+        fillHoles: options.fillHoles,
+        increasingX: true
+      });
+
+      if(!segments.length) {
+        // If there were no segments return 'Chartist.Interpolation.none'
+        return Chartist.Interpolation.none()([]);
+      } else if(segments.length > 1) {
+        // If the split resulted in more that one segment we need to interpolate each segment individually and join them
+        // afterwards together into a single path.
+          var paths = [];
+        // For each segment we will recurse the monotoneCubic fn function
+        segments.forEach(function(segment) {
+          paths.push(monotoneCubic(segment.pathCoordinates, segment.valueData));
+        });
+        // Join the segment path data into a single path and return
+        return Chartist.Svg.Path.join(paths);
+      } else {
+        // If there was only one segment we can proceed regularly by using pathCoordinates and valueData from the first
+        // segment
+        pathCoordinates = segments[0].pathCoordinates;
+        valueData = segments[0].valueData;
+
+        // If less than three points we need to fallback to no smoothing
+        if(pathCoordinates.length <= 4) {
+          return Chartist.Interpolation.none()(pathCoordinates, valueData);
+        }
+
+        var xs = [],
+          ys = [],
+          i,
+          n = pathCoordinates.length / 2,
+          ms = [],
+          ds = [], dys = [], dxs = [],
+          path;
+
+        // Populate x and y coordinates into separate arrays, for readability
+
+        for(i = 0; i < n; i++) {
+          xs[i] = pathCoordinates[i * 2];
+          ys[i] = pathCoordinates[i * 2 + 1];
+        }
+
+        // Calculate deltas and derivative
+
+        for(i = 0; i < n - 1; i++) {
+          dys[i] = ys[i + 1] - ys[i];
+          dxs[i] = xs[i + 1] - xs[i];
+          ds[i] = dys[i] / dxs[i];
+        }
+
+        // Determine desired slope (m) at each point using Fritsch-Carlson method
+        // See: http://math.stackexchange.com/questions/45218/implementation-of-monotone-cubic-interpolation
+
+        ms[0] = ds[0];
+        ms[n - 1] = ds[n - 2];
+
+        for(i = 1; i < n - 1; i++) {
+          if(ds[i] === 0 || ds[i - 1] === 0 || (ds[i - 1] > 0) !== (ds[i] > 0)) {
+            ms[i] = 0;
+          } else {
+            ms[i] = 3 * (dxs[i - 1] + dxs[i]) / (
+              (2 * dxs[i] + dxs[i - 1]) / ds[i - 1] +
+              (dxs[i] + 2 * dxs[i - 1]) / ds[i]);
+
+            if(!isFinite(ms[i])) {
+              ms[i] = 0;
+            }
+          }
+        }
+
+        // Now build a path from the slopes
+
+        path = new Chartist.Svg.Path().move(xs[0], ys[0], false, valueData[0]);
+
+        for(i = 0; i < n - 1; i++) {
+          path.curve(
+            // First control point
+            xs[i] + dxs[i] / 3,
+            ys[i] + ms[i] * dxs[i] / 3,
+            // Second control point
+            xs[i + 1] - dxs[i] / 3,
+            ys[i + 1] - ms[i + 1] * dxs[i] / 3,
+            // End point
+            xs[i + 1],
+            ys[i + 1],
+
+            false,
+            valueData[i + 1]
+          );
+        }
+
+        return path;
+      }
+    };
+  };
+
+  /**
+   * Step interpolation will cause the line chart to move in steps rather than diagonal or smoothed lines. This interpolation will create additional points that will also be drawn when the `showPoint` option is enabled.
+   *
+   * All smoothing functions within Chartist are factory functions that accept an options parameter. The step interpolation function accepts one configuration parameter `postpone`, that can be `true` or `false`. The default value is `true` and will cause the step to occur where the value actually changes. If a different behaviour is needed where the step is shifted to the left and happens before the actual value, this option can be set to `false`.
+   *
+   * @example
+   * var chart = new Chartist.Line('.ct-chart', {
+   *   labels: [1, 2, 3, 4, 5],
+   *   series: [[1, 2, 8, 1, 7]]
+   * }, {
+   *   lineSmooth: Chartist.Interpolation.step({
+   *     postpone: true,
+   *     fillHoles: false
+   *   })
+   * });
+   *
+   * @memberof Chartist.Interpolation
+   * @param options
+   * @returns {Function}
+   */
+  Chartist.Interpolation.step = function(options) {
+    var defaultOptions = {
+      postpone: true,
+      fillHoles: false
+    };
+
+    options = Chartist.extend({}, defaultOptions, options);
+
+    return function step(pathCoordinates, valueData) {
+      var path = new Chartist.Svg.Path();
+
+      var prevX, prevY, prevData;
+
+      for (var i = 0; i < pathCoordinates.length; i += 2) {
+        var currX = pathCoordinates[i];
+        var currY = pathCoordinates[i + 1];
+        var currData = valueData[i / 2];
+
+        // If the current point is also not a hole we can draw the step lines
+        if(currData.value !== undefined) {
+          if(prevData === undefined) {
+            path.move(currX, currY, false, currData);
+          } else {
+            if(options.postpone) {
+              // If postponed we should draw the step line with the value of the previous value
+              path.line(currX, prevY, false, prevData);
+            } else {
+              // If not postponed we should draw the step line with the value of the current value
+              path.line(prevX, currY, false, currData);
+            }
+            // Line to the actual point (this should only be a Y-Axis movement
+            path.line(currX, currY, false, currData);
+          }
+
+          prevX = currX;
+          prevY = currY;
+          prevData = currData;
+        } else if(!options.fillHoles) {
+          prevX = prevY = prevData = undefined;
+        }
+      }
+
+      return path;
+    };
+  };
+
+}(window, document, Chartist));
+;/**
+ * A very basic event module that helps to generate and catch events.
+ *
+ * @module Chartist.Event
+ */
+/* global Chartist */
+(function (window, document, Chartist) {
+  'use strict';
+
+  Chartist.EventEmitter = function () {
+    var handlers = [];
+
+    /**
+     * Add an event handler for a specific event
+     *
+     * @memberof Chartist.Event
+     * @param {String} event The event name
+     * @param {Function} handler A event handler function
+     */
+    function addEventHandler(event, handler) {
+      handlers[event] = handlers[event] || [];
+      handlers[event].push(handler);
+    }
+
+    /**
+     * Remove an event handler of a specific event name or remove all event handlers for a specific event.
+     *
+     * @memberof Chartist.Event
+     * @param {String} event The event name where a specific or all handlers should be removed
+     * @param {Function} [handler] An optional event handler function. If specified only this specific handler will be removed and otherwise all handlers are removed.
+     */
+    function removeEventHandler(event, handler) {
+      // Only do something if there are event handlers with this name existing
+      if(handlers[event]) {
+        // If handler is set we will look for a specific handler and only remove this
+        if(handler) {
+          handlers[event].splice(handlers[event].indexOf(handler), 1);
+          if(handlers[event].length === 0) {
+            delete handlers[event];
+          }
+        } else {
+          // If no handler is specified we remove all handlers for this event
+          delete handlers[event];
+        }
+      }
+    }
+
+    /**
+     * Use this function to emit an event. All handlers that are listening for this event will be triggered with the data parameter.
+     *
+     * @memberof Chartist.Event
+     * @param {String} event The event name that should be triggered
+     * @param {*} data Arbitrary data that will be passed to the event handler callback functions
+     */
+    function emit(event, data) {
+      // Only do something if there are event handlers with this name existing
+      if(handlers[event]) {
+        handlers[event].forEach(function(handler) {
+          handler(data);
+        });
+      }
+
+      // Emit event to star event handlers
+      if(handlers['*']) {
+        handlers['*'].forEach(function(starHandler) {
+          starHandler(event, data);
+        });
+      }
+    }
+
+    return {
+      addEventHandler: addEventHandler,
+      removeEventHandler: removeEventHandler,
+      emit: emit
+    };
+  };
+
+}(window, document, Chartist));
+;/**
+ * This module provides some basic prototype inheritance utilities.
+ *
+ * @module Chartist.Class
+ */
+/* global Chartist */
+(function(window, document, Chartist) {
+  'use strict';
+
+  function listToArray(list) {
+    var arr = [];
+    if (list.length) {
+      for (var i = 0; i < list.length; i++) {
+        arr.push(list[i]);
+      }
+    }
+    return arr;
+  }
+
+  /**
+   * Method to extend from current prototype.
+   *
+   * @memberof Chartist.Class
+   * @param {Object} properties The object that serves as definition for the prototype that gets created for the new class. This object should always contain a constructor property that is the desired constructor for the newly created class.
+   * @param {Object} [superProtoOverride] By default extens will use the current class prototype or Chartist.class. With this parameter you can specify any super prototype that will be used.
+   * @return {Function} Constructor function of the new class
+   *
+   * @example
+   * var Fruit = Class.extend({
+     * color: undefined,
+     *   sugar: undefined,
+     *
+     *   constructor: function(color, sugar) {
+     *     this.color = color;
+     *     this.sugar = sugar;
+     *   },
+     *
+     *   eat: function() {
+     *     this.sugar = 0;
+     *     return this;
+     *   }
+     * });
+   *
+   * var Banana = Fruit.extend({
+     *   length: undefined,
+     *
+     *   constructor: function(length, sugar) {
+     *     Banana.super.constructor.call(this, 'Yellow', sugar);
+     *     this.length = length;
+     *   }
+     * });
+   *
+   * var banana = new Banana(20, 40);
+   * console.log('banana instanceof Fruit', banana instanceof Fruit);
+   * console.log('Fruit is prototype of banana', Fruit.prototype.isPrototypeOf(banana));
+   * console.log('bananas prototype is Fruit', Object.getPrototypeOf(banana) === Fruit.prototype);
+   * console.log(banana.sugar);
+   * console.log(banana.eat().sugar);
+   * console.log(banana.color);
+   */
+  function extend(properties, superProtoOverride) {
+    var superProto = superProtoOverride || this.prototype || Chartist.Class;
+    var proto = Object.create(superProto);
+
+    Chartist.Class.cloneDefinitions(proto, properties);
+
+    var constr = function() {
+      var fn = proto.constructor || function () {},
+        instance;
+
+      // If this is linked to the Chartist namespace the constructor was not called with new
+      // To provide a fallback we will instantiate here and return the instance
+      instance = this === Chartist ? Object.create(proto) : this;
+      fn.apply(instance, Array.prototype.slice.call(arguments, 0));
+
+      // If this constructor was not called with new we need to return the instance
+      // This will not harm when the constructor has been called with new as the returned value is ignored
+      return instance;
+    };
+
+    constr.prototype = proto;
+    constr.super = superProto;
+    constr.extend = this.extend;
+
+    return constr;
+  }
+
+  // Variable argument list clones args > 0 into args[0] and retruns modified args[0]
+  function cloneDefinitions() {
+    var args = listToArray(arguments);
+    var target = args[0];
+
+    args.splice(1, args.length - 1).forEach(function (source) {
+      Object.getOwnPropertyNames(source).forEach(function (propName) {
+        // If this property already exist in target we delete it first
+        delete target[propName];
+        // Define the property with the descriptor from source
+        Object.defineProperty(target, propName,
+          Object.getOwnPropertyDescriptor(source, propName));
+      });
+    });
+
+    return target;
+  }
+
+  Chartist.Class = {
+    extend: extend,
+    cloneDefinitions: cloneDefinitions
+  };
+
+}(window, document, Chartist));
+;/**
+ * Base for all chart types. The methods in Chartist.Base are inherited to all chart types.
+ *
+ * @module Chartist.Base
+ */
+/* global Chartist */
+(function(window, document, Chartist) {
+  'use strict';
+
+  // TODO: Currently we need to re-draw the chart on window resize. This is usually very bad and will affect performance.
+  // This is done because we can't work with relative coordinates when drawing the chart because SVG Path does not
+  // work with relative positions yet. We need to check if we can do a viewBox hack to switch to percentage.
+  // See http://mozilla.6506.n7.nabble.com/Specyfing-paths-with-percentages-unit-td247474.html
+  // Update: can be done using the above method tested here: http://codepen.io/gionkunz/pen/KDvLj
+  // The problem is with the label offsets that can't be converted into percentage and affecting the chart container
+  /**
+   * Updates the chart which currently does a full reconstruction of the SVG DOM
+   *
+   * @param {Object} [data] Optional data you'd like to set for the chart before it will update. If not specified the update method will use the data that is already configured with the chart.
+   * @param {Object} [options] Optional options you'd like to add to the previous options for the chart before it will update. If not specified the update method will use the options that have been already configured with the chart.
+   * @param {Boolean} [override] If set to true, the passed options will be used to extend the options that have been configured already. Otherwise the chart default options will be used as the base
+   * @memberof Chartist.Base
+   */
+  function update(data, options, override) {
+    if(data) {
+      this.data = data || {};
+      this.data.labels = this.data.labels || [];
+      this.data.series = this.data.series || [];
+      // Event for data transformation that allows to manipulate the data before it gets rendered in the charts
+      this.eventEmitter.emit('data', {
+        type: 'update',
+        data: this.data
+      });
+    }
+
+    if(options) {
+      this.options = Chartist.extend({}, override ? this.options : this.defaultOptions, options);
+
+      // If chartist was not initialized yet, we just set the options and leave the rest to the initialization
+      // Otherwise we re-create the optionsProvider at this point
+      if(!this.initializeTimeoutId) {
+        this.optionsProvider.removeMediaQueryListeners();
+        this.optionsProvider = Chartist.optionsProvider(this.options, this.responsiveOptions, this.eventEmitter);
+      }
+    }
+
+    // Only re-created the chart if it has been initialized yet
+    if(!this.initializeTimeoutId) {
+      this.createChart(this.optionsProvider.getCurrentOptions());
+    }
+
+    // Return a reference to the chart object to chain up calls
+    return this;
+  }
+
+  /**
+   * This method can be called on the API object of each chart and will un-register all event listeners that were added to other components. This currently includes a window.resize listener as well as media query listeners if any responsive options have been provided. Use this function if you need to destroy and recreate Chartist charts dynamically.
+   *
+   * @memberof Chartist.Base
+   */
+  function detach() {
+    // Only detach if initialization already occurred on this chart. If this chart still hasn't initialized (therefore
+    // the initializationTimeoutId is still a valid timeout reference, we will clear the timeout
+    if(!this.initializeTimeoutId) {
+      window.removeEventListener('resize', this.resizeListener);
+      this.optionsProvider.removeMediaQueryListeners();
+    } else {
+      window.clearTimeout(this.initializeTimeoutId);
+    }
+
+    return this;
+  }
+
+  /**
+   * Use this function to register event handlers. The handler callbacks are synchronous and will run in the main thread rather than the event loop.
+   *
+   * @memberof Chartist.Base
+   * @param {String} event Name of the event. Check the examples for supported events.
+   * @param {Function} handler The handler function that will be called when an event with the given name was emitted. This function will receive a data argument which contains event data. See the example for more details.
+   */
+  function on(event, handler) {
+    this.eventEmitter.addEventHandler(event, handler);
+    return this;
+  }
+
+  /**
+   * Use this function to un-register event handlers. If the handler function parameter is omitted all handlers for the given event will be un-registered.
+   *
+   * @memberof Chartist.Base
+   * @param {String} event Name of the event for which a handler should be removed
+   * @param {Function} [handler] The handler function that that was previously used to register a new event handler. This handler will be removed from the event handler list. If this parameter is omitted then all event handlers for the given event are removed from the list.
+   */
+  function off(event, handler) {
+    this.eventEmitter.removeEventHandler(event, handler);
+    return this;
+  }
+
+  function initialize() {
+    // Add window resize listener that re-creates the chart
+    window.addEventListener('resize', this.resizeListener);
+
+    // Obtain current options based on matching media queries (if responsive options are given)
+    // This will also register a listener that is re-creating the chart based on media changes
+    this.optionsProvider = Chartist.optionsProvider(this.options, this.responsiveOptions, this.eventEmitter);
+    // Register options change listener that will trigger a chart update
+    this.eventEmitter.addEventHandler('optionsChanged', function() {
+      this.update();
+    }.bind(this));
+
+    // Before the first chart creation we need to register us with all plugins that are configured
+    // Initialize all relevant plugins with our chart object and the plugin options specified in the config
+    if(this.options.plugins) {
+      this.options.plugins.forEach(function(plugin) {
+        if(plugin instanceof Array) {
+          plugin[0](this, plugin[1]);
+        } else {
+          plugin(this);
+        }
+      }.bind(this));
+    }
+
+    // Event for data transformation that allows to manipulate the data before it gets rendered in the charts
+    this.eventEmitter.emit('data', {
+      type: 'initial',
+      data: this.data
+    });
+
+    // Create the first chart
+    this.createChart(this.optionsProvider.getCurrentOptions());
+
+    // As chart is initialized from the event loop now we can reset our timeout reference
+    // This is important if the chart gets initialized on the same element twice
+    this.initializeTimeoutId = undefined;
+  }
+
+  /**
+   * Constructor of chart base class.
+   *
+   * @param query
+   * @param data
+   * @param defaultOptions
+   * @param options
+   * @param responsiveOptions
+   * @constructor
+   */
+  function Base(query, data, defaultOptions, options, responsiveOptions) {
+    this.container = Chartist.querySelector(query);
+    this.data = data || {};
+    this.data.labels = this.data.labels || [];
+    this.data.series = this.data.series || [];
+    this.defaultOptions = defaultOptions;
+    this.options = options;
+    this.responsiveOptions = responsiveOptions;
+    this.eventEmitter = Chartist.EventEmitter();
+    this.supportsForeignObject = Chartist.Svg.isSupported('Extensibility');
+    this.supportsAnimations = Chartist.Svg.isSupported('AnimationEventsAttribute');
+    this.resizeListener = function resizeListener(){
+      this.update();
+    }.bind(this);
+
+    if(this.container) {
+      // If chartist was already initialized in this container we are detaching all event listeners first
+      if(this.container.__chartist__) {
+        this.container.__chartist__.detach();
+      }
+
+      this.container.__chartist__ = this;
+    }
+
+    // Using event loop for first draw to make it possible to register event listeners in the same call stack where
+    // the chart was created.
+    this.initializeTimeoutId = setTimeout(initialize.bind(this), 0);
+  }
+
+  // Creating the chart base class
+  Chartist.Base = Chartist.Class.extend({
+    constructor: Base,
+    optionsProvider: undefined,
+    container: undefined,
+    svg: undefined,
+    eventEmitter: undefined,
+    createChart: function() {
+      throw new Error('Base chart type can\'t be instantiated!');
+    },
+    update: update,
+    detach: detach,
+    on: on,
+    off: off,
+    version: Chartist.version,
+    supportsForeignObject: false
+  });
+
+}(window, document, Chartist));
+;/**
+ * Chartist SVG module for simple SVG DOM abstraction
+ *
+ * @module Chartist.Svg
+ */
+/* global Chartist */
+(function(window, document, Chartist) {
+  'use strict';
+
+  /**
+   * Chartist.Svg creates a new SVG object wrapper with a starting element. You can use the wrapper to fluently create sub-elements and modify them.
+   *
+   * @memberof Chartist.Svg
+   * @constructor
+   * @param {String|Element} name The name of the SVG element to create or an SVG dom element which should be wrapped into Chartist.Svg
+   * @param {Object} attributes An object with properties that will be added as attributes to the SVG element that is created. Attributes with undefined values will not be added.
+   * @param {String} className This class or class list will be added to the SVG element
+   * @param {Object} parent The parent SVG wrapper object where this newly created wrapper and it's element will be attached to as child
+   * @param {Boolean} insertFirst If this param is set to true in conjunction with a parent element the newly created element will be added as first child element in the parent element
+   */
+  function Svg(name, attributes, className, parent, insertFirst) {
+    // If Svg is getting called with an SVG element we just return the wrapper
+    if(name instanceof Element) {
+      this._node = name;
+    } else {
+      this._node = document.createElementNS(Chartist.namespaces.svg, name);
+
+      // If this is an SVG element created then custom namespace
+      if(name === 'svg') {
+        this.attr({
+          'xmlns:ct': Chartist.namespaces.ct
+        });
+      }
+    }
+
+    if(attributes) {
+      this.attr(attributes);
+    }
+
+    if(className) {
+      this.addClass(className);
+    }
+
+    if(parent) {
+      if (insertFirst && parent._node.firstChild) {
+        parent._node.insertBefore(this._node, parent._node.firstChild);
+      } else {
+        parent._node.appendChild(this._node);
+      }
+    }
+  }
+
+  /**
+   * Set attributes on the current SVG element of the wrapper you're currently working on.
+   *
+   * @memberof Chartist.Svg
+   * @param {Object|String} attributes An object with properties that will be added as attributes to the SVG element that is created. Attributes with undefined values will not be added. If this parameter is a String then the function is used as a getter and will return the attribute value.
+   * @param {String} [ns] If specified, the attribute will be obtained using getAttributeNs. In order to write namepsaced attributes you can use the namespace:attribute notation within the attributes object.
+   * @return {Object|String} The current wrapper object will be returned so it can be used for chaining or the attribute value if used as getter function.
+   */
+  function attr(attributes, ns) {
+    if(typeof attributes === 'string') {
+      if(ns) {
+        return this._node.getAttributeNS(ns, attributes);
+      } else {
+        return this._node.getAttribute(attributes);
+      }
+    }
+
+    Object.keys(attributes).forEach(function(key) {
+      // If the attribute value is undefined we can skip this one
+      if(attributes[key] === undefined) {
+        return;
+      }
+
+      if (key.indexOf(':') !== -1) {
+        var namespacedAttribute = key.split(':');
+        this._node.setAttributeNS(Chartist.namespaces[namespacedAttribute[0]], key, attributes[key]);
+      } else {
+        this._node.setAttribute(key, attributes[key]);
+      }
+    }.bind(this));
+
+    return this;
+  }
+
+  /**
+   * Create a new SVG element whose wrapper object will be selected for further operations. This way you can also create nested groups easily.
+   *
+   * @memberof Chartist.Svg
+   * @param {String} name The name of the SVG element that should be created as child element of the currently selected element wrapper
+   * @param {Object} [attributes] An object with properties that will be added as attributes to the SVG element that is created. Attributes with undefined values will not be added.
+   * @param {String} [className] This class or class list will be added to the SVG element
+   * @param {Boolean} [insertFirst] If this param is set to true in conjunction with a parent element the newly created element will be added as first child element in the parent element
+   * @return {Chartist.Svg} Returns a Chartist.Svg wrapper object that can be used to modify the containing SVG data
+   */
+  function elem(name, attributes, className, insertFirst) {
+    return new Chartist.Svg(name, attributes, className, this, insertFirst);
+  }
+
+  /**
+   * Returns the parent Chartist.SVG wrapper object
+   *
+   * @memberof Chartist.Svg
+   * @return {Chartist.Svg} Returns a Chartist.Svg wrapper around the parent node of the current node. If the parent node is not existing or it's not an SVG node then this function will return null.
+   */
+  function parent() {
+    return this._node.parentNode instanceof SVGElement ? new Chartist.Svg(this._node.parentNode) : null;
+  }
+
+  /**
+   * This method returns a Chartist.Svg wrapper around the root SVG element of the current tree.
+   *
+   * @memberof Chartist.Svg
+   * @return {Chartist.Svg} The root SVG element wrapped in a Chartist.Svg element
+   */
+  function root() {
+    var node = this._node;
+    while(node.nodeName !== 'svg') {
+      node = node.parentNode;
+    }
+    return new Chartist.Svg(node);
+  }
+
+  /**
+   * Find the first child SVG element of the current element that matches a CSS selector. The returned object is a Chartist.Svg wrapper.
+   *
+   * @memberof Chartist.Svg
+   * @param {String} selector A CSS selector that is used to query for child SVG elements
+   * @return {Chartist.Svg} The SVG wrapper for the element found or null if no element was found
+   */
+  function querySelector(selector) {
+    var foundNode = this._node.querySelector(selector);
+    return foundNode ? new Chartist.Svg(foundNode) : null;
+  }
+
+  /**
+   * Find the all child SVG elements of the current element that match a CSS selector. The returned object is a Chartist.Svg.List wrapper.
+   *
+   * @memberof Chartist.Svg
+   * @param {String} selector A CSS selector that is used to query for child SVG elements
+   * @return {Chartist.Svg.List} The SVG wrapper list for the element found or null if no element was found
+   */
+  function querySelectorAll(selector) {
+    var foundNodes = this._node.querySelectorAll(selector);
+    return foundNodes.length ? new Chartist.Svg.List(foundNodes) : null;
+  }
+
+  /**
+   * Returns the underlying SVG node for the current element.
+   *
+   * @memberof Chartist.Svg
+   * @returns {Node}
+   */
+  function getNode() {
+    return this._node;
+  }
+
+  /**
+   * This method creates a foreignObject (see https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject) that allows to embed HTML content into a SVG graphic. With the help of foreignObjects you can enable the usage of regular HTML elements inside of SVG where they are subject for SVG positioning and transformation but the Browser will use the HTML rendering capabilities for the containing DOM.
+   *
+   * @memberof Chartist.Svg
+   * @param {Node|String} content The DOM Node, or HTML string that will be converted to a DOM Node, that is then placed into and wrapped by the foreignObject
+   * @param {String} [attributes] An object with properties that will be added as attributes to the foreignObject element that is created. Attributes with undefined values will not be added.
+   * @param {String} [className] This class or class list will be added to the SVG element
+   * @param {Boolean} [insertFirst] Specifies if the foreignObject should be inserted as first child
+   * @return {Chartist.Svg} New wrapper object that wraps the foreignObject element
+   */
+  function foreignObject(content, attributes, className, insertFirst) {
+    // If content is string then we convert it to DOM
+    // TODO: Handle case where content is not a string nor a DOM Node
+    if(typeof content === 'string') {
+      var container = document.createElement('div');
+      container.innerHTML = content;
+      content = container.firstChild;
+    }
+
+    // Adding namespace to content element
+    content.setAttribute('xmlns', Chartist.namespaces.xmlns);
+
+    // Creating the foreignObject without required extension attribute (as described here
+    // http://www.w3.org/TR/SVG/extend.html#ForeignObjectElement)
+    var fnObj = this.elem('foreignObject', attributes, className, insertFirst);
+
+    // Add content to foreignObjectElement
+    fnObj._node.appendChild(content);
+
+    return fnObj;
+  }
+
+  /**
+   * This method adds a new text element to the current Chartist.Svg wrapper.
+   *
+   * @memberof Chartist.Svg
+   * @param {String} t The text that should be added to the text element that is created
+   * @return {Chartist.Svg} The same wrapper object that was used to add the newly created element
+   */
+  function text(t) {
+    this._node.appendChild(document.createTextNode(t));
+    return this;
+  }
+
+  /**
+   * This method will clear all child nodes of the current wrapper object.
+   *
+   * @memberof Chartist.Svg
+   * @return {Chartist.Svg} The same wrapper object that got emptied
+   */
+  function empty() {
+    while (this._node.firstChild) {
+      this._node.removeChild(this._node.firstChild);
+    }
+
+    return this;
+  }
+
+  /**
+   * This method will cause the current wrapper to remove itself from its parent wrapper. Use this method if you'd like to get rid of an element in a given DOM structure.
+   *
+   * @memberof Chartist.Svg
+   * @return {Chartist.Svg} The parent wrapper object of the element that got removed
+   */
+  function remove() {
+    this._node.parentNode.removeChild(this._node);
+    return this.parent();
+  }
+
+  /**
+   * This method will replace the element with a new element that can be created outside of the current DOM.
+   *
+   * @memberof Chartist.Svg
+   * @param {Chartist.Svg} newElement The new Chartist.Svg object that will be used to replace the current wrapper object
+   * @return {Chartist.Svg} The wrapper of the new element
+   */
+  function replace(newElement) {
+    this._node.parentNode.replaceChild(newElement._node, this._node);
+    return newElement;
+  }
+
+  /**
+   * This method will append an element to the current element as a child.
+   *
+   * @memberof Chartist.Svg
+   * @param {Chartist.Svg} element The Chartist.Svg element that should be added as a child
+   * @param {Boolean} [insertFirst] Specifies if the element should be inserted as first child
+   * @return {Chartist.Svg} The wrapper of the appended object
+   */
+  function append(element, insertFirst) {
+    if(insertFirst && this._node.firstChild) {
+      this._node.insertBefore(element._node, this._node.firstChild);
+    } else {
+      this._node.appendChild(element._node);
+    }
+
+    return this;
+  }
+
+  /**
+   * Returns an array of class names that are attached to the current wrapper element. This method can not be chained further.
+   *
+   * @memberof Chartist.Svg
+   * @return {Array} A list of classes or an empty array if there are no classes on the current element
+   */
+  function classes() {
+    return this._node.getAttribute('class') ? this._node.getAttribute('class').trim().split(/\s+/) : [];
+  }
+
+  /**
+   * Adds one or a space separated list of classes to the current element and ensures the classes are only existing once.
+   *
+   * @memberof Chartist.Svg
+   * @param {String} names A white space separated list of class names
+   * @return {Chartist.Svg} The wrapper of the current element
+   */
+  function addClass(names) {
+    this._node.setAttribute('class',
+      this.classes(this._node)
+        .concat(names.trim().split(/\s+/))
+        .filter(function(elem, pos, self) {
+          return self.indexOf(elem) === pos;
+        }).join(' ')
+    );
+
+    return this;
+  }
+
+  /**
+   * Removes one or a space separated list of classes from the current element.
+   *
+   * @memberof Chartist.Svg
+   * @param {String} names A white space separated list of class names
+   * @return {Chartist.Svg} The wrapper of the current element
+   */
+  function removeClass(names) {
+    var removedClasses = names.trim().split(/\s+/);
+
+    this._node.setAttribute('class', this.classes(this._node).filter(function(name) {
+      return removedClasses.indexOf(name) === -1;
+    }).join(' '));
+
+    return this;
+  }
+
+  /**
+   * Removes all classes from the current element.
+   *
+   * @memberof Chartist.Svg
+   * @return {Chartist.Svg} The wrapper of the current element
+   */
+  function removeAllClasses() {
+    this._node.setAttribute('class', '');
+
+    return this;
+  }
+
+  /**
+   * Get element height using `getBoundingClientRect`
+   *
+   * @memberof Chartist.Svg
+   * @return {Number} The elements height in pixels
+   */
+  function height() {
+    return this._node.getBoundingClientRect().height;
+  }
+
+  /**
+   * Get element width using `getBoundingClientRect`
+   *
+   * @memberof Chartist.Core
+   * @return {Number} The elements width in pixels
+   */
+  function width() {
+    return this._node.getBoundingClientRect().width;
+  }
+
+  /**
+   * The animate function lets you animate the current element with SMIL animations. You can add animations for multiple attributes at the same time by using an animation definition object. This object should contain SMIL animation attributes. Please refer to http://www.w3.org/TR/SVG/animate.html for a detailed specification about the available animation attributes. Additionally an easing property can be passed in the animation definition object. This can be a string with a name of an easing function in `Chartist.Svg.Easing` or an array with four numbers specifying a cubic Bézier curve.
+   * **An animations object could look like this:**
+   * ```javascript
+   * element.animate({
+   *   opacity: {
+   *     dur: 1000,
+   *     from: 0,
+   *     to: 1
+   *   },
+   *   x1: {
+   *     dur: '1000ms',
+   *     from: 100,
+   *     to: 200,
+   *     easing: 'easeOutQuart'
+   *   },
+   *   y1: {
+   *     dur: '2s',
+   *     from: 0,
+   *     to: 100
+   *   }
+   * });
+   * ```
+   * **Automatic unit conversion**
+   * For the `dur` and the `begin` animate attribute you can also omit a unit by passing a number. The number will automatically be converted to milli seconds.
+   * **Guided mode**
+   * The default behavior of SMIL animations with offset using the `begin` attribute is that the attribute will keep it's original value until the animation starts. Mostly this behavior is not desired as you'd like to have your element attributes already initialized with the animation `from` value even before the animation starts. Also if you don't specify `fill="freeze"` on an animate element or if you delete the animation after it's done (which is done in guided mode) the attribute will switch back to the initial value. This behavior is also not desired when performing simple one-time animations. For one-time animations you'd want to trigger animations immediately instead of relative to the document begin time. That's why in guided mode Chartist.Svg will also use the `begin` property to schedule a timeout and manually start the animation after the timeout. If you're using multiple SMIL definition objects for an attribute (in an array), guided mode will be disabled for this attribute, even if you explicitly enabled it.
+   * If guided mode is enabled the following behavior is added:
+   * - Before the animation starts (even when delayed with `begin`) the animated attribute will be set already to the `from` value of the animation
+   * - `begin` is explicitly set to `indefinite` so it can be started manually without relying on document begin time (creation)
+   * - The animate element will be forced to use `fill="freeze"`
+   * - The animation will be triggered with `beginElement()` in a timeout where `begin` of the definition object is interpreted in milli seconds. If no `begin` was specified the timeout is triggered immediately.
+   * - After the animation the element attribute value will be set to the `to` value of the animation
+   * - The animate element is deleted from the DOM
+   *
+   * @memberof Chartist.Svg
+   * @param {Object} animations An animations object where the property keys are the attributes you'd like to animate. The properties should be objects again that contain the SMIL animation attributes (usually begin, dur, from, and to). The property begin and dur is auto converted (see Automatic unit conversion). You can also schedule multiple animations for the same attribute by passing an Array of SMIL definition objects. Attributes that contain an array of SMIL definition objects will not be executed in guided mode.
+   * @param {Boolean} guided Specify if guided mode should be activated for this animation (see Guided mode). If not otherwise specified, guided mode will be activated.
+   * @param {Object} eventEmitter If specified, this event emitter will be notified when an animation starts or ends.
+   * @return {Chartist.Svg} The current element where the animation was added
+   */
+  function animate(animations, guided, eventEmitter) {
+    if(guided === undefined) {
+      guided = true;
+    }
+
+    Object.keys(animations).forEach(function createAnimateForAttributes(attribute) {
+
+      function createAnimate(animationDefinition, guided) {
+        var attributeProperties = {},
+          animate,
+          timeout,
+          easing;
+
+        // Check if an easing is specified in the definition object and delete it from the object as it will not
+        // be part of the animate element attributes.
+        if(animationDefinition.easing) {
+          // If already an easing Bézier curve array we take it or we lookup a easing array in the Easing object
+          easing = animationDefinition.easing instanceof Array ?
+            animationDefinition.easing :
+            Chartist.Svg.Easing[animationDefinition.easing];
+          delete animationDefinition.easing;
+        }
+
+        // If numeric dur or begin was provided we assume milli seconds
+        animationDefinition.begin = Chartist.ensureUnit(animationDefinition.begin, 'ms');
+        animationDefinition.dur = Chartist.ensureUnit(animationDefinition.dur, 'ms');
+
+        if(easing) {
+          animationDefinition.calcMode = 'spline';
+          animationDefinition.keySplines = easing.join(' ');
+          animationDefinition.keyTimes = '0;1';
+        }
+
+        // Adding "fill: freeze" if we are in guided mode and set initial attribute values
+        if(guided) {
+          animationDefinition.fill = 'freeze';
+          // Animated property on our element should already be set to the animation from value in guided mode
+          attributeProperties[attribute] = animationDefinition.from;
+          this.attr(attributeProperties);
+
+          // In guided mode we also set begin to indefinite so we can trigger the start manually and put the begin
+          // which needs to be in ms aside
+          timeout = Chartist.quantity(animationDefinition.begin || 0).value;
+          animationDefinition.begin = 'indefinite';
+        }
+
+        animate = this.elem('animate', Chartist.extend({
+          attributeName: attribute
+        }, animationDefinition));
+
+        if(guided) {
+          // If guided we take the value that was put aside in timeout and trigger the animation manually with a timeout
+          setTimeout(function() {
+            // If beginElement fails we set the animated attribute to the end position and remove the animate element
+            // This happens if the SMIL ElementTimeControl interface is not supported or any other problems occured in
+            // the browser. (Currently FF 34 does not support animate elements in foreignObjects)
+            try {
+              animate._node.beginElement();
+            } catch(err) {
+              // Set animated attribute to current animated value
+              attributeProperties[attribute] = animationDefinition.to;
+              this.attr(attributeProperties);
+              // Remove the animate element as it's no longer required
+              animate.remove();
+            }
+          }.bind(this), timeout);
+        }
+
+        if(eventEmitter) {
+          animate._node.addEventListener('beginEvent', function handleBeginEvent() {
+            eventEmitter.emit('animationBegin', {
+              element: this,
+              animate: animate._node,
+              params: animationDefinition
+            });
+          }.bind(this));
+        }
+
+        animate._node.addEventListener('endEvent', function handleEndEvent() {
+          if(eventEmitter) {
+            eventEmitter.emit('animationEnd', {
+              element: this,
+              animate: animate._node,
+              params: animationDefinition
+            });
+          }
+
+          if(guided) {
+            // Set animated attribute to current animated value
+            attributeProperties[attribute] = animationDefinition.to;
+            this.attr(attributeProperties);
+            // Remove the animate element as it's no longer required
+            animate.remove();
+          }
+        }.bind(this));
+      }
+
+      // If current attribute is an array of definition objects we create an animate for each and disable guided mode
+      if(animations[attribute] instanceof Array) {
+        animations[attribute].forEach(function(animationDefinition) {
+          createAnimate.bind(this)(animationDefinition, false);
+        }.bind(this));
+      } else {
+        createAnimate.bind(this)(animations[attribute], guided);
+      }
+
+    }.bind(this));
+
+    return this;
+  }
+
+  Chartist.Svg = Chartist.Class.extend({
+    constructor: Svg,
+    attr: attr,
+    elem: elem,
+    parent: parent,
+    root: root,
+    querySelector: querySelector,
+    querySelectorAll: querySelectorAll,
+    getNode: getNode,
+    foreignObject: foreignObject,
+    text: text,
+    empty: empty,
+    remove: remove,
+    replace: replace,
+    append: append,
+    classes: classes,
+    addClass: addClass,
+    removeClass: removeClass,
+    removeAllClasses: removeAllClasses,
+    height: height,
+    width: width,
+    animate: animate
+  });
+
+  /**
+   * This method checks for support of a given SVG feature like Extensibility, SVG-animation or the like. Check http://www.w3.org/TR/SVG11/feature for a detailed list.
+   *
+   * @memberof Chartist.Svg
+   * @param {String} feature The SVG 1.1 feature that should be checked for support.
+   * @return {Boolean} True of false if the feature is supported or not
+   */
+  Chartist.Svg.isSupported = function(feature) {
+    return document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#' + feature, '1.1');
+  };
+
+  /**
+   * This Object contains some standard easing cubic bezier curves. Then can be used with their name in the `Chartist.Svg.animate`. You can also extend the list and use your own name in the `animate` function. Click the show code button to see the available bezier functions.
+   *
+   * @memberof Chartist.Svg
+   */
+  var easingCubicBeziers = {
+    easeInSine: [0.47, 0, 0.745, 0.715],
+    easeOutSine: [0.39, 0.575, 0.565, 1],
+    easeInOutSine: [0.445, 0.05, 0.55, 0.95],
+    easeInQuad: [0.55, 0.085, 0.68, 0.53],
+    easeOutQuad: [0.25, 0.46, 0.45, 0.94],
+    easeInOutQuad: [0.455, 0.03, 0.515, 0.955],
+    easeInCubic: [0.55, 0.055, 0.675, 0.19],
+    easeOutCubic: [0.215, 0.61, 0.355, 1],
+    easeInOutCubic: [0.645, 0.045, 0.355, 1],
+    easeInQuart: [0.895, 0.03, 0.685, 0.22],
+    easeOutQuart: [0.165, 0.84, 0.44, 1],
+    easeInOutQuart: [0.77, 0, 0.175, 1],
+    easeInQuint: [0.755, 0.05, 0.855, 0.06],
+    easeOutQuint: [0.23, 1, 0.32, 1],
+    easeInOutQuint: [0.86, 0, 0.07, 1],
+    easeInExpo: [0.95, 0.05, 0.795, 0.035],
+    easeOutExpo: [0.19, 1, 0.22, 1],
+    easeInOutExpo: [1, 0, 0, 1],
+    easeInCirc: [0.6, 0.04, 0.98, 0.335],
+    easeOutCirc: [0.075, 0.82, 0.165, 1],
+    easeInOutCirc: [0.785, 0.135, 0.15, 0.86],
+    easeInBack: [0.6, -0.28, 0.735, 0.045],
+    easeOutBack: [0.175, 0.885, 0.32, 1.275],
+    easeInOutBack: [0.68, -0.55, 0.265, 1.55]
+  };
+
+  Chartist.Svg.Easing = easingCubicBeziers;
+
+  /**
+   * This helper class is to wrap multiple `Chartist.Svg` elements into a list where you can call the `Chartist.Svg` functions on all elements in the list with one call. This is helpful when you'd like to perform calls with `Chartist.Svg` on multiple elements.
+   * An instance of this class is also returned by `Chartist.Svg.querySelectorAll`.
+   *
+   * @memberof Chartist.Svg
+   * @param {Array<Node>|NodeList} nodeList An Array of SVG DOM nodes or a SVG DOM NodeList (as returned by document.querySelectorAll)
+   * @constructor
+   */
+  function SvgList(nodeList) {
+    var list = this;
+
+    this.svgElements = [];
+    for(var i = 0; i < nodeList.length; i++) {
+      this.svgElements.push(new Chartist.Svg(nodeList[i]));
+    }
+
+    // Add delegation methods for Chartist.Svg
+    Object.keys(Chartist.Svg.prototype).filter(function(prototypeProperty) {
+      return ['constructor',
+          'parent',
+          'querySelector',
+          'querySelectorAll',
+          'replace',
+          'append',
+          'classes',
+          'height',
+          'width'].indexOf(prototypeProperty) === -1;
+    }).forEach(function(prototypeProperty) {
+      list[prototypeProperty] = function() {
+        var args = Array.prototype.slice.call(arguments, 0);
+        list.svgElements.forEach(function(element) {
+          Chartist.Svg.prototype[prototypeProperty].apply(element, args);
+        });
+        return list;
+      };
+    });
+  }
+
+  Chartist.Svg.List = Chartist.Class.extend({
+    constructor: SvgList
+  });
+}(window, document, Chartist));
+;/**
+ * Chartist SVG path module for SVG path description creation and modification.
+ *
+ * @module Chartist.Svg.Path
+ */
+/* global Chartist */
+(function(window, document, Chartist) {
+  'use strict';
+
+  /**
+   * Contains the descriptors of supported element types in a SVG path. Currently only move, line and curve are supported.
+   *
+   * @memberof Chartist.Svg.Path
+   * @type {Object}
+   */
+  var elementDescriptions = {
+    m: ['x', 'y'],
+    l: ['x', 'y'],
+    c: ['x1', 'y1', 'x2', 'y2', 'x', 'y'],
+    a: ['rx', 'ry', 'xAr', 'lAf', 'sf', 'x', 'y']
+  };
+
+  /**
+   * Default options for newly created SVG path objects.
+   *
+   * @memberof Chartist.Svg.Path
+   * @type {Object}
+   */
+  var defaultOptions = {
+    // The accuracy in digit count after the decimal point. This will be used to round numbers in the SVG path. If this option is set to false then no rounding will be performed.
+    accuracy: 3
+  };
+
+  function element(command, params, pathElements, pos, relative, data) {
+    var pathElement = Chartist.extend({
+      command: relative ? command.toLowerCase() : command.toUpperCase()
+    }, params, data ? { data: data } : {} );
+
+    pathElements.splice(pos, 0, pathElement);
+  }
+
+  function forEachParam(pathElements, cb) {
+    pathElements.forEach(function(pathElement, pathElementIndex) {
+      elementDescriptions[pathElement.command.toLowerCase()].forEach(function(paramName, paramIndex) {
+        cb(pathElement, paramName, pathElementIndex, paramIndex, pathElements);
+      });
+    });
+  }
+
+  /**
+   * Used to construct a new path object.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Boolean} close If set to true then this path will be closed when stringified (with a Z at the end)
+   * @param {Object} options Options object that overrides the default objects. See default options for more details.
+   * @constructor
+   */
+  function SvgPath(close, options) {
+    this.pathElements = [];
+    this.pos = 0;
+    this.close = close;
+    this.options = Chartist.extend({}, defaultOptions, options);
+  }
+
+  /**
+   * Gets or sets the current position (cursor) inside of the path. You can move around the cursor freely but limited to 0 or the count of existing elements. All modifications with element functions will insert new elements at the position of this cursor.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} [pos] If a number is passed then the cursor is set to this position in the path element array.
+   * @return {Chartist.Svg.Path|Number} If the position parameter was passed then the return value will be the path object for easy call chaining. If no position parameter was passed then the current position is returned.
+   */
+  function position(pos) {
+    if(pos !== undefined) {
+      this.pos = Math.max(0, Math.min(this.pathElements.length, pos));
+      return this;
+    } else {
+      return this.pos;
+    }
+  }
+
+  /**
+   * Removes elements from the path starting at the current position.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} count Number of path elements that should be removed from the current position.
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function remove(count) {
+    this.pathElements.splice(this.pos, count);
+    return this;
+  }
+
+  /**
+   * Use this function to add a new move SVG path element.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} x The x coordinate for the move element.
+   * @param {Number} y The y coordinate for the move element.
+   * @param {Boolean} [relative] If set to true the move element will be created with relative coordinates (lowercase letter)
+   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function move(x, y, relative, data) {
+    element('M', {
+      x: +x,
+      y: +y
+    }, this.pathElements, this.pos++, relative, data);
+    return this;
+  }
+
+  /**
+   * Use this function to add a new line SVG path element.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} x The x coordinate for the line element.
+   * @param {Number} y The y coordinate for the line element.
+   * @param {Boolean} [relative] If set to true the line element will be created with relative coordinates (lowercase letter)
+   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function line(x, y, relative, data) {
+    element('L', {
+      x: +x,
+      y: +y
+    }, this.pathElements, this.pos++, relative, data);
+    return this;
+  }
+
+  /**
+   * Use this function to add a new curve SVG path element.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} x1 The x coordinate for the first control point of the bezier curve.
+   * @param {Number} y1 The y coordinate for the first control point of the bezier curve.
+   * @param {Number} x2 The x coordinate for the second control point of the bezier curve.
+   * @param {Number} y2 The y coordinate for the second control point of the bezier curve.
+   * @param {Number} x The x coordinate for the target point of the curve element.
+   * @param {Number} y The y coordinate for the target point of the curve element.
+   * @param {Boolean} [relative] If set to true the curve element will be created with relative coordinates (lowercase letter)
+   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function curve(x1, y1, x2, y2, x, y, relative, data) {
+    element('C', {
+      x1: +x1,
+      y1: +y1,
+      x2: +x2,
+      y2: +y2,
+      x: +x,
+      y: +y
+    }, this.pathElements, this.pos++, relative, data);
+    return this;
+  }
+
+  /**
+   * Use this function to add a new non-bezier curve SVG path element.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} rx The radius to be used for the x-axis of the arc.
+   * @param {Number} ry The radius to be used for the y-axis of the arc.
+   * @param {Number} xAr Defines the orientation of the arc
+   * @param {Number} lAf Large arc flag
+   * @param {Number} sf Sweep flag
+   * @param {Number} x The x coordinate for the target point of the curve element.
+   * @param {Number} y The y coordinate for the target point of the curve element.
+   * @param {Boolean} [relative] If set to true the curve element will be created with relative coordinates (lowercase letter)
+   * @param {*} [data] Any data that should be stored with the element object that will be accessible in pathElement
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function arc(rx, ry, xAr, lAf, sf, x, y, relative, data) {
+    element('A', {
+      rx: +rx,
+      ry: +ry,
+      xAr: +xAr,
+      lAf: +lAf,
+      sf: +sf,
+      x: +x,
+      y: +y
+    }, this.pathElements, this.pos++, relative, data);
+    return this;
+  }
+
+  /**
+   * Parses an SVG path seen in the d attribute of path elements, and inserts the parsed elements into the existing path object at the current cursor position. Any closing path indicators (Z at the end of the path) will be ignored by the parser as this is provided by the close option in the options of the path object.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {String} path Any SVG path that contains move (m), line (l) or curve (c) components.
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function parse(path) {
+    // Parsing the SVG path string into an array of arrays [['M', '10', '10'], ['L', '100', '100']]
+    var chunks = path.replace(/([A-Za-z])([0-9])/g, '$1 $2')
+      .replace(/([0-9])([A-Za-z])/g, '$1 $2')
+      .split(/[\s,]+/)
+      .reduce(function(result, element) {
+        if(element.match(/[A-Za-z]/)) {
+          result.push([]);
+        }
+
+        result[result.length - 1].push(element);
+        return result;
+      }, []);
+
+    // If this is a closed path we remove the Z at the end because this is determined by the close option
+    if(chunks[chunks.length - 1][0].toUpperCase() === 'Z') {
+      chunks.pop();
+    }
+
+    // Using svgPathElementDescriptions to map raw path arrays into objects that contain the command and the parameters
+    // For example {command: 'M', x: '10', y: '10'}
+    var elements = chunks.map(function(chunk) {
+        var command = chunk.shift(),
+          description = elementDescriptions[command.toLowerCase()];
+
+        return Chartist.extend({
+          command: command
+        }, description.reduce(function(result, paramName, index) {
+          result[paramName] = +chunk[index];
+          return result;
+        }, {}));
+      });
+
+    // Preparing a splice call with the elements array as var arg params and insert the parsed elements at the current position
+    var spliceArgs = [this.pos, 0];
+    Array.prototype.push.apply(spliceArgs, elements);
+    Array.prototype.splice.apply(this.pathElements, spliceArgs);
+    // Increase the internal position by the element count
+    this.pos += elements.length;
+
+    return this;
+  }
+
+  /**
+   * This function renders to current SVG path object into a final SVG string that can be used in the d attribute of SVG path elements. It uses the accuracy option to round big decimals. If the close parameter was set in the constructor of this path object then a path closing Z will be appended to the output string.
+   *
+   * @memberof Chartist.Svg.Path
+   * @return {String}
+   */
+  function stringify() {
+    var accuracyMultiplier = Math.pow(10, this.options.accuracy);
+
+    return this.pathElements.reduce(function(path, pathElement) {
+        var params = elementDescriptions[pathElement.command.toLowerCase()].map(function(paramName) {
+          return this.options.accuracy ?
+            (Math.round(pathElement[paramName] * accuracyMultiplier) / accuracyMultiplier) :
+            pathElement[paramName];
+        }.bind(this));
+
+        return path + pathElement.command + params.join(',');
+      }.bind(this), '') + (this.close ? 'Z' : '');
+  }
+
+  /**
+   * Scales all elements in the current SVG path object. There is an individual parameter for each coordinate. Scaling will also be done for control points of curves, affecting the given coordinate.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} x The number which will be used to scale the x, x1 and x2 of all path elements.
+   * @param {Number} y The number which will be used to scale the y, y1 and y2 of all path elements.
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function scale(x, y) {
+    forEachParam(this.pathElements, function(pathElement, paramName) {
+      pathElement[paramName] *= paramName[0] === 'x' ? x : y;
+    });
+    return this;
+  }
+
+  /**
+   * Translates all elements in the current SVG path object. The translation is relative and there is an individual parameter for each coordinate. Translation will also be done for control points of curves, affecting the given coordinate.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Number} x The number which will be used to translate the x, x1 and x2 of all path elements.
+   * @param {Number} y The number which will be used to translate the y, y1 and y2 of all path elements.
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function translate(x, y) {
+    forEachParam(this.pathElements, function(pathElement, paramName) {
+      pathElement[paramName] += paramName[0] === 'x' ? x : y;
+    });
+    return this;
+  }
+
+  /**
+   * This function will run over all existing path elements and then loop over their attributes. The callback function will be called for every path element attribute that exists in the current path.
+   * The method signature of the callback function looks like this:
+   * ```javascript
+   * function(pathElement, paramName, pathElementIndex, paramIndex, pathElements)
+   * ```
+   * If something else than undefined is returned by the callback function, this value will be used to replace the old value. This allows you to build custom transformations of path objects that can't be achieved using the basic transformation functions scale and translate.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Function} transformFnc The callback function for the transformation. Check the signature in the function description.
+   * @return {Chartist.Svg.Path} The current path object for easy call chaining.
+   */
+  function transform(transformFnc) {
+    forEachParam(this.pathElements, function(pathElement, paramName, pathElementIndex, paramIndex, pathElements) {
+      var transformed = transformFnc(pathElement, paramName, pathElementIndex, paramIndex, pathElements);
+      if(transformed || transformed === 0) {
+        pathElement[paramName] = transformed;
+      }
+    });
+    return this;
+  }
+
+  /**
+   * This function clones a whole path object with all its properties. This is a deep clone and path element objects will also be cloned.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Boolean} [close] Optional option to set the new cloned path to closed. If not specified or false, the original path close option will be used.
+   * @return {Chartist.Svg.Path}
+   */
+  function clone(close) {
+    var c = new Chartist.Svg.Path(close || this.close);
+    c.pos = this.pos;
+    c.pathElements = this.pathElements.slice().map(function cloneElements(pathElement) {
+      return Chartist.extend({}, pathElement);
+    });
+    c.options = Chartist.extend({}, this.options);
+    return c;
+  }
+
+  /**
+   * Split a Svg.Path object by a specific command in the path chain. The path chain will be split and an array of newly created paths objects will be returned. This is useful if you'd like to split an SVG path by it's move commands, for example, in order to isolate chunks of drawings.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {String} command The command you'd like to use to split the path
+   * @return {Array<Chartist.Svg.Path>}
+   */
+  function splitByCommand(command) {
+    var split = [
+      new Chartist.Svg.Path()
+    ];
+
+    this.pathElements.forEach(function(pathElement) {
+      if(pathElement.command === command.toUpperCase() && split[split.length - 1].pathElements.length !== 0) {
+        split.push(new Chartist.Svg.Path());
+      }
+
+      split[split.length - 1].pathElements.push(pathElement);
+    });
+
+    return split;
+  }
+
+  /**
+   * This static function on `Chartist.Svg.Path` is joining multiple paths together into one paths.
+   *
+   * @memberof Chartist.Svg.Path
+   * @param {Array<Chartist.Svg.Path>} paths A list of paths to be joined together. The order is important.
+   * @param {boolean} close If the newly created path should be a closed path
+   * @param {Object} options Path options for the newly created path.
+   * @return {Chartist.Svg.Path}
+   */
+
+  function join(paths, close, options) {
+    var joinedPath = new Chartist.Svg.Path(close, options);
+    for(var i = 0; i < paths.length; i++) {
+      var path = paths[i];
+      for(var j = 0; j < path.pathElements.length; j++) {
+        joinedPath.pathElements.push(path.pathElements[j]);
+      }
+    }
+    return joinedPath;
+  }
+
+  Chartist.Svg.Path = Chartist.Class.extend({
+    constructor: SvgPath,
+    position: position,
+    remove: remove,
+    move: move,
+    line: line,
+    curve: curve,
+    arc: arc,
+    scale: scale,
+    translate: translate,
+    transform: transform,
+    parse: parse,
+    stringify: stringify,
+    clone: clone,
+    splitByCommand: splitByCommand
+  });
+
+  Chartist.Svg.Path.elementDescriptions = elementDescriptions;
+  Chartist.Svg.Path.join = join;
+}(window, document, Chartist));
+;/* global Chartist */
+(function (window, document, Chartist) {
+  'use strict';
+
+  var axisUnits = {
+    x: {
+      pos: 'x',
+      len: 'width',
+      dir: 'horizontal',
+      rectStart: 'x1',
+      rectEnd: 'x2',
+      rectOffset: 'y2'
+    },
+    y: {
+      pos: 'y',
+      len: 'height',
+      dir: 'vertical',
+      rectStart: 'y2',
+      rectEnd: 'y1',
+      rectOffset: 'x1'
+    }
+  };
+
+  function Axis(units, chartRect, ticks, options) {
+    this.units = units;
+    this.counterUnits = units === axisUnits.x ? axisUnits.y : axisUnits.x;
+    this.chartRect = chartRect;
+    this.axisLength = chartRect[units.rectEnd] - chartRect[units.rectStart];
+    this.gridOffset = chartRect[units.rectOffset];
+    this.ticks = ticks;
+    this.options = options;
+  }
+
+  function createGridAndLabels(gridGroup, labelGroup, useForeignObject, chartOptions, eventEmitter) {
+    var axisOptions = chartOptions['axis' + this.units.pos.toUpperCase()];
+    var projectedValues = this.ticks.map(this.projectValue.bind(this));
+    var labelValues = this.ticks.map(axisOptions.labelInterpolationFnc);
+
+    projectedValues.forEach(function(projectedValue, index) {
+      var labelOffset = {
+        x: 0,
+        y: 0
+      };
+
+      // TODO: Find better solution for solving this problem
+      // Calculate how much space we have available for the label
+      var labelLength;
+      if(projectedValues[index + 1]) {
+        // If we still have one label ahead, we can calculate the distance to the next tick / label
+        labelLength = projectedValues[index + 1] - projectedValue;
+      } else {
+        // If we don't have a label ahead and we have only two labels in total, we just take the remaining distance to
+        // on the whole axis length. We limit that to a minimum of 30 pixel, so that labels close to the border will
+        // still be visible inside of the chart padding.
+        labelLength = Math.max(this.axisLength - projectedValue, 30);
+      }
+
+      // Skip grid lines and labels where interpolated label values are falsey (execpt for 0)
+      if(Chartist.isFalseyButZero(labelValues[index]) && labelValues[index] !== '') {
+        return;
+      }
+
+      // Transform to global coordinates using the chartRect
+      // We also need to set the label offset for the createLabel function
+      if(this.units.pos === 'x') {
+        projectedValue = this.chartRect.x1 + projectedValue;
+        labelOffset.x = chartOptions.axisX.labelOffset.x;
+
+        // If the labels should be positioned in start position (top side for vertical axis) we need to set a
+        // different offset as for positioned with end (bottom)
+        if(chartOptions.axisX.position === 'start') {
+          labelOffset.y = this.chartRect.padding.top + chartOptions.axisX.labelOffset.y + (useForeignObject ? 5 : 20);
+        } else {
+          labelOffset.y = this.chartRect.y1 + chartOptions.axisX.labelOffset.y + (useForeignObject ? 5 : 20);
+        }
+      } else {
+        projectedValue = this.chartRect.y1 - projectedValue;
+        labelOffset.y = chartOptions.axisY.labelOffset.y - (useForeignObject ? labelLength : 0);
+
+        // If the labels should be positioned in start position (left side for horizontal axis) we need to set a
+        // different offset as for positioned with end (right side)
+        if(chartOptions.axisY.position === 'start') {
+          labelOffset.x = useForeignObject ? this.chartRect.padding.left + chartOptions.axisY.labelOffset.x : this.chartRect.x1 - 10;
+        } else {
+          labelOffset.x = this.chartRect.x2 + chartOptions.axisY.labelOffset.x + 10;
+        }
+      }
+
+      if(axisOptions.showGrid) {
+        Chartist.createGrid(projectedValue, index, this, this.gridOffset, this.chartRect[this.counterUnits.len](), gridGroup, [
+          chartOptions.classNames.grid,
+          chartOptions.classNames[this.units.dir]
+        ], eventEmitter);
+      }
+
+      if(axisOptions.showLabel) {
+        Chartist.createLabel(projectedValue, labelLength, index, labelValues, this, axisOptions.offset, labelOffset, labelGroup, [
+          chartOptions.classNames.label,
+          chartOptions.classNames[this.units.dir],
+          (axisOptions.position === 'start' ? chartOptions.classNames[axisOptions.position] : chartOptions.classNames['end'])
+        ], useForeignObject, eventEmitter);
+      }
+    }.bind(this));
+  }
+
+  Chartist.Axis = Chartist.Class.extend({
+    constructor: Axis,
+    createGridAndLabels: createGridAndLabels,
+    projectValue: function(value, index, data) {
+      throw new Error('Base axis can\'t be instantiated!');
+    }
+  });
+
+  Chartist.Axis.units = axisUnits;
+
+}(window, document, Chartist));
+;/**
+ * The auto scale axis uses standard linear scale projection of values along an axis. It uses order of magnitude to find a scale automatically and evaluates the available space in order to find the perfect amount of ticks for your chart.
+ * **Options**
+ * The following options are used by this axis in addition to the default axis options outlined in the axis configuration of the chart default settings.
+ * ```javascript
+ * var options = {
+ *   // If high is specified then the axis will display values explicitly up to this value and the computed maximum from the data is ignored
+ *   high: 100,
+ *   // If low is specified then the axis will display values explicitly down to this value and the computed minimum from the data is ignored
+ *   low: 0,
+ *   // This option will be used when finding the right scale division settings. The amount of ticks on the scale will be determined so that as many ticks as possible will be displayed, while not violating this minimum required space (in pixel).
+ *   scaleMinSpace: 20,
+ *   // Can be set to true or false. If set to true, the scale will be generated with whole numbers only.
+ *   onlyInteger: true,
+ *   // The reference value can be used to make sure that this value will always be on the chart. This is especially useful on bipolar charts where the bipolar center always needs to be part of the chart.
+ *   referenceValue: 5
+ * };
+ * ```
+ *
+ * @module Chartist.AutoScaleAxis
+ */
+/* global Chartist */
+(function (window, document, Chartist) {
+  'use strict';
+
+  function AutoScaleAxis(axisUnit, data, chartRect, options) {
+    // Usually we calculate highLow based on the data but this can be overriden by a highLow object in the options
+    var highLow = options.highLow || Chartist.getHighLow(data, options, axisUnit.pos);
+    this.bounds = Chartist.getBounds(chartRect[axisUnit.rectEnd] - chartRect[axisUnit.rectStart], highLow, options.scaleMinSpace || 20, options.onlyInteger);
+    this.range = {
+      min: this.bounds.min,
+      max: this.bounds.max
+    };
+
+    Chartist.AutoScaleAxis.super.constructor.call(this,
+      axisUnit,
+      chartRect,
+      this.bounds.values,
+      options);
+  }
+
+  function projectValue(value) {
+    return this.axisLength * (+Chartist.getMultiValue(value, this.units.pos) - this.bounds.min) / this.bounds.range;
+  }
+
+  Chartist.AutoScaleAxis = Chartist.Axis.extend({
+    constructor: AutoScaleAxis,
+    projectValue: projectValue
+  });
+
+}(window, document, Chartist));
+;/**
+ * The fixed scale axis uses standard linear projection of values along an axis. It makes use of a divisor option to divide the range provided from the minimum and maximum value or the options high and low that will override the computed minimum and maximum.
+ * **Options**
+ * The following options are used by this axis in addition to the default axis options outlined in the axis configuration of the chart default settings.
+ * ```javascript
+ * var options = {
+ *   // If high is specified then the axis will display values explicitly up to this value and the computed maximum from the data is ignored
+ *   high: 100,
+ *   // If low is specified then the axis will display values explicitly down to this value and the computed minimum from the data is ignored
+ *   low: 0,
+ *   // If specified then the value range determined from minimum to maximum (or low and high) will be divided by this number and ticks will be generated at those division points. The default divisor is 1.
+ *   divisor: 4,
+ *   // If ticks is explicitly set, then the axis will not compute the ticks with the divisor, but directly use the data in ticks to determine at what points on the axis a tick need to be generated.
+ *   ticks: [1, 10, 20, 30]
+ * };
+ * ```
+ *
+ * @module Chartist.FixedScaleAxis
+ */
+/* global Chartist */
+(function (window, document, Chartist) {
+  'use strict';
+
+  function FixedScaleAxis(axisUnit, data, chartRect, options) {
+    var highLow = options.highLow || Chartist.getHighLow(data, options, axisUnit.pos);
+    this.divisor = options.divisor || 1;
+    this.ticks = options.ticks || Chartist.times(this.divisor).map(function(value, index) {
+      return highLow.low + (highLow.high - highLow.low) / this.divisor * index;
+    }.bind(this));
+    this.ticks.sort(function(a, b) {
+      return a - b;
+    });
+    this.range = {
+      min: highLow.low,
+      max: highLow.high
+    };
+
+    Chartist.FixedScaleAxis.super.constructor.call(this,
+      axisUnit,
+      chartRect,
+      this.ticks,
+      options);
+
+    this.stepLength = this.axisLength / this.divisor;
+  }
+
+  function projectValue(value) {
+    return this.axisLength * (+Chartist.getMultiValue(value, this.units.pos) - this.range.min) / (this.range.max - this.range.min);
+  }
+
+  Chartist.FixedScaleAxis = Chartist.Axis.extend({
+    constructor: FixedScaleAxis,
+    projectValue: projectValue
+  });
+
+}(window, document, Chartist));
+;/**
+ * The step axis for step based charts like bar chart or step based line charts. It uses a fixed amount of ticks that will be equally distributed across the whole axis length. The projection is done using the index of the data value rather than the value itself and therefore it's only useful for distribution purpose.
+ * **Options**
+ * The following options are used by this axis in addition to the default axis options outlined in the axis configuration of the chart default settings.
+ * ```javascript
+ * var options = {
+ *   // Ticks to be used to distribute across the axis length. As this axis type relies on the index of the value rather than the value, arbitrary data that can be converted to a string can be used as ticks.
+ *   ticks: ['One', 'Two', 'Three'],
+ *   // If set to true the full width will be used to distribute the values where the last value will be at the maximum of the axis length. If false the spaces between the ticks will be evenly distributed instead.
+ *   stretch: true
+ * };
+ * ```
+ *
+ * @module Chartist.StepAxis
+ */
+/* global Chartist */
+(function (window, document, Chartist) {
+  'use strict';
+
+  function StepAxis(axisUnit, data, chartRect, options) {
+    Chartist.StepAxis.super.constructor.call(this,
+      axisUnit,
+      chartRect,
+      options.ticks,
+      options);
+
+    var calc = Math.max(1, options.ticks.length - (options.stretch ? 1 : 0));
+    this.stepLength = this.axisLength / calc;
+  }
+
+  function projectValue(value, index) {
+    return this.stepLength * index;
+  }
+
+  Chartist.StepAxis = Chartist.Axis.extend({
+    constructor: StepAxis,
+    projectValue: projectValue
+  });
+
+}(window, document, Chartist));
+;/**
+ * The Chartist line chart can be used to draw Line or Scatter charts. If used in the browser you can access the global `Chartist` namespace where you find the `Line` function as a main entry point.
+ *
+ * For examples on how to use the line chart please check the examples of the `Chartist.Line` method.
+ *
+ * @module Chartist.Line
+ */
+/* global Chartist */
+(function(window, document, Chartist){
+  'use strict';
+
+  /**
+   * Default options in line charts. Expand the code view to see a detailed list of options with comments.
+   *
+   * @memberof Chartist.Line
+   */
+  var defaultOptions = {
+    // Options for X-Axis
+    axisX: {
+      // The offset of the labels to the chart area
+      offset: 30,
+      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
+      position: 'end',
+      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
+      labelOffset: {
+        x: 0,
+        y: 0
+      },
+      // If labels should be shown or not
+      showLabel: true,
+      // If the axis grid should be drawn or not
+      showGrid: true,
+      // Interpolation function that allows you to intercept the value from the axis label
+      labelInterpolationFnc: Chartist.noop,
+      // Set the axis type to be used to project values on this axis. If not defined, Chartist.StepAxis will be used for the X-Axis, where the ticks option will be set to the labels in the data and the stretch option will be set to the global fullWidth option. This type can be changed to any axis constructor available (e.g. Chartist.FixedScaleAxis), where all axis options should be present here.
+      type: undefined
+    },
+    // Options for Y-Axis
+    axisY: {
+      // The offset of the labels to the chart area
+      offset: 40,
+      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
+      position: 'start',
+      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
+      labelOffset: {
+        x: 0,
+        y: 0
+      },
+      // If labels should be shown or not
+      showLabel: true,
+      // If the axis grid should be drawn or not
+      showGrid: true,
+      // Interpolation function that allows you to intercept the value from the axis label
+      labelInterpolationFnc: Chartist.noop,
+      // Set the axis type to be used to project values on this axis. If not defined, Chartist.AutoScaleAxis will be used for the Y-Axis, where the high and low options will be set to the global high and low options. This type can be changed to any axis constructor available (e.g. Chartist.FixedScaleAxis), where all axis options should be present here.
+      type: undefined,
+      // This value specifies the minimum height in pixel of the scale steps
+      scaleMinSpace: 20,
+      // Use only integer values (whole numbers) for the scale steps
+      onlyInteger: false
+    },
+    // Specify a fixed width for the chart as a string (i.e. '100px' or '50%')
+    width: undefined,
+    // Specify a fixed height for the chart as a string (i.e. '100px' or '50%')
+    height: undefined,
+    // If the line should be drawn or not
+    showLine: true,
+    // If dots should be drawn or not
+    showPoint: true,
+    // If the line chart should draw an area
+    showArea: false,
+    // The base for the area chart that will be used to close the area shape (is normally 0)
+    areaBase: 0,
+    // Specify if the lines should be smoothed. This value can be true or false where true will result in smoothing using the default smoothing interpolation function Chartist.Interpolation.cardinal and false results in Chartist.Interpolation.none. You can also choose other smoothing / interpolation functions available in the Chartist.Interpolation module, or write your own interpolation function. Check the examples for a brief description.
+    lineSmooth: true,
+    // If the line chart should add a background fill to the .ct-grids group.
+    showGridBackground: false,
+    // Overriding the natural low of the chart allows you to zoom in or limit the charts lowest displayed value
+    low: undefined,
+    // Overriding the natural high of the chart allows you to zoom in or limit the charts highest displayed value
+    high: undefined,
+    // Padding of the chart drawing area to the container element and labels as a number or padding object {top: 5, right: 5, bottom: 5, left: 5}
+    chartPadding: {
+      top: 15,
+      right: 15,
+      bottom: 5,
+      left: 10
+    },
+    // When set to true, the last grid line on the x-axis is not drawn and the chart elements will expand to the full available width of the chart. For the last label to be drawn correctly you might need to add chart padding or offset the last label with a draw event handler.
+    fullWidth: false,
+    // If true the whole data is reversed including labels, the series order as well as the whole series data arrays.
+    reverseData: false,
+    // Override the class names that get used to generate the SVG structure of the chart
+    classNames: {
+      chart: 'ct-chart-line',
+      label: 'ct-label',
+      labelGroup: 'ct-labels',
+      series: 'ct-series',
+      line: 'ct-line',
+      point: 'ct-point',
+      area: 'ct-area',
+      grid: 'ct-grid',
+      gridGroup: 'ct-grids',
+      gridBackground: 'ct-grid-background',
+      vertical: 'ct-vertical',
+      horizontal: 'ct-horizontal',
+      start: 'ct-start',
+      end: 'ct-end'
+    }
+  };
+
+  /**
+   * Creates a new chart
+   *
+   */
+  function createChart(options) {
+    var data = Chartist.normalizeData(this.data, options.reverseData, true);
+
+    // Create new svg object
+    this.svg = Chartist.createSvg(this.container, options.width, options.height, options.classNames.chart);
+    // Create groups for labels, grid and series
+    var gridGroup = this.svg.elem('g').addClass(options.classNames.gridGroup);
+    var seriesGroup = this.svg.elem('g');
+    var labelGroup = this.svg.elem('g').addClass(options.classNames.labelGroup);
+
+    var chartRect = Chartist.createChartRect(this.svg, options, defaultOptions.padding);
+    var axisX, axisY;
+
+    if(options.axisX.type === undefined) {
+      axisX = new Chartist.StepAxis(Chartist.Axis.units.x, data.normalized.series, chartRect, Chartist.extend({}, options.axisX, {
+        ticks: data.normalized.labels,
+        stretch: options.fullWidth
+      }));
+    } else {
+      axisX = options.axisX.type.call(Chartist, Chartist.Axis.units.x, data.normalized.series, chartRect, options.axisX);
+    }
+
+    if(options.axisY.type === undefined) {
+      axisY = new Chartist.AutoScaleAxis(Chartist.Axis.units.y, data.normalized.series, chartRect, Chartist.extend({}, options.axisY, {
+        high: Chartist.isNumeric(options.high) ? options.high : options.axisY.high,
+        low: Chartist.isNumeric(options.low) ? options.low : options.axisY.low
+      }));
+    } else {
+      axisY = options.axisY.type.call(Chartist, Chartist.Axis.units.y, data.normalized.series, chartRect, options.axisY);
+    }
+
+    axisX.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
+    axisY.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
+
+    if (options.showGridBackground) {
+      Chartist.createGridBackground(gridGroup, chartRect, options.classNames.gridBackground, this.eventEmitter);
+    }
+
+    // Draw the series
+    data.raw.series.forEach(function(series, seriesIndex) {
+      var seriesElement = seriesGroup.elem('g');
+
+      // Write attributes to series group element. If series name or meta is undefined the attributes will not be written
+      seriesElement.attr({
+        'ct:series-name': series.name,
+        'ct:meta': Chartist.serialize(series.meta)
+      });
+
+      // Use series class from series data or if not set generate one
+      seriesElement.addClass([
+        options.classNames.series,
+        (series.className || options.classNames.series + '-' + Chartist.alphaNumerate(seriesIndex))
+      ].join(' '));
+
+      var pathCoordinates = [],
+        pathData = [];
+
+      data.normalized.series[seriesIndex].forEach(function(value, valueIndex) {
+        var p = {
+          x: chartRect.x1 + axisX.projectValue(value, valueIndex, data.normalized.series[seriesIndex]),
+          y: chartRect.y1 - axisY.projectValue(value, valueIndex, data.normalized.series[seriesIndex])
+        };
+        pathCoordinates.push(p.x, p.y);
+        pathData.push({
+          value: value,
+          valueIndex: valueIndex,
+          meta: Chartist.getMetaData(series, valueIndex)
+        });
+      }.bind(this));
+
+      var seriesOptions = {
+        lineSmooth: Chartist.getSeriesOption(series, options, 'lineSmooth'),
+        showPoint: Chartist.getSeriesOption(series, options, 'showPoint'),
+        showLine: Chartist.getSeriesOption(series, options, 'showLine'),
+        showArea: Chartist.getSeriesOption(series, options, 'showArea'),
+        areaBase: Chartist.getSeriesOption(series, options, 'areaBase')
+      };
+
+      var smoothing = typeof seriesOptions.lineSmooth === 'function' ?
+        seriesOptions.lineSmooth : (seriesOptions.lineSmooth ? Chartist.Interpolation.monotoneCubic() : Chartist.Interpolation.none());
+      // Interpolating path where pathData will be used to annotate each path element so we can trace back the original
+      // index, value and meta data
+      var path = smoothing(pathCoordinates, pathData);
+
+      // If we should show points we need to create them now to avoid secondary loop
+      // Points are drawn from the pathElements returned by the interpolation function
+      // Small offset for Firefox to render squares correctly
+      if (seriesOptions.showPoint) {
+
+        path.pathElements.forEach(function(pathElement) {
+          var point = seriesElement.elem('line', {
+            x1: pathElement.x,
+            y1: pathElement.y,
+            x2: pathElement.x + 0.01,
+            y2: pathElement.y
+          }, options.classNames.point).attr({
+            'ct:value': [pathElement.data.value.x, pathElement.data.value.y].filter(Chartist.isNumeric).join(','),
+            'ct:meta': Chartist.serialize(pathElement.data.meta)
+          });
+
+          this.eventEmitter.emit('draw', {
+            type: 'point',
+            value: pathElement.data.value,
+            index: pathElement.data.valueIndex,
+            meta: pathElement.data.meta,
+            series: series,
+            seriesIndex: seriesIndex,
+            axisX: axisX,
+            axisY: axisY,
+            group: seriesElement,
+            element: point,
+            x: pathElement.x,
+            y: pathElement.y
+          });
+        }.bind(this));
+      }
+
+      if(seriesOptions.showLine) {
+        var line = seriesElement.elem('path', {
+          d: path.stringify()
+        }, options.classNames.line, true);
+
+        this.eventEmitter.emit('draw', {
+          type: 'line',
+          values: data.normalized.series[seriesIndex],
+          path: path.clone(),
+          chartRect: chartRect,
+          index: seriesIndex,
+          series: series,
+          seriesIndex: seriesIndex,
+          seriesMeta: series.meta,
+          axisX: axisX,
+          axisY: axisY,
+          group: seriesElement,
+          element: line
+        });
+      }
+
+      // Area currently only works with axes that support a range!
+      if(seriesOptions.showArea && axisY.range) {
+        // If areaBase is outside the chart area (< min or > max) we need to set it respectively so that
+        // the area is not drawn outside the chart area.
+        var areaBase = Math.max(Math.min(seriesOptions.areaBase, axisY.range.max), axisY.range.min);
+
+        // We project the areaBase value into screen coordinates
+        var areaBaseProjected = chartRect.y1 - axisY.projectValue(areaBase);
+
+        // In order to form the area we'll first split the path by move commands so we can chunk it up into segments
+        path.splitByCommand('M').filter(function onlySolidSegments(pathSegment) {
+          // We filter only "solid" segments that contain more than one point. Otherwise there's no need for an area
+          return pathSegment.pathElements.length > 1;
+        }).map(function convertToArea(solidPathSegments) {
+          // Receiving the filtered solid path segments we can now convert those segments into fill areas
+          var firstElement = solidPathSegments.pathElements[0];
+          var lastElement = solidPathSegments.pathElements[solidPathSegments.pathElements.length - 1];
+
+          // Cloning the solid path segment with closing option and removing the first move command from the clone
+          // We then insert a new move that should start at the area base and draw a straight line up or down
+          // at the end of the path we add an additional straight line to the projected area base value
+          // As the closing option is set our path will be automatically closed
+          return solidPathSegments.clone(true)
+            .position(0)
+            .remove(1)
+            .move(firstElement.x, areaBaseProjected)
+            .line(firstElement.x, firstElement.y)
+            .position(solidPathSegments.pathElements.length + 1)
+            .line(lastElement.x, areaBaseProjected);
+
+        }).forEach(function createArea(areaPath) {
+          // For each of our newly created area paths, we'll now create path elements by stringifying our path objects
+          // and adding the created DOM elements to the correct series group
+          var area = seriesElement.elem('path', {
+            d: areaPath.stringify()
+          }, options.classNames.area, true);
+
+          // Emit an event for each area that was drawn
+          this.eventEmitter.emit('draw', {
+            type: 'area',
+            values: data.normalized.series[seriesIndex],
+            path: areaPath.clone(),
+            series: series,
+            seriesIndex: seriesIndex,
+            axisX: axisX,
+            axisY: axisY,
+            chartRect: chartRect,
+            index: seriesIndex,
+            group: seriesElement,
+            element: area
+          });
+        }.bind(this));
+      }
+    }.bind(this));
+
+    this.eventEmitter.emit('created', {
+      bounds: axisY.bounds,
+      chartRect: chartRect,
+      axisX: axisX,
+      axisY: axisY,
+      svg: this.svg,
+      options: options
+    });
+  }
+
+  /**
+   * This method creates a new line chart.
+   *
+   * @memberof Chartist.Line
+   * @param {String|Node} query A selector query string or directly a DOM element
+   * @param {Object} data The data object that needs to consist of a labels and a series array
+   * @param {Object} [options] The options object with options that override the default options. Check the examples for a detailed list.
+   * @param {Array} [responsiveOptions] Specify an array of responsive option arrays which are a media query and options object pair => [[mediaQueryString, optionsObject],[more...]]
+   * @return {Object} An object which exposes the API for the created chart
+   *
+   * @example
+   * // Create a simple line chart
+   * var data = {
+   *   // A labels array that can contain any sort of values
+   *   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+   *   // Our series array that contains series objects or in this case series data arrays
+   *   series: [
+   *     [5, 2, 4, 2, 0]
+   *   ]
+   * };
+   *
+   * // As options we currently only set a static size of 300x200 px
+   * var options = {
+   *   width: '300px',
+   *   height: '200px'
+   * };
+   *
+   * // In the global name space Chartist we call the Line function to initialize a line chart. As a first parameter we pass in a selector where we would like to get our chart created. Second parameter is the actual data object and as a third parameter we pass in our options
+   * new Chartist.Line('.ct-chart', data, options);
+   *
+   * @example
+   * // Use specific interpolation function with configuration from the Chartist.Interpolation module
+   *
+   * var chart = new Chartist.Line('.ct-chart', {
+   *   labels: [1, 2, 3, 4, 5],
+   *   series: [
+   *     [1, 1, 8, 1, 7]
+   *   ]
+   * }, {
+   *   lineSmooth: Chartist.Interpolation.cardinal({
+   *     tension: 0.2
+   *   })
+   * });
+   *
+   * @example
+   * // Create a line chart with responsive options
+   *
+   * var data = {
+   *   // A labels array that can contain any sort of values
+   *   labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+   *   // Our series array that contains series objects or in this case series data arrays
+   *   series: [
+   *     [5, 2, 4, 2, 0]
+   *   ]
+   * };
+   *
+   * // In addition to the regular options we specify responsive option overrides that will override the default configutation based on the matching media queries.
+   * var responsiveOptions = [
+   *   ['screen and (min-width: 641px) and (max-width: 1024px)', {
+   *     showPoint: false,
+   *     axisX: {
+   *       labelInterpolationFnc: function(value) {
+   *         // Will return Mon, Tue, Wed etc. on medium screens
+   *         return value.slice(0, 3);
+   *       }
+   *     }
+   *   }],
+   *   ['screen and (max-width: 640px)', {
+   *     showLine: false,
+   *     axisX: {
+   *       labelInterpolationFnc: function(value) {
+   *         // Will return M, T, W etc. on small screens
+   *         return value[0];
+   *       }
+   *     }
+   *   }]
+   * ];
+   *
+   * new Chartist.Line('.ct-chart', data, null, responsiveOptions);
+   *
+   */
+  function Line(query, data, options, responsiveOptions) {
+    Chartist.Line.super.constructor.call(this,
+      query,
+      data,
+      defaultOptions,
+      Chartist.extend({}, defaultOptions, options),
+      responsiveOptions);
+  }
+
+  // Creating line chart type in Chartist namespace
+  Chartist.Line = Chartist.Base.extend({
+    constructor: Line,
+    createChart: createChart
+  });
+
+}(window, document, Chartist));
+;/**
+ * The bar chart module of Chartist that can be used to draw unipolar or bipolar bar and grouped bar charts.
+ *
+ * @module Chartist.Bar
+ */
+/* global Chartist */
+(function(window, document, Chartist){
+  'use strict';
+
+  /**
+   * Default options in bar charts. Expand the code view to see a detailed list of options with comments.
+   *
+   * @memberof Chartist.Bar
+   */
+  var defaultOptions = {
+    // Options for X-Axis
+    axisX: {
+      // The offset of the chart drawing area to the border of the container
+      offset: 30,
+      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
+      position: 'end',
+      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
+      labelOffset: {
+        x: 0,
+        y: 0
+      },
+      // If labels should be shown or not
+      showLabel: true,
+      // If the axis grid should be drawn or not
+      showGrid: true,
+      // Interpolation function that allows you to intercept the value from the axis label
+      labelInterpolationFnc: Chartist.noop,
+      // This value specifies the minimum width in pixel of the scale steps
+      scaleMinSpace: 30,
+      // Use only integer values (whole numbers) for the scale steps
+      onlyInteger: false
+    },
+    // Options for Y-Axis
+    axisY: {
+      // The offset of the chart drawing area to the border of the container
+      offset: 40,
+      // Position where labels are placed. Can be set to `start` or `end` where `start` is equivalent to left or top on vertical axis and `end` is equivalent to right or bottom on horizontal axis.
+      position: 'start',
+      // Allows you to correct label positioning on this axis by positive or negative x and y offset.
+      labelOffset: {
+        x: 0,
+        y: 0
+      },
+      // If labels should be shown or not
+      showLabel: true,
+      // If the axis grid should be drawn or not
+      showGrid: true,
+      // Interpolation function that allows you to intercept the value from the axis label
+      labelInterpolationFnc: Chartist.noop,
+      // This value specifies the minimum height in pixel of the scale steps
+      scaleMinSpace: 20,
+      // Use only integer values (whole numbers) for the scale steps
+      onlyInteger: false
+    },
+    // Specify a fixed width for the chart as a string (i.e. '100px' or '50%')
+    width: undefined,
+    // Specify a fixed height for the chart as a string (i.e. '100px' or '50%')
+    height: undefined,
+    // Overriding the natural high of the chart allows you to zoom in or limit the charts highest displayed value
+    high: undefined,
+    // Overriding the natural low of the chart allows you to zoom in or limit the charts lowest displayed value
+    low: undefined,
+    // Unless low/high are explicitly set, bar chart will be centered at zero by default. Set referenceValue to null to auto scale.
+    referenceValue: 0,
+    // Padding of the chart drawing area to the container element and labels as a number or padding object {top: 5, right: 5, bottom: 5, left: 5}
+    chartPadding: {
+      top: 15,
+      right: 15,
+      bottom: 5,
+      left: 10
+    },
+    // Specify the distance in pixel of bars in a group
+    seriesBarDistance: 15,
+    // If set to true this property will cause the series bars to be stacked. Check the `stackMode` option for further stacking options.
+    stackBars: false,
+    // If set to 'overlap' this property will force the stacked bars to draw from the zero line.
+    // If set to 'accumulate' this property will form a total for each series point. This will also influence the y-axis and the overall bounds of the chart. In stacked mode the seriesBarDistance property will have no effect.
+    stackMode: 'accumulate',
+    // Inverts the axes of the bar chart in order to draw a horizontal bar chart. Be aware that you also need to invert your axis settings as the Y Axis will now display the labels and the X Axis the values.
+    horizontalBars: false,
+    // If set to true then each bar will represent a series and the data array is expected to be a one dimensional array of data values rather than a series array of series. This is useful if the bar chart should represent a profile rather than some data over time.
+    distributeSeries: false,
+    // If true the whole data is reversed including labels, the series order as well as the whole series data arrays.
+    reverseData: false,
+    // If the bar chart should add a background fill to the .ct-grids group.
+    showGridBackground: false,
+    // Override the class names that get used to generate the SVG structure of the chart
+    classNames: {
+      chart: 'ct-chart-bar',
+      horizontalBars: 'ct-horizontal-bars',
+      label: 'ct-label',
+      labelGroup: 'ct-labels',
+      series: 'ct-series',
+      bar: 'ct-bar',
+      grid: 'ct-grid',
+      gridGroup: 'ct-grids',
+      gridBackground: 'ct-grid-background',
+      vertical: 'ct-vertical',
+      horizontal: 'ct-horizontal',
+      start: 'ct-start',
+      end: 'ct-end'
+    }
+  };
+
+  /**
+   * Creates a new chart
+   *
+   */
+  function createChart(options) {
+    var data;
+    var highLow;
+
+    if(options.distributeSeries) {
+      data = Chartist.normalizeData(this.data, options.reverseData, options.horizontalBars ? 'x' : 'y');
+      data.normalized.series = data.normalized.series.map(function(value) {
+        return [value];
+      });
+    } else {
+      data = Chartist.normalizeData(this.data, options.reverseData, options.horizontalBars ? 'x' : 'y');
+    }
+
+    // Create new svg element
+    this.svg = Chartist.createSvg(
+      this.container,
+      options.width,
+      options.height,
+      options.classNames.chart + (options.horizontalBars ? ' ' + options.classNames.horizontalBars : '')
+    );
+
+    // Drawing groups in correct order
+    var gridGroup = this.svg.elem('g').addClass(options.classNames.gridGroup);
+    var seriesGroup = this.svg.elem('g');
+    var labelGroup = this.svg.elem('g').addClass(options.classNames.labelGroup);
+
+    if(options.stackBars && data.normalized.series.length !== 0) {
+
+      // If stacked bars we need to calculate the high low from stacked values from each series
+      var serialSums = Chartist.serialMap(data.normalized.series, function serialSums() {
+        return Array.prototype.slice.call(arguments).map(function(value) {
+          return value;
+        }).reduce(function(prev, curr) {
+          return {
+            x: prev.x + (curr && curr.x) || 0,
+            y: prev.y + (curr && curr.y) || 0
+          };
+        }, {x: 0, y: 0});
+      });
+
+      highLow = Chartist.getHighLow([serialSums], options, options.horizontalBars ? 'x' : 'y');
+
+    } else {
+
+      highLow = Chartist.getHighLow(data.normalized.series, options, options.horizontalBars ? 'x' : 'y');
+    }
+
+    // Overrides of high / low from settings
+    highLow.high = +options.high || (options.high === 0 ? 0 : highLow.high);
+    highLow.low = +options.low || (options.low === 0 ? 0 : highLow.low);
+
+    var chartRect = Chartist.createChartRect(this.svg, options, defaultOptions.padding);
+
+    var valueAxis,
+      labelAxisTicks,
+      labelAxis,
+      axisX,
+      axisY;
+
+    // We need to set step count based on some options combinations
+    if(options.distributeSeries && options.stackBars) {
+      // If distributed series are enabled and bars need to be stacked, we'll only have one bar and therefore should
+      // use only the first label for the step axis
+      labelAxisTicks = data.normalized.labels.slice(0, 1);
+    } else {
+      // If distributed series are enabled but stacked bars aren't, we should use the series labels
+      // If we are drawing a regular bar chart with two dimensional series data, we just use the labels array
+      // as the bars are normalized
+      labelAxisTicks = data.normalized.labels;
+    }
+
+    // Set labelAxis and valueAxis based on the horizontalBars setting. This setting will flip the axes if necessary.
+    if(options.horizontalBars) {
+      if(options.axisX.type === undefined) {
+        valueAxis = axisX = new Chartist.AutoScaleAxis(Chartist.Axis.units.x, data.normalized.series, chartRect, Chartist.extend({}, options.axisX, {
+          highLow: highLow,
+          referenceValue: 0
+        }));
+      } else {
+        valueAxis = axisX = options.axisX.type.call(Chartist, Chartist.Axis.units.x, data.normalized.series, chartRect, Chartist.extend({}, options.axisX, {
+          highLow: highLow,
+          referenceValue: 0
+        }));
+      }
+
+      if(options.axisY.type === undefined) {
+        labelAxis = axisY = new Chartist.StepAxis(Chartist.Axis.units.y, data.normalized.series, chartRect, {
+          ticks: labelAxisTicks
+        });
+      } else {
+        labelAxis = axisY = options.axisY.type.call(Chartist, Chartist.Axis.units.y, data.normalized.series, chartRect, options.axisY);
+      }
+    } else {
+      if(options.axisX.type === undefined) {
+        labelAxis = axisX = new Chartist.StepAxis(Chartist.Axis.units.x, data.normalized.series, chartRect, {
+          ticks: labelAxisTicks
+        });
+      } else {
+        labelAxis = axisX = options.axisX.type.call(Chartist, Chartist.Axis.units.x, data.normalized.series, chartRect, options.axisX);
+      }
+
+      if(options.axisY.type === undefined) {
+        valueAxis = axisY = new Chartist.AutoScaleAxis(Chartist.Axis.units.y, data.normalized.series, chartRect, Chartist.extend({}, options.axisY, {
+          highLow: highLow,
+          referenceValue: 0
+        }));
+      } else {
+        valueAxis = axisY = options.axisY.type.call(Chartist, Chartist.Axis.units.y, data.normalized.series, chartRect, Chartist.extend({}, options.axisY, {
+          highLow: highLow,
+          referenceValue: 0
+        }));
+      }
+    }
+
+    // Projected 0 point
+    var zeroPoint = options.horizontalBars ? (chartRect.x1 + valueAxis.projectValue(0)) : (chartRect.y1 - valueAxis.projectValue(0));
+    // Used to track the screen coordinates of stacked bars
+    var stackedBarValues = [];
+
+    labelAxis.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
+    valueAxis.createGridAndLabels(gridGroup, labelGroup, this.supportsForeignObject, options, this.eventEmitter);
+
+    if (options.showGridBackground) {
+      Chartist.createGridBackground(gridGroup, chartRect, options.classNames.gridBackground, this.eventEmitter);
+    }
+
+    // Draw the series
+    data.raw.series.forEach(function(series, seriesIndex) {
+      // Calculating bi-polar value of index for seriesOffset. For i = 0..4 biPol will be -1.5, -0.5, 0.5, 1.5 etc.
+      var biPol = seriesIndex - (data.raw.series.length - 1) / 2;
+      // Half of the period width between vertical grid lines used to position bars
+      var periodHalfLength;
+      // Current series SVG element
+      var seriesElement;
+
+      // We need to set periodHalfLength based on some options combinations
+      if(options.distributeSeries && !options.stackBars) {
+        // If distributed series are enabled but stacked bars aren't, we need to use the length of the normaizedData array
+        // which is the series count and divide by 2
+        periodHalfLength = labelAxis.axisLength / data.normalized.series.length / 2;
+      } else if(options.distributeSeries && options.stackBars) {
+        // If distributed series and stacked bars are enabled we'll only get one bar so we should just divide the axis
+        // length by 2
+        periodHalfLength = labelAxis.axisLength / 2;
+      } else {
+        // On regular bar charts we should just use the series length
+        periodHalfLength = labelAxis.axisLength / data.normalized.series[seriesIndex].length / 2;
+      }
+
+      // Adding the series group to the series element
+      seriesElement = seriesGroup.elem('g');
+
+      // Write attributes to series group element. If series name or meta is undefined the attributes will not be written
+      seriesElement.attr({
+        'ct:series-name': series.name,
+        'ct:meta': Chartist.serialize(series.meta)
+      });
+
+      // Use series class from series data or if not set generate one
+      seriesElement.addClass([
+        options.classNames.series,
+        (series.className || options.classNames.series + '-' + Chartist.alphaNumerate(seriesIndex))
+      ].join(' '));
+
+      data.normalized.series[seriesIndex].forEach(function(value, valueIndex) {
+        var projected,
+          bar,
+          previousStack,
+          labelAxisValueIndex;
+
+        // We need to set labelAxisValueIndex based on some options combinations
+        if(options.distributeSeries && !options.stackBars) {
+          // If distributed series are enabled but stacked bars aren't, we can use the seriesIndex for later projection
+          // on the step axis for label positioning
+          labelAxisValueIndex = seriesIndex;
+        } else if(options.distributeSeries && options.stackBars) {
+          // If distributed series and stacked bars are enabled, we will only get one bar and therefore always use
+          // 0 for projection on the label step axis
+          labelAxisValueIndex = 0;
+        } else {
+          // On regular bar charts we just use the value index to project on the label step axis
+          labelAxisValueIndex = valueIndex;
+        }
+
+        // We need to transform coordinates differently based on the chart layout
+        if(options.horizontalBars) {
+          projected = {
+            x: chartRect.x1 + valueAxis.projectValue(value && value.x ? value.x : 0, valueIndex, data.normalized.series[seriesIndex]),
+            y: chartRect.y1 - labelAxis.projectValue(value && value.y ? value.y : 0, labelAxisValueIndex, data.normalized.series[seriesIndex])
+          };
+        } else {
+          projected = {
+            x: chartRect.x1 + labelAxis.projectValue(value && value.x ? value.x : 0, labelAxisValueIndex, data.normalized.series[seriesIndex]),
+            y: chartRect.y1 - valueAxis.projectValue(value && value.y ? value.y : 0, valueIndex, data.normalized.series[seriesIndex])
+          }
+        }
+
+        // If the label axis is a step based axis we will offset the bar into the middle of between two steps using
+        // the periodHalfLength value. Also we do arrange the different series so that they align up to each other using
+        // the seriesBarDistance. If we don't have a step axis, the bar positions can be chosen freely so we should not
+        // add any automated positioning.
+        if(labelAxis instanceof Chartist.StepAxis) {
+          // Offset to center bar between grid lines, but only if the step axis is not stretched
+          if(!labelAxis.options.stretch) {
+            projected[labelAxis.units.pos] += periodHalfLength * (options.horizontalBars ? -1 : 1);
+          }
+          // Using bi-polar offset for multiple series if no stacked bars or series distribution is used
+          projected[labelAxis.units.pos] += (options.stackBars || options.distributeSeries) ? 0 : biPol * options.seriesBarDistance * (options.horizontalBars ? -1 : 1);
+        }
+
+        // Enter value in stacked bar values used to remember previous screen value for stacking up bars
+        previousStack = stackedBarValues[valueIndex] || zeroPoint;
+        stackedBarValues[valueIndex] = previousStack - (zeroPoint - projected[labelAxis.counterUnits.pos]);
+
+        // Skip if value is undefined
+        if(value === undefined) {
+          return;
+        }
+
+        var positions = {};
+        positions[labelAxis.units.pos + '1'] = projected[labelAxis.units.pos];
+        positions[labelAxis.units.pos + '2'] = projected[labelAxis.units.pos];
+
+        if(options.stackBars && (options.stackMode === 'accumulate' || !options.stackMode)) {
+          // Stack mode: accumulate (default)
+          // If bars are stacked we use the stackedBarValues reference and otherwise base all bars off the zero line
+          // We want backwards compatibility, so the expected fallback without the 'stackMode' option
+          // to be the original behaviour (accumulate)
+          positions[labelAxis.counterUnits.pos + '1'] = previousStack;
+          positions[labelAxis.counterUnits.pos + '2'] = stackedBarValues[valueIndex];
+        } else {
+          // Draw from the zero line normally
+          // This is also the same code for Stack mode: overlap
+          positions[labelAxis.counterUnits.pos + '1'] = zeroPoint;
+          positions[labelAxis.counterUnits.pos + '2'] = projected[labelAxis.counterUnits.pos];
+        }
+
+        // Limit x and y so that they are within the chart rect
+        positions.x1 = Math.min(Math.max(positions.x1, chartRect.x1), chartRect.x2);
+        positions.x2 = Math.min(Math.max(positions.x2, chartRect.x1), chartRect.x2);
+        positions.y1 = Math.min(Math.max(positions.y1, chartRect.y2), chartRect.y1);
+        positions.y2 = Math.min(Math.max(positions.y2, chartRect.y2), chartRect.y1);
+
+        var metaData = Chartist.getMetaData(series, valueIndex);
+
+        // Create bar element
+        bar = seriesElement.elem('line', positions, options.classNames.bar).attr({
+          'ct:value': [value.x, value.y].filter(Chartist.isNumeric).join(','),
+          'ct:meta': Chartist.serialize(metaData)
+        });
+
+        this.eventEmitter.emit('draw', Chartist.extend({
+          type: 'bar',
+          value: value,
+          index: valueIndex,
+          meta: metaData,
+          series: series,
+          seriesIndex: seriesIndex,
+          axisX: axisX,
+          axisY: axisY,
+          chartRect: chartRect,
+          group: seriesElement,
+          element: bar
+        }, positions));
+      }.bind(this));
+    }.bind(this));
+
+    this.eventEmitter.emit('created', {
+      bounds: valueAxis.bounds,
+      chartRect: chartRect,
+      axisX: axisX,
+      axisY: axisY,
+      svg: this.svg,
+      options: options
+    });
+  }
+
+  /**
+   * This method creates a new bar chart and returns API object that you can use for later changes.
+   *
+   * @memberof Chartist.Bar
+   * @param {String|Node} query A selector query string or directly a DOM element
+   * @param {Object} data The data object that needs to consist of a labels and a series array
+   * @param {Object} [options] The options object with options that override the default options. Check the examples for a detailed list.
+   * @param {Array} [responsiveOptions] Specify an array of responsive option arrays which are a media query and options object pair => [[mediaQueryString, optionsObject],[more...]]
+   * @return {Object} An object which exposes the API for the created chart
+   *
+   * @example
+   * // Create a simple bar chart
+   * var data = {
+   *   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+   *   series: [
+   *     [5, 2, 4, 2, 0]
+   *   ]
+   * };
+   *
+   * // In the global name space Chartist we call the Bar function to initialize a bar chart. As a first parameter we pass in a selector where we would like to get our chart created and as a second parameter we pass our data object.
+   * new Chartist.Bar('.ct-chart', data);
+   *
+   * @example
+   * // This example creates a bipolar grouped bar chart where the boundaries are limitted to -10 and 10
+   * new Chartist.Bar('.ct-chart', {
+   *   labels: [1, 2, 3, 4, 5, 6, 7],
+   *   series: [
+   *     [1, 3, 2, -5, -3, 1, -6],
+   *     [-5, -2, -4, -1, 2, -3, 1]
+   *   ]
+   * }, {
+   *   seriesBarDistance: 12,
+   *   low: -10,
+   *   high: 10
+   * });
+   *
+   */
+  function Bar(query, data, options, responsiveOptions) {
+    Chartist.Bar.super.constructor.call(this,
+      query,
+      data,
+      defaultOptions,
+      Chartist.extend({}, defaultOptions, options),
+      responsiveOptions);
+  }
+
+  // Creating bar chart type in Chartist namespace
+  Chartist.Bar = Chartist.Base.extend({
+    constructor: Bar,
+    createChart: createChart
+  });
+
+}(window, document, Chartist));
+;/**
+ * The pie chart module of Chartist that can be used to draw pie, donut or gauge charts
+ *
+ * @module Chartist.Pie
+ */
+/* global Chartist */
+(function(window, document, Chartist) {
+  'use strict';
+
+  /**
+   * Default options in line charts. Expand the code view to see a detailed list of options with comments.
+   *
+   * @memberof Chartist.Pie
+   */
+  var defaultOptions = {
+    // Specify a fixed width for the chart as a string (i.e. '100px' or '50%')
+    width: undefined,
+    // Specify a fixed height for the chart as a string (i.e. '100px' or '50%')
+    height: undefined,
+    // Padding of the chart drawing area to the container element and labels as a number or padding object {top: 5, right: 5, bottom: 5, left: 5}
+    chartPadding: 5,
+    // Override the class names that are used to generate the SVG structure of the chart
+    classNames: {
+      chartPie: 'ct-chart-pie',
+      chartDonut: 'ct-chart-donut',
+      series: 'ct-series',
+      slicePie: 'ct-slice-pie',
+      sliceDonut: 'ct-slice-donut',
+      sliceDonutSolid: 'ct-slice-donut-solid',
+      label: 'ct-label'
+    },
+    // The start angle of the pie chart in degrees where 0 points north. A higher value offsets the start angle clockwise.
+    startAngle: 0,
+    // An optional total you can specify. By specifying a total value, the sum of the values in the series must be this total in order to draw a full pie. You can use this parameter to draw only parts of a pie or gauge charts.
+    total: undefined,
+    // If specified the donut CSS classes will be used and strokes will be drawn instead of pie slices.
+    donut: false,
+    // If specified the donut segments will be drawn as shapes instead of strokes.
+    donutSolid: false,
+    // Specify the donut stroke width, currently done in javascript for convenience. May move to CSS styles in the future.
+    // This option can be set as number or string to specify a relative width (i.e. 100 or '30%').
+    donutWidth: 60,
+    // If a label should be shown or not
+    showLabel: true,
+    // Label position offset from the standard position which is half distance of the radius. This value can be either positive or negative. Positive values will position the label away from the center.
+    labelOffset: 0,
+    // This option can be set to 'inside', 'outside' or 'center'. Positioned with 'inside' the labels will be placed on half the distance of the radius to the border of the Pie by respecting the 'labelOffset'. The 'outside' option will place the labels at the border of the pie and 'center' will place the labels in the absolute center point of the chart. The 'center' option only makes sense in conjunction with the 'labelOffset' option.
+    labelPosition: 'inside',
+    // An interpolation function for the label value
+    labelInterpolationFnc: Chartist.noop,
+    // Label direction can be 'neutral', 'explode' or 'implode'. The labels anchor will be positioned based on those settings as well as the fact if the labels are on the right or left side of the center of the chart. Usually explode is useful when labels are positioned far away from the center.
+    labelDirection: 'neutral',
+    // If true the whole data is reversed including labels, the series order as well as the whole series data arrays.
+    reverseData: false,
+    // If true empty values will be ignored to avoid drawing unncessary slices and labels
+    ignoreEmptyValues: false
+  };
+
+  /**
+   * Determines SVG anchor position based on direction and center parameter
+   *
+   * @param center
+   * @param label
+   * @param direction
+   * @return {string}
+   */
+  function determineAnchorPosition(center, label, direction) {
+    var toTheRight = label.x > center.x;
+
+    if(toTheRight && direction === 'explode' ||
+      !toTheRight && direction === 'implode') {
+      return 'start';
+    } else if(toTheRight && direction === 'implode' ||
+      !toTheRight && direction === 'explode') {
+      return 'end';
+    } else {
+      return 'middle';
+    }
+  }
+
+  /**
+   * Creates the pie chart
+   *
+   * @param options
+   */
+  function createChart(options) {
+    var data = Chartist.normalizeData(this.data);
+    var seriesGroups = [],
+      labelsGroup,
+      chartRect,
+      radius,
+      labelRadius,
+      totalDataSum,
+      startAngle = options.startAngle;
+
+    // Create SVG.js draw
+    this.svg = Chartist.createSvg(this.container, options.width, options.height,options.donut ? options.classNames.chartDonut : options.classNames.chartPie);
+    // Calculate charting rect
+    chartRect = Chartist.createChartRect(this.svg, options, defaultOptions.padding);
+    // Get biggest circle radius possible within chartRect
+    radius = Math.min(chartRect.width() / 2, chartRect.height() / 2);
+    // Calculate total of all series to get reference value or use total reference from optional options
+    totalDataSum = options.total || data.normalized.series.reduce(function(previousValue, currentValue) {
+      return previousValue + currentValue;
+    }, 0);
+
+    var donutWidth = Chartist.quantity(options.donutWidth);
+    if (donutWidth.unit === '%') {
+      donutWidth.value *= radius / 100;
+    }
+
+    // If this is a donut chart we need to adjust our radius to enable strokes to be drawn inside
+    // Unfortunately this is not possible with the current SVG Spec
+    // See this proposal for more details: http://lists.w3.org/Archives/Public/www-svg/2003Oct/0000.html
+    radius -= options.donut && !options.donutSolid ? donutWidth.value / 2  : 0;
+
+    // If labelPosition is set to `outside` or a donut chart is drawn then the label position is at the radius,
+    // if regular pie chart it's half of the radius
+    if(options.labelPosition === 'outside' || options.donut && !options.donutSolid) {
+      labelRadius = radius;
+    } else if(options.labelPosition === 'center') {
+      // If labelPosition is center we start with 0 and will later wait for the labelOffset
+      labelRadius = 0;
+    } else if(options.donutSolid) {
+      labelRadius = radius - donutWidth.value / 2;
+    } else {
+      // Default option is 'inside' where we use half the radius so the label will be placed in the center of the pie
+      // slice
+      labelRadius = radius / 2;
+    }
+    // Add the offset to the labelRadius where a negative offset means closed to the center of the chart
+    labelRadius += options.labelOffset;
+
+    // Calculate end angle based on total sum and current data value and offset with padding
+    var center = {
+      x: chartRect.x1 + chartRect.width() / 2,
+      y: chartRect.y2 + chartRect.height() / 2
+    };
+
+    // Check if there is only one non-zero value in the series array.
+    var hasSingleValInSeries = data.raw.series.filter(function(val) {
+      return val.hasOwnProperty('value') ? val.value !== 0 : val !== 0;
+    }).length === 1;
+
+    // Creating the series groups
+    data.raw.series.forEach(function(series, index) {
+      seriesGroups[index] = this.svg.elem('g', null, null);
+    }.bind(this));
+    //if we need to show labels we create the label group now
+    if(options.showLabel) {
+      labelsGroup = this.svg.elem('g', null, null);
+    }
+
+    // Draw the series
+    // initialize series groups
+    data.raw.series.forEach(function(series, index) {
+      // If current value is zero and we are ignoring empty values then skip to next value
+      if (data.normalized.series[index] === 0 && options.ignoreEmptyValues) return;
+
+      // If the series is an object and contains a name or meta data we add a custom attribute
+      seriesGroups[index].attr({
+        'ct:series-name': series.name
+      });
+
+      // Use series class from series data or if not set generate one
+      seriesGroups[index].addClass([
+        options.classNames.series,
+        (series.className || options.classNames.series + '-' + Chartist.alphaNumerate(index))
+      ].join(' '));
+
+      // If the whole dataset is 0 endAngle should be zero. Can't divide by 0.
+      var endAngle = (totalDataSum > 0 ? startAngle + data.normalized.series[index] / totalDataSum * 360 : 0);
+
+      // Use slight offset so there are no transparent hairline issues
+      var overlappigStartAngle = Math.max(0, startAngle - (index === 0 || hasSingleValInSeries ? 0 : 0.2));
+
+      // If we need to draw the arc for all 360 degrees we need to add a hack where we close the circle
+      // with Z and use 359.99 degrees
+      if(endAngle - overlappigStartAngle >= 359.99) {
+        endAngle = overlappigStartAngle + 359.99;
+      }
+
+      var start = Chartist.polarToCartesian(center.x, center.y, radius, overlappigStartAngle),
+        end = Chartist.polarToCartesian(center.x, center.y, radius, endAngle);
+
+      var innerStart,
+        innerEnd,
+        donutSolidRadius;
+
+      // Create a new path element for the pie chart. If this isn't a donut chart we should close the path for a correct stroke
+      var path = new Chartist.Svg.Path(!options.donut || options.donutSolid)
+        .move(end.x, end.y)
+        .arc(radius, radius, 0, endAngle - startAngle > 180, 0, start.x, start.y);
+
+      // If regular pie chart (no donut) we add a line to the center of the circle for completing the pie
+      if(!options.donut) {
+        path.line(center.x, center.y);
+      } else if (options.donutSolid) {
+        donutSolidRadius = radius - donutWidth.value;
+        innerStart = Chartist.polarToCartesian(center.x, center.y, donutSolidRadius, startAngle - (index === 0 || hasSingleValInSeries ? 0 : 0.2));
+        innerEnd = Chartist.polarToCartesian(center.x, center.y, donutSolidRadius, endAngle);
+        path.line(innerStart.x, innerStart.y);
+        path.arc(donutSolidRadius, donutSolidRadius, 0, endAngle - startAngle  > 180, 1, innerEnd.x, innerEnd.y);
+      }
+
+      // Create the SVG path
+      // If this is a donut chart we add the donut class, otherwise just a regular slice
+      var pathClassName = options.classNames.slicePie;
+      if (options.donut) {
+        pathClassName = options.classNames.sliceDonut;
+        if (options.donutSolid) {
+          pathClassName = options.classNames.sliceDonutSolid;
+        }
+      }
+      var pathElement = seriesGroups[index].elem('path', {
+        d: path.stringify()
+      }, pathClassName);
+
+      // Adding the pie series value to the path
+      pathElement.attr({
+        'ct:value': data.normalized.series[index],
+        'ct:meta': Chartist.serialize(series.meta)
+      });
+
+      // If this is a donut, we add the stroke-width as style attribute
+      if(options.donut && !options.donutSolid) {
+        pathElement._node.style.strokeWidth = donutWidth.value + 'px';
+      }
+
+      // Fire off draw event
+      this.eventEmitter.emit('draw', {
+        type: 'slice',
+        value: data.normalized.series[index],
+        totalDataSum: totalDataSum,
+        index: index,
+        meta: series.meta,
+        series: series,
+        group: seriesGroups[index],
+        element: pathElement,
+        path: path.clone(),
+        center: center,
+        radius: radius,
+        startAngle: startAngle,
+        endAngle: endAngle
+      });
+
+      // If we need to show labels we need to add the label for this slice now
+      if(options.showLabel) {
+        var labelPosition;
+        if(data.raw.series.length === 1) {
+          // If we have only 1 series, we can position the label in the center of the pie
+          labelPosition = {
+            x: center.x,
+            y: center.y
+          };
+        } else {
+          // Position at the labelRadius distance from center and between start and end angle
+          labelPosition = Chartist.polarToCartesian(
+            center.x,
+            center.y,
+            labelRadius,
+            startAngle + (endAngle - startAngle) / 2
+          );
+        }
+
+        var rawValue;
+        if(data.normalized.labels && !Chartist.isFalseyButZero(data.normalized.labels[index])) {
+          rawValue = data.normalized.labels[index];
+        } else {
+          rawValue = data.normalized.series[index];
+        }
+
+        var interpolatedValue = options.labelInterpolationFnc(rawValue, index);
+
+        if(interpolatedValue || interpolatedValue === 0) {
+          var labelElement = labelsGroup.elem('text', {
+            dx: labelPosition.x,
+            dy: labelPosition.y,
+            'text-anchor': determineAnchorPosition(center, labelPosition, options.labelDirection)
+          }, options.classNames.label).text('' + interpolatedValue);
+
+          // Fire off draw event
+          this.eventEmitter.emit('draw', {
+            type: 'label',
+            index: index,
+            group: labelsGroup,
+            element: labelElement,
+            text: '' + interpolatedValue,
+            x: labelPosition.x,
+            y: labelPosition.y
+          });
+        }
+      }
+
+      // Set next startAngle to current endAngle.
+      // (except for last slice)
+      startAngle = endAngle;
+    }.bind(this));
+
+    this.eventEmitter.emit('created', {
+      chartRect: chartRect,
+      svg: this.svg,
+      options: options
+    });
+  }
+
+  /**
+   * This method creates a new pie chart and returns an object that can be used to redraw the chart.
+   *
+   * @memberof Chartist.Pie
+   * @param {String|Node} query A selector query string or directly a DOM element
+   * @param {Object} data The data object in the pie chart needs to have a series property with a one dimensional data array. The values will be normalized against each other and don't necessarily need to be in percentage. The series property can also be an array of value objects that contain a value property and a className property to override the CSS class name for the series group.
+   * @param {Object} [options] The options object with options that override the default options. Check the examples for a detailed list.
+   * @param {Array} [responsiveOptions] Specify an array of responsive option arrays which are a media query and options object pair => [[mediaQueryString, optionsObject],[more...]]
+   * @return {Object} An object with a version and an update method to manually redraw the chart
+   *
+   * @example
+   * // Simple pie chart example with four series
+   * new Chartist.Pie('.ct-chart', {
+   *   series: [10, 2, 4, 3]
+   * });
+   *
+   * @example
+   * // Drawing a donut chart
+   * new Chartist.Pie('.ct-chart', {
+   *   series: [10, 2, 4, 3]
+   * }, {
+   *   donut: true
+   * });
+   *
+   * @example
+   * // Using donut, startAngle and total to draw a gauge chart
+   * new Chartist.Pie('.ct-chart', {
+   *   series: [20, 10, 30, 40]
+   * }, {
+   *   donut: true,
+   *   donutWidth: 20,
+   *   startAngle: 270,
+   *   total: 200
+   * });
+   *
+   * @example
+   * // Drawing a pie chart with padding and labels that are outside the pie
+   * new Chartist.Pie('.ct-chart', {
+   *   series: [20, 10, 30, 40]
+   * }, {
+   *   chartPadding: 30,
+   *   labelOffset: 50,
+   *   labelDirection: 'explode'
+   * });
+   *
+   * @example
+   * // Overriding the class names for individual series as well as a name and meta data.
+   * // The name will be written as ct:series-name attribute and the meta data will be serialized and written
+   * // to a ct:meta attribute.
+   * new Chartist.Pie('.ct-chart', {
+   *   series: [{
+   *     value: 20,
+   *     name: 'Series 1',
+   *     className: 'my-custom-class-one',
+   *     meta: 'Meta One'
+   *   }, {
+   *     value: 10,
+   *     name: 'Series 2',
+   *     className: 'my-custom-class-two',
+   *     meta: 'Meta Two'
+   *   }, {
+   *     value: 70,
+   *     name: 'Series 3',
+   *     className: 'my-custom-class-three',
+   *     meta: 'Meta Three'
+   *   }]
+   * });
+   */
+  function Pie(query, data, options, responsiveOptions) {
+    Chartist.Pie.super.constructor.call(this,
+      query,
+      data,
+      defaultOptions,
+      Chartist.extend({}, defaultOptions, options),
+      responsiveOptions);
+  }
+
+  // Creating pie chart type in Chartist namespace
+  Chartist.Pie = Chartist.Base.extend({
+    constructor: Pie,
+    createChart: createChart,
+    determineAnchorPosition: determineAnchorPosition
+  });
+
+}(window, document, Chartist));
+
+return Chartist;
+
+}));
+
+
+/***/ }),
+/* 138 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(selector) {
+		if (typeof memo[selector] === "undefined") {
+			memo[selector] = fn.call(this, selector);
+		}
+
+		return memo[selector]
+	};
+})(function (target) {
+	return document.querySelector(target)
+});
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(447);
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton) options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+	if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	options.attrs.type = "text/css";
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	options.attrs.type = "text/css";
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = options.transform(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 140 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClickOutside; });
+var ClickOutside = {
+    bind: function bind(el, binding, vnode) {
+        el.event = function (event) {
+            if (!(el == event.target || el.contains(event.target))) {
+                vnode.context[binding.expression](event);
+            }
+        };
+        document.body.addEventListener('click', el.event);
+    },
+    unbind: function unbind(el) {
+        document.body.removeEventListener('click', el.event);
+    }
+};
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(142);
+module.exports = __webpack_require__(475);
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_portal_vue__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_portal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_portal_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_store__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toasted__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_toasted___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_toasted__);
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+__webpack_require__(143);
+__webpack_require__(164);
+__webpack_require__(167);
+
+window.Vue = __webpack_require__(49);
+
+/**
+ * Dependencies
+ */
+
+
+
+
+
+// Toast snackbar
+window.Toasted = __WEBPACK_IMPORTED_MODULE_3_vue_toasted___default.a;
+Vue.use(__WEBPACK_IMPORTED_MODULE_3_vue_toasted___default.a, {
+    position: 'bottom-right',
+    duration: 6000,
+    theme: 'bubble'
+});
+
+/**
+ * Use dependencies
+ */
+Vue.use(__WEBPACK_IMPORTED_MODULE_1_portal_vue___default.a);
+
+/**
+ * Icons
+ */
+var icons = __webpack_require__(375);
+icons.keys().map(function (key) {
+    var icon = key.split('/').pop().split('.')[0].toLowerCase();
+    Vue.component('icon-' + icon, icons(key));
+});
+
+/**
+ * Elements
+ */
+var elements = __webpack_require__(420);
+elements.keys().map(function (key) {
+    var component = key.split('/').pop().split('.')[0].toLowerCase();
+    Vue.component('vue-' + component, elements(key));
+});
+
+// Profile
+Vue.component('vue-profile', __webpack_require__(427));
+Vue.component('vue-addresses', __webpack_require__(430));
+Vue.component('vue-address-box', __webpack_require__(432));
+Vue.component('vue-orders', __webpack_require__(435));
+Vue.component('vue-order-box', __webpack_require__(437));
+Vue.component('vue-profile-chart', __webpack_require__(440));
+Vue.component('vue-dropdown-menu', __webpack_require__(452));
+
+// Basket
+Vue.component('vue-basket', __webpack_require__(454));
+Vue.component('vue-header-basket', __webpack_require__(457));
+Vue.component('vue-add-to-basket', __webpack_require__(460));
+
+// Product
+Vue.component('vue-product-gallery', __webpack_require__(466));
+
+// Search
+Vue.component('vue-search', __webpack_require__(469));
+
+var app = new Vue({
+    el: '#app',
+    store: __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* store */]
+});
 
 /***/ }),
 /* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+window._ = __webpack_require__(95);
+
+/**
+ * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs. This
+ * code may be modified to fit the specific needs of your application.
+ */
+
+try {
+  // window.Popper = require('popper.js').default;
+  // window.$ = window.jQuery = require('jquery');
+  // require('bootstrap');
+} catch (e) {}
+
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+window.axios = __webpack_require__(145);
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+/**
+ * Next we will register the CSRF Token as a common header with Axios so that
+ * all outgoing HTTP requests automatically have it attached. This is just
+ * a simple convenience so we don't have to attach every token manually.
+ */
+
+var token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+
+// import Echo from 'laravel-echo'
+
+// window.Pusher = require('pusher-js');
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     encrypted: true
+// });
+
+/***/ }),
+/* 144 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -37929,21 +37952,21 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(145);
+module.exports = __webpack_require__(146);
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(15);
-var bind = __webpack_require__(95);
-var Axios = __webpack_require__(147);
+var bind = __webpack_require__(96);
+var Axios = __webpack_require__(148);
 var defaults = __webpack_require__(68);
 
 /**
@@ -37977,15 +38000,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(100);
-axios.CancelToken = __webpack_require__(161);
-axios.isCancel = __webpack_require__(99);
+axios.Cancel = __webpack_require__(101);
+axios.CancelToken = __webpack_require__(162);
+axios.isCancel = __webpack_require__(100);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(162);
+axios.spread = __webpack_require__(163);
 
 module.exports = axios;
 
@@ -37994,7 +38017,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports) {
 
 /*!
@@ -38021,7 +38044,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38029,8 +38052,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(68);
 var utils = __webpack_require__(15);
-var InterceptorManager = __webpack_require__(156);
-var dispatchRequest = __webpack_require__(157);
+var InterceptorManager = __webpack_require__(157);
+var dispatchRequest = __webpack_require__(158);
 
 /**
  * Create a new instance of Axios
@@ -38107,7 +38130,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38126,13 +38149,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(98);
+var createError = __webpack_require__(99);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -38159,7 +38182,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38187,7 +38210,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38260,7 +38283,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38320,7 +38343,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38395,7 +38418,7 @@ module.exports = (
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38438,7 +38461,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38498,7 +38521,7 @@ module.exports = (
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38557,18 +38580,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(15);
-var transformData = __webpack_require__(158);
-var isCancel = __webpack_require__(99);
+var transformData = __webpack_require__(159);
+var isCancel = __webpack_require__(100);
 var defaults = __webpack_require__(68);
-var isAbsoluteURL = __webpack_require__(159);
-var combineURLs = __webpack_require__(160);
+var isAbsoluteURL = __webpack_require__(160);
+var combineURLs = __webpack_require__(161);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -38650,7 +38673,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38677,7 +38700,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38698,7 +38721,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38719,13 +38742,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(100);
+var Cancel = __webpack_require__(101);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -38783,7 +38806,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38817,7 +38840,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38869,7 +38892,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$snack = function (msg) {
 };
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -38925,7 +38948,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(165);
+__webpack_require__(166);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -38939,7 +38962,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44)))
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -39129,19 +39152,19 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44), __webpack_require__(96)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44), __webpack_require__(97)))
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex_i18n__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_store__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__locales_js__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex_i18n__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_store__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__locales_js__ = __webpack_require__(170);
 // Translations
 
 
@@ -39160,7 +39183,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$trans = window.trans = fu
 };
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39975,7 +39998,7 @@ var index = {
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40920,7 +40943,7 @@ var index_esm = {
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41158,17 +41181,17 @@ var index_esm = {
 });
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(171);
-
-__webpack_require__(368);
+__webpack_require__(172);
 
 __webpack_require__(369);
+
+__webpack_require__(370);
 
 if (global._babelPolyfill) {
   throw new Error("only one instance of babel-polyfill is allowed");
@@ -41193,11 +41216,10 @@ define(String.prototype, "padRight", "".padEnd);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44)))
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(172);
-__webpack_require__(174);
+__webpack_require__(173);
 __webpack_require__(175);
 __webpack_require__(176);
 __webpack_require__(177);
@@ -41212,7 +41234,7 @@ __webpack_require__(185);
 __webpack_require__(186);
 __webpack_require__(187);
 __webpack_require__(188);
-__webpack_require__(190);
+__webpack_require__(189);
 __webpack_require__(191);
 __webpack_require__(192);
 __webpack_require__(193);
@@ -41273,16 +41295,16 @@ __webpack_require__(247);
 __webpack_require__(248);
 __webpack_require__(249);
 __webpack_require__(250);
-__webpack_require__(252);
+__webpack_require__(251);
 __webpack_require__(253);
-__webpack_require__(255);
+__webpack_require__(254);
 __webpack_require__(256);
 __webpack_require__(257);
 __webpack_require__(258);
 __webpack_require__(259);
 __webpack_require__(260);
 __webpack_require__(261);
-__webpack_require__(263);
+__webpack_require__(262);
 __webpack_require__(264);
 __webpack_require__(265);
 __webpack_require__(266);
@@ -41295,19 +41317,19 @@ __webpack_require__(272);
 __webpack_require__(273);
 __webpack_require__(274);
 __webpack_require__(275);
-__webpack_require__(90);
 __webpack_require__(276);
+__webpack_require__(90);
 __webpack_require__(277);
-__webpack_require__(120);
 __webpack_require__(278);
+__webpack_require__(121);
 __webpack_require__(279);
 __webpack_require__(280);
 __webpack_require__(281);
 __webpack_require__(282);
-__webpack_require__(123);
-__webpack_require__(125);
-__webpack_require__(126);
 __webpack_require__(283);
+__webpack_require__(124);
+__webpack_require__(126);
+__webpack_require__(127);
 __webpack_require__(284);
 __webpack_require__(285);
 __webpack_require__(286);
@@ -41392,11 +41414,12 @@ __webpack_require__(364);
 __webpack_require__(365);
 __webpack_require__(366);
 __webpack_require__(367);
+__webpack_require__(368);
 module.exports = __webpack_require__(20);
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41413,9 +41436,9 @@ var shared = __webpack_require__(53);
 var setToStringTag = __webpack_require__(45);
 var uid = __webpack_require__(35);
 var wks = __webpack_require__(6);
-var wksExt = __webpack_require__(103);
+var wksExt = __webpack_require__(104);
 var wksDefine = __webpack_require__(70);
-var enumKeys = __webpack_require__(173);
+var enumKeys = __webpack_require__(174);
 var isArray = __webpack_require__(56);
 var anObject = __webpack_require__(2);
 var isObject = __webpack_require__(5);
@@ -41423,7 +41446,7 @@ var toIObject = __webpack_require__(17);
 var toPrimitive = __webpack_require__(24);
 var createDesc = __webpack_require__(34);
 var _create = __webpack_require__(38);
-var gOPNExt = __webpack_require__(106);
+var gOPNExt = __webpack_require__(107);
 var $GOPD = __webpack_require__(18);
 var $DP = __webpack_require__(8);
 var $keys = __webpack_require__(36);
@@ -41637,7 +41660,7 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
@@ -41658,7 +41681,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -41667,7 +41690,7 @@ $export($export.S, 'Object', { create: __webpack_require__(38) });
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -41676,16 +41699,16 @@ $export($export.S + $export.F * !__webpack_require__(7), 'Object', { definePrope
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(7), 'Object', { defineProperties: __webpack_require__(105) });
+$export($export.S + $export.F * !__webpack_require__(7), 'Object', { defineProperties: __webpack_require__(106) });
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
@@ -41700,7 +41723,7 @@ __webpack_require__(27)('getOwnPropertyDescriptor', function () {
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
@@ -41715,7 +41738,7 @@ __webpack_require__(27)('getPrototypeOf', function () {
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
@@ -41730,17 +41753,17 @@ __webpack_require__(27)('keys', function () {
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(27)('getOwnPropertyNames', function () {
-  return __webpack_require__(106).f;
+  return __webpack_require__(107).f;
 });
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
@@ -41755,7 +41778,7 @@ __webpack_require__(27)('freeze', function ($freeze) {
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
@@ -41770,7 +41793,7 @@ __webpack_require__(27)('seal', function ($seal) {
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
@@ -41785,7 +41808,7 @@ __webpack_require__(27)('preventExtensions', function ($preventExtensions) {
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
@@ -41799,7 +41822,7 @@ __webpack_require__(27)('isFrozen', function ($isFrozen) {
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
@@ -41813,7 +41836,7 @@ __webpack_require__(27)('isSealed', function ($isSealed) {
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
@@ -41827,26 +41850,26 @@ __webpack_require__(27)('isExtensible', function ($isExtensible) {
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(0);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(107) });
-
-
-/***/ }),
-/* 188 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.3.10 Object.is(value1, value2)
-var $export = __webpack_require__(0);
-$export($export.S, 'Object', { is: __webpack_require__(189) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(108) });
 
 
 /***/ }),
 /* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.10 Object.is(value1, value2)
+var $export = __webpack_require__(0);
+$export($export.S, 'Object', { is: __webpack_require__(190) });
+
+
+/***/ }),
+/* 190 */
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -41857,7 +41880,7 @@ module.exports = Object.is || function is(x, y) {
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
@@ -41866,7 +41889,7 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(74).set });
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41883,17 +41906,17 @@ if (test + '' != '[object z]') {
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Function', { bind: __webpack_require__(108) });
+$export($export.P, 'Function', { bind: __webpack_require__(109) });
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(8).f;
@@ -41915,7 +41938,7 @@ NAME in FProto || __webpack_require__(7) && dP(FProto, NAME, {
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41935,27 +41958,27 @@ if (!(HAS_INSTANCE in FunctionProto)) __webpack_require__(8).f(FunctionProto, HA
 
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(110);
+var $parseInt = __webpack_require__(111);
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(111);
+var $parseFloat = __webpack_require__(112);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $parseFloat });
 
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42031,14 +42054,14 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
 
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
 var toInteger = __webpack_require__(26);
-var aNumberValue = __webpack_require__(112);
+var aNumberValue = __webpack_require__(113);
 var repeat = __webpack_require__(77);
 var $toFixed = 1.0.toFixed;
 var floor = Math.floor;
@@ -42152,14 +42175,14 @@ $export($export.P + $export.F * (!!$toFixed && (
 
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
 var $fails = __webpack_require__(4);
-var aNumberValue = __webpack_require__(112);
+var aNumberValue = __webpack_require__(113);
 var $toPrecision = 1.0.toPrecision;
 
 $export($export.P + $export.F * ($fails(function () {
@@ -42177,7 +42200,7 @@ $export($export.P + $export.F * ($fails(function () {
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -42187,7 +42210,7 @@ $export($export.S, 'Number', { EPSILON: Math.pow(2, -52) });
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -42202,17 +42225,17 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Number', { isInteger: __webpack_require__(113) });
+$export($export.S, 'Number', { isInteger: __webpack_require__(114) });
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -42227,12 +42250,12 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export = __webpack_require__(0);
-var isInteger = __webpack_require__(113);
+var isInteger = __webpack_require__(114);
 var abs = Math.abs;
 
 $export($export.S, 'Number', {
@@ -42243,7 +42266,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -42253,7 +42276,7 @@ $export($export.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -42263,32 +42286,32 @@ $export($export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 
 
 /***/ }),
-/* 207 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(111);
-// 20.1.2.12 Number.parseFloat(string)
-$export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { parseFloat: $parseFloat });
-
-
-/***/ }),
 /* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(110);
-// 20.1.2.13 Number.parseInt(string, radix)
-$export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { parseInt: $parseInt });
+var $parseFloat = __webpack_require__(112);
+// 20.1.2.12 Number.parseFloat(string)
+$export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { parseFloat: $parseFloat });
 
 
 /***/ }),
 /* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var $export = __webpack_require__(0);
+var $parseInt = __webpack_require__(111);
+// 20.1.2.13 Number.parseInt(string, radix)
+$export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { parseInt: $parseInt });
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(0);
-var log1p = __webpack_require__(114);
+var log1p = __webpack_require__(115);
 var sqrt = Math.sqrt;
 var $acosh = Math.acosh;
 
@@ -42307,7 +42330,7 @@ $export($export.S + $export.F * !($acosh
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -42323,7 +42346,7 @@ $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh:
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -42339,7 +42362,7 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
@@ -42354,7 +42377,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -42368,7 +42391,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -42383,7 +42406,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -42394,17 +42417,17 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 
 
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { fround: __webpack_require__(115) });
+$export($export.S, 'Math', { fround: __webpack_require__(116) });
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -42435,7 +42458,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -42458,7 +42481,7 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -42472,17 +42495,17 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { log1p: __webpack_require__(114) });
+$export($export.S, 'Math', { log1p: __webpack_require__(115) });
 
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -42496,7 +42519,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
@@ -42506,7 +42529,7 @@ $export($export.S, 'Math', { sign: __webpack_require__(78) });
 
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
@@ -42527,7 +42550,7 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
@@ -42545,7 +42568,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -42559,7 +42582,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -42588,7 +42611,7 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -42612,7 +42635,7 @@ $export($export.S, 'String', {
 
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42626,7 +42649,7 @@ __webpack_require__(46)('trim', function ($trim) {
 
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42650,7 +42673,7 @@ __webpack_require__(81)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42666,7 +42689,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42693,7 +42716,7 @@ $export($export.P + $export.F * __webpack_require__(84)(ENDS_WITH), 'String', {
 
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42712,7 +42735,7 @@ $export($export.P + $export.F * __webpack_require__(84)(INCLUDES), 'String', {
 
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -42724,7 +42747,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42749,7 +42772,7 @@ $export($export.P + $export.F * __webpack_require__(84)(STARTS_WITH), 'String', 
 
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42763,7 +42786,7 @@ __webpack_require__(14)('anchor', function (createHTML) {
 
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42777,7 +42800,7 @@ __webpack_require__(14)('big', function (createHTML) {
 
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42791,7 +42814,7 @@ __webpack_require__(14)('blink', function (createHTML) {
 
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42805,7 +42828,7 @@ __webpack_require__(14)('bold', function (createHTML) {
 
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42819,7 +42842,7 @@ __webpack_require__(14)('fixed', function (createHTML) {
 
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42833,7 +42856,7 @@ __webpack_require__(14)('fontcolor', function (createHTML) {
 
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42847,7 +42870,7 @@ __webpack_require__(14)('fontsize', function (createHTML) {
 
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42861,7 +42884,7 @@ __webpack_require__(14)('italics', function (createHTML) {
 
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42875,7 +42898,7 @@ __webpack_require__(14)('link', function (createHTML) {
 
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42889,7 +42912,7 @@ __webpack_require__(14)('small', function (createHTML) {
 
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42903,7 +42926,7 @@ __webpack_require__(14)('strike', function (createHTML) {
 
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42917,7 +42940,7 @@ __webpack_require__(14)('sub', function (createHTML) {
 
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42931,7 +42954,7 @@ __webpack_require__(14)('sup', function (createHTML) {
 
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -42941,7 +42964,7 @@ $export($export.S, 'Date', { now: function () { return new Date().getTime(); } }
 
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42964,12 +42987,12 @@ $export($export.P + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 var $export = __webpack_require__(0);
-var toISOString = __webpack_require__(251);
+var toISOString = __webpack_require__(252);
 
 // PhantomJS / old WebKit has a broken implementations
 $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'Date', {
@@ -42978,7 +43001,7 @@ $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'D
 
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43011,7 +43034,7 @@ module.exports = (fails(function () {
 
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var DateProto = Date.prototype;
@@ -43029,17 +43052,17 @@ if (new Date(NaN) + '' != INVALID_DATE) {
 
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(6)('toPrimitive');
 var proto = Date.prototype;
 
-if (!(TO_PRIMITIVE in proto)) __webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(254));
+if (!(TO_PRIMITIVE in proto)) __webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(255));
 
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43055,7 +43078,7 @@ module.exports = function (hint) {
 
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
@@ -43065,7 +43088,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(56) });
 
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43073,7 +43096,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(56) });
 var ctx = __webpack_require__(21);
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(10);
-var call = __webpack_require__(116);
+var call = __webpack_require__(117);
 var isArrayIter = __webpack_require__(85);
 var toLength = __webpack_require__(9);
 var createProperty = __webpack_require__(86);
@@ -43109,7 +43132,7 @@ $export($export.S + $export.F * !__webpack_require__(58)(function (iter) { Array
 
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43135,7 +43158,7 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43154,7 +43177,7 @@ $export($export.P + $export.F * (__webpack_require__(50) != Object || !__webpack
 
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43189,7 +43212,7 @@ $export($export.P + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43219,7 +43242,7 @@ $export($export.P + $export.F * (fails(function () {
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43237,7 +43260,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(5);
@@ -43259,7 +43282,7 @@ module.exports = function (original) {
 
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43276,7 +43299,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].map, true), 'Array',
 
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43293,7 +43316,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].filter, true), 'Arra
 
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43310,7 +43333,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].some, true), 'Array'
 
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43327,13 +43350,13 @@ $export($export.P + $export.F * !__webpack_require__(23)([].every, true), 'Array
 
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(117);
+var $reduce = __webpack_require__(118);
 
 $export($export.P + $export.F * !__webpack_require__(23)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -43344,13 +43367,13 @@ $export($export.P + $export.F * !__webpack_require__(23)([].reduce, true), 'Arra
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(117);
+var $reduce = __webpack_require__(118);
 
 $export($export.P + $export.F * !__webpack_require__(23)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -43361,7 +43384,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].reduceRight, true), 
 
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43383,7 +43406,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(23)($nati
 
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43412,19 +43435,19 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(23)($nati
 
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Array', { copyWithin: __webpack_require__(118) });
+$export($export.P, 'Array', { copyWithin: __webpack_require__(119) });
 
 __webpack_require__(33)('copyWithin');
 
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
@@ -43436,7 +43459,7 @@ __webpack_require__(33)('fill');
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43457,7 +43480,7 @@ __webpack_require__(33)(KEY);
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43478,14 +43501,14 @@ __webpack_require__(33)(KEY);
 
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(40)('Array');
 
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(3);
@@ -43534,12 +43557,12 @@ __webpack_require__(40)('RegExp');
 
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-__webpack_require__(120);
+__webpack_require__(121);
 var anObject = __webpack_require__(2);
 var $flags = __webpack_require__(59);
 var DESCRIPTORS = __webpack_require__(7);
@@ -43566,7 +43589,7 @@ if (__webpack_require__(4)(function () { return $toString.call({ source: 'a', fl
 
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@match logic
@@ -43582,7 +43605,7 @@ __webpack_require__(60)('match', 1, function (defined, MATCH, $match) {
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@replace logic
@@ -43600,7 +43623,7 @@ __webpack_require__(60)('replace', 2, function (defined, REPLACE, $replace) {
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@search logic
@@ -43616,7 +43639,7 @@ __webpack_require__(60)('search', 1, function (defined, SEARCH, $search) {
 
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@split logic
@@ -43693,7 +43716,7 @@ __webpack_require__(60)('split', 2, function (defined, SPLIT, $split) {
 
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43711,9 +43734,9 @@ var speciesConstructor = __webpack_require__(61);
 var task = __webpack_require__(91).set;
 var microtask = __webpack_require__(92)();
 var newPromiseCapabilityModule = __webpack_require__(93);
-var perform = __webpack_require__(121);
+var perform = __webpack_require__(122);
 var userAgent = __webpack_require__(62);
-var promiseResolve = __webpack_require__(122);
+var promiseResolve = __webpack_require__(123);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -43986,12 +44009,12 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(58)(function
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var weak = __webpack_require__(127);
+var weak = __webpack_require__(128);
 var validate = __webpack_require__(48);
 var WEAK_SET = 'WeakSet';
 
@@ -44007,7 +44030,7 @@ __webpack_require__(63)(WEAK_SET, function (get) {
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44060,7 +44083,7 @@ __webpack_require__(40)(ARRAY_BUFFER);
 
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -44070,7 +44093,7 @@ $export($export.G + $export.W + $export.F * !__webpack_require__(64).ABV, {
 
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Int8', 1, function (init) {
@@ -44081,7 +44104,7 @@ __webpack_require__(29)('Int8', 1, function (init) {
 
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Uint8', 1, function (init) {
@@ -44092,7 +44115,7 @@ __webpack_require__(29)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Uint8', 1, function (init) {
@@ -44103,7 +44126,7 @@ __webpack_require__(29)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Int16', 2, function (init) {
@@ -44114,7 +44137,7 @@ __webpack_require__(29)('Int16', 2, function (init) {
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Uint16', 2, function (init) {
@@ -44125,7 +44148,7 @@ __webpack_require__(29)('Uint16', 2, function (init) {
 
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Int32', 4, function (init) {
@@ -44136,7 +44159,7 @@ __webpack_require__(29)('Int32', 4, function (init) {
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Uint32', 4, function (init) {
@@ -44147,7 +44170,7 @@ __webpack_require__(29)('Uint32', 4, function (init) {
 
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Float32', 4, function (init) {
@@ -44158,7 +44181,7 @@ __webpack_require__(29)('Float32', 4, function (init) {
 
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29)('Float64', 8, function (init) {
@@ -44169,7 +44192,7 @@ __webpack_require__(29)('Float64', 8, function (init) {
 
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -44191,7 +44214,7 @@ $export($export.S + $export.F * !__webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -44201,7 +44224,7 @@ var aFunction = __webpack_require__(11);
 var anObject = __webpack_require__(2);
 var isObject = __webpack_require__(5);
 var fails = __webpack_require__(4);
-var bind = __webpack_require__(108);
+var bind = __webpack_require__(109);
 var rConstruct = (__webpack_require__(3).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -44244,7 +44267,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -44273,7 +44296,7 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -44290,7 +44313,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44323,7 +44346,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
@@ -44350,7 +44373,7 @@ $export($export.S, 'Reflect', { get: get });
 
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -44366,7 +44389,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
@@ -44382,7 +44405,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -44396,7 +44419,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -44413,17 +44436,17 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Reflect', { ownKeys: __webpack_require__(129) });
+$export($export.S, 'Reflect', { ownKeys: __webpack_require__(130) });
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -44445,7 +44468,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
@@ -44484,7 +44507,7 @@ $export($export.S, 'Reflect', { set: set });
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
@@ -44505,7 +44528,7 @@ if (setProto) $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44524,14 +44547,14 @@ __webpack_require__(33)('includes');
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(130);
+var flattenIntoArray = __webpack_require__(131);
 var toObject = __webpack_require__(10);
 var toLength = __webpack_require__(9);
 var aFunction = __webpack_require__(11);
@@ -44553,14 +44576,14 @@ __webpack_require__(33)('flatMap');
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatten
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(130);
+var flattenIntoArray = __webpack_require__(131);
 var toObject = __webpack_require__(10);
 var toLength = __webpack_require__(9);
 var toInteger = __webpack_require__(26);
@@ -44581,7 +44604,7 @@ __webpack_require__(33)('flatten');
 
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44598,14 +44621,14 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
-var $pad = __webpack_require__(131);
+var $pad = __webpack_require__(132);
 var userAgent = __webpack_require__(62);
 
 // https://github.com/zloirock/core-js/issues/280
@@ -44617,14 +44640,14 @@ $export($export.P + $export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAge
 
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
-var $pad = __webpack_require__(131);
+var $pad = __webpack_require__(132);
 var userAgent = __webpack_require__(62);
 
 // https://github.com/zloirock/core-js/issues/280
@@ -44636,7 +44659,7 @@ $export($export.P + $export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAge
 
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44650,7 +44673,7 @@ __webpack_require__(46)('trimLeft', function ($trim) {
 
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44664,7 +44687,7 @@ __webpack_require__(46)('trimRight', function ($trim) {
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44701,26 +44724,26 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(70)('asyncIterator');
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(70)('observable');
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export = __webpack_require__(0);
-var ownKeys = __webpack_require__(129);
+var ownKeys = __webpack_require__(130);
 var toIObject = __webpack_require__(17);
 var gOPD = __webpack_require__(18);
 var createProperty = __webpack_require__(86);
@@ -44743,12 +44766,12 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var $values = __webpack_require__(132)(false);
+var $values = __webpack_require__(133)(false);
 
 $export($export.S, 'Object', {
   values: function values(it) {
@@ -44758,12 +44781,12 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var $entries = __webpack_require__(132)(true);
+var $entries = __webpack_require__(133)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it) {
@@ -44773,7 +44796,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44792,7 +44815,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(65), 'Object',
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44811,7 +44834,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(65), 'Object',
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44836,7 +44859,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(65), 'Object',
 
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44861,27 +44884,27 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(65), 'Object',
 
 
 /***/ }),
-/* 327 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var $export = __webpack_require__(0);
-
-$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(133)('Map') });
-
-
-/***/ }),
 /* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(133)('Set') });
+$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(134)('Map') });
 
 
 /***/ }),
 /* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
+var $export = __webpack_require__(0);
+
+$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(134)('Set') });
+
+
+/***/ }),
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
@@ -44889,7 +44912,7 @@ __webpack_require__(66)('Map');
 
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
@@ -44897,7 +44920,7 @@ __webpack_require__(66)('Set');
 
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
@@ -44905,7 +44928,7 @@ __webpack_require__(66)('WeakMap');
 
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
@@ -44913,7 +44936,7 @@ __webpack_require__(66)('WeakSet');
 
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
@@ -44921,7 +44944,7 @@ __webpack_require__(67)('Map');
 
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
@@ -44929,7 +44952,7 @@ __webpack_require__(67)('Set');
 
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
@@ -44937,21 +44960,11 @@ __webpack_require__(67)('WeakMap');
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
 __webpack_require__(67)('WeakSet');
-
-
-/***/ }),
-/* 337 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/tc39/proposal-global
-var $export = __webpack_require__(0);
-
-$export($export.G, { global: __webpack_require__(3) });
 
 
 /***/ }),
@@ -44961,11 +44974,21 @@ $export($export.G, { global: __webpack_require__(3) });
 // https://github.com/tc39/proposal-global
 var $export = __webpack_require__(0);
 
-$export($export.S, 'System', { global: __webpack_require__(3) });
+$export($export.G, { global: __webpack_require__(3) });
 
 
 /***/ }),
 /* 339 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/tc39/proposal-global
+var $export = __webpack_require__(0);
+
+$export($export.S, 'System', { global: __webpack_require__(3) });
+
+
+/***/ }),
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-is-error
@@ -44980,7 +45003,7 @@ $export($export.S, 'Error', {
 
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -44994,7 +45017,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -45004,7 +45027,7 @@ $export($export.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
 
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -45019,13 +45042,13 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
-var scale = __webpack_require__(135);
-var fround = __webpack_require__(115);
+var scale = __webpack_require__(136);
+var fround = __webpack_require__(116);
 
 $export($export.S, 'Math', {
   fscale: function fscale(x, inLow, inHigh, outLow, outHigh) {
@@ -45035,7 +45058,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -45052,7 +45075,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -45069,7 +45092,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -45091,7 +45114,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -45101,7 +45124,7 @@ $export($export.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -45116,17 +45139,17 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { scale: __webpack_require__(135) });
+$export($export.S, 'Math', { scale: __webpack_require__(136) });
 
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -45148,7 +45171,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // http://jfbastien.github.io/papers/Math.signbit.html
@@ -45161,7 +45184,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45171,7 +45194,7 @@ var $export = __webpack_require__(0);
 var core = __webpack_require__(20);
 var global = __webpack_require__(3);
 var speciesConstructor = __webpack_require__(61);
-var promiseResolve = __webpack_require__(122);
+var promiseResolve = __webpack_require__(123);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -45188,7 +45211,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45196,7 +45219,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 // https://github.com/tc39/proposal-promise-try
 var $export = __webpack_require__(0);
 var newPromiseCapability = __webpack_require__(93);
-var perform = __webpack_require__(121);
+var perform = __webpack_require__(122);
 
 $export($export.S, 'Promise', { 'try': function (callbackfn) {
   var promiseCapability = newPromiseCapability.f(this);
@@ -45207,7 +45230,7 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(30);
@@ -45221,7 +45244,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
 
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(30);
@@ -45242,7 +45265,7 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(30);
@@ -45265,11 +45288,11 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Set = __webpack_require__(125);
-var from = __webpack_require__(134);
+var Set = __webpack_require__(126);
+var from = __webpack_require__(135);
 var metadata = __webpack_require__(30);
 var anObject = __webpack_require__(2);
 var getPrototypeOf = __webpack_require__(19);
@@ -45290,7 +45313,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
 
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(30);
@@ -45305,7 +45328,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(30);
@@ -45319,7 +45342,7 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
 
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(30);
@@ -45341,7 +45364,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 361 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(30);
@@ -45356,7 +45379,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $metadata = __webpack_require__(30);
@@ -45377,7 +45400,7 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
 
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
@@ -45395,7 +45418,7 @@ $export($export.G, {
 
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45601,7 +45624,7 @@ __webpack_require__(40)('Observable');
 
 
 /***/ }),
-/* 365 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ie9- setTimeout & setInterval additional parameters fix
@@ -45627,7 +45650,7 @@ $export($export.G + $export.B + $export.F * MSIE, {
 
 
 /***/ }),
-/* 366 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -45639,7 +45662,7 @@ $export($export.G + $export.B, {
 
 
 /***/ }),
-/* 367 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $iterators = __webpack_require__(90);
@@ -45703,7 +45726,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -46446,26 +46469,26 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(44)))
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(370);
+__webpack_require__(371);
 module.exports = __webpack_require__(20).RegExp.escape;
 
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/benjamingr/RexExp.escape
 var $export = __webpack_require__(0);
-var $re = __webpack_require__(371)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
+var $re = __webpack_require__(372)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 
 $export($export.S, 'RegExp', { escape: function escape(it) { return $re(it); } });
 
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports) {
 
 module.exports = function (regExp, replace) {
@@ -46479,7 +46502,7 @@ module.exports = function (regExp, replace) {
 
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -47099,38 +47122,38 @@ return index;
 
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(t,e){if(true)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var n=e();for(var r in n)("object"==typeof exports?exports:t)[r]=n[r]}}(this,function(){return function(t){function e(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,e),i.l=!0,i.exports}var n={};return e.m=t,e.c=n,e.i=function(t){return t},e.d=function(t,n,r){e.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="/dist/",e(e.s=6)}([function(t,e,n){"use strict";function r(){d=!1}function i(t){if(!t)return void(f!==m&&(f=m,r()));if(t!==f){if(t.length!==m.length)throw new Error("Custom alphabet for shortid must be "+m.length+" unique characters. You submitted "+t.length+" characters: "+t);var e=t.split("").filter(function(t,e,n){return e!==n.lastIndexOf(t)});if(e.length)throw new Error("Custom alphabet for shortid must be "+m.length+" unique characters. These characters were not unique: "+e.join(", "));f=t,r()}}function o(t){return i(t),f}function a(t){h.seed(t),p!==t&&(r(),p=t)}function s(){f||i(m);for(var t,e=f.split(""),n=[],r=h.nextValue();e.length>0;)r=h.nextValue(),t=Math.floor(r*e.length),n.push(e.splice(t,1)[0]);return n.join("")}function c(){return d||(d=s())}function u(t){return c()[t]}function l(){return f||m}var f,p,d,h=n(19),m="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-";t.exports={get:l,characters:o,seed:a,lookup:u,shuffled:c}},function(t,e,n){"use strict";var r=n(5),i=n.n(r);e.a={animateIn:function(t){i()({targets:t,translateY:"-35px",opacity:1,duration:300,easing:"easeOutCubic"})},animateOut:function(t,e){i()({targets:t,opacity:0,marginTop:"-40px",duration:300,easing:"easeOutExpo",complete:e})},animateOutBottom:function(t,e){i()({targets:t,opacity:0,marginBottom:"-40px",duration:300,easing:"easeOutExpo",complete:e})},animateReset:function(t){i()({targets:t,left:0,opacity:1,duration:300,easing:"easeOutExpo"})},animatePanning:function(t,e,n){i()({targets:t,duration:10,easing:"easeOutQuad",left:e,opacity:n})},animatePanEnd:function(t,e){i()({targets:t,opacity:0,duration:300,easing:"easeOutExpo",complete:e})},clearAnimation:function(t){var e=i.a.timeline();t.forEach(function(t){e.add({targets:t.el,opacity:0,right:"-40px",duration:300,offset:"-=150",easing:"easeOutExpo",complete:function(){t.remove()}})})}}},function(t,e,n){"use strict";t.exports=n(16)},function(t,e,n){"use strict";n.d(e,"a",function(){return s});var r=n(8),i=n(1),o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},a=n(2);n(11).polyfill();var s=function t(e){var n=this;return this.id=a.generate(),this.options=e,this.cached_options={},this.global={},this.groups=[],this.toasts=[],u(this),this.group=function(e){e||(e={}),e.globalToasts||(e.globalToasts={}),Object.assign(e.globalToasts,n.global);var r=new t(e);return n.groups.push(r),r},this.register=function(t,e,r){return r=r||{},l(n,t,e,r)},this.show=function(t,e){return c(n,t,e)},this.success=function(t,e){return e=e||{},e.type="success",c(n,t,e)},this.info=function(t,e){return e=e||{},e.type="info",c(n,t,e)},this.error=function(t,e){return e=e||{},e.type="error",c(n,t,e)},this.remove=function(t){n.toasts=n.toasts.filter(function(e){return e.el.hash!==t.hash}),t.parentNode&&t.parentNode.removeChild(t)},this.clear=function(t){return i.a.clearAnimation(n.toasts,function(){t&&t()}),n.toasts=[],!0},this},c=function(t,e,i){i=i||{};var a=null;if("object"!==(void 0===i?"undefined":o(i)))return console.error("Options should be a type of object. given : "+i),null;t.options.singleton&&t.toasts.length>0&&(t.cached_options=i,t.toasts[t.toasts.length-1].goAway(0));var s=Object.assign({},t.options);return Object.assign(s,i),a=n.i(r.a)(t,e,s),t.toasts.push(a),a},u=function(t){var e=t.options.globalToasts,n=function(e,n){return"string"==typeof n&&t[n]?t[n].apply(t,[e,{}]):c(t,e,n)};e&&(t.global={},Object.keys(e).forEach(function(r){t.global[r]=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return e[r].apply(null,[t,n])}}))},l=function(t,e,n,r){t.options.globalToasts||(t.options.globalToasts={}),t.options.globalToasts[e]=function(t,e){var i=null;return"string"==typeof n&&(i=n),"function"==typeof n&&(i=n(t)),e(i,r)},u(t)}},function(t,e,n){n(22);var r=n(21)(null,null,null,null);t.exports=r.exports},function(t,e,n){(function(n){var r,i,o,a={scope:{}};a.defineProperty="function"==typeof Object.defineProperties?Object.defineProperty:function(t,e,n){if(n.get||n.set)throw new TypeError("ES3 does not support getters and setters.");t!=Array.prototype&&t!=Object.prototype&&(t[e]=n.value)},a.getGlobal=function(t){return"undefined"!=typeof window&&window===t?t:void 0!==n&&null!=n?n:t},a.global=a.getGlobal(this),a.SYMBOL_PREFIX="jscomp_symbol_",a.initSymbol=function(){a.initSymbol=function(){},a.global.Symbol||(a.global.Symbol=a.Symbol)},a.symbolCounter_=0,a.Symbol=function(t){return a.SYMBOL_PREFIX+(t||"")+a.symbolCounter_++},a.initSymbolIterator=function(){a.initSymbol();var t=a.global.Symbol.iterator;t||(t=a.global.Symbol.iterator=a.global.Symbol("iterator")),"function"!=typeof Array.prototype[t]&&a.defineProperty(Array.prototype,t,{configurable:!0,writable:!0,value:function(){return a.arrayIterator(this)}}),a.initSymbolIterator=function(){}},a.arrayIterator=function(t){var e=0;return a.iteratorPrototype(function(){return e<t.length?{done:!1,value:t[e++]}:{done:!0}})},a.iteratorPrototype=function(t){return a.initSymbolIterator(),t={next:t},t[a.global.Symbol.iterator]=function(){return this},t},a.array=a.array||{},a.iteratorFromArray=function(t,e){a.initSymbolIterator(),t instanceof String&&(t+="");var n=0,r={next:function(){if(n<t.length){var i=n++;return{value:e(i,t[i]),done:!1}}return r.next=function(){return{done:!0,value:void 0}},r.next()}};return r[Symbol.iterator]=function(){return r},r},a.polyfill=function(t,e,n,r){if(e){for(n=a.global,t=t.split("."),r=0;r<t.length-1;r++){var i=t[r];i in n||(n[i]={}),n=n[i]}t=t[t.length-1],r=n[t],e=e(r),e!=r&&null!=e&&a.defineProperty(n,t,{configurable:!0,writable:!0,value:e})}},a.polyfill("Array.prototype.keys",function(t){return t||function(){return a.iteratorFromArray(this,function(t){return t})}},"es6-impl","es3");var s=this;!function(n,a){i=[],r=a,void 0!==(o="function"==typeof r?r.apply(e,i):r)&&(t.exports=o)}(0,function(){function t(t){if(!R.col(t))try{return document.querySelectorAll(t)}catch(t){}}function e(t,e){for(var n=t.length,r=2<=arguments.length?arguments[1]:void 0,i=[],o=0;o<n;o++)if(o in t){var a=t[o];e.call(r,a,o,t)&&i.push(a)}return i}function n(t){return t.reduce(function(t,e){return t.concat(R.arr(e)?n(e):e)},[])}function r(e){return R.arr(e)?e:(R.str(e)&&(e=t(e)||e),e instanceof NodeList||e instanceof HTMLCollection?[].slice.call(e):[e])}function i(t,e){return t.some(function(t){return t===e})}function o(t){var e,n={};for(e in t)n[e]=t[e];return n}function a(t,e){var n,r=o(t);for(n in t)r[n]=e.hasOwnProperty(n)?e[n]:t[n];return r}function c(t,e){var n,r=o(t);for(n in e)r[n]=R.und(t[n])?e[n]:t[n];return r}function u(t){t=t.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,function(t,e,n,r){return e+e+n+n+r+r});var e=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(t);t=parseInt(e[1],16);var n=parseInt(e[2],16),e=parseInt(e[3],16);return"rgba("+t+","+n+","+e+",1)"}function l(t){function e(t,e,n){return 0>n&&(n+=1),1<n&&--n,n<1/6?t+6*(e-t)*n:.5>n?e:n<2/3?t+(e-t)*(2/3-n)*6:t}var n=/hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(t)||/hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)/g.exec(t);t=parseInt(n[1])/360;var r=parseInt(n[2])/100,i=parseInt(n[3])/100,n=n[4]||1;if(0==r)i=r=t=i;else{var o=.5>i?i*(1+r):i+r-i*r,a=2*i-o,i=e(a,o,t+1/3),r=e(a,o,t);t=e(a,o,t-1/3)}return"rgba("+255*i+","+255*r+","+255*t+","+n+")"}function f(t){if(t=/([\+\-]?[0-9#\.]+)(%|px|pt|em|rem|in|cm|mm|ex|ch|pc|vw|vh|vmin|vmax|deg|rad|turn)?$/.exec(t))return t[2]}function p(t){return-1<t.indexOf("translate")||"perspective"===t?"px":-1<t.indexOf("rotate")||-1<t.indexOf("skew")?"deg":void 0}function d(t,e){return R.fnc(t)?t(e.target,e.id,e.total):t}function h(t,e){if(e in t.style)return getComputedStyle(t).getPropertyValue(e.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase())||"0"}function m(t,e){return R.dom(t)&&i(D,e)?"transform":R.dom(t)&&(t.getAttribute(e)||R.svg(t)&&t[e])?"attribute":R.dom(t)&&"transform"!==e&&h(t,e)?"css":null!=t[e]?"object":void 0}function v(t,n){var r=p(n),r=-1<n.indexOf("scale")?1:0+r;if(!(t=t.style.transform))return r;for(var i=[],o=[],a=[],s=/(\w+)\((.+?)\)/g;i=s.exec(t);)o.push(i[1]),a.push(i[2]);return t=e(a,function(t,e){return o[e]===n}),t.length?t[0]:r}function g(t,e){switch(m(t,e)){case"transform":return v(t,e);case"css":return h(t,e);case"attribute":return t.getAttribute(e)}return t[e]||0}function y(t,e){var n=/^(\*=|\+=|-=)/.exec(t);if(!n)return t;var r=f(t)||0;switch(e=parseFloat(e),t=parseFloat(t.replace(n[0],"")),n[0][0]){case"+":return e+t+r;case"-":return e-t+r;case"*":return e*t+r}}function b(t,e){return Math.sqrt(Math.pow(e.x-t.x,2)+Math.pow(e.y-t.y,2))}function x(t){t=t.points;for(var e,n=0,r=0;r<t.numberOfItems;r++){var i=t.getItem(r);0<r&&(n+=b(e,i)),e=i}return n}function T(t){if(t.getTotalLength)return t.getTotalLength();switch(t.tagName.toLowerCase()){case"circle":return 2*Math.PI*t.getAttribute("r");case"rect":return 2*t.getAttribute("width")+2*t.getAttribute("height");case"line":return b({x:t.getAttribute("x1"),y:t.getAttribute("y1")},{x:t.getAttribute("x2"),y:t.getAttribute("y2")});case"polyline":return x(t);case"polygon":var e=t.points;return x(t)+b(e.getItem(e.numberOfItems-1),e.getItem(0))}}function w(t,e){function n(n){return n=void 0===n?0:n,t.el.getPointAtLength(1<=e+n?e+n:0)}var r=n(),i=n(-1),o=n(1);switch(t.property){case"x":return r.x;case"y":return r.y;case"angle":return 180*Math.atan2(o.y-i.y,o.x-i.x)/Math.PI}}function E(t,e){var n,r=/-?\d*\.?\d+/g;if(n=R.pth(t)?t.totalLength:t,R.col(n))if(R.rgb(n)){var i=/rgb\((\d+,\s*[\d]+,\s*[\d]+)\)/g.exec(n);n=i?"rgba("+i[1]+",1)":n}else n=R.hex(n)?u(n):R.hsl(n)?l(n):void 0;else i=(i=f(n))?n.substr(0,n.length-i.length):n,n=e&&!/\s/g.test(n)?i+e:i;return n+="",{original:n,numbers:n.match(r)?n.match(r).map(Number):[0],strings:R.str(t)||e?n.split(r):[]}}function C(t){return t=t?n(R.arr(t)?t.map(r):r(t)):[],e(t,function(t,e,n){return n.indexOf(t)===e})}function S(t){var e=C(t);return e.map(function(t,n){return{target:t,id:n,total:e.length}})}function O(t,e){var n=o(e);if(R.arr(t)){var i=t.length;2!==i||R.obj(t[0])?R.fnc(e.duration)||(n.duration=e.duration/i):t={value:t}}return r(t).map(function(t,n){return n=n?0:e.delay,t=R.obj(t)&&!R.pth(t)?t:{value:t},R.und(t.delay)&&(t.delay=n),t}).map(function(t){return c(t,n)})}function A(t,e){var n,r={};for(n in t){var i=d(t[n],e);R.arr(i)&&(i=i.map(function(t){return d(t,e)}),1===i.length&&(i=i[0])),r[n]=i}return r.duration=parseFloat(r.duration),r.delay=parseFloat(r.delay),r}function I(t){return R.arr(t)?F.apply(this,t):z[t]}function M(t,e){var n;return t.tweens.map(function(r){r=A(r,e);var i=r.value,o=g(e.target,t.name),a=n?n.to.original:o,a=R.arr(i)?i[0]:a,s=y(R.arr(i)?i[1]:i,a),o=f(s)||f(a)||f(o);return r.from=E(a,o),r.to=E(s,o),r.start=n?n.end:t.offset,r.end=r.start+r.delay+r.duration,r.easing=I(r.easing),r.elasticity=(1e3-Math.min(Math.max(r.elasticity,1),999))/1e3,r.isPath=R.pth(i),r.isColor=R.col(r.from.original),r.isColor&&(r.round=1),n=r})}function P(t,r){return e(n(t.map(function(t){return r.map(function(e){var n=m(t.target,e.name);if(n){var r=M(e,t);e={type:n,property:e.name,animatable:t,tweens:r,duration:r[r.length-1].end,delay:r[0].delay}}else e=void 0;return e})})),function(t){return!R.und(t)})}function k(t,e,n,r){var i="delay"===t;return e.length?(i?Math.min:Math.max).apply(Math,e.map(function(e){return e[t]})):i?r.delay:n.offset+r.delay+r.duration}function L(t){var e,n=a(_,t),r=a(X,t),i=S(t.targets),o=[],s=c(n,r);for(e in t)s.hasOwnProperty(e)||"targets"===e||o.push({name:e,offset:s.offset,tweens:O(t[e],r)});return t=P(i,o),c(n,{children:[],animatables:i,animations:t,duration:k("duration",t,n,r),delay:k("delay",t,n,r)})}function j(t){function n(){return window.Promise&&new Promise(function(t){return f=t})}function r(t){return d.reversed?d.duration-t:t}function i(t){for(var n=0,r={},i=d.animations,o=i.length;n<o;){var a=i[n],s=a.animatable,c=a.tweens,u=c.length-1,l=c[u];u&&(l=e(c,function(e){return t<e.end})[0]||l);for(var c=Math.min(Math.max(t-l.start-l.delay,0),l.duration)/l.duration,f=isNaN(c)?1:l.easing(c,l.elasticity),c=l.to.strings,p=l.round,u=[],m=void 0,m=l.to.numbers.length,v=0;v<m;v++){var g=void 0,g=l.to.numbers[v],y=l.from.numbers[v],g=l.isPath?w(l.value,f*g):y+f*(g-y);p&&(l.isColor&&2<v||(g=Math.round(g*p)/p)),u.push(g)}if(l=c.length)for(m=c[0],f=0;f<l;f++)p=c[f+1],v=u[f],isNaN(v)||(m=p?m+(v+p):m+(v+" "));else m=u[0];Y[a.type](s.target,a.property,m,r,s.id),a.currentValue=m,n++}if(n=Object.keys(r).length)for(i=0;i<n;i++)N||(N=h(document.body,"transform")?"transform":"-webkit-transform"),d.animatables[i].target.style[N]=r[i].join(" ");d.currentTime=t,d.progress=t/d.duration*100}function o(t){d[t]&&d[t](d)}function a(){d.remaining&&!0!==d.remaining&&d.remaining--}function s(t){var e=d.duration,s=d.offset,h=s+d.delay,m=d.currentTime,v=d.reversed,g=r(t);if(d.children.length){var y=d.children,b=y.length;if(g>=d.currentTime)for(var x=0;x<b;x++)y[x].seek(g);else for(;b--;)y[b].seek(g)}(g>=h||!e)&&(d.began||(d.began=!0,o("begin")),o("run")),g>s&&g<e?i(g):(g<=s&&0!==m&&(i(0),v&&a()),(g>=e&&m!==e||!e)&&(i(e),v||a())),o("update"),t>=e&&(d.remaining?(u=c,"alternate"===d.direction&&(d.reversed=!d.reversed)):(d.pause(),d.completed||(d.completed=!0,o("complete"),"Promise"in window&&(f(),p=n()))),l=0)}t=void 0===t?{}:t;var c,u,l=0,f=null,p=n(),d=L(t);return d.reset=function(){var t=d.direction,e=d.loop;for(d.currentTime=0,d.progress=0,d.paused=!0,d.began=!1,d.completed=!1,d.reversed="reverse"===t,d.remaining="alternate"===t&&1===e?2:e,i(0),t=d.children.length;t--;)d.children[t].reset()},d.tick=function(t){c=t,u||(u=c),s((l+c-u)*j.speed)},d.seek=function(t){s(r(t))},d.pause=function(){var t=q.indexOf(d);-1<t&&q.splice(t,1),d.paused=!0},d.play=function(){d.paused&&(d.paused=!1,u=0,l=r(d.currentTime),q.push(d),H||V())},d.reverse=function(){d.reversed=!d.reversed,u=0,l=r(d.currentTime)},d.restart=function(){d.pause(),d.reset(),d.play()},d.finished=p,d.reset(),d.autoplay&&d.play(),d}var N,_={update:void 0,begin:void 0,run:void 0,complete:void 0,loop:1,direction:"normal",autoplay:!0,offset:0},X={duration:1e3,delay:0,easing:"easeOutElastic",elasticity:500,round:0},D="translateX translateY translateZ rotate rotateX rotateY rotateZ scale scaleX scaleY scaleZ skewX skewY perspective".split(" "),R={arr:function(t){return Array.isArray(t)},obj:function(t){return-1<Object.prototype.toString.call(t).indexOf("Object")},pth:function(t){return R.obj(t)&&t.hasOwnProperty("totalLength")},svg:function(t){return t instanceof SVGElement},dom:function(t){return t.nodeType||R.svg(t)},str:function(t){return"string"==typeof t},fnc:function(t){return"function"==typeof t},und:function(t){return void 0===t},hex:function(t){return/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(t)},rgb:function(t){return/^rgb/.test(t)},hsl:function(t){return/^hsl/.test(t)},col:function(t){return R.hex(t)||R.rgb(t)||R.hsl(t)}},F=function(){function t(t,e,n){return(((1-3*n+3*e)*t+(3*n-6*e))*t+3*e)*t}return function(e,n,r,i){if(0<=e&&1>=e&&0<=r&&1>=r){var o=new Float32Array(11);if(e!==n||r!==i)for(var a=0;11>a;++a)o[a]=t(.1*a,e,r);return function(a){if(e===n&&r===i)return a;if(0===a)return 0;if(1===a)return 1;for(var s=0,c=1;10!==c&&o[c]<=a;++c)s+=.1;--c;var c=s+(a-o[c])/(o[c+1]-o[c])*.1,u=3*(1-3*r+3*e)*c*c+2*(3*r-6*e)*c+3*e;if(.001<=u){for(s=0;4>s&&0!==(u=3*(1-3*r+3*e)*c*c+2*(3*r-6*e)*c+3*e);++s)var l=t(c,e,r)-a,c=c-l/u;a=c}else if(0===u)a=c;else{var c=s,s=s+.1,f=0;do{l=c+(s-c)/2,u=t(l,e,r)-a,0<u?s=l:c=l}while(1e-7<Math.abs(u)&&10>++f);a=l}return t(a,n,i)}}}}(),z=function(){function t(t,e){return 0===t||1===t?t:-Math.pow(2,10*(t-1))*Math.sin(2*(t-1-e/(2*Math.PI)*Math.asin(1))*Math.PI/e)}var e,n="Quad Cubic Quart Quint Sine Expo Circ Back Elastic".split(" "),r={In:[[.55,.085,.68,.53],[.55,.055,.675,.19],[.895,.03,.685,.22],[.755,.05,.855,.06],[.47,0,.745,.715],[.95,.05,.795,.035],[.6,.04,.98,.335],[.6,-.28,.735,.045],t],Out:[[.25,.46,.45,.94],[.215,.61,.355,1],[.165,.84,.44,1],[.23,1,.32,1],[.39,.575,.565,1],[.19,1,.22,1],[.075,.82,.165,1],[.175,.885,.32,1.275],function(e,n){return 1-t(1-e,n)}],InOut:[[.455,.03,.515,.955],[.645,.045,.355,1],[.77,0,.175,1],[.86,0,.07,1],[.445,.05,.55,.95],[1,0,0,1],[.785,.135,.15,.86],[.68,-.55,.265,1.55],function(e,n){return.5>e?t(2*e,n)/2:1-t(-2*e+2,n)/2}]},i={linear:F(.25,.25,.75,.75)},o={};for(e in r)o.type=e,r[o.type].forEach(function(t){return function(e,r){i["ease"+t.type+n[r]]=R.fnc(e)?e:F.apply(s,e)}}(o)),o={type:o.type};return i}(),Y={css:function(t,e,n){return t.style[e]=n},attribute:function(t,e,n){return t.setAttribute(e,n)},object:function(t,e,n){return t[e]=n},transform:function(t,e,n,r,i){r[i]||(r[i]=[]),r[i].push(e+"("+n+")")}},q=[],H=0,V=function(){function t(){H=requestAnimationFrame(e)}function e(e){var n=q.length;if(n){for(var r=0;r<n;)q[r]&&q[r].tick(e),r++;t()}else cancelAnimationFrame(H),H=0}return t}();return j.version="2.2.0",j.speed=1,j.running=q,j.remove=function(t){t=C(t);for(var e=q.length;e--;)for(var n=q[e],r=n.animations,o=r.length;o--;)i(t,r[o].animatable.target)&&(r.splice(o,1),r.length||n.pause())},j.getValue=g,j.path=function(e,n){var r=R.str(e)?t(e)[0]:e,i=n||100;return function(t){return{el:r,property:t,totalLength:T(r)*(i/100)}}},j.setDashoffset=function(t){var e=T(t);return t.setAttribute("stroke-dasharray",e),e},j.bezier=F,j.easings=z,j.timeline=function(t){var e=j(t);return e.pause(),e.duration=0,e.add=function(n){return e.children.forEach(function(t){t.began=!0,t.completed=!0}),r(n).forEach(function(n){var r=c(n,a(X,t||{}));r.targets=r.targets||t.targets,n=e.duration;var i=r.offset;r.autoplay=!1,r.direction=e.direction,r.offset=R.und(i)?n:y(i,n),e.began=!0,e.completed=!0,e.seek(r.offset),r=j(r),r.began=!0,r.completed=!0,r.duration>n&&(e.duration=r.duration),e.children.push(r)}),e.seek(0),e.reset(),e.autoplay&&e.restart(),e},e},j.random=function(t,e){return Math.floor(Math.random()*(e-t+1))+t},j})}).call(e,n(25))},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(3),i=n(4),o=n.n(i),a={install:function(t,e){e||(e={});var n=new r.a(e);t.component("toasted",o.a),t.toasted=t.prototype.$toasted=n}};"undefined"!=typeof window&&window.Vue&&(window.Toasted=a),e.default=a},function(t,e,n){"use strict";n.d(e,"a",function(){return c});var r=n(1),i=this,o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},a=function(t,e,n){return setTimeout(function(){if(n.cached_options.position&&n.cached_options.position.includes("bottom"))return void r.a.animateOutBottom(t,function(){n.remove(t)});r.a.animateOut(t,function(){n.remove(t)})},e),!0},s=function(t,e){return("object"===("undefined"==typeof HTMLElement?"undefined":o(HTMLElement))?e instanceof HTMLElement:e&&"object"===(void 0===e?"undefined":o(e))&&null!==e&&1===e.nodeType&&"string"==typeof e.nodeName)?t.appendChild(e):t.innerHTML=e,i},c=function(t,e){var n=!1;return{el:t,text:function(e){return s(t,e),this},goAway:function(){var r=arguments.length>0&&void 0!==arguments[0]?arguments[0]:800;return n=!0,a(t,r,e)},remove:function(){e.remove(t)},disposed:function(){return n}}}},function(t,e,n){"use strict";var r=n(12),i=n.n(r),o=n(1),a=n(7),s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},c=n(2);String.prototype.includes||Object.defineProperty(String.prototype,"includes",{value:function(t,e){return"number"!=typeof e&&(e=0),!(e+t.length>this.length)&&-1!==this.indexOf(t,e)}});var u={},l=null,f=function(t){return t.className=t.className||null,t.onComplete=t.onComplete||null,t.position=t.position||"top-right",t.duration=t.duration||null,t.theme=t.theme||"toasted-primary",t.type=t.type||"default",t.containerClass=t.containerClass||null,t.fullWidth=t.fullWidth||!1,t.icon=t.icon||null,t.action=t.action||null,t.fitToScreen=t.fitToScreen||null,t.closeOnSwipe=void 0===t.closeOnSwipe||t.closeOnSwipe,t.iconPack=t.iconPack||"material",t.className&&"string"==typeof t.className&&(t.className=t.className.split(" ")),t.className||(t.className=[]),t.theme&&t.className.push(t.theme.trim()),t.type&&t.className.push(t.type),t.containerClass&&"string"==typeof t.containerClass&&(t.containerClass=t.containerClass.split(" ")),t.containerClass||(t.containerClass=[]),t.position&&t.containerClass.push(t.position.trim()),t.fullWidth&&t.containerClass.push("full-width"),t.fitToScreen&&t.containerClass.push("fit-to-screen"),u=t,t},p=function(t,e){var r=document.createElement("div");if(r.classList.add("toasted"),r.hash=c.generate(),e.className&&e.className.forEach(function(t){r.classList.add(t)}),("object"===("undefined"==typeof HTMLElement?"undefined":s(HTMLElement))?t instanceof HTMLElement:t&&"object"===(void 0===t?"undefined":s(t))&&null!==t&&1===t.nodeType&&"string"==typeof t.nodeName)?r.appendChild(t):r.innerHTML=t,d(e,r),e.closeOnSwipe){var u=new i.a(r,{prevent_default:!1});u.on("pan",function(t){var e=t.deltaX;r.classList.contains("panning")||r.classList.add("panning");var n=1-Math.abs(e/80);n<0&&(n=0),o.a.animatePanning(r,e,n)}),u.on("panend",function(t){var n=t.deltaX;Math.abs(n)>80?o.a.animatePanEnd(r,function(){"function"==typeof e.onComplete&&e.onComplete(),r.parentNode&&l.remove(r)}):(r.classList.remove("panning"),o.a.animateReset(r))})}if(Array.isArray(e.action))e.action.forEach(function(t){var e=m(t,n.i(a.a)(r,l));e&&r.appendChild(e)});else if("object"===s(e.action)){var f=m(e.action,n.i(a.a)(r,l));f&&r.appendChild(f)}return r},d=function(t,e){if(t.icon){var n=document.createElement("i");switch(t.iconPack){case"fontawesome":n.classList.add("fa");var r=t.icon.name?t.icon.name:t.icon;r.includes("fa-")?n.classList.add(r.trim()):n.classList.add("fa-"+r.trim());break;case"mdi":n.classList.add("mdi");var i=t.icon.name?t.icon.name:t.icon;i.includes("mdi-")?n.classList.add(i.trim()):n.classList.add("mdi-"+i.trim());break;case"custom-class":var o=t.icon.name?t.icon.name:t.icon;"string"==typeof o?o.split(" ").forEach(function(t){n.classList.add(t)}):Array.isArray(o)&&o.forEach(function(t){n.classList.add(t.trim())});break;case"callback":var a=t.icon&&t.icon instanceof Function?t.icon:null;a&&(n=a(n));break;default:n.classList.add("material-icons"),n.textContent=t.icon.name?t.icon.name:t.icon}t.icon.after&&n.classList.add("after"),h(t,n,e)}},h=function(t,e,n){t.icon&&(t.icon.after&&t.icon.name?n.appendChild(e):(t.icon.name,n.insertBefore(e,n.firstChild)))},m=function(t,e){if(!t)return null;var n=document.createElement("a");if(n.classList.add("action"),n.classList.add("ripple"),t.text&&(n.text=t.text),t.href&&(n.href=t.href),t.target&&(n.target=t.target),t.icon){n.classList.add("icon");var r=document.createElement("i");switch(u.iconPack){case"fontawesome":r.classList.add("fa"),t.icon.includes("fa-")?r.classList.add(t.icon.trim()):r.classList.add("fa-"+t.icon.trim());break;case"mdi":r.classList.add("mdi"),t.icon.includes("mdi-")?r.classList.add(t.icon.trim()):r.classList.add("mdi-"+t.icon.trim());break;case"custom-class":"string"==typeof t.icon?t.icon.split(" ").forEach(function(t){n.classList.add(t)}):Array.isArray(t.icon)&&t.icon.forEach(function(t){n.classList.add(t.trim())});break;default:r.classList.add("material-icons"),r.textContent=t.icon}n.appendChild(r)}return t.class&&("string"==typeof t.class?t.class.split(" ").forEach(function(t){n.classList.add(t)}):Array.isArray(t.class)&&t.class.forEach(function(t){n.classList.add(t.trim())})),t.push&&n.addEventListener("click",function(n){if(n.preventDefault(),!u.router)return void console.warn("[vue-toasted] : Vue Router instance is not attached. please check the docs");u.router.push(t.push),t.push.dontClose||e.goAway(0)}),t.onClick&&"function"==typeof t.onClick&&n.addEventListener("click",function(n){t.onClick&&(n.preventDefault(),t.onClick(n,e))}),n};e.a=function(t,e,r){l=t,r=f(r);var i=document.getElementById(l.id);null===i&&(i=document.createElement("div"),i.id=l.id,document.body.appendChild(i)),r.containerClass.unshift("toasted-container"),i.className!==r.containerClass.join(" ")&&(i.className="",r.containerClass.forEach(function(t){i.classList.add(t)}));var s=p(e,r);e&&i.appendChild(s),s.style.opacity=0,o.a.animateIn(s);var c=r.duration,u=void 0;return null!==c&&(u=setInterval(function(){null===s.parentNode&&window.clearInterval(u),s.classList.contains("panning")||(c-=20),c<=0&&(o.a.animateOut(s,function(){"function"==typeof r.onComplete&&r.onComplete(),s.parentNode&&l.remove(s)}),window.clearInterval(u))},20)),n.i(a.a)(s,l)}},function(t,e,n){e=t.exports=n(10)(),e.push([t.i,".toasted{padding:0 20px}.toasted.rounded{border-radius:24px}.toasted .primary,.toasted.toasted-primary{border-radius:2px;min-height:38px;line-height:1.1em;background-color:#353535;padding:0 20px;font-size:15px;font-weight:300;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}.toasted .primary.success,.toasted.toasted-primary.success{background:#4caf50}.toasted .primary.error,.toasted.toasted-primary.error{background:#f44336}.toasted .primary.info,.toasted.toasted-primary.info{background:#3f51b5}.toasted .primary .action,.toasted.toasted-primary .action{color:#a1c2fa}.toasted.bubble{border-radius:30px;min-height:38px;line-height:1.1em;background-color:#ff7043;padding:0 20px;font-size:15px;font-weight:300;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}.toasted.bubble.success{background:#4caf50}.toasted.bubble.error{background:#f44336}.toasted.bubble.info{background:#3f51b5}.toasted.bubble .action{color:#8e2b0c}.toasted.outline{border-radius:30px;min-height:38px;line-height:1.1em;background-color:#fff;border:1px solid #676767;padding:0 20px;font-size:15px;color:#676767;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);font-weight:700}.toasted.outline.success{color:#4caf50;border-color:#4caf50}.toasted.outline.error{color:#f44336;border-color:#f44336}.toasted.outline.info{color:#3f51b5;border-color:#3f51b5}.toasted.outline .action{color:#607d8b}.toasted-container{position:fixed;z-index:10000}.toasted-container,.toasted-container.full-width{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.toasted-container.full-width{max-width:86%;width:100%}.toasted-container.full-width.fit-to-screen{min-width:100%}.toasted-container.full-width.fit-to-screen .toasted:first-child{margin-top:0}.toasted-container.full-width.fit-to-screen.top-right{top:0;right:0}.toasted-container.full-width.fit-to-screen.top-left{top:0;left:0}.toasted-container.full-width.fit-to-screen.top-center{top:0;left:0;-webkit-transform:translateX(0);transform:translateX(0)}.toasted-container.full-width.fit-to-screen.bottom-right{right:0;bottom:0}.toasted-container.full-width.fit-to-screen.bottom-left{left:0;bottom:0}.toasted-container.full-width.fit-to-screen.bottom-center{left:0;bottom:0;-webkit-transform:translateX(0);transform:translateX(0)}.toasted-container.top-right{top:10%;right:7%}.toasted-container.top-left{top:10%;left:7%}.toasted-container.top-center{top:10%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.toasted-container.bottom-right{right:5%;bottom:7%}.toasted-container.bottom-left{left:5%;bottom:7%}.toasted-container.bottom-center{left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);bottom:7%}.toasted-container.bottom-left .toasted,.toasted-container.top-left .toasted{float:left}.toasted-container.bottom-right .toasted,.toasted-container.top-right .toasted{float:right}.toasted-container .toasted{top:35px;width:auto;clear:both;margin-top:10px;position:relative;max-width:100%;height:auto;word-break:normal;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;box-sizing:inherit}.toasted-container .toasted .fa,.toasted-container .toasted .fab,.toasted-container .toasted .far,.toasted-container .toasted .fas,.toasted-container .toasted .material-icons,.toasted-container .toasted .mdi{margin-right:.5rem;margin-left:-.4rem}.toasted-container .toasted .fa.after,.toasted-container .toasted .fab.after,.toasted-container .toasted .far.after,.toasted-container .toasted .fas.after,.toasted-container .toasted .material-icons.after,.toasted-container .toasted .mdi.after{margin-left:.5rem;margin-right:-.4rem}.toasted-container .toasted .action{text-decoration:none;font-size:.8rem;padding:8px;margin:5px -7px 5px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:.03em;font-weight:600;cursor:pointer}.toasted-container .toasted .action.icon{padding:4px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.toasted-container .toasted .action.icon .fa,.toasted-container .toasted .action.icon .material-icons,.toasted-container .toasted .action.icon .mdi{margin-right:0;margin-left:4px}.toasted-container .toasted .action.icon:hover{text-decoration:none}.toasted-container .toasted .action:hover{text-decoration:underline}@media only screen and (max-width:600px){#toasted-container{min-width:100%}#toasted-container .toasted:first-child{margin-top:0}#toasted-container.top-right{top:0;right:0}#toasted-container.top-left{top:0;left:0}#toasted-container.top-center{top:0;left:0;-webkit-transform:translateX(0);transform:translateX(0)}#toasted-container.bottom-right{right:0;bottom:0}#toasted-container.bottom-left{left:0;bottom:0}#toasted-container.bottom-center{left:0;bottom:0;-webkit-transform:translateX(0);transform:translateX(0)}#toasted-container.bottom-center,#toasted-container.top-center{-ms-flex-align:stretch!important;align-items:stretch!important}#toasted-container.bottom-left .toasted,#toasted-container.bottom-right .toasted,#toasted-container.top-left .toasted,#toasted-container.top-right .toasted{float:none}#toasted-container .toasted{border-radius:0}}",""])},function(t,e){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],e=0;e<this.length;e++){var n=this[e];n[2]?t.push("@media "+n[2]+"{"+n[1]+"}"):t.push(n[1])}return t.join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},i=0;i<this.length;i++){var o=this[i][0];"number"==typeof o&&(r[o]=!0)}for(i=0;i<e.length;i++){var a=e[i];"number"==typeof a[0]&&r[a[0]]||(n&&!a[2]?a[2]=n:n&&(a[2]="("+a[2]+") and ("+n+")"),t.push(a))}},t}},function(t,e,n){"use strict";function r(t,e){if(void 0===t||null===t)throw new TypeError("Cannot convert first argument to object");for(var n=Object(t),r=1;r<arguments.length;r++){var i=arguments[r];if(void 0!==i&&null!==i)for(var o=Object.keys(Object(i)),a=0,s=o.length;a<s;a++){var c=o[a],u=Object.getOwnPropertyDescriptor(i,c);void 0!==u&&u.enumerable&&(n[c]=i[c])}}return n}function i(){Object.assign||Object.defineProperty(Object,"assign",{enumerable:!1,configurable:!0,writable:!0,value:r})}t.exports={assign:r,polyfill:i}},function(t,e,n){var r;!function(i,o,a,s){"use strict";function c(t,e,n){return setTimeout(d(t,n),e)}function u(t,e,n){return!!Array.isArray(t)&&(l(t,n[e],n),!0)}function l(t,e,n){var r;if(t)if(t.forEach)t.forEach(e,n);else if(t.length!==s)for(r=0;r<t.length;)e.call(n,t[r],r,t),r++;else for(r in t)t.hasOwnProperty(r)&&e.call(n,t[r],r,t)}function f(t,e,n){var r="DEPRECATED METHOD: "+e+"\n"+n+" AT \n";return function(){var e=new Error("get-stack-trace"),n=e&&e.stack?e.stack.replace(/^[^\(]+?[\n$]/gm,"").replace(/^\s+at\s+/gm,"").replace(/^Object.<anonymous>\s*\(/gm,"{anonymous}()@"):"Unknown Stack Trace",o=i.console&&(i.console.warn||i.console.log);return o&&o.call(i.console,r,n),t.apply(this,arguments)}}function p(t,e,n){var r,i=e.prototype;r=t.prototype=Object.create(i),r.constructor=t,r._super=i,n&&ht(r,n)}function d(t,e){return function(){return t.apply(e,arguments)}}function h(t,e){return typeof t==gt?t.apply(e?e[0]||s:s,e):t}function m(t,e){return t===s?e:t}function v(t,e,n){l(x(e),function(e){t.addEventListener(e,n,!1)})}function g(t,e,n){l(x(e),function(e){t.removeEventListener(e,n,!1)})}function y(t,e){for(;t;){if(t==e)return!0;t=t.parentNode}return!1}function b(t,e){return t.indexOf(e)>-1}function x(t){return t.trim().split(/\s+/g)}function T(t,e,n){if(t.indexOf&&!n)return t.indexOf(e);for(var r=0;r<t.length;){if(n&&t[r][n]==e||!n&&t[r]===e)return r;r++}return-1}function w(t){return Array.prototype.slice.call(t,0)}function E(t,e,n){for(var r=[],i=[],o=0;o<t.length;){var a=e?t[o][e]:t[o];T(i,a)<0&&r.push(t[o]),i[o]=a,o++}return n&&(r=e?r.sort(function(t,n){return t[e]>n[e]}):r.sort()),r}function C(t,e){for(var n,r,i=e[0].toUpperCase()+e.slice(1),o=0;o<mt.length;){if(n=mt[o],(r=n?n+i:e)in t)return r;o++}return s}function S(){return Et++}function O(t){var e=t.ownerDocument||t;return e.defaultView||e.parentWindow||i}function A(t,e){var n=this;this.manager=t,this.callback=e,this.element=t.element,this.target=t.options.inputTarget,this.domHandler=function(e){h(t.options.enable,[t])&&n.handler(e)},this.init()}function I(t){var e=t.options.inputClass;return new(e||(Ot?q:At?W:St?B:Y))(t,M)}function M(t,e,n){var r=n.pointers.length,i=n.changedPointers.length,o=e&Mt&&r-i==0,a=e&(kt|Lt)&&r-i==0;n.isFirst=!!o,n.isFinal=!!a,o&&(t.session={}),n.eventType=e,P(t,n),t.emit("hammer.input",n),t.recognize(n),t.session.prevInput=n}function P(t,e){var n=t.session,r=e.pointers,i=r.length;n.firstInput||(n.firstInput=j(e)),i>1&&!n.firstMultiple?n.firstMultiple=j(e):1===i&&(n.firstMultiple=!1);var o=n.firstInput,a=n.firstMultiple,s=a?a.center:o.center,c=e.center=N(r);e.timeStamp=xt(),e.deltaTime=e.timeStamp-o.timeStamp,e.angle=R(s,c),e.distance=D(s,c),k(n,e),e.offsetDirection=X(e.deltaX,e.deltaY);var u=_(e.deltaTime,e.deltaX,e.deltaY);e.overallVelocityX=u.x,e.overallVelocityY=u.y,e.overallVelocity=bt(u.x)>bt(u.y)?u.x:u.y,e.scale=a?z(a.pointers,r):1,e.rotation=a?F(a.pointers,r):0,e.maxPointers=n.prevInput?e.pointers.length>n.prevInput.maxPointers?e.pointers.length:n.prevInput.maxPointers:e.pointers.length,L(n,e);var l=t.element;y(e.srcEvent.target,l)&&(l=e.srcEvent.target),e.target=l}function k(t,e){var n=e.center,r=t.offsetDelta||{},i=t.prevDelta||{},o=t.prevInput||{};e.eventType!==Mt&&o.eventType!==kt||(i=t.prevDelta={x:o.deltaX||0,y:o.deltaY||0},r=t.offsetDelta={x:n.x,y:n.y}),e.deltaX=i.x+(n.x-r.x),e.deltaY=i.y+(n.y-r.y)}function L(t,e){var n,r,i,o,a=t.lastInterval||e,c=e.timeStamp-a.timeStamp;if(e.eventType!=Lt&&(c>It||a.velocity===s)){var u=e.deltaX-a.deltaX,l=e.deltaY-a.deltaY,f=_(c,u,l);r=f.x,i=f.y,n=bt(f.x)>bt(f.y)?f.x:f.y,o=X(u,l),t.lastInterval=e}else n=a.velocity,r=a.velocityX,i=a.velocityY,o=a.direction;e.velocity=n,e.velocityX=r,e.velocityY=i,e.direction=o}function j(t){for(var e=[],n=0;n<t.pointers.length;)e[n]={clientX:yt(t.pointers[n].clientX),clientY:yt(t.pointers[n].clientY)},n++;return{timeStamp:xt(),pointers:e,center:N(e),deltaX:t.deltaX,deltaY:t.deltaY}}function N(t){var e=t.length;if(1===e)return{x:yt(t[0].clientX),y:yt(t[0].clientY)};for(var n=0,r=0,i=0;i<e;)n+=t[i].clientX,r+=t[i].clientY,i++;return{x:yt(n/e),y:yt(r/e)}}function _(t,e,n){return{x:e/t||0,y:n/t||0}}function X(t,e){return t===e?jt:bt(t)>=bt(e)?t<0?Nt:_t:e<0?Xt:Dt}function D(t,e,n){n||(n=Yt);var r=e[n[0]]-t[n[0]],i=e[n[1]]-t[n[1]];return Math.sqrt(r*r+i*i)}function R(t,e,n){n||(n=Yt);var r=e[n[0]]-t[n[0]],i=e[n[1]]-t[n[1]];return 180*Math.atan2(i,r)/Math.PI}function F(t,e){return R(e[1],e[0],qt)+R(t[1],t[0],qt)}function z(t,e){return D(e[0],e[1],qt)/D(t[0],t[1],qt)}function Y(){this.evEl=Vt,this.evWin=Wt,this.pressed=!1,A.apply(this,arguments)}function q(){this.evEl=$t,this.evWin=Gt,A.apply(this,arguments),this.store=this.manager.session.pointerEvents=[]}function H(){this.evTarget=Qt,this.evWin=Jt,this.started=!1,A.apply(this,arguments)}function V(t,e){var n=w(t.touches),r=w(t.changedTouches);return e&(kt|Lt)&&(n=E(n.concat(r),"identifier",!0)),[n,r]}function W(){this.evTarget=te,this.targetIds={},A.apply(this,arguments)}function U(t,e){var n=w(t.touches),r=this.targetIds;if(e&(Mt|Pt)&&1===n.length)return r[n[0].identifier]=!0,[n,n];var i,o,a=w(t.changedTouches),s=[],c=this.target;if(o=n.filter(function(t){return y(t.target,c)}),e===Mt)for(i=0;i<o.length;)r[o[i].identifier]=!0,i++;for(i=0;i<a.length;)r[a[i].identifier]&&s.push(a[i]),e&(kt|Lt)&&delete r[a[i].identifier],i++;return s.length?[E(o.concat(s),"identifier",!0),s]:void 0}function B(){A.apply(this,arguments);var t=d(this.handler,this);this.touch=new W(this.manager,t),this.mouse=new Y(this.manager,t),this.primaryTouch=null,this.lastTouches=[]}function $(t,e){t&Mt?(this.primaryTouch=e.changedPointers[0].identifier,G.call(this,e)):t&(kt|Lt)&&G.call(this,e)}function G(t){var e=t.changedPointers[0];if(e.identifier===this.primaryTouch){var n={x:e.clientX,y:e.clientY};this.lastTouches.push(n);var r=this.lastTouches,i=function(){var t=r.indexOf(n);t>-1&&r.splice(t,1)};setTimeout(i,ee)}}function Z(t){for(var e=t.srcEvent.clientX,n=t.srcEvent.clientY,r=0;r<this.lastTouches.length;r++){var i=this.lastTouches[r],o=Math.abs(e-i.x),a=Math.abs(n-i.y);if(o<=ne&&a<=ne)return!0}return!1}function Q(t,e){this.manager=t,this.set(e)}function J(t){if(b(t,se))return se;var e=b(t,ce),n=b(t,ue);return e&&n?se:e||n?e?ce:ue:b(t,ae)?ae:oe}function K(t){this.options=ht({},this.defaults,t||{}),this.id=S(),this.manager=null,this.options.enable=m(this.options.enable,!0),this.state=fe,this.simultaneous={},this.requireFail=[]}function tt(t){return t&ve?"cancel":t&he?"end":t&de?"move":t&pe?"start":""}function et(t){return t==Dt?"down":t==Xt?"up":t==Nt?"left":t==_t?"right":""}function nt(t,e){var n=e.manager;return n?n.get(t):t}function rt(){K.apply(this,arguments)}function it(){rt.apply(this,arguments),this.pX=null,this.pY=null}function ot(){rt.apply(this,arguments)}function at(){K.apply(this,arguments),this._timer=null,this._input=null}function st(){rt.apply(this,arguments)}function ct(){rt.apply(this,arguments)}function ut(){K.apply(this,arguments),this.pTime=!1,this.pCenter=!1,this._timer=null,this._input=null,this.count=0}function lt(t,e){return e=e||{},e.recognizers=m(e.recognizers,lt.defaults.preset),new ft(t,e)}function ft(t,e){this.options=ht({},lt.defaults,e||{}),this.options.inputTarget=this.options.inputTarget||t,this.handlers={},this.session={},this.recognizers=[],this.oldCssProps={},this.element=t,this.input=I(this),this.touchAction=new Q(this,this.options.touchAction),pt(this,!0),l(this.options.recognizers,function(t){var e=this.add(new t[0](t[1]));t[2]&&e.recognizeWith(t[2]),t[3]&&e.requireFailure(t[3])},this)}function pt(t,e){var n=t.element;if(n.style){var r;l(t.options.cssProps,function(i,o){r=C(n.style,o),e?(t.oldCssProps[r]=n.style[r],n.style[r]=i):n.style[r]=t.oldCssProps[r]||""}),e||(t.oldCssProps={})}}function dt(t,e){var n=o.createEvent("Event");n.initEvent(t,!0,!0),n.gesture=e,e.target.dispatchEvent(n)}var ht,mt=["","webkit","Moz","MS","ms","o"],vt=o.createElement("div"),gt="function",yt=Math.round,bt=Math.abs,xt=Date.now;ht="function"!=typeof Object.assign?function(t){if(t===s||null===t)throw new TypeError("Cannot convert undefined or null to object");for(var e=Object(t),n=1;n<arguments.length;n++){var r=arguments[n];if(r!==s&&null!==r)for(var i in r)r.hasOwnProperty(i)&&(e[i]=r[i])}return e}:Object.assign;var Tt=f(function(t,e,n){for(var r=Object.keys(e),i=0;i<r.length;)(!n||n&&t[r[i]]===s)&&(t[r[i]]=e[r[i]]),i++;return t},"extend","Use `assign`."),wt=f(function(t,e){return Tt(t,e,!0)},"merge","Use `assign`."),Et=1,Ct=/mobile|tablet|ip(ad|hone|od)|android/i,St="ontouchstart"in i,Ot=C(i,"PointerEvent")!==s,At=St&&Ct.test(navigator.userAgent),It=25,Mt=1,Pt=2,kt=4,Lt=8,jt=1,Nt=2,_t=4,Xt=8,Dt=16,Rt=Nt|_t,Ft=Xt|Dt,zt=Rt|Ft,Yt=["x","y"],qt=["clientX","clientY"];A.prototype={handler:function(){},init:function(){this.evEl&&v(this.element,this.evEl,this.domHandler),this.evTarget&&v(this.target,this.evTarget,this.domHandler),this.evWin&&v(O(this.element),this.evWin,this.domHandler)},destroy:function(){this.evEl&&g(this.element,this.evEl,this.domHandler),this.evTarget&&g(this.target,this.evTarget,this.domHandler),this.evWin&&g(O(this.element),this.evWin,this.domHandler)}};var Ht={mousedown:Mt,mousemove:Pt,mouseup:kt},Vt="mousedown",Wt="mousemove mouseup";p(Y,A,{handler:function(t){var e=Ht[t.type];e&Mt&&0===t.button&&(this.pressed=!0),e&Pt&&1!==t.which&&(e=kt),this.pressed&&(e&kt&&(this.pressed=!1),this.callback(this.manager,e,{pointers:[t],changedPointers:[t],pointerType:"mouse",srcEvent:t}))}});var Ut={pointerdown:Mt,pointermove:Pt,pointerup:kt,pointercancel:Lt,pointerout:Lt},Bt={2:"touch",3:"pen",4:"mouse",5:"kinect"},$t="pointerdown",Gt="pointermove pointerup pointercancel";i.MSPointerEvent&&!i.PointerEvent&&($t="MSPointerDown",Gt="MSPointerMove MSPointerUp MSPointerCancel"),p(q,A,{handler:function(t){var e=this.store,n=!1,r=t.type.toLowerCase().replace("ms",""),i=Ut[r],o=Bt[t.pointerType]||t.pointerType,a="touch"==o,s=T(e,t.pointerId,"pointerId");i&Mt&&(0===t.button||a)?s<0&&(e.push(t),s=e.length-1):i&(kt|Lt)&&(n=!0),s<0||(e[s]=t,this.callback(this.manager,i,{pointers:e,changedPointers:[t],pointerType:o,srcEvent:t}),n&&e.splice(s,1))}});var Zt={touchstart:Mt,touchmove:Pt,touchend:kt,touchcancel:Lt},Qt="touchstart",Jt="touchstart touchmove touchend touchcancel";p(H,A,{handler:function(t){var e=Zt[t.type];if(e===Mt&&(this.started=!0),this.started){var n=V.call(this,t,e);e&(kt|Lt)&&n[0].length-n[1].length==0&&(this.started=!1),this.callback(this.manager,e,{pointers:n[0],changedPointers:n[1],pointerType:"touch",srcEvent:t})}}});var Kt={touchstart:Mt,touchmove:Pt,touchend:kt,touchcancel:Lt},te="touchstart touchmove touchend touchcancel";p(W,A,{handler:function(t){var e=Kt[t.type],n=U.call(this,t,e);n&&this.callback(this.manager,e,{pointers:n[0],changedPointers:n[1],pointerType:"touch",srcEvent:t})}});var ee=2500,ne=25;p(B,A,{handler:function(t,e,n){var r="touch"==n.pointerType,i="mouse"==n.pointerType;if(!(i&&n.sourceCapabilities&&n.sourceCapabilities.firesTouchEvents)){if(r)$.call(this,e,n);else if(i&&Z.call(this,n))return;this.callback(t,e,n)}},destroy:function(){this.touch.destroy(),this.mouse.destroy()}});var re=C(vt.style,"touchAction"),ie=re!==s,oe="auto",ae="manipulation",se="none",ce="pan-x",ue="pan-y",le=function(){if(!ie)return!1;var t={},e=i.CSS&&i.CSS.supports;return["auto","manipulation","pan-y","pan-x","pan-x pan-y","none"].forEach(function(n){t[n]=!e||i.CSS.supports("touch-action",n)}),t}();Q.prototype={set:function(t){"compute"==t&&(t=this.compute()),ie&&this.manager.element.style&&le[t]&&(this.manager.element.style[re]=t),this.actions=t.toLowerCase().trim()},update:function(){this.set(this.manager.options.touchAction)},compute:function(){var t=[];return l(this.manager.recognizers,function(e){h(e.options.enable,[e])&&(t=t.concat(e.getTouchAction()))}),J(t.join(" "))},preventDefaults:function(t){var e=t.srcEvent,n=t.offsetDirection;if(this.manager.session.prevented)return void e.preventDefault();var r=this.actions,i=b(r,se)&&!le[se],o=b(r,ue)&&!le[ue],a=b(r,ce)&&!le[ce];if(i){var s=1===t.pointers.length,c=t.distance<2,u=t.deltaTime<250;if(s&&c&&u)return}return a&&o?void 0:i||o&&n&Rt||a&&n&Ft?this.preventSrc(e):void 0},preventSrc:function(t){this.manager.session.prevented=!0,t.preventDefault()}};var fe=1,pe=2,de=4,he=8,me=he,ve=16;K.prototype={defaults:{},set:function(t){return ht(this.options,t),this.manager&&this.manager.touchAction.update(),this},recognizeWith:function(t){if(u(t,"recognizeWith",this))return this;var e=this.simultaneous;return t=nt(t,this),e[t.id]||(e[t.id]=t,t.recognizeWith(this)),this},dropRecognizeWith:function(t){return u(t,"dropRecognizeWith",this)?this:(t=nt(t,this),delete this.simultaneous[t.id],this)},requireFailure:function(t){if(u(t,"requireFailure",this))return this;var e=this.requireFail;return t=nt(t,this),-1===T(e,t)&&(e.push(t),t.requireFailure(this)),this},dropRequireFailure:function(t){if(u(t,"dropRequireFailure",this))return this;t=nt(t,this);var e=T(this.requireFail,t);return e>-1&&this.requireFail.splice(e,1),this},hasRequireFailures:function(){return this.requireFail.length>0},canRecognizeWith:function(t){return!!this.simultaneous[t.id]},emit:function(t){function e(e){n.manager.emit(e,t)}var n=this,r=this.state;r<he&&e(n.options.event+tt(r)),e(n.options.event),t.additionalEvent&&e(t.additionalEvent),r>=he&&e(n.options.event+tt(r))},tryEmit:function(t){if(this.canEmit())return this.emit(t);this.state=32},canEmit:function(){for(var t=0;t<this.requireFail.length;){if(!(this.requireFail[t].state&(32|fe)))return!1;t++}return!0},recognize:function(t){var e=ht({},t);if(!h(this.options.enable,[this,e]))return this.reset(),void(this.state=32);this.state&(me|ve|32)&&(this.state=fe),this.state=this.process(e),this.state&(pe|de|he|ve)&&this.tryEmit(e)},process:function(t){},getTouchAction:function(){},reset:function(){}},p(rt,K,{defaults:{pointers:1},attrTest:function(t){var e=this.options.pointers;return 0===e||t.pointers.length===e},process:function(t){var e=this.state,n=t.eventType,r=e&(pe|de),i=this.attrTest(t);return r&&(n&Lt||!i)?e|ve:r||i?n&kt?e|he:e&pe?e|de:pe:32}}),p(it,rt,{defaults:{event:"pan",threshold:10,pointers:1,direction:zt},getTouchAction:function(){var t=this.options.direction,e=[];return t&Rt&&e.push(ue),t&Ft&&e.push(ce),e},directionTest:function(t){var e=this.options,n=!0,r=t.distance,i=t.direction,o=t.deltaX,a=t.deltaY;return i&e.direction||(e.direction&Rt?(i=0===o?jt:o<0?Nt:_t,n=o!=this.pX,r=Math.abs(t.deltaX)):(i=0===a?jt:a<0?Xt:Dt,n=a!=this.pY,r=Math.abs(t.deltaY))),t.direction=i,n&&r>e.threshold&&i&e.direction},attrTest:function(t){return rt.prototype.attrTest.call(this,t)&&(this.state&pe||!(this.state&pe)&&this.directionTest(t))},emit:function(t){this.pX=t.deltaX,this.pY=t.deltaY;var e=et(t.direction);e&&(t.additionalEvent=this.options.event+e),this._super.emit.call(this,t)}}),p(ot,rt,{defaults:{event:"pinch",threshold:0,pointers:2},getTouchAction:function(){return[se]},attrTest:function(t){return this._super.attrTest.call(this,t)&&(Math.abs(t.scale-1)>this.options.threshold||this.state&pe)},emit:function(t){if(1!==t.scale){var e=t.scale<1?"in":"out";t.additionalEvent=this.options.event+e}this._super.emit.call(this,t)}}),p(at,K,{defaults:{event:"press",pointers:1,time:251,threshold:9},getTouchAction:function(){return[oe]},process:function(t){var e=this.options,n=t.pointers.length===e.pointers,r=t.distance<e.threshold,i=t.deltaTime>e.time;if(this._input=t,!r||!n||t.eventType&(kt|Lt)&&!i)this.reset();else if(t.eventType&Mt)this.reset(),this._timer=c(function(){this.state=me,this.tryEmit()},e.time,this);else if(t.eventType&kt)return me;return 32},reset:function(){clearTimeout(this._timer)},emit:function(t){this.state===me&&(t&&t.eventType&kt?this.manager.emit(this.options.event+"up",t):(this._input.timeStamp=xt(),this.manager.emit(this.options.event,this._input)))}}),p(st,rt,{defaults:{event:"rotate",threshold:0,pointers:2},getTouchAction:function(){return[se]},attrTest:function(t){return this._super.attrTest.call(this,t)&&(Math.abs(t.rotation)>this.options.threshold||this.state&pe)}}),p(ct,rt,{defaults:{event:"swipe",threshold:10,velocity:.3,direction:Rt|Ft,pointers:1},getTouchAction:function(){return it.prototype.getTouchAction.call(this)},attrTest:function(t){var e,n=this.options.direction;return n&(Rt|Ft)?e=t.overallVelocity:n&Rt?e=t.overallVelocityX:n&Ft&&(e=t.overallVelocityY),this._super.attrTest.call(this,t)&&n&t.offsetDirection&&t.distance>this.options.threshold&&t.maxPointers==this.options.pointers&&bt(e)>this.options.velocity&&t.eventType&kt},emit:function(t){var e=et(t.offsetDirection);e&&this.manager.emit(this.options.event+e,t),this.manager.emit(this.options.event,t)}}),p(ut,K,{defaults:{event:"tap",pointers:1,taps:1,interval:300,time:250,threshold:9,posThreshold:10},getTouchAction:function(){return[ae]},process:function(t){var e=this.options,n=t.pointers.length===e.pointers,r=t.distance<e.threshold,i=t.deltaTime<e.time;if(this.reset(),t.eventType&Mt&&0===this.count)return this.failTimeout();if(r&&i&&n){if(t.eventType!=kt)return this.failTimeout();var o=!this.pTime||t.timeStamp-this.pTime<e.interval,a=!this.pCenter||D(this.pCenter,t.center)<e.posThreshold;this.pTime=t.timeStamp,this.pCenter=t.center,a&&o?this.count+=1:this.count=1,this._input=t;if(0===this.count%e.taps)return this.hasRequireFailures()?(this._timer=c(function(){this.state=me,this.tryEmit()},e.interval,this),pe):me}return 32},failTimeout:function(){return this._timer=c(function(){this.state=32},this.options.interval,this),32},reset:function(){clearTimeout(this._timer)},emit:function(){this.state==me&&(this._input.tapCount=this.count,this.manager.emit(this.options.event,this._input))}}),lt.VERSION="2.0.7",lt.defaults={domEvents:!1,touchAction:"compute",enable:!0,inputTarget:null,inputClass:null,preset:[[st,{enable:!1}],[ot,{enable:!1},["rotate"]],[ct,{direction:Rt}],[it,{direction:Rt},["swipe"]],[ut],[ut,{event:"doubletap",taps:2},["tap"]],[at]],cssProps:{userSelect:"none",touchSelect:"none",touchCallout:"none",contentZooming:"none",userDrag:"none",tapHighlightColor:"rgba(0,0,0,0)"}};ft.prototype={set:function(t){return ht(this.options,t),t.touchAction&&this.touchAction.update(),t.inputTarget&&(this.input.destroy(),this.input.target=t.inputTarget,this.input.init()),this},stop:function(t){this.session.stopped=t?2:1},recognize:function(t){var e=this.session;if(!e.stopped){this.touchAction.preventDefaults(t);var n,r=this.recognizers,i=e.curRecognizer;(!i||i&&i.state&me)&&(i=e.curRecognizer=null);for(var o=0;o<r.length;)n=r[o],2===e.stopped||i&&n!=i&&!n.canRecognizeWith(i)?n.reset():n.recognize(t),!i&&n.state&(pe|de|he)&&(i=e.curRecognizer=n),o++}},get:function(t){if(t instanceof K)return t;for(var e=this.recognizers,n=0;n<e.length;n++)if(e[n].options.event==t)return e[n];return null},add:function(t){if(u(t,"add",this))return this;var e=this.get(t.options.event);return e&&this.remove(e),this.recognizers.push(t),t.manager=this,this.touchAction.update(),t},remove:function(t){if(u(t,"remove",this))return this;if(t=this.get(t)){var e=this.recognizers,n=T(e,t);-1!==n&&(e.splice(n,1),this.touchAction.update())}return this},on:function(t,e){if(t!==s&&e!==s){var n=this.handlers;return l(x(t),function(t){n[t]=n[t]||[],n[t].push(e)}),this}},off:function(t,e){if(t!==s){var n=this.handlers;return l(x(t),function(t){e?n[t]&&n[t].splice(T(n[t],e),1):delete n[t]}),this}},emit:function(t,e){this.options.domEvents&&dt(t,e);var n=this.handlers[t]&&this.handlers[t].slice();if(n&&n.length){e.type=t,e.preventDefault=function(){e.srcEvent.preventDefault()};for(var r=0;r<n.length;)n[r](e),r++}},destroy:function(){this.element&&pt(this,!1),this.handlers={},this.session={},this.input.destroy(),this.element=null}},ht(lt,{INPUT_START:Mt,INPUT_MOVE:Pt,INPUT_END:kt,INPUT_CANCEL:Lt,STATE_POSSIBLE:fe,STATE_BEGAN:pe,STATE_CHANGED:de,STATE_ENDED:he,STATE_RECOGNIZED:me,STATE_CANCELLED:ve,STATE_FAILED:32,DIRECTION_NONE:jt,DIRECTION_LEFT:Nt,DIRECTION_RIGHT:_t,DIRECTION_UP:Xt,DIRECTION_DOWN:Dt,DIRECTION_HORIZONTAL:Rt,DIRECTION_VERTICAL:Ft,DIRECTION_ALL:zt,Manager:ft,Input:A,TouchAction:Q,TouchInput:W,MouseInput:Y,PointerEventInput:q,TouchMouseInput:B,SingleTouchInput:H,Recognizer:K,AttrRecognizer:rt,Tap:ut,Pan:it,Swipe:ct,Pinch:ot,Rotate:st,Press:at,on:v,off:g,each:l,merge:wt,extend:Tt,assign:ht,inherit:p,bindFn:d,prefixed:C}),(void 0!==i?i:"undefined"!=typeof self?self:{}).Hammer=lt,(r=function(){return lt}.call(e,n,e,t))!==s&&(t.exports=r)}(window,document)},function(t,e){t.exports=function(t,e,n){for(var r=(2<<Math.log(e.length-1)/Math.LN2)-1,i=Math.ceil(1.6*r*n/e.length),o="";;)for(var a=t(i),s=0;s<i;s++){var c=a[s]&r;if(e[c]&&(o+=e[c],o.length===n))return o}}},function(t,e,n){"use strict";function r(t){var e="",n=Math.floor(.001*(Date.now()-s));return n===o?i++:(i=0,o=n),e+=a(c),e+=a(t),i>0&&(e+=a(i)),e+=a(n)}var i,o,a=n(15),s=(n(0),1459707606518),c=6;t.exports=r},function(t,e,n){"use strict";function r(t){for(var e,n=0,r="";!e;)r+=a(o,i.get(),1),e=t<Math.pow(16,n+1),n++;return r}var i=n(0),o=n(18),a=n(13);t.exports=r},function(t,e,n){"use strict";function r(e){return s.seed(e),t.exports}function i(e){return l=e,t.exports}function o(t){return void 0!==t&&s.characters(t),s.shuffled()}function a(){return c(l)}var s=n(0),c=n(14),u=n(17),l=n(20)||0;t.exports=a,t.exports.generate=a,t.exports.seed=r,t.exports.worker=i,t.exports.characters=o,t.exports.isValid=u},function(t,e,n){"use strict";function r(t){return!(!t||"string"!=typeof t||t.length<6)&&!new RegExp("[^"+i.get().replace(/[|\\{}()[\]^$+*?.-]/g,"\\$&")+"]").test(t)}var i=n(0);t.exports=r},function(t,e,n){"use strict";var r,i="object"==typeof window&&(window.crypto||window.msCrypto);r=i&&i.getRandomValues?function(t){return i.getRandomValues(new Uint8Array(t))}:function(t){for(var e=[],n=0;n<t;n++)e.push(Math.floor(256*Math.random()));return e},t.exports=r},function(t,e,n){"use strict";function r(){return(o=(9301*o+49297)%233280)/233280}function i(t){o=t}var o=1;t.exports={nextValue:r,seed:i}},function(t,e,n){"use strict";t.exports=0},function(t,e){t.exports=function(t,e,n,r){var i,o=t=t||{},a=typeof t.default;"object"!==a&&"function"!==a||(i=t,o=t.default);var s="function"==typeof o?o.options:o;if(e&&(s.render=e.render,s.staticRenderFns=e.staticRenderFns),n&&(s._scopeId=n),r){var c=Object.create(s.computed||null);Object.keys(r).forEach(function(t){var e=r[t];c[t]=function(){return e}}),s.computed=c}return{esModule:i,exports:o,options:s}}},function(t,e,n){var r=n(9);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(23)("02af2e15",r,!0,{})},function(t,e,n){function r(t){for(var e=0;e<t.length;e++){var n=t[e],r=l[n.id];if(r){r.refs++;for(var i=0;i<r.parts.length;i++)r.parts[i](n.parts[i]);for(;i<n.parts.length;i++)r.parts.push(o(n.parts[i]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{for(var a=[],i=0;i<n.parts.length;i++)a.push(o(n.parts[i]));l[n.id]={id:n.id,refs:1,parts:a}}}}function i(){var t=document.createElement("style");return t.type="text/css",f.appendChild(t),t}function o(t){var e,n,r=document.querySelector("style["+g+'~="'+t.id+'"]');if(r){if(h)return m;r.parentNode.removeChild(r)}if(y){var o=d++;r=p||(p=i()),e=a.bind(null,r,o,!1),n=a.bind(null,r,o,!0)}else r=i(),e=s.bind(null,r),n=function(){r.parentNode.removeChild(r)};return e(t),function(r){if(r){if(r.css===t.css&&r.media===t.media&&r.sourceMap===t.sourceMap)return;e(t=r)}else n()}}function a(t,e,n,r){var i=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=b(e,i);else{var o=document.createTextNode(i),a=t.childNodes;a[e]&&t.removeChild(a[e]),a.length?t.insertBefore(o,a[e]):t.appendChild(o)}}function s(t,e){var n=e.css,r=e.media,i=e.sourceMap;if(r&&t.setAttribute("media",r),v.ssrId&&t.setAttribute(g,e.id),i&&(n+="\n/*# sourceURL="+i.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}var c="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!c)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var u=n(24),l={},f=c&&(document.head||document.getElementsByTagName("head")[0]),p=null,d=0,h=!1,m=function(){},v=null,g="data-vue-ssr-id",y="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());t.exports=function(t,e,n,i){h=n,v=i||{};var o=u(t,e);return r(o),function(e){for(var n=[],i=0;i<o.length;i++){var a=o[i],s=l[a.id];s.refs--,n.push(s)}e?(o=u(t,e),r(o)):o=[];for(var i=0;i<n.length;i++){var s=n[i];if(0===s.refs){for(var c=0;c<s.parts.length;c++)s.parts[c]();delete l[s.id]}}}};var b=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}()},function(t,e){t.exports=function(t,e){for(var n=[],r={},i=0;i<e.length;i++){var o=e[i],a=o[0],s=o[1],c=o[2],u=o[3],l={id:t+":"+i,css:s,media:c,sourceMap:u};r[a]?r[a].parts.push(l):n.push(r[a]={id:a,parts:[l]})}return n}},function(t,e){var n;n=function(){return this}();try{n=n||Function("return this")()||(0,eval)("this")}catch(t){"object"==typeof window&&(n=window)}t.exports=n}])});
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./Basket.vue": 375,
-	"./Calendar.vue": 377,
-	"./Card.vue": 379,
-	"./Carretdown.vue": 381,
-	"./Cart.vue": 383,
-	"./Circlecheck.vue": 385,
-	"./Closecircle.vue": 387,
-	"./Cube.vue": 389,
-	"./Cubes.vue": 391,
-	"./Dropdown.vue": 393,
-	"./Filter.vue": 395,
-	"./Gift.vue": 397,
-	"./Mail.vue": 399,
-	"./Menu.vue": 401,
-	"./Navigate.vue": 403,
-	"./Phone.vue": 405,
-	"./Plus.vue": 407,
-	"./Ribbon.vue": 409,
-	"./Search.vue": 411,
-	"./Star.vue": 413,
-	"./Sync.vue": 415,
-	"./Trash.vue": 417
+	"./Basket.vue": 376,
+	"./Calendar.vue": 378,
+	"./Card.vue": 380,
+	"./Carretdown.vue": 382,
+	"./Cart.vue": 384,
+	"./Circlecheck.vue": 386,
+	"./Closecircle.vue": 388,
+	"./Cube.vue": 390,
+	"./Cubes.vue": 392,
+	"./Dropdown.vue": 394,
+	"./Filter.vue": 396,
+	"./Gift.vue": 398,
+	"./Mail.vue": 400,
+	"./Menu.vue": 402,
+	"./Navigate.vue": 404,
+	"./Phone.vue": 406,
+	"./Plus.vue": 408,
+	"./Ribbon.vue": 410,
+	"./Search.vue": 412,
+	"./Star.vue": 414,
+	"./Sync.vue": 416,
+	"./Trash.vue": 418
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -47146,10 +47169,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 374;
+webpackContext.id = 375;
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47157,7 +47180,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(376)
+var __vue_template__ = __webpack_require__(377)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47196,7 +47219,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47228,7 +47251,7 @@ if (false) {
 }
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47236,7 +47259,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(378)
+var __vue_template__ = __webpack_require__(379)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47275,7 +47298,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47307,7 +47330,7 @@ if (false) {
 }
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47315,7 +47338,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(380)
+var __vue_template__ = __webpack_require__(381)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47354,7 +47377,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47386,7 +47409,7 @@ if (false) {
 }
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47394,7 +47417,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(382)
+var __vue_template__ = __webpack_require__(383)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47433,7 +47456,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47458,7 +47481,7 @@ if (false) {
 }
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47466,7 +47489,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(384)
+var __vue_template__ = __webpack_require__(385)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47505,7 +47528,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47555,7 +47578,7 @@ if (false) {
 }
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47563,7 +47586,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(386)
+var __vue_template__ = __webpack_require__(387)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47602,7 +47625,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47640,7 +47663,7 @@ if (false) {
 }
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47648,7 +47671,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(388)
+var __vue_template__ = __webpack_require__(389)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47687,7 +47710,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47725,7 +47748,7 @@ if (false) {
 }
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47733,7 +47756,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(390)
+var __vue_template__ = __webpack_require__(391)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47772,7 +47795,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47804,7 +47827,7 @@ if (false) {
 }
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47812,7 +47835,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(392)
+var __vue_template__ = __webpack_require__(393)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47851,7 +47874,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47889,7 +47912,7 @@ if (false) {
 }
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47897,7 +47920,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(394)
+var __vue_template__ = __webpack_require__(395)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -47936,7 +47959,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -47985,7 +48008,7 @@ if (false) {
 }
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -47993,7 +48016,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(396)
+var __vue_template__ = __webpack_require__(397)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48032,7 +48055,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48064,7 +48087,7 @@ if (false) {
 }
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48072,7 +48095,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(398)
+var __vue_template__ = __webpack_require__(399)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48111,7 +48134,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48143,7 +48166,7 @@ if (false) {
 }
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48151,7 +48174,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(400)
+var __vue_template__ = __webpack_require__(401)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48190,7 +48213,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48228,7 +48251,7 @@ if (false) {
 }
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48236,7 +48259,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(402)
+var __vue_template__ = __webpack_require__(403)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48275,7 +48298,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48307,7 +48330,7 @@ if (false) {
 }
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48315,7 +48338,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(404)
+var __vue_template__ = __webpack_require__(405)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48354,7 +48377,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48386,7 +48409,7 @@ if (false) {
 }
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48394,7 +48417,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(406)
+var __vue_template__ = __webpack_require__(407)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48433,7 +48456,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48465,7 +48488,7 @@ if (false) {
 }
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48473,7 +48496,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(408)
+var __vue_template__ = __webpack_require__(409)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48512,7 +48535,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 408 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48544,7 +48567,7 @@ if (false) {
 }
 
 /***/ }),
-/* 409 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48552,7 +48575,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(410)
+var __vue_template__ = __webpack_require__(411)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48591,7 +48614,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 410 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48629,7 +48652,7 @@ if (false) {
 }
 
 /***/ }),
-/* 411 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48637,7 +48660,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(412)
+var __vue_template__ = __webpack_require__(413)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48676,7 +48699,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48708,7 +48731,7 @@ if (false) {
 }
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48716,7 +48739,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(414)
+var __vue_template__ = __webpack_require__(415)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48755,7 +48778,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 414 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48789,7 +48812,7 @@ if (false) {
 }
 
 /***/ }),
-/* 415 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48797,7 +48820,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(416)
+var __vue_template__ = __webpack_require__(417)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48836,7 +48859,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 416 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48868,7 +48891,7 @@ if (false) {
 }
 
 /***/ }),
-/* 417 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48876,7 +48899,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(418)
+var __vue_template__ = __webpack_require__(419)
 /* template functional */
 var __vue_template_functional__ = true
 /* styles */
@@ -48915,7 +48938,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 418 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function(_h, _vm) {
@@ -48947,12 +48970,12 @@ if (false) {
 }
 
 /***/ }),
-/* 419 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./FileInput.vue": 420,
-	"./Snackbar.vue": 423
+	"./FileInput.vue": 421,
+	"./Snackbar.vue": 424
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -48968,18 +48991,18 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 419;
+webpackContext.id = 420;
 
 /***/ }),
-/* 420 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(421)
+var __vue_script__ = __webpack_require__(422)
 /* template */
-var __vue_template__ = __webpack_require__(422)
+var __vue_template__ = __webpack_require__(423)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49018,7 +49041,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 421 */
+/* 422 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49075,7 +49098,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 422 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49121,15 +49144,15 @@ if (false) {
 }
 
 /***/ }),
-/* 423 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(424)
+var __vue_script__ = __webpack_require__(425)
 /* template */
-var __vue_template__ = __webpack_require__(425)
+var __vue_template__ = __webpack_require__(426)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49168,7 +49191,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 424 */
+/* 425 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49198,7 +49221,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 425 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49218,15 +49241,15 @@ if (false) {
 }
 
 /***/ }),
-/* 426 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(427)
+var __vue_script__ = __webpack_require__(428)
 /* template */
-var __vue_template__ = __webpack_require__(428)
+var __vue_template__ = __webpack_require__(429)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49265,7 +49288,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 427 */
+/* 428 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49319,7 +49342,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 428 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49385,13 +49408,13 @@ if (false) {
 }
 
 /***/ }),
-/* 429 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(430)
+var __vue_script__ = __webpack_require__(431)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -49432,7 +49455,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 430 */
+/* 431 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49473,15 +49496,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 431 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(432)
+var __vue_script__ = __webpack_require__(433)
 /* template */
-var __vue_template__ = __webpack_require__(433)
+var __vue_template__ = __webpack_require__(434)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49520,7 +49543,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 432 */
+/* 433 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49568,7 +49591,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 433 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49652,13 +49675,13 @@ if (false) {
 }
 
 /***/ }),
-/* 434 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(435)
+var __vue_script__ = __webpack_require__(436)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -49699,7 +49722,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 435 */
+/* 436 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49725,15 +49748,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 436 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(437)
+var __vue_script__ = __webpack_require__(438)
 /* template */
-var __vue_template__ = __webpack_require__(438)
+var __vue_template__ = __webpack_require__(439)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49772,7 +49795,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 437 */
+/* 438 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49815,7 +49838,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 438 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49892,15 +49915,15 @@ if (false) {
 }
 
 /***/ }),
-/* 439 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(440)
+var __vue_script__ = __webpack_require__(441)
 /* template */
-var __vue_template__ = __webpack_require__(450)
+var __vue_template__ = __webpack_require__(451)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49939,12 +49962,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 440 */
+/* 441 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_Chart_vue__ = __webpack_require__(441);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_Chart_vue__ = __webpack_require__(442);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_Chart_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__base_Chart_vue__);
 //
 //
@@ -49967,15 +49990,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 441 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(442)
+var __vue_script__ = __webpack_require__(443)
 /* template */
-var __vue_template__ = __webpack_require__(449)
+var __vue_template__ = __webpack_require__(450)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -50014,18 +50037,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 442 */
+/* 443 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chartist__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chartist__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chartist___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chartist__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chartist_plugin_tooltips__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chartist_plugin_tooltips__ = __webpack_require__(444);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chartist_plugin_tooltips___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_chartist_plugin_tooltips__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chartist_dist_chartist_min_css__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chartist_dist_chartist_min_css__ = __webpack_require__(445);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chartist_dist_chartist_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_chartist_dist_chartist_min_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chartist_plugin_tooltips_dist_chartist_plugin_tooltip_css__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chartist_plugin_tooltips_dist_chartist_plugin_tooltip_css__ = __webpack_require__(448);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chartist_plugin_tooltips_dist_chartist_plugin_tooltip_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chartist_plugin_tooltips_dist_chartist_plugin_tooltip_css__);
 //
 //
@@ -50097,13 +50120,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 443 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(136)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Chartist) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(137)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Chartist) {
       return (root.returnExportsGlobal = factory(Chartist));
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -50310,13 +50333,13 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root,
 
 
 /***/ }),
-/* 444 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(445);
+var content = __webpack_require__(446);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -50324,7 +50347,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(138)(content, options);
+var update = __webpack_require__(139)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -50341,10 +50364,10 @@ if(false) {
 }
 
 /***/ }),
-/* 445 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(137)(false);
+exports = module.exports = __webpack_require__(138)(false);
 // imports
 
 
@@ -50355,7 +50378,7 @@ exports.push([module.i, ".ct-double-octave:after,.ct-major-eleventh:after,.ct-ma
 
 
 /***/ }),
-/* 446 */
+/* 447 */
 /***/ (function(module, exports) {
 
 
@@ -50450,13 +50473,13 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 447 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(448);
+var content = __webpack_require__(449);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -50464,7 +50487,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(138)(content, options);
+var update = __webpack_require__(139)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -50481,10 +50504,10 @@ if(false) {
 }
 
 /***/ }),
-/* 448 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(137)(false);
+exports = module.exports = __webpack_require__(138)(false);
 // imports
 
 
@@ -50495,7 +50518,7 @@ exports.push([module.i, ".chartist-tooltip {\n  position: absolute;\n  display: 
 
 
 /***/ }),
-/* 449 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50515,7 +50538,7 @@ if (false) {
 }
 
 /***/ }),
-/* 450 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50535,13 +50558,13 @@ if (false) {
 }
 
 /***/ }),
-/* 451 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(452)
+var __vue_script__ = __webpack_require__(453)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -50582,12 +50605,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 452 */
+/* 453 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_ClickOutside__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_ClickOutside__ = __webpack_require__(140);
 
 
 
@@ -50613,26 +50636,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         ClickOutside: __WEBPACK_IMPORTED_MODULE_0__directives_ClickOutside__["a" /* ClickOutside */]
     }
 });
-
-/***/ }),
-/* 453 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClickOutside; });
-var ClickOutside = {
-    bind: function bind(el, binding, vnode) {
-        el.event = function (event) {
-            if (!(el == event.target || el.contains(event.target))) {
-                vnode.context[binding.expression](event);
-            }
-        };
-        document.body.addEventListener('click', el.event);
-    },
-    unbind: function unbind(el) {
-        document.body.removeEventListener('click', el.event);
-    }
-};
 
 /***/ }),
 /* 454 */
@@ -51569,6 +51572,522 @@ if (false) {
 
 /***/ }),
 /* 469 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(470)
+/* template */
+var __vue_template__ = __webpack_require__(474)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/search/Search.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3e164758", Component.options)
+  } else {
+    hotAPI.reload("data-v-3e164758", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 470 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Suggestions__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Suggestions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Suggestions__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_ClickOutside__ = __webpack_require__(140);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        eligibleToSeePrices: {
+            required: true,
+            default: false
+        },
+        route: String,
+        query: String,
+        modifier: String
+    },
+
+    data: function data() {
+        return {
+            currentQuery: this.query,
+            overlay: false
+        };
+    },
+
+
+    computed: {
+        showOverlay: function showOverlay() {
+            return this.overlay && this.currentQuery.length > 0;
+        }
+    },
+
+    methods: {
+        closeOverlay: function closeOverlay() {
+            if (this.overlay) {
+                this.overlay = false;
+            }
+        },
+        submitForm: function submitForm() {
+            document.getElementById('search-form').submit();
+        }
+    },
+
+    components: {
+        Suggestions: __WEBPACK_IMPORTED_MODULE_0__Suggestions___default.a
+    },
+
+    directives: {
+        ClickOutside: __WEBPACK_IMPORTED_MODULE_1__directives_ClickOutside__["a" /* ClickOutside */]
+    }
+});
+
+/***/ }),
+/* 471 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(472)
+/* template */
+var __vue_template__ = __webpack_require__(473)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/search/Suggestions.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-921ba31a", Component.options)
+  } else {
+    hotAPI.reload("data-v-921ba31a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 472 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        showPrices: {
+            required: true
+        },
+        show: Boolean,
+        query: String
+    },
+
+    data: function data() {
+        return {
+            items: []
+        };
+    },
+
+
+    methods: {
+        getItems: Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["throttle"])(function () {
+            var _this = this;
+
+            axios.get('ajax/search?query=' + this.query).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.items = data.products;
+            });
+        }, 1000)
+    },
+
+    created: function created() {
+        if (this.query.length > 0) {
+            this.getItems();
+        }
+    },
+
+
+    watch: {
+        query: function query(newValue, oldValue) {
+            if (newValue.length > 0) {
+                this.getItems();
+            }
+        }
+    }
+});
+
+/***/ }),
+/* 473 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "search-suggestions", class: { show: _vm.show } },
+    [
+      _c("div", { staticClass: "search-items" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.$trans("header.search_products")))]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          [
+            _c(
+              "transition",
+              { attrs: { mode: "out-in", name: "fade" } },
+              [
+                !_vm.items.length > 0 && _vm.query.length > 0
+                  ? [
+                      _c("p", [
+                        _vm._v(_vm._s(_vm.$trans("header.no_results_found")))
+                      ])
+                    ]
+                  : [
+                      _c(
+                        "transition-group",
+                        { attrs: { name: "list" } },
+                        _vm._l(_vm.items, function(item, index) {
+                          return _c(
+                            "li",
+                            { key: "item-" + index, staticClass: "list-item" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "image-wrapper",
+                                  attrs: { href: item.show_path }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "rounded-img",
+                                    attrs: { src: item.thumb, alt: item.slug }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("h4", [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "nowrap",
+                                    attrs: { href: item.show_path }
+                                  },
+                                  [_vm._v(_vm._s(item.name))]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _vm.showPrices && item.formatted_price
+                                ? _c("span", { staticClass: "price mr-1" }, [
+                                    _vm._v(_vm._s(item.formatted_price))
+                                  ])
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "type mr-1" }, [
+                                _vm._v(_vm._s(_vm.$trans("header.products")))
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "time" }, [
+                                _vm._v(_vm._s(item.formated_created_at))
+                              ])
+                            ]
+                          )
+                        })
+                      )
+                    ]
+              ],
+              2
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "quick-links" },
+        [
+          _c("h3", [_vm._v(_vm._s(_vm.$trans("header.quick_links")))]),
+          _vm._v(" "),
+          _vm._t("default")
+        ],
+        2
+      )
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-921ba31a", module.exports)
+  }
+}
+
+/***/ }),
+/* 474 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "click-outside",
+          rawName: "v-click-outside",
+          value: _vm.closeOverlay,
+          expression: "closeOverlay"
+        }
+      ],
+      staticClass: "relative col-search"
+    },
+    [
+      _c("div", { staticClass: "search-wrapper" }, [
+        _c("form", { attrs: { action: _vm.route, id: "search-form" } }, [
+          _c(
+            "div",
+            {
+              staticClass: "search-wrap input-wrap has-icon z-75",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  $event.stopPropagation()
+                  _vm.overlay = true
+                }
+              }
+            },
+            [
+              _c("icon-search", {
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    $event.stopPropagation()
+                    return _vm.submitForm($event)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.currentQuery,
+                    expression: "currentQuery"
+                  }
+                ],
+                staticClass: "input",
+                attrs: {
+                  type: "text",
+                  name: "query",
+                  autocomplete: "off",
+                  placeholder: _vm.$trans("header.what_are_you_looking")
+                },
+                domProps: { value: _vm.currentQuery },
+                on: {
+                  keydown: function($event) {
+                    if (
+                      !("button" in $event) &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.submitForm($event)
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.currentQuery = $event.target.value
+                  }
+                }
+              })
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "suggestions",
+        {
+          attrs: {
+            show: _vm.showOverlay,
+            "show-prices": _vm.eligibleToSeePrices,
+            query: _vm.currentQuery
+          }
+        },
+        [_vm._t("default")],
+        2
+      ),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "search-overlay",
+        class: { show: _vm.showOverlay },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            $event.stopPropagation()
+            _vm.overlay = false
+          }
+        }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3e164758", module.exports)
+  }
+}
+
+/***/ }),
+/* 475 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

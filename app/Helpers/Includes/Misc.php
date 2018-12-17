@@ -40,3 +40,10 @@ if (!function_exists('selectedIf')) {
         return $boolean ? $text : '';
     }
 }
+
+if (!function_exists('booleanToString')) {
+    function booleanToString($boolean, $true = 'true', $false = 'false')
+    {
+        return $boolean ? $true : $false;
+    }
+}

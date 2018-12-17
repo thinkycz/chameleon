@@ -40,12 +40,19 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-search">
-                    <div class="search-wrap input-wrap has-icon">
-                        <icon-search></icon-search>
-                        <input type="text" class="input" placeholder="What are you searching for?">
-                    </div>
-                </div>
+
+                <vue-search query="{{ request('query') }}" route="{{ route('search') }}"
+                    eligible-to-see-prices="{{ booleanToString(auth()->check()) }}">
+                    <ul>
+                        <li><a href="#">Quick Link #1</a></li>
+                        <li><a href="#">Quick Link #2</a></li>
+                        <li><a href="#">Quick Link #3</a></li>
+                        <li><a href="#">Quick Link #4</a></li>
+                        <li><a href="#">Quick Link #5</a></li>
+                        <li><a href="#">Quick Link #6</a></li>
+                    </ul>
+                </vue-search>
+
                 <div class="col-cart">
                     @auth
                         <vue-header-basket></vue-header-basket>

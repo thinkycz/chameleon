@@ -16,3 +16,16 @@
 .fade-leave-to {
     opacity: 0;
 }
+
+.list-item {
+    display: block;
+}
+.list-enter-active,
+.list-leave-active {
+    transition: opacity 1s ease, transform 1s ease;
+}
+.list-enter,
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}

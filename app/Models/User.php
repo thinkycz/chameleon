@@ -25,7 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         'email',
         'phone',
         'password',
-        'activated_at'
+        'activated_at',
     ];
 
     protected $hidden = [
@@ -34,7 +34,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
 
     protected $dates = [
         'birth_date',
-        'activated_at'
+        'activated_at',
     ];
 
     public static function getAuthenticatedUser()
@@ -93,7 +93,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
 
     public function getIsActiveAttribute()
     {
-        return !! $this->activated_at;
+        return !!$this->activated_at;
     }
 
     public static function getActiveBasket()

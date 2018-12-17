@@ -8,6 +8,13 @@ class Setting extends Model
 {
     public $timestamps = false;
 
+    protected $fillable = [
+        'namespace',
+        'code',
+        'schema',
+        'data'
+    ];
+
     protected $casts = [
         'schema' => 'array',
         'data'   => 'array'
@@ -15,7 +22,9 @@ class Setting extends Model
 
     public function getNameAttribute()
     {
-        return __("settings.{$this->code}");
+        $namespace = $this->namespace ? "{$this->namespace}::" : '';
+
+        return __("{$namespace}settings.{$this->code}");
     }
 
     public function getValueAttribute()
@@ -36,5 +45,24 @@ class Setting extends Model
         }
 
         $this->attributes['data'] = json_encode($data);
+    }
+
+    public static function loadConfiguration(string $code)
+    {
+        $setting = static::whereCode($code)->first();
+
+        return optional($setting)->data;
+    }
+
+    public static function saveConfiguration(string $code, array $data, string $namespace = '')
+    {
+        $schema = [
+            'type'       => 'object',
+            'properties' => collect($data)->keys()->mapWithKeys(function ($value) {
+                return [$value => ['type' => 'string']];
+            })
+        ];
+
+        return static::updateOrCreate(compact('namespace', 'code'), compact('schema', 'data'));
     }
 }

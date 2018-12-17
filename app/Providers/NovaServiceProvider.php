@@ -15,6 +15,7 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 use Laravel\Nova\Tools\Dashboard;
 use Laravel\Nova\Tools\ResourceManager;
 use MadWeb\NovaHorizonLink\HorizonLink;
+use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
 use Nulisec\Store\Store;
 use Silvanite\NovaToolPermissions\NovaToolPermissions;
 
@@ -86,12 +87,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        Nova::$tools = [];
-
         return [
-            (new Dashboard),
-            (new Store),
-            (new ResourceManager),
+            (new JetsoftShopconnector),
             (new Novassport),
             (new HorizonLink),
             (new NovaToolPermissions)

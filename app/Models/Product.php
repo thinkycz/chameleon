@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use Laravel\Scout\Searchable;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
@@ -17,6 +18,7 @@ class Product extends Model implements HasMedia
     use HasSlug;
     use NodeTrait;
     use HasMediaTrait;
+    use Searchable;
 
     protected $appends = [
         'thumb',

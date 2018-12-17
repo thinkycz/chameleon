@@ -27,7 +27,6 @@
         "mad-web/nova-horizon-link": "^2.0",
         "martinlindhe/laravel-vue-i18n-generator": "^0.1.34",
         "nulisec/scoutelastic": "*",
-        "nulisec/store": "*",
         "nulisec/translatable-text": "*",
         "nulisec/translatable-textarea": "*",
         "nulisec/xmlparser": "*",
@@ -38,7 +37,8 @@
         "spatie/laravel-translatable": "^3.1",
         "spatie/nova-tags-field": "^1.1",
         "timothyasp/nova-color-field": "^1.0",
-        "nulisec/json-schema": "*"
+        "nulisec/json-schema": "*",
+        "nulisec/jetsoft-shopconnector": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -69,6 +69,10 @@
         {
             "type": "path",
             "url": "./nova-components/JsonSchema"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/JetsoftShopconnector"
         }
     ],
     "extra": {

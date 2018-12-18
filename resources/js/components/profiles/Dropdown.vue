@@ -1,5 +1,5 @@
 <script>
-    import { ClickOutside } from './../../directives/ClickOutside';
+    import vClickOutside from 'v-click-outside';
 
     export default {
         data: () => ({
@@ -11,15 +11,19 @@
                 this.visible = !this.visible;
             },
 
-            close() {
+            close(e) {
                 if (this.visible) {
                     this.visible = false;
                 }
             },
+
+            blank() {
+                // do nothing (to prevent propagation)
+            },
         },
 
         directives: {
-            ClickOutside,
+            clickOutside: vClickOutside.directive,
         },
     };
 </script>

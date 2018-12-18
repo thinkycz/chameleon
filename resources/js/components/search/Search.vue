@@ -31,7 +31,7 @@
 
 <script>
     import Suggestions from './Suggestions';
-    import { ClickOutside } from './../../directives/ClickOutside';
+    import vClickOutside from 'v-click-outside';
 
     export default {
         props: {
@@ -74,7 +74,7 @@
         },
 
         directives: {
-            ClickOutside,
+            clickOutside: vClickOutside.directive,
         },
     };
 </script>

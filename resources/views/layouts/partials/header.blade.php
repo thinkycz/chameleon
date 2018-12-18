@@ -68,7 +68,7 @@
                                 </div>
 
                                 <transition name="fade">
-                                    <div class="user-dropdown-menu" v-if="visible" v-click-outside="close">
+                                    <div class="user-dropdown-menu" v-if="visible" v-click-outside="close" @click.stop="blank">
                                         <icon-dropdown></icon-dropdown>
                                         <ul class="list-reset">
                                             <li>

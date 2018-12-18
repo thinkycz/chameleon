@@ -29,6 +29,7 @@
         "query-string": "^6.2.0",
         "tailwindcss": "^0.7.2",
         "tailwindcss-tables": "^0.2.0",
+        "v-click-outside": "^2.0.2",
         "vue-axios": "^2.1.4",
         "vue-slick": "^1.1.15",
         "vue-toasted": "^1.1.26",

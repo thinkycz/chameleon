@@ -104,7 +104,7 @@
 
 // Badges
 .badge {
-    @apply px-2 py-1 text-white rounded-full inline-block text-sm tracking-wide font-semibold;
+    @apply px-4 py-1 text-white rounded-full inline-block text-sm font-bold;
 
     &.accent {
         @apply bg-accent;
@@ -125,11 +125,39 @@
     &.success {
         @apply bg-success;
     }
+
+    &.grey {
+        @apply bg-grey-darker;
+    }
+}
+
+.alert {
+    @apply w-full px-4 py-3 border-l-4 text-white rounded shadow;
+
+    &.accent {
+        @apply bg-accent border-accent-dark;
+    }
+
+    &.danger {
+        @apply bg-danger border-danger-dark;
+    }
+
+    &.primary {
+        @apply bg-primary border-primary-dark;
+    }
+
+    &.warning {
+        @apply bg-warning border-warning-dark;
+    }
+
+    &.success {
+        @apply bg-success border-success-dark;
+    }
 }
 
 // Section
 .heading-title {
-    @apply text-center font-semibold text-grey-darkest tracking-tight mb-2;
+    @apply text-center font-bold text-grey-darkest tracking-tight mb-2;
 }
 .heading-subtitle {
     @apply text-center mb-4;

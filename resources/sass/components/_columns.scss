@@ -7,6 +7,20 @@
     .col-full {
         @apply w-full;
     }
+    .col-10 {
+        @apply w-full;
+
+        @screen md {
+            width: 80%;
+        }
+    }
+    .col-9 {
+        @apply w-full;
+
+        @screen md {
+            @apply w-3/4;
+        }
+    }
     .col-6 {
         @apply w-1/2;
     }
@@ -32,6 +46,18 @@
         @apply w-1/2;
         @screen lg {
             @apply w-1/4;
+        }
+    }
+    .col-content {
+        @apply w-full;
+        @screen md {
+            @apply w-2/3;
+        }
+    }
+    .col-sidebar {
+        @apply w-full;
+        @screen md {
+            @apply w-1/3;
         }
     }
 }

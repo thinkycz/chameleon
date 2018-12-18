@@ -4,16 +4,17 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import 'babel-polyfill';
 require('./bootstrap');
 require('./helpers');
 require('./translations/translations');
+require('lightbox2');
 
 window.Vue = require('vue');
 
 /**
  * Dependencies
  */
-import 'babel-polyfill';
 import PortalVue from 'portal-vue';
 import { store } from './store/store';
 import Toasted from 'vue-toasted';
@@ -72,7 +73,7 @@ Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue
 Vue.component('vue-add-to-basket', require('./components/basket/AddToBasket.vue'));
 
 // Product
-Vue.component('vue-product-gallery', require('./components/product/Gallery.vue'));
+Vue.component('vue-product-gallery', require('./components/product/Gallery.vue')); // Dynamically
 
 // Search
 Vue.component('vue-search', require('./components/search/Search.vue'));

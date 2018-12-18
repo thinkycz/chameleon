@@ -3,7 +3,6 @@
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Page;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class SampleSeeder extends Seeder

@@ -8,6 +8,7 @@ return [
     'catalogue_number'      => 'Cat',
     'barcode'               => 'Barcode',
 
+    'login_to_view_details' => 'In order to see more details about this product and add it to your basket, please <a class="text-white font-bold" href=" :login">login</a> with your account or <a class="text-white font-bold" href=" :register">register</a> a new account if you dont have one.',
     'product_deleted'       => 'Product deleted from basket',
     'quantity_updated'      => 'Product quantity updated',
     'added_to_basket'       => 'Product added to basket',

@@ -2,10 +2,12 @@
 
 @section('content')
     <!-- TODO:: Add related products, add details card -->
+    <div class="container pb-16">
 
-    <div class="container py-16">
+        @include('partials.breadcrumb_area')
+
         <div class="row">
-            <div class="col-10 mx-auto">
+            <div class="col-full mx-auto">
                 <div class="card flex justify-between p-4">
 
                     @if($product->images->isNotEmpty())
@@ -24,11 +26,13 @@
                             @endif
                         </p>
 
-                        <p class="mb-8 flex flex-wrap">
-                            @foreach($product->tags as $tag)
-                                @include('partials.tag')
-                            @endforeach
-                        </p>
+                        @if($product->tags->isNotEmpty())
+                            <p class="mb-8 flex flex-wrap">
+                                @foreach($product->tags as $tag)
+                                    @include('partials.tag')
+                                @endforeach
+                            </p>
+                        @endif
 
                         <p>{{ $product->description }}</p>
 
@@ -39,7 +43,12 @@
                         </div>
                         @else
                         <div class="product-pricing">
-                            <!-- TODO:: implement -->
+                            <div class="alert primary mt-5">
+                                <span class="icon-wrap icon-2x">
+                                    <icon-infocircle></icon-infocircle>
+                                    <p class="mb-0">{!! trans('products.login_to_view_details', ['login' => route('login'), 'register' => route('register')]) !!}</p>
+                                </span>
+                            </div>
                         </div>
                         @endauth
 
@@ -47,8 +56,6 @@
 
                             @auth
                                 <vue-add-to-basket :is-mini="false" :product="{{ json_encode($product) }}"></vue-add-to-basket>
-                            @else
-                                <!-- TODO:: implement -->
                             @endauth
 
                             <span class="icon-wrap">

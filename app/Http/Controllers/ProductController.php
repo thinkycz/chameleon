@@ -9,6 +9,8 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
+        $product->load('media', 'tags');
+
         return view('products.show', compact('product'));
     }
 

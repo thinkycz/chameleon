@@ -31,7 +31,7 @@ if (!function_exists('getVatFromPrice')) {
 if (!function_exists('showPriceWithCurrency')) {
     function showPriceWithCurrency($price, Currency $currency = null, $noPrice = null)
     {
-        $noPrice = !is_null($noPrice) ? $noPrice : __('global.no_price');
+        $noPrice = !is_null($noPrice) ? $noPrice : trans('global.no_price');
 
         if (!$price) {
             return $noPrice;

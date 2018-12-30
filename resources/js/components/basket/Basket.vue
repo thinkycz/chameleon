@@ -26,9 +26,13 @@
                         </button>
                     </li>
                 </ul>
-                <div class="basket-total">
+                <div class="basket-total"
+                    v-if="basketItems.length > 0">
                     <span>{{ $trans('header.basket_total') }}</span>
                     <span>{{ total }}</span>
+                </div>
+                <div v-else>
+                    <p class="text-center">{{ $trans('header.add_products_basket_empty') }}</p>
                 </div>
                 <div class="bg-primary w-full text-center py-6 mt-3">
                     <a href="/checkout"

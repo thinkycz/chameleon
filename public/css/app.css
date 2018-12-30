@@ -2979,6 +2979,46 @@ html.lb-disable-scrolling {
   opacity: 1;
 }
 
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.breadcrumb li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.breadcrumb li a {
+  color: var(--grey-darker);
+  display: inline-block;
+}
+
+.breadcrumb li a:hover {
+  color: var(--primary);
+}
+
+.breadcrumb li:before {
+  content: '\203A';
+  color: var(--primary);
+  vertical-align: middle;
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  display: inline-block;
+  margin-top: -0.5rem;
+}
+
+.breadcrumb li.active {
+  font-weight: 700;
+}
+
+.breadcrumb li:first-child:before {
+  display: none;
+}
+
 .list-reset {
   list-style: none;
   padding: 0;

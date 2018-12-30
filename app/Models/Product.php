@@ -68,6 +68,16 @@ class Product extends Model implements HasMedia
         return $this->prices()->first();
     }
 
+    public function hasCategory()
+    {
+        return $this->categories->isNotEmpty();
+    }
+
+    public function getFirstCategory()
+    {
+        return $this->categories->first();
+    }
+
     public function getPriceAttribute()
     {
         return optional($this->getPrice())->price;

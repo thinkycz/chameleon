@@ -1,0 +1,26 @@
+.breadcrumb {
+    @apply list-reset flex;
+
+    li {
+        @apply inline mr-4;
+        a {
+            @apply text-grey-darker inline-block;
+            &:hover {
+                @apply text-primary;
+            }
+        }
+
+        &:before {
+            content: '\203A';
+            @apply text-primary align-middle text-xl mr-4 inline-block -mt-2;
+        }
+
+        &.active {
+            @apply font-bold;
+        }
+    }
+}
+
+.breadcrumb li:first-child:before {
+    @apply hidden;
+}

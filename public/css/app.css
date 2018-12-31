@@ -1677,7 +1677,8 @@ p.p-small {
       flex-wrap: wrap;
 }
 
-.row [class^='col'] {
+.row [class^='col'],
+.row .col {
   padding-left: .5rem;
   padding-right: .5rem;
 }
@@ -2546,6 +2547,11 @@ footer .footer-info img {
   -webkit-appearance: none;
 }
 
+.basket-sidebar .inner[style^='position: fixed'] {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
 .search-overlay {
   display: block;
   position: fixed;
@@ -2995,6 +3001,8 @@ html.lb-disable-scrolling {
 .breadcrumb li a {
   color: var(--grey-darker);
   display: inline-block;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
 }
 
 .breadcrumb li a:hover {

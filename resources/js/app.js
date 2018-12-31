@@ -18,6 +18,7 @@ window.Vue = require('vue');
 import PortalVue from 'portal-vue';
 import { store } from './store/store';
 import Toasted from 'vue-toasted';
+var vMediaQuery = require('v-media-query');
 
 // Toast snackbar
 window.Toasted = Toasted;
@@ -26,6 +27,11 @@ Vue.use(Toasted, {
     duration: 6000,
     theme: 'bubble',
 });
+
+/**
+ * Use media queries
+ */
+Vue.use(vMediaQuery.default);
 
 /**
  * Use dependencies
@@ -71,6 +77,7 @@ Vue.component('vue-dropdown-menu', require('./components/profiles/Dropdown.vue')
 Vue.component('vue-basket', require('./components/basket/Basket.vue'));
 Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue'));
 Vue.component('vue-add-to-basket', require('./components/basket/AddToBasket.vue'));
+Vue.component('vue-basket-sidebar', require('./components/basket/Sidebar.vue'));
 
 // Product
 Vue.component('vue-product-gallery', require('./components/product/Gallery.vue')); // Dynamically

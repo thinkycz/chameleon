@@ -109,3 +109,9 @@
         }
     }
 }
+
+.basket-sidebar {
+    .inner[style^='position: fixed'] {
+        @apply px-2;
+    }
+}

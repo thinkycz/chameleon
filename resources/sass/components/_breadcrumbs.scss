@@ -5,6 +5,7 @@
         @apply inline mr-4;
         a {
             @apply text-grey-darker inline-block;
+            @include transition(color);
             &:hover {
                 @apply text-primary;
             }

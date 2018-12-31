@@ -1,6 +1,7 @@
 .row {
     @apply -mx-2 flex flex-wrap;
-    [class^='col'] {
+    [class^='col'],
+    .col {
         @apply px-2;
     }
     .col-12,

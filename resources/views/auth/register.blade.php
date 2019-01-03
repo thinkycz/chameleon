@@ -4,6 +4,9 @@
     <div class="container py-16">
         <div class="row">
             <div class="col-half mx-auto">
+
+                @include('partials.errors')
+
                 <div class="card p-12">
                     <div class="card-heading mb-8">
                         <h3><span>Do you</span> want to join us?</h3>

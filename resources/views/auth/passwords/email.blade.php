@@ -1,47 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <div class="container py-16">
+        <div class="row">
+            <div class="col-half mx-auto">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                @include('partials.errors')
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+                <div class="card p-12">
+                    <div class="card-heading mb-8">
+                        <h3>{!! trans('auth.reset_heading') !!}</h3>
+                        <p>{{ trans('auth.reset_subheading') }}</p>
+                    </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                    <div class="card-body">
+                        <form csrf action="{{ route('password.email') }}" method="post">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="row pb-4">
+                                <div class="col-full">
+                                    <div class="input-wrap">
+                                        <label for="email">{{ trans('auth.email') }} *</label>
+                                        <input type="email" id="email" name="email" required class="input" value="{{ old('email') }}" placeholder="{{ trans('auth.your_email') }}">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                            <button type="submit" class="btn btn-primary">{{ trans('auth.send_password_reset') }}</button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+@stop

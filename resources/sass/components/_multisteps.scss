@@ -1,0 +1,43 @@
+$color-1: #2c3f4c;
+$color-2: #3498db;
+$color-3: #eff1f4;
+$color-4: #e4e6e8;
+
+/* --------------------------------
+
+Basic Style
+
+-------------------------------- */
+
+.multisteps {
+    @apply w-full px-2 pb-4 mb-4 mx-auto bg-grey-lightest flex items-center rounded justify-center;
+
+    @screen md {
+        width: 90%;
+    }
+
+    li {
+        @apply inline-block float-left my-2 mx-0 mr-2;
+
+        &::after {
+            @apply inline-block mx-3 text-grey-darker align-top;
+            content: '\00bb';
+        }
+
+        &:last-of-type::after {
+            @apply hidden;
+        }
+    }
+
+    li > * {
+        @apply inline-block text-grey-darkest;
+    }
+
+    li.current > * {
+        @apply text-primary;
+    }
+
+    .no-touch & a:hover {
+        @apply text-primary;
+    }
+}

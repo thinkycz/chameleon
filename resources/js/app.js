@@ -86,6 +86,9 @@ Vue.component('vue-product-gallery', require('./components/product/Gallery.vue')
 // Search
 Vue.component('vue-search', require('./components/search/Search.vue'));
 
+// Checkout
+Vue.component('vue-checkout-steps', require('./components/checkout/CheckoutSteps.vue'));
+
 const app = new Vue({
     el: '#app',
     store,

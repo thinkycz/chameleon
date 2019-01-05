@@ -4,6 +4,11 @@
     <div class="container py-16">
         <div class="row">
             @if($basket->orderedItems->isNotEmpty())
+                <vue-checkout-steps current="basket"></vue-checkout-steps>
+            @endif
+        </div>
+        <div class="row">
+            @if($basket->orderedItems->isNotEmpty())
                 <div class="col-9 main-basket">
                     <div class="card">
                         @foreach($basket->orderedItems as $orderedItem)

@@ -10,4 +10,9 @@ return [
     'payment_method'    => 'Payment Method',
     'basket_empty'      => 'You dont have any products in your basket :(',
     'continue_shopping' => 'Continue Shopping',
+
+    // Steps
+    'basket'            => 'Basket',
+    'confirmation'      => 'Confirmation',
+    'order_placed'      => 'Order Placed',
 ];

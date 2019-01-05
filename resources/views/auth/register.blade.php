@@ -10,8 +10,8 @@
                 <div class="card p-12">
 
                     <div class="card-heading mb-8">
-                        <h3><span>Do you</span> want to join us?</h3>
-                        <p>Register on our website to get your own and personalized shopping experience online. Register by filling the details below. Its simple and easy!</p>
+                        <h3>{!! trans('auth.register_heading') !!}</h3>
+                        <p>{{ trans('auth.register_subheading') }}</p>
                     </div>
 
                     <div class="card-body">

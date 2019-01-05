@@ -1,0 +1,1 @@
+<vue-basket :basket="{{ json_encode(activeBasket()) }}"></vue-basket>

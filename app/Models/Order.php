@@ -15,6 +15,7 @@ class Order extends Model
     protected $appends = [
         'formatted_created_at',
         'formatted_total_price',
+        'formatted_total_price_excl_vat',
     ];
 
     protected $fillable = [
@@ -28,7 +29,7 @@ class Order extends Model
         'phone',
         'noted',
         'customer_note',
-        'status_id'
+        'status_id',
     ];
 
     protected $dates = [
@@ -93,5 +94,17 @@ class Order extends Model
     public function getFormattedTotalPriceAttribute()
     {
         return showPriceWithCurrency($this->total_price, currentCurrency());
+    }
+
+    public function getTotalPriceExclVatAttribute()
+    {
+        return $this->orderedItems->sum(function ($item) {
+            return $item->total_price_excl_vat;
+        });
+    }
+
+    public function getFormattedTotalPriceExclVatAttribute()
+    {
+        return showPriceWithCurrency($this->total_price_excl_vat, currentCurrency());
     }
 }

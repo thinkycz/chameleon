@@ -78,6 +78,7 @@ Vue.component('vue-basket', require('./components/basket/Basket.vue'));
 Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue'));
 Vue.component('vue-add-to-basket', require('./components/basket/AddToBasket.vue'));
 Vue.component('vue-basket-sidebar', require('./components/basket/Sidebar.vue'));
+Vue.component('vue-basket-item-quantity', require('./components/basket/ItemQuantity.vue'));
 
 // Product
 Vue.component('vue-product-gallery', require('./components/product/Gallery.vue')); // Dynamically

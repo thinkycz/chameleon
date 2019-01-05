@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Currency;
+use Illuminate\Support\Facades\Request;
 
 /**
  * @return float
@@ -43,6 +44,32 @@ if (!function_exists('showPriceWithCurrency')) {
 
         return formatPrice($currency, $formattedPrice);
 
+    }
+}
+
+/*
+ * @return string
+ */
+if (!function_exists('isActive')) {
+    function isActive($route, $text = 'active', $wildcard = true, ...$parameters)
+    {
+        $r = preg_replace('/^\//', '', route($route, $parameters, false));
+
+        $r .= $wildcard ? '*' : '';
+
+        return isActiveString($r, $text);
+    }
+}
+
+/*
+ * @return string
+ */
+if (!function_exists('isActiveString')) {
+    function isActiveString($string, $text = 'active')
+    {
+        $r = preg_replace('/^\//', '', $string);
+
+        return Request::is($r) ? $text : '';
     }
 }
 

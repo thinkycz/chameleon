@@ -1,5 +1,5 @@
 .basket {
-    @apply z-20 absolute pin-r h-full pin-t overflow-y-auto invisible opacity-0;
+    @apply z-20 absolute pin-r h-full pin-t invisible opacity-0 overflow-hidden;
     @include transition(opacity, visibility);
     min-width: 35%;
 
@@ -13,10 +13,9 @@
         @include transition(right);
         right: -100%;
         .basket-wrapper__inner {
-            @apply overflow-y-auto;
-
             .basket-items {
-                @apply list-reset;
+                @apply list-reset overflow-y-auto;
+                max-height: 50vh;
                 li {
                     @apply px-6 py-4 border-t relative;
 
@@ -113,5 +112,40 @@
 .basket-sidebar {
     .inner[style^='position: fixed'] {
         @apply px-2;
+    }
+}
+
+.main-basket {
+    .basket-item {
+        @apply overflow-x-auto py-6 px-4 items-center;
+        .image {
+            @apply text-center overflow-hidden relative w-16 mr-6;
+
+            img {
+                @apply w-full object-cover h-auto rounded-lg;
+            }
+        }
+
+        .name {
+            width: 33%;
+            @apply mr-6;
+        }
+
+        .basket-item-quantity,
+        .ordered,
+        .total {
+            @apply mr-6;
+        }
+
+        .basket-item-quantity {
+            .quantity {
+                @apply -ml-0 rounded-l-lg;
+
+                input {
+                    @apply rounded-l-lg;
+                    width: 90px;
+                }
+            }
+        }
     }
 }

@@ -18,9 +18,7 @@
     <div id="app" v-cloak>
         @include('layouts.partials.header')
         <main>
-            @auth
-                <vue-basket :basket="{{ json_encode(activeBasket()) }}"></vue-basket>
-            @endauth
+            @includeWhen(auth()->check() && booleanToString(!request()->routeIs('basket.*', 'checkout.*')), 'partials.basket')
             @yield('content')
         </main>
         @include('layouts.partials.footer')

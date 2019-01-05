@@ -48219,6 +48219,7 @@ Vue.component('vue-basket', __webpack_require__(465));
 Vue.component('vue-header-basket', __webpack_require__(468));
 Vue.component('vue-add-to-basket', __webpack_require__(471));
 Vue.component('vue-basket-sidebar', __webpack_require__(477));
+Vue.component('vue-basket-item-quantity', __webpack_require__(495));
 
 // Product
 Vue.component('vue-product-gallery', __webpack_require__(481)); // Dynamically
@@ -67509,6 +67510,190 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 494 */,
+/* 495 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(496)
+/* template */
+var __vue_template__ = __webpack_require__(497)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/basket/ItemQuantity.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-fcbe6de8", Component.options)
+  } else {
+    hotAPI.reload("data-v-fcbe6de8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 496 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        item: {
+            required: true
+        }
+    },
+
+    data: function data() {
+        return {
+            quantity: this.item.quantity_ordered
+        };
+    },
+
+
+    methods: {
+        increaseQuantity: function increaseQuantity() {
+            this.quantity = this.quantity + 1;
+        },
+        decreaseQuantity: function decreaseQuantity() {
+            this.quantity = this.quantity > 1 ? this.quantity - 1 : 0;
+        }
+    }
+});
+
+/***/ }),
+/* 497 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "basket-item-quantity" }, [
+    _c("div", { staticClass: "quantity mb-2" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.quantity,
+            expression: "quantity"
+          }
+        ],
+        attrs: {
+          name: "quantities[" + _vm.item.id + "]",
+          type: "number",
+          min: _vm.item.product.minimal_order_quantity,
+          max: _vm.item.product.quantity_in_stock,
+          step: "1"
+        },
+        domProps: { value: _vm.quantity },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.quantity = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "quantity-nav" }, [
+        _c(
+          "div",
+          {
+            staticClass: "increment",
+            on: {
+              click: function($event) {
+                $event.stopPropagation()
+                $event.preventDefault()
+                return _vm.increaseQuantity($event)
+              }
+            }
+          },
+          [_vm._v("+")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "decrement",
+            on: {
+              click: function($event) {
+                $event.stopPropagation()
+                $event.preventDefault()
+                return _vm.decreaseQuantity($event)
+              }
+            }
+          },
+          [_vm._v("-")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "text-danger text-xs text-center mb-0" }, [
+      _vm._v(_vm._s(_vm.$trans("basket.delete_item")))
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-fcbe6de8", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

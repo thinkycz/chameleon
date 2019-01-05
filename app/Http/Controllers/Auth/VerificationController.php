@@ -53,13 +53,6 @@ class VerificationController extends Controller
         return back()->with('resent', true);
     }
 
-    /**
-     * Mark the authenticated user's email address as verified.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-     */
     public function verify(Request $request)
     {
         if ($request->route('id') != $request->user()->getKey()) {

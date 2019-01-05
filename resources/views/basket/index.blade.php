@@ -3,18 +3,24 @@
 @section('content')
     <div class="container py-16">
         <div class="row">
-            <div class="col-9 main-basket">
-                <div class="card">
-                    <span style="height: 800px" class="inline-block">This is where the products will go</span>
-                </div>
-            </div>
-            <vue-basket-sidebar>
-                <div class="inner">
+            @if($basket->orderedItems->isNotEmpty())
+                <div class="col-9 main-basket">
                     <div class="card">
-                        <span>Some sidebar content to test</span>
+                        @foreach($basket->orderedItems as $orderedItem)
+                            @include('basket.partials.ordered_item')
+                        @endforeach
                     </div>
                 </div>
-            </vue-basket-sidebar>
+                <vue-basket-sidebar>
+                    <div class="inner">
+                        <div class="card">
+                            @include('basket.partials.sidebar')
+                        </div>
+                    </div>
+                </vue-basket-sidebar>
+            @else
+                @include('basket.partials.empty_basket')
+            @endif
         </div>
     </div>
 @stop

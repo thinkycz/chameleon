@@ -13,21 +13,6 @@ return [
     |
      */
 
-<<<<<<< HEAD
-    'failed'           => 'These credentials do not match our records.',
-    'throttle'         => 'Too many login attempts. Please try again in :seconds seconds.',
-
-    'email'            => 'Email',
-    'password'         => 'Password',
-    'your_email'       => 'Your email',
-    'your_password'    => 'Your password',
-
-    'login'            => 'Login',
-
-    'login_heading'    => '<span>Are you</span> an existing user?',
-    'login_subheading' => 'Using your credentials, please login on our system. Your online shopping experience with us starts here!',
-
-=======
     'failed'                    => 'These credentials do not match our records.',
     'throttle'                  => 'Too many login attempts. Please try again in :seconds seconds.',
 
@@ -70,5 +55,4 @@ return [
     'register_heading'          => '<span>Do you</span> want to join us?',
     'register_subheading'       => 'Register on our website to get your own and personalized shopping experience online. Register by filling the details below. Its simple and easy!',
     'register'                  => 'Register',
->>>>>>> Password reset, email verification completed
 ];

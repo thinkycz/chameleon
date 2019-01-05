@@ -39,22 +39,24 @@
                                     </div>
                                 </div>
 
-                                <div class="col-half">
-                                    <div class="input-wrap">
-                                        <label for="password">Password *</label>
-                                        <input type="password" id="password" required class="input" placeholder="Your password">
+                                <div class="row pb-4">
+                                    <div class="col-half">
+                                        <div class="input-wrap">
+                                            <label for="password">{{ trans('auth.password') }} *</label>
+                                            <input type="password" name="password" id="password" required class="input" placeholder="{{ trans('auth.your_password') }}">
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-half">
-                                    <div class="input-wrap">
-                                        <label for="password_confirmation">Confirmation *</label>
-                                        <input type="text" id="password_confirmation" required class="input" placeholder="Confirm your password">
+                                    <div class="col-half">
+                                        <div class="input-wrap">
+                                            <label for="password_confirmation">{{ trans('auth.confirmation') }} *</label>
+                                            <input type="password" name="password_confirmation" id="password_confirmation" required class="input" placeholder="{{ trans('auth.confirm_password') }}">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary">{{ trans('auth.register') }}</button>
                         </form>
                     </div>
 

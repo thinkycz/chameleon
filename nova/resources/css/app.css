@@ -50,7 +50,7 @@ input[type='search']::-webkit-search-cancel-button {
 /* Background Image
 ---------------------------------------------------------------------------- */
 .bg-grad-sidebar {
-    background-image: #3c4655;
+    background: #3c4655;
 }
 
 /* Custom Padding

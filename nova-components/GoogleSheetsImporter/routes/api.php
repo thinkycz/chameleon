@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Nulisec\GoogleSheetsImporter\Http\Controllers\GoogleSheetsImporterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | are loaded by the ServiceProvider of your tool. They are protected
 | by your tool's "Authorize" middleware by default. Now, go build!
 |
-*/
+ */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+Route::get('/settings', [GoogleSheetsImporterController::class, 'settings']);
+Route::post('/save-configuration', [GoogleSheetsImporterController::class, 'saveConfiguration']);
+Route::post('/sync', [GoogleSheetsImporterController::class, 'sync']);

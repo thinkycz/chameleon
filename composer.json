@@ -28,6 +28,7 @@
         "mad-web/nova-horizon-link": "^2.0",
         "martinlindhe/laravel-vue-i18n-generator": "^0.1.34",
         "nulisec/jetsoft-shopconnector": "*",
+        "nulisec/google-sheets-importer": "*",
         "nulisec/json-schema": "*",
         "nulisec/scoutelastic": "*",
         "nulisec/translatable-text": "*",

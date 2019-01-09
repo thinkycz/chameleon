@@ -1,6 +1,8 @@
 /vendor
 /laravel
 /node_modules
+/public/mix-manifest.json
+/public/app.js
 package-lock.json
 composer.phar
 composer.lock

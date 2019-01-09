@@ -14,6 +14,10 @@ class Category extends Model
     use HasTranslations;
     use NodeTrait;
 
+    public $fillable = [
+        'name',
+    ];
+
     public $translatable = ['name'];
 
     public function getSlugOptions(): SlugOptions

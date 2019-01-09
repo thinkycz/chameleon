@@ -47,3 +47,16 @@ if (!function_exists('booleanToString')) {
         return $boolean ? $true : $false;
     }
 }
+
+/*
+ * @return float
+ */
+if (!function_exists('normalizeNumber')) {
+    function normalizeNumber($val)
+    {
+        $val = str_replace(',', '.', $val);
+        $val = preg_replace('/\.(?=.*\.)/', '', $val);
+
+        return floatval($val);
+    }
+}

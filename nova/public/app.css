@@ -685,8 +685,7 @@ input[type='search']::-webkit-search-cancel-button {
 ---------------------------------------------------------------------------- */
 
 .bg-grad-sidebar {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#7e8ea1), to(#3c4655));
-  background-image: linear-gradient(0deg, #7e8ea1 0%, #3c4655 100%);
+  background: #3c4655;
 }
 
 /* Custom Padding

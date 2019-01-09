@@ -11,20 +11,10 @@
 |
  */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
-
-// TODO:: Auth
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-Route::get('/logout', function () {
-    return redirect()->back();
-})->name('logout');
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('search', 'SearchController@index')->name('search');
 Route::resource('products', 'ProductController')->only('show');

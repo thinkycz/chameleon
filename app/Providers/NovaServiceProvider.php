@@ -7,16 +7,15 @@ use App\Models\User;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\ProductsPerCategory;
+use Illuminate\Support\Facades\Gate;
 use Kristories\Novassport\Novassport;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
-use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Laravel\Nova\Tools\Dashboard;
-use Laravel\Nova\Tools\ResourceManager;
 use MadWeb\NovaHorizonLink\HorizonLink;
+use Nulisec\GoogleSheetsImporter\GoogleSheetsImporter;
 use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
-use Nulisec\Store\Store;
 use Silvanite\NovaToolPermissions\NovaToolPermissions;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -32,9 +31,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
         Nova::serving(function (ServingNova $event) {
             Nova::provideToScript([
-                'locales' => Locale::all(),
+                'locales'       => Locale::all(),
                 'currentLocale' => Locale::current(),
-                'flagsPath' => asset('/images/flags')
+                'flagsPath'     => asset('/images/flags'),
             ]);
         });
     }
@@ -47,9 +46,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function routes()
     {
         Nova::routes()
-                ->withAuthenticationRoutes()
-                ->withPasswordResetRoutes()
-                ->register();
+            ->withAuthenticationRoutes()
+            ->withPasswordResetRoutes()
+            ->register();
     }
 
     /**
@@ -91,7 +90,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new JetsoftShopconnector),
             (new Novassport),
             (new HorizonLink),
-            (new NovaToolPermissions)
+            (new NovaToolPermissions),
+            (new GoogleSheetsImporter),
         ];
     }
 

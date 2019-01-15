@@ -4,10 +4,18 @@ return [
     'billing_details'              => 'Billing Details',
     'shipping_details'             => 'Shipping Details',
     'contact_information'          => 'Contact Information',
+
     'delivery_method'              => 'Delivery Method',
     'payment_method'               => 'Payment Method',
+
     'additional_notes'             => 'Additional Notes',
+    'notes'                        => 'Notes',
+    'additional_information_note'  => 'If you need to send us some additional information or ask some questions, please write them here.',
+    'write_your_notes_here'        => 'Write your notes here',
+
     'confirmation'                 => 'Confirmation',
+
+    'contact_information'          => 'Contact information',
 
     'select_shipping_address'      => 'Select shipping address',
     'ship_to_billing'              => 'Ship to Billing address',

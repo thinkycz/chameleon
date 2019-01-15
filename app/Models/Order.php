@@ -107,4 +107,9 @@ class Order extends Model
     {
         return showPriceWithCurrency($this->total_price_excl_vat, currentCurrency());
     }
+
+    public function hasOrderedItems()
+    {
+        return $this->orderedItems()->count();
+    }
 }

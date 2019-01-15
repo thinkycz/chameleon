@@ -4,7 +4,6 @@
     </div>
     <div class="name">
         <p class="p-big">{{ $orderedItem->product->name }}</p>
-        <p class="p-small">{{ str_limit($orderedItem->product->description, 45) }}</p>
         <p class="p-small">
             @if($orderedItem->product->barcode)
                 <span class="mr-4">{{ trans('products.barcode') }}<strong class="ml-1">{{ $orderedItem->product->barcode }}</strong></span>

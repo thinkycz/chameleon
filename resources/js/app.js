@@ -77,7 +77,6 @@ Vue.component('vue-dropdown-menu', require('./components/profiles/Dropdown.vue')
 Vue.component('vue-basket', require('./components/basket/Basket.vue'));
 Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue'));
 Vue.component('vue-add-to-basket', require('./components/basket/AddToBasket.vue'));
-Vue.component('vue-basket-sidebar', require('./components/basket/Sidebar.vue'));
 Vue.component('vue-basket-item-quantity', require('./components/basket/ItemQuantity.vue'));
 
 // Product
@@ -88,6 +87,8 @@ Vue.component('vue-search', require('./components/search/Search.vue'));
 
 // Checkout
 Vue.component('vue-checkout-steps', require('./components/checkout/CheckoutSteps.vue'));
+Vue.component('vue-checkout-address-selector', require('./components/checkout/AddressSelector.vue'));
+Vue.component('vue-checkout-shipping-details', require('./components/checkout/ShippingDetails.vue'));
 
 const app = new Vue({
     el: '#app',

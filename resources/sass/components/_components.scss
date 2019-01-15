@@ -42,6 +42,31 @@
     }
 }
 
+.btn-text {
+    @apply inline-block font-bold text-sm;
+    line-height: 1.25rem;
+    outline: none !important;
+    @include transition(color);
+    &.btn-primary {
+        @apply text-primary;
+        &:hover {
+            @apply text-primary-darker;
+        }
+    }
+    &.btn-sm {
+        @apply h-8;
+        line-height: 1rem;
+    }
+    &.btn-lg {
+        @apply h-12 text-lg;
+        line-height: 2rem;
+    }
+
+    &[disabled] {
+        @apply opacity-75 pointer-events-none cursor-not-allowed;
+    }
+}
+
 // Icons
 .icon-wrap {
     @apply flex items-center;

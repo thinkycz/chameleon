@@ -25,6 +25,7 @@ class StoreAddressRequest extends FormRequest
     public function rules()
     {
         return [
+            'company_id' => 'required',
             'first_name' => 'required',
             'last_name'  => 'required',
             'street'     => 'required',

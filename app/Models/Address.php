@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
+    protected $appends = [
+        'title',
+    ];
+
     protected $fillable = [
         'first_name',
         'last_name',

@@ -17,6 +17,17 @@
     opacity: 0;
 }
 
+.fade-shrink-in-enter-active,
+.fade-shrink-in-leave-active {
+    @include transition(opacity, transform);
+}
+
+.fade-shrink-in-enter,
+.fade-shrink-in-leave-to {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
 .list-item {
     display: block;
 }

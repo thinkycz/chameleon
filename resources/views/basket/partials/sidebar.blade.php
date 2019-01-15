@@ -8,21 +8,7 @@
     </div>
     <div class="quantities mb-6">
         <p class="mb-2 text-center"><a href="#" class="btn btn-accent text-center">{{ trans('basket.update_quantities') }}</a></p>
-        <p class="text-center text-sm"><a href="#" class="text-danger">{{ trans('basket.empty_basket') }}</a></p>
+        <p class="text-center text-sm mb-2 pb-4 border-b"><a href="#" class="text-grey-darker">{{ trans('basket.empty_basket') }}</a></p>
     </div>
-    <div class="delivery-method mb-4">
-        <h4 class="text-grey-darker text-sm uppercase mb-2">{{ trans('basket.delivery_method') }}</h4>
-
-        @foreach($deliveryMethods as $deliveryMethod)
-            @include('basket.partials.delivery_method')
-        @endforeach
-    </div>
-    <div class="payment-method mb-6">
-        <h4 class="text-grey-darker text-sm uppercase mb-2">{{ trans('basket.payment_method') }}</h4>
-
-        @foreach($paymentMethods as $paymentMethod)
-            @include('basket.partials.payment_method')
-        @endforeach
-    </div>
-    <p><a href="#" class="btn btn-primary w-full text-center">{{ trans('basket.checkout') }}</a></p>
+    <p><a href="#" class="btn btn-primary w-full text-center btn-lg">{{ trans('basket.checkout') }}</a></p>
 </div>

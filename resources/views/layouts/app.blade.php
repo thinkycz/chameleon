@@ -15,13 +15,14 @@
     <link href="{{ mix('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" v-cloak>
+    <div id="app" class="relative" v-cloak>
         @include('layouts.partials.header')
         <main>
             @includeWhen(auth()->check() && booleanToString(!request()->routeIs('basket.*', 'checkout.*')), 'partials.basket')
             @yield('content')
         </main>
         @include('layouts.partials.footer')
+        @yield('footer')
         @include('partials.snackbar')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>

@@ -21,7 +21,7 @@ class AddressController extends Controller
 
         snackbar()->success(trans('profiles.address_created'));
 
-        return redirect()->route('profiles.show', ['user' => $user, 'current' => 'address_book']);
+        return redirect()->back();
     }
 
     /**

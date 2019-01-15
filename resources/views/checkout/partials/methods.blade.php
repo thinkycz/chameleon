@@ -31,7 +31,7 @@
         </div>
 
         <div class="col-12 text-right">
-            <button type="submit" class="btn btn-primary btn-lg">{{ trans('checkout.confirmation') }}</button>
+            <button type="submit" class="btn btn-primary">{{ trans('checkout.confirmation') }}</button>
         </div>
     </div>
 </div>

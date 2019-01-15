@@ -8,6 +8,10 @@
                 <label for="email">{{ trans('auth.email') }}*</label>
                 <input type="email" id="email" name="email" required class="input" value="{{ old('email') }}" placeholder="{{ trans('auth.your_email') }}">
             </div>
+            <div class="input-wrap">
+                <label for="phone">{{ trans('profiles.phone') }}*</label>
+                <input type="text" id="phone" required class="input" name="phone" value="{{ old('phone') }}" placeholder="{{ trans('profiles.phone_label') }}">
+            </div>
         </div>
 
         <div class="col-12 mt-2 mb-4">

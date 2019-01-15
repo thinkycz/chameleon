@@ -22,7 +22,7 @@ return [
     'ship_to_different'            => 'Ship to different address',
 
     'email_address'                => 'Email address',
-    'email_address_note'           => 'Please enter existing email since we are going to send your order information on this email.',
+    'email_address_note'           => 'Please enter existing email since we are going to send your order information on this email. Also, please provide your phone number so we can contact you in case we need further information.',
 
     'billing_and_shipping_details' => 'Billing & Shipping Details',
     'select_existing_address'      => 'Select existing address',

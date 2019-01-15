@@ -1326,6 +1326,27 @@ p.p-small {
           box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, .5);
 }
 
+.rounded-lg-img {
+  border-radius: .5rem;
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  overflow: hidden;
+}
+
+.rounded-lg-img::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  -webkit-box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, .5);
+          box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, .5);
+}
+
 .circled-list {
   padding-left: 2rem;
   margin-bottom: 1rem;
@@ -1389,7 +1410,6 @@ p.p-small {
 }
 
 .method-label {
-  border-top-width: 1px;
   cursor: pointer;
   font-size: .875rem;
   display: -webkit-box;
@@ -2525,7 +2545,7 @@ footer .footer-info img {
 }
 
 .basket {
-  z-index: 20;
+  z-index: 75;
   position: absolute;
   right: 0;
   height: 100%;
@@ -2533,9 +2553,17 @@ footer .footer-info img {
   visibility: hidden;
   opacity: 0;
   overflow: hidden;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
   transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
-  min-width: 35%;
+  width: 75%;
+}
+
+@media (min-width: 768px) {
+  .basket {
+    width: 35%;
+  }
 }
 
 .basket .basket-overlay {
@@ -2567,7 +2595,7 @@ footer .footer-info img {
   list-style: none;
   padding: 0;
   overflow-y: auto;
-  max-height: 50vh;
+  max-height: calc(100vh - 185px);
 }
 
 .basket .basket-wrapper .basket-wrapper__inner .basket-items li {
@@ -2786,6 +2814,18 @@ footer .footer-info img {
 }
 
 .main-basket .basket-item .basket-item-quantity .quantity input {
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  width: calc(100% - 30px);
+}
+
+.basket-items .basket-item-quantity .quantity {
+  margin-left: 0;
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+
+.basket-items .basket-item-quantity .quantity input {
   border-top-left-radius: .5rem;
   border-bottom-left-radius: .5rem;
   width: calc(100% - 30px);

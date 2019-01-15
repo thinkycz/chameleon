@@ -30,12 +30,3 @@ window.updateQueryStringParam = function(key, value) {
 
     window.history.replaceState({}, '', baseUrl + params);
 };
-
-/**
- * Vue prototypes
- */
-import Vue from 'vue';
-
-Vue.prototype.$snack = (msg, type = 'success') => {
-    return Vue.toasted.show(msg, { type });
-};

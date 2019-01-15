@@ -1,7 +1,11 @@
 .basket {
-    @apply z-20 absolute pin-r h-full pin-t invisible opacity-0 overflow-hidden;
+    @apply z-75 absolute pin-r h-full pin-t invisible opacity-0 overflow-hidden shadow;
     @include transition(opacity, visibility);
-    min-width: 35%;
+    width: 75%;
+
+    @screen md {
+        width: 35%;
+    }
 
     .basket-overlay {
         @apply fixed min-h-full w-full pin-t pin-l cursor-pointer z-20 hidden;
@@ -15,7 +19,7 @@
         .basket-wrapper__inner {
             .basket-items {
                 @apply list-reset overflow-y-auto;
-                max-height: 50vh;
+                max-height: calc(100vh - 185px);
                 li {
                     @apply px-6 py-4 border-t relative;
 
@@ -146,6 +150,19 @@
                     @apply rounded-l-lg;
                     width: calc(100% - 30px);
                 }
+            }
+        }
+    }
+}
+
+.basket-items {
+    .basket-item-quantity {
+        .quantity {
+            @apply -ml-0 rounded-l-lg;
+
+            input {
+                @apply rounded-l-lg;
+                width: calc(100% - 30px);
             }
         }
     }

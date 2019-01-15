@@ -18,10 +18,10 @@
     <div id="app" class="relative" v-cloak>
         @include('layouts.partials.header')
         <main>
-            @includeWhen(auth()->check() && booleanToString(!request()->routeIs('basket.*', 'checkout.*')), 'partials.basket')
             @yield('content')
         </main>
         @include('layouts.partials.footer')
+        @includeWhen(auth()->check() && booleanToString(!request()->routeIs('basket.*', 'checkout.*')), 'partials.basket')
         @yield('footer')
         @include('partials.snackbar')
     </div>

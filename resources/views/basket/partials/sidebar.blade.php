@@ -10,5 +10,5 @@
         <p class="mb-2 text-center"><a href="#" class="btn btn-accent text-center">{{ trans('basket.update_quantities') }}</a></p>
         <p class="text-center text-sm mb-2 pb-4 border-b"><a href="#" class="text-grey-darker">{{ trans('basket.empty_basket') }}</a></p>
     </div>
-    <p><a href="#" class="btn btn-primary w-full text-center btn-lg">{{ trans('basket.checkout') }}</a></p>
+    <p><a href="{{ route('checkout.index') }}" class="btn btn-primary w-full text-center btn-lg">{{ trans('basket.checkout') }}</a></p>
 </div>

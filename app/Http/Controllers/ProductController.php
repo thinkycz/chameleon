@@ -27,15 +27,4 @@ class ProductController extends Controller
             'basket' => $basket->fresh(),
         ]);
     }
-
-    public function removeFromBasket(BasketItem $basketItem)
-    {
-        $basket = activeBasket();
-
-        $basket->removeBasketItem($basketItem);
-
-        return $this->ajaxWithPayload([
-            'basket' => $basket->fresh(),
-        ]);
-    }
 }

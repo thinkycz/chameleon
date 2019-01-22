@@ -98,6 +98,7 @@ export default {
             "basket_empty": "You dont have any products in your basket :(",
             "continue_shopping": "Continue Shopping",
             "successfully_deleted": "Successfully deleted",
+            "successfully_updated": "Successfully updated",
             "basket": "Basket",
             "confirmation": "Confirmation",
             "order_placed": "Order Placed"
@@ -115,7 +116,8 @@ export default {
             "no_results_found": "No results have been found",
             "add_products_basket_empty": "You dont have any products in your basket.",
             "no_price": "No price",
-            "your_basket": "Your basket",
+            "your_basket": "Your Basket",
+            "you_can_view_ordered_items": "Here you can view, edit and remove products from your basket quickly and easily.",
             "basket_total": "Basket total",
             "checkout": "Checkout",
             "view_basket": "View Basket"

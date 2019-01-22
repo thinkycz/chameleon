@@ -21,9 +21,9 @@
             @yield('content')
         </main>
         @include('layouts.partials.footer')
-        @includeWhen(auth()->check() && booleanToString(!request()->routeIs('basket.*', 'checkout.*')), 'partials.basket')
-        @yield('footer')
+        @includeWhen(auth()->check(), 'partials.basket')
         @include('partials.snackbar')
+        @yield('footer')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

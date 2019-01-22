@@ -1,5 +1,5 @@
 <template>
-    <div class="pb-4">
+    <div class="pb-1">
         <div class="input-wrap mb-2 -mx-2">
             <div class="radio">
                 <input type="radio"

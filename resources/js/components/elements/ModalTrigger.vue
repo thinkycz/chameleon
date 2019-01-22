@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn-primary"
+    <button :class="buttonClass"
         @click="openModal"
         role="button">
         <span>{{ label }}</span>
@@ -23,12 +23,23 @@
             label: {
                 required: true,
             },
+
+            button: {
+                required: false,
+                default: true,
+            },
         },
 
         data() {
             return {
                 open: false,
             };
+        },
+
+        computed: {
+            buttonClass() {
+                return this.button ? 'btn btn-primary' : 'btn-primary btn-text';
+            },
         },
 
         methods: {

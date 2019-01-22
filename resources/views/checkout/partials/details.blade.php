@@ -48,7 +48,7 @@
             </div>
         @endif
         <div class="col-12">
-            <vue-modaltrigger modal="address-modal" label="{{ trans('checkout.add_new_address') }}">
+            <vue-modaltrigger modal="address-modal" label="&plus; {{ trans('checkout.add_new_address') }}" :button="false">
                 @include('checkout.partials.address_form')
             </vue-modaltrigger>
         </div>

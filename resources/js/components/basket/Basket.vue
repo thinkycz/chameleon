@@ -1,10 +1,24 @@
 <template>
     <div class="basket"
-        :class="{'active': isVisible}">
+        :class="{'active': isVisible}"
+        v-if="!isDisabled">
 
         <div class="basket-wrapper">
             <div class="basket-wrapper__inner">
-                <h4 class="py-4 text-white bg-primary px-4 uppercase text-sm">{{ $trans('header.your_basket') }}</h4>
+
+                <div class="p-4 relative">
+                    <button role="button"
+                        @click="close"
+                        class="text-3xl absolute text-grey-dark"
+                        style="left: 12px; top: 6px;"><span>&times;</span></button>
+                    <h4 class="font-normal text-lg text-center">
+                        {{ $trans('header.your_basket') }}
+                    </h4>
+                </div>
+
+                <div class="py-3 px-4 bg-success-lighter border-l-2 border-success-darker">
+                    <p class="mb-0 text-success-darker">{{ $trans('header.you_can_view_ordered_items') }}</p>
+                </div>
 
                 <ul class="basket-items">
                     <li v-for="item in basketItems"
@@ -38,14 +52,14 @@
                 <div v-else>
                     <p class="text-center">{{ $trans('header.add_products_basket_empty') }}</p>
                 </div>
-                <div class="bg-primary w-full text-center py-6 mt-3">
+
+                <div class="w-full text-center pb-4 mt-3">
                     <a href="/checkout"
-                        class="font-bold text-white">{{ $trans('header.checkout') }}</a>
-                </div>
-                <div class="text-center mt-2">
+                        class="btn btn-primary mr-4">{{ $trans('header.checkout') }}</a>
                     <a href="/basket"
                         class="text-grey-darkest">{{ $trans('header.view_basket') }}</a>
                 </div>
+
             </div>
         </div>
 
@@ -67,6 +81,11 @@
 
             basket: {
                 required: true,
+            },
+
+            isDisabled: {
+                required: true,
+                default: false,
             },
         },
 
@@ -146,11 +165,15 @@
         },
 
         mounted() {
-            document.querySelector(this.toggler).addEventListener('click', this.toggle);
+            if (!this.isDisabled) {
+                document.querySelector(this.toggler).addEventListener('click', this.toggle);
+            }
         },
 
         destroyed() {
-            document.querySelector(this.toggler).removeEventListener('click', this.toggle);
+            if (!this.isDisabled) {
+                document.querySelector(this.toggler).removeEventListener('click', this.toggle);
+            }
         },
 
         components: {

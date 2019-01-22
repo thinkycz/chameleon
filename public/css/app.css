@@ -2887,29 +2887,23 @@ footer .footer-info img {
     padding: 1.2em;
   }
 
-  .search-suggestions ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .search-suggestions .quick-links,
-  .search-suggestions .search-items {
+  .search-suggestions .quick-links {
     text-align: left;
     display: inline-block;
   }
 
-  .search-suggestions .quick-links {
-    text-align: left;
-    width: 25%;
-  }
-
-  .search-suggestions .quick-links h3 {
-    text-align: left;
-  }
-
   .search-suggestions .search-items {
-    float: left;
-    width: 75%;
+    width: 100%;
+  }
+
+  .search-suggestions .search-items ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
   }
 
   .search-suggestions h3 {
@@ -2925,6 +2919,8 @@ footer .footer-info img {
   .search-suggestions h4 {
     font-weight: 700;
     font-size: .875rem;
+    line-height: 1;
+    margin-bottom: .25rem;
   }
 
   .search-suggestions h4 a {
@@ -2932,8 +2928,7 @@ footer .footer-info img {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 100%;
-    padding-top: .25rem;
-    padding-bottom: .25rem;
+    padding-bottom: 0;
   }
 
   .search-suggestions a {
@@ -2975,33 +2970,26 @@ footer .footer-info img {
 
   .search-suggestions .search-items li {
     position: relative;
-    margin-bottom: .25rem;
-    padding: .625em .75em .75em 4em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 1.5rem;
   }
 
-  .search-suggestions .search-items li:last-of-type {
+  .search-suggestions .search-items li .image {
+    margin-right: 1rem;
+    min-width: 60px;
+    height: 60px;
+  }
+
+  .search-suggestions .search-items li .image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .search-suggestions .search-items li:last-of-type,
+  .search-suggestions .search-items li.second-last {
     margin-bottom: 0;
-  }
-
-  .search-suggestions .image-wrapper {
-    position: absolute;
-    left: 0;
-    width: 50px;
-    height: 50px;
-  }
-
-  .search-suggestions .image-wrapper img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .search-suggestions .quick-links a {
-    padding-right: .5rem;
-    font-size: .875rem;
-    line-height: 1.2;
   }
 
   .search-suggestions.show {

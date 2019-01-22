@@ -68133,7 +68133,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -68279,6 +68278,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -68287,13 +68290,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         showPrices: {
             required: true
         },
+
         show: Boolean,
+
         query: String
     },
 
     data: function data() {
         return {
-            items: []
+            products: []
         };
     },
 
@@ -68302,10 +68307,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getItems: Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["throttle"])(function () {
             var _this = this;
 
-            axios.get('ajax/search?query=' + this.query).then(function (_ref) {
+            axios.get('/ajax/search?query=' + this.query).then(function (_ref) {
                 var data = _ref.data;
 
-                _this.items = data.products;
+                _this.products = data.products;
             });
         }, 1000)
     },
@@ -68338,91 +68343,117 @@ var render = function() {
     "div",
     { staticClass: "search-suggestions", class: { show: _vm.show } },
     [
-      _c("div", { staticClass: "search-items" }, [
-        _c("h3", [_vm._v(_vm._s(_vm.$trans("header.product_results")))]),
-        _vm._v(" "),
-        _c(
-          "ul",
-          [
-            _c(
-              "transition",
-              { attrs: { mode: "out-in", name: "fade" } },
-              [
-                !_vm.items.length > 0 && _vm.query.length > 0
-                  ? [
-                      _c("p", [
-                        _vm._v(_vm._s(_vm.$trans("header.no_results_found")))
-                      ])
-                    ]
-                  : [
-                      _c(
-                        "transition-group",
-                        { attrs: { name: "list" } },
-                        _vm._l(_vm.items, function(item, index) {
-                          return _c(
-                            "li",
-                            { key: "item-" + index, staticClass: "list-item" },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "image-wrapper",
-                                  attrs: { href: item.show_path }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "rounded-img",
-                                    attrs: { src: item.thumb, alt: item.slug }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "search-items" },
+        [
+          _c("h3", [_vm._v(_vm._s(_vm.$trans("header.product_results")))]),
+          _vm._v(" "),
+          _c(
+            "transition",
+            { attrs: { mode: "out-in", name: "fade" } },
+            [
+              !_vm.products.length > 0 && _vm.query.length > 0
+                ? [
+                    _c("p", [
+                      _vm._v(_vm._s(_vm.$trans("header.no_results_found")))
+                    ])
+                  ]
+                : [
+                    _c(
+                      "transition-group",
+                      {
+                        staticClass: "row",
+                        attrs: { name: "list", tag: "ul" }
+                      },
+                      _vm._l(_vm.products, function(product, index) {
+                        return _c(
+                          "li",
+                          {
+                            key: "product-" + index,
+                            staticClass: "list-item col-half",
+                            class: {
+                              "second-last": index == _vm.products.length - 2
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "image" }, [
+                              _c("img", {
+                                staticClass: "rounded-lg-img",
+                                attrs: { src: product.thumb, alt: product.slug }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
                               _c("h4", [
                                 _c(
                                   "a",
                                   {
-                                    staticClass: "nowrap",
-                                    attrs: { href: item.show_path }
+                                    staticClass: "truncate",
+                                    attrs: { href: product.show_path }
                                   },
-                                  [_vm._v(_vm._s(item.name))]
+                                  [_vm._v(_vm._s(product.name))]
                                 )
                               ]),
                               _vm._v(" "),
-                              _vm.showPrices && item.formatted_price
-                                ? _c("span", { staticClass: "price mr-1" }, [
-                                    _vm._v(_vm._s(item.formatted_price))
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "text-xs text-grey-darker mb-0"
+                                },
+                                [
+                                  product.catalogue_number
+                                    ? _c("span", [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.$trans(
+                                              "products.catalogue_number"
+                                            )
+                                          )
+                                        ),
+                                        _c("strong", { staticClass: "ml-1" }, [
+                                          _vm._v(
+                                            _vm._s(product.catalogue_number)
+                                          )
+                                        ])
+                                      ])
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  product.barcode
+                                    ? _c("span", [
+                                        _vm._v(
+                                          _vm._s(_vm.$trans("products.barcode"))
+                                        ),
+                                        _c("strong", { staticClass: "ml-1" }, [
+                                          _vm._v(_vm._s(product.barcode))
+                                        ])
+                                      ])
+                                    : _vm._e()
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _vm.showPrices && product.formatted_price
+                                ? _c("p", { staticClass: "mb-0" }, [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass: "price mr-1 inline-block"
+                                      },
+                                      [_vm._v(_vm._s(product.formatted_price))]
+                                    )
                                   ])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c("span", { staticClass: "type mr-1" }, [
-                                _vm._v(_vm._s(_vm.$trans("header.products")))
-                              ]),
-                              _vm._v(" "),
-                              _c("span", { staticClass: "time" }, [
-                                _vm._v(_vm._s(item.formated_created_at))
-                              ])
-                            ]
-                          )
-                        })
-                      )
-                    ]
-              ],
-              2
-            )
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "quick-links" },
-        [
-          _c("h3", [_vm._v(_vm._s(_vm.$trans("header.quick_links")))]),
-          _vm._v(" "),
-          _vm._t("default")
+                                : _vm._e()
+                            ])
+                          ]
+                        )
+                      })
+                    )
+                  ]
+            ],
+            2
+          )
         ],
-        2
+        1
       )
     ]
   )
@@ -68525,18 +68556,13 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "suggestions",
-        {
-          attrs: {
-            show: _vm.showOverlay,
-            "show-prices": _vm.eligibleToSeePrices,
-            query: _vm.currentQuery
-          }
-        },
-        [_vm._t("default")],
-        2
-      ),
+      _c("suggestions", {
+        attrs: {
+          show: _vm.showOverlay,
+          "show-prices": _vm.eligibleToSeePrices,
+          query: _vm.currentQuery
+        }
+      }),
       _vm._v(" "),
       _c("div", {
         staticClass: "search-overlay",

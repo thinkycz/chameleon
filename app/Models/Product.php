@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\ModelHasDateFormatted;
 use App\Traits\ReusableScopes\ScopeWhereLike;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
@@ -21,11 +22,13 @@ class Product extends Model implements HasMedia
     use HasMediaTrait;
     use Searchable;
     use ScopeWhereLike;
+    use ModelHasDateFormatted;
 
     protected $appends = [
         'thumb',
         'purchasable',
         'show_path',
+        'formatted_price',
     ];
 
     protected $fillable = [

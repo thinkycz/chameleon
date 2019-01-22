@@ -3,38 +3,42 @@
         :class="{'show': show}">
         <div class="search-items">
             <h3>{{ $trans('header.product_results') }}</h3>
-            <ul>
-                <transition mode="out-in"
-                    name="fade">
-                    <template v-if="!items.length > 0 && query.length > 0">
-                        <p>{{ $trans('header.no_results_found') }}</p>
-                    </template>
-                    <template v-else>
-                        <transition-group name="list">
-                            <li v-for="(item, index) in items"
-                                :key="'item-' + index"
-                                class="list-item">
-                                <a class="image-wrapper"
-                                    :href="item.show_path"><img class="rounded-img"
-                                        :src="item.thumb"
-                                        :alt="item.slug"></a>
+            <transition mode="out-in"
+                name="fade">
+                <template v-if="!products.length > 0 && query.length > 0">
+                    <p>{{ $trans('header.no_results_found') }}</p>
+                </template>
+                <template v-else>
+                    <transition-group name="list"
+                        tag="ul"
+                        class="row">
+                        <li v-for="(product, index) in products"
+                            :key="'product-' + index"
+                            :class="{'second-last': index == products.length - 2}"
+                            class="list-item col-half">
+                            <div class="image">
+                                <img class="rounded-lg-img"
+                                    :src="product.thumb"
+                                    :alt="product.slug">
+                            </div>
+                            <div>
                                 <h4>
-                                    <a class="nowrap"
-                                        :href="item.show_path">{{ item.name }}</a>
+                                    <a class="truncate"
+                                        :href="product.show_path">{{ product.name }}</a>
                                 </h4>
-                                <span class="price mr-1"
-                                    v-if="showPrices && item.formatted_price">{{ item.formatted_price }}</span>
-                                <span class="type mr-1">{{ $trans('header.products') }}</span>
-                                <span class="time">{{ item.formated_created_at }}</span>
-                            </li>
-                        </transition-group>
-                    </template>
-                </transition>
-            </ul>
-        </div>
-        <div class="quick-links">
-            <h3>{{ $trans('header.quick_links') }}</h3>
-            <slot></slot>
+                                <p class="text-xs text-grey-darker mb-0">
+                                    <span v-if="product.catalogue_number">{{ $trans('products.catalogue_number') }}<strong class="ml-1">{{ product.catalogue_number }}</strong></span>
+                                    <span v-if="product.barcode">{{ $trans('products.barcode') }}<strong class="ml-1">{{ product.barcode }}</strong></span>
+                                </p>
+                                <p class="mb-0"
+                                    v-if="(showPrices && product.formatted_price)">
+                                    <span class="price mr-1 inline-block">{{ product.formatted_price }}</span>
+                                </p>
+                            </div>
+                        </li>
+                    </transition-group>
+                </template>
+            </transition>
         </div>
     </div>
 </template>
@@ -47,20 +51,22 @@
             showPrices: {
                 required: true,
             },
+
             show: Boolean,
+
             query: String,
         },
 
         data() {
             return {
-                items: [],
+                products: [],
             };
         },
 
         methods: {
             getItems: throttle(function() {
-                axios.get(`ajax/search?query=${this.query}`).then(({ data }) => {
-                    this.items = data.products;
+                axios.get(`/ajax/search?query=${this.query}`).then(({ data }) => {
+                    this.products = data.products;
                 });
             }, 1000),
         },

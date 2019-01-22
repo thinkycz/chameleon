@@ -20,7 +20,6 @@
         <suggestions :show="showOverlay"
             :show-prices="eligibleToSeePrices"
             :query="currentQuery">
-            <slot></slot>
         </suggestions>
         <div class="search-overlay"
             :class="{'show': showOverlay}"

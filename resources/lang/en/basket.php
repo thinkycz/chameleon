@@ -8,7 +8,7 @@ return [
     'empty_basket'         => 'Empty Basket',
     'delivery_method'      => 'Delivery Method',
     'payment_method'       => 'Payment Method',
-    'basket_empty'         => 'You dont have any products in your basket :(',
+    'basket_empty'         => 'You dont have any products in your basket. ',
     'continue_shopping'    => 'Continue Shopping',
 
     'successfully_deleted' => 'Successfully deleted',

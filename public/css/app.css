@@ -2604,12 +2604,8 @@ footer .footer-info img {
 }
 
 .basket .basket-wrapper .basket-wrapper__inner .basket-items li {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
-          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+  padding: 1.5rem;
+  border-bottom-width: 1px;
   position: relative;
 }
 

@@ -21,7 +21,7 @@
                 @apply list-reset overflow-y-auto;
                 max-height: calc(100vh - 250px);
                 li {
-                    @apply px-6 py-4 shadow-sm relative;
+                    @apply p-6 border-b relative;
 
                     .item-price {
                         @apply mt-1 mb-0 text-grey-darkest;

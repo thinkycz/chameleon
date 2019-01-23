@@ -17,6 +17,7 @@
 
 <script>
     import Quantity from './Quantity';
+    import { BasketMixin } from './../../mixins/basket';
 
     export default {
         props: {
@@ -53,10 +54,6 @@
             isInBasket() {
                 return typeof this.item !== 'undefined' ? true : false;
             },
-
-            basketItems() {
-                return this.$store.getters.getBasketItems;
-            },
         },
 
         methods: {
@@ -87,24 +84,23 @@
                 let message = this.message(quantity);
                 this.disabled = true;
                 axios
-                    .post(`products/${this.product.id}/basket`, {
+                    .post(`/products/${this.product.id}/basket`, {
                         quantity: this.quantity,
                     })
                     .then(({ data }) => {
                         this.updateStore(data.payload.basket);
                     })
                     .catch(({ response }) => {
-                        this.$snack(response.data.message, 'error');
+                        this.$toasted.show(response.data.message, {
+                            type: 'error',
+                        });
                     })
                     .then(() => {
                         this.disabled = false;
-                        this.$snack(message);
+                        this.$toasted.show(message, {
+                            type: 'success',
+                        });
                     });
-            },
-
-            updateStore(basket) {
-                this.$store.commit('setBasketItems', basket.ordered_items);
-                this.$store.commit('setBasketTotal', basket.formatted_total_price);
             },
         },
 
@@ -115,5 +111,7 @@
         created() {
             this.quantity = this.isInBasket ? this.item.quantity_ordered : this.product.minimum_order_quantity;
         },
+
+        mixins: [BasketMixin],
     };
 </script>

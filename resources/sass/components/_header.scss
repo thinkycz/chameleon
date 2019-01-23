@@ -87,7 +87,7 @@ header {
                 }
                 .header-cart {
                     @apply relative text-center ml-2 cursor-pointer select-none;
-                    .icon {
+                    & > span > .icon {
                         @apply w-10 h-10 text-primary;
                     }
                     .cart-total {

@@ -47,7 +47,9 @@
 
                 <div class="col-cart">
                     @auth
-                        <vue-header-basket></vue-header-basket>
+                        <vue-header-basket :basket="{{ json_encode(activeBasket()) }}"
+                            :is-disabled="{{ booleanToString(request()->routeIs('basket.*', 'checkout.*', 'confirmation.*')) }}">
+                        </vue-header-basket>
 
                         <vue-dropdown-menu inline-template>
                             <div class="user-dropdown relative" @click.stop="toggle">

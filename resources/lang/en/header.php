@@ -21,7 +21,8 @@ return [
     'no_price'                   => 'No price',
     'your_basket'                => 'Your Basket',
     'you_can_view_ordered_items' => 'Here you can view, edit and remove products from your basket quickly and easily.',
-    'basket_total'               => 'Basket total',
+    'basket_total'               => 'Total',
     'checkout'                   => 'Checkout',
     'view_basket'                => 'View Basket',
+    'start_shopping'             => 'Start Shopping',
 ];

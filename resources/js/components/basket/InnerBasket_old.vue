@@ -1,6 +1,10 @@
 <template>
     <div class="inner-basket">
-        <ul class="basket-items">
+        <div class="py-3 px-4 bg-success-lighter border-l-2 border-success-darker">
+            <p class="mb-0 text-success-darker">{{ $trans('header.you_can_view_ordered_items') }}</p>
+        </div>
+
+        <ul class="basket-items border-b">
             <li v-for="item in basketItems"
                 :key="'basket-item-' + item.id">
                 <div class="flex justify-left items-center">
@@ -10,8 +14,8 @@
                             class="rounded-lg-img">
                     </div>
                     <div class="inline-block mr-4 w-1/2">
-                        <p class="p-big text-left text-sm">{{ item.name }}</p>
-                        <p class="p-small text-left">
+                        <p class="p-big">{{ item.name }}</p>
+                        <p class="p-small">
                             <span class="mr-4">{{ item.quantity_ordered }}&times;<strong>{{ item.formatted_price }}</strong></span>
                             <span>{{ $trans('basket.total') }}&nbsp;<strong class="text-primary">{{ item.formatted_total_price }}</strong></span>
                         </p>
@@ -24,7 +28,16 @@
                 </div>
             </li>
         </ul>
-        <div class="text-center py-3 border-t mt-3 mx-2">
+        <div class="basket-total"
+            v-if="basketItems.length > 0">
+            <span>{{ $trans('header.basket_total') }}</span>
+            <span>{{ total }}</span>
+        </div>
+        <div v-else>
+            <p class="text-center">{{ $trans('header.add_products_basket_empty') }}</p>
+        </div>
+
+        <div class="w-full text-center pb-4 mt-3">
             <a href="/checkout"
                 class="btn btn-primary mr-4">{{ $trans('header.checkout') }}</a>
             <a href="/basket"

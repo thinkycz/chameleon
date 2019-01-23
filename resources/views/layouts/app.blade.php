@@ -21,7 +21,6 @@
             @yield('content')
         </main>
         @include('layouts.partials.footer')
-        @includeWhen(auth()->check(), 'partials.basket')
         @include('partials.snackbar')
         @yield('footer')
     </div>

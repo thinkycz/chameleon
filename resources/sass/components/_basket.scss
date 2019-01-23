@@ -1,4 +1,4 @@
-.basket {
+/* .basket {
     @apply z-75 absolute pin-r h-full pin-t invisible opacity-0 overflow-hidden shadow;
     @include transition(opacity, visibility);
     width: 75%;
@@ -54,6 +54,88 @@
         }
         .basket-wrapper {
             right: 0;
+        }
+    }
+}
+@keyframes basket-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+*/
+
+.basket {
+    @apply invisible opacity-0 absolute z-100;
+    left: auto;
+    right: -20px;
+    top: 60px;
+    @include transition(opacity, visibility);
+
+    & > svg {
+        @apply absolute;
+        width: 46px;
+        height: 23px;
+        top: -22px;
+        right: 15px;
+        z-index: 76;
+        .dropdown-svg-path {
+            stroke: var(--grey-light);
+        }
+    }
+
+    .basker-inner {
+        @apply bg-white shadow-lg rounded border h-auto z-75 relative;
+        width: 90vw;
+        max-width: 475px;
+
+        .basket-header {
+            @apply flex flex-wrap text-sm text-grey-darkest justify-between mx-2 px-2 py-3 items-center border-b;
+        }
+
+        .basket-items {
+            @apply list-reset overflow-y-auto mx-2;
+            max-height: 350px;
+            li {
+                @apply py-6 px-2 relative;
+                @include transition(background-color);
+
+                .item-price {
+                    @apply mt-1 mb-0 text-grey-darkest;
+                }
+
+                .item-remove {
+                    @apply absolute;
+                    right: 25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    @include transition(color);
+                    &:hover {
+                        @apply text-danger;
+                    }
+                }
+
+                &:nth-of-type(even) {
+                    @apply bg-grey-lightest;
+                }
+            }
+        }
+    }
+
+    .basket-overlay {
+        @apply fixed min-h-full w-full pin-t pin-l cursor-pointer hidden;
+        z-index: 74;
+        background: var(--black-transparent-50);
+    }
+
+    &.active {
+        @apply visible opacity-100;
+        .basket-overlay {
+            @apply block;
+            animation: basket-fade-in 0.3s;
         }
     }
 }

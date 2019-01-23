@@ -14,14 +14,14 @@
                         class="row">
                         <li v-for="(product, index) in products"
                             :key="'product-' + index"
-                            :class="{'second-last': index == products.length - 2}"
+                            :style="appendStyle(index)"
                             class="list-item col-half">
                             <div class="image">
                                 <img class="rounded-lg-img"
                                     :src="product.thumb"
                                     :alt="product.slug">
                             </div>
-                            <div>
+                            <div class="data">
                                 <h4>
                                     <a class="truncate"
                                         :href="product.show_path">{{ product.name }}</a>
@@ -69,6 +69,14 @@
                     this.products = data.products;
                 });
             }, 1000),
+
+            appendStyle(index) {
+                if (index == this.products.length - 1 || index == this.products.length - 2) {
+                    return {
+                        marginBottom: 0,
+                    };
+                }
+            },
         },
 
         created() {

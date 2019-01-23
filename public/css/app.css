@@ -1991,6 +1991,7 @@ header {
   border-bottom-width: 1px;
   position: relative;
   width: 100%;
+  z-index: 10;
 }
 
 header #top {
@@ -2974,6 +2975,7 @@ footer .footer-info img {
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 1.5rem;
+    overflow: hidden;
   }
 
   .search-suggestions .search-items li .image {
@@ -2985,6 +2987,10 @@ footer .footer-info img {
   .search-suggestions .search-items li .image img {
     width: 60px;
     height: 60px;
+  }
+
+  .search-suggestions .search-items li .data {
+    width: calc(100% - 60px);
   }
 
   .search-suggestions .search-items li:last-of-type,

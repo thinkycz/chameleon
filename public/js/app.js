@@ -68312,7 +68312,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 _this.products = data.products;
             });
-        }, 1000)
+        }, 1000),
+
+        appendStyle: function appendStyle(index) {
+            if (index == this.products.length - 1 || index == this.products.length - 2) {
+                return {
+                    marginBottom: 0
+                };
+            }
+        }
     },
 
     created: function created() {
@@ -68372,9 +68380,7 @@ var render = function() {
                           {
                             key: "product-" + index,
                             staticClass: "list-item col-half",
-                            class: {
-                              "second-last": index == _vm.products.length - 2
-                            }
+                            style: _vm.appendStyle(index)
                           },
                           [
                             _c("div", { staticClass: "image" }, [
@@ -68384,7 +68390,7 @@ var render = function() {
                               })
                             ]),
                             _vm._v(" "),
-                            _c("div", [
+                            _c("div", { staticClass: "data" }, [
                               _c("h4", [
                                 _c(
                                   "a",

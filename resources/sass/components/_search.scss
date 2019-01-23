@@ -69,7 +69,7 @@
         }
 
         .search-items li {
-            @apply relative flex mb-6;
+            @apply relative flex mb-6 overflow-hidden;
 
             .image {
                 @apply mr-4;
@@ -80,6 +80,10 @@
                     width: 60px;
                     height: 60px;
                 }
+            }
+
+            .data {
+                width: calc(100% - 60px);
             }
 
             &:last-of-type,

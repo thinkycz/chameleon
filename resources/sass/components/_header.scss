@@ -1,5 +1,5 @@
 header {
-    @apply bg-white shadow border-b relative w-full;
+    @apply bg-white shadow border-b relative w-full z-10;
     #top {
         @apply border-b bg-grey-lightest text-xs py-3;
         .icon-wrap {

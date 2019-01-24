@@ -29,6 +29,7 @@ return [
     'addresses_empty'              => 'You dont have any addresses added to your account. Please add new one by clicking on the button below, and select that address for your billing/shipping details after you have created it.',
     'add_new_address'              => 'Add new address',
 
+    'ordered_items'                => 'Ordered Items',
     'complete_order'               => 'Complete order',
     'order_was_placed'             => 'Your order has been placed!',
 ];

@@ -8,7 +8,6 @@ use App\Models\Country;
 use App\Models\DeliveryMethod;
 use App\Models\PaymentMethod;
 use App\Models\User;
-use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
 {
@@ -48,9 +47,9 @@ class CheckoutController extends Controller
 
         snackbar()->success(trans('checkout.order_was_placed'));
 
-        Session::flash('placed_order', $basket->id);
+        $order = $basket->load('orderedItems.product', 'status', 'deliveryMethod', 'billingDetail', 'paymentMethod', 'shippingDetail');
 
-        return redirect()->route('profiles.show');
+        return redirect()->route('profiles.show', User::getAuthenticatedUser())->with('placed_order', $order);
     }
 
     public function storeAddress(StoreAddressRequest $request)

@@ -24,8 +24,8 @@ trait OrderHasProcessors
         : $request->get('shipping_detail_id');
         $address = User::getAuthenticatedUser()->addresses()->find($addressId);
 
-        $billingDetail = $this->billingDetail()->updateOrCreate([], $address->toArray());
+        $shippingDetail = $this->shippingDetail()->updateOrCreate([], $address->toArray());
 
-        $this->billingDetail()->associate($billingDetail);
+        $this->shippingDetail()->associate($shippingDetail);
     }
 }

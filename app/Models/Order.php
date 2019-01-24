@@ -117,8 +117,19 @@ class Order extends Model
         return $this->orderedItems()->count();
     }
 
+    public function setStatus(Status $status)
+    {
+        if ($this->status && $this->status->is($status)) {
+            return false;
+        }
+
+        return $this->update(['status_id' => $status->id]);
+    }
+
     public function complete()
     {
+        $this->setStatus(preferenceRepository()->getCreatedOrderStatus());
+
         return $this->update(['placed_at' => Carbon::now()]);
     }
 }

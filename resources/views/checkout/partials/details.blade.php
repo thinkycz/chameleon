@@ -6,11 +6,11 @@
 
             <div class="input-wrap">
                 <label for="email">{{ trans('auth.email') }}*</label>
-                <input type="email" id="email" name="email" required class="input" value="{{ old('email') }}" placeholder="{{ trans('auth.your_email') }}">
+                <input type="email" id="email" name="email" required class="input" value="{{ old('email', currentUser()->email) }}" placeholder="{{ trans('auth.your_email') }}">
             </div>
             <div class="input-wrap">
                 <label for="phone">{{ trans('profiles.phone') }}*</label>
-                <input type="text" id="phone" required class="input" name="phone" value="{{ old('phone') }}" placeholder="{{ trans('profiles.phone_label') }}">
+                <input type="text" id="phone" required class="input" name="phone" value="{{ old('phone', currentUser()->phone) }}" placeholder="{{ trans('profiles.phone_label') }}">
             </div>
         </div>
 

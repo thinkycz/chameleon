@@ -25,8 +25,8 @@
             <h3 class="text-grey-darkest mb-2">{{ trans('checkout.additional_notes') }}</h3>
             <p>{{ trans('checkout.additional_information_note') }}</p>
             <div class="input-wrap">
-                <label for="notes">{{ trans('checkout.notes') }}</label>
-                <textarea id="notes" class="input" name="notes" value="{{ old('notes') }}" placeholder="{{ trans('checkout.write_your_notes_here') }}"></textarea>
+                <label for="customer_notes">{{ trans('checkout.notes') }}</label>
+                <textarea id="customer_notes" class="input" name="customer_notes" value="{{ old('customer_notes') }}" placeholder="{{ trans('checkout.write_your_notes_here') }}"></textarea>
             </div>
         </div>
 

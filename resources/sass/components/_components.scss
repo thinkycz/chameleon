@@ -53,6 +53,12 @@
             @apply text-primary-darker;
         }
     }
+    &.btn-danger {
+        @apply text-danger;
+        &:hover {
+            @apply text-danger-darker;
+        }
+    }
     &.btn-sm {
         @apply h-8;
         line-height: 1rem;

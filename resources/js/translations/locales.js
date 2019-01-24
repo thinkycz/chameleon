@@ -7,7 +7,10 @@ export default {
             "delete": "Delete",
             "close": "Close",
             "updated": "Updating completed.",
-            "no_price": "No price"
+            "no_price": "No price",
+            "confirm_action": "Please confirm your action",
+            "confirm": "Confirm",
+            "cancel": "Cancel"
         },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
@@ -97,6 +100,7 @@ export default {
             "payment_method": "Payment Method",
             "basket_empty": "You dont have any products in your basket. ",
             "continue_shopping": "Continue Shopping",
+            "basket_quantity_update_err": "Some ordered items quantities were not updated.",
             "successfully_deleted": "Successfully deleted",
             "successfully_updated": "Successfully updated",
             "basket": "Basket",
@@ -120,7 +124,8 @@ export default {
             "you_can_view_ordered_items": "Here you can view, edit and remove products from your basket quickly and easily.",
             "basket_total": "Total",
             "checkout": "Checkout",
-            "view_basket": "View Basket"
+            "view_basket": "View Basket",
+            "start_shopping": "Start Shopping"
         },
         "products": {
             "add_to_basket": "Add to basket",

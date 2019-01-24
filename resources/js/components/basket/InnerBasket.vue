@@ -52,14 +52,10 @@
                     })
                     .then(({ data }) => {
                         this.updateStore(data.payload.basket);
-                        this.$toasted.show($trans('basket.successfully_updated'), {
-                            type: 'success',
-                        });
+                        this.$toasted.success($trans('basket.successfully_updated'));
                     })
                     .catch(({ response }) => {
-                        this.$toasted.show(response.data.message, {
-                            type: 'error',
-                        });
+                        this.$toasted.error(response.data.message);
                     });
             },
 
@@ -68,14 +64,10 @@
                     .delete(`/ordered-items/${id}/remove`)
                     .then(({ data }) => {
                         this.updateStore(data.payload.basket);
-                        this.$toasted.show($trans('basket.successfully_deleted'), {
-                            type: 'success',
-                        });
+                        this.$toasted.success($trans('basket.successfully_deleted'));
                     })
                     .catch(({ response }) => {
-                        this.$toasted.show(response.data.message, {
-                            type: 'error',
-                        });
+                        this.$toasted.error(response.data.message);
                     });
             },
         },

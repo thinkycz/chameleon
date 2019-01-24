@@ -91,15 +91,11 @@
                         this.updateStore(data.payload.basket);
                     })
                     .catch(({ response }) => {
-                        this.$toasted.show(response.data.message, {
-                            type: 'error',
-                        });
+                        this.$toasted.error(response.data.message);
                     })
                     .then(() => {
                         this.disabled = false;
-                        this.$toasted.show(message, {
-                            type: 'success',
-                        });
+                        this.$toasted.success(message);
                     });
             },
         },

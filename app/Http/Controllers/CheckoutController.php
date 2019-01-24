@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ConfirmationRequest;
 use App\Models\Country;
 use App\Models\DeliveryMethod;
 use App\Models\PaymentMethod;
@@ -14,7 +15,7 @@ class CheckoutController extends Controller
         $this->middleware('basket_is_not_empty');
     }
 
-    public function index()
+    public function show()
     {
         $basket = activeBasket();
         $countries = Country::whereEnabled(true)->get();
@@ -24,7 +25,17 @@ class CheckoutController extends Controller
 
         $addresses = User::getAuthenticatedUser()->addresses()->orderBy('is_default', 'desc')->get();
 
-        return view('checkout.index', compact('addresses', 'basket', 'countries', 'deliveryMethods', 'paymentMethods'));
+        return view('checkout.show', compact('addresses', 'basket', 'countries', 'deliveryMethods', 'paymentMethods'));
+    }
 
+    public function confirm(ConfirmationRequest $request)
+    {
+        $basket = activeBasket();
+
+        $basket->processBillingDetails($request);
+        $basket->processShippingDetails($request);
+        $basket->update($request->only('email', 'phone', 'customer_note', 'delivery_method_id', 'payment_method_id'));
+
+        return view('checkout.confirmation', compact('basket'));
     }
 }

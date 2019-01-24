@@ -1016,6 +1016,33 @@ p.p-small {
           transform: translateX(30px);
 }
 
+.toasted.bubble.info {
+  background-color: var(--accent) !important;
+}
+
+.toasted-container .toasted.confirm-action {
+  color: var(--white);
+  background-color: var(--accent);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.toasted-container .toasted.confirm-action a.action {
+  color: var(--white);
+  position: relative;
+  font-weight: 700;
+  top: 2px;
+}
+
+.toasted-container .toasted.confirm-action a.action:last-of-type {
+  color: var(--grey-lighter);
+  font-weight: 600;
+}
+
 .btn {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1097,6 +1124,14 @@ p.p-small {
 
 .btn-text.btn-primary:hover {
   color: var(--primary-darker);
+}
+
+.btn-text.btn-danger {
+  color: var(--danger);
+}
+
+.btn-text.btn-danger:hover {
+  color: var(--danger-darker);
 }
 
 .btn-text.btn-sm {
@@ -2624,6 +2659,7 @@ footer .footer-info img {
   opacity: 0;
   position: absolute;
   z-index: 100;
+  cursor: default;
   left: auto;
   right: -20px;
   top: 60px;

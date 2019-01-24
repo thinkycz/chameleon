@@ -40,3 +40,18 @@
     opacity: 0;
     transform: translateX(30px);
 }
+
+.toasted.bubble.info {
+    background-color: var(--accent) !important;
+}
+.toasted-container .toasted.confirm-action {
+    @apply text-white bg-accent flex items-center;
+    a.action {
+        @apply text-white relative font-bold;
+        top: 2px;
+
+        &:last-of-type {
+            @apply text-grey-lighter font-semibold;
+        }
+    }
+}

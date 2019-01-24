@@ -69,7 +69,7 @@
 */
 
 .basket {
-    @apply invisible opacity-0 absolute z-100;
+    @apply invisible opacity-0 absolute z-100 cursor-default;
     left: auto;
     right: -20px;
     top: 60px;

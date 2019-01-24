@@ -31,7 +31,7 @@ class ConfirmationRequest extends FormRequest
             'phone'              => 'required',
         ];
 
-        $shippingSame = stringToBoolean($this->get('shipping_same'));
+        $shippingSame = stringToBoolean($this->get('shipping_details'));
 
         if (!$shippingSame) {
             $rules = array_merge($rules, [

@@ -7,25 +7,25 @@ use Illuminate\Http\Request;
 
 trait OrderHasProcessors
 {
-    public function processBillingDetails(Request $request)
+    public function processBillingDetail(Request $request)
     {
-        $addressId = $request->get('billing_details_id');
+        $addressId = $request->get('billing_detail_id');
         $address = User::getAuthenticatedUser()->addresses()->find($addressId);
 
-        $billingDetails = $this->billingDetails()->updateOrCreate([], $address->toArray());
+        $billingDetail = $this->billingDetail()->updateOrCreate([], $address->toArray());
 
-        $this->billingDetails()->associate($billingDetails);
+        $this->billingDetail()->associate($billingDetail);
     }
 
-    public function processShippingDetails(Request $request)
+    public function processShippingDetail(Request $request)
     {
-        $addressId = stringToBoolean($request->get('shipping_details'))
-        ? $request->get('billing_details_id')
-        : $request->get('shipping_details_id');
+        $addressId = stringToBoolean($request->get('shipping_detail'))
+        ? $request->get('billing_detail_id')
+        : $request->get('shipping_detail_id');
         $address = User::getAuthenticatedUser()->addresses()->find($addressId);
 
-        $billingDetails = $this->billingDetails()->updateOrCreate([], $address->toArray());
+        $billingDetail = $this->billingDetail()->updateOrCreate([], $address->toArray());
 
-        $this->billingDetails()->associate($billingDetails);
+        $this->billingDetail()->associate($billingDetail);
     }
 }

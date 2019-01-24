@@ -48,6 +48,13 @@ if (!function_exists('booleanToString')) {
     }
 }
 
+if (!function_exists('stringToBoolean')) {
+    function stringToBoolean($string)
+    {
+        return is_bool($string) ? $string : 'true' == $string;
+    }
+}
+
 /*
  * @return float
  */

@@ -22,10 +22,12 @@
             <div class="col-12">
                 <h3 class="text-grey-darkest mb-4">{{ trans('checkout.billing_and_shipping_details') }}</h3>
 
-                <template v-if="currentAddresses.length">
-                    <vue-checkout-address-selector name="billing_details_id" />
+                <template v-if="addresses.length">
+                    <vue-checkout-address-selector name="billing_detail_id"></vue-checkout-address-selector>
+
+                    <vue-checkout-shipping-details>
                         <div class="w-full">
-                            <vue-checkout-address-selector name="shipping_details_id" />
+                            <vue-checkout-address-selector name="shipping_detail_id" />
                         </div>
                     </vue-checkout-shipping-details>
                 </template>
@@ -38,6 +40,7 @@
                 </div>
             </div>
         </vue-checkout-address-wrapper>
+
         <div class="col-12">
             <vue-modaltrigger modal="address-modal" label="&plus; {{ trans('checkout.add_new_address') }}" :button="false">
                 @include('checkout.partials.address_form')

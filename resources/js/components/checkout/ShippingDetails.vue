@@ -3,22 +3,22 @@
         <div class="input-wrap mb-2 -mx-2">
             <div class="radio">
                 <input type="radio"
-                    id="shipping_details_same"
+                    id="shipping_detail_same"
                     :value="true"
-                    name="shipping_details"
+                    name="shipping_detail"
                     v-model="same">
-                <label for="shipping_details_same"
+                <label for="shipping_detail_same"
                     class="radio-label">{{ $trans('checkout.ship_to_billing') }}</label>
             </div>
         </div>
         <div class="input-wrap -mx-2">
             <div class="radio">
                 <input type="radio"
-                    id="shipping_details_diff"
+                    id="shipping_detail_diff"
                     :value="false"
-                    name="shipping_details"
+                    name="shipping_detail"
                     v-model="same">
-                <label for="shipping_details_diff"
+                <label for="shipping_detail_diff"
                     class="radio-label">{{ $trans('checkout.ship_to_different') }}</label>
             </div>
         </div>

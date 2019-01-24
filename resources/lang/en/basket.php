@@ -13,6 +13,8 @@ return [
 
     'basket_emptied'             => 'Your basket has been emptied',
     'basket_quantity_update_err' => 'Some ordered items quantities were not updated.',
+    'basket_quantity_updated'    => 'Ordered items quantities updated',
+    'ordered_item_removed'       => 'Ordered item removed',
 
     'successfully_deleted'       => 'Successfully deleted',
     'successfully_updated'       => 'Successfully updated',

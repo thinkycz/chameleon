@@ -61544,6 +61544,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         method: {
             required: false,
             default: null
+        },
+
+        linksTo: {
+            required: false,
+            default: null
+        },
+
+        formSelector: {
+            required: false,
+            default: null
         }
     },
 
@@ -61556,12 +61566,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         click: function click() {
             var self = this;
-            this.isDisabled = true;
+            self.isDisabled = true;
 
-            if (this.confirm) {
-                this.$toasted.info(self.$trans('global.confirm_action'), {
+            if (self.confirm) {
+                self.$toasted.info(self.$trans('global.confirm_action'), {
                     className: 'confirm-action',
-                    duration: 12000,
+                    duration: null,
                     action: [{
                         text: self.$trans('global.confirm'),
                         onClick: function onClick(e, toast) {
@@ -61584,19 +61594,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         perform: function perform() {
+            if (this.action) return this.request();
+
+            if (this.linksTo) return this.redirect(this.linksTo);
+
+            return document.querySelector(this.formSelector).submit();
+        },
+        request: function request() {
             var _this = this;
 
             axios[this.method](this.action).then(function (res) {
-                return _this.requestCallback(res.data.redirect);
+                return _this.redirect(res.data.redirect);
             }).catch(function (_ref) {
                 var response = _ref.response;
 
                 _this.$toasted.error(response.data.message);
             });
         },
-        requestCallback: function requestCallback(redirect) {
-            if (redirect) {
-                window.location.href = redirect;
+        redirect: function redirect(_redirect) {
+            if (_redirect) {
+                window.location.href = _redirect;
             }
         }
     }
@@ -65070,6 +65087,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -65165,9 +65189,22 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("p", { staticClass: "text-danger text-xs text-center mb-0" }, [
-      _vm._v(_vm._s(_vm.$trans("basket.delete_item")))
-    ])
+    _c(
+      "p",
+      { staticClass: "text-danger text-xs text-center mb-0" },
+      [
+        _c("vue-button", {
+          attrs: {
+            method: "delete",
+            action: "/basket/ordered-items/" + _vm.item.id,
+            confirm: true,
+            label: _vm.$trans("basket.delete_item"),
+            "button-class": "btn-text btn-danger font-normal text-xs"
+          }
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []

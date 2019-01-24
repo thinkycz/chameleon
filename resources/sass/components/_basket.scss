@@ -234,6 +234,10 @@
                 }
             }
         }
+
+        &:nth-of-type(even) {
+            @apply bg-grey-lightest;
+        }
     }
 }
 

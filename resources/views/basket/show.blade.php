@@ -7,7 +7,7 @@
                 <vue-checkout-steps current="basket"></vue-checkout-steps>
             @endif
         </div>
-        <form csrf action="{{ route('basket.quantities.update') }}" method="post" class="w-full relative">
+        <form id="update-quantities" csrf action="{{ route('basket.quantities.update') }}" method="post" class="w-full relative">
             <div class="row">
                 @if($basket->hasOrderedItems())
                     <div class="col-9 main-basket">

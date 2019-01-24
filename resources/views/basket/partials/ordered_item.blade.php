@@ -1,4 +1,4 @@
-<div class="basket-item flex border-b">
+<div class="basket-item flex">
     <div class="image">
         <img src="{{ $orderedItem->product->thumb }}">
     </div>

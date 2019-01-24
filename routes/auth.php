@@ -1,6 +1,7 @@
 <?php
 
 Route::post('basket/empty-basket', 'BasketController@emptyBasket')->name('basket.empty_basket');
+Route::delete('basket/ordered-items/{orderedItem}', 'BasketController@removeOrderedItem');
 Route::post('basket/update-quantities', 'BasketController@updateQuantities')->name('basket.quantities.update');
 Route::get('basket', 'BasketController@show')->name('basket.show');
 Route::resource('confirmation', 'ConfirmationController')->only('index');

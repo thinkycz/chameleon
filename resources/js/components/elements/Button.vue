@@ -33,6 +33,16 @@
                 required: false,
                 default: null,
             },
+
+            linksTo: {
+                required: false,
+                default: null,
+            },
+
+            formSelector: {
+                required: false,
+                default: null,
+            },
         },
 
         data: () => ({
@@ -42,12 +52,12 @@
         methods: {
             click() {
                 let self = this;
-                this.isDisabled = true;
+                self.isDisabled = true;
 
-                if (this.confirm) {
-                    this.$toasted.info(self.$trans('global.confirm_action'), {
+                if (self.confirm) {
+                    self.$toasted.info(self.$trans('global.confirm_action'), {
                         className: 'confirm-action',
-                        duration: 12000,
+                        duration: null,
                         action: [
                             {
                                 text: self.$trans('global.confirm'),
@@ -74,14 +84,22 @@
             },
 
             perform() {
+                if (this.action) return this.request();
+
+                if (this.linksTo) return this.redirect(this.linksTo);
+
+                return document.querySelector(this.formSelector).submit();
+            },
+
+            request() {
                 axios[this.method](this.action)
-                    .then(res => this.requestCallback(res.data.redirect))
+                    .then(res => this.redirect(res.data.redirect))
                     .catch(({ response }) => {
                         this.$toasted.error(response.data.message);
                     });
             },
 
-            requestCallback(redirect) {
+            redirect(redirect) {
                 if (redirect) {
                     window.location.href = redirect;
                 }

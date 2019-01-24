@@ -8,7 +8,10 @@
     </div>
     <div class="quantities mb-6">
         <p class="mb-2 text-center">
-            <button type="submit" class="btn btn-accent text-center">{{ trans('basket.update_quantities') }}</button>
+            <vue-button form-selector="#update-quantities"
+                label="{{ trans('basket.update_quantities') }}"
+                button-class="btn btn-accent text-center" >
+            </vue-button>
         </p>
         <p class="text-center text-sm mb-2 pb-4 border-b">
             <vue-button method="post"

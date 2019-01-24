@@ -44,14 +44,27 @@
 .toasted.bubble.info {
     background-color: var(--accent) !important;
 }
+.toasted-container .toasted {
+    font-weight: bold !important;
+}
+.toasted-container .toasted.bubble {
+    padding: 10px 25px !important;
+}
 .toasted-container .toasted.confirm-action {
     @apply text-white bg-accent flex items-center;
     a.action {
-        @apply text-white relative font-bold;
+        @apply text-white relative font-bold border-b;
+        font-weight: bold;
         top: 2px;
+        padding: 0 0px;
+        margin: 5px 2px 5px 7px;
 
         &:last-of-type {
-            @apply text-grey-lighter font-semibold;
+            @apply text-grey-light;
+        }
+
+        &:first-of-type {
+            @apply ml-4;
         }
     }
 }

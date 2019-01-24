@@ -14,7 +14,14 @@
                     @click.stop.prevent="decreaseQuantity">-</div>
             </div>
         </div>
-        <p class="text-danger text-xs text-center mb-0">{{ $trans('basket.delete_item') }}</p>
+        <p class="text-danger text-xs text-center mb-0">
+            <vue-button method="delete"
+                :action="`/basket/ordered-items/${item.id}`"
+                :confirm="true"
+                :label="$trans('basket.delete_item')"
+                button-class="btn-text btn-danger font-normal text-xs">
+            </vue-button>
+        </p>
     </div>
 </template>
 

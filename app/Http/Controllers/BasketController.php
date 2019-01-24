@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrderedItem;
+use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 
 class BasketController extends Controller
@@ -18,9 +20,9 @@ class BasketController extends Controller
         $basket = activeBasket();
         $errors = new MessageBag();
 
-        foreach ($request->get('quantities') as $basketItemId => $quantity) {
-            if ($basketItem = $basket->basketItems->firstWhere('id', $basketItemId)) {
-                $basket->updateOrderedItemQuantity($basketItem, $quantity);
+        foreach ($request->get('quantities') as $orderedItemId => $quantity) {
+            if ($orderedItem = $basket->orderedItems->firstWhere('id', $orderedItemId)) {
+                $basket->updateOrderedItemQuantity($orderedItem, $quantity);
 
                 // TODO:: check eligibility
                 // $result = $basketItem->checkEligibility($quantity);
@@ -30,9 +32,20 @@ class BasketController extends Controller
 
         if ($errors->count()) {
             snackbar()->error(trans('basket.basket_quantity_update_err'));
+        } else {
+            snackbar()->success(trans('basket.basket_quantity_updated'));
         }
 
         return redirect()->route('basket.show')->withErrors($errors);
+    }
+
+    public function removeOrderedItem(OrderedItem $orderedItem)
+    {
+        $orderedItem->delete();
+
+        snackbar()->success(trans('basket.ordered_item_removed'));
+
+        return $this->ajaxOrRedirect(route('basket.show'));
     }
 
     public function emptyBasket()

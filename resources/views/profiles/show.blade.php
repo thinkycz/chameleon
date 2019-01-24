@@ -41,7 +41,7 @@
 
         @include('partials.errors')
 
-        <vue-profile current="{{ getCurrentView('account_overview') }}">
+        <vue-profile current="{{ getCurrentView($default = 'account_overview') }}">
             <template slot="account_overview"> @include('profiles.partials.overview') </template>
             <template slot="account_details"> @include('profiles.partials.details') </template>
             <template slot="address_book"> @include('profiles.partials.addresses') </template>

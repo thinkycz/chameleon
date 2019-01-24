@@ -46,6 +46,10 @@
         methods: {
             openModal() {
                 this.open = true;
+                window.scroll({
+                    top: 0,
+                    behavior: 'smooth',
+                });
             },
 
             close() {

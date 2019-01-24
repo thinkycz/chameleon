@@ -1,5 +1,5 @@
 <vue-checkout-address-form action="{{ route('checkout.addresses.store') }}" inline-template>
-    <div class="row pb-4">
+    <div class="row">
         <div class="col-full">
             <h4 class="mb-4 text-grey-darkest">{{ trans('checkout.add_new_address') }}</h4>
         </div>
@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <div class="col-full">
+        <div class="col-full mt-4">
             <button type="submit" class="btn btn-primary mr-4" @click="submit">{{ trans('global.save') }}</button>
             <button type="button" class="btn-text btn-primary close">{{ trans('global.close') }}</button>
         </div>

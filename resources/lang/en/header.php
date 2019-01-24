@@ -7,6 +7,9 @@ return [
     'register'                   => 'Register',
 
     'my_profile'                 => 'My profile',
+    'my_address_book'            => 'Address Book',
+    'my_details'                 => 'Profile details',
+    'my_privacy'                 => 'Profile privacy',
     'logout'                     => 'Logout',
 
     // Search

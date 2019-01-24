@@ -87,7 +87,9 @@ Vue.component('vue-search', require('./components/search/Search.vue'));
 
 // Checkout
 Vue.component('vue-checkout-steps', require('./components/checkout/CheckoutSteps.vue'));
+Vue.component('vue-checkout-address-wrapper', require('./components/checkout/AddressWrapper.vue'));
 Vue.component('vue-checkout-address-selector', require('./components/checkout/AddressSelector.vue'));
+Vue.component('vue-checkout-address-form', require('./components/checkout/AddressForm.vue'));
 Vue.component('vue-checkout-shipping-details', require('./components/checkout/ShippingDetails.vue'));
 
 const app = new Vue({

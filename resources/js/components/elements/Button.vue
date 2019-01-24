@@ -2,6 +2,7 @@
     <button role="button"
         :class="buttonClass"
         :disabled="isDisabled"
+        type="button"
         @click.stop.prevent="click">
         {{ label }}
     </button>

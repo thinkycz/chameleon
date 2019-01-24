@@ -7,20 +7,20 @@
                 <vue-checkout-steps current="checkout"></vue-checkout-steps>
             @endif
         </div>
-        <div class="row">
-            <div class="col-full">
-                @include('partials.errors')
+        <form csrf method="post" action="{{ route('checkout.confirm') }}">
+            <div class="row">
+                <div class="col-full">
+                    @include('partials.errors')
+                </div>
+                <div class="col-half">
+                    @include('checkout.partials.details')
+                </div>
+                <div class="col-half">
+                    @include('checkout.partials.methods')
+                </div>
             </div>
-            <div class="col-6">
-                @include('checkout.partials.details')
-            </div>
-            <div class="col-6">
-                @include('checkout.partials.methods')
-            </div>
-        </div>
+        </form>
     </div>
-
-
 @stop
 
 @section('footer')

@@ -14,12 +14,10 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         props: {
-            addresses: {
-                required: true,
-            },
-
             name: {
                 required: true,
             },
@@ -31,13 +29,21 @@
             };
         },
 
-        created() {
-            let address = this.addresses.find(a => a.is_default);
+        computed: {
+            ...mapGetters({
+                addresses: 'getAddresses',
+            }),
+        },
 
-            if (typeof address !== 'undefined') {
-                this.selected = address.id;
-            } else {
-                this.selected = this.addresses[0].id;
+        created() {
+            if (this.addresses.length > 0) {
+                let address = this.addresses.find(a => a.is_default);
+
+                if (typeof address !== 'undefined') {
+                    this.selected = address.id;
+                } else {
+                    this.selected = this.addresses[0].id;
+                }
             }
         },
     };

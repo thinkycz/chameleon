@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Confirmation;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,7 +24,7 @@ class ConfirmationRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'billing_address_id' => 'required',
+            'billing_details_id' => 'required',
             'delivery_method_id' => 'required',
             'payment_method_id'  => 'required',
             'email'              => 'required|email',
@@ -35,7 +35,7 @@ class ConfirmationRequest extends FormRequest
 
         if (!$shippingSame) {
             $rules = array_merge($rules, [
-                'shipping_address_id' => 'required',
+                'shipping_details_id' => 'required',
             ]);
         }
 

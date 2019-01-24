@@ -2,7 +2,10 @@
     @apply -mx-2 flex flex-wrap;
     [class^='col'],
     .col {
-        @apply px-2;
+        @apply px-2 mb-4;
+        @screen lg {
+            @apply mb-0;
+        }
     }
     .col-12,
     .col-full {

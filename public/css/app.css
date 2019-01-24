@@ -1879,7 +1879,7 @@ p.p-small {
 }
 
 .input-wrap textarea.input {
-  height: 8rem;
+  height: 6rem;
   padding-top: 1rem;
 }
 
@@ -1945,6 +1945,14 @@ p.p-small {
 .row .col {
   padding-left: .5rem;
   padding-right: .5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 992px) {
+  .row [class^='col'],
+  .row .col {
+    margin-bottom: 0;
+  }
 }
 
 .row .col-12,

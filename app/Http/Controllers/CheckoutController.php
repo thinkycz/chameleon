@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ConfirmationRequest;
+use App\Http\Requests\Checkout\StoreAddressRequest;
+use App\Http\Requests\Confirmation\ConfirmationRequest;
 use App\Models\Country;
 use App\Models\DeliveryMethod;
 use App\Models\PaymentMethod;
@@ -36,6 +37,16 @@ class CheckoutController extends Controller
         $basket->processShippingDetails($request);
         $basket->update($request->only('email', 'phone', 'customer_note', 'delivery_method_id', 'payment_method_id'));
 
-        return view('checkout.confirmation', compact('basket'));
+        return view('confirmation.show', compact('basket'));
+    }
+
+    public function storeAddress(StoreAddressRequest $request)
+    {
+        $address = $request->user()->addresses()->create($request->all());
+
+        return response([
+            'address' => $address,
+            'message' => trans('profiles.address_created'),
+        ]);
     }
 }

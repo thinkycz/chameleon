@@ -5,10 +5,12 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
+        addresses: [],
         basketItems: [],
         basketTotal: 0,
     },
     getters: {
+        getAddresses: state => state.addresses,
         getBasketItems: state => state.basketItems,
         getBasketTotal: state => (state.basketTotal ? state.basketTotal : ''),
     },
@@ -18,6 +20,12 @@ export const store = new Vuex.Store({
         },
         setBasketTotal: (state, total) => {
             state.basketTotal = total;
+        },
+        setAddresses: (state, addresses) => {
+            state.addresses = addresses;
+        },
+        addAddress: (state, address) => {
+            state.addresses.push(address);
         },
     },
 });

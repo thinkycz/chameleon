@@ -9,7 +9,7 @@ trait OrderHasProcessors
 {
     public function processBillingDetails(Request $request)
     {
-        $addressId = $request->get('billing_address_id');
+        $addressId = $request->get('billing_details_id');
         $address = User::getAuthenticatedUser()->addresses()->find($addressId);
 
         $billingDetails = $this->billingDetails()->updateOrCreate([], $address->toArray());
@@ -20,8 +20,8 @@ trait OrderHasProcessors
     public function processShippingDetails(Request $request)
     {
         $addressId = stringToBoolean($request->get('shipping_details'))
-        ? $request->get('billing_address_id')
-        : $request->get('shipping_address_id');
+        ? $request->get('billing_details_id')
+        : $request->get('shipping_details_id');
         $address = User::getAuthenticatedUser()->addresses()->find($addressId);
 
         $billingDetails = $this->billingDetails()->updateOrCreate([], $address->toArray());

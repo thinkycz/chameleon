@@ -1,6 +1,7 @@
 <template>
     <button :class="buttonClass"
         @click="openModal"
+        type="button"
         role="button">
         <span>{{ label }}</span>
 

@@ -34,4 +34,9 @@ class PaymentMethod extends Model implements HasMedia
     {
         return $this->getMedia('logo')->isNotEmpty() ? $this->getFirstMediaUrl('logo', 'thumb') : placeholderImage();
     }
+
+    public function getFormattedPriceAttribute()
+    {
+        return intval($this->price) ? showPriceWithCurrency($this->price, currentCurrency()) : trans('global.free');
+    }
 }

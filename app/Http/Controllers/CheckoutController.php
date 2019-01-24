@@ -8,6 +8,7 @@ use App\Models\Country;
 use App\Models\DeliveryMethod;
 use App\Models\PaymentMethod;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
 {
@@ -33,11 +34,23 @@ class CheckoutController extends Controller
     {
         $basket = activeBasket();
 
-        $basket->processBillingDetails($request);
-        $basket->processShippingDetails($request);
+        $basket->processBillingDetail($request);
+        $basket->processShippingDetail($request);
         $basket->update($request->only('email', 'phone', 'customer_note', 'delivery_method_id', 'payment_method_id'));
 
         return view('confirmation.show', compact('basket'));
+    }
+
+    public function complete()
+    {
+        $basket = activeBasket();
+        $basket->complete();
+
+        snackbar()->success(trans('checkout.order_was_placed'));
+
+        Session::flash('placed_order', $basket->id);
+
+        return redirect()->route('profiles.show');
     }
 
     public function storeAddress(StoreAddressRequest $request)

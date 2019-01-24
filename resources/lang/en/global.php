@@ -9,6 +9,7 @@ return [
     'updated'        => 'Updating completed.',
     'no_price'       => 'No price',
 
+    'free'           => 'Free',
     'confirm_action' => 'Please confirm your action',
     'confirm'        => 'Confirm',
     'cancel'         => 'Cancel',

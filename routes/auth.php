@@ -9,7 +9,7 @@ Route::get('basket', 'BasketController@show')->name('basket.show');
 // Checkout Routes
 Route::post('checkout/addresses/store', 'CheckoutController@storeAddress')->name('checkout.addresses.store');
 Route::post('checkout/confirm', 'CheckoutController@confirm')->name('checkout.confirm');
-Route::post('checkout/completed', 'CheckoutController@complete')->name('checkout.complete');
+Route::post('checkout/complete', 'CheckoutController@complete')->name('checkout.complete');
 Route::get('checkout', 'CheckoutController@show')->name('checkout.show');
 
 Route::post('products/{product}/basket', 'ProductController@basket')->name('products.basket');

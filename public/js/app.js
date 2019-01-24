@@ -62995,9 +62995,16 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        order: {
+            required: false,
+            default: null
+        }
+    },
+
     data: function data() {
         return {
-            current: null,
+            current: this.order,
             locale: window.currentLocale
         };
     },
@@ -71705,8 +71712,8 @@ var render = function() {
           ],
           attrs: {
             type: "radio",
-            id: "shipping_details_same",
-            name: "shipping_details"
+            id: "shipping_detail_same",
+            name: "shipping_detail"
           },
           domProps: { value: true, checked: _vm._q(_vm.same, true) },
           on: {
@@ -71720,7 +71727,7 @@ var render = function() {
           "label",
           {
             staticClass: "radio-label",
-            attrs: { for: "shipping_details_same" }
+            attrs: { for: "shipping_detail_same" }
           },
           [_vm._v(_vm._s(_vm.$trans("checkout.ship_to_billing")))]
         )
@@ -71740,8 +71747,8 @@ var render = function() {
           ],
           attrs: {
             type: "radio",
-            id: "shipping_details_diff",
-            name: "shipping_details"
+            id: "shipping_detail_diff",
+            name: "shipping_detail"
           },
           domProps: { value: false, checked: _vm._q(_vm.same, false) },
           on: {
@@ -71755,7 +71762,7 @@ var render = function() {
           "label",
           {
             staticClass: "radio-label",
-            attrs: { for: "shipping_details_diff" }
+            attrs: { for: "shipping_detail_diff" }
           },
           [_vm._v(_vm._s(_vm.$trans("checkout.ship_to_different")))]
         )

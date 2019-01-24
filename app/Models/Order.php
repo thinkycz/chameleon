@@ -32,6 +32,8 @@ class Order extends Model
         'noted',
         'customer_note',
         'status_id',
+        'delivery_method_id',
+        'payment_method_id',
     ];
 
     protected $dates = [
@@ -113,5 +115,10 @@ class Order extends Model
     public function hasOrderedItems()
     {
         return $this->orderedItems()->count();
+    }
+
+    public function complete()
+    {
+        return $this->update(['placed_at' => Carbon::now()]);
     }
 }

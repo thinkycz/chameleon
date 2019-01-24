@@ -24,18 +24,18 @@ class ConfirmationRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'billing_details_id' => 'required',
+            'billing_detail_id'  => 'required',
             'delivery_method_id' => 'required',
             'payment_method_id'  => 'required',
             'email'              => 'required|email',
             'phone'              => 'required',
         ];
 
-        $shippingSame = stringToBoolean($this->get('shipping_details'));
+        $shippingSame = stringToBoolean($this->get('shipping_detail'));
 
         if (!$shippingSame) {
             $rules = array_merge($rules, [
-                'shipping_details_id' => 'required',
+                'shipping_detail_id' => 'required',
             ]);
         }
 

@@ -1,8 +1,15 @@
 <script>
     export default {
+        props: {
+            order: {
+                required: false,
+                default: null,
+            },
+        },
+
         data() {
             return {
-                current: null,
+                current: this.order,
                 locale: window.currentLocale,
             };
         },

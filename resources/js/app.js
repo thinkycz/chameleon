@@ -92,6 +92,10 @@ Vue.component('vue-checkout-address-selector', require('./components/checkout/Ad
 Vue.component('vue-checkout-address-form', require('./components/checkout/AddressForm.vue'));
 Vue.component('vue-checkout-shipping-details', require('./components/checkout/ShippingDetails.vue'));
 
+// Dropdowns
+Vue.component('vue-per-page', require('./components/dropdowns/PerPage.vue'));
+Vue.component('vue-search-sort', require('./components/dropdowns/SearchSort.vue'));
+
 const app = new Vue({
     el: '#app',
     store,

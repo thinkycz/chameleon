@@ -108,14 +108,34 @@
 
 // Dropdown
 .dropdown {
-    @apply overflow-hidden absolute pin-t pin-l bg-white shadow-lg z-50 rounded border;
-    min-width: $dropdown-min-width;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-    &.active {
-        max-height: 999px;
-        transition: max-height 1s ease-in-out;
+    @apply flex justify-between items-center relative;
+
+    .dropdown-menu {
+        @apply absolute pin-l bg-white shadow z-50 rounded border;
+        min-width: 175px;
+        top: calc(100% + 18px);
+
+        li {
+            @apply w-full text-left;
+            @include transition(background-color);
+            &:hover {
+                @apply bg-grey-lightest;
+            }
+            a {
+                @apply px-4 py-3 text-grey-darker block font-bold uppercase text-xs w-full;
+            }
+        }
+
+        svg {
+            width: 46px;
+            height: 23px;
+            @apply absolute z-50;
+            top: -1.45rem;
+            left: 2rem;
+            .dropdown-svg-path {
+                stroke: var(--grey-light);
+            }
+        }
     }
 }
 

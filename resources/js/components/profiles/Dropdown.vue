@@ -1,29 +1,7 @@
 <script>
-    import vClickOutside from 'v-click-outside';
+    import { DropdownMixin } from './../../mixins/dropdown';
 
     export default {
-        data: () => ({
-            visible: false,
-        }),
-
-        methods: {
-            toggle() {
-                this.visible = !this.visible;
-            },
-
-            close(e) {
-                if (this.visible) {
-                    this.visible = false;
-                }
-            },
-
-            blank() {
-                // do nothing (to prevent propagation)
-            },
-        },
-
-        directives: {
-            clickOutside: vClickOutside.directive,
-        },
+        mixins: [DropdownMixin],
     };
 </script>

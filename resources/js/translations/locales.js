@@ -8,6 +8,7 @@ export default {
             "close": "Close",
             "updated": "Updating completed.",
             "no_price": "No price",
+            "free": "Free",
             "confirm_action": "Please confirm your action",
             "confirm": "Confirm",
             "cancel": "Cancel"
@@ -88,7 +89,10 @@ export default {
             "billing_and_shipping_details": "Billing & Shipping Details",
             "select_existing_address": "Select existing address",
             "addresses_empty": "You dont have any addresses added to your account. Please add new one by clicking on the button below, and select that address for your billing/shipping details after you have created it.",
-            "add_new_address": "Add new address"
+            "add_new_address": "Add new address",
+            "ordered_items": "Ordered Items",
+            "complete_order": "Complete order",
+            "order_was_placed": "Your order has been placed!"
         },
         "basket": {
             "delete_item": "Delete from Basket",
@@ -100,7 +104,10 @@ export default {
             "payment_method": "Payment Method",
             "basket_empty": "You dont have any products in your basket. ",
             "continue_shopping": "Continue Shopping",
+            "basket_emptied": "Your basket has been emptied",
             "basket_quantity_update_err": "Some ordered items quantities were not updated.",
+            "basket_quantity_updated": "Ordered items quantities updated",
+            "ordered_item_removed": "Ordered item removed",
             "successfully_deleted": "Successfully deleted",
             "successfully_updated": "Successfully updated",
             "basket": "Basket",
@@ -112,6 +119,9 @@ export default {
             "login": "Login",
             "register": "Register",
             "my_profile": "My profile",
+            "my_address_book": "Address Book",
+            "my_details": "Profile details",
+            "my_privacy": "Profile privacy",
             "logout": "Logout",
             "what_are_you_looking": "What are you looking for?",
             "products": "Products",

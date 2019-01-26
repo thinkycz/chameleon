@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Services\SearchService;
 
 class SearchController extends Controller
 {
-    public function index()
+    public function index(SearchService $search)
     {
-        // TODO:: Change this with real params
-        $products = Product::inRandomOrder()->take(6)->get();
+        $products = $search->fetch()->paginate(request('per_page', config('config.products_default_pagination')));
 
         return view('search.index', compact('products'));
     }

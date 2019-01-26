@@ -41,7 +41,7 @@
         "spatie/laravel-translatable": "^3.1",
         "spatie/nova-tags-field": "^1.1",
         "timothyasp/nova-color-field": "^1.0",
-        "nulisec/google-sheets-importer": "*"
+        "teamtnt/laravel-scout-tntsearch-driver": "^3.2"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -126,6 +126,8 @@
             "php artisan view:clear",
             "php artisan db:seed",
             "php artisan db:seed --class=SampleSeeder",
+            "php artisan scout:import 'App\\Models\\Product'",
+            "php artisan vue-i18n:generate",
             "php artisan link:directories",
             "php artisan ide-helper:generate",
             "php artisan ide-helper:models",

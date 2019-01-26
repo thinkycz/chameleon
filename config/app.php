@@ -179,6 +179,7 @@ return [
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
         App\Providers\TagHelperServiceProvider::class,
+        App\Providers\MacroServiceProvider::class,
 
     ],
 

@@ -4,6 +4,7 @@
 /public/fonts
 /public/images
 /storage/*.key
+/storage/*.index
 /resources/js/translations/locales.js
 /vendor
 /.idea

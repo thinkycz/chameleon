@@ -10,6 +10,8 @@ return [
     'alphabetically'      => 'Alphabetically',
     'newest'              => 'Newest',
 
+    'more_filters'        => 'More Filters',
+
     'order_by_date_added' => 'Order by date added',
     'order_by_price_desc' => 'Order by price descending',
     'order_by_price_asc'  => 'Order by price ascending',

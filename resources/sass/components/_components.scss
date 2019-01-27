@@ -59,6 +59,12 @@
             @apply text-danger-darker;
         }
     }
+    &.btn-default {
+        @apply text-grey-darker;
+        &:hover {
+            @apply text-grey-darkest;
+        }
+    }
     &.btn-sm {
         @apply h-8;
         line-height: 1rem;
@@ -103,6 +109,18 @@
 .icon-4x {
     .icon {
         @apply w-24 h-24;
+    }
+}
+
+// Accordion
+.accordion {
+    @apply overflow-hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    &.open {
+        max-height: 999px;
+        transition: max-height 1s ease-in-out;
     }
 }
 

@@ -24,11 +24,13 @@ export default {
             "hide_without_prices": "Hide without prices",
             "in_stock_only": "In stock only",
             "per_page": "Per Page",
+            "relevance": "Relevance",
+            "alphabetically": "Alphabetically",
+            "newest": "Newest",
             "order_by_date_added": "Order by date added",
             "order_by_price_desc": "Order by price descending",
             "order_by_price_asc": "Order by price ascending",
-            "order_by_alphabet": "Order alphabetically",
-            "order_by_rating": "Order by rating"
+            "order_by_alphabet": "Order alphabetically"
         },
         "auth": {
             "failed": "These credentials do not match our records.",
@@ -273,6 +275,9 @@ export default {
         },
         "partials": {
             "there_are_errors": "There are some errors in your form, please fix them before submitting again."
+        },
+        "categories": {
+            "products_count": "{count} products"
         },
         "preferences": {
             "default_country": "Default Country",

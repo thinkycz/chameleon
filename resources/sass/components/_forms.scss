@@ -55,7 +55,7 @@
             + .radio-label {
                 &:before {
                     content: '';
-                    @apply bg-grey-lighter rounded-full border inline-block w-6 h-6 relative mr-4 align-top text-center cursor-pointer;
+                    @apply bg-grey-lighter rounded-full border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
                     top: -0.2em;
                     @include transition(all);
                 }
@@ -100,7 +100,7 @@
             + .checkbox-label {
                 &:before {
                     content: '';
-                    @apply bg-grey-lighter rounded border inline-block w-6 h-6 relative mr-4 align-top text-center cursor-pointer;
+                    @apply bg-grey-lighter rounded border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
                     top: -0.2em;
                     @include transition(all);
                 }

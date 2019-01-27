@@ -5,7 +5,7 @@
 
         <vue-dropdown inline-template>
             <div class="dropdown dropdown-categories" @click.stop="toggle">
-                <span class="menu-toggler">
+                <span class="menu-toggler cursor-pointer">
                     <icon-menu></icon-menu>
                 </span>
 

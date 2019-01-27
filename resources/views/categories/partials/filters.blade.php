@@ -27,5 +27,13 @@
             </div>
         </div>
 
+        <div class="col-12">
+            <vue-accordion accordion="more-filters" label="&plus; {{ trans('filters.more_filters') }}" button-class="btn-text btn-default mt-2">
+                @include('categories.partials.more_filters')
+            </vue-accordion>
+
+            <portal-target name="more-filters"></portal-target>
+        </div>
+
     </div>
 </div>

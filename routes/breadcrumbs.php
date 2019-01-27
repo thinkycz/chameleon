@@ -40,7 +40,7 @@ Breadcrumbs::register('categories.show', function ($breadcrumbs, Category $categ
 // Home > Category > {Product}
 Breadcrumbs::register('products.show', function ($breadcrumbs, Product $product) {
     if ($product->hasCategory()) {
-        $breadcrumbs->parent('category', $product->getFirstCategory());
+        $breadcrumbs->parent('categories.show', $product->getFirstCategory());
     } else {
         $breadcrumbs->parent('home');
     }

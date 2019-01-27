@@ -13,6 +13,9 @@ return [
     'quantity_updated'      => 'Product quantity updated',
     'added_to_basket'       => 'Product added to basket',
 
+    'related_products'      => 'Related products',
+    'product_details'       => 'Read product details',
+
     'increase_the_quantity' => 'Please increase the quantity.',
 
     'this_product_is_stock' => 'This product is currently in <strong> :stock.</strong>',

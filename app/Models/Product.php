@@ -4,6 +4,9 @@ namespace App\Models;
 
 use App\Traits\ModelHasDateFormatted;
 use App\Traits\ModelIsTableColumnsAware;
+use App\Traits\Product\ProductHasAttributes;
+use App\Traits\Product\ProductHasEligibilities;
+use App\Traits\Product\ProductHasRecommendations;
 use App\Traits\Product\ScopeOnlyAvailable;
 use App\Traits\Product\ScopeOnlyWithPrice;
 use App\Traits\Product\ScopeProcessFilters;
@@ -34,6 +37,9 @@ class Product extends Model implements HasMedia
     use ScopeWhereLike;
     use ScopeOnlyAvailable;
     use ScopeOnlyWithPrice;
+    use ProductHasAttributes;
+    use ProductHasEligibilities;
+    use ProductHasRecommendations;
 
     protected $appends = [
         'thumb',

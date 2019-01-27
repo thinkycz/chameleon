@@ -10,8 +10,9 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $product->load('media', 'tags', 'properties', 'categories', 'prices');
+        $relatedProducts = $product->getRelatedRecommendations();
 
-        return view('products.show', compact('product'));
+        return view('products.show', compact('product', 'relatedProducts'));
     }
 
     public function basket(Request $request, Product $product)

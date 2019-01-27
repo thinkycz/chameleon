@@ -29,7 +29,8 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     protected $dates = [
@@ -107,5 +108,10 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
             ->with('orderedItems.product')
             ->whereNull('placed_at')
             ->firstOrCreate([]);
+    }
+
+    public function getPriceLevel()
+    {
+        return $this->priceLevel ?? preferenceRepository()->getDefaultPriceLevel() ?? PriceLevel::first();
     }
 }

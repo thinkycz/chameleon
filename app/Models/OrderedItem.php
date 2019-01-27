@@ -61,7 +61,7 @@ class OrderedItem extends Model
 
     public function getTotalPriceExclVatAttribute()
     {
-        return $this->quantity * $this->price_excl_vat;
+        return $this->quantity_ordered * $this->price_excl_vat;
     }
 
     public function getFormattedTotalPriceExclVatAttribute()

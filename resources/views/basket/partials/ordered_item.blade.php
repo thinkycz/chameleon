@@ -3,7 +3,9 @@
         <img src="{{ $orderedItem->product->thumb }}">
     </div>
     <div class="name">
-        <p class="p-big">{{ $orderedItem->product->name }}</p>
+        <p class="p-big">
+            <a href="{{ route('products.show', $orderedItem->product) }}" class="text-grey-darkest">{{ $orderedItem->product->name }}</a>
+        </p>
         <p class="p-small">
             @if($orderedItem->product->barcode)
                 <span class="mr-4">{{ trans('products.barcode') }}<strong class="ml-1">{{ $orderedItem->product->barcode }}</strong></span>

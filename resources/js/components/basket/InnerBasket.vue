@@ -10,7 +10,10 @@
                             class="rounded-lg-img">
                     </div>
                     <div class="inline-block mr-4 w-1/2">
-                        <p class="p-big text-left text-sm">{{ item.name }}</p>
+                        <p class="p-big text-left text-sm">
+                            <a :href="item.product.show_path"
+                                class="text-grey-darkest">{{ item.name }}</a>
+                        </p>
                         <p class="p-small text-left">
                             <span class="mr-4">{{ item.quantity_ordered }}&times;<strong>{{ item.formatted_price }}</strong></span>
                             <span>{{ $trans('basket.total') }}&nbsp;<strong class="text-primary">{{ item.formatted_total_price }}</strong></span>

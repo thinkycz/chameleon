@@ -11,7 +11,7 @@ class ProductRepository
 {
     public function getProductsForCategory(Category $category)
     {
-        $products = Product::with('media', 'tags', 'properties', 'categories', 'prices')
+        $products = Product::with('tags', 'availability', 'properties', 'categories', 'unit')
             ->whereEnabled(true)
             ->processCategoryClient($category)
             ->processPriceRangeClient(request());
@@ -23,7 +23,7 @@ class ProductRepository
     {
         return $products->processTagsClient(request())
             ->onlyAvailable(request()->get('in_stock_only'))
-            ->onlyWithPrice(request()->get('only_with_price'), currentUser()->priceLevel)
+            ->onlyWithPrice(request()->get('only_with_price'), currentUser()->getPriceLevel())
             ->processPropertiesClient(request())
             ->processSortingClient(request())
             ->paginate(request()->get('per_page') ?: config('config.products_default_pagination'));

@@ -3,8 +3,9 @@
         <img src="{{ $orderedItem->product->thumb }}">
     </div>
     <div class="name">
-        <p class="p-big">{{ $orderedItem->product->name }}</p>
-
+        <p class="p-big">
+            <a href="{{ route('products.show', $orderedItem->product) }}" class="text-grey-darkest">{{ $orderedItem->product->name }}</a>
+        </p>
     </div>
     <div class="ordered">
         <p class="text-xl text-primary mb-0 font-bold">{{ $orderedItem->formatted_price }}</p>

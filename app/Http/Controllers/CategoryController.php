@@ -15,7 +15,8 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = Category::withCount('products')
+        $categories = Category::with('media')
+            ->withCount('products')
             ->whereEnabled(true)
             ->whereIsRoot()
             ->get();

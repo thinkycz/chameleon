@@ -29,7 +29,6 @@ if (!function_exists('activeBasket')) {
 if (!function_exists('currentCurrency')) {
     function currentCurrency()
     {
-        // TODO:: implement
-        return Currency::whereEnabled(true)->first();
+        return preferenceRepository()->getDefaultCurrency();
     }
 }

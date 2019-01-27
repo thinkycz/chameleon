@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-        $product->load('media', 'tags', 'properties', 'categories', 'prices');
+        $product->load('tags', 'availability', 'properties', 'categories', 'unit');
         $relatedProducts = $product->getRelatedRecommendations();
 
         return view('products.show', compact('product', 'relatedProducts'));

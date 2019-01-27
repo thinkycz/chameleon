@@ -58,6 +58,11 @@ class Product extends Model implements HasMedia
         'minimum_order_quantity',
     ];
 
+    protected $with = [
+        'prices',
+        'media',
+    ];
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
@@ -106,8 +111,7 @@ class Product extends Model implements HasMedia
 
     public function getPrice()
     {
-        // TODO:: implement for current user's price level
-        return $this->prices()->first();
+        return $this->prices->where('price_level_id', currentUser()->getPriceLevel()->id)->first();
     }
 
     public function hasCategory()

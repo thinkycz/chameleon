@@ -102,6 +102,14 @@ class PreferenceRepository extends InstanceCache
     }
 
     /**
+     * @return OrderStatus
+     */
+    public function getDefaultPriceLevel()
+    {
+        return $this->getPreference('default_price_level');
+    }
+
+    /**
      * @param string $key
      * @return mixed
      */

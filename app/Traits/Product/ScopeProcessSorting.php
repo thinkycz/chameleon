@@ -20,9 +20,9 @@ trait ScopeProcessSorting
             case 'relevance':
                 return $query->orderBy('created_at', 'desc');
             case 'price_asc':
-                return $query->orderByPrice(currentUser()->priceLevel, 'asc');
+                return $query->orderByPrice(currentUser()->getPriceLevel(), 'asc');
             case 'price_desc':
-                return $query->orderByPrice(currentUser()->priceLevel, 'desc');
+                return $query->orderByPrice(currentUser()->getPriceLevel(), 'desc');
             case 'alphabetically':
                 return $query->orderBy("name");
             default:

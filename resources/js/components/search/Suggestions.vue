@@ -12,30 +12,10 @@
                     <transition-group name="list"
                         tag="ul"
                         class="row">
-                        <li v-for="(product, index) in products"
+                        <product v-for="(product, index) in products"
                             :key="'product-' + index"
-                            :style="appendStyle(index)"
-                            class="list-item col-half">
-                            <div class="image">
-                                <img class="rounded-lg-img"
-                                    :src="product.thumb"
-                                    :alt="product.slug">
-                            </div>
-                            <div class="data">
-                                <h4>
-                                    <a class="truncate"
-                                        :href="product.show_path">{{ product.name }}</a>
-                                </h4>
-                                <p class="text-xs text-grey-darker mb-0">
-                                    <span v-if="product.catalogue_number">{{ $trans('products.catalogue_number') }}<strong class="ml-1">{{ product.catalogue_number }}</strong></span>
-                                    <span v-if="product.barcode">{{ $trans('products.barcode') }}<strong class="ml-1">{{ product.barcode }}</strong></span>
-                                </p>
-                                <p class="mb-0"
-                                    v-if="(showPrices && product.formatted_price)">
-                                    <span class="price mr-1 inline-block">{{ product.formatted_price }}</span>
-                                </p>
-                            </div>
-                        </li>
+                            :product="product"
+                            :additionalStyle="appendStyle(index)"></product>
                     </transition-group>
                 </template>
             </transition>
@@ -44,6 +24,7 @@
 </template>
 
 <script>
+    import Product from './Product';
     import { throttle } from 'lodash';
 
     export default {
@@ -66,7 +47,7 @@
         methods: {
             getItems: throttle(function() {
                 axios.get(`/ajax/search?query=${this.query}`).then(({ data }) => {
-                    this.products = data.products;
+                    this.products = data.data;
                 });
             }, 1000),
 
@@ -91,6 +72,10 @@
                     this.getItems();
                 }
             },
+        },
+
+        components: {
+            Product,
         },
     };
 </script>

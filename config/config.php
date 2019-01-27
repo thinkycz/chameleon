@@ -20,4 +20,9 @@ return [
      * Default pagination for product cards.
      */
     'products_default_pagination' => env('PRODUCTS_DEFAULT_PAGINATION', 48),
+
+    /*
+     * Number if results in search autocomplete suggestion box
+     */
+    'autocomplete_results_count'  => env('AUTOCOMPLETE_RESULTS_COUNT', 8),
 ];

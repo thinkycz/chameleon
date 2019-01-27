@@ -5,7 +5,7 @@
         <button type="button"
             class="btn-text btn-primary has-dropdown"
             @click.prevent.stop="visible = !visible">
-            <span>{{ currentLabel }}</span>
+            {{ currentLabel }}
         </button>
 
         <transition name="fade">

@@ -3,6 +3,8 @@
 /public/storage
 /public/fonts
 /public/images
+/public/js
+/public/css
 /storage/*.key
 /storage/*.index
 /resources/js/translations/locales.js

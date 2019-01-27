@@ -3,20 +3,14 @@
 namespace App\Http\Controllers\Ajax;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Services\SearchService;
 
 class SearchController extends Controller
 {
-    public function search(Request $request)
+    public function search(SearchService $search)
     {
-        $query = $request->get('query');
+        $products = $search->fetch()->paginate(config('config.autocomplete_results_count'));
 
-        // TODO:: implement elastic
-        $products = Product::whereLike('name', $query)->take(4)->get();
-
-        return [
-            'products' => $products,
-        ];
+        return $products;
     }
 }

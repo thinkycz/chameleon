@@ -93,6 +93,11 @@ class Product extends Model implements HasMedia
         return ['name^3', 'barcode^2', 'catalogue_number^2', 'description', 'details'];
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function getPrice()
     {
         // TODO:: implement for current user's price level

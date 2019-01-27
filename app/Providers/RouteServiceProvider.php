@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +25,17 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::bind('product', function ($value) {
+            return Product::where('slug', $value)->firstOr(function () use ($value) {
+                return Product::find($value);
+            });
+        });
+
+        Route::bind('category', function ($value) {
+            return Category::where('slug', $value)->firstOr(function () use ($value) {
+                return Category::find($value);
+            });
+        });
 
         parent::boot();
     }

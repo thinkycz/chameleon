@@ -1,7 +1,10 @@
-<div class="method">
-    <div class="method-image">
-        <img src="{{ $paymentMethod->logo }}" alt="{{ str_slug($paymentMethod->name) }}"/>
+<div class="input-wrap -mx-2">
+    <div class="radio">
+        <input type="radio"
+            id="{{ str_slug($paymentMethod->name) }}"
+            value="{{ $paymentMethod->id }}"
+            name="payment_method_id">
+        <label for="{{ str_slug($paymentMethod->name) }}"
+            class="radio-label text-sm"><span>{{ $paymentMethod->name }}</span> <span class="inline-block float-right text-primary">{{ $paymentMethod->formatted_price }}</span></label>
     </div>
-    <input class="method-option" type="radio" name="payment_method_id" id="{{ str_slug($paymentMethod->name) }}" value="{{ $paymentMethod->id }}"/>
-    <label class="method-label" for="{{ str_slug($paymentMethod->name) }}">{{ $paymentMethod->name }}</label>
 </div>

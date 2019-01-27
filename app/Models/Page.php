@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\ModelHasDateFormatted;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -9,6 +10,7 @@ use Spatie\Sluggable\SlugOptions;
 class Page extends Model
 {
     use HasSlug;
+    use ModelHasDateFormatted;
 
     public function getSlugOptions(): SlugOptions
     {

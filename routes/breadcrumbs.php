@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Category;
+use App\Models\Page;
 use App\Models\Product;
 
 // Home
@@ -12,6 +13,12 @@ Breadcrumbs::for('home', function ($breadcrumbs) {
 Breadcrumbs::register('categories.index', function ($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push(trans('breadcrumbs.categories'), route('categories.index'));
+});
+
+// Home > {Page}
+Breadcrumbs::register('pages.show', function ($breadcrumbs, Page $page) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push($page->title, route('pages.show', $page));
 });
 
 // Home > Categories > Category

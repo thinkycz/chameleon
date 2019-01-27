@@ -1,10 +1,10 @@
 <div class="card filters mb-6 p-2">
     <div class="row items-center">
         <div class="col-half">
-            <div class="icon-wrap">
-                <span class="text-primary mr-4">
+            <div class="icon-wrap px-2">
+                <!-- <span class="text-primary mr-4">
                     <icon-filter></icon-filter>
-                </span>
+                </span> -->
 
                 <vue-sort-products :authenticated="{{ booleanToString(auth()->check()) }}"></vue-sort-products>
                 <vue-per-page :default-pagination="{{ config('config.products_default_pagination') }}"></vue-per-page>

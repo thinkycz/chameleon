@@ -41,7 +41,7 @@
             @apply pr-10;
         }
         .addon {
-            @apply border-l absolute h-full leading-normal text-sm pin-t pin-r px-1 font-semibold;
+            @apply border-l absolute h-full leading-normal text-sm pin-t pin-r px-1;
             span {
                 @apply relative;
                 top: 5px;
@@ -70,7 +70,7 @@
             + .radio-label {
                 &:before {
                     content: '';
-                    @apply bg-grey-lighter rounded-full border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
+                    @apply bg-grey-lightest rounded-full border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
                     top: -0.2em;
                     @include transition(all);
                 }
@@ -79,7 +79,7 @@
                 + .radio-label {
                     &:before {
                         @apply bg-primary;
-                        box-shadow: inset 0 0 0 4px var(--grey-lighter);
+                        box-shadow: inset 0 0 0 4px var(--grey-lightest);
                     }
                 }
             }
@@ -93,7 +93,7 @@
             &:disabled {
                 + .radio-label {
                     &:before {
-                        box-shadow: inset 0 0 0 4px var(--grey-lighter);
+                        box-shadow: inset 0 0 0 4px var(--grey-lightest);
                         @apply bg-grey-darker border-grey-darker;
                     }
                 }
@@ -115,7 +115,7 @@
             + .checkbox-label {
                 &:before {
                     content: '';
-                    @apply bg-grey-lighter rounded border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
+                    @apply bg-grey-lightest rounded border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
                     top: -0.2em;
                     @include transition(all);
                 }
@@ -124,7 +124,7 @@
                 + .checkbox-label {
                     &:before {
                         @apply bg-primary;
-                        box-shadow: inset 0 0 0 4px var(--grey-lighter);
+                        box-shadow: inset 0 0 0 4px var(--grey-lightest);
                     }
                 }
             }
@@ -139,7 +139,7 @@
                 + .checkbox-label {
                     &:before {
                         box-shadow: inset 0 0 0 4px var(--grey-lighter);
-                        @apply bg-grey-darker border-grey-darker;
+                        @apply bg-grey-dark border-grey-dark;
                     }
                 }
             }

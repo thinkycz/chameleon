@@ -2,10 +2,10 @@
     <div class="row items-center">
 
         <div class="col w-full md:w-2/3">
-            <div class="icon-wrap">
-                <span class="text-primary mr-4">
+            <div class="icon-wrap px-2">
+                <!-- <span class="text-primary mr-4">
                     <icon-filter></icon-filter>
-                </span>
+                </span> -->
 
                 <vue-sort-products :authenticated="{{ booleanToString(auth()->check()) }}" :newest="true"></vue-sort-products>
                 <vue-per-page :default-pagination="{{ config('config.products_default_pagination') }}"></vue-per-page>
@@ -36,12 +36,12 @@
             </div>
         </div>
 
-        <div class="col-12">
+        <div class="col-12 mx-2 border-t">
 
             <vue-accordion accordion="more-filters"
                 :open="{{ booleanToString(request()->has('price_min') || request()->has('price_max')) }}"
-                label="&plus; {{ trans('filters.more_filters') }}"
-                button-class="btn-text btn-default mt-2 uppercase text-xs"
+                label="{{ trans('filters.more_filters') }}"
+                button-class="btn-text btn-default mt-2 uppercase text-xs has-dropdown default"
             >
                 @include('categories.partials.more_filters')
             </vue-accordion>

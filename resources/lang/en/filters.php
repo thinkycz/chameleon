@@ -15,6 +15,9 @@ return [
     'filter'              => 'Filter',
     'filter_by_price'     => 'Filter by price',
 
+    'price_min' => 'Min price',
+    'price_max' => 'Max price',
+
     'tags'                => 'Tags',
     'subcategories'       => 'Subcategories',
 

@@ -1,8 +1,8 @@
 <template>
-    <vue-filterdropdown name="per_page"
+    <vue-base-dropdown name="per_page"
         :label="defaultOption.label"
         :options="options">
-    </vue-filterdropdown>
+    </vue-base-dropdown>
 </template>
 
 <script>

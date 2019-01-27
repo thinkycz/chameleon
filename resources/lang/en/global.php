@@ -15,4 +15,9 @@ return [
     'confirm_action'   => 'Please confirm your action',
     'confirm'          => 'Confirm',
     'cancel'           => 'Cancel',
+
+    // Locales
+    'locales.en'       => 'English',
+    'locales.vi'       => 'Vietnamese',
+    'locales.cs'       => 'Czech',
 ];

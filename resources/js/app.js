@@ -64,6 +64,9 @@ elements.keys().map(key => {
     Vue.component(`vue-${component}`, elements(key));
 });
 
+// Base
+Vue.component('vue-base-dropdown', require('./components/base/Dropdown.vue'));
+
 // Profile
 Vue.component('vue-profile', require('./components/profiles/Profile.vue'));
 Vue.component('vue-addresses', require('./components/profiles/Addresses.vue'));
@@ -98,6 +101,7 @@ Vue.component('vue-sort-products', require('./components/dropdowns/SortProducts.
 Vue.component('vue-dropdown', require('./components/dropdowns/Dropdown.vue'));
 Vue.component('vue-tags-dropdown', require('./components/dropdowns/Tags.vue'));
 Vue.component('vue-subcategories-dropdown', require('./components/dropdowns/Subcategories.vue'));
+Vue.component('vue-languages', require('./components/dropdowns/Languages.vue'));
 
 const app = new Vue({
     el: '#app',

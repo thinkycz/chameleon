@@ -1,8 +1,8 @@
 <template>
-    <vue-filterdropdown name="subcategory"
+    <vue-base-dropdown name="subcategory"
         :label="$trans('filters.subcategories')"
         :options="items">
-    </vue-filterdropdown>
+    </vue-base-dropdown>
 </template>
 
 <script>

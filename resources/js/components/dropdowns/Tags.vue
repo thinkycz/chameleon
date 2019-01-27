@@ -1,8 +1,8 @@
 <template>
-    <vue-filterdropdown name="tags"
+    <vue-base-dropdown name="tags"
         :label="$trans('filters.tags')"
         :options="items">
-    </vue-filterdropdown>
+    </vue-base-dropdown>
 </template>
 
 <script>

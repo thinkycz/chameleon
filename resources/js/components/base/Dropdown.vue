@@ -47,6 +47,11 @@
             name: {
                 required: true,
             },
+
+            page: {
+                required: false,
+                default: true,
+            },
         },
 
         computed: {
@@ -76,7 +81,10 @@
                 let parsed = queryString.parse(window.location.search);
 
                 parsed[this.name] = event.target.dataset.value;
-                parsed.page = 1;
+
+                if (this.page) {
+                    parsed.page = 1;
+                }
 
                 window.location.search = queryString.stringify(parsed);
             },

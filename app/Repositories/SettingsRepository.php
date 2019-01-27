@@ -10,4 +10,9 @@ class SettingsRepository
     {
         return Setting::fetch($code, $key);
     }
+
+    public function configuration($code)
+    {
+        return Setting::loadConfiguration($code);
+    }
 }

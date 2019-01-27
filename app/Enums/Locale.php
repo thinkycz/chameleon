@@ -11,9 +11,9 @@ abstract class Locale
     public static function all()
     {
         return [
-            static::ENGLISH    => 'English',
-            static::CZECH      => 'Czech',
-            static::VIETNAMESE => 'Vietnamese'
+            static::ENGLISH    => trans('global.locales.en'),
+            static::CZECH      => trans('global.locales.cs'),
+            static::VIETNAMESE => trans('global.locales.vi'),
         ];
     }
 

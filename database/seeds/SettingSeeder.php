@@ -22,15 +22,15 @@ class SettingSeeder extends Seeder
                     'keywords'    => ['type' => 'string'],
                     'logo'        => ['type' => 'string'],
                     'favicon'     => ['type' => 'string'],
-                ]
+                ],
             ],
             'data'   => [
                 'name'        => 'Chameleon',
                 'description' => 'Chameleon Store',
                 'keywords'    => 'store,ecommerce,eshop',
                 'logo'        => null,
-                'favicon'     => null
-            ]
+                'favicon'     => null,
+            ],
         ]);
 
         Setting::updateOrCreate(['code' => 'company_details'], [
@@ -47,7 +47,7 @@ class SettingSeeder extends Seeder
                     'email'     => ['type' => 'string'],
                     'phone'     => ['type' => 'string'],
                     'vat_payer' => ['type' => 'boolean'],
-                ]
+                ],
             ],
             'data'   => [
                 'name'      => 'Nulisec',
@@ -58,8 +58,8 @@ class SettingSeeder extends Seeder
                 'vatid'     => 'CZ06359621',
                 'email'     => 'team@nulisec.com',
                 'phone'     => '+420 702 096 113',
-                'vat_payer' => true
-            ]
+                'vat_payer' => true,
+            ],
         ]);
 
         Setting::updateOrCreate(['code' => 'business_hours'], [
@@ -74,7 +74,7 @@ class SettingSeeder extends Seeder
                     'fr' => ['type' => 'string'],
                     'sa' => ['type' => 'string'],
                     'su' => ['type' => 'string'],
-                ]
+                ],
             ],
             'data'   => [
                 'mo' => '8:00 - 18:00',
@@ -84,7 +84,7 @@ class SettingSeeder extends Seeder
                 'fr' => '8:00 - 18:00',
                 'sa' => '8:00 - 18:00',
                 'su' => 'closed',
-            ]
+            ],
         ]);
 
         Setting::updateOrCreate(['code' => 'shopping_policy'], [
@@ -96,14 +96,14 @@ class SettingSeeder extends Seeder
                     'hide_out_of_stock'         => ['type' => 'boolean'],
                     'hide_prices_for_guests'    => ['type' => 'boolean'],
                     'allow_residual_qty_orders' => ['type' => 'boolean'],
-                ]
+                ],
             ],
             'data'   => [
                 'company_id_required'       => true,
                 'hide_out_of_stock'         => false,
                 'hide_prices_for_guests'    => true,
                 'allow_residual_qty_orders' => true,
-            ]
+            ],
         ]);
 
         Setting::updateOrCreate(['code' => 'verification_policy'], [
@@ -114,13 +114,13 @@ class SettingSeeder extends Seeder
                     'require_admin_verification'      => ['type' => 'boolean'],
                     'require_email_verification'      => ['type' => 'boolean'],
                     'require_address_on_registration' => ['type' => 'boolean'],
-                ]
+                ],
             ],
             'data'   => [
                 'require_admin_verification'      => true,
                 'require_email_verification'      => false,
-                'require_address_on_registration' => true
-            ]
+                'require_address_on_registration' => true,
+            ],
         ]);
 
         Setting::updateOrCreate(['code' => 'watermark_settings'], [
@@ -132,13 +132,13 @@ class SettingSeeder extends Seeder
                     'image'    => ['type' => 'string'],
                     'opacity'  => ['type' => 'number'],
                     'position' => ['type' => 'string'],
-                ]
+                ],
             ],
             'data'   => [
                 'enabled'  => false,
                 'image'    => '',
                 'opacity'  => 50,
-                'position' => 'center'
+                'position' => 'center',
             ],
         ]);
 
@@ -147,12 +147,13 @@ class SettingSeeder extends Seeder
                 'type'       => 'object',
                 'required'   => ['value'],
                 'properties' => [
-                    'value' => ['type' => 'boolean']
-                ]
+                    'value' => ['type' => 'boolean'],
+                ],
             ],
             'data'   => [
-                'value' => true
+                'value' => true,
             ],
         ]);
+
     }
 }

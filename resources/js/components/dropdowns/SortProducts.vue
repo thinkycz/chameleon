@@ -1,8 +1,8 @@
 <template>
-    <vue-filterdropdown name="sort"
+    <vue-base-dropdown name="sort"
         :label="this.options[0].label"
         :options="options">
-    </vue-filterdropdown>
+    </vue-base-dropdown>
 </template>
 
 <script>

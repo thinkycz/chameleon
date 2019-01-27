@@ -3,6 +3,11 @@
 namespace App\Models;
 
 use App\Traits\ModelHasDateFormatted;
+use App\Traits\ModelIsTableColumnsAware;
+use App\Traits\Product\ScopeOnlyAvailable;
+use App\Traits\Product\ScopeOnlyWithPrice;
+use App\Traits\Product\ScopeProcessFilters;
+use App\Traits\Product\ScopeProcessSorting;
 use App\Traits\ReusableScopes\ScopeWhereLike;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
@@ -21,8 +26,14 @@ class Product extends Model implements HasMedia
     use NodeTrait;
     use HasMediaTrait;
     use Searchable;
-    use ScopeWhereLike;
+
+    use ModelIsTableColumnsAware;
     use ModelHasDateFormatted;
+    use ScopeProcessSorting;
+    use ScopeProcessFilters;
+    use ScopeWhereLike;
+    use ScopeOnlyAvailable;
+    use ScopeOnlyWithPrice;
 
     protected $appends = [
         'thumb',

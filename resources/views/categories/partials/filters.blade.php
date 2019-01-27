@@ -1,15 +1,17 @@
 <div class="card filters mb-6 p-2">
     <div class="row items-center">
+
         <div class="col-half">
             <div class="icon-wrap">
                 <span class="text-primary mr-4">
                     <icon-filter></icon-filter>
                 </span>
 
-                <vue-sort-products :authenticated="{{ booleanToString(auth()->check()) }}"></vue-sort-products>
+                <vue-sort-products :authenticated="{{ booleanToString(auth()->check()) }}" :newest="true"></vue-sort-products>
                 <vue-per-page :default-pagination="{{ config('config.products_default_pagination') }}"></vue-per-page>
             </div>
         </div>
+
         <div class="col-half">
             <div class="flex flex-wrap justify-between md:justify-end">
                 <vue-filtercheckbox id="only_with_price"
@@ -24,5 +26,6 @@
                 </vue-filtercheckbox>
             </div>
         </div>
+
     </div>
 </div>

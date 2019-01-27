@@ -9,14 +9,14 @@ Breadcrumbs::for('home', function ($breadcrumbs) {
 });
 
 // Home > Categories
-Breadcrumbs::register('categories', function ($breadcrumbs) {
+Breadcrumbs::register('categories.index', function ($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push(trans('breadcrumbs.categories'), route('categories.index'));
 });
 
 // Home > Categories > Category
-Breadcrumbs::register('category', function ($breadcrumbs, Category $category) {
-    $breadcrumbs->parent('categories');
+Breadcrumbs::register('categories.show', function ($breadcrumbs, Category $category) {
+    $breadcrumbs->parent('categories.index');
     foreach ($category->ancestors as $ancestor) {
         $breadcrumbs->push($ancestor->name, route('categories.show', $ancestor));
     }

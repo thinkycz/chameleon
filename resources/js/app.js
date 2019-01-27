@@ -71,7 +71,6 @@ Vue.component('vue-address-box', require('./components/profiles/AddressBox.vue')
 Vue.component('vue-orders', require('./components/profiles/Orders.vue'));
 Vue.component('vue-order-box', require('./components/profiles/OrderBox.vue'));
 Vue.component('vue-profile-chart', require('./components/profiles/Chart.vue'));
-Vue.component('vue-dropdown-menu', require('./components/profiles/Dropdown.vue'));
 
 // Basket
 Vue.component('vue-basket', require('./components/basket/Basket.vue'));
@@ -94,7 +93,8 @@ Vue.component('vue-checkout-shipping-details', require('./components/checkout/Sh
 
 // Dropdowns
 Vue.component('vue-per-page', require('./components/dropdowns/PerPage.vue'));
-Vue.component('vue-search-sort', require('./components/dropdowns/SearchSort.vue'));
+Vue.component('vue-sort-products', require('./components/dropdowns/SortProducts.vue'));
+Vue.component('vue-dropdown', require('./components/dropdowns/Dropdown.vue'));
 
 const app = new Vue({
     el: '#app',

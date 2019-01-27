@@ -61,6 +61,7 @@ class Kernel extends HttpKernel
         'throttle'            => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified'            => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'basket_is_not_empty' => \App\Http\Middleware\BasketIsNotEmpty::class,
+        'category_is_enabled' => \App\Http\Middleware\CategoryIsEnabled::class,
     ];
 
     /**

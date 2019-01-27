@@ -4,15 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Translatable\HasTranslations;
 
-class Category extends Model
+class Category extends Model implements HasMedia
 {
     use HasSlug;
     use HasTranslations;
     use NodeTrait;
+    use HasMediaTrait;
 
     public $fillable = [
         'name',
@@ -30,5 +34,27 @@ class Category extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class);
+    }
+
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('thumb')
+            ->width(300)
+            ->height(300)
+            ->optimize()
+            ->keepOriginalImageFormat()
+            ->nonQueued();
+
+        $this->addMediaConversion('optimized')
+            ->width(800)
+            ->height(800)
+            ->optimize()
+            ->keepOriginalImageFormat()
+            ->nonQueued();
+    }
+
+    public function getThumbAttribute()
+    {
+        return $this->getMedia('images')->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumb') : placeholderImage();
     }
 }

@@ -180,6 +180,7 @@ return [
         App\Providers\HelperServiceProvider::class,
         App\Providers\TagHelperServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
 
     ],
 

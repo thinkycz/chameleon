@@ -1,5 +1,6 @@
 .row {
-    .col-product {
+    .col-product,
+    .col-category {
         @apply w-1/2;
 
         @screen md {
@@ -12,7 +13,8 @@
     }
 
     &.has-sidebar {
-        .col-product {
+        .col-product,
+        .col-category {
             @apply w-full;
 
             @screen md {

@@ -161,7 +161,7 @@
 
 // Badges
 .badge {
-    @apply px-4 py-1 text-white rounded-full inline-block text-sm font-bold;
+    @apply px-4 py-1 text-white rounded inline-block text-sm font-bold;
 
     &.accent {
         @apply bg-accent;
@@ -185,6 +185,10 @@
 
     &.grey {
         @apply bg-grey-darker;
+    }
+
+    &.badge-sm {
+        @apply p-1;
     }
 }
 

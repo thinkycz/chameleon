@@ -1,6 +1,7 @@
 <template>
     <div class="col-full">
-        <div class="input-wrap has-addon mr-4 inline-block">
+        <div class="input-wrap has-addon mr-4 inline-block"
+            style="margin-bottom: 0">
             <input type="number"
                 class="input input-sm"
                 step="0.01"
@@ -11,7 +12,8 @@
                 <span>{{ currency }}</span>
             </span>
         </div>
-        <div class="input-wrap has-addon mr-4  inline-block">
+        <div class="input-wrap has-addon mr-4  inline-block"
+            style="margin-bottom: 0">
             <input type="number"
                 class="input input-sm"
                 step="0.01"

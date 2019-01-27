@@ -31,6 +31,15 @@
                                 </div>
 
                                 <div class="col-full">
+                                    <div class="input-wrap">
+                                        <div class="checkbox" style="margin-left: 0">
+                                            <input type="checkbox" id="remember_me" name="remember_me">
+                                            <label for="remember_me" class="checkbox-label">{{ trans('auth.remember_me') }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-full">
                                     <a href="{{ route('password.request') }}" class="text-xs text-primary">{{ trans('auth.forgot_your_password') }}</a>
                                     <span class="px-2 text-xs">|</span>
                                     <a href="{{ route('register') }}" class="text-xs text-primary">{{ trans('auth.have_an_account') }}</a>

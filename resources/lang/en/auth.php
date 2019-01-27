@@ -55,4 +55,6 @@ return [
     'register_heading'          => '<span>Do you</span> want to join us?',
     'register_subheading'       => 'Register on our website to get your own and personalized shopping experience online. Register by filling the details below. Its simple and easy!',
     'register'                  => 'Register',
+
+    'remember_me'               => 'Remember me',
 ];

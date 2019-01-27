@@ -12,12 +12,12 @@ class Setting extends Model
         'namespace',
         'code',
         'schema',
-        'data'
+        'data',
     ];
 
     protected $casts = [
         'schema' => 'array',
-        'data'   => 'array'
+        'data'   => 'array',
     ];
 
     public function getNameAttribute()
@@ -47,6 +47,13 @@ class Setting extends Model
         $this->attributes['data'] = json_encode($data);
     }
 
+    public static function fetch($code, $key)
+    {
+        $settings = static::loadConfiguration($code);
+
+        return $settings[$key] ?? null;
+    }
+
     public static function loadConfiguration(string $code)
     {
         $setting = static::whereCode($code)->first();
@@ -60,7 +67,7 @@ class Setting extends Model
             'type'       => 'object',
             'properties' => collect($data)->keys()->mapWithKeys(function ($value) {
                 return [$value => ['type' => 'string']];
-            })
+            }),
         ];
 
         return static::updateOrCreate(compact('namespace', 'code'), compact('schema', 'data'));

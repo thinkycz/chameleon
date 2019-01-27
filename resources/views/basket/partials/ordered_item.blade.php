@@ -20,7 +20,7 @@
         <p class="text-sm text-grey-darker mb-2">{{ $orderedItem->formatted_price_excl_vat . ' ' . trans('products.excl_vat') }}</p>
     </div>
 
-    <vue-basket-item-quantity :item="{{ json_encode($orderedItem) }}"></vue-basket-item-quantity>
+    <vue-basket-item-quantity :item="{{ json_encode($orderedItem) }}" has-error="{{ $errors->has('quantities-' . $orderedItem->id) }}"></vue-basket-item-quantity>
 
     <div class="total text-right">
         <p class="text-xl text-primary mb-0 font-bold">{{ $orderedItem->formatted_total_price }}</p>

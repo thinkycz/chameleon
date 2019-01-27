@@ -10,13 +10,15 @@ class OrderedItemController extends Controller
     public function update(Request $request, OrderedItem $orderedItem)
     {
         $basket = activeBasket();
+        $result = $orderedItem->checkEligibility($request->get('quantity'));
 
-        // TODO:: check eligibility
-        $basket->updateOrderedItemQuantity($orderedItem, $request->get('quantity'));
+        if ($result->successful()) {
+            $basket->updateOrderedItemQuantity($orderedItem, $request->get('quantity'));
+        }
 
         return $this->ajaxWithPayload([
             'basket' => $basket->fresh(),
-        ]);
+        ], $result->successful(), $result->message());
 
     }
 

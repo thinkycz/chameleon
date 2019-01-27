@@ -21,8 +21,8 @@
             </span>
         </span>
     </div>
-    <!-- TODO:: add eligibility -->
-    @auth
+
+    @if($product->is_purchasable)
         <vue-add-to-basket :product="{{ json_encode($product) }}"></vue-add-to-basket>
-    @endauth
+    @endif
 </div>

@@ -109,9 +109,11 @@ class Product extends Model implements HasMedia
         return 'slug';
     }
 
-    public function getPrice()
+    public function getPrice(?PriceLevel $priceLevel = null)
     {
-        return $this->prices->where('price_level_id', currentUser()->getPriceLevel()->id)->first();
+        $priceLevel = $priceLevel ?? currentUser()->getPriceLevel();
+
+        return $this->prices->where('price_level_id', $priceLevel->id)->first();
     }
 
     public function hasCategory()
@@ -146,8 +148,7 @@ class Product extends Model implements HasMedia
 
     public function getPurchasableAttribute()
     {
-        // TODO:: implement
-        return true;
+        return auth()->check() && $this->hasPrice() && $this->productIsAvailable() && $this->productIsInStock();
     }
 
     public function getShowPathAttribute()

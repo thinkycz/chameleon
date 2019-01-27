@@ -21,11 +21,14 @@ class ProductController extends Controller
         $quantity = $request->get('quantity');
         $options = $request->get('options') ? iterable($request->get('options')) : [];
 
-        // TODO:: check eligibility
-        $basket->addOrUpdateProduct($product, $quantity ?? 1, $options);
+        $result = $product->checkEligibility($request->get('quantity'), $options);
+
+        if ($result->successful()) {
+            $basket->addOrUpdateProduct($product, $quantity ?? 1, $options);
+        }
 
         return $this->ajaxWithPayload([
             'basket' => $basket->fresh(),
-        ]);
+        ], $result->successful(), $result->message());
     }
 }

@@ -83,4 +83,13 @@ class OrderedItem extends Model
     {
         return showPriceWithCurrency($this->price, currentCurrency());
     }
+
+    /**
+     * @param $quantity
+     * @return EligibilityResult
+     */
+    public function checkEligibility($quantity)
+    {
+        return optional($this->product)->checkEligibility($quantity, $this->options);
+    }
 }

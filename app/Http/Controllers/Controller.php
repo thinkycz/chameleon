@@ -11,19 +11,19 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected function ajaxOrRedirect($redirect, $success = true, $message = '')
+    protected function ajaxOrRedirect($redirect, $success = true, $message = '', $error = 400)
     {
         if (request()->ajax() || request()->wantsJson()) {
-            return compact('redirect', 'success', 'message');
+            return response(compact('redirect', 'success', 'message'), $success ? 200 : $error);
         }
 
         return redirect($redirect);
     }
 
-    protected function ajaxWithPayload($payload, $success = true, $message = '')
+    protected function ajaxWithPayload($payload = null, $success = true, $message = '', $error = 400)
     {
         if (request()->ajax() || request()->wantsJson()) {
-            return compact('payload', 'success', 'message');
+            return response(compact('payload', 'success', 'message'), $success ? 200 : $error);
         }
 
         return response();

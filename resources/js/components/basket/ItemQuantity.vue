@@ -3,14 +3,17 @@
         <div class="quantity mb-2">
             <input :name="`quantities[${item.id}]`"
                 type="number"
+                :class="{'border border-danger': hasError}"
                 v-model="quantity"
                 :min="item.product.minimal_order_quantity"
                 :max="item.product.quantity_in_stock"
                 step="1" />
             <div class="quantity-nav">
                 <div class="increment"
+                    :class="{'border-danger': hasError}"
                     @click.stop.prevent="increaseQuantity">+</div>
                 <div class="decrement"
+                    :class="{'border-danger': hasError}"
                     @click.stop.prevent="decreaseQuantity">-</div>
             </div>
         </div>
@@ -30,6 +33,11 @@
         props: {
             item: {
                 required: true,
+            },
+
+            hasError: {
+                required: false,
+                default: false,
             },
         },
 

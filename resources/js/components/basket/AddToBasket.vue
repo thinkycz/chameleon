@@ -89,13 +89,13 @@
                     })
                     .then(({ data }) => {
                         this.updateStore(data.payload.basket);
+                        this.$toasted.success(message);
                     })
                     .catch(({ response }) => {
                         this.$toasted.error(response.data.message);
                     })
                     .then(() => {
                         this.disabled = false;
-                        this.$toasted.success(message);
                     });
             },
         },

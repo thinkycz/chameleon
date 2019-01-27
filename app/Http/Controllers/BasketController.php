@@ -22,11 +22,8 @@ class BasketController extends Controller
 
         foreach ($request->get('quantities') as $orderedItemId => $quantity) {
             if ($orderedItem = $basket->orderedItems->firstWhere('id', $orderedItemId)) {
-                $basket->updateOrderedItemQuantity($orderedItem, $quantity);
-
-                // TODO:: check eligibility
-                // $result = $basketItem->checkEligibility($quantity);
-                // $result->successful() ? $basket->updateBasketItemQuantity($basketItem, $quantity) : $errors->add("quantities-{$basketItemId}", $result->message());
+                $result = $orderedItem->checkEligibility($quantity);
+                $result->successful() ? $basket->updateOrderedItemQuantity($orderedItem, $quantity) : $errors->add("quantities-{$orderedItemId}", $result->message());
             }
         }
 

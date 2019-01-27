@@ -3,22 +3,29 @@
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Product;
+use App\Models\User;
 
 // Home
 Breadcrumbs::for('home', function ($breadcrumbs) {
     $breadcrumbs->push(trans('breadcrumbs.home'), route('home'));
 });
 
-// Home > Categories
-Breadcrumbs::register('categories.index', function ($breadcrumbs) {
-    $breadcrumbs->parent('home');
-    $breadcrumbs->push(trans('breadcrumbs.categories'), route('categories.index'));
+// Home > My Profile
+Breadcrumbs::for('profiles.show', function ($breadcrumbs, User $user) {
+    $breadcrumbs->push(trans('breadcrumbs.home'), route('home'));
+    $breadcrumbs->push(trans('breadcrumbs.my_profile'), route('profiles.show', $user));
 });
 
 // Home > {Page}
 Breadcrumbs::register('pages.show', function ($breadcrumbs, Page $page) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push($page->title, route('pages.show', $page));
+});
+
+// Home > Categories
+Breadcrumbs::register('categories.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(trans('breadcrumbs.categories'), route('categories.index'));
 });
 
 // Home > Categories > Category
@@ -37,8 +44,10 @@ Breadcrumbs::register('products.show', function ($breadcrumbs, Product $product)
     } else {
         $breadcrumbs->parent('home');
     }
+
     if ($parent = $product->parent) {
         $breadcrumbs->push($parent->name, route('products.show', $parent));
     }
+
     $breadcrumbs->push($product->name, route('products.show', $product));
 });

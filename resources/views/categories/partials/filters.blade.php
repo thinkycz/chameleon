@@ -1,7 +1,7 @@
 <div class="card filters mb-6 p-2">
     <div class="row items-center">
 
-        <div class="col-half">
+        <div class="col w-full md:w-2/3">
             <div class="icon-wrap">
                 <span class="text-primary mr-4">
                     <icon-filter></icon-filter>
@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="col-half">
+        <div class="col w-full md:w-1/3">
             <div class="flex flex-wrap justify-between md:justify-end">
 
                 <vue-filtercheckbox id="only_with_price"

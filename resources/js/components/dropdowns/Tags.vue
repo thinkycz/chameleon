@@ -19,7 +19,7 @@
 
         created() {
             this.items = this.tags.map(tag => ({
-                label: tag.value,
+                label: tag.name[window.currentLocale],
                 value: tag.id,
             }));
         },

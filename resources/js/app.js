@@ -80,6 +80,7 @@ Vue.component('vue-basket-item-quantity', require('./components/basket/ItemQuant
 
 // Product
 Vue.component('vue-product-gallery', require('./components/product/Gallery.vue')); // Dynamically
+Vue.component('vue-price-filter', require('./components/product/PriceFilter.vue'));
 
 // Search
 Vue.component('vue-search', require('./components/search/Search.vue'));
@@ -95,6 +96,8 @@ Vue.component('vue-checkout-shipping-details', require('./components/checkout/Sh
 Vue.component('vue-per-page', require('./components/dropdowns/PerPage.vue'));
 Vue.component('vue-sort-products', require('./components/dropdowns/SortProducts.vue'));
 Vue.component('vue-dropdown', require('./components/dropdowns/Dropdown.vue'));
+Vue.component('vue-tags-dropdown', require('./components/dropdowns/Tags.vue'));
+Vue.component('vue-subcategories-dropdown', require('./components/dropdowns/Subcategories.vue'));
 
 const app = new Vue({
     el: '#app',

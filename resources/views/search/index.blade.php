@@ -6,11 +6,13 @@
             <div class="col-full">
                 @include('search.partials.filters')
             </div>
-            @foreach($products as $product)
+            @forelse($products as $product)
                 <div class="col-product">
                     @include('products.partials.card')
                 </div>
-            @endforeach
+            @empty
+                @include('partials.no_results_found')
+            @endforelse
         </div>
     </div>
 @stop

@@ -6,11 +6,13 @@
         @include('partials.breadcrumb_area')
 
         <div class="row">
-            @foreach($categories as $category)
+            @forelse($categories as $category)
                 <div class="col-category">
                     @include('categories.partials.card')
                 </div>
-            @endforeach
+            @empty
+                @include('partials.no_results_found')
+            @endforelse
         </div>
 
     </div>

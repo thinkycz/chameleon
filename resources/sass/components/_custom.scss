@@ -91,4 +91,15 @@
             @apply mr-0;
         }
     }
+
+    .subcategories,
+    .tags {
+        .dropdown {
+            .dropdown-menu {
+                svg {
+                    top: -1.35rem;
+                }
+            }
+        }
+    }
 }

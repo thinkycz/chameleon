@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
+    protected $with = [
+        'property_type',
+        'property_value',
+    ];
+
     public function product()
     {
         return $this->belongsTo(Product::class);

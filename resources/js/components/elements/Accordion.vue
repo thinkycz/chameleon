@@ -32,6 +32,11 @@
             accordion: {
                 required: true,
             },
+
+            open: {
+                required: false,
+                default: false,
+            },
         },
 
         data: () => ({
@@ -48,6 +53,10 @@
                     this.isOpen = false;
                 }
             },
+        },
+
+        created() {
+            this.isOpen = this.open;
         },
 
         directives: {

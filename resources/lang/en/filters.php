@@ -12,6 +12,12 @@ return [
 
     'more_filters'        => 'More Filters',
 
+    'filter'              => 'Filter',
+    'filter_by_price'     => 'Filter by price',
+
+    'tags'                => 'Tags',
+    'subcategories'       => 'Subcategories',
+
     'order_by_date_added' => 'Order by date added',
     'order_by_price_desc' => 'Order by price descending',
     'order_by_price_asc'  => 'Order by price ascending',

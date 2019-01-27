@@ -19,6 +19,9 @@
         &.has-btn {
             @apply pr-12;
         }
+        &.input-sm {
+            @apply h-8 text-xs;
+        }
     }
     label {
         @apply text-xs text-grey-darkest font-semibold mb-1 leading-loose;
@@ -31,6 +34,18 @@
             @apply absolute;
             top: 4px;
             left: 4px;
+        }
+    }
+    &.has-addon {
+        .input {
+            @apply pr-10;
+        }
+        .addon {
+            @apply border-l absolute h-full leading-normal text-sm pin-t pin-r px-1 font-semibold;
+            span {
+                @apply relative;
+                top: 5px;
+            }
         }
     }
     select {

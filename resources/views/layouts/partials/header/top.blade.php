@@ -3,20 +3,16 @@
         <div class="row">
 
             <div class="col-half">
-                @php
-                    $companyDetails = settingsRepository()->configuration('company_details');
-                @endphp
-
-                @if($companyDetails['phone'])
+                @if($companyPhone = settingsRepository()->getCompanyPhoneNumber())
                     <div class="icon-wrap inline mr-4">
                         <icon-phone></icon-phone>
-                        <span>{{ $companyDetails['phone'] }}</span>
+                        <span>{{ $companyPhone }}</span>
                     </div>
                 @endif
-                @if($companyDetails['email'])
+                @if($companyEmail = settingsRepository()->getCompanyEmail())
                     <div class="icon-wrap inline">
                         <icon-mail></icon-mail>
-                        <span>{{ $companyDetails['email'] }}</span>
+                        <span>{{ $companyEmail }}</span>
                     </div>
                 @endif
             </div>

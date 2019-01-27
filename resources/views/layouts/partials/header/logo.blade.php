@@ -1,7 +1,9 @@
 <div class="col-logo">
     <div class="icon-wrap justify-between">
-        <img src="http://enormous.test/img/skytrade.png" />
 
+        @if($logo = settingsRepository()->getLogo())
+            <img src="{{ $logo }}" alt="{{ config('app.name') }}"/>
+        @endif
 
         <vue-dropdown inline-template>
             <div class="dropdown dropdown-categories" @click.stop="toggle">

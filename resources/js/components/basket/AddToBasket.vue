@@ -29,6 +29,11 @@
                 required: false,
                 default: true,
             },
+
+            purchasable: {
+                required: false,
+                default: true,
+            },
         },
 
         data: () => ({
@@ -75,6 +80,10 @@
             },
 
             handleButtonClicked() {
+                if (!this.purchasable) {
+                    return;
+                }
+
                 let quantity = parseInt(this.quantity);
 
                 if (!this.isInBasket && !quantity) {
@@ -106,6 +115,7 @@
 
         created() {
             this.quantity = this.isInBasket ? this.item.quantity_ordered : this.product.minimum_order_quantity;
+            this.disabled = this.purchasable;
         },
 
         mixins: [BasketMixin],

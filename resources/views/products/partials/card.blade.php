@@ -22,7 +22,7 @@
         </span>
     </div>
 
-    @if($product->is_purchasable)
-        <vue-add-to-basket :product="{{ json_encode($product) }}"></vue-add-to-basket>
-    @endif
+    <vue-add-to-basket :product="{{ json_encode($product) }}"
+        :purchasable="{{ booleanToString($product->purchasable) }}"
+    ></vue-add-to-basket>
 </div>

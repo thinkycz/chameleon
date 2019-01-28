@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class SampleSeeder extends Seeder
@@ -15,5 +16,6 @@ class SampleSeeder extends Seeder
     {
         factory(Category::class, 3)->create();
         factory(Order::class, 3)->create();
+        factory(User::class, 3)->create();
     }
 }

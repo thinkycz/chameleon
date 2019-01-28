@@ -115,7 +115,7 @@
 
         created() {
             this.quantity = this.isInBasket ? this.item.quantity_ordered : this.product.minimum_order_quantity;
-            this.disabled = this.purchasable;
+            this.disabled = !this.purchasable;
         },
 
         mixins: [BasketMixin],

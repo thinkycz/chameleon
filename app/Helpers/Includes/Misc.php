@@ -67,3 +67,15 @@ if (!function_exists('normalizeNumber')) {
         return floatval($val);
     }
 }
+
+/*
+ * @return float
+ */
+if (!function_exists('novaResourceAction')) {
+    function novaResourceAction($resourceName, $resource)
+    {
+        $nova = config('nova.path');
+
+        return "${nova}/${resourceName}/${resource}";
+    }
+}

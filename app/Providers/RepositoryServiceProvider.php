@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Repositories\OrderRepository;
 use App\Repositories\PreferenceRepository;
 use App\Repositories\SettingsRepository;
+use App\Repositories\UserRepository;
 use App\Services\InstanceCache;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,6 +32,10 @@ class RepositoryServiceProvider extends ServiceProvider
 
         $this->app->singleton('SettingsRepository', function () {
             return new SettingsRepository();
+        });
+
+        $this->app->singleton('UserRepository', function () {
+            return new UserRepository();
         });
     }
 }

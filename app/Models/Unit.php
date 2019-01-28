@@ -9,7 +9,10 @@ class Unit extends Model
 {
     use HasTranslations;
 
-    public $translatable = ['name', 'abbr'];
+    public $translatable = [
+        'name',
+        'abbr',
+    ];
 
     public function products()
     {

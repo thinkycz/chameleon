@@ -6,7 +6,11 @@ use Spatie\MediaLibrary\Models\Media as BaseMedia;
 
 class Media extends BaseMedia
 {
-    protected $appends = ['url', 'thumb', 'optimized'];
+    protected $appends = [
+        'url',
+        'thumb',
+        'optimized',
+    ];
 
     public function getUrlAttribute(): string
     {

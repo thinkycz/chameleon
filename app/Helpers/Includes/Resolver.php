@@ -49,3 +49,13 @@ if (!function_exists('settingsRepository')) {
         return App::make('SettingsRepository');
     }
 }
+
+/*
+ * @return \App\Repositories\SettingsRepository
+ */
+if (!function_exists('userRepository')) {
+    function userRepository()
+    {
+        return App::make('UserRepository');
+    }
+}

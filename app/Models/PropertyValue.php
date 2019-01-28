@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class PropertyValue extends Model
 {
-    public $fillable = ['value'];
+    public $fillable = [
+        'value',
+    ];
 
     public function properties()
     {

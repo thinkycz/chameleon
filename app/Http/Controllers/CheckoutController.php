@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderPlaced;
 use App\Http\Requests\Checkout\StoreAddressRequest;
 use App\Http\Requests\Confirmation\ConfirmationRequest;
 use App\Models\Country;
@@ -49,7 +50,9 @@ class CheckoutController extends Controller
 
         $order = $basket->load('orderedItems.product', 'status', 'deliveryMethod', 'billingDetail', 'paymentMethod', 'shippingDetail');
 
-        return redirect()->route('profiles.show', User::getAuthenticatedUser())->with('placed_order', $order);
+        event(new OrderPlaced($order));
+
+        return redirect()->route('profiles.show', ['order' => $order->id]);
     }
 
     public function storeAddress(StoreAddressRequest $request)

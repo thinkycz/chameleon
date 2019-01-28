@@ -9,7 +9,10 @@ class Status extends Model
 {
     use HasTranslations;
 
-    public $translatable = ['name', 'description'];
+    public $translatable = [
+        'name',
+        'description',
+    ];
 
     public function orders()
     {

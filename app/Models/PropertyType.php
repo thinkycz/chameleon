@@ -9,7 +9,9 @@ class PropertyType extends Model
 {
     use HasTranslations;
 
-    public $translatable = ['name'];
+    public $translatable = [
+        'name',
+    ];
 
     public function properties()
     {

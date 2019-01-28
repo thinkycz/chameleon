@@ -55,7 +55,7 @@
                     })
                     .then(({ data }) => {
                         this.updateStore(data.payload.basket);
-                        this.$toasted.success($trans('basket.successfully_updated'));
+                        this.$toasted.success(this.$trans('basket.successfully_updated'));
                     })
                     .catch(({ response }) => {
                         this.$toasted.error(response.data.message);
@@ -67,7 +67,7 @@
                     .delete(`/ordered-items/${id}/remove`)
                     .then(({ data }) => {
                         this.updateStore(data.payload.basket);
-                        this.$toasted.success($trans('basket.successfully_deleted'));
+                        this.$toasted.success(this.$trans('basket.successfully_deleted'));
                     })
                     .catch(({ response }) => {
                         this.$toasted.error(response.data.message);

@@ -50,6 +50,17 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         }
     }
 
+    public function setDefaultAddress(Address $address)
+    {
+        $this->addresses()->update([
+            'is_default' => false,
+        ]);
+
+        return $address->update([
+            'is_default' => true,
+        ]);
+    }
+
     public function priceLevel()
     {
         return $this->belongsTo(PriceLevel::class);

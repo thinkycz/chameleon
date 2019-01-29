@@ -35,4 +35,13 @@ class StoreAddressRequest extends FormRequest
             'country_id' => 'required|exists:countries,id',
         ];
     }
+
+    public function mergeDefaultAddress()
+    {
+        $this->merge([
+            'is_default' => !$this->user()->addresses()->count(),
+        ]);
+
+        return $this;
+    }
 }

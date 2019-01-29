@@ -20,6 +20,7 @@ class Address extends Model
         'phone',
         'company_id',
         'vat_id',
+        'is_default',
         'company_name',
     ];
 

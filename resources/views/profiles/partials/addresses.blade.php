@@ -4,7 +4,7 @@
             <h3 class="mb-2">{{ trans('profiles.address_book') }}</h3>
             <p class="mb-6">{{ trans('profiles.address_book_info') }}</p>
 
-            <vue-addresses inline-template>
+            <vue-addresses :new="{{ booleanToString($errors->count() && isCurrentView('address_book')) }}" inline-template>
                 <transition name="fade" mode="out-in" key="addresses">
                     <div class="addresses flex flex-wrap -mx-2" v-if="!current" >
                         @foreach($user->addresses as $address)

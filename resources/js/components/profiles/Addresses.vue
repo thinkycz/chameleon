@@ -1,10 +1,15 @@
 <script>
     export default {
-        data() {
-            return {
-                current: null,
-            };
+        props: {
+            new: {
+                required: false,
+                default: null,
+            },
         },
+
+        data: () => ({
+            current: null,
+        }),
 
         methods: {
             handleAddressBoxClicked(address) {
@@ -31,6 +36,18 @@
                     window.location.href = data.redirect;
                 });
             },
+
+            handleAddressMakeDefault(route) {
+                axios.post(`${route}/make-default`).then(({ data }) => {
+                    window.location.href = data.redirect;
+                });
+            },
+        },
+
+        created() {
+            if (this.new) {
+                this.current = 'new';
+            }
         },
     };
 </script>

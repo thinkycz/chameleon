@@ -34,6 +34,13 @@ if (!function_exists('getCurrentView')) {
     }
 }
 
+if (!function_exists('isCurrentView')) {
+    function isCurrentView($current)
+    {
+        return request()->get('current') == $current;
+    }
+}
+
 if (!function_exists('selectedIf')) {
     function selectedIf($boolean, $text = 'selected')
     {

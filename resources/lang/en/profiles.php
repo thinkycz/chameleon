@@ -7,6 +7,7 @@ return [
     'update_personal_info'             => 'You can update your personal information using the form below. ',
     'profile_updated'                  => 'Your profile has been successfully updated.',
 
+    'make_default'                     => 'Make default',
     'address_created'                  => 'Your new address was created',
     'address_updated'                  => 'Your address was updated',
     'address_deleted'                  => 'Address was deleted',

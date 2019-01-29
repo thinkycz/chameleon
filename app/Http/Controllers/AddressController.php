@@ -17,7 +17,7 @@ class AddressController extends Controller
      */
     public function store(StoreAddressRequest $request, User $user)
     {
-        $user->addresses()->create($request->all());
+        $user->addresses()->create($request->mergeDefaultAddress()->all());
 
         snackbar()->success(trans('profiles.address_created'));
 
@@ -54,5 +54,15 @@ class AddressController extends Controller
         snackbar()->success(trans('profiles.address_deleted'));
 
         return $this->ajaxOrRedirect(route('profiles.show', ['user' => $user, 'current' => 'address_book']));
+    }
+
+    public function makeDefault(User $user, Address $address)
+    {
+        $user->setDefaultAddress($address);
+
+        snackbar()->success(trans('profiles.address_updated'));
+
+        return $this->ajaxOrRedirect(route('profiles.show', ['user' => $user, 'current' => 'address_book']));
+
     }
 }

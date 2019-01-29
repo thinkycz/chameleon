@@ -14,19 +14,29 @@
             currency: {
                 required: true,
             },
+
             height: {
+                required: true,
+            },
+
+            labels: {
+                required: true,
+            },
+
+            series: {
                 required: true,
             },
         },
 
-        data() {
-            return {
-                chart: null,
-                data: {
-                    // TODO:: implement real data
-                    labels: ['01/01', '', '01/03', '', '01/05', ''],
-                    series: [[12, 18, 10, 6, 5, 16]],
-                },
+        data: () => ({
+            chart: null,
+            deta: null,
+        }),
+
+        created() {
+            this.data = {
+                labels: this.labels,
+                series: [this.series],
             };
         },
 

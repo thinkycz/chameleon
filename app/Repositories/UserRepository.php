@@ -12,7 +12,7 @@ class UserRepository
 
     public function admins()
     {
-        // TODO:: Should be changed
+        // TODO:: Should be changed with nova permissions
         return User::whereEmail(static::$admins)->get();
     }
 }

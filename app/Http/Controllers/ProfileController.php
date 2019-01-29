@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Tools\ChartData;
 use App\Http\Requests\Profile\UpdateProfileRequest;
 use App\Models\User;
+use App\Repositories\StatsRepository;
 
 class ProfileController extends Controller
 {
-    public function show(User $user)
+    public function show(User $user, StatsRepository $statsRepository)
     {
         $user->load('addresses',
             'priceLevel',
@@ -18,7 +20,10 @@ class ProfileController extends Controller
             'orders.paymentMethod',
             'orders.shippingDetail');
 
-        return view('profiles.show', compact('user'));
+        $stats = $statsRepository->daily('orders');
+        $orderStats = ChartData::make($stats->getResult(), $stats->getInterval());
+
+        return view('profiles.show', compact('user', 'orderStats'));
     }
 
     public function update(UpdateProfileRequest $request, User $user)

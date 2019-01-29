@@ -12,6 +12,11 @@ return [
     'date_format'                 => 'j.n.Y',
 
     /*
+     * Chart date format
+     */
+    'chart_date_format'           => 'j.n',
+
+    /*
      * Default VAT rate when no VAT is defined
      */
     'default_vat_rate_percentage' => env('DEFAULT_VAT_RATE_PERCENTAGE', 21),

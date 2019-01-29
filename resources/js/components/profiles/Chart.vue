@@ -1,6 +1,8 @@
 <template>
     <chart :currency="currency"
-        height="60px" />
+        height="60px"
+        :labels="labels"
+        :series="series" />
 </template>
 
 <script>
@@ -9,6 +11,14 @@
     export default {
         props: {
             currency: {
+                required: true,
+            },
+
+            labels: {
+                required: true,
+            },
+
+            series: {
                 required: true,
             },
         },

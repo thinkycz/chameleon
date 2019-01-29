@@ -26,8 +26,11 @@
             </div>
             <div class="user-graph">
                 <div class="px-2">
-                    <p class="mb-0 text-center font-bold text-sm">{{ trans('profiles.your_past_orders') }}</p>
-                    <vue-profile-chart :currency="{{ currentCurrency() }}"></vue-profile-chart>
+                    <p class="mb-1 text-center font-bold text-sm">{{ trans('profiles.your_past_orders') }}</p>
+                    <vue-profile-chart :currency="{{ currentCurrency() }}"
+                        :labels="{{ json_encode($orderStats->pluck('point')) }}"
+                        :series="{{ json_encode($orderStats->pluck('value')) }}"
+                    ></vue-profile-chart>
                 </div>
             </div>
         </div>

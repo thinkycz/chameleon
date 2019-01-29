@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Notifications\UserRegistered;
+use App\Repositories\UserRepository;
 
 class HandleUserRegistered
 {
@@ -12,10 +13,10 @@ class HandleUserRegistered
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle($event, UserRepository $userRepository)
     {
         $user = $event->user;
 
-        Notification::send(userRepository()->admins(), new UserRegistered($user));
+        Notification::send($userRepository->admins(), new UserRegistered($user));
     }
 }

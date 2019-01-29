@@ -181,6 +181,7 @@ return [
         App\Providers\TagHelperServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
+        App\Providers\ObserverServiceProvider::class,
 
     ],
 

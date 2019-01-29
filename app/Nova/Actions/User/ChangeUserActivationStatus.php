@@ -4,12 +4,11 @@ namespace App\Nova\Actions\User;
 
 use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Laravel\Nova\Actions\Action;
-use Illuminate\Support\Collection;
-use Laravel\Nova\Fields\ActionFields;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Collection;
+use Laravel\Nova\Actions\Action;
+use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\Select;
 
 class ChangeUserActivationStatus extends Action
@@ -29,6 +28,7 @@ class ChangeUserActivationStatus extends Action
 
         $models->each(function (User $user) use ($activated) {
             $user->update(['activated_at' => $activated]);
+            $user->notify(new AccountActivated());
         });
     }
 
@@ -42,8 +42,8 @@ class ChangeUserActivationStatus extends Action
         return [
             Select::make('Activation Status')->options([
                 'active'   => 'Active',
-                'inactive' => 'Inactive'
-            ])->displayUsingLabels()
+                'inactive' => 'Inactive',
+            ])->displayUsingLabels(),
         ];
     }
 }

@@ -18,4 +18,8 @@ return [
     'new_registration'                  => 'We received a new registration',
     'new_user_registered'               => 'There is a new registered user on your shop.',
     'user_registered'                   => 'The user is :username and has a email :email',
+
+    'account_activated'                 => 'Your account has been activated',
+    'we_have_activated_your_account'    => 'We have activated your account on our shop. You can start shopping on our website now, by logging in with your account.',
+    'login_now'                         => 'Login now',
 ];

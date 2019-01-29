@@ -7,11 +7,11 @@ use App\Nova\Metrics\NumberOfOrders;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\OrdersPerStatus;
 use Bissolli\NovaPhoneField\PhoneNumber;
+use Illuminate\Http\Request;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -43,12 +43,17 @@ class Order extends Resource
     public static $search = [
         'order_number',
         'invoice_number',
-        'variable_symbol'
+        'variable_symbol',
     ];
 
     public function subtitle()
     {
         return "Customer: {$this->user->name}";
+    }
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->whereNotNull('placed_at');
     }
 
     /**
@@ -156,7 +161,7 @@ class Order extends Resource
     public function actions(Request $request)
     {
         return [
-            (new ChangeOrderStatus)
+            (new ChangeOrderStatus),
         ];
     }
 }

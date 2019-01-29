@@ -19,9 +19,13 @@
         </div>
 
         <div class="col-half">
-            <div class="input-wrap">
+            <div class="input-wrap has-addon">
                 <label for="company_id">{{ trans('profiles.company_id') }}</label>
-                <input type="text" id="company_id" class="input" :class="{'invalid': $v.company_id.$error}" name="company_id" v-model="company_id" placeholder="{{ trans('profiles.company_id_label') }}">
+                <div class="relative">
+                    <input type="text" id="company_id" class="input" :class="{'invalid': $v.company_id.$error}" name="company_id" v-model="company_id" placeholder="{{ trans('profiles.company_id_label') }}">
+                    <ares-fetcher @change="handleAresOnFetch($event)"
+                    :company_id="company_id"></ares-fetcher>
+                </div>
             </div>
         </div>
 

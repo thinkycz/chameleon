@@ -62,10 +62,7 @@
         </div>
 
         <div class="col-half">
-            <div class="input-wrap">
-                <label for="company_id">{{ trans('profiles.company_id') }}</label>
-                <input type="text" id="company_id" class="input" name="company_id" value="{{ old('company_id') }}" placeholder="{{ trans('profiles.company_id_label') }}">
-            </div>
+            <vue-company-id old="{{ old('company_id') }}"></vue-company-id>
         </div>
 
         <div class="col-half">

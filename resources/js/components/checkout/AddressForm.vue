@@ -1,6 +1,7 @@
 <script>
     import { required } from 'vuelidate/lib/validators';
     import { validationMixin } from 'vuelidate';
+    import AresFetcher from './../services/AresFetcher';
 
     export default {
         props: {
@@ -51,6 +52,15 @@
             addAddressToStore(address) {
                 this.$store.commit('addAddress', address);
             },
+
+            handleAresOnFetch(values) {
+                var self = this;
+
+                Object.keys(values).forEach(key => {
+                    let value = values[key] instanceof Object ? values[key][0] : values[key];
+                    this[key] = value;
+                });
+            },
         },
 
         validations: {
@@ -89,6 +99,10 @@
             country_id: {
                 required,
             },
+        },
+
+        components: {
+            AresFetcher,
         },
 
         mixins: [validationMixin],

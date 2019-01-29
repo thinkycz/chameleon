@@ -75,6 +75,9 @@ Vue.component('vue-orders', require('./components/profiles/Orders.vue'));
 Vue.component('vue-order-box', require('./components/profiles/OrderBox.vue'));
 Vue.component('vue-profile-chart', require('./components/profiles/Chart.vue'));
 
+// Fields
+Vue.component('vue-company-id', require('./components/fields/CompanyId.vue'));
+
 // Basket
 Vue.component('vue-basket', require('./components/basket/Basket.vue'));
 Vue.component('vue-header-basket', require('./components/basket/HeaderBasket.vue'));

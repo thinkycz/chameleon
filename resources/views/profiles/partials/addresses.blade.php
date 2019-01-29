@@ -10,7 +10,7 @@
                         @foreach($user->addresses as $address)
                             @include('profiles.addresses.card')
                         @endforeach
-                        <div class="address-card" @click="handleAddressBoxClicked('new')">
+                        <div class="address-card px-2" @click="handleAddressBoxClicked('new')">
                             <div class="address-card__inner new-address">
                                 <icon-plus></icon-plus>
                             </div>

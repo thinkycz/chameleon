@@ -57,4 +57,6 @@ return [
     'register'                  => 'Register',
 
     'remember_me'               => 'Remember me',
+    'welcome_back'              => 'Welcome back!',
+    'activation_error'          => 'Error while logging in - your account hasn\'t been activated yet.',
 ];

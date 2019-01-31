@@ -1,5 +1,12 @@
 export default {
     "en": {
+        "viewNova": "Access Nova",
+        "viewRoles": "View Roles",
+        "manageRoles": "Manage Roles",
+        "assignRoles": "Assign Roles",
+        "viewUsers": "View Users",
+        "manageUsers": "Manage Users",
+        "viewHorizon": "Access Horizon",
         "global": {
             "save": "Save",
             "back": "Back",
@@ -12,7 +19,10 @@ export default {
             "free": "Free",
             "confirm_action": "Please confirm your action",
             "confirm": "Confirm",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "locales.en": "English",
+            "locales.vi": "Vietnamese",
+            "locales.cs": "Czech"
         },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
@@ -31,6 +41,8 @@ export default {
             "more_filters": "More Filters",
             "filter": "Filter",
             "filter_by_price": "Filter by price",
+            "price_min": "Min price",
+            "price_max": "Max price",
             "tags": "Tags",
             "subcategories": "Subcategories",
             "order_by_date_added": "Order by date added",
@@ -68,7 +80,10 @@ export default {
             "password_reset": "Your password was updated!",
             "register_heading": "<span>Do you</span> want to join us?",
             "register_subheading": "Register on our website to get your own and personalized shopping experience online. Register by filling the details below. Its simple and easy!",
-            "register": "Register"
+            "register": "Register",
+            "remember_me": "Remember me",
+            "welcome_back": "Welcome back!",
+            "activation_error": "Error while logging in - your account hasn't been activated yet."
         },
         "settings": {
             "store_settings": "Store Settings",
@@ -86,7 +101,20 @@ export default {
         },
         "breadcrumbs": {
             "home": "Home",
-            "categories": "Categories"
+            "categories": "Categories",
+            "my_profile": "My profile"
+        },
+        "eligibilities": {
+            "cannot_make_purchases": "You are not eligible to make purchases",
+            "no_price_defined": "This product has no price defined",
+            "not_available": "This product is not available to order",
+            "out_of_stock": "This product is out of stock",
+            "desired_qty_not_available": "Desired quantity is not available",
+            "only_count_unit_are_available": "Only {count} {unit} of this product are available to order",
+            "moq_not_reached": "You need to order at least minimum order quantity",
+            "moq_multiplies_only": "You can order only multiplies of minimum order quantity",
+            "options_missing": "Please select all product options",
+            "mov_for_store_is": "Minimum order value for store {store} is {amount}"
         },
         "checkout": {
             "billing_details": "Billing Details",
@@ -155,6 +183,24 @@ export default {
             "view_basket": "View Basket",
             "start_shopping": "Start Shopping"
         },
+        "notifications": {
+            "we_received_new_order": "We received a new order!",
+            "we_received_new_order_description": "We have just received a new order, let's do our best to make this customer happy!",
+            "customer_name": "Customer: {name}",
+            "total_price": "Total price: {price}",
+            "thank_you_for_your_order": "We have received your order. Thank you for ordering from our store!",
+            "order_received": "Your order has been received",
+            "order_number": "Order: {number}",
+            "show_order": "Show order",
+            "order_status_has_changed": "Your order status has been changed!",
+            "order_status": "Status: {status}",
+            "new_registration": "We received a new registration",
+            "new_user_registered": "There is a new registered user on your shop.",
+            "user_registered": "The user is {username} and has a email {email}",
+            "account_activated": "Your account has been activated",
+            "we_have_activated_your_account": "We have activated your account on our shop. You can start shopping on our website now, by logging in with your account.",
+            "login_now": "Login now"
+        },
         "products": {
             "add_to_basket": "Add to basket",
             "update_quantity": "Update quantity",
@@ -165,6 +211,8 @@ export default {
             "product_deleted": "Product deleted from basket",
             "quantity_updated": "Product quantity updated",
             "added_to_basket": "Product added to basket",
+            "related_products": "Related products",
+            "product_details": "Read product details",
             "increase_the_quantity": "Please increase the quantity.",
             "this_product_is_stock": "This product is currently in <strong> {stock}.</strong>",
             "total_times_ordered": "This product has been ordered total of <strong> {total} times.</strong>",
@@ -320,6 +368,7 @@ export default {
             "your_personal_information": "Your personal information",
             "update_personal_info": "You can update your personal information using the form below. ",
             "profile_updated": "Your profile has been successfully updated.",
+            "make_default": "Make default",
             "address_created": "Your new address was created",
             "address_updated": "Your address was updated",
             "address_deleted": "Address was deleted",
@@ -392,6 +441,9 @@ export default {
             "total": "Total",
             "grand_total": "Grand Total",
             "excl_vat": "Excl. vat"
+        },
+        "pages": {
+            "created_at": "Created at {date}"
         }
     }
 }

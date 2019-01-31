@@ -5,7 +5,6 @@ use App\Models\Country;
 use App\Models\Currency;
 use App\Models\Page;
 use App\Models\Preference;
-use App\Models\Price;
 use App\Models\PriceLevel;
 use App\Models\Status;
 use App\Models\Unit;
@@ -22,11 +21,6 @@ class PreferenceSeeder extends Seeder
     {
         Preference::updateOrCreate(['code' => 'default_country'], [
             'preferable_id'   => Country::whereIsocode3('CZE')->first()->id,
-            'preferable_type' => Country::class,
-        ]);
-
-        Preference::updateOrCreate(['code' => 'default_country'], [
-            'preferable_id'   => Price::whereIsocode3('CZE')->first()->id,
             'preferable_type' => Country::class,
         ]);
 

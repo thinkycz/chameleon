@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-fourth footer-info">
-                <img src="http://enormous.test/img/skytrade.png" />
+                <img src="{{ settingsRepository()->getLogo() }}" alt="{{ config('app.name') }}"/>
             </div>
             <div class="col-fourth">
                 <h4>Useful Links</h4>

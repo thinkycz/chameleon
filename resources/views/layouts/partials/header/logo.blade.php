@@ -1,9 +1,9 @@
 <div class="col-logo">
     <div class="icon-wrap justify-between">
 
-        @if($logo = settingsRepository()->getLogo())
-            <img src="{{ $logo }}" alt="{{ config('app.name') }}"/>
-        @endif
+        <a href="{{ route('home') }}">
+            <img src="{{ settingsRepository()->getLogo() }}" alt="{{ config('app.name') }}"/>
+        </a>
 
         <vue-dropdown inline-template>
             <div class="dropdown dropdown-categories" @click.stop="toggle">

@@ -14,7 +14,6 @@ use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 
 class Order extends Resource
@@ -49,11 +48,6 @@ class Order extends Resource
     public function subtitle()
     {
         return "Customer: {$this->user->name}";
-    }
-
-    public static function indexQuery(NovaRequest $request, $query)
-    {
-        return $query->whereNotNull('placed_at');
     }
 
     /**
@@ -138,7 +132,9 @@ class Order extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\OrderPlacedStatus()
+        ];
     }
 
     /**

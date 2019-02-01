@@ -89,11 +89,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             (new JetsoftShopconnector),
-            (new Novassport),
             (new HorizonLink),
             (new NovaToolPermissions),
             (new GoogleSheetsImporter),
             (new BulkImageUpload),
+            (new Novassport),
         ];
     }
 

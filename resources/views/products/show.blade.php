@@ -7,7 +7,7 @@
 
         <div class="row">
             <div class="col-full mx-auto">
-                <div class="card flex justify-between p-4">
+                <div class="card md:flex justify-between p-4">
 
                     @include('products.partials.images')
 

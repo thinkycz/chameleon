@@ -1,20 +1,25 @@
-<div class="product-details">
-    <h2 class="mb-2">{{ $product->name }}</h2>
+<div class="product-details py-2 md:mx-5">
+    <h2 class="text-3xl font-normal mb-5">{{ $product->name }}</h2>
 
-    <p class="text-sm mb-3 text-grey-darker">
-        @if($product->barcode)
-            <span class="mr-4">{{ trans('products.barcode') }}<strong class="ml-1">{{ $product->barcode }}</strong></span>
-        @endif
+    <div class="mb-5 text-grey-darker flex justify-between">
         @if($product->catalogue_number)
-            <span>{{ trans('products.catalogue_number') }}<strong class="ml-1">{{ $product->catalogue_number }}</strong></span>
+            <div class="flex">
+                <icon-warehouse></icon-warehouse>
+                <span class="ml-2">{{ $product->catalogue_number }}</span>
+            </div>
         @endif
-    </p>
+
+        @if($product->barcode)
+            <div class="flex">
+                <icon-barcode></icon-barcode>
+                <span class="ml-2">{{ $product->barcode }}</span>
+            </div>
+        @endif
+    </div>
 
     @if($product->tags->isNotEmpty())
         <p class="mb-8 flex flex-wrap">
-            @foreach($product->tags as $tag)
-                @include('partials.tag')
-            @endforeach
+            @each('partials.tag', $product->tags, 'tag')
         </p>
     @endif
 

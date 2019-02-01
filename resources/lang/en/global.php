@@ -15,6 +15,7 @@ return [
     'confirm_action'   => 'Please confirm your action',
     'confirm'          => 'Confirm',
     'cancel'           => 'Cancel',
+    'no_file_selected' => 'No file selected',
 
     // Locales
     'locales.en'       => 'English',

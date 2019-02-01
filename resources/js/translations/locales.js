@@ -95,6 +95,12 @@ export default {
             "recaptcha_enabled": "Recaptcha Enabled",
             "object": "Object"
         },
+        "mail": {
+            "export_data_subject": "Personal Information export request completed",
+            "download_exported_data": "Download Exported Data",
+            "export_data_mail_message": "You can download a copy of your data we store on our servers by clicking the button below.",
+            "kind_regards": "Kind regards"
+        },
         "pagination": {
             "previous": "&laquo; Previous",
             "next": "Next &raquo;"
@@ -399,8 +405,10 @@ export default {
             "company_information": "Your company information, if you created a store for that company",
             "products_sold_info": "Information about products you sold on our marketplace",
             "let_us_know": "Please let us know if you have any questions about this, and we'd be happy to help.",
-            "request_a_complete_deletion": "To request a complete deletion of your account, please email <a href=\"mailto:team@nulisec.com\">team@nulisec.com</a>",
+            "request_a_complete_deletion": "To request a complete deletion of your account, please email",
             "process_within_30_days": "We will process your request within 30 days of receiving your email",
+            "preparing_your_data": "We are preparing your data. When it's ready we are going to send it to your email",
+            "request_download_confirmation": "Are you sure you want to proceed with downloading your data?",
             "first_name": "First name",
             "first_name_label": "Your First name",
             "last_name": "Last name",

@@ -3,6 +3,7 @@
 namespace App\Nova\Actions\User;
 
 use App\Models\User;
+use App\Notifications\AccountActivated;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;

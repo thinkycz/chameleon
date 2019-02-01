@@ -3,7 +3,6 @@
 namespace App\Traits\Product;
 
 use App\Models\PriceLevel;
-use App\Models\User;
 
 trait ProductHasPrices
 {
@@ -36,6 +35,6 @@ trait ProductHasPrices
 
     public function getPurchasableAttribute()
     {
-        return User::getAuthenticatedUser()->is_active && $this->hasPrice() && $this->productIsAvailable() && $this->productIsInStock();
+        return currentUser()->is_active && $this->hasPrice() && $this->productIsAvailable() && $this->productIsInStock();
     }
 }

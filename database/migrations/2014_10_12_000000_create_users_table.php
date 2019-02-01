@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
             $table->timestamp('activated_at')->nullable();
-            $table->boolean('pending_activation')->default(false);
 
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

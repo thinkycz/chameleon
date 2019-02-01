@@ -108,8 +108,6 @@ class User extends Resource
 
             DateTime::make('Activated At')->hideFromIndex(),
 
-            Boolean::make('Pending Activation')->hideFromIndex(),
-
             HasMany::make('Addresses'),
 
             BelongsToMany::make('Roles', 'roles', Role::class),

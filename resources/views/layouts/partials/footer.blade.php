@@ -24,8 +24,18 @@
             <div class="col-fourth">
                 <h4>Links</h4>
                 <ul class="list-reset">
+                    @if(settingsRepository()->getCustomLink1()['title'])
+                        <li>
+                            <a href="{{ settingsRepository()->getCustomLink1()['link'] }}">{{ settingsRepository()->getCustomLink1()['title'] }}</a>
+                        </li>
+                    @endif
+                    @if(settingsRepository()->getCustomLink2()['title'])
+                        <li>
+                            <a href="{{ settingsRepository()->getCustomLink2()['link'] }}">{{ settingsRepository()->getCustomLink2()['title'] }}</a>
+                        </li>
+                    @endif
                     <li>
-                        <a href="{{ route('profiles.show', auth()->user()) }}">My Account</a>
+                        <a href="{{ auth()->check() ? route('profiles.show', auth()->user()) : route('login') }}">My Account</a>
                     </li>
                     <li>
                         <a href="#">Contact Us</a>

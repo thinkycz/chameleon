@@ -27,6 +27,16 @@ class SettingsRepository extends InstanceCache
         return $this->get('store_settings', 'logo') ?: asset('images/chameleon.png');
     }
 
+    public function getCustomLink1()
+    {
+        return $this->configuration('custom_footer_link_1');
+    }
+
+    public function getCustomLink2()
+    {
+        return $this->configuration('custom_footer_link_2');
+    }
+
     public function get($code, $key)
     {
         return $this->getOrFetch(__CLASS__, $key, function () use ($key, $code) {

@@ -155,5 +155,35 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
+        Setting::updateOrCreate(['code' => 'custom_footer_link_1'], [
+            'schema' => [
+                'type'       => 'object',
+                'required'   => [],
+                'properties' => [
+                    'title' => ['type' => 'string'],
+                    'link'  => ['type' => 'string'],
+                ],
+            ],
+            'data'   => [
+                'title' => null,
+                'link'  => null,
+            ],
+        ]);
+
+        Setting::updateOrCreate(['code' => 'custom_footer_link_2'], [
+            'schema' => [
+                'type'       => 'object',
+                'required'   => [],
+                'properties' => [
+                    'title' => ['type' => 'string'],
+                    'link'  => ['type' => 'string'],
+                ],
+            ],
+            'data'   => [
+                'title' => null,
+                'link'  => null,
+            ],
+        ]);
+
     }
 }

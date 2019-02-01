@@ -177,7 +177,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
-module.exports = __webpack_require__(13);
+module.exports = __webpack_require__(10);
 
 
 /***/ }),
@@ -185,23 +185,20 @@ module.exports = __webpack_require__(13);
 /***/ (function(module, exports, __webpack_require__) {
 
 Nova.booting(function (Vue, router) {
-    Vue.component('detail-json-schema', __webpack_require__(6));
-    Vue.component('form-json-schema', __webpack_require__(9));
+    Vue.component('detail-json-schema', __webpack_require__(3));
+    Vue.component('form-json-schema', __webpack_require__(6));
 });
 
 /***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(7)
+var __vue_script__ = __webpack_require__(4)
 /* template */
-var __vue_template__ = __webpack_require__(8)
+var __vue_template__ = __webpack_require__(5)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -240,11 +237,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 7 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -278,7 +279,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 8 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -288,39 +289,43 @@ var render = function() {
   return _c(
     "div",
     _vm._l(_vm.field.value, function(value, key) {
-      return _c("div", { staticClass: "flex border-b border-40" }, [
-        _c(
-          "div",
-          { staticClass: "w-1/4 py-4" },
-          [
-            _vm._t("default", [
-              _c("h4", { staticClass: "font-normal text-80" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(this._.capitalize(key)) +
-                    "\n                "
-                )
+      return _c(
+        "div",
+        { key: "field-" + key, staticClass: "flex border-b border-40" },
+        [
+          _c(
+            "div",
+            { staticClass: "w-1/4 py-4" },
+            [
+              _vm._t("default", [
+                _c("h4", { staticClass: "font-normal text-80" }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(this._.capitalize(key)) +
+                      "\n                "
+                  )
+                ])
               ])
-            ])
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "w-3/4 py-4" },
-          [
-            _vm._t("value", [
-              value && !_vm.shouldDisplayAsHtml
-                ? _c("p", { staticClass: "text-90" }, [_vm._v(_vm._s(value))])
-                : value && _vm.shouldDisplayAsHtml
-                ? _c("div", { domProps: { innerHTML: _vm._s(value) } })
-                : _c("p", [_vm._v("—")])
-            ])
-          ],
-          2
-        )
-      ])
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "w-3/4 py-4" },
+            [
+              _vm._t("value", [
+                value && !_vm.shouldDisplayAsHtml
+                  ? _c("p", { staticClass: "text-90" }, [_vm._v(_vm._s(value))])
+                  : value && _vm.shouldDisplayAsHtml
+                  ? _c("div", { domProps: { innerHTML: _vm._s(value) } })
+                  : _c("p", [_vm._v("—")])
+              ])
+            ],
+            2
+          )
+        ]
+      )
     }),
     0
   )
@@ -336,15 +341,15 @@ if (false) {
 }
 
 /***/ }),
-/* 9 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(10)
+var __vue_script__ = __webpack_require__(7)
 /* template */
-var __vue_template__ = __webpack_require__(12)
+var __vue_template__ = __webpack_require__(9)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -383,13 +388,24 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 10 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -471,7 +487,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 11 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -10664,7 +10680,7 @@ module.exports = g;
 });
 
 /***/ }),
-/* 12 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -10756,6 +10772,20 @@ var render = function() {
                   })
                 : _vm._e(),
               _vm._v(" "),
+              property.type === "image"
+                ? _c("input", {
+                    staticClass:
+                      "w-full form-control form-input form-input-bordered",
+                    class: _vm.errorClasses,
+                    attrs: {
+                      id: key,
+                      type: "file",
+                      accept: "images/*",
+                      placeholder: this._.capitalize(key)
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
               property.type === "boolean"
                 ? _c("checkbox", {
                     staticClass: "py-2",
@@ -10792,7 +10822,7 @@ if (false) {
 }
 
 /***/ }),
-/* 13 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

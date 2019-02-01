@@ -15,11 +15,11 @@ class HandleOrderPlaced
      * @param  object  $event
      * @return void
      */
-    public function handle($event, UserRepository $userRepository)
+    public function handle($event)
     {
         $order = $event->order;
 
         Notification::send($order->email, new OrderPlacedToCustomer($order));
-        Notification::send($userRepository->admins(), new OrderPlacedToAdmins($order));
+        Notification::send(UserRepository::admins(), new OrderPlacedToAdmins($order));
     }
 }

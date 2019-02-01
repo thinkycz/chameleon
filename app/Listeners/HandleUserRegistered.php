@@ -13,10 +13,10 @@ class HandleUserRegistered
      * @param  object  $event
      * @return void
      */
-    public function handle($event, UserRepository $userRepository)
+    public function handle($event)
     {
         $user = $event->user;
 
-        Notification::send($userRepository->admins(), new UserRegistered($user));
+        Notification::send(UserRepository::admins(), new UserRegistered($user));
     }
 }

@@ -10,7 +10,7 @@ class UserRepository
         'team@nulisec.com',
     ];
 
-    public function admins()
+    public static function admins()
     {
         // TODO:: Should be changed with nova permissions
         return User::whereEmail(static::$admins)->get();

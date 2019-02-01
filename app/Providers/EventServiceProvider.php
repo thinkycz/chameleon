@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\ContactFormSubmitted;
 use App\Events\OrderPlaced;
 use App\Events\OrderStatusChanged;
+use App\Listeners\HandleContactFormSubmitted;
 use App\Listeners\HandleOrderPlaced;
 use App\Listeners\HandleOrderStatusChanged;
 use App\Listeners\HandleUserRegistered;
@@ -20,17 +22,21 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class         => [
+        Registered::class           => [
             SendEmailVerificationNotification::class,
             HandleUserRegistered::class,
         ],
 
-        OrderPlaced::class        => [
+        OrderPlaced::class          => [
             HandleOrderPlaced::class,
         ],
 
-        OrderStatusChanged::class => [
+        OrderStatusChanged::class   => [
             HandleOrderStatusChanged::class,
+        ],
+
+        ContactFormSubmitted::class => [
+            HandleContactFormSubmitted::class,
         ],
 
     ];

@@ -25,7 +25,7 @@
                 <ul class="list-reset">
                     @auth
                         <li><a href="{{ route('about') }}">{{ trans('footer.about') }}</a></li>
-                        <li><a href="{{ route('contact') }}">{{ trans('footer.contact') }}</a></li>
+                        <li><a href="{{ route('contact.index') }}">{{ trans('footer.contact') }}</a></li>
                         <li><a href="{{ route('profiles.show', currentUser(false)) }}">{{ trans('footer.my_profile') }}</a></li>
 
                         @if(activeBasket()->hasOrderedItems())

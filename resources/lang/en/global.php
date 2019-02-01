@@ -8,6 +8,7 @@ return [
     'close'            => 'Close',
     'updated'          => 'Updating completed.',
     'no_price'         => 'No price',
+    'submit'           => 'Submit',
 
     'no_results_found' => 'We haven\'t found any results matching your request.',
 

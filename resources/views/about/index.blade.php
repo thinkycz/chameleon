@@ -16,10 +16,11 @@
                     <div class="card-body">
                         <form csrf action="{{ route('login') }}" method="post">
                             <div class="row pb-4">
+
                                 <div class="col-full">
                                     <div class="input-wrap">
                                         <label for="email">{{ trans('auth.email') }} *</label>
-                                        <input type="email" id="email" name="email" required class="input" value="{{ old('email') }}" placeholder="{{ trans('auth.your_email') }}">
+                                        <input type="email" id="email" name="email" required class="input" value="{{ currentUser()->email }}" placeholder="{{ trans('auth.your_email') }}">
                                     </div>
                                 </div>
 

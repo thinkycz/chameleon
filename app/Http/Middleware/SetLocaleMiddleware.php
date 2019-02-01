@@ -56,7 +56,7 @@ class SetLocaleMiddleware
     {
         $requestedLang = $request->get('lang');
 
-        $locale = $requestedLang ?: Session::get('lang') ?: optional($this->user)->locale ?: getAppLocale();
+        $locale = $requestedLang ?: Session::get('lang') ?: optional($this->user)->locale ?: Locale::app();
 
         if (!in_array($locale, Locale::codes())) {
             return $next($request);

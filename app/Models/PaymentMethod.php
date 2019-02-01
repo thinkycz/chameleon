@@ -18,6 +18,11 @@ class PaymentMethod extends Model
         return $this->hasMany(Order::class);
     }
 
+    public function deliveryMethod()
+    {
+        return $this->belongsTo(DeliveryMethod::class);
+    }
+
     public function getFormattedPriceAttribute()
     {
         return intval($this->price) ? showPriceWithCurrency($this->price, currentCurrency()) : trans('global.free');

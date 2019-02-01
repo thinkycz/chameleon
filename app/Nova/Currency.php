@@ -19,7 +19,7 @@ class Currency extends Resource
      */
     public static $model = \App\Models\Currency::class;
 
-    public static $group = 'Geolocation';
+    public static $group = 'Settings';
 
     public static $globallySearchable = false;
 

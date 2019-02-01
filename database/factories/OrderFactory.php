@@ -14,10 +14,10 @@ use Faker\Generator as Faker;
 $factory->define(Order::class, function (Faker $faker) {
     return [
         'placed_at' => Carbon::yesterday(),
-        'tax_date'           => Carbon::today()->addDays(5),
-        'due_date'           => Carbon::today()->addDays(12),
-        'email'              => $faker->email,
-        'phone'              => $faker->phoneNumber,
+        'tax_date'  => Carbon::today()->addDays(5),
+        'due_date'  => Carbon::today()->addDays(12),
+        'email'     => $faker->email,
+        'phone'     => $faker->phoneNumber,
     ];
 });
 

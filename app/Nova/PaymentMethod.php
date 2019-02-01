@@ -2,11 +2,11 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Nulisec\TranslatableText\TranslatableText;
 
 class PaymentMethod extends Resource
@@ -18,9 +18,9 @@ class PaymentMethod extends Resource
      */
     public static $model = \App\Models\PaymentMethod::class;
 
-    public static $group = 'Checkout';
-
     public static $globallySearchable = false;
+
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -60,8 +60,9 @@ class PaymentMethod extends Resource
 
             Boolean::make('Price Will Be Calculated'),
 
-            Boolean::make('Enabled')
+            Boolean::make('Enabled'),
 
+            BelongsTo::make('Delivery Method', 'deliveryMethod'),
         ];
     }
 

@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
@@ -18,7 +19,7 @@ class DeliveryMethod extends Resource
      */
     public static $model = \App\Models\DeliveryMethod::class;
 
-    public static $group = 'Checkout';
+    public static $group = 'Settings';
 
     public static $globallySearchable = false;
 
@@ -63,6 +64,8 @@ class DeliveryMethod extends Resource
             Boolean::make('Price Will Be Calculated'),
 
             Boolean::make('Enabled'),
+
+            HasMany::make('Payment Methods', 'paymentMethods'),
         ];
     }
 

@@ -15,5 +15,6 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('layouts.partials.header', '\App\Http\ViewComposers\HeaderComposer@compose');
+        View::composer('mail.*', '\App\Http\ViewComposers\EmailComposer@compose');
     }
 }

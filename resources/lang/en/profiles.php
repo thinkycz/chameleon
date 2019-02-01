@@ -46,8 +46,10 @@ return [
     'company_information'              => 'Your company information, if you created a store for that company',
     'products_sold_info'               => 'Information about products you sold on our marketplace',
     'let_us_know'                      => 'Please let us know if you have any questions about this, and we\'d be happy to help.',
-    'request_a_complete_deletion'      => 'To request a complete deletion of your account, please email <a href="mailto:team@nulisec.com">team@nulisec.com</a>',
+    'request_a_complete_deletion'      => 'To request a complete deletion of your account, please email',
     'process_within_30_days'           => 'We will process your request within 30 days of receiving your email',
+    'preparing_your_data'              => 'We are preparing your data. When it\'s ready we are going to send it to your email',
+    'request_download_confirmation'    => 'Are you sure you want to proceed with downloading your data?',
 
     // Forms
     'first_name'                       => 'First name',

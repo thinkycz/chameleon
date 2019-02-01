@@ -9,7 +9,14 @@
             <div class="mb-4">
                 <h3 class="mb-2 mt-6">{{ trans('profiles.export_data') }}</h3>
                 <p class="mb-4">{{ trans('profiles.request_export') }}</p>
-                <a href="#!" class="btn btn-danger">{{ trans('profiles.request_download') }}</a>
+
+                <vue-button method="post"
+                    action="{{ route('profiles.download_account_data', $user) }}"
+                    :confirm="true"
+                    button-class="btn btn-danger"
+                    label="{{ trans('profiles.request_download') }}">
+                </vue-button>
+
             </div>
         </div>
         <div class="col-half sm:hidden md:block">
@@ -39,7 +46,10 @@
                 </ul>
 
                 <p>{{ trans('profiles.let_us_know') }} </p>
-                <p class="font-bold">{!! trans('profiles.request_a_complete_deletion') !!}</p>
+                @php
+                    $emailAddress = config('mail.from.address');
+                @endphp
+                <p class="font-bold">{{ trans('profiles.request_a_complete_deletion') }} <a href="mailto:{{ $emailAddress }}">{{ $emailAddress }}</a></p>
                 <p>{{ trans('profiles.process_within_30_days') }}</p>
             </div>
         </div>

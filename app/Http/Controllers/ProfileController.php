@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Tools\ChartData;
 use App\Http\Requests\Profile\UpdateProfileRequest;
+use App\Jobs\ExportUserData;
 use App\Models\User;
 use App\Repositories\StatsRepository;
 
@@ -35,5 +36,14 @@ class ProfileController extends Controller
         snackbar()->success(trans('profiles.profile_updated'));
 
         return redirect()->route('profiles.show', ['user' => $user, 'current' => $request->get('current')]);
+    }
+
+    public function downloadAccountData(User $user)
+    {
+        $this->dispatch(new ExportUserData($user));
+
+        snackbar()->success(trans('profiles.preparing_your_data'));
+
+        return $this->ajaxOrRedirect(back()->getTargetUrl());
     }
 }

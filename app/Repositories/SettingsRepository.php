@@ -17,6 +17,11 @@ class SettingsRepository extends InstanceCache
         return $this->get('company_details', 'email');
     }
 
+    public function getCompanyName()
+    {
+        return $this->get('store_settings', 'name');
+    }
+
     public function getLogo()
     {
         return $this->get('store_settings', 'logo') ?: asset('images/chameleon.png');

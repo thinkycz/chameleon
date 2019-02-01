@@ -5,36 +5,30 @@
                 <img src="{{ settingsRepository()->getLogo() }}" alt="{{ config('app.name') }}"/>
             </div>
             <div class="col-fourth">
-                <h4>Useful Links</h4>
+                <h4>Our Company</h4>
                 <ul class="list-reset">
                     <li>
-                        <a href="http://enormous.test/pages/obchodni-podminky">Terms and Conditions</a>
+                        <a href="{{ preferenceRepository()->getTermsPage()->showRoute() }}">Terms and Conditions</a>
                     </li>
                     <li>
-                        <a href="http://enormous.test/pages/ochrana-osobnich-udaju">Privacy Policy</a>
+                        <a href="{{ preferenceRepository()->getPrivacyPage()->showRoute() }}">Privacy Policy</a>
                     </li>
                     <li>
-                        <a href="http://enormous.test/pages/reklamacni-rad">Refunds and returns</a>
+                        <a href="{{ preferenceRepository()->getRefundsPage()->showRoute() }}">Refunds and returns</a>
                     </li>
                     <li>
-                        <a href="http://enormous.test/pages/casto-kladene-otazky">Frequently asked questions</a>
+                        <a href="{{ preferenceRepository()->getFaqPage()->showRoute() }}">Frequently asked questions</a>
                     </li>
                 </ul>
             </div>
             <div class="col-fourth">
-                <h4>Information</h4>
+                <h4>Links</h4>
                 <ul class="list-reset">
                     <li>
-                        <a href="http://enormous.test/pages/obchodni-podminky">Terms and Conditions</a>
+                        <a href="{{ route('profiles.show', auth()->user()) }}">My Account</a>
                     </li>
                     <li>
-                        <a href="http://enormous.test/pages/ochrana-osobnich-udaju">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="http://enormous.test/pages/reklamacni-rad">Refunds and returns</a>
-                    </li>
-                    <li>
-                        <a href="http://enormous.test/pages/casto-kladene-otazky">Frequently asked questions</a>
+                        <a href="#">Contact Us</a>
                     </li>
                 </ul>
             </div>

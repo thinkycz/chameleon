@@ -6,6 +6,7 @@ use App\Models\Availability;
 use App\Models\Country;
 use App\Models\Currency;
 use App\Models\OrderStatus;
+use App\Models\Page;
 use App\Models\Preference;
 use App\Models\StoreStatus;
 use App\Models\Unit;
@@ -107,6 +108,38 @@ class PreferenceRepository extends InstanceCache
     public function getDefaultPriceLevel()
     {
         return $this->getPreference('default_price_level');
+    }
+
+    /**
+     * @return Page
+     */
+    public function getTermsPage()
+    {
+        return $this->getPreference('terms_conditions_page');
+    }
+
+    /**
+     * @return Page
+     */
+    public function getPrivacyPage()
+    {
+        return $this->getPreference('privacy_policy_page');
+    }
+
+    /**
+     * @return Page
+     */
+    public function getRefundsPage()
+    {
+        return $this->getPreference('return_refund_page');
+    }
+
+    /**
+     * @return Page
+     */
+    public function getFaqPage()
+    {
+        return $this->getPreference('frequently_asked_questions_page');
     }
 
     /**

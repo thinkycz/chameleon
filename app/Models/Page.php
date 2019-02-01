@@ -15,4 +15,9 @@ class Page extends Model
         'title',
         'content',
     ];
+
+    public function showRoute()
+    {
+        return route('pages.show', $this);
+    }
 }

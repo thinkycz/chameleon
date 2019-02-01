@@ -2,6 +2,7 @@
 
 use App\Models\Currency;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 /**
  * @return User
@@ -24,11 +25,19 @@ if (!function_exists('activeBasket')) {
 }
 
 /**
- * @return \App\Models\Basket
+ * @return \App\Models\Currency
  */
 if (!function_exists('currentCurrency')) {
     function currentCurrency()
     {
+        if ($currency = Session::has('currency')) {
+            return Session::get('currency');
+        }
+
+        if ($currency = currentUser()->currency) {
+            return $currency;
+        }
+
         return preferenceRepository()->getDefaultCurrency();
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -34,6 +34,9 @@ class CreateUsersTable extends Migration
 
             $table->unsignedInteger('price_level_id')->nullable();
             $table->foreign('price_level_id')->references('id')->on('price_levels')->onDelete('set null');
+
+            $table->unsignedInteger('currency_id')->nullable();
+            $table->foreign('currency_id')->references('id')->on('currencies')->onDelete('set null');
         });
     }
 

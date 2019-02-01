@@ -42,7 +42,8 @@
         "spatie/laravel-translatable": "^3.1",
         "spatie/nova-tags-field": "^1.1",
         "teamtnt/laravel-scout-tntsearch-driver": "^3.2",
-        "timothyasp/nova-color-field": "^1.0"
+        "timothyasp/nova-color-field": "^1.0",
+        "nulisec/bulk-image-upload": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -81,6 +82,10 @@
         {
             "type": "path",
             "url": "./nova-components/GoogleSheetsImporter"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/BulkImageUpload"
         }
     ],
     "extra": {

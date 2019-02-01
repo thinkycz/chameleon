@@ -20,6 +20,7 @@ export default {
             "confirm_action": "Please confirm your action",
             "confirm": "Confirm",
             "cancel": "Cancel",
+            "no_file_selected": "No file selected",
             "locales.en": "English",
             "locales.vi": "Vietnamese",
             "locales.cs": "Czech"
@@ -146,6 +147,18 @@ export default {
             "complete_order": "Complete order",
             "order_was_placed": "Your order has been placed!"
         },
+        "bulk_image_upload": {
+            "upload_images": "Drop files here to upload",
+            "dictFallbackMessage": "Your browser does not support drag'n'drop file uploads.",
+            "dictFallbackText": "Please use the fallback form below to upload your files like in the olden days.",
+            "dictFileTooBig": "File is too big ({filesize} MiB). Max filesize: {maxFilesize} MiB.",
+            "dictInvalidFileType": "You can't upload files of this type.",
+            "dictResponseError": "Server responded with {statusCode} code.",
+            "dictCancelUpload": "Cancel upload",
+            "dictCancelUploadConfirmation": "Are you sure you want to cancel this upload?",
+            "dictRemoveFile": "Remove file",
+            "dictMaxFilesExceeded": "You can not upload any more files."
+        },
         "basket": {
             "delete_item": "Delete from Basket",
             "total": "Total",
@@ -222,7 +235,8 @@ export default {
             "increase_the_quantity": "Please increase the quantity.",
             "this_product_is_stock": "This product is currently in <strong> {stock}.</strong>",
             "total_times_ordered": "This product has been ordered total of <strong> {total} times.</strong>",
-            "in_stock_moq": "There are <strong> {stock} </strong> {unit} in stock, and minimum order quantity is <strong> {moq}.</strong>"
+            "in_stock_moq": "There are <strong> {stock} </strong> {unit} in stock, and minimum order quantity is <strong> {moq}.</strong>",
+            "product_not_found": "Product not found!"
         },
         "validation": {
             "accepted": "The {attribute} must be accepted.",

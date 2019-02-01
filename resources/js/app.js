@@ -105,6 +105,7 @@ Vue.component('vue-dropdown', require('./components/dropdowns/Dropdown.vue'));
 Vue.component('vue-tags-dropdown', require('./components/dropdowns/Tags.vue'));
 Vue.component('vue-subcategories-dropdown', require('./components/dropdowns/Subcategories.vue'));
 Vue.component('vue-languages', require('./components/dropdowns/Languages.vue'));
+Vue.component('vue-currencies', require('./components/dropdowns/Currencies.vue'));
 
 const app = new Vue({
     el: '#app',

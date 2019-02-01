@@ -2,12 +2,11 @@
 
 namespace App\Nova;
 
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Nulisec\TranslatableText\TranslatableText;
 
 class Currency extends Resource
@@ -54,7 +53,7 @@ class Currency extends Resource
 
             Text::make('Symbol'),
 
-            Number::make('Exchange Rate'),
+            Number::make('Exchange Rate')->step(0.01),
 
             Boolean::make('Symbol Is Before')->hideFromIndex(),
 

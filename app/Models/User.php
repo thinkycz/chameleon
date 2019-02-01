@@ -66,6 +66,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return $this->belongsTo(PriceLevel::class);
     }
 
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
+    }
+
     public function billingDetails()
     {
         return $this->hasMany(BillingDetail::class);

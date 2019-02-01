@@ -20,7 +20,9 @@ class InstanceCache
         if ($this->instanceData->has($key)) {
             $result = $this->instanceData->get($key);
         } else {
-            $result = $closure();
+            $result = cache()->remember($key, 3600, function () use ($closure) {
+                return $closure();
+            });
             $this->instanceData->put($key, $result);
         }
 

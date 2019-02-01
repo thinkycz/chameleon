@@ -9,7 +9,9 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "build-google-sheets-importer": "cd nova-components/GoogleSheetsImporter && npm run dev",
-        "build-google-sheets-importer-prod": "cd nova-components/GoogleSheetsImporter && npm run prod"
+        "build-google-sheets-importer-prod": "cd nova-components/GoogleSheetsImporter && npm run prod",
+        "build-bulk-image-upload": "cd nova-components/BulkImageUpload && npm run dev",
+        "build-bulk-image-upload-prod": "cd nova-components/BulkImageUpload && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18.0",

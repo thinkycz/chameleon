@@ -18,9 +18,14 @@
             </div>
 
             <div class="col-half">
+                <div class="inline-block mr-4">
+                    <div class="icon-wrap right-icon">
+                        <vue-currencies :currencies="{{ json_encode($currencies->values()) }}" current="{{ currentCurrency()->name }}"></vue-currencies>
+                    </div>
+                </div>
                 <div class="inline-block">
                     <div class="icon-wrap right-icon">
-                        <vue-languages :locales="{{ json_encode(\App\Enums\Locale::all()) }}"></vue-languages>
+                        <vue-languages :locales="{{ json_encode($locales) }}"></vue-languages>
                     </div>
                 </div>
             </div>

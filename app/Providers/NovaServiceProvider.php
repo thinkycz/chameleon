@@ -14,6 +14,7 @@ use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Laravel\Nova\Tools\Dashboard;
 use MadWeb\NovaHorizonLink\HorizonLink;
+use Nulisec\BulkImageUpload\BulkImageUpload;
 use Nulisec\GoogleSheetsImporter\GoogleSheetsImporter;
 use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
 use Silvanite\NovaToolPermissions\NovaToolPermissions;
@@ -92,6 +93,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new HorizonLink),
             (new NovaToolPermissions),
             (new GoogleSheetsImporter),
+            (new BulkImageUpload),
         ];
     }
 

@@ -22,9 +22,14 @@ class SettingsRepository extends InstanceCache
         return $this->get('store_settings', 'name');
     }
 
+    public function getCompanyAddress()
+    {
+        return $this->get('company_details', 'street') . ' ' . $this->get('company_details', 'city');
+    }
+
     public function getLogo()
     {
-        return $this->get('store_settings', 'logo') ?: asset('images/chameleon.png');
+        return $this->get('store_settings', 'logo') ?? asset('images/chameleon.png');
     }
 
     public function getCustomLink1()

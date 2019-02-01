@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('search', 'SearchController@index')->name('search');
+Route::get('contact', 'ContactController@index')->name('contact');
+Route::get('about-us', 'AboutController@index')->name('about');
 Route::resource('pages', 'PageController')->only('show');
 Route::resource('products', 'ProductController')->only('show');
 Route::resource('categories', 'CategoryController')->only('index', 'show');

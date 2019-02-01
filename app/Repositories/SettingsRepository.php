@@ -29,7 +29,7 @@ class SettingsRepository extends InstanceCache
 
     public function getLogo()
     {
-        return $this->get('store_settings', 'logo') ?? asset('images/chameleon.png');
+        return $this->get('store_settings', 'logo') ?: asset('images/chameleon.png');
     }
 
     public function getCustomLink1()

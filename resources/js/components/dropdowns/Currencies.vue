@@ -24,7 +24,7 @@
 
         created() {
             this.items = this.currencies.map(currency => ({
-                label: currency.name[window.currentLocale],
+                label: currency.isocode,
                 value: currency.isocode,
             }));
         },

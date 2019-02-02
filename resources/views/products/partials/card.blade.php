@@ -8,10 +8,12 @@
         <h3><a href="{{ route('products.show', $product) }}">{{ $product->name }}</a></h3>
     </div>
 
-    <div class="product-price">
-        <p class="price">{{ $product->formatted_price }}</p>
-        <p class="price-excl-vat">{{ trans('products.price_excl_vat', ['price' => $product->formatted_price_excl_vat, 'vat' => $product->formatted_vatrate]) }}</p>
-    </div>
+    @auth
+        <div class="product-price">
+            <p class="price">{{ $product->formatted_price }}</p>
+            <p class="price-excl-vat">{{ trans('products.price_excl_vat', ['price' => $product->formatted_price_excl_vat, 'vat' => $product->formatted_vatrate]) }}</p>
+        </div>
+    @endauth
 
     <div class="product-stock">
         <span class="icon-wrap">

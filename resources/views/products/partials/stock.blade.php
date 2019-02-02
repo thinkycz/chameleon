@@ -1,11 +1,5 @@
 <div class="product-stock my-5 text-sm">
 
-    @auth
-        <div class="my-5">
-            <vue-add-to-basket :is-mini="false" :product="{{ json_encode($product) }}"></vue-add-to-basket>
-        </div>
-    @endauth
-
     <div class="alert my-5 {{ $product->availability_or_default->allow_orders ? 'success' : 'danger' }}">
         <span class="icon-wrap">
             <icon-cube></icon-cube>

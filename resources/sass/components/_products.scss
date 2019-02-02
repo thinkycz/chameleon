@@ -45,7 +45,7 @@
         }
     }
     .product-data {
-        @apply relative px-4 pt-2;
+        @apply relative px-4 my-3;
         .badge {
             @apply absolute;
             top: -15px;
@@ -59,7 +59,7 @@
         }
     }
     .product-price {
-        @apply py-2 px-4;
+        @apply my-3 px-4;
         .price {
             @apply text-primary font-bold mb-0 text-xl;
         }
@@ -68,10 +68,10 @@
         }
     }
     .product-stock {
-        @apply px-4 text-xs mb-4 select-none;
+        @apply px-4 text-xs my-3 select-none;
     }
     .product-actions {
-        @apply text-center py-3 bg-grey-lightest flex justify-between px-4;
+        @apply text-center bg-grey-lightest flex justify-between p-4;
 
         .mini {
             .icon {
@@ -142,9 +142,9 @@
         width: 55%;
     }
 }
-.product-stock {
+.product-basket {
     .product-actions {
-        @apply flex mb-6;
+        @apply flex;
 
         .btn {
             @apply flex-grow flex justify-center;

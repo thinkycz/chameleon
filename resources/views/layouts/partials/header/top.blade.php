@@ -20,7 +20,7 @@
             <div class="col-half">
                 <div class="inline-block mr-4">
                     <div class="icon-wrap right-icon">
-                        <vue-currencies :currencies="{{ json_encode($currencies->values()) }}" current="{{ currentCurrency()->name }}"></vue-currencies>
+                        <vue-currencies :currencies="{{ json_encode($currencies->values()) }}" current="{{ currentCurrency()->isocode }}"></vue-currencies>
                     </div>
                 </div>
                 <div class="inline-block">

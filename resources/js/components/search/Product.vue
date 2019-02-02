@@ -12,8 +12,8 @@
                     :href="product.show_path">{{ product.name }}</a>
             </h4>
             <p class="text-xs text-grey-darker mb-0">
-                <span v-if="product.catalogue_number">{{ $trans('products.catalogue_number') }}<strong class="ml-1">{{ product.catalogue_number }}</strong></span>
-                <span v-if="product.barcode">{{ $trans('products.barcode') }}<strong class="ml-1">{{ product.barcode }}</strong></span>
+                <span v-if="product.barcode"><strong class="mr-1">EAN</strong>{{ product.barcode }}</span>
+                <span v-else-if="product.catalogue_number"><strong class="mr-1">CAT</strong>{{ product.catalogue_number }}</span>
             </p>
             <p class="mb-0"
                 v-if="product.formatted_price">

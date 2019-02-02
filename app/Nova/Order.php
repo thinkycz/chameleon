@@ -134,7 +134,10 @@ class Order extends Resource
     public function filters(Request $request)
     {
         return [
-            new Filters\OrderPlacedStatus()
+            new Filters\OrderPlacedStatus(),
+            new Filters\OrderStatus(),
+            new Filters\OrderDeliveryMethod(),
+            new Filters\OrderPaymentMethod(),
         ];
     }
 

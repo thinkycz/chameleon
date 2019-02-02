@@ -21,6 +21,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 use Silvanite\NovaToolPermissions\Role;
 
 class User extends Resource
@@ -160,7 +161,8 @@ class User extends Resource
     public function actions(Request $request)
     {
         return [
-            (new ChangeUserActivationStatus)
+            (new ChangeUserActivationStatus()),
+            (new DownloadExcel()),
         ];
     }
 }

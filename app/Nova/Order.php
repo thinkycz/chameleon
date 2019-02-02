@@ -15,6 +15,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Panel;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 
 class Order extends Resource
 {
@@ -157,7 +158,8 @@ class Order extends Resource
     public function actions(Request $request)
     {
         return [
-            (new ChangeOrderStatus),
+            (new ChangeOrderStatus()),
+            (new DownloadExcel()),
         ];
     }
 }

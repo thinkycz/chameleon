@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3a74bb6600400d7d8f49329d67d8a25",
+    "content-hash": "5ce67b539ee36f48e7da5cde212c7c92",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3174,6 +3174,60 @@
                 "phpspreadsheet"
             ],
             "time": "2019-01-30T19:01:33+00:00"
+        },
+        {
+            "name": "maatwebsite/laravel-nova-excel",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Maatwebsite/Laravel-Nova-Excel.git",
+                "reference": "806cafa2cf38de9a8f6c8cbc835445f406148b69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Nova-Excel/zipball/806cafa2cf38de9a8f6c8cbc835445f406148b69",
+                "reference": "806cafa2cf38de9a8f6c8cbc835445f406148b69",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.6",
+                "laravel/nova": "*",
+                "maatwebsite/excel": "^3.0.10",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Maatwebsite\\LaravelNovaExcel\\LaravelNovaExcelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Maatwebsite\\LaravelNovaExcel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Brouwers",
+                    "email": "patrick@maatwebsite.nl"
+                }
+            ],
+            "description": "Supercharged Excel exports for Laravel Nova Resources",
+            "keywords": [
+                "PHPExcel",
+                "actions",
+                "laravel",
+                "laravel-nova",
+                "nova",
+                "phpspreadsheet"
+            ],
+            "time": "2018-12-27T13:20:35+00:00"
         },
         {
             "name": "mad-web/nova-horizon-link",

@@ -19,7 +19,27 @@ class SettingsRepository extends InstanceCache
 
     public function getCompanyName()
     {
-        return $this->get('store_settings', 'name');
+        return $this->get('company_details', 'name');
+    }
+
+    public function getCompanyAbout()
+    {
+        return $this->get('company_details', 'about');
+    }
+
+    public function getCompanyGoogleMap()
+    {
+        return $this->get('company_details', 'google_map');
+    }
+
+    public function getCompanyId()
+    {
+        return $this->get('company_details', 'id');
+    }
+
+    public function getCompanyVatId()
+    {
+        return $this->get('company_details', 'vatid');
     }
 
     public function getCompanyAddress()

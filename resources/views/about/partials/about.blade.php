@@ -1,12 +1,8 @@
 <div class="row">
     <div class="col-content">
-        <div class="card">
-            example content
-        </div>
+        @include('about.partials.company_details')
     </div>
     <div class="col-sidebar">
-        <div class="card">
-            exapmple sidebar
-        </div>
+        @include('about.partials.business_hours')
     </div>
 </div>

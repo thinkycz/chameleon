@@ -39,6 +39,7 @@ class SettingSeeder extends Seeder
                 'required'   => ['name'],
                 'properties' => [
                     'name'       => ['type' => 'string'],
+                    'about'      => ['type' => 'textarea'],
                     'street'     => ['type' => 'string'],
                     'city'       => ['type' => 'string'],
                     'zipcode'    => ['type' => 'string'],
@@ -52,6 +53,7 @@ class SettingSeeder extends Seeder
             ],
             'data'   => [
                 'name'       => 'Nulisec',
+                'about'      => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at sapien sit amet nunc vulputate sodales. ',
                 'street'     => 'V Lužích 6',
                 'city'       => 'Prague 4',
                 'zipcode'    => '142 00',

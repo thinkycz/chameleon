@@ -1,4 +1,4 @@
-<div class="row mt-8">
+<div class="row mt-16">
     <div class="col-full">
         <h2 class="heading-title">{{ trans('about.some_stats') }}</h2>
         <p class="heading-subtitle">{{ trans('about.some_stats_desc') }} </p>

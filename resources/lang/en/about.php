@@ -1,6 +1,18 @@
 <?php
 
 return [
+    'business_hours'        => 'Business Hours',
+    'company_id'            => 'Company ID',
+    'vat_id'                => 'Vat ID',
+
+    'business_hours.mo'     => 'Monday',
+    'business_hours.tu'     => 'Tuesday',
+    'business_hours.we'     => 'Wednesday',
+    'business_hours.th'     => 'Thursday',
+    'business_hours.fr'     => 'Friday',
+    'business_hours.sa'     => 'Saturday',
+    'business_hours.su'     => 'Sunday',
+
     'some_stats'            => 'Some stats about our store',
     'some_stats_desc'       => 'We are always proud to share the trust we have built with our customers in previous years of operating.',
 

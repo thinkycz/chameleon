@@ -9,7 +9,7 @@ use App\Nova\Filters\UserPriceLevel;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\UsersPerDay;
 use App\Nova\Metrics\UsersPerPriceLevel;
-use Bissolli\NovaPhoneField\PhoneNumber;
+use Nulisec\PhoneField\PhoneNumber;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;

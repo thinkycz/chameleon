@@ -10,7 +10,7 @@ use App\Nova\Filters\OrderStatus;
 use App\Nova\Metrics\NumberOfOrders;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\OrdersPerStatus;
-use Bissolli\NovaPhoneField\PhoneNumber;
+use Nulisec\PhoneField\PhoneNumber;
 use Illuminate\Http\Request;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;

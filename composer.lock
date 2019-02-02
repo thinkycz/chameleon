@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ce67b539ee36f48e7da5cde212c7c92",
+    "content-hash": "0fc7cc40cc8230b2c257ef5271e249e6",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -305,57 +305,6 @@
                 "laravel-tag-helper"
             ],
             "time": "2018-10-08T10:10:05+00:00"
-        },
-        {
-            "name": "bissolli/nova-phone-field",
-            "version": "0.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bissolli/nova-phone-field.git",
-                "reference": "ab11fff0a8390769db661a38bf6119834f4b4cb6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bissolli/nova-phone-field/zipball/ab11fff0a8390769db661a38bf6119834f4b4cb6",
-                "reference": "ab11fff0a8390769db661a38bf6119834f4b4cb6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Bissolli\\NovaPhoneField\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Bissolli\\NovaPhoneField\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gustavo Bissolli",
-                    "email": "gustavo.bissolli@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A phone field for Laravel Nova apps.",
-            "homepage": "https://github.com/bissolli/nova-phone-field",
-            "keywords": [
-                "input mask",
-                "laravel",
-                "nova",
-                "phone mask"
-            ],
-            "time": "2018-11-12T14:56:24+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -3904,7 +3853,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/BulkImageUpload",
-                "reference": "18db550cee045f21835937ad175867c5dd291835",
+                "reference": "6dbe6a45cb861573ab086242e4d06d1f3b2c2b91",
                 "shasum": null
             },
             "require": {
@@ -4029,6 +3978,40 @@
                 "MIT"
             ],
             "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
+            "name": "nulisec/nova-phone-field",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/PhoneField",
+                "reference": "87a55167b170e2e8cc4042c622417f0176b523ca",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\PhoneField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\PhoneField\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova phone field.",
             "keywords": [
                 "laravel",
                 "nova"

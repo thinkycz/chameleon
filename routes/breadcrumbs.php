@@ -16,6 +16,30 @@ Breadcrumbs::for('profiles.show', function ($breadcrumbs, User $user) {
     $breadcrumbs->push(trans('breadcrumbs.my_profile'), route('profiles.show', $user));
 });
 
+// Home > About Us
+Breadcrumbs::for('about', function ($breadcrumbs) {
+    $breadcrumbs->push(trans('breadcrumbs.home'), route('home'));
+    $breadcrumbs->push(trans('breadcrumbs.about_us'), route('about'));
+});
+
+// Home > Contact
+Breadcrumbs::for('contact.index', function ($breadcrumbs) {
+    $breadcrumbs->push(trans('breadcrumbs.home'), route('home'));
+    $breadcrumbs->push(trans('breadcrumbs.contact_us'), route('contact.index'));
+});
+
+// Home > Register
+Breadcrumbs::for('register', function ($breadcrumbs) {
+    $breadcrumbs->push(trans('breadcrumbs.home'), route('home'));
+    $breadcrumbs->push(trans('breadcrumbs.register'), route('register'));
+});
+
+// Home > Login
+Breadcrumbs::for('login', function ($breadcrumbs) {
+    $breadcrumbs->push(trans('breadcrumbs.home'), route('home'));
+    $breadcrumbs->push(trans('breadcrumbs.login'), route('login'));
+});
+
 // Home > {Page}
 Breadcrumbs::register('pages.show', function ($breadcrumbs, Page $page) {
     $breadcrumbs->parent('home');

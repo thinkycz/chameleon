@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container py-16">
+    <div class="container pb-16">
+
+        @include('partials.breadcrumb_area')
+
         <div class="row">
             <div class="col-half mx-auto">
 

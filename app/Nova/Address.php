@@ -2,7 +2,7 @@
 
 namespace App\Nova;
 
-use Bissolli\NovaPhoneField\PhoneNumber;
+use Nulisec\PhoneField\PhoneNumber;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;

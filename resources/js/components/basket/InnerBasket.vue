@@ -14,10 +14,10 @@
                             <a :href="item.product.show_path"
                                 class="text-grey-darkest">{{ item.name }}</a>
                         </p>
-                        <p class="p-small text-left">
-                            <span class="mr-4">{{ item.quantity_ordered }}&times;<strong>{{ item.formatted_price }}</strong></span>
-                            <span>{{ $trans('basket.total') }}&nbsp;<strong class="text-primary">{{ item.formatted_total_price }}</strong></span>
-                        </p>
+                        <div class="text-left text-xs">
+                            <div class="my-1">{{ item.quantity_ordered }}&nbsp;&times;&nbsp;<strong>{{ item.formatted_price }}</strong></div>
+                            <div class="my-1">{{ $trans('basket.total') }}&nbsp;<strong class="text-primary">{{ item.formatted_total_price }}</strong></div>
+                        </div>
                     </div>
                     <div class="inline-block w-1/3">
                         <sidebasket-item-quantity :item="item"
@@ -27,11 +27,9 @@
                 </div>
             </li>
         </ul>
-        <div class="text-center py-3 border-t mt-3 mx-2">
-            <a href="/checkout"
-                class="btn btn-primary mr-4">{{ $trans('header.checkout') }}</a>
-            <a href="/basket"
-                class="btn-text btn-primary">{{ $trans('header.view_basket') }}</a>
+        <div class="flex justify-between items-center p-5">
+            <a href="/basket" class="btn-text btn-primary">{{ $trans('header.view_basket') }}</a>
+            <a href="/checkout" class="btn btn-primary">{{ $trans('header.checkout') }}</a>
         </div>
     </div>
 </template>

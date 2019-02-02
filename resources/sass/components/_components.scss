@@ -101,6 +101,16 @@
 .icon {
     @apply w-6 h-6 inline fill-current;
 }
+.icon-xs {
+    .icon {
+        @apply w-2 h-2;
+    }
+}
+.icon-sm {
+    .icon {
+        @apply w-4 h-4;
+    }
+}
 .icon-2x {
     .icon {
         @apply w-16 h-16;

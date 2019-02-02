@@ -15,6 +15,7 @@ export default {
             "close": "Close",
             "updated": "Updating completed.",
             "no_price": "No price",
+            "submit": "Submit",
             "no_results_found": "We haven't found any results matching your request.",
             "free": "Free",
             "confirm_action": "Please confirm your action",
@@ -94,7 +95,9 @@ export default {
             "verification_policy": "Verification Policy",
             "watermark_settings": "Watermark Settings",
             "recaptcha_enabled": "Recaptcha Enabled",
-            "object": "Object"
+            "object": "Object",
+            "custom_footer_link_1": "Custom Footer Link 1",
+            "custom_footer_link_2": "Custom Footer Link 2"
         },
         "mail": {
             "export_data_subject": "Personal Information export request completed",
@@ -122,6 +125,14 @@ export default {
             "moq_multiplies_only": "You can order only multiplies of minimum order quantity",
             "options_missing": "Please select all product options",
             "mov_for_store_is": "Minimum order value for store {store} is {amount}"
+        },
+        "contact": {
+            "heading": "<span>Do you have</span> any questions?",
+            "subheading": "You can contact us directly using the form below. We are going to reply as soon as possible.",
+            "your_name": "Your name",
+            "your_message": "Your message",
+            "your_message_desc": "Type your message here",
+            "contact_success": "We have received your message."
         },
         "checkout": {
             "billing_details": "Billing Details",
@@ -160,7 +171,7 @@ export default {
             "dictMaxFilesExceeded": "You can not upload any more files."
         },
         "basket": {
-            "delete_item": "Delete from Basket",
+            "delete_item": "Remove from Basket",
             "total": "Total",
             "checkout": "Checkout",
             "update_quantities": "Update Quantities",
@@ -177,7 +188,8 @@ export default {
             "successfully_updated": "Successfully updated",
             "basket": "Basket",
             "confirmation": "Confirmation",
-            "order_placed": "Order Placed"
+            "order_placed": "Order Placed",
+            "incl_vat": "incl. VAT"
         },
         "header": {
             "welcome": "Welcome back, {name}",
@@ -218,24 +230,44 @@ export default {
             "user_registered": "The user is {username} and has a email {email}",
             "account_activated": "Your account has been activated",
             "we_have_activated_your_account": "We have activated your account on our shop. You can start shopping on our website now, by logging in with your account.",
-            "login_now": "Login now"
+            "login_now": "Login now",
+            "new_contact_form_request": "New Contact Form Request",
+            "new_contact_form_request_description": "Someone used our contact form to contact us! Reply to this email to contact the customer.",
+            "name_wrote": "{name} wrote:",
+            "reply_to_mail": "reply to: {mail}"
+        },
+        "footer": {
+            "quick_links": "Quick Links",
+            "my_profile": "My profile",
+            "contact": "Contact us",
+            "about": "About us",
+            "basket": "Basket",
+            "categories": "All categories",
+            "information": "Information",
+            "useful_links": "Useful links",
+            "terms_of_use": "Terms of use",
+            "privacy_policy": "Privacy Policy",
+            "returns_and_refunds": "Returns and refunds",
+            "faqs": "Frequently asked questions",
+            "copyright": "All rights reserved &copy; {year}"
         },
         "products": {
             "add_to_basket": "Add to basket",
             "update_quantity": "Update quantity",
-            "excl_vat": "excl. vat",
+            "price_excl_vat": "{price} excl. {vat} % VAT",
             "catalogue_number": "Cat",
             "barcode": "Barcode",
-            "login_to_view_details": "In order to see more details about this product and add it to your basket, please <a class=\"text-white font-bold\" href=\" {login}\">login</a> with your account or <a class=\"text-white font-bold\" href=\" {register}\">register</a> a new account if you dont have one.",
+            "login_to_view_details": "In order to see prices and make purchases, please <a class=\"text-white font-bold\" href=\" {login}\">login</a> or <a class=\"text-white font-bold\" href=\" {register}\">create an account</a> if you dont have one.",
             "product_deleted": "Product deleted from basket",
             "quantity_updated": "Product quantity updated",
             "added_to_basket": "Product added to basket",
             "related_products": "Related products",
             "product_details": "Read product details",
             "increase_the_quantity": "Please increase the quantity.",
-            "this_product_is_stock": "This product is currently in <strong> {stock}.</strong>",
-            "total_times_ordered": "This product has been ordered total of <strong> {total} times.</strong>",
-            "in_stock_moq": "There are <strong> {stock} </strong> {unit} in stock, and minimum order quantity is <strong> {moq}.</strong>",
+            "this_product_is_stock": "This product is currently <strong>{stock}</strong>",
+            "total_times_ordered": "This product has been ordered total of <strong> {total} times</strong>",
+            "in_stock_unit": "There are <strong>{stock}</strong> {unit} in stock",
+            "buy_at_least": "You need to purchase at least <strong>{moq}</strong> {unit} of this product",
             "product_not_found": "Product not found!"
         },
         "validation": {

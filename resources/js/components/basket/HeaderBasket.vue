@@ -13,12 +13,12 @@
             <div class="basker-inner">
                 <div class="basket-header">
                     <span class="font-semibold">
-                        <span @click="close"
-                            class="cursor-pointer mr-2 text-xl">&times;</span>{{ $trans('header.your_basket') }}
+                        <span @click="close" class="cursor-pointer mr-2 text-xl">&times;</span>
+                        <a href="/basket" class="btn-text uppercase text-grey-darker">{{ $trans('header.your_basket') }}</a>
                     </span>
                     <span v-if="basketItems.length"
                         class="text-grey-dark">
-                        {{ $trans('header.basket_total') }}: <span class="text-primary font-semibold">{{ total }}</span>
+                        {{ $trans('header.basket_total') }}&nbsp;<span class="text-primary font-semibold">{{ total }}&nbsp;{{ $trans('basket.incl_vat') }}</span>
                     </span>
                 </div>
 

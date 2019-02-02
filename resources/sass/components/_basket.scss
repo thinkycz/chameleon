@@ -93,14 +93,15 @@
         max-width: 475px;
 
         .basket-header {
-            @apply flex flex-wrap text-sm text-grey-darkest justify-between mx-2 px-2 py-3 items-center border-b;
+            @apply flex flex-wrap text-sm text-grey-darkest justify-between p-4 items-center bg-primary-lightest;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.03);
         }
 
         .basket-items {
-            @apply list-reset overflow-y-auto mx-2;
+            @apply list-reset overflow-y-auto;
             max-height: 350px;
             li {
-                @apply py-6 px-2 relative;
+                @apply p-4 relative;
                 @include transition(background-color);
 
                 .item-price {

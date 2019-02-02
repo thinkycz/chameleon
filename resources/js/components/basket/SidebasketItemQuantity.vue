@@ -14,12 +14,10 @@
                     @click.stop.prevent="decreaseQuantity">-</div>
             </div>
         </div>
-        <p class="mb-0 text-xs text-center cursor-pointer">
-            <span class="text-accent mr-2"
-                @click="update">{{ $trans('global.update') }}</span>
-            <span class="text-danger"
-                @click="remove">{{ $trans('global.delete') }}</span>
-        </p>
+        <div class="flex justify-end cursor-pointer">
+            <span class="text-accent mx-2 icon-sm" @click="update"><icon-sync></icon-sync></span>
+            <span class="text-danger mx-2 icon-sm" @click="remove"><icon-trash></icon-trash></span>
+        </div>
     </div>
 </template>
 

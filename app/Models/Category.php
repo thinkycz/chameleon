@@ -25,6 +25,10 @@ class Category extends Model implements HasMedia
         'name',
     ];
 
+    public $attributes = [
+        'position' => 0
+    ];
+
     public function products()
     {
         return $this->belongsToMany(Product::class);

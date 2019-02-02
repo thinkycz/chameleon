@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\CategoryEnabled;
+use App\Nova\Filters\CategoryShowSubcategories;
 use App\Nova\Metrics\NumberOfCategories;
 use App\Nova\Metrics\ProductsPerCategory;
 use Laravel\Nova\Fields\BelongsTo;
@@ -11,7 +13,6 @@ use Laravel\Nova\Fields\HasMany;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Nulisec\TranslatableText\TranslatableText;
 
 class Category extends Resource
@@ -90,7 +91,10 @@ class Category extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new CategoryShowSubcategories(),
+            new CategoryEnabled(),
+        ];
     }
 
     /**

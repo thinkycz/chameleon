@@ -2,6 +2,9 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\ProductAvailability;
+use App\Nova\Filters\ProductEnabled;
+use App\Nova\Filters\ProductUnit;
 use App\Nova\Metrics\NumberOfProducts;
 use App\Nova\Metrics\ProductsPerAvailability;
 use Laravel\Nova\Fields\BelongsTo;
@@ -148,7 +151,11 @@ class Product extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new ProductAvailability(),
+            new ProductUnit(),
+            new ProductEnabled(),
+        ];
     }
 
     /**

@@ -2,12 +2,13 @@
 
 namespace App\Nova\Filters;
 
+use App\Models\Unit;
 use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
 
-class OrderPlacedStatus extends Filter
+class ProductUnit extends Filter
 {
-    public $name = 'Order Placed';
+    public $name = 'Unit';
 
     /**
      * The filter's component.
@@ -15,14 +16,6 @@ class OrderPlacedStatus extends Filter
      * @var string
      */
     public $component = 'select-filter';
-
-    /**
-     * Set the default options for the filter.
-     */
-    public function default()
-    {
-        return 'placed';
-    }
 
     /**
      * Apply the filter to the given query.
@@ -34,13 +27,7 @@ class OrderPlacedStatus extends Filter
      */
     public function apply(Request $request, $query, $value)
     {
-        return $query
-            ->when(str_is('placed', $value), function ($query) {
-                return $query->whereNotNull('placed_at');
-            })
-            ->when(str_is('incomplete', $value), function ($query) {
-                return $query->whereNull('placed_at');
-            });
+        return $query->where('unit_id', $value);
     }
 
     /**
@@ -51,9 +38,6 @@ class OrderPlacedStatus extends Filter
      */
     public function options(Request $request)
     {
-        return [
-            'Only Placed Orders'  => 'placed',
-            'Only Incomplete Orders' => 'incomplete',
-        ];
+        return Unit::all()->pluck('id', 'name')->toArray();
     }
 }

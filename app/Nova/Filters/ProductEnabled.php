@@ -5,9 +5,9 @@ namespace App\Nova\Filters;
 use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
 
-class OrderPlacedStatus extends Filter
+class ProductEnabled extends Filter
 {
-    public $name = 'Order Placed';
+    public $name = 'Enabled';
 
     /**
      * The filter's component.
@@ -15,14 +15,6 @@ class OrderPlacedStatus extends Filter
      * @var string
      */
     public $component = 'select-filter';
-
-    /**
-     * Set the default options for the filter.
-     */
-    public function default()
-    {
-        return 'placed';
-    }
 
     /**
      * Apply the filter to the given query.
@@ -35,11 +27,11 @@ class OrderPlacedStatus extends Filter
     public function apply(Request $request, $query, $value)
     {
         return $query
-            ->when(str_is('placed', $value), function ($query) {
-                return $query->whereNotNull('placed_at');
+            ->when(str_is('enabled', $value), function ($query) {
+                return $query->whereEnabled(true);
             })
-            ->when(str_is('incomplete', $value), function ($query) {
-                return $query->whereNull('placed_at');
+            ->when(str_is('disabled', $value), function ($query) {
+                return $query->whereEnabled(false);
             });
     }
 
@@ -52,8 +44,8 @@ class OrderPlacedStatus extends Filter
     public function options(Request $request)
     {
         return [
-            'Only Placed Orders'  => 'placed',
-            'Only Incomplete Orders' => 'incomplete',
+            'Enabled'  => 'enabled',
+            'Disabled' => 'disabled'
         ];
     }
 }

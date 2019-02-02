@@ -3,6 +3,10 @@
 namespace App\Nova;
 
 use App\Nova\Actions\Order\ChangeOrderStatus;
+use App\Nova\Filters\OrderDeliveryMethod;
+use App\Nova\Filters\OrderPaymentMethod;
+use App\Nova\Filters\OrderPlacedStatus;
+use App\Nova\Filters\OrderStatus;
 use App\Nova\Metrics\NumberOfOrders;
 use App\Nova\Metrics\OrdersPerDay;
 use App\Nova\Metrics\OrdersPerStatus;
@@ -134,10 +138,10 @@ class Order extends Resource
     public function filters(Request $request)
     {
         return [
-            new Filters\OrderPlacedStatus(),
-            new Filters\OrderStatus(),
-            new Filters\OrderDeliveryMethod(),
-            new Filters\OrderPaymentMethod(),
+            new OrderPlacedStatus(),
+            new OrderStatus(),
+            new OrderDeliveryMethod(),
+            new OrderPaymentMethod(),
         ];
     }
 
@@ -161,8 +165,8 @@ class Order extends Resource
     public function actions(Request $request)
     {
         return [
-            (new ChangeOrderStatus()),
-            (new DownloadExcel()),
+            new ChangeOrderStatus(),
+            new DownloadExcel(),
         ];
     }
 }

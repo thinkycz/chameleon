@@ -24,6 +24,12 @@
                     :class="errorClasses"
                     :placeholder="this._.capitalize(key)"
                     v-model="value[key]" />
+                <textarea v-if="property.type === 'textarea'"
+                    :id="key"
+                    class="w-full form-control form-input form-input-bordered"
+                    :class="errorClasses"
+                    :placeholder="this._.capitalize(key)"
+                    v-model="value[key]"></textarea>
                 <input v-if="property.type === 'image'"
                     :id="key"
                     type="file"

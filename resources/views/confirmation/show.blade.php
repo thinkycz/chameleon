@@ -19,13 +19,8 @@
                         @endforeach
                     </div>
                 </div>
-                <vue-affixsidebar>
-                    <div class="inner">
-                        <div class="card">
-                            @include('confirmation.partials.sidebar')
-                        </div>
-                    </div>
-                </vue-affixsidebar>
+
+                @include('confirmation.partials.sidebar')
             </div>
         </form>
     </div>

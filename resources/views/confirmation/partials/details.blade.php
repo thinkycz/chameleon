@@ -30,12 +30,12 @@
         </div>
         @if($basket->billingDetail->vat_id || $basket->billingDetail->company_id)
             <div class="col-full">
-                <div class="flex flex-wrap justify-between">
+                <div class="flex flex-col">
                     @if($basket->billingDetail->company_id)
-                        <strong>{{ trans('profiles.company_id') }}: {{ $basket->billingDetail->company_id }}</strong>
+                        <strong class="my-1">{{ trans('profiles.company_id') }}: {{ $basket->billingDetail->company_id }}</strong>
                     @endif
                     @if($basket->billingDetail->vat_id)
-                        <strong>{{ trans('profiles.vat_id') }}: {{ $basket->billingDetail->vat_id }}</strong>
+                        <strong class="my-1">{{ trans('profiles.vat_id') }}: {{ $basket->billingDetail->vat_id }}</strong>
                     @endif
                 </div>
             </div>

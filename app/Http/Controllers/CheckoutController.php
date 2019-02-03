@@ -52,7 +52,7 @@ class CheckoutController extends Controller
 
     public function storeAddress(StoreAddressRequest $request)
     {
-        $address = $user->addresses()->create($request->mergeDefaultAddress()->all());
+        $address = currentUser()->addresses()->create($request->mergeDefaultAddress()->all());
 
         return response([
             'address' => $address,

@@ -9,9 +9,9 @@ class DeliveryMethod extends Model
 {
     use HasTranslations;
 
-    public $translatable = [
-        'name',
-    ];
+    public $translatable = ['name'];
+
+    public $appends = ['formatted_price', 'available_payment_methods'];
 
     public function orders()
     {
@@ -26,5 +26,10 @@ class DeliveryMethod extends Model
     public function getFormattedPriceAttribute()
     {
         return intval($this->price) ? showPriceWithCurrency($this->price, currentCurrency()) : trans('global.free');
+    }
+
+    public function getAvailablePaymentMethodsAttribute()
+    {
+        return $this->paymentMethods->where('enabled', true);
     }
 }

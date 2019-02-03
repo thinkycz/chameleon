@@ -141,7 +141,7 @@ export default {
         "checkout": {
             "billing_details": "Billing Details",
             "shipping_details": "Shipping Details",
-            "contact_information": "Contact information",
+            "contact_information": "Contact Information",
             "delivery_method": "Delivery Method",
             "payment_method": "Payment Method",
             "additional_notes": "Additional Notes",
@@ -160,7 +160,10 @@ export default {
             "add_new_address": "Add new address",
             "ordered_items": "Ordered Items",
             "complete_order": "Complete order",
-            "order_was_placed": "Your order has been placed!"
+            "order_was_placed": "Your order has been placed!",
+            "no_delivery_methods_available": "No delivery methods are available at the moment",
+            "no_payment_methods_available": "No payment methods are available at the moment",
+            "please_select_delivery_method": "Please select delivery method first"
         },
         "bulk_image_upload": {
             "upload_images": "Drop files here to upload",

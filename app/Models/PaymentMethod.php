@@ -9,9 +9,9 @@ class PaymentMethod extends Model
 {
     use HasTranslations;
 
-    public $translatable = [
-        'name',
-    ];
+    public $translatable = ['name'];
+
+    public $appends = ['formatted_price'];
 
     public function orders()
     {

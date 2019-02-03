@@ -7,8 +7,6 @@ use App\Http\Requests\Checkout\StoreAddressRequest;
 use App\Http\Requests\Confirmation\ConfirmationRequest;
 use App\Models\Country;
 use App\Models\DeliveryMethod;
-use App\Models\PaymentMethod;
-use App\Models\User;
 
 class CheckoutController extends Controller
 {
@@ -21,13 +19,10 @@ class CheckoutController extends Controller
     {
         $basket = activeBasket();
         $countries = Country::whereEnabled(true)->get();
-
         $deliveryMethods = DeliveryMethod::whereEnabled(true)->get();
-        $paymentMethods = PaymentMethod::whereEnabled(true)->get();
+        $addresses = currentUser()->addresses()->orderBy('is_default', 'desc')->get();
 
-        $addresses = User::getAuthenticatedUser()->addresses()->orderBy('is_default', 'desc')->get();
-
-        return view('checkout.show', compact('addresses', 'basket', 'countries', 'deliveryMethods', 'paymentMethods'));
+        return view('checkout.show', compact('addresses', 'basket', 'countries', 'deliveryMethods'));
     }
 
     public function confirm(ConfirmationRequest $request)

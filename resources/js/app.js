@@ -1,32 +1,14 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
+import Vue from 'vue';
 import 'babel-polyfill';
+import PortalVue from 'portal-vue';
+import { store } from './store/store';
+import * as vMediaQuery from 'v-media-query';
+
 require('./bootstrap');
 require('./helpers');
 require('./translations/translations');
+require('./common');
 require('lightbox2');
-
-window.Vue = require('vue');
-
-/**
- * Dependencies
- */
-import PortalVue from 'portal-vue';
-import { store } from './store/store';
-import Toasted from 'vue-toasted';
-var vMediaQuery = require('v-media-query');
-
-// Toast snackbar
-window.Toasted = Toasted;
-Vue.use(Toasted, {
-    position: 'bottom-right',
-    duration: 6000,
-    theme: 'bubble',
-});
 
 /**
  * Use media queries
@@ -97,6 +79,7 @@ Vue.component('vue-checkout-address-wrapper', require('./components/checkout/Add
 Vue.component('vue-checkout-address-selector', require('./components/checkout/AddressSelector.vue'));
 Vue.component('vue-checkout-address-form', require('./components/checkout/AddressForm.vue'));
 Vue.component('vue-checkout-shipping-details', require('./components/checkout/ShippingDetails.vue'));
+Vue.component('vue-checkout-delivery-payment', require('./components/checkout/DeliveryPayment.vue'));
 
 // Dropdowns
 Vue.component('vue-per-page', require('./components/dropdowns/PerPage.vue'));

@@ -1,33 +1,36 @@
 <?php
 
 use App\Models\Currency;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
 
-/**
- * @return User
- */
 if (!function_exists('currentUser')) {
+    /**
+     * @param bool $optional
+     * @return User
+     */
     function currentUser($optional = true)
     {
         return $optional ? optional(User::getAuthenticatedUser()) : User::getAuthenticatedUser();
     }
 }
 
-/**
- * @return \App\Models\Basket
- */
+
 if (!function_exists('activeBasket')) {
+    /**
+     * @return Order
+     */
     function activeBasket()
     {
         return User::getActiveBasket();
     }
 }
 
-/**
- * @return \App\Models\Currency
- */
 if (!function_exists('currentCurrency')) {
+    /**
+     * @return Currency
+     */
     function currentCurrency()
     {
         if ($currency = Session::has('currency')) {

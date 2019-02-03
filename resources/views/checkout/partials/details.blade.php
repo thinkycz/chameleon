@@ -1,7 +1,7 @@
 <div class="card p-4">
-    <div class="row">
-        <div class="col-12">
-            <h3 class="text-grey-darkest mb-2">{{ trans('checkout.contact_information') }}</h3>
+    <div class="row -mt-4">
+        <div class="col-12 my-4">
+            <h2 class="font-normal text-grey-darkest mb-2">{{ trans('checkout.contact_information') }}</h2>
             <p>{{ trans('checkout.email_address_note') }}</p>
 
             <div class="input-wrap">
@@ -14,13 +14,9 @@
             </div>
         </div>
 
-        <div class="col-12 mt-2 mb-4">
-            <hr class="border-t">
-        </div>
-
         <vue-checkout-address-wrapper :addresses="{{ json_encode($addresses) }}" inline-template>
-            <div class="col-12">
-                <h3 class="text-grey-darkest mb-4">{{ trans('checkout.billing_and_shipping_details') }}</h3>
+            <div class="col-12 my-4">
+                <h2 class="font-normal text-grey-darkest mb-4">{{ trans('checkout.billing_and_shipping_details') }}</h2>
 
                 <template v-if="addresses.length">
                     <vue-checkout-address-selector name="billing_detail_id"></vue-checkout-address-selector>

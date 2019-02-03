@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Helpers\Tools\ChartData;
 use App\Http\Requests\Profile\UpdateProfileRequest;
 use App\Jobs\ExportUserData;
-use App\Models\User;
 use App\Repositories\StatsRepository;
 
 class ProfileController extends Controller
 {
-    public function show(User $user, StatsRepository $statsRepository)
+    public function show(StatsRepository $statsRepository)
     {
+        $user = currentUser(false);
+
         $user->load('addresses',
             'priceLevel',
             'orders.orderedItems.product',
@@ -24,23 +25,23 @@ class ProfileController extends Controller
         $stats = $statsRepository->daily('orders');
         $orderStats = ChartData::make($stats->getResult(), $stats->getInterval());
 
-        return view('profiles.show', compact('user', 'orderStats'));
+        return view('profiles.show', compact('orderStats', 'user'));
     }
 
-    public function update(UpdateProfileRequest $request, User $user)
+    public function update(UpdateProfileRequest $request)
     {
-        $user->update($request->except('password'));
-        $user->processImage($request->file('image'));
-        $user->changePassword($request->get('password'));
+        currentUser()->update($request->except('password'));
+        currentUser()->processImage($request->file('image'));
+        currentUser()->changePassword($request->get('password'));
 
         snackbar()->success(trans('profiles.profile_updated'));
 
-        return redirect()->route('profiles.show', ['user' => $user, 'current' => $request->get('current')]);
+        return redirect()->route('profiles.show', ['current' => $request->get('current')]);
     }
 
-    public function downloadAccountData(User $user)
+    public function downloadAccountData()
     {
-        $this->dispatch(new ExportUserData($user));
+        $this->dispatch(new ExportUserData(currentUser()));
 
         snackbar()->success(trans('profiles.preparing_your_data'));
 

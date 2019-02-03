@@ -14,7 +14,7 @@ class UpdateProfileRequest extends FormRequest
      */
     public function authorize()
     {
-        return User::getAuthenticatedUser()->is($this->user);
+        return true;
     }
 
     /**
@@ -27,7 +27,7 @@ class UpdateProfileRequest extends FormRequest
         return [
             'first_name' => 'required|max:255',
             'last_name'  => 'required|max:255',
-            'email'      => 'required|email|unique:users,email,' . $this->user->id,
+            'email'      => 'required|email|unique:users,email,' . currentUser()->id,
             'phone'      => 'required',
             'password'   => 'sometimes|nullable|confirmed|string|min:6',
             'birth_date' => 'sometimes|nullable|date',

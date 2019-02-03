@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Models\Order;
 use App\Notifications\OrderPlacedToAdmins;
 use App\Notifications\OrderPlacedToCustomer;
 use App\Repositories\UserRepository;
@@ -17,9 +18,10 @@ class HandleOrderPlaced
      */
     public function handle($event)
     {
+        /** @var Order $order */
         $order = $event->order;
 
-        Notification::send($order->email, new OrderPlacedToCustomer($order));
+        Notification::send($order->user, new OrderPlacedToCustomer($order));
         Notification::send(UserRepository::admins(), new OrderPlacedToAdmins($order));
     }
 }

@@ -22,6 +22,13 @@ Route::get('about-us', 'AboutController@index')->name('about');
 Route::get('contact', 'ContactController@index')->name('contact.index');
 Route::post('contact/contact', 'ContactController@contact')->name('contact.contact');
 
+Route::get('profile', 'ProfileController@show')->name('profiles.show');
+Route::patch('profile/update', 'ProfileController@update')->name('profiles.update');
+Route::post('profile/download-account-data', 'ProfileController@downloadAccountData')->name('profiles.download_account_data');
+
+Route::post('addresses/{address}/make-default', 'AddressController@makeDefault');
+Route::resource('addresses', 'AddressController', ['as' => 'profiles'])->only('store', 'update', 'destroy');
+
 Route::resource('pages', 'PageController')->only('show');
 Route::resource('products', 'ProductController')->only('show');
 Route::resource('categories', 'CategoryController')->only('index', 'show');

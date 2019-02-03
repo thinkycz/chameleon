@@ -1,5 +1,5 @@
 <div class="p-8">
-    <form csrf method="patch" form-action="profiles.update" params="$user" files>
+    <form csrf method="patch" form-action="profiles.update" files>
         <div class="row">
             <div class="col-half">
                 <h3 class="mb-2">{{ trans('profiles.your_personal_information') }}</h3>
@@ -8,14 +8,14 @@
                     <div class="col-half">
                         <div class="input-wrap">
                             <label for="first_name">{{ trans('profiles.first_name') }}</label>
-                            <input type="first_name" id="first_name" required class="input" name="first_name" value="{{ old('first_name', $user->first_name) }}" placeholder="{{ trans('profiles.first_name_label') }}">
+                            <input type="text" id="first_name" required class="input" name="first_name" value="{{ old('first_name', $user->first_name) }}" placeholder="{{ trans('profiles.first_name_label') }}">
                         </div>
                     </div>
 
                     <div class="col-half">
                         <div class="input-wrap">
                             <label for="last_name">{{ trans('profiles.last_name') }}</label>
-                            <input type="last_name" id="last_name" required class="input" name="last_name" value="{{ old('last_name', $user->last_name) }}" placeholder="{{ trans('profiles.last_name_label') }}">
+                            <input type="text" id="last_name" required class="input" name="last_name" value="{{ old('last_name', $user->last_name) }}" placeholder="{{ trans('profiles.last_name_label') }}">
                         </div>
                     </div>
 

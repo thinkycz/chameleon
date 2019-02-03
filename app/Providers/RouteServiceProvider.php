@@ -62,8 +62,6 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapAuthRoutes();
 
-        $this->mapProfileRoutes();
-
         $this->mapTestRoutes();
     }
 
@@ -79,15 +77,6 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web', 'auth'])
             ->namespace($this->namespace)
             ->group(base_path('routes/auth.php'));
-    }
-
-    protected function mapProfileRoutes()
-    {
-        Route::prefix('profiles/{user}')
-            ->middleware(['web', 'auth'])
-            ->namespace($this->namespace)
-            ->group(base_path('routes/profile.php'));
-
     }
 
     protected function mapAjaxRoutes()

@@ -19,16 +19,16 @@
                         <icon-dropdown></icon-dropdown>
                         <ul class="list-reset">
                             <li>
-                                <a href="{{ route('profiles.show', currentUser()->id) }}"">{{ trans('header.my_profile') }}</a>
+                                <a href="{{ route('profiles.show') }}">{{ trans('header.my_profile') }}</a>
                             </li>
                             <li>
-                                <a href="{{ route('profiles.show', [currentUser()->id, 'current' => 'account_details']) }}"">{{ trans('header.my_details') }}</a>
+                                <a href="{{ route('profiles.show', ['current' => 'account_details']) }}">{{ trans('header.my_details') }}</a>
                             </li>
                             <li>
-                                <a href="{{ route('profiles.show', [currentUser()->id, 'current' => 'address_book']) }}"">{{ trans('header.my_address_book') }}</a>
+                                <a href="{{ route('profiles.show', ['current' => 'address_book']) }}">{{ trans('header.my_address_book') }}</a>
                             </li>
                             <li>
-                                <a href="{{ route('profiles.show', [currentUser()->id, 'current' => 'account_privacy']) }}"">{{ trans('header.my_privacy') }}</a>
+                                <a href="{{ route('profiles.show', ['current' => 'account_privacy']) }}">{{ trans('header.my_privacy') }}</a>
                             </li>
                             <li>
                                 <a href="{{ route('logout') }}">{{ trans('header.logout') }}</a>

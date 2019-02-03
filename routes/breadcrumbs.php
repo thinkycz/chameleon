@@ -11,9 +11,9 @@ Breadcrumbs::for('home', function ($breadcrumbs) {
 });
 
 // Home > My Profile
-Breadcrumbs::for('profiles.show', function ($breadcrumbs, User $user) {
+Breadcrumbs::for('profiles.show', function ($breadcrumbs) {
     $breadcrumbs->push(trans('breadcrumbs.home'), route('home'));
-    $breadcrumbs->push(trans('breadcrumbs.my_profile'), route('profiles.show', $user));
+    $breadcrumbs->push(trans('breadcrumbs.my_profile'), route('profiles.show'));
 });
 
 // Home > About Us

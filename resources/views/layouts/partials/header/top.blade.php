@@ -12,17 +12,20 @@
                 @if($companyEmail = settingsRepository()->getCompanyEmail())
                     <div class="icon-wrap inline">
                         <icon-mail></icon-mail>
-                        <span>{{ $companyEmail }}</span>
+                        <span>{{ $companyEmail}}</span>
                     </div>
                 @endif
             </div>
 
             <div class="col-half">
-                <div class="inline-block mr-4">
-                    <div class="icon-wrap right-icon">
-                        <vue-currencies :currencies="{{ json_encode($currencies->values()) }}" current="{{ currentCurrency()->isocode }}"></vue-currencies>
+                @if($currencies->count() > 1)
+                    <div class="inline-block mr-4">
+                        <div class="icon-wrap right-icon">
+                            <vue-currencies :currencies="{{ json_encode($currencies->values()) }}" current="{{ currentCurrency()->isocode }}"></vue-currencies>
+                        </div>
                     </div>
-                </div>
+                @endif
+
                 <div class="inline-block">
                     <div class="icon-wrap right-icon">
                         <vue-languages :locales="{{ json_encode($locales) }}"></vue-languages>

@@ -8,10 +8,9 @@
         </p>
         <p class="p-small">
             @if($orderedItem->product->barcode)
-                <span class="mr-4">{{ trans('products.barcode') }}<strong class="ml-1">{{ $orderedItem->product->barcode }}</strong></span>
-            @endif
-            @if($orderedItem->product->catalogue_number)
-                <span>{{ trans('products.catalogue_number') }}<strong class="ml-1">{{ $orderedItem->product->catalogue_number }}</strong></span>
+                <span><strong class="mr-1">EAN</strong>{{ $orderedItem->product->barcode }}</span>
+            @elseif($orderedItem->product->catalogue_number)
+                <span><strong class="mr-1">CAT</strong>{{ $orderedItem->product->catalogue_number }}</span>
             @endif
         </p>
     </div>

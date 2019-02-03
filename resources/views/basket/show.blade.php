@@ -12,18 +12,11 @@
                 @if($basket->hasOrderedItems())
                     <div class="col-9 main-basket">
                         <div class="card">
-                            @foreach($basket->orderedItems as $orderedItem)
-                                @include('basket.partials.ordered_item')
-                            @endforeach
+                            @each('basket.partials.ordered_item', $basket->orderedItems, 'orderedItem')
                         </div>
                     </div>
-                    <vue-affixsidebar>
-                        <div class="inner">
-                            <div class="card">
-                                @include('basket.partials.sidebar')
-                            </div>
-                        </div>
-                    </vue-affixsidebar>
+
+                    @include('basket.partials.sidebar')
                 @else
                     @include('basket.partials.empty_basket')
                 @endif

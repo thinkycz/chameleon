@@ -2,6 +2,13 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\Product\ChangeProductAvailability;
+use App\Nova\Actions\Product\ChangeProductEnabledStatus;
+use App\Nova\Actions\Product\ChangeProductUnit;
+use App\Nova\Actions\Product\SetMinimumOrderQuantity;
+use App\Nova\Actions\Product\SetMultiplyOfMoqOnly;
+use App\Nova\Actions\Product\SetStockQuantity;
+use App\Nova\Actions\Product\SetVatRate;
 use App\Nova\Filters\ProductAvailability;
 use App\Nova\Filters\ProductEnabled;
 use App\Nova\Filters\ProductUnit;
@@ -178,6 +185,13 @@ class Product extends Resource
     public function actions(Request $request)
     {
         return [
+            (new ChangeProductAvailability()),
+            (new ChangeProductUnit()),
+            (new ChangeProductEnabledStatus()),
+            (new SetMinimumOrderQuantity()),
+            (new SetMultiplyOfMoqOnly()),
+            (new SetStockQuantity()),
+            (new SetVatRate()),
             (new DownloadExcel()),
         ];
     }

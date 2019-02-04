@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Nova\Actions\User;
+namespace App\Nova\Actions\Product;
 
-use App\Models\User;
-use App\Notifications\AccountActivated;
+use App\Models\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
@@ -12,7 +11,7 @@ use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\Boolean;
 
-class ChangeUserActivationStatus extends Action
+class ChangeProductEnabledStatus extends Action
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 
@@ -25,11 +24,8 @@ class ChangeUserActivationStatus extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        $activated = $fields->is_active ? now() : null;
-
-        $models->each(function (User $user) use ($activated) {
-            $user->update(['activated_at' => $activated]);
-            $user->notify(new AccountActivated());
+        $models->each(function (Product $product) use ($fields) {
+            $product->update(['enabled' => $fields->enabled]);
         });
     }
 
@@ -41,7 +37,7 @@ class ChangeUserActivationStatus extends Action
     public function fields()
     {
         return [
-            Boolean::make('Is Active')
+            Boolean::make('Enabled')
         ];
     }
 }

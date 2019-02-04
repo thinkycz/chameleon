@@ -60,6 +60,11 @@ class Product extends Model implements HasMedia
         'barcode',
         'quantity_in_stock',
         'minimum_order_quantity',
+        'multiply_of_moq_only',
+        'availability_id',
+        'unit_id',
+        'vatrate',
+        'enabled',
     ];
 
     protected $with = [

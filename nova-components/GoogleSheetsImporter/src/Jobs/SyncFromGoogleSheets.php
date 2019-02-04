@@ -6,12 +6,23 @@ use App\Models\Category;
 use App\Models\PriceLevel;
 use App\Models\Product;
 use App\Models\PropertyType;
+use App\Models\Setting;
 use App\Models\Unit;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Collection;
 
-class SyncFromGoogleSheets implements ShouldQueue
+class SyncFromGoogleSheets extends SyncJob implements ShouldQueue
 {
+    /**
+     * @var string
+     */
+    public static $jobName = 'Google Sheets Sync';
+
+    /**
+     * @var string
+     */
+    protected $statusCode = 'google_sheets_status';
+
     /**
      * @var Collection
      */
@@ -27,13 +38,16 @@ class SyncFromGoogleSheets implements ShouldQueue
      */
     protected $endpoint;
 
-    public function __construct($settings)
-    {
-        $this->settings = $settings;
-    }
+    /**
+     * @var mixed
+     */
+    protected $results;
 
     protected function prepare()
     {
+        parent::prepare();
+
+        $this->settings = Setting::loadConfiguration('google_sheets_importer');
         $this->endpoint = $this->buildEndpointFromShareLink($this->settings['link']);
 
         $data = file_get_contents($this->endpoint);

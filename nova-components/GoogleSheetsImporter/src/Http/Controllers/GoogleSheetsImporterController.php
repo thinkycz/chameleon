@@ -26,14 +26,12 @@ class GoogleSheetsImporterController extends Controller
 
     public function sync()
     {
-        $settings = Setting::loadConfiguration('google_sheets_importer');
-
-        $validator = Validator::make($settings ?? [], [
+        Validator::make(Setting::loadConfiguration('google_sheets_importer'), [
             'link'       => 'required',
             'identifier' => 'required',
         ])->validate();
 
-        $this->dispatch(new SyncFromGoogleSheets($settings));
+        $this->dispatch(new SyncFromGoogleSheets());
 
         return $this->ajaxWithPayload([]);
     }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Setting extends Model
 {
@@ -24,7 +25,9 @@ class Setting extends Model
     {
         $namespace = $this->namespace ? "{$this->namespace}::" : '';
 
-        return __("{$namespace}settings.{$this->code}");
+        $key = "{$namespace}settings.{$this->code}";
+
+        return \Lang::has($key) ? __($key) : str_replace('_', ' ', Str::title($this->code));
     }
 
     public function getValueAttribute()

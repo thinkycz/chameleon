@@ -7,9 +7,11 @@ use App\Traits\Order\OrderHasProcessors;
 use App\Traits\Order\OrderHasProducts;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Nova\Actions\Actionable;
 
 class Order extends Model
 {
+    use Actionable;
     use ModelHasDateFormatted;
     use OrderHasProducts;
     use OrderHasProcessors;

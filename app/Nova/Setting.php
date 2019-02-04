@@ -52,9 +52,9 @@ class Setting extends Resource
                 ->rules('json')
                 ->onlyOnDetail(),
 
-            Code::make('Schema')->json()
-                ->rules('json')
-                ->hideWhenUpdating(),
+//            Code::make('Schema')->json()
+//                ->rules('json')
+//                ->hideWhenUpdating(),
 
             $this->getValue()->onlyOnIndex(),
         ];

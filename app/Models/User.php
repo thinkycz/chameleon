@@ -8,6 +8,7 @@ use App\Traits\User\UserHasMedia;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Nova\Actions\Actionable;
 use Laravel\Passport\HasApiTokens;
 use Silvanite\Brandenburg\Traits\HasRoles;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
@@ -17,6 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     use HasApiTokens;
     use HasRoles;
     use Notifiable;
+    use Actionable;
 
     use UserHasMedia;
     use UserHasGetters;

@@ -18,6 +18,7 @@ use App\Traits\Product\ScopeProcessSorting;
 use App\Traits\ReusableScopes\ScopeWhereLike;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use Laravel\Nova\Actions\Actionable;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\Tags\HasTags;
 
@@ -25,6 +26,7 @@ class Product extends Model implements HasMedia
 {
     use HasTags;
     use NodeTrait;
+    use Actionable;
 
     use ModelHasSlug;
     use ModelIsTableColumnsAware;

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\Category\ChangeCategoryEnabledStatus;
 use App\Nova\Filters\CategoryEnabled;
 use App\Nova\Filters\CategoryShowSubcategories;
 use App\Nova\Metrics\NumberOfCategories;
@@ -116,6 +117,8 @@ class Category extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new ChangeCategoryEnabledStatus()),
+        ];
     }
 }

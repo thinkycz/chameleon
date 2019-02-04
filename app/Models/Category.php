@@ -21,6 +21,7 @@ class Category extends Model implements HasMedia
 
     public $fillable = [
         'name',
+        'enabled'
     ];
 
     public $translatable = [

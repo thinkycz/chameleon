@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Enums\Locale;
 use App\Nova\Actions\User\ChangeUserActivationStatus;
+use App\Nova\Actions\User\ChangeUserLocale;
 use App\Nova\Actions\User\ChangeUserPriceLevel;
 use App\Nova\Filters\UserActive;
 use App\Nova\Filters\UserPriceLevel;
@@ -169,6 +170,7 @@ class User extends Resource
         return [
             (new ChangeUserActivationStatus()),
             (new ChangeUserPriceLevel()),
+            (new ChangeUserLocale()),
             (new DownloadExcel()),
         ];
     }

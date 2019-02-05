@@ -33,10 +33,10 @@ class UserSheet implements FromCollection, WithTitle, WithHeadings, ShouldAutoSi
     public function headings(): array
     {
         return [
-            'Email',
-            'First Name',
-            'Last Name',
-            'Phone',
+            trans('exports.email'),
+            trans('exports.first_name'),
+            trans('exports.last_name'),
+            trans('exports.phone'),
         ];
     }
 
@@ -45,6 +45,6 @@ class UserSheet implements FromCollection, WithTitle, WithHeadings, ShouldAutoSi
      */
     public function title(): string
     {
-        return 'Personal';
+        return trans('exports.personal');
     }
 }

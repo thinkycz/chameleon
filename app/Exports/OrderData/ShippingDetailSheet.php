@@ -37,13 +37,13 @@ class ShippingDetailSheet implements FromCollection, WithTitle, WithHeadings, Sh
     public function headings(): array
     {
         return [
-            'Company Name',
-            'First Name',
-            'Last Name',
-            'City',
-            'Street',
-            'Zipcode',
-            'Phone',
+            trans('exports.company_name'),
+            trans('exports.first_name'),
+            trans('exports.last_name'),
+            trans('exports.city'),
+            trans('exports.street'),
+            trans('exports.zipcode'),
+            trans('exports.phone'),
         ];
     }
 
@@ -52,6 +52,6 @@ class ShippingDetailSheet implements FromCollection, WithTitle, WithHeadings, Sh
      */
     public function title(): string
     {
-        return 'Shipping Details';
+        return trans('exports.shipping_details');
     }
 }

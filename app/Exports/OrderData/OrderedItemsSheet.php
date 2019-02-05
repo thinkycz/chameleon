@@ -47,15 +47,15 @@ class OrderedItemsSheet implements FromCollection, WithTitle, WithHeadings, Shou
     public function headings(): array
     {
         return [
-            'Name',
-            'Catalogue Number',
-            'Barcode',
-            'Quantity Ordered',
-            'Price',
-            'Total',
-            'Discount',
-            'VAT Rate',
-            'Type',
+            trans('exports.name'),
+            trans('exports.catalogue_number'),
+            trans('exports.barcode'),
+            trans('exports.quantity_ordered'),
+            trans('exports.price'),
+            trans('exports.total'),
+            trans('exports.discount'),
+            trans('exports.vat_rate'),
+            trans('exports.type'),
         ];
     }
 
@@ -64,6 +64,6 @@ class OrderedItemsSheet implements FromCollection, WithTitle, WithHeadings, Shou
      */
     public function title(): string
     {
-        return 'Ordered Items';
+        return trans('exports.ordered_items');
     }
 }

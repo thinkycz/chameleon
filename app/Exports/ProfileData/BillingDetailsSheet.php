@@ -36,15 +36,15 @@ class BillingDetailsSheet implements FromCollection, WithTitle, WithHeadings, Sh
     public function headings(): array
     {
         return [
-            'Company Name',
-            'First Name',
-            'Last Name',
-            'City',
-            'Street',
-            'Zipcode',
-            'Country',
-            'Company ID',
-            'Vat Number',
+            trans('exports.company_name'),
+            trans('exports.first_name'),
+            trans('exports.last_name'),
+            trans('exports.city'),
+            trans('exports.street'),
+            trans('exports.zipcode'),
+            trans('exports.phone'),
+            trans('exports.company_id'),
+            trans('exports.vat_number'),
         ];
     }
 
@@ -53,6 +53,6 @@ class BillingDetailsSheet implements FromCollection, WithTitle, WithHeadings, Sh
      */
     public function title(): string
     {
-        return 'Billing Details';
+        return trans('exports.billing_details');
     }
 }

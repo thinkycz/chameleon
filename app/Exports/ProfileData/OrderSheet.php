@@ -36,12 +36,12 @@ class OrderSheet implements FromCollection, WithTitle, WithHeadings, ShouldAutoS
     public function headings(): array
     {
         return [
-            'Order Number',
-            'Invoice Number',
-            'Variable Symbol',
-            'Placed at',
-            'Email',
-            'Total',
+            trans('exports.order_number'),
+            trans('exports.invoice_number'),
+            trans('exports.variable_symbol'),
+            trans('exports.placed_at'),
+            trans('exports.email'),
+            trans('exports.total'),
         ];
     }
 
@@ -50,6 +50,6 @@ class OrderSheet implements FromCollection, WithTitle, WithHeadings, ShouldAutoS
      */
     public function title(): string
     {
-        return 'Orders';
+        return trans('exports.orders');
     }
 }

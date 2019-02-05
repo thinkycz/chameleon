@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fc7cc40cc8230b2c257ef5271e249e6",
+    "content-hash": "80344cbb18e99d01b038502e7b60f443",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3123,60 +3123,6 @@
                 "phpspreadsheet"
             ],
             "time": "2019-01-30T19:01:33+00:00"
-        },
-        {
-            "name": "maatwebsite/laravel-nova-excel",
-            "version": "1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Maatwebsite/Laravel-Nova-Excel.git",
-                "reference": "806cafa2cf38de9a8f6c8cbc835445f406148b69"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Nova-Excel/zipball/806cafa2cf38de9a8f6c8cbc835445f406148b69",
-                "reference": "806cafa2cf38de9a8f6c8cbc835445f406148b69",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^5.6",
-                "laravel/nova": "*",
-                "maatwebsite/excel": "^3.0.10",
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Maatwebsite\\LaravelNovaExcel\\LaravelNovaExcelServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Maatwebsite\\LaravelNovaExcel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Patrick Brouwers",
-                    "email": "patrick@maatwebsite.nl"
-                }
-            ],
-            "description": "Supercharged Excel exports for Laravel Nova Resources",
-            "keywords": [
-                "PHPExcel",
-                "actions",
-                "laravel",
-                "laravel-nova",
-                "nova",
-                "phpspreadsheet"
-            ],
-            "time": "2018-12-27T13:20:35+00:00"
         },
         {
             "name": "mad-web/nova-horizon-link",
@@ -7470,6 +7416,65 @@
                 "environment"
             ],
             "time": "2019-01-29T11:11:52+00:00"
+        },
+        {
+            "name": "zanysoft/laravel-zip",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zanysoft/laravel-zip.git",
+                "reference": "466663746c92154c48a2d490efc6724f9f6e9652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zanysoft/laravel-zip/zipball/466663746c92154c48a2d490efc6724f9f6e9652",
+                "reference": "466663746c92154c48a2d490efc6724f9f6e9652",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0",
+                "scrutinizer/ocular": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ZanySoft\\Zip\\ZipServiceProvider"
+                    ],
+                    "aliases": {
+                        "Zip": "ZanySoft\\Zip\\ZipFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZanySoft\\Zip\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zany Soft",
+                    "email": "info@zanysoft.co",
+                    "homepage": "http://www.zanysoft.co"
+                }
+            ],
+            "description": "ZipArchive toolbox",
+            "homepage": "http://www.zanysoft.co",
+            "keywords": [
+                "merge",
+                "multiple",
+                "unzip",
+                "zip",
+                "ziparchive"
+            ],
+            "time": "2017-10-10T03:22:41+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",

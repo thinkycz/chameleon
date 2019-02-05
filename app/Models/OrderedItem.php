@@ -30,6 +30,7 @@ class OrderedItem extends Model
         'barcode',
         'catalogue_number',
         'options',
+        'type',
         'product_id',
     ];
 
@@ -50,5 +51,10 @@ class OrderedItem extends Model
     public function checkEligibility($quantity)
     {
         return optional($this->product)->checkEligibility($quantity, $this->options);
+    }
+
+    public function getTypeInStringAttribute()
+    {
+        return trans('orders.ordered_item.' . $this->type);
     }
 }

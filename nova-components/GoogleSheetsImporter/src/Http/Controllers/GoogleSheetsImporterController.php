@@ -7,6 +7,7 @@ use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Nulisec\GoogleSheetsImporter\Jobs\SyncFromGoogleSheets;
+use Nulisec\GoogleSheetsImporter\Services\SyncStatus;
 
 class GoogleSheetsImporterController extends Controller
 {
@@ -26,7 +27,7 @@ class GoogleSheetsImporterController extends Controller
 
     public function sync()
     {
-        Validator::make(Setting::loadConfiguration('google_sheets_importer'), [
+        Validator::make(Setting::loadConfiguration('google_sheets_importer') ?? [], [
             'link'       => 'required',
             'identifier' => 'required',
         ])->validate();
@@ -34,5 +35,16 @@ class GoogleSheetsImporterController extends Controller
         $this->dispatch(new SyncFromGoogleSheets());
 
         return $this->ajaxWithPayload([]);
+    }
+
+    public function status()
+    {
+        $status = SyncStatus::get('google_sheets_status');
+
+        return $this->ajaxWithPayload([
+            'lastUpdate' => $status->lastUpdate(),
+            'duration' => $status->duration(),
+            'status' => $status->status()
+        ]);
     }
 }

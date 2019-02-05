@@ -50,4 +50,14 @@ trait ProductHasAttributes
     {
         return str_replace(',00', '', number_format($this->vatrate, 2, ',', ' '));
     }
+
+    public function setMinimumOrderQuantityAttribute($value)
+    {
+        $this->attributes['minimum_order_quantity'] = is_numeric($value) ? $value : 1;
+    }
+
+    public function setVatrateAttribute($value)
+    {
+        $this->attributes['vatrate'] = is_numeric($value) ? $value : config('config.default_vat_rate_percentage');
+    }
 }

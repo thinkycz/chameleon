@@ -17,17 +17,17 @@ class SyncStatus
 
     public function lastUpdate()
     {
-        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format(config('config.datetime_format')) : __('admin/store/skytrade_connect.now')) : __('admin/store/skytrade_connect.never');
+        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format(config('config.datetime_format')) : __('google-sheets-importer::settings.now')) : __('google-sheets-importer::settings.never');
     }
 
     public function nextPossibleUpdate()
     {
-        return $this->job ? Carbon::createFromTimestamp($this->job->reserved_at)->addHours(config('config.sync_limit_every_hrs'))->diffForHumans() : __('admin/store/skytrade_connect.now');
+        return $this->job ? Carbon::createFromTimestamp($this->job->reserved_at)->addHours(config('config.sync_limit_every_hrs'))->diffForHumans() : __('google-sheets-importer::settings.now');
     }
 
     public function duration()
     {
-        if (!$this->job) return __('admin/store/skytrade_connect.not_active_yet');
+        if (!$this->job) return __('google-sheets-importer::settings.not_active_yet');
 
         $reservedAt = Carbon::createFromTimestamp($this->job->reserved_at);
 
@@ -36,13 +36,13 @@ class SyncStatus
         } elseif ($this->failed()) {
             return Carbon::createFromTimestamp($this->job->failed_at)->diffForHumans($reservedAt, true);
         } else {
-            return __('admin/store/skytrade_connect.pending');
+            return __('google-sheets-importer::settings.pending');
         }
     }
 
     public function status()
     {
-        return $this->job ? __("admin/store/skytrade_connect.{$this->job->status}") : __('admin/store/skytrade_connect.not_active_yet');
+        return $this->job ? __("google-sheets-importer::settings.{$this->job->status}") : __('google-sheets-importer::settings.not_active_yet');
     }
 
     public function failed()
@@ -73,7 +73,7 @@ class SyncStatus
     public static function get(string $type)
     {
         $repository = app(JobRepository::class);
-        $jobId = optional(Setting::loadConfiguration($type))->jobId;
+        $jobId = optional((object)Setting::loadConfiguration($type))->jobId;
 
         return new static($repository->getJobs(iterable($jobId))->first());
     }

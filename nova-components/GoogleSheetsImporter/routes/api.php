@@ -14,6 +14,8 @@ use Nulisec\GoogleSheetsImporter\Http\Controllers\GoogleSheetsImporterController
 |
  */
 
-Route::get('/settings', [GoogleSheetsImporterController::class, 'settings']);
-Route::post('/save-configuration', [GoogleSheetsImporterController::class, 'saveConfiguration']);
-Route::post('/sync', [GoogleSheetsImporterController::class, 'sync']);
+Route::get('settings', [GoogleSheetsImporterController::class, 'settings']);
+Route::get('status', [GoogleSheetsImporterController::class, 'status']);
+
+Route::post('save-configuration', [GoogleSheetsImporterController::class, 'saveConfiguration']);
+Route::post('sync', [GoogleSheetsImporterController::class, 'sync']);

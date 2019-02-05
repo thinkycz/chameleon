@@ -17,6 +17,7 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'google-sheets-importer');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'google-sheets-importer');
 
         $this->app->booted(function () {

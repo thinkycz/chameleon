@@ -284,7 +284,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
 
 // exports
 
@@ -669,18 +669,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            lastUpdate: null,
+            duration: null,
+            status: null
+        };
+    },
+
     methods: {
         sync: function sync() {
             var _this = this;
 
             Nova.request().post('/nova-vendor/google-sheets-importer/sync').then(function () {
                 _this.$toasted.show('Syncing in progress!', { type: 'success' });
+
+                setTimeout(_this.refresh, 1000);
             }).catch(function (err) {
                 _this.$toasted.show('Please check your configuration!', { type: 'error' });
             });
+        },
+        refresh: function refresh() {
+            var _this2 = this;
+
+            Nova.request().get('/nova-vendor/google-sheets-importer/status').then(function (_ref) {
+                var data = _ref.data;
+
+                _this2.lastUpdate = data.payload.lastUpdate;
+                _this2.duration = data.payload.duration;
+                _this2.status = data.payload.status;
+            });
         }
+    },
+    created: function created() {
+        this.refresh();
     }
 });
 
@@ -718,7 +754,7 @@ var render = function() {
                     staticClass: "btn btn-default btn-primary",
                     attrs: { to: "/google-sheets-importer/configure" }
                   },
-                  [_vm._v("Configuration")]
+                  [_vm._v("Configuration\n                ")]
                 )
               ],
               1
@@ -728,30 +764,51 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "card",
-        {
-          staticClass: "flex flex-col items-center justify-center",
-          staticStyle: { "min-height": "300px" }
-        },
-        [
-          _c(
-            "h1",
-            { staticClass: "text-90 text-4xl text-90 font-light mb-6" },
-            [_vm._v("\n            Click here to sync\n        ")]
-          ),
+      _c("card", { staticClass: "flex flex-col p-8" }, [
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v("Last Update")
+          ]),
           _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-default btn-primary",
-              attrs: { type: "button" },
-              on: { click: _vm.sync }
-            },
-            [_c("span", {}, [_vm._v("Sync Now")])]
-          )
-        ]
-      )
+          _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.lastUpdate))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [_vm._v("Duration")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.duration))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [_vm._v("Status")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.status))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-3/4 ml-auto" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-default btn-primary",
+                attrs: { type: "button" },
+                on: { click: _vm.sync }
+              },
+              [_vm._v(_vm._s(_vm.__("Sync Now")))]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-default btn-primary",
+                attrs: { type: "button" },
+                on: { click: _vm.refresh }
+              },
+              [_vm._v(_vm._s(_vm.__("Refresh Status")))]
+            )
+          ])
+        ])
+      ])
     ],
     1
   )

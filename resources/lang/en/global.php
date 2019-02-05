@@ -6,9 +6,8 @@ return [
     'update'           => 'Update',
     'delete'           => 'Delete',
     'close'            => 'Close',
-    'updated'          => 'Updating completed.',
+    'updated'          => 'Update completed.',
     'no_price'         => 'No price',
-    'submit'           => 'Submit',
 
     'no_results_found' => 'We haven\'t found any results matching your request.',
 
@@ -16,7 +15,6 @@ return [
     'confirm_action'   => 'Please confirm your action',
     'confirm'          => 'Confirm',
     'cancel'           => 'Cancel',
-    'no_file_selected' => 'No file selected',
 
     // Locales
     'locales.en'       => 'English',

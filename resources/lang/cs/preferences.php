@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'default_country'                               => 'Výchozí země',
+    'default_currency'                              => 'Výchozí měna',
+    'default_price_level'                           => 'Výchozí úroveň ceny',
+    'default_availability_in_stock'                 => 'Dostupnost v skladě',
+    'default_availability_out_of_stock'             => 'Dostupnost když není v skladě',
+    'default_quantitative_unit'                     => 'Výchozí jednotka množství',
+    'created_order_status'                          => 'Vytvořený stav objednávky',
+    'confirmed_order_status'                        => 'Potvrzený stav objednávky',
+    'cancelled_order_status'                        => 'Zrušený stav objednávky',
+    'completed_order_status'                        => 'Dokončený stav objednávky',
+    'terms_conditions_page'                         => 'Stránka Smluvní podmínky',
+    'privacy_policy_page'                           => 'Stránka Soukromí',
+    'return_refund_page'                            => 'Stránka Reklamace a návratu',
+    'frequently_asked_questions_page'               => 'Stránka FAQ',
+
+    'default_country.description'                   => 'Nastavit výchozí zemi tohoto obchodu.',
+    'default_currency.description'                  => 'Nastavit výchozí měnu tohoto obchodu.',
+    'default_price_level.description'               => 'Nastavit výchozí úroveň ceny pro zákazníky tohoto obchodu.',
+    'default_availability_in_stock.description'     => 'Nastavit výchozí dostupnost tohoto obchodu, když je produkt ve skladě. Tato možnost bude automaticky nastavena během vytváření produktu.',
+    'default_availability_out_of_stock.description' => 'Nastavit výchozí dostupnost tohoto obchodu, když není produkt ve skladě. Tato možnost bude automaticky nastavena, když množství ve skladě je nižší než minimální množství objednávky a dostupnost množství produktu nemůže být v záporu.',
+    'default_quantitative_unit.description'         => 'Tato jednotka bude nastavea, když je produkt vytvořen.',
+    'created_order_status.description'              => 'Tento stav objednávky bude automaticky nastavena, když je objednávka vytvořena.',
+    'confirmed_order_status.description'            => 'Tento stav objednávky bude automaticky nastavena, když je objednávka vystavena a aplikace nastavena tak, aby požadovala povolení admina k potvrzení objednávky, předtím než dojde k vyhodnocení a platbě.',
+    'cancelled_order_status.description'            => 'Tento stav objednávky bude automaticky nastavena, když je objednávka zrušena.',
+    'completed_order_status.description'            => 'Tento stav objednávky bude automaticky nastavena, když je objednávka dokončena.',
+    'terms_conditions_page.description'             => 'Toto je výchozí stránka Smluvní podmínky',
+    'privacy_policy_page.description'               => 'Toto je výchozí stánka Soukromí',
+    'return_refund_page.description'                => 'Toto je výchozí stánka Reklamace a návratu',
+    'frequently_asked_questions_page.description'   => 'Toto je výchozí stánka FAQ',
+];

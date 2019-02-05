@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have sent a password reset link to your email!',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
+    'password' => 'Heslo musí být aspoň 6 charakterů dlouhé a má být totožné jako potvrzovací heslo.',
+    'reset' => 'Vaše heslo bylo resetován!',
+    'sent' => 'Poslali jsme na váš email adresu pro resetování hesla!',
+    'token' => 'Token resetu pro heslo je invalidní.',
+    'user' => "Nemůžeme najít uživatele s touto emailovou adresou.",
 
 ];

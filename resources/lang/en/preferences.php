@@ -20,7 +20,7 @@ return [
     'default_currency.description'                  => 'Set the default currency for this store.',
     'default_price_level.description'               => 'Set the default price level for customers of this store.',
     'default_availability_in_stock.description'     => 'Set the default availability option when the product is in stock. This option will be set automatically when creating a new product.',
-    'default_availability_out_of_stock.description' => 'Set the default availability option when the product is not in stock. This option will be set automatically when quantity in stock becomes less than minimum order quantity, and product\'s availability does not allow negative quantity.',
+    'default_availability_out_of_stock.description' => 'Set the default availability option when the product is not in stock. This option will be set automatically when quantity in stock becomes less than the minimum order quantity, and product\'s availability does not allow negative quantity.',
     'default_quantitative_unit.description'         => 'This unit will be set when the product is created.',
     'created_order_status.description'              => 'This order status will be set automatically when order is created.',
     'confirmed_order_status.description'            => 'This order status will be set automatically when order is created and app is set to require admin to confirm orders before processing and payment.',

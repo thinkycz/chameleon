@@ -46,14 +46,14 @@ return [
     'reset_link_sent'           => 'Please check your email. We sent a password reset link!',
 
     'reset_password_heading'    => '<span>Reset</span> your password',
-    'reset_password_subheading' => 'You can update your password by filling the form bellow.',
+    'reset_password_subheading' => 'You can update your password by filling in the form bellow.',
     'reset_password'            => 'Reset password',
     'password_reset'            => 'Your password was updated!',
 
     'send_password_reset'       => 'Send password reset',
 
     'register_heading'          => '<span>Do you</span> want to join us?',
-    'register_subheading'       => 'Register on our website to get your own and personalized shopping experience online. Register by filling the details below. Its simple and easy!',
+    'register_subheading'       => 'Register on our website to get your own personalized shopping experience online. Register by filling in the details below. Its simple and easy!',
     'register'                  => 'Register',
 
     'remember_me'               => 'Remember me',

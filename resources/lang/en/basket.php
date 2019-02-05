@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'delete_item'                => 'Remove from Basket',
+    'delete_item'                => 'Delete from Basket',
     'total'                      => 'Total',
     'checkout'                   => 'Checkout',
     'update_quantities'          => 'Update Quantities',
@@ -23,5 +23,4 @@ return [
     'basket'                     => 'Basket',
     'confirmation'               => 'Confirmation',
     'order_placed'               => 'Order Placed',
-    'incl_vat' => 'incl. VAT',
 ];

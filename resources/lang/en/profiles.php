@@ -12,7 +12,7 @@ return [
     'address_updated'                  => 'Your address was updated',
     'address_deleted'                  => 'Address was deleted',
     'address_book'                     => 'Your address book',
-    'address_book_info'                => 'You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new by clicking on the blank address box.',
+    'address_book_info'                => 'You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new one by clicking on the blank address box.',
 
     'billing_details'                  => 'Billing:',
     'shipping_details'                 => 'Shipping:',
@@ -25,7 +25,7 @@ return [
     'privacy_policy_info'              => 'In this section you can set your privacy policy settings, read our terms of usage, request exporting your account data that we store on our servers and also request account deletion. We care about and respect your privacy.',
 
     'overview'                         => 'Your account overview',
-    'overview_info'                    => 'Here we are going to show you the most important information about your account. You can click on any of the orders to see more details about it. ',
+    'overview_info'                    => 'Here, we are going to show you the most important information about your account. You can click on any of the orders to see more details about it. ',
 
     'your_price_level'                 => 'Your price level is <strong class="text-primary"> :level </strong>',
     'your_total_orders'                => 'You made total of <strong class="text-primary"> :total </strong> orders',
@@ -37,7 +37,7 @@ return [
     'your_past_orders'                 => 'Your past order values',
 
     'permanently_delete_your_account'  => 'Permanently delete your account',
-    'honor_your_right_to_be_forgotten' => 'We honor your right to be completely forgotten from our platform, including any third party services we share your information with. When you request a complete deletion of your account, we will:',
+    'honor_your_right_to_be_forgotten' => 'We respect your right to be completely forgotten from our platform, including any third party services we share your information with. When you request a complete deletion of your account, we will:',
     'delete_your_account'              => 'Delete your account and all related data from our database',
     'request_3rd_party_services'       => 'Request 3rd party services we use to remove your information',
     'contact_you_and_let_you_know'     => 'Contact you and let you know what we\'ve deleted, and where from',
@@ -46,10 +46,8 @@ return [
     'company_information'              => 'Your company information, if you created a store for that company',
     'products_sold_info'               => 'Information about products you sold on our marketplace',
     'let_us_know'                      => 'Please let us know if you have any questions about this, and we\'d be happy to help.',
-    'request_a_complete_deletion'      => 'To request a complete deletion of your account, please email',
+    'request_a_complete_deletion'      => 'To request a complete deletion of your account, please email <a href="mailto:team@nulisec.com">team@nulisec.com</a>',
     'process_within_30_days'           => 'We will process your request within 30 days of receiving your email',
-    'preparing_your_data'              => 'We are preparing your data. When it\'s ready we are going to send it to your email',
-    'request_download_confirmation'    => 'Are you sure you want to proceed with downloading your data?',
 
     // Forms
     'first_name'                       => 'First name',

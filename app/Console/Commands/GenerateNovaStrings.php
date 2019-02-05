@@ -4,10 +4,13 @@ namespace App\Console\Commands;
 
 use App\Enums\Locale;
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
 class GenerateNovaStrings extends Command
 {
+    protected $strings;
+
     /**
      * The name and signature of the console command.
      *
@@ -37,22 +40,29 @@ class GenerateNovaStrings extends Command
      */
     public function handle()
     {
+
         $packageDirectories = $this->fetchPackageDirectories();
 
         collect(Locale::codes())->each(function ($language) use ($packageDirectories) {
             $this->generatePackageStrings($language, $packageDirectories);
             $this->generateGlobalStrings($language);
+
+            if ($this->strings->isNotEmpty()) {
+                file_put_contents(resource_path("lang/vendor/nova/{$language}.json"), $this->strings->toJson(JSON_PRETTY_PRINT));
+            }
         });
+
+        $this->info('Available locale strings were generated.');
     }
 
     private function generatePackageStrings($language, $packageDirectories)
     {
-        $content = '';
+        $this->strings = new Collection();
 
         foreach ($packageDirectories as $directory) {
             $path = "{$directory}/resources/lang/{$language}";
 
-            $this->generateStringsBasedOnPath($path);
+            $this->generateStringsBasedOnPath($path, $directory);
         }
     }
 
@@ -70,22 +80,23 @@ class GenerateNovaStrings extends Command
         return glob("{$path}/*", GLOB_ONLYDIR);
     }
 
-    private function generateStringsBasedOnPath($path)
+    private function generateStringsBasedOnPath($path, $directory = null)
     {
-        $translations = collect([]);
+        $translations = new Collection();
+        $package = $directory ? kebab_case(last(explode('/', $directory))) : null;
 
         if (File::exists($path)) {
             $files = File::files($path);
 
-            collect($files)->flatMap(function ($file) use (&$translations) {
+            collect($files)->flatMap(function ($file) use (&$translations, $package) {
                 $file = $file->getBasename('.php');
-                $translations = $translations->merge(trans($file));
+                $file = $package ? "{$package}::{$file}" : $file;
+                $translations = $translations->merge(collect(trans($file)));
             });
         }
 
         if ($translations->isNotEmpty()) {
-            file_put_contents("$path.json", $translations->toJson(JSON_PRETTY_PRINT));
-            $this->info("{$path}.json was generated.");
+            $this->strings = $this->strings->merge($translations->toArray());
         }
     }
 }

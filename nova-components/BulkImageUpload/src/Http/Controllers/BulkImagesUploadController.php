@@ -23,6 +23,13 @@ class BulkImageUploadController extends Controller
         return $this->ajaxWithPayload(null, false, trans('products.product_not_found'), 404);
     }
 
+    public function destroy(Request $request, Product $product)
+    {
+        $product->deleteMedia($request->get('imageId'));
+
+        return $this->ajaxWithPayload();
+    }
+
     private function extractFilename(UploadedFile $file, $delimeter = '|')
     {
         return collect(explode($delimeter, pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)))->first();

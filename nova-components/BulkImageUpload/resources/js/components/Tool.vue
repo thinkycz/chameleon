@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="flex">
-            <heading class="mb-6 flex-no-shrink">Bulk Image uploader</heading>
+            <heading class="mb-6 flex-no-shrink">{{ __('bulk_images_upload') }}</heading>
         </div>
 
         <card class="flex flex-col items-center justify-center"

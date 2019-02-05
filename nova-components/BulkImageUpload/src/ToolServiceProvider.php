@@ -2,10 +2,10 @@
 
 namespace Nulisec\BulkImageUpload;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Nulisec\BulkImageUpload\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
@@ -17,7 +17,8 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'bulk-image-upload');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bulk-image-upload');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'bulk-image-upload');
 
         $this->app->booted(function () {
             $this->routes();
@@ -40,8 +41,8 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/bulk-image-upload')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/bulk-image-upload')
+            ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**

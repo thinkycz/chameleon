@@ -57,8 +57,9 @@ class GenerateNovaStrings extends Command
     private function generateGlobalStrings($language)
     {
         $path = resource_path("lang/{$language}");
+        $pathToStore = resource_path("lang/vendor/nova");
 
-        $this->generateStringsBasedOnPath($path);
+        $this->generateStringsBasedOnPath($path, null, $pathToStore);
     }
 
     private function fetchPackageDirectories()
@@ -68,7 +69,7 @@ class GenerateNovaStrings extends Command
         return glob("{$path}/*", GLOB_ONLYDIR);
     }
 
-    private function generateStringsBasedOnPath($path, $directory = null)
+    private function generateStringsBasedOnPath($path, $directory = null, $pathToStore = null)
     {
         $translations = collect([]);
         $package = $directory ? kebab_case(last(explode('/', $directory))) : null;
@@ -84,8 +85,9 @@ class GenerateNovaStrings extends Command
         }
 
         if ($translations->isNotEmpty()) {
-            file_put_contents("$path.json", $translations->toJson(JSON_PRETTY_PRINT));
-            $this->info("{$path}.json was generated.");
+            $pathToStore = $pathToStore ? $pathToStore . '/' . last(explode('/', $path)) : $path;
+            file_put_contents("$pathToStore.json", $translations->toJson(JSON_PRETTY_PRINT));
+            $this->info("{$pathToStore}.json was generated.");
         }
     }
 }

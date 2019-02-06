@@ -15,6 +15,8 @@ class FieldServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'dropzone-field');
+
         Nova::serving(function (ServingNova $event) {
             Nova::script('dropzone-field', __DIR__ . '/../dist/js/field.js');
             Nova::style('dropzone-field', __DIR__ . '/../dist/css/field.css');

@@ -6,9 +6,6 @@
 
         <card class="flex flex-col items-center justify-center"
             style="min-height: 300px">
-            <p class="mb-4"
-                style="margin-top: 3rem">{{ __('bulk_images_upload_note') }}</p>
-
             <image-upload></image-upload>
         </card>
 

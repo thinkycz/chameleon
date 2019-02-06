@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
 
-        <div class="flex border-b border-40 justify-center">
+        <div class="flex justify-center">
             <div class="w-1/5 py-6 px-8">
                 <label class="inline-block text-80 pt-2 leading-tight"
                     for="identifier">
@@ -19,6 +19,10 @@
                     <option value="catalogue_number">{{ __('catalogue_number') }}</option>
                 </select>
             </div>
+        </div>
+
+        <div class="px-6 text-center max-w-lg border-b border-40 mx-auto">
+            <p class="mb-4 text-sm text-80">{{ __('bulk_images_upload_note') }}</p>
         </div>
 
         <div class="flex justify-center">

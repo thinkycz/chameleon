@@ -95,19 +95,19 @@
             let obj = {
                 url: this.route,
                 maxFiles: this.maxImages,
-                dictDefaultMessage: trans('bulk_image_upload.upload_images'),
-                dictFallbackMessage: trans('bulk_image_upload.dictFallbackMessage'),
-                dictFallbackText: trans('bulk_image_upload.dictFallbackText'),
-                dictFileTooBig: trans('bulk_image_upload.dictFileTooBig', {
+                dictDefaultMessage: this.trans('bulk_image_upload.upload_images'),
+                dictFallbackMessage: this.trans('bulk_image_upload.dictFallbackMessage'),
+                dictFallbackText: this.trans('bulk_image_upload.dictFallbackText'),
+                dictFileTooBig: this.trans('bulk_image_upload.dictFileTooBig', {
                     filesize: '',
                     maxFilesize: 2,
                 }),
-                dictInvalidFileType: trans('bulk_image_upload.dictInvalidFileType'),
-                dictResponseError: trans('bulk_image_upload.dictResponseError', { statusCode: '' }),
-                dictCancelUpload: trans('bulk_image_upload.dictCancelUpload'),
-                dictCancelUploadConfirmation: trans('bulk_image_upload.dictCancelUploadConfirmation'),
-                dictRemoveFile: trans('bulk_image_upload.dictRemoveFile'),
-                dictMaxFilesExceeded: trans('bulk_image_upload.dictMaxFilesExceeded'),
+                dictInvalidFileType: this.trans('bulk_image_upload.dictInvalidFileType'),
+                dictResponseError: this.trans('bulk_image_upload.dictResponseError', { statusCode: '' }),
+                dictCancelUpload: this.trans('bulk_image_upload.dictCancelUpload'),
+                dictCancelUploadConfirmation: this.trans('bulk_image_upload.dictCancelUploadConfirmation'),
+                dictRemoveFile: this.trans('bulk_image_upload.dictRemoveFile'),
+                dictMaxFilesExceeded: this.trans('bulk_image_upload.dictMaxFilesExceeded'),
             };
 
             this.dropzoneOptions = { ...this.dropzoneOptions, ...obj };

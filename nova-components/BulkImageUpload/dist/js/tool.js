@@ -682,10 +682,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("card", {
-        staticClass: "flex flex-col items-center justify-center",
-        staticStyle: { "min-height": "300px" }
-      })
+      _c(
+        "card",
+        {
+          staticClass: "flex flex-col items-center justify-center",
+          staticStyle: { "min-height": "300px" }
+        },
+        [_c("p", [_vm._v(_vm._s(_vm.__("testing_something")))])]
+      )
     ],
     1
   )

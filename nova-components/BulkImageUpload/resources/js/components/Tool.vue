@@ -6,7 +6,7 @@
 
         <card class="flex flex-col items-center justify-center"
             style="min-height: 300px">
-
+            <p>{{ __('testing_something') }}</p>
         </card>
     </div>
 </template>

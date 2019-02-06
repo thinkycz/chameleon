@@ -4,13 +4,10 @@ namespace App\Console\Commands;
 
 use App\Enums\Locale;
 use Illuminate\Console\Command;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
 class GenerateNovaStrings extends Command
 {
-    protected $strings;
-
     /**
      * The name and signature of the console command.
      *
@@ -40,25 +37,16 @@ class GenerateNovaStrings extends Command
      */
     public function handle()
     {
-
         $packageDirectories = $this->fetchPackageDirectories();
 
         collect(Locale::codes())->each(function ($language) use ($packageDirectories) {
             $this->generatePackageStrings($language, $packageDirectories);
             $this->generateGlobalStrings($language);
-
-            if ($this->strings->isNotEmpty()) {
-                file_put_contents(resource_path("lang/vendor/nova/{$language}.json"), $this->strings->toJson(JSON_PRETTY_PRINT));
-            }
         });
-
-        $this->info('Available locale strings were generated.');
     }
 
     private function generatePackageStrings($language, $packageDirectories)
     {
-        $this->strings = new Collection();
-
         foreach ($packageDirectories as $directory) {
             $path = "{$directory}/resources/lang/{$language}";
 
@@ -82,7 +70,7 @@ class GenerateNovaStrings extends Command
 
     private function generateStringsBasedOnPath($path, $directory = null)
     {
-        $translations = new Collection();
+        $translations = collect([]);
         $package = $directory ? kebab_case(last(explode('/', $directory))) : null;
 
         if (File::exists($path)) {
@@ -96,7 +84,8 @@ class GenerateNovaStrings extends Command
         }
 
         if ($translations->isNotEmpty()) {
-            $this->strings = $this->strings->merge($translations->toArray());
+            file_put_contents("$path.json", $translations->toJson(JSON_PRETTY_PRINT));
+            $this->info("{$path}.json was generated.");
         }
     }
 }

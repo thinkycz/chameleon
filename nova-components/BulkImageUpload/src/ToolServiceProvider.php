@@ -19,7 +19,6 @@ class ToolServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bulk-image-upload');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'bulk-image-upload');
-        $this->loadJsonTranslationsFrom(__DIR__ . '/../resources/lang');
 
         $this->app->booted(function () {
             $this->routes();

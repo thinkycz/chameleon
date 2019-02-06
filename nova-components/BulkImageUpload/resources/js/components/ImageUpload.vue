@@ -1,46 +1,49 @@
 <template>
-    <div class="col-sm-12">
-        <div class="form-group">
-            <label>{{ $trans('admin.store.bulk_image_upload.product_identifier') }}</label>
-            <select title="identifier"
-                name="identifier"
-                class="form-control"
-                v-model="identifier"
-                required>
-                <option value="barcode">{{ $trans('admin.store.bulk_image_upload.barcode') }}</option>
-                <option value="catalogue_number">{{ $trans('admin.store.bulk_image_upload.catalogue_number') }}</option>
-            </select>
+    <div class="w-full">
+
+        <div class="flex border-b border-40 justify-center">
+            <div class="w-1/5 py-6 px-8">
+                <label class="inline-block text-80 pt-2 leading-tight"
+                    for="identifier">
+                    {{ __('identifier') }}
+                </label>
+            </div>
+            <div class="py-6 px-8 w-1/2">
+                <select v-model="identifier"
+                    name="identifier"
+                    id="identifier"
+                    required="required"
+                    class="w-full form-control form-select">
+                    <option value="barcode"
+                        selected="selected">{{ __('barcode') }}</option>
+                    <option value="catalogue_number">{{ __('catalogue_number') }}</option>
+                </select>
+            </div>
         </div>
 
-        <image-dropzone :mass-upload-identifier="identifier"
-            :is-delete-enabled="false"
-            :max-images="100"
-            :element-id="elementId"
-            :route="route">
-        </image-dropzone>
+        <div class="flex justify-center">
+            <div class="w-full max-w-md py-6">
+                <image-dropzone :identifier="identifier"
+                    :delete-route="deleteRoute"
+                    :max-images="100"
+                    :element-id="'dropzone' + _uid"
+                    :route="route">
+                </image-dropzone>
+            </div>
+        </div>
+
     </div>
 </template>
 
 <script>
-    import ImageDropzone from './ImageDropzone';
+    import ImageDropzone from '@nova/ImageDropzone';
 
     export default {
-        data() {
-            return {
-                currentLocale: window.currentLocale,
-                identifier: 'barcode',
-            };
-        },
-
-        props: {
-            elementId: {
-                required: true,
-            },
-
-            route: {
-                required: true,
-            },
-        },
+        data: () => ({
+            identifier: 'barcode',
+            route: '/nova-vendor/bulk-image-upload/upload',
+            deleteRoute: '/nova-vendor/bulk-image-upload/destroy',
+        }),
 
         components: {
             ImageDropzone,

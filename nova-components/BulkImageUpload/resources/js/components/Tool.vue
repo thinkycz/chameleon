@@ -6,28 +6,21 @@
 
         <card class="flex flex-col items-center justify-center"
             style="min-height: 300px">
-            <p>{{ __('testing_something') }}</p>
+            <p class="mb-4"
+                style="margin-top: 3rem">{{ __('bulk_images_upload_note') }}</p>
+
+            <image-upload></image-upload>
         </card>
+
     </div>
 </template>
 
 <script>
+    import ImageUpload from './ImageUpload';
+
     export default {
-        methods: {
-            sync() {
-                Nova.request()
-                    .post('/nova-vendor/google-sheets-importer/sync')
-                    .then(() => {
-                        this.$toasted.show('Syncing in progress!', { type: 'success' });
-                    })
-                    .catch(err => {
-                        this.$toasted.show('Please check your configuration!', { type: 'error' });
-                    });
-            },
+        components: {
+            ImageUpload,
         },
     };
 </script>
-
-<style>
-    /* Scoped Styles */
-</style>

@@ -15,4 +15,4 @@ use Nulisec\BulkImageUpload\Http\Controllers\BulkImageUploadController;
  */
 
 Route::post('/upload', [BulkImageUploadController::class, 'upload']);
-Route::delete('/destroy/{product}', [BulkImageUploadController::class, 'destroy']);
+Route::delete('/destroy/{product}/{image}', [BulkImageUploadController::class, 'destroy']);

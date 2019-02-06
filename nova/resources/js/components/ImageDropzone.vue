@@ -4,13 +4,14 @@
         @vdropzone-sending="sendingEvent"
         @vdropzone-removed-file="removeFile"
         @vdropzone-success="addedFile"
+        @vdropzone-error="handleError"
         :id="elementId"
         :options="dropzoneOptions">
     </dropzone>
 </template>
 
 <script>
-    import Dropzone from 'vue2-dropzone';
+    import Dropzone from 'vue2-dropzone'
 
     export default {
         data() {
@@ -25,7 +26,7 @@
                     uploadMultiple: true,
                     maxFiles: this.maxImages,
                 },
-            };
+            }
         },
 
         props: {
@@ -45,7 +46,7 @@
             prepopulate: {
                 required: false,
                 default() {
-                    return [];
+                    return []
                 },
             },
 
@@ -53,12 +54,7 @@
                 required: false,
             },
 
-            isDeleteEnabled: {
-                required: false,
-                default: true,
-            },
-
-            massUploadIdentifier: {
+            identifier: {
                 required: false,
                 default: null,
             },
@@ -70,55 +66,68 @@
 
         methods: {
             sendingEvent(file, xhr, formData) {
-                formData.append('_token', window.csrf);
+                formData.append(
+                    '_token',
+                    document.head.querySelector('meta[name="csrf-token"]').content
+                )
 
-                if (this.massUploadIdentifier) {
-                    formData.append('identifier', this.massUploadIdentifier);
+                if (this.identifier) {
+                    formData.append('identifier', this.identifier)
                 }
             },
 
             removeFile(file, xhr, formData) {
-                if (this.isDeleteEnabled) {
-                    axios.delete(this.deleteRoute, { imageId: file.id });
-                    return true;
+                console.log(file)
+
+                if (!this.deleteRoute || typeof file.model === 'undefined') {
+                    return false
                 }
 
-                return false;
+                let route = `${this.deleteRoute}/${file.model}/${file.id}`
+
+                return axios.delete(route).then(res => {
+                    return true
+                })
+            },
+
+            handleError(file, message, error) {
+                Nova.$emit('error', message.message)
             },
 
             addedFile(file) {
-                let response = JSON.parse(file.xhr.response);
-                file.id = response.payload.media.id;
+                let response = JSON.parse(file.xhr.response)
+                file.id = response.payload.media.id
+                file.model = response.payload.media.model_id
             },
         },
         created() {
             let obj = {
                 url: this.route,
                 maxFiles: this.maxImages,
-                dictDefaultMessage: this.trans('bulk_image_upload.upload_images'),
-                dictFallbackMessage: this.trans('bulk_image_upload.dictFallbackMessage'),
-                dictFallbackText: this.trans('bulk_image_upload.dictFallbackText'),
-                dictFileTooBig: this.trans('bulk_image_upload.dictFileTooBig', {
+                dictDefaultMessage: this.__('upload_images'),
+                dictFallbackMessage: this.__('dictFallbackMessage'),
+                dictFallbackText: this.__('dictFallbackText'),
+                dictFileTooBig: this.__('dictFileTooBig', {
                     filesize: '',
                     maxFilesize: 2,
                 }),
-                dictInvalidFileType: this.trans('bulk_image_upload.dictInvalidFileType'),
-                dictResponseError: this.trans('bulk_image_upload.dictResponseError', { statusCode: '' }),
-                dictCancelUpload: this.trans('bulk_image_upload.dictCancelUpload'),
-                dictCancelUploadConfirmation: this.trans('bulk_image_upload.dictCancelUploadConfirmation'),
-                dictRemoveFile: this.trans('bulk_image_upload.dictRemoveFile'),
-                dictMaxFilesExceeded: this.trans('bulk_image_upload.dictMaxFilesExceeded'),
-            };
+                dictInvalidFileType: this.__('dictInvalidFileType'),
+                dictResponseError: this.__('dictResponseError', { statusCode: '' }),
+                dictCancelUpload: this.__('dictCancelUpload'),
+                dictCancelUploadConfirmation: this.__('dictCancelUploadConfirmation'),
+                dictRemoveFile: this.__('dictRemoveFile'),
+                dictMaxFilesExceeded: this.__('dictMaxFilesExceeded'),
+            }
 
-            this.dropzoneOptions = { ...this.dropzoneOptions, ...obj };
+            this.dropzoneOptions = { ...this.dropzoneOptions, ...obj }
         },
         mounted() {
             window._.forEach(this.prepopulate, image => {
-                let file = { size: image.size, name: image.name, id: image.id };
-                this.$refs[this.elementId].manuallyAddFile(file, window.baseURL + image.url);
-            });
+                let file = { size: image.size, name: image.name, id: image.id }
+                this.$refs[this.elementId].manuallyAddFile(file, window.baseURL + image.url)
+            })
         },
-    };
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -127,10 +136,11 @@
         * {
             box-sizing: border-box;
         }
-        min-height: 150px;
-        border: 2px solid rgba(0, 0, 0, 0.3);
+        min-height: 250px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
         background: #fff;
         padding: 20px;
+        border-radius: 0.25rem;
         &.dz-clickable {
             cursor: pointer;
             * {
@@ -155,6 +165,7 @@
         /deep/ .dz-message {
             text-align: center;
             margin: 2em 0;
+            font-size: 1.6rem;
         }
     }
 
@@ -359,10 +370,11 @@
                 }
             }
         }
-        border: 2px solid #e5e5e5;
+        border: 1px solid #e5e5e5;
         letter-spacing: 0.2px;
         color: #777;
         transition: background-color 0.2s linear;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 
         &:hover {
             background-color: #f6f6f6;

@@ -73,6 +73,8 @@ import SelectFilter from '@/components/Filters/SelectFilter'
 import BooleanFilter from '@/components/Filters/BooleanFilter'
 import DateFilter from '@/components/Filters/DateFilter'
 
+import ImageDropzone from '@/components/ImageDropzone'
+
 Vue.component('action-selector', ActionSelector)
 Vue.component('base-partition-metric', BasePartitionMetric)
 Vue.component('base-trend-metric', BaseTrendMetric)

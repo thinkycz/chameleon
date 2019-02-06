@@ -20,12 +20,12 @@ class BulkImageUploadController extends Controller
             return $this->ajaxWithPayload(compact('media'));
         }
 
-        return $this->ajaxWithPayload(null, false, trans('products.product_not_found'), 404);
+        return $this->ajaxWithPayload(null, false, trans('bulk-image-upload::messages.product_not_found'));
     }
 
-    public function destroy(Request $request, Product $product)
+    public function destroy(Product $product, $image)
     {
-        $product->deleteMedia($request->get('imageId'));
+        $product->deleteMedia($image);
 
         return $this->ajaxWithPayload();
     }

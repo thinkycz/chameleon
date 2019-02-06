@@ -36,13 +36,14 @@
 </template>
 
 <script>
-    import ImageDropzone from '@nova/ImageDropzone';
+    import ImageDropzone from '@dropzone';
+    const route = '/nova-vendor/bulk-image-upload';
 
     export default {
         data: () => ({
             identifier: 'barcode',
-            route: '/nova-vendor/bulk-image-upload/upload',
-            deleteRoute: '/nova-vendor/bulk-image-upload/destroy',
+            route: `${route}/upload`,
+            deleteRoute: `${route}/destroy`,
         }),
 
         components: {

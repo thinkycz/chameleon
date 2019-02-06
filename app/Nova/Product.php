@@ -14,19 +14,19 @@ use App\Nova\Filters\ProductEnabled;
 use App\Nova\Filters\ProductUnit;
 use App\Nova\Metrics\NumberOfProducts;
 use App\Nova\Metrics\ProductsPerAvailability;
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
+use Nulisec\DropzoneField\DropzoneField;
 use Spatie\TagsField\Tags;
 
 class Product extends Resource
@@ -55,7 +55,7 @@ class Product extends Resource
     public static $search = [
         'name',
         'barcode',
-        'catalogue_number'
+        'catalogue_number',
     ];
 
     public function subtitle()
@@ -103,6 +103,8 @@ class Product extends Resource
             HasMany::make('Prices'),
 
             HasMany::make('Properties'),
+
+            DropzoneField::make('images')->onlyOnDetail(),
 
 //            HasMany::make('Subproducts', 'children', static::class),
 

@@ -9,7 +9,7 @@ mix.webpackConfig({
         extensions: ['.js', '.vue', '.json'],
         alias: {
             vue$: 'vue/dist/vue.esm.js',
-            '@nova': '../../../../../nova/resources/js/components/',
+            '@dropzone': '../../../../DropzoneField/resources/js/components/ImageDropzone.vue',
         },
     },
 });

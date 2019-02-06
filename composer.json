@@ -32,6 +32,7 @@
         "nulisec/jetsoft-shopconnector": "*",
         "nulisec/json-schema": "*",
         "nulisec/nova-phone-field": "*",
+        "nulisec/dropzone-field": "*",
         "nulisec/scoutelastic": "*",
         "nulisec/translatable-text": "*",
         "nulisec/translatable-textarea": "*",

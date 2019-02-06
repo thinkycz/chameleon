@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import Dropzone from 'vue2-dropzone'
+    import Dropzone from 'vue2-dropzone';
 
     export default {
         data() {
@@ -26,7 +26,7 @@
                     uploadMultiple: true,
                     maxFiles: this.maxImages,
                 },
-            }
+            };
         },
 
         props: {
@@ -46,7 +46,7 @@
             prepopulate: {
                 required: false,
                 default() {
-                    return []
+                    return [];
                 },
             },
 
@@ -66,38 +66,35 @@
 
         methods: {
             sendingEvent(file, xhr, formData) {
-                formData.append(
-                    '_token',
-                    document.head.querySelector('meta[name="csrf-token"]').content
-                )
+                formData.append('_token', document.head.querySelector('meta[name="csrf-token"]').content);
 
                 if (this.identifier) {
-                    formData.append('identifier', this.identifier)
+                    formData.append('identifier', this.identifier);
                 }
             },
 
             removeFile(file, xhr, formData) {
-                console.log(file)
+                console.log(file);
 
                 if (!this.deleteRoute || typeof file.model === 'undefined') {
-                    return false
+                    return false;
                 }
 
-                let route = `${this.deleteRoute}/${file.model}/${file.id}`
+                let route = `${this.deleteRoute}/${file.model}/${file.id}`;
 
                 return axios.delete(route).then(res => {
-                    return true
-                })
+                    return true;
+                });
             },
 
             handleError(file, message, error) {
-                Nova.$emit('error', message.message)
+                Nova.$emit('error', message.message);
             },
 
             addedFile(file) {
-                let response = JSON.parse(file.xhr.response)
-                file.id = response.payload.media.id
-                file.model = response.payload.media.model_id
+                let response = JSON.parse(file.xhr.response);
+                file.id = response.payload.media.id;
+                file.model = response.payload.media.model_id;
             },
         },
         created() {
@@ -117,17 +114,17 @@
                 dictCancelUploadConfirmation: this.__('dictCancelUploadConfirmation'),
                 dictRemoveFile: this.__('dictRemoveFile'),
                 dictMaxFilesExceeded: this.__('dictMaxFilesExceeded'),
-            }
+            };
 
-            this.dropzoneOptions = { ...this.dropzoneOptions, ...obj }
+            this.dropzoneOptions = { ...this.dropzoneOptions, ...obj };
         },
         mounted() {
             window._.forEach(this.prepopulate, image => {
-                let file = { size: image.size, name: image.name, id: image.id }
-                this.$refs[this.elementId].manuallyAddFile(file, window.baseURL + image.url)
-            })
+                let file = { size: image.size, name: image.name, id: image.id };
+                this.$refs[this.elementId].manuallyAddFile(file, window.baseURL + image.url);
+            });
         },
-    }
+    };
 </script>
 
 <style lang="scss" scoped>

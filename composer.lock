@@ -3882,6 +3882,40 @@
             ]
         },
         {
+            "name": "nulisec/dropzone-field",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/DropzoneField",
+                "reference": "3a78b05ca9cfbcf897b48827e5b1905645ebcdd6",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\DropzoneField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\DropzoneField\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova dropzone field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
             "name": "nulisec/google-sheets-importer",
             "version": "dev-dev",
             "dist": {
@@ -3989,7 +4023,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/PhoneField",
-                "reference": "87a55167b170e2e8cc4042c622417f0176b523ca",
+                "reference": "e77db7d3ba1d07130ffb92a731c2c7db86bf0e78",
                 "shasum": null
             },
             "require": {

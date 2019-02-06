@@ -284,7 +284,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
 
 // exports
 
@@ -680,7 +680,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -696,11 +695,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             Nova.request().post('/nova-vendor/google-sheets-importer/sync').then(function () {
-                _this.$toasted.show('Syncing in progress!', { type: 'success' });
+                _this.$toasted.show(__('syncing_in_progress'), { type: 'success' });
 
                 setTimeout(_this.refresh, 1000);
             }).catch(function (err) {
-                _this.$toasted.show('Please check your configuration!', { type: 'error' });
+                _this.$toasted.show(__('please_check_config'), { type: 'error' });
             });
         },
         refresh: function refresh() {
@@ -736,7 +735,7 @@ var render = function() {
         { staticClass: "flex" },
         [
           _c("heading", { staticClass: "mb-6 flex-no-shrink" }, [
-            _vm._v("Google Sheets Importer")
+            _vm._v(_vm._s(_vm.__("google_sheets_importer")))
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-full flex items-center mb-6" }, [
@@ -754,7 +753,11 @@ var render = function() {
                     staticClass: "btn btn-default btn-primary",
                     attrs: { to: "/google-sheets-importer/configure" }
                   },
-                  [_vm._v("Configuration\n                ")]
+                  [
+                    _vm._v(
+                      _vm._s(_vm.__("configuration")) + "\n                "
+                    )
+                  ]
                 )
               ],
               1
@@ -767,20 +770,24 @@ var render = function() {
       _c("card", { staticClass: "flex flex-col p-8" }, [
         _c("div", { staticClass: "flex my-4" }, [
           _c("div", { staticClass: "w-1/4 font-bold" }, [
-            _vm._v("Last Update")
+            _vm._v(_vm._s(_vm.__("last_update")))
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.lastUpdate))])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
-          _c("div", { staticClass: "w-1/4 font-bold" }, [_vm._v("Duration")]),
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v(_vm._s(_vm.__("duration")))
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.duration))])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
-          _c("div", { staticClass: "w-1/4 font-bold" }, [_vm._v("Status")]),
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v(_vm._s(_vm.__("status")))
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.status))])
         ]),
@@ -794,7 +801,7 @@ var render = function() {
                 attrs: { type: "button" },
                 on: { click: _vm.sync }
               },
-              [_vm._v(_vm._s(_vm.__("Sync Now")))]
+              [_vm._v(_vm._s(_vm.__("sync_now")))]
             ),
             _vm._v(" "),
             _c(
@@ -804,7 +811,7 @@ var render = function() {
                 attrs: { type: "button" },
                 on: { click: _vm.refresh }
               },
-              [_vm._v(_vm._s(_vm.__("Refresh Status")))]
+              [_vm._v(_vm._s(_vm.__("refresh_status")))]
             )
           ])
         ])
@@ -934,12 +941,73 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            link: '',
-            identifier: ''
+            link: null,
+            identifier: 'barcode'
         };
     },
 
@@ -961,8 +1029,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Nova.request().get('/nova-vendor/google-sheets-importer/settings').then(function (_ref) {
             var data = _ref.data;
 
-            _this2.link = data.payload.link;
-            _this2.identifier = data.payload.identifier;
+            _this2.link = data.payload ? data.payload.link : _this2.link;
+            _this2.identifier = data.payload ? data.payload.identifier : _this2.identifier;
         });
     }
 });
@@ -979,13 +1047,28 @@ var render = function() {
     "div",
     [
       _c("heading", { staticClass: "mb-6" }, [
-        _vm._v("Google Sheets Importer Configuration")
+        _vm._v(_vm._s(_vm.__("google_sheets_importer_configuration")))
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card overflow-hidden" }, [
         _c("form", { attrs: { autocomplete: "off" } }, [
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(0),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "link" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("google_sheets_link")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c("input", {
@@ -1018,7 +1101,22 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(1),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "identifier" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("identifier")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c(
@@ -1055,14 +1153,12 @@ var render = function() {
                   }
                 },
                 [
-                  _c(
-                    "option",
-                    { attrs: { value: "barcode", selected: "selected" } },
-                    [_vm._v("Čárový kód")]
-                  ),
+                  _c("option", { attrs: { value: "barcode", selected: "" } }, [
+                    _vm._v(_vm._s(_vm.__("barcode")))
+                  ]),
                   _vm._v(" "),
                   _c("option", { attrs: { value: "catalogueNumber" } }, [
-                    _vm._v("Katalogové číslo")
+                    _vm._v(_vm._s(_vm.__("catalogue")))
                   ])
                 ]
               )
@@ -1078,8 +1174,118 @@ var render = function() {
                 attrs: { type: "button" },
                 on: { click: _vm.saveConfiguration }
               },
-              [_c("span", {}, [_vm._v("Save Configuration")])]
+              [_c("span", {}, [_vm._v(_vm._s(_vm.__("save_configuration")))])]
             )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("heading", { staticClass: "my-8" }, [
+        _vm._v(_vm._s(_vm.__("supported_columns")))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card overflow-hidden" }, [
+        _c("div", { staticClass: "overflow-x-auto relative" }, [
+          _c("table", { staticClass: "table w-full" }, [
+            _c("tbody", [
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [_vm._v("name")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("product_name")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [_vm._v("description")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("product_description")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [_vm._v("details")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("product_details")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v("quantity_in_stock")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("qty_in_stock")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v("minimum_order_quantity")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("min_order_qty")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [_vm._v("barcode")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("product_barcode")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v("catalogue_number")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("product_catalogue")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [_vm._v("categories")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("categories")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v("price.{price_level_import_code}")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("price_for_price_level")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v("old_price.{price_level_import_code}")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("price_for_price_level")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v("property.{property_type_import_code}")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("property_for_property_type")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [
+                  _vm._v("option.{property_type_import_code}")
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("options_for_property_type")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [_vm._v("unit")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("selling_unit")))])
+              ]),
+              _vm._v(" "),
+              _c("tr", [
+                _c("th", { attrs: { scope: "row" } }, [_vm._v("vatrate")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(_vm.__("vat_rate")))])
+              ])
+            ])
           ])
         ])
       ])
@@ -1087,42 +1293,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "link" }
-        },
-        [
-          _vm._v(
-            "\n                        Google Sheets Link\n                    "
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "identifier" }
-        },
-        [_vm._v("\n                        Identifier\n                    ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

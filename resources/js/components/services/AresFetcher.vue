@@ -2,8 +2,13 @@
     <span class="addon cursor-pointer"
         :class="{'loading': loading}"
         @click.stop.prevent="fetch">
-        <span style="top: 8px">
-            <component :is="icon"></component>
+        <span style="top: 4px">
+            <span v-if="loading">
+                <icon-syncspin ></icon-syncspin>
+            </span>
+            <span v-show="!loading">
+                <icon-magic></icon-magic>
+            </span>
         </span>
     </span>
 </template>
@@ -19,12 +24,6 @@
         data: () => ({
             loading: false,
         }),
-
-        computed: {
-            icon() {
-                return this.loading ? 'icon-sync' : 'icon-magic';
-            },
-        },
 
         methods: {
             parseStreet(data) {

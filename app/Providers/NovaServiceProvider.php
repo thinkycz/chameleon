@@ -13,7 +13,6 @@ use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Laravel\Nova\Tools\Dashboard;
-use MadWeb\NovaHorizonLink\HorizonLink;
 use Nulisec\BulkImageUpload\BulkImageUpload;
 use Nulisec\GoogleSheetsImporter\GoogleSheetsImporter;
 use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
@@ -35,6 +34,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 'locales'       => Locale::all(),
                 'currentLocale' => Locale::current(),
                 'flagsPath'     => asset('/images/flags'),
+                'baseURL'       => config('app.url'),
             ]);
         });
     }

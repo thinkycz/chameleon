@@ -15,7 +15,7 @@ class BulkImageUploadController extends Controller
         $filename = $this->extractFilename($file);
 
         if ($product = Product::where($request->get('identifier'), $filename)->first()) {
-            $media = $product->addMediaFromRequest('file')->toMediaCollection('photos');
+            $media = $product->addMediaFromRequest('file')->toMediaCollection('images');
 
             return $this->ajaxWithPayload(compact('media'));
         }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18701471672f118218bd7abb8943eabf",
+    "content-hash": "640b39d78ec56d3448e4555d7d2ad364",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3853,7 +3853,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/BulkImageUpload",
-                "reference": "18db550cee045f21835937ad175867c5dd291835",
+                "reference": "6dbe6a45cb861573ab086242e4d06d1f3b2c2b91",
                 "shasum": null
             },
             "require": {
@@ -3921,7 +3921,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GoogleSheetsImporter",
-                "reference": "0748005a450a766d918bdc5d74d9cc19d46c1c64",
+                "reference": "4982c818a5e5cbd7393b871d9dcc4392c3ee4e69",
                 "shasum": null
             },
             "require": {
@@ -3955,7 +3955,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/JetsoftShopconnector",
-                "reference": "0f80f4d6fac569172bb39c9c4d8b0877a6992415",
+                "reference": "8760d6af31de9d7d819f80a3a88343cb69883cb3",
                 "shasum": null
             },
             "require": {
@@ -3989,7 +3989,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/JsonSchema",
-                "reference": "3564eab20d1f9b37ad23945995ab7c33d1b179b4",
+                "reference": "00226f9fd7233c703fffb01cb50eec9d054e10bd",
                 "shasum": null
             },
             "require": {
@@ -4057,7 +4057,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/scoutelastic",
-                "reference": "8fcaa6ad36694fc032ad2798e56373d90848462b",
+                "reference": "41fcd922492968a7b4e8fb671e38a1a141b85f13",
                 "shasum": null
             },
             "require": {
@@ -4100,7 +4100,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TranslatableText",
-                "reference": "bcf29436bbadb86fe08a6c76c4117ae3979eb7cd",
+                "reference": "d1983c83f1acfcbf08359dbe47f581d58e51b7f5",
                 "shasum": null
             },
             "require": {
@@ -4134,7 +4134,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TranslatableTextarea",
-                "reference": "247523b0680b8aab8046d04bfc07605c22c3a923",
+                "reference": "05f654891d33f9fab44e9a4bb858ad63c7aac5bb",
                 "shasum": null
             },
             "require": {
@@ -4168,7 +4168,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/xmlparser",
-                "reference": "a026c77c589aa1a813af4e7bf789d926f788148f",
+                "reference": "9ff3682c1db48632208e822cc36719803da8c812",
                 "shasum": null
             },
             "require": {

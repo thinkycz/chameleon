@@ -1,5 +1,5 @@
 <template>
-    <dropzone :destroyDropzone="false"
+    <dropzone :destroyDropzone="true"
         :ref="elementId"
         @vdropzone-sending="sendingEvent"
         @vdropzone-removed-file="removeFile"
@@ -74,8 +74,6 @@
             },
 
             removeFile(file, xhr, formData) {
-                console.log(file);
-
                 if (!this.deleteRoute || typeof file.model === 'undefined') {
                     return false;
                 }
@@ -97,6 +95,7 @@
                 file.model = response.payload.media.model_id;
             },
         },
+
         created() {
             let obj = {
                 url: this.route,
@@ -118,10 +117,18 @@
 
             this.dropzoneOptions = { ...this.dropzoneOptions, ...obj };
         },
+
         mounted() {
-            window._.forEach(this.prepopulate, image => {
-                let file = { size: image.size, name: image.name, id: image.id };
-                this.$refs[this.elementId].manuallyAddFile(file, window.baseURL + image.url);
+            this.prepopulate.forEach(image => {
+                let file = {
+                    id: image.id,
+                    model: image.model_id,
+                    size: image.size,
+                    name: image.name,
+                    type: image.mime_type,
+                };
+
+                this.$refs[this.elementId].manuallyAddFile(file, Nova.config.baseURL + image.url);
             });
         },
     };

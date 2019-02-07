@@ -284,7 +284,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Scoped Styles */\n", ""]);
 
 // exports
 
@@ -680,6 +680,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -695,11 +700,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             Nova.request().post('/nova-vendor/google-sheets-importer/sync').then(function () {
-                _this.$toasted.show(__('syncing_in_progress'), { type: 'success' });
-
+                _this.$toasted.success(_this.__('syncing_in_progress'));
                 setTimeout(_this.refresh, 1000);
             }).catch(function (err) {
-                _this.$toasted.show(__('please_check_config'), { type: 'error' });
+                _this.$toasted.success(_this.__('please_check_config'));
             });
         },
         refresh: function refresh() {
@@ -1002,6 +1006,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -1017,7 +1024,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             Nova.request().post('/nova-vendor/google-sheets-importer/save-configuration', this.$data).then(function () {
-                _this.$toasted.show('Configuration saved!', { type: 'success' });
+                _this.$toasted.success(_this.__('configuration_saved'));
                 _this.$router.push('/google-sheets-importer');
             });
         }

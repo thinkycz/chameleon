@@ -292,6 +292,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -307,11 +312,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             Nova.request().post('/nova-vendor/jetsoft-shopconnector/sync').then(function () {
-                _this.$toasted.show(__('syncing_in_progress'), { type: 'success' });
-
+                _this.$toasted.success(_this.__('syncing_in_progress'));
                 setTimeout(_this.refresh, 1000);
             }).catch(function (err) {
-                _this.$toasted.show(__('please_check_config'), { type: 'error' });
+                _this.$toasted.error(_this.__('please_check_config'));
             });
         },
         refresh: function refresh() {
@@ -326,6 +330,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }
     },
+
     created: function created() {
         this.refresh();
     }
@@ -347,7 +352,7 @@ var render = function() {
         { staticClass: "flex" },
         [
           _c("heading", { staticClass: "mb-6 flex-no-shrink" }, [
-            _vm._v("Jetsoft Shopconnector")
+            _vm._v(_vm._s(_vm.__("jetsoft_shopconnector")))
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-full flex items-center mb-6" }, [
@@ -365,7 +370,7 @@ var render = function() {
                     staticClass: "btn btn-default btn-primary",
                     attrs: { to: "/jetsoft-shopconnector/configure" }
                   },
-                  [_vm._v("Configuration")]
+                  [_vm._v(_vm._s(_vm.__("configuration")))]
                 )
               ],
               1
@@ -590,6 +595,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -610,7 +650,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             Nova.request().post('/nova-vendor/jetsoft-shopconnector/save-configuration', this.$data).then(function () {
-                _this.$toasted.show('Configuration saved!', { type: 'success' });
+                _this.$toasted.success(_this.__('configuration_saved'));
                 _this.$router.push('/jetsoft-shopconnector');
             });
         }
@@ -645,13 +685,28 @@ var render = function() {
     "div",
     [
       _c("heading", { staticClass: "mb-6" }, [
-        _vm._v("Jetsoft Shopconnector Configuration")
+        _vm._v(_vm._s(_vm.__("jetsoft_shopconnector_config")))
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card overflow-hidden" }, [
         _c("form", { attrs: { autocomplete: "off" } }, [
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(0),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "eshopname" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("eshop_name")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c("input", {
@@ -668,7 +723,7 @@ var render = function() {
                 attrs: {
                   id: "eshopname",
                   type: "text",
-                  placeholder: "Eshop Name"
+                  placeholder: _vm.__(_vm.eshop_name)
                 },
                 domProps: { value: _vm.eshopname },
                 on: {
@@ -684,7 +739,22 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(1),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "identifier" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("identifier")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c(
@@ -724,11 +794,11 @@ var render = function() {
                   _c(
                     "option",
                     { attrs: { value: "barcode", selected: "selected" } },
-                    [_vm._v("Čárový kód")]
+                    [_vm._v(_vm._s(_vm.__("barcode")))]
                   ),
                   _vm._v(" "),
                   _c("option", { attrs: { value: "catalogueNumber" } }, [
-                    _vm._v("Katalogové číslo")
+                    _vm._v(_vm._s(_vm.__("catalogue_number")))
                   ])
                 ]
               )
@@ -736,7 +806,22 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(2),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "host" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("host")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c("input", {
@@ -750,7 +835,11 @@ var render = function() {
                 ],
                 staticClass:
                   "w-full form-control form-input form-input-bordered",
-                attrs: { id: "host", type: "text", placeholder: "Host" },
+                attrs: {
+                  id: "host",
+                  type: "text",
+                  placeholder: _vm.__("host")
+                },
                 domProps: { value: _vm.host },
                 on: {
                   input: function($event) {
@@ -765,7 +854,22 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(3),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "port" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("port")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c("input", {
@@ -779,7 +883,11 @@ var render = function() {
                 ],
                 staticClass:
                   "w-full form-control form-input form-input-bordered",
-                attrs: { id: "port", type: "text", placeholder: "Port" },
+                attrs: {
+                  id: "port",
+                  type: "text",
+                  placeholder: _vm.__("port")
+                },
                 domProps: { value: _vm.port },
                 on: {
                   input: function($event) {
@@ -794,7 +902,22 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(4),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "database" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("database")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c("input", {
@@ -811,7 +934,7 @@ var render = function() {
                 attrs: {
                   id: "database",
                   type: "text",
-                  placeholder: "Database"
+                  placeholder: _vm.__("database")
                 },
                 domProps: { value: _vm.database },
                 on: {
@@ -827,7 +950,22 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(5),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "username" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("username")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c("input", {
@@ -844,7 +982,7 @@ var render = function() {
                 attrs: {
                   id: "username",
                   type: "text",
-                  placeholder: "Username"
+                  placeholder: _vm.__("username")
                 },
                 domProps: { value: _vm.username },
                 on: {
@@ -860,7 +998,22 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex border-b border-40" }, [
-            _vm._m(6),
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "password" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("password")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
               _c("input", {
@@ -877,7 +1030,7 @@ var render = function() {
                 attrs: {
                   id: "password",
                   type: "text",
-                  placeholder: "Password"
+                  placeholder: _vm.__("password")
                 },
                 domProps: { value: _vm.password },
                 on: {
@@ -901,7 +1054,7 @@ var render = function() {
                 attrs: { type: "button" },
                 on: { click: _vm.saveConfiguration }
               },
-              [_c("span", {}, [_vm._v("Save Configuration")])]
+              [_c("span", {}, [_vm._v(_vm._s(_vm.__("save_config")))])]
             )
           ])
         ])
@@ -910,113 +1063,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "eshopname" }
-        },
-        [_vm._v("\n                        Eshop Name\n                    ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "identifier" }
-        },
-        [_vm._v("\n                        Identifier\n                    ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "host" }
-        },
-        [_vm._v("\n                        Host\n                    ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "port" }
-        },
-        [_vm._v("\n                        Port\n                    ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "database" }
-        },
-        [_vm._v("\n                        Database\n                    ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "username" }
-        },
-        [_vm._v("\n                        Username\n                    ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-      _c(
-        "label",
-        {
-          staticClass: "inline-block text-80 pt-2 leading-tight",
-          attrs: { for: "password" }
-        },
-        [_vm._v("\n                        Password\n                    ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

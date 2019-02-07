@@ -1,3 +1,3 @@
 Nova.booting((Vue, router) => {
-    Vue.component('form-dropzone-field', require('./components/FormField'));
+    Vue.component('detail-dropzone-field', require('./components/DetailField'));
 });

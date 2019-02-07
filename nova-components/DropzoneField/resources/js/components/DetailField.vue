@@ -1,8 +1,7 @@
 <template>
-    <default-field :field="field"
-        :errors="errors"
+    <panel-item :field="field"
         :fullWidthContent="true">
-        <template slot="field">
+        <template slot="value">
             <image-dropzone :delete-route="deleteRoute"
                 :max-images="100"
                 :element-id="'dropzone' + _uid"
@@ -10,7 +9,7 @@
                 :route="route">
             </image-dropzone>
         </template>
-    </default-field>
+    </panel-item>
 </template>
 
 <script>
@@ -21,10 +20,6 @@
     export default {
         props: {
             field: {
-                required: true,
-            },
-
-            errors: {
                 required: true,
             },
         },

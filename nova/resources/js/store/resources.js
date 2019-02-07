@@ -143,7 +143,9 @@ const actions = {
 const mutations = {
     updateFilterState(state, { filterClass, value }) {
         const filter = _(state.filters).find(f => f.class == filterClass)
-        filter.currentValue = value
+        if (typeof filter !== 'undefined') {
+            filter.currentValue = value
+        }
     },
 
     /**

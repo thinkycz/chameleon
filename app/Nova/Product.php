@@ -104,7 +104,7 @@ class Product extends Resource
 
             HasMany::make('Properties'),
 
-            DropzoneField::make('Product Images')->onlyOnForms(),
+            DropzoneField::make('Product Images')->onlyOnDetail(),
 
 //            HasMany::make('Subproducts', 'children', static::class),
 

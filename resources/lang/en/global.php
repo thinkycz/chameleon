@@ -20,4 +20,7 @@ return [
     'locales.en'       => 'English',
     'locales.vi'       => 'Vietnamese',
     'locales.cs'       => 'Czech',
+
+    'print'            => 'Print',
+    'print_preview'    => 'Print Preview',
 ];

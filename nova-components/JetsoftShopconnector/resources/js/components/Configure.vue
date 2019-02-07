@@ -102,7 +102,7 @@
         data() {
             return {
                 eshopname: '',
-                identifier: '',
+                identifier: 'barcode',
                 host: '',
                 port: '',
                 database: '',
@@ -110,6 +110,7 @@
                 password: '',
             }
         },
+
         methods: {
             saveConfiguration() {
                 Nova.request()
@@ -119,6 +120,20 @@
                         this.$router.push('/jetsoft-shopconnector');
                     });
             }
-        }
+        },
+
+        mounted() {
+            Nova.request()
+                .get('/nova-vendor/jetsoft-shopconnector/settings')
+                .then(({ data }) => {
+                    this.eshopname = data.payload ? data.payload.eshopname : this.eshopname;
+                    this.identifier = data.payload ? data.payload.identifier : this.identifier;
+                    this.host = data.payload ? data.payload.host : this.host;
+                    this.port = data.payload ? data.payload.port : this.port;
+                    this.database = data.payload ? data.payload.database : this.database;
+                    this.username = data.payload ? data.payload.username : this.username;
+                    this.password = data.payload ? data.payload.password : this.password;
+                });
+        },
     }
 </script>

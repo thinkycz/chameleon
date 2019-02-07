@@ -3,16 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 
 class PriceLevel extends Model
 {
-    use HasTranslations;
-
-    public $translatable = [
-        'name',
-    ];
-
     public function users()
     {
         return $this->hasMany(User::class);
@@ -21,5 +14,10 @@ class PriceLevel extends Model
     public function prices()
     {
         return $this->hasMany(Price::class);
+    }
+
+    public function getImportCodeAttribute()
+    {
+        return str_slug($this->name, '_');
     }
 }

@@ -14,42 +14,13 @@ class PriceLevelSeeder extends Seeder
     public function run()
     {
         PriceLevel::create([
-            'name' => [
-                Locale::ENGLISH => 'Regular',
-                Locale::CZECH => 'Standardní',
-                Locale::VIETNAMESE => 'Giá thường',
-            ],
+            'name' => 'Regular',
             'enabled' => true
         ]);
         PriceLevel::create([
-            'name' => [
-                Locale::ENGLISH => 'VIP Customers',
-                Locale::CZECH => 'VIP zákazníci',
-                Locale::VIETNAMESE => 'Khách hàng VIP',
-            ],
+            'name' => 'VIP Customers',
             'enabled' => true,
             'has_quantity_discounts' => true
-        ]);
-        PriceLevel::create([
-            'name' => [
-                Locale::ENGLISH => 'Wholesale',
-                Locale::CZECH => 'Velkoobchod',
-                Locale::VIETNAMESE => 'Bán buôn',
-            ],
-        ]);
-        PriceLevel::create([
-            'name' => [
-                Locale::ENGLISH => 'Seasonal',
-                Locale::CZECH => 'Sortiment',
-                Locale::VIETNAMESE => 'Theo mùa',
-            ],
-        ]);
-        PriceLevel::create([
-            'name' => [
-                Locale::ENGLISH => 'Clearance',
-                Locale::CZECH => 'Výprodej',
-                Locale::VIETNAMESE => 'Giải tỏa',
-            ],
         ]);
     }
 }

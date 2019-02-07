@@ -14,4 +14,8 @@ use Nulisec\JetsoftShopconnector\Http\Controllers\ShopconnectorController;
 |
 */
 
- Route::post('/save-configuration', [ShopconnectorController::class, 'saveConfiguration']);
+Route::get('settings', [ShopconnectorController::class, 'settings']);
+Route::get('status', [ShopconnectorController::class, 'status']);
+
+Route::post('save-configuration', [ShopconnectorController::class, 'saveConfiguration']);
+Route::post('sync', [ShopconnectorController::class, 'sync']);

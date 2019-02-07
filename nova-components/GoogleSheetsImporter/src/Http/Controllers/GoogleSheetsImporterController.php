@@ -4,10 +4,10 @@ namespace Nulisec\GoogleSheetsImporter\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use App\Services\SyncStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Nulisec\GoogleSheetsImporter\Jobs\SyncFromGoogleSheets;
-use Nulisec\GoogleSheetsImporter\Services\SyncStatus;
 
 class GoogleSheetsImporterController extends Controller
 {

@@ -275,9 +275,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    methods: {}
+    data: function data() {
+        return {
+            lastUpdate: null,
+            duration: null,
+            status: null
+        };
+    },
+
+    methods: {
+        sync: function sync() {
+            var _this = this;
+
+            Nova.request().post('/nova-vendor/jetsoft-shopconnector/sync').then(function () {
+                _this.$toasted.show(__('syncing_in_progress'), { type: 'success' });
+
+                setTimeout(_this.refresh, 1000);
+            }).catch(function (err) {
+                _this.$toasted.show(__('please_check_config'), { type: 'error' });
+            });
+        },
+        refresh: function refresh() {
+            var _this2 = this;
+
+            Nova.request().get('/nova-vendor/jetsoft-shopconnector/status').then(function (_ref) {
+                var data = _ref.data;
+
+                _this2.lastUpdate = data.payload.lastUpdate;
+                _this2.duration = data.payload.duration;
+                _this2.status = data.payload.status;
+            });
+        }
+    },
+    created: function created() {
+        this.refresh();
+    }
 });
 
 /***/ }),
@@ -324,30 +375,55 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "card",
-        {
-          staticClass: "flex flex-col items-center justify-center",
-          staticStyle: { "min-height": "300px" }
-        },
-        [
-          _c(
-            "h1",
-            { staticClass: "text-90 text-4xl text-90 font-light mb-6" },
-            [_vm._v("\n            Click here to sync\n        ")]
-          ),
+      _c("card", { staticClass: "flex flex-col p-8" }, [
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v(_vm._s(_vm.__("last_update")))
+          ]),
           _vm._v(" "),
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-default btn-primary",
-              attrs: { to: "jetsoft-shopconnector/sync" }
-            },
-            [_vm._v("Sync Now")]
-          )
-        ],
-        1
-      )
+          _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.lastUpdate))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v(_vm._s(_vm.__("duration")))
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.duration))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v(_vm._s(_vm.__("status")))
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.status))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-3/4 ml-auto" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-default btn-primary",
+                attrs: { type: "button" },
+                on: { click: _vm.sync }
+              },
+              [_vm._v(_vm._s(_vm.__("sync_now")))]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-default btn-primary",
+                attrs: { type: "button" },
+                on: { click: _vm.refresh }
+              },
+              [_vm._v(_vm._s(_vm.__("refresh_status")))]
+            )
+          ])
+        ])
+      ])
     ],
     1
   )
@@ -519,7 +595,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             eshopname: '',
-            identifier: '',
+            identifier: 'barcode',
             host: '',
             port: '',
             database: '',
@@ -527,6 +603,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             password: ''
         };
     },
+
 
     methods: {
         saveConfiguration: function saveConfiguration() {
@@ -537,6 +614,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.$router.push('/jetsoft-shopconnector');
             });
         }
+    },
+
+    mounted: function mounted() {
+        var _this2 = this;
+
+        Nova.request().get('/nova-vendor/jetsoft-shopconnector/settings').then(function (_ref) {
+            var data = _ref.data;
+
+            _this2.eshopname = data.payload ? data.payload.eshopname : _this2.eshopname;
+            _this2.identifier = data.payload ? data.payload.identifier : _this2.identifier;
+            _this2.host = data.payload ? data.payload.host : _this2.host;
+            _this2.port = data.payload ? data.payload.port : _this2.port;
+            _this2.database = data.payload ? data.payload.database : _this2.database;
+            _this2.username = data.payload ? data.payload.username : _this2.username;
+            _this2.password = data.payload ? data.payload.password : _this2.password;
+        });
     }
 });
 

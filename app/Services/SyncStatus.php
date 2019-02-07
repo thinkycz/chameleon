@@ -1,6 +1,6 @@
 <?php
 
-namespace Nulisec\GoogleSheetsImporter\Services;
+namespace App\Services;
 
 use App\Models\Setting;
 use Carbon\Carbon;

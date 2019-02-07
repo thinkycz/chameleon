@@ -2,6 +2,7 @@
 
 namespace Nulisec\GoogleSheetsImporter\Jobs;
 
+use App\Abstracts\SyncJob;
 use App\Models\Category;
 use App\Models\PriceLevel;
 use App\Models\Product;

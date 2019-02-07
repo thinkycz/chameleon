@@ -1,14 +1,14 @@
 <?php
 
-namespace Nulisec\GoogleSheetsImporter\Jobs;
+namespace App\Abstracts;
 
 use App\Models\Store;
 use App\Notifications\JobFailed;
+use App\Services\SyncStatus;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Nulisec\GoogleSheetsImporter\Services\SyncStatus;
 
 abstract class SyncJob
 {

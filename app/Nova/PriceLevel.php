@@ -6,8 +6,8 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Nulisec\TranslatableText\TranslatableText;
 
 class PriceLevel extends Resource
 {
@@ -52,7 +52,9 @@ class PriceLevel extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            Text::make('Name'),
+
+            Text::make('Import Code', 'import_code')->exceptOnForms(),
 
             Boolean::make('Enabled'),
 

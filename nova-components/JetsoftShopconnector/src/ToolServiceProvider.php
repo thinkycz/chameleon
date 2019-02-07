@@ -2,6 +2,7 @@
 
 namespace Nulisec\JetsoftShopconnector;
 
+use App\Models\Setting;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
@@ -19,15 +20,34 @@ class ToolServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'jetsoft-shopconnector');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'jetsoft-shopconnector');
-        $this->mergeConfigFrom(__DIR__.'/../config/database.php', 'database.connections');
 
         $this->app->booted(function () {
             $this->routes();
+            $this->database();
         });
 
         Nova::serving(function (ServingNova $event) {
             //
         });
+    }
+
+    protected function database()
+    {
+        $config = Setting::loadConfiguration('shopconnector');
+
+        \Config::set("database.connections.shopconnector", [
+            'driver' => 'sqlsrv',
+            'host' => $config['host'] ?? '',
+            'port' => $config['port'] ?? '',
+            'database' => $config['database'] ?? '',
+            'username' => $config['username'] ?? '',
+            'password' => $config['password'] ?? '',
+            'charset' => 'utf8',
+            'prefix' => '',
+            'options' => [
+                \PDO::DBLIB_ATTR_STRINGIFY_UNIQUEIDENTIFIER => true
+            ]
+        ]);
     }
 
     /**

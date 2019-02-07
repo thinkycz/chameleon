@@ -11,19 +11,69 @@
             </div>
         </div>
 
-        <card class="flex flex-col items-center justify-center" style="min-height: 300px">
+        <card class="flex flex-col p-8">
 
-            <h1 class="text-90 text-4xl text-90 font-light mb-6">
-                Click here to sync
-            </h1>
+            <div class="flex my-4">
+                <div class="w-1/4 font-bold">{{ __('last_update') }}</div>
+                <div class="w-3/4">{{ lastUpdate }}</div>
+            </div>
 
-            <router-link to="jetsoft-shopconnector/sync" class="btn btn-default btn-primary">Sync Now</router-link>
+            <div class="flex my-4">
+                <div class="w-1/4 font-bold">{{ __('duration') }}</div>
+                <div class="w-3/4">{{ duration }}</div>
+            </div>
+
+            <div class="flex my-4">
+                <div class="w-1/4 font-bold">{{ __('status') }}</div>
+                <div class="w-3/4">{{ status }}</div>
+            </div>
+
+            <div class="flex my-4">
+                <div class="w-3/4 ml-auto">
+                    <button type="button" class="btn btn-default btn-primary" @click="sync">{{ __('sync_now') }}</button>
+                    <button type="button" class="btn btn-default btn-primary" @click="refresh">{{ __('refresh_status') }}</button>
+                </div>
+            </div>
+
         </card>
     </div>
 </template>
 
 <script>
     export default {
-        methods: {}
-    }
+        data() {
+            return {
+                lastUpdate: null,
+                duration: null,
+                status: null,
+            }
+        },
+        methods: {
+            sync() {
+                Nova.request()
+                    .post('/nova-vendor/jetsoft-shopconnector/sync')
+                    .then(() => {
+                        this.$toasted.show(__('syncing_in_progress'), {type: 'success'});
+
+                        setTimeout(this.refresh, 1000);
+                    })
+                    .catch(err => {
+                        this.$toasted.show(__('please_check_config'), {type: 'error'});
+                    });
+            },
+
+            refresh() {
+                Nova.request()
+                    .get('/nova-vendor/jetsoft-shopconnector/status')
+                    .then(({data}) => {
+                        this.lastUpdate = data.payload.lastUpdate;
+                        this.duration = data.payload.duration;
+                        this.status = data.payload.status;
+                    });
+            }
+        },
+        created() {
+            this.refresh();
+        }
+    };
 </script>

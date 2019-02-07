@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\Order\ChangeOrderStatus;
 use App\Nova\Actions\Order\ExportOrder;
+use App\Nova\Actions\Order\PrintInvoice;
 use App\Nova\Filters\OrderDeliveryMethod;
 use App\Nova\Filters\OrderPaymentMethod;
 use App\Nova\Filters\OrderPlacedStatus;
@@ -167,6 +168,7 @@ class Order extends Resource
         return [
             new ChangeOrderStatus(),
             new ExportOrder(),
+            new PrintInvoice(),
         ];
     }
 }

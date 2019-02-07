@@ -22,6 +22,8 @@ Route::get('about-us', 'AboutController@index')->name('about');
 Route::get('contact', 'ContactController@index')->name('contact.index');
 Route::post('contact/contact', 'ContactController@contact')->name('contact.contact');
 
+Route::get('invoices', 'InvoiceController@index')->name('invoices.index');
+
 Route::get('profile', 'ProfileController@show')->name('profiles.show');
 Route::patch('profile/update', 'ProfileController@update')->name('profiles.update');
 Route::post('profile/download-account-data', 'ProfileController@downloadAccountData')->name('profiles.download_account_data');

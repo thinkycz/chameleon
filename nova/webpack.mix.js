@@ -12,8 +12,7 @@ let tailwindcss = require('tailwindcss')
  |
  */
 
-mix
-    .js('resources/js/app.js', 'public')
+mix.js('resources/js/app.js', 'public')
     .extract([
         'codemirror',
         'chartist',
@@ -42,7 +41,7 @@ mix
     ])
     .setPublicPath('public')
     .postCss('resources/css/app.css', 'public', [tailwindcss('tailwind.js')])
-    .copy('public', '../nova-app/public/vendor/nova')
+    .copy('public', '../public/vendor/nova')
     .webpackConfig({
         resolve: {
             alias: {

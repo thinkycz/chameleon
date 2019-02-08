@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'bulk_images_upload'      => 'Bulk Images Upload',
+    'upload_images_title'     => 'Upload Images',
+    'bulk_images_upload'      => 'Bulk Image Upload',
     'upload_images'           => 'Drag and Drop files here to upload.',
     'product'                 => 'Product',
     'product_not_found'       => 'Product not found',

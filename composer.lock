@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "640b39d78ec56d3448e4555d7d2ad364",
+    "content-hash": "76c4f2fa845510bf8ec68169211c9075",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3750,16 +3750,16 @@
         },
         {
             "name": "nexmo/client",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nexmo/nexmo-php.git",
-                "reference": "3dc03ca1dab726a23b757110897740e54304fc65"
+                "reference": "2f79f67f24225ea627ee14578e98c96276cdd4c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/3dc03ca1dab726a23b757110897740e54304fc65",
-                "reference": "3dc03ca1dab726a23b757110897740e54304fc65",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/2f79f67f24225ea627ee14578e98c96276cdd4c5",
+                "reference": "2f79f67f24225ea627ee14578e98c96276cdd4c5",
                 "shasum": ""
             },
             "require": {
@@ -3794,7 +3794,7 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
-            "time": "2019-01-02T09:06:47+00:00"
+            "time": "2019-02-07T11:14:34+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3853,7 +3853,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/BulkImageUpload",
-                "reference": "6dbe6a45cb861573ab086242e4d06d1f3b2c2b91",
+                "reference": "18db550cee045f21835937ad175867c5dd291835",
                 "shasum": null
             },
             "require": {
@@ -3887,7 +3887,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/DropzoneField",
-                "reference": "3a78b05ca9cfbcf897b48827e5b1905645ebcdd6",
+                "reference": "f8617f7a0669aa1b42506177fece511d76a26e43",
                 "shasum": null
             },
             "require": {
@@ -3921,7 +3921,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GoogleSheetsImporter",
-                "reference": "4982c818a5e5cbd7393b871d9dcc4392c3ee4e69",
+                "reference": "0748005a450a766d918bdc5d74d9cc19d46c1c64",
                 "shasum": null
             },
             "require": {
@@ -3955,7 +3955,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/JetsoftShopconnector",
-                "reference": "8760d6af31de9d7d819f80a3a88343cb69883cb3",
+                "reference": "0f80f4d6fac569172bb39c9c4d8b0877a6992415",
                 "shasum": null
             },
             "require": {
@@ -3989,7 +3989,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/JsonSchema",
-                "reference": "00226f9fd7233c703fffb01cb50eec9d054e10bd",
+                "reference": "3564eab20d1f9b37ad23945995ab7c33d1b179b4",
                 "shasum": null
             },
             "require": {
@@ -4023,7 +4023,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/PhoneField",
-                "reference": "e77db7d3ba1d07130ffb92a731c2c7db86bf0e78",
+                "reference": "87a55167b170e2e8cc4042c622417f0176b523ca",
                 "shasum": null
             },
             "require": {
@@ -4057,7 +4057,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/scoutelastic",
-                "reference": "41fcd922492968a7b4e8fb671e38a1a141b85f13",
+                "reference": "8fcaa6ad36694fc032ad2798e56373d90848462b",
                 "shasum": null
             },
             "require": {
@@ -4100,7 +4100,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TranslatableText",
-                "reference": "d1983c83f1acfcbf08359dbe47f581d58e51b7f5",
+                "reference": "bcf29436bbadb86fe08a6c76c4117ae3979eb7cd",
                 "shasum": null
             },
             "require": {
@@ -4134,7 +4134,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TranslatableTextarea",
-                "reference": "05f654891d33f9fab44e9a4bb858ad63c7aac5bb",
+                "reference": "247523b0680b8aab8046d04bfc07605c22c3a923",
                 "shasum": null
             },
             "require": {
@@ -4163,12 +4163,46 @@
             ]
         },
         {
+            "name": "nulisec/xml-importer",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/XmlImporter",
+                "reference": "20ac0eca031ffcd7b33e4f2f31159ba052796fa2",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\XmlImporter\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\XmlImporter\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
             "name": "nulisec/xmlparser",
             "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./packages/xmlparser",
-                "reference": "9ff3682c1db48632208e822cc36719803da8c812",
+                "reference": "a026c77c589aa1a813af4e7bf789d926f788148f",
                 "shasum": null
             },
             "require": {
@@ -8655,16 +8689,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.3",
+            "version": "7.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2cb759721e53bc05f56487f628c6b9fbb6c18746"
+                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2cb759721e53bc05f56487f628c6b9fbb6c18746",
-                "reference": "2cb759721e53bc05f56487f628c6b9fbb6c18746",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2896657da5fb237bc316bdfc18c2650efeee0dc0",
+                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0",
                 "shasum": ""
             },
             "require": {
@@ -8735,7 +8769,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-02-01T05:24:07+00:00"
+            "time": "2019-02-07T14:15:04+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

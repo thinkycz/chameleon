@@ -25,6 +25,7 @@ return [
     'syncing_in_progress'                  => 'Syncing in progress...',
     'please_check_config'                  => 'Please check your configuration!',
     'google_sheets_importer'               => 'Google Sheets Importer',
+    'google_sheets'                        => 'Google Sheets',
     'google_sheets_importer_configuration' => 'Google Sheets Importer Configuration',
     'google_sheets_link'                   => 'Google Sheets Link',
     'identifier'                           => 'Identifier',

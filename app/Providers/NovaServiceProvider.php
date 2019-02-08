@@ -16,6 +16,7 @@ use Laravel\Nova\Tools\Dashboard;
 use Nulisec\BulkImageUpload\BulkImageUpload;
 use Nulisec\GoogleSheetsImporter\GoogleSheetsImporter;
 use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
+use Nulisec\XmlImporter\XmlImporter;
 use Silvanite\NovaToolPermissions\NovaToolPermissions;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -74,9 +75,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            (new NumberOfUsers),
-            (new OrdersPerDay),
-            (new ProductsPerCategory),
+            (new NumberOfUsers()),
+            (new OrdersPerDay()),
+            (new ProductsPerCategory()),
         ];
     }
 
@@ -88,12 +89,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            (new JetsoftShopconnector),
-//            (new HorizonLink),
-            (new NovaToolPermissions),
-            (new GoogleSheetsImporter),
-            (new BulkImageUpload),
-            (new Novassport),
+            (new JetsoftShopconnector()),
+//            (new HorizonLink()),
+            (new NovaToolPermissions()),
+            (new GoogleSheetsImporter()),
+            (new XmlImporter()),
+            (new BulkImageUpload()),
+            (new Novassport()),
         ];
     }
 

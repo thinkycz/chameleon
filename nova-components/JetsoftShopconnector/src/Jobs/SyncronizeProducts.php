@@ -87,7 +87,7 @@ class SyncronizeProducts extends SyncJob implements ShouldQueue
     protected function handleProductPrices(Product $product)
     {
         foreach (PriceLevel::all() as $priceLevel) {
-            $cenik = $this->data->cenikyCeny->where('GUIPriceList', $this->resolvePriceLevel($priceLevel->import_code));
+            $cenik = $this->data->cenikyCeny->where('GUIPriceList', $this->resolvePriceLevel($priceLevel->import_code))->first();
 
             if ($cenik) {
                 $product->prices()->updateOrCreate(['price_level_id' => $priceLevel->id], [

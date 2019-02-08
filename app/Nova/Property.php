@@ -46,7 +46,7 @@ class Property extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Product'),
+            BelongsTo::make('Product')->searchable(),
 
             BelongsTo::make('Property Type', 'propertyType')->searchable(),
 

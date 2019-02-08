@@ -17,17 +17,17 @@ class SyncStatus
 
     public function lastUpdate()
     {
-        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format(config('config.datetime_format')) : __('google-sheets-importer::settings.now')) : __('google-sheets-importer::settings.never');
+        return $this->job ? ($this->job->reserved_at ? Carbon::createFromTimestamp($this->job->reserved_at)->format(config('config.datetime_format')) : __('syncstatus.now')) : __('syncstatus.never');
     }
 
     public function nextPossibleUpdate()
     {
-        return $this->job ? Carbon::createFromTimestamp($this->job->reserved_at)->addHours(config('config.sync_limit_every_hrs'))->diffForHumans() : __('google-sheets-importer::settings.now');
+        return $this->job ? Carbon::createFromTimestamp($this->job->reserved_at)->addHours(config('config.sync_limit_every_hrs'))->diffForHumans() : __('syncstatus.now');
     }
 
     public function duration()
     {
-        if (!$this->job) return __('google-sheets-importer::settings.not_active_yet');
+        if (!$this->job) return __('syncstatus.not_active_yet');
 
         $reservedAt = Carbon::createFromTimestamp($this->job->reserved_at);
 
@@ -36,13 +36,13 @@ class SyncStatus
         } elseif ($this->failed()) {
             return Carbon::createFromTimestamp($this->job->failed_at)->diffForHumans($reservedAt, true);
         } else {
-            return __('google-sheets-importer::settings.pending');
+            return __('syncstatus.pending');
         }
     }
 
     public function status()
     {
-        return $this->job ? __("google-sheets-importer::settings.{$this->job->status}") : __('google-sheets-importer::settings.not_active_yet');
+        return $this->job ? __("syncstatus.{$this->job->status}") : __('syncstatus.not_active_yet');
     }
 
     public function failed()
@@ -53,6 +53,11 @@ class SyncStatus
     public function succeeded()
     {
         return $this->job && $this->job->completed_at;
+    }
+
+    public function job()
+    {
+        return $this->job;
     }
 
     public function exception()

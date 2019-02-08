@@ -44,7 +44,8 @@ class GoogleSheetsImporterController extends Controller
         return $this->ajaxWithPayload([
             'lastUpdate' => $status->lastUpdate(),
             'duration' => $status->duration(),
-            'status' => $status->status()
+            'status' => $status->status(),
+            'job' => $status->job()
         ]);
     }
 }

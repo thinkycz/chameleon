@@ -43,7 +43,7 @@ class Price extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Product'),
+            BelongsTo::make('Product')->searchable(),
 
             BelongsTo::make('Price Level', 'priceLevel'),
 

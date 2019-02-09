@@ -23,4 +23,5 @@ return [
     'basket'                     => 'Basket',
     'confirmation'               => 'Confirmation',
     'order_placed'               => 'Order Placed',
+    'incl_vat'                   => 'incl. Vat',
 ];

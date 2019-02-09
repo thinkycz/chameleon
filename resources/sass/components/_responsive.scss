@@ -1,0 +1,39 @@
+.dropdown {
+    .dropdown-menu {
+        @apply z-100;
+
+        @screen md {
+            @apply z-50;
+        }
+    }
+}
+
+.dropdown-categories {
+    .dropdown-menu {
+        left: auto !important;
+        right: 0;
+
+        @screen md {
+            left: -35px !important;
+            right: 0;
+
+            svg {
+                left: 2rem;
+                right: 0;
+            }
+        }
+
+        svg {
+            right: 2rem;
+            left: auto;
+        }
+    }
+}
+
+.basket {
+    @apply pin-l;
+
+    @screen lg {
+        left: auto;
+    }
+}

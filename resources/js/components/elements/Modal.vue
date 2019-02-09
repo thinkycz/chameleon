@@ -3,7 +3,7 @@
         appear>
         <div v-show="open"
             @click="close"
-            class="absolute pin p-8 z-100"
+            class="absolute pin p-8 z-100 overflow-hidden"
             style="background-color: hsla(0, 0%, 0%, .5)">
             <div @click.stop
                 class="max-w-md w-full mx-auto bg-white rounded p-6 mt-8 shadow-lg"

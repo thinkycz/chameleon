@@ -94,7 +94,7 @@
 
         .basket-header {
             @apply flex flex-wrap text-sm text-grey-darkest justify-between p-4 items-center bg-primary-lightest;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.03);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
         }
 
         .basket-items {
@@ -203,8 +203,15 @@
 }
 
 .main-basket {
+    .card {
+        @apply overflow-x-auto;
+    }
     .basket-item {
-        @apply overflow-x-auto py-6 px-4 items-center;
+        @apply overflow-x-auto py-6 px-4 items-center flex-no-wrap;
+        min-width: 600px;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+
         .image {
             @apply text-center overflow-hidden relative w-16 mr-6;
 

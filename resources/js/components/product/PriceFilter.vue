@@ -26,7 +26,7 @@
         </div>
         <button role="button"
             type="button"
-            class="btn btn-sm btn-primary"
+            class="btn btn-sm btn-primary mt-2 md:mt-0"
             @click="filter">{{ $trans('filters.filter_by_price') }}</button>
     </div>
 </template>

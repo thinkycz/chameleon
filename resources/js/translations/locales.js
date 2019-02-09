@@ -1504,7 +1504,11 @@ export default {
         "breadcrumbs": {
             "home": "Home",
             "categories": "Categories",
-            "my_profile": "My profile"
+            "my_profile": "My profile",
+            "register": "Register",
+            "login": "Login",
+            "about_us": "About us",
+            "contact_us": "Contact us"
         },
         "eligibilities": {
             "cannot_make_purchases": "You are not eligible to make purchases",
@@ -1737,7 +1741,7 @@ export default {
             "address_created": "Your new address was created",
             "address_updated": "Your address was updated",
             "address_deleted": "Address was deleted",
-            "address_book": "Address Book",
+            "address_book": "Address <span class=\"md-inline-block\">Book</span>",
             "address_book_info": "You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new one by clicking on the blank address box.",
             "billing_details": "Billing:",
             "shipping_details": "Shipping:",
@@ -1796,8 +1800,17 @@ export default {
             "total_ordered": "Total",
             "ordered_at": "Ordered at",
             "account_overview": "Overview",
-            "account_details": "Account Details",
-            "account_privacy": "Account Privacy"
+            "account_details": "<span class=\"md-inline-block\">Account</span> Details",
+            "account_privacy": "<span class=\"md-inline-block\">Account</span> Privacy"
+        },
+        "syncstatus": {
+            "now": "Now",
+            "never": "Never",
+            "failed": "Failed",
+            "pending": "Pending",
+            "reserved": "In Progress",
+            "completed": "Completed",
+            "not_active_yet": "Not Active Yet"
         },
         "syncstatus": {
             "now": "Now",

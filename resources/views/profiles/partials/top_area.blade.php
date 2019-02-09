@@ -12,13 +12,13 @@
             </div>
             <div class="user-counters">
                 <p class="mb-3 font-bold text-sm">
-                    <span class="justify-center icon-wrap">
+                    <span class="md:justify-center icon-wrap">
                         <icon-star></icon-star>
                         <span>{!! trans('profiles.your_price_level', ['level' => optional($user->priceLevel)->name]) !!}</span>
                     </span>
                 </p>
                 <p class="mb-0 font-bold text-sm">
-                    <span class="justify-center icon-wrap">
+                    <span class="md:justify-center icon-wrap">
                         <icon-ribbon></icon-ribbon>
                         <span>{!! trans('profiles.your_total_orders', ['total' => $user->orders()->count()]) !!}</span>
                     </span>

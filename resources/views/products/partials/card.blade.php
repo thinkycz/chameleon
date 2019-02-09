@@ -18,11 +18,12 @@
     <div class="product-stock">
         <span class="icon-wrap">
             <icon-cubes></icon-cubes>
-            <span>{!! trans('products.in_stock_unit', ['unit' => $product->unit_or_default->abbr, 'stock' => $product->public_stock_quantity]) !!}</span>
+            <span>{!! trans('products.in_stock_moq', ['moq' => $product->minimum_order_quantity, 'unit' => $product->unit_or_default->abbr, 'stock' => $product->public_stock_quantity]) !!}</span>
         </span>
     </div>
 
     <vue-add-to-basket :product="{{ json_encode($product) }}"
             :purchasable="{{ booleanToString($product->purchasable) }}"
     ></vue-add-to-basket>
+
 </div>

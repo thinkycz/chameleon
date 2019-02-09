@@ -3,10 +3,6 @@
 
         <div class="col w-full md:w-2/3">
             <div class="icon-wrap px-2">
-                <!-- <span class="text-primary mr-4">
-                    <icon-filter></icon-filter>
-                </span> -->
-
                 <vue-sort-products :authenticated="{{ booleanToString(auth()->check()) }}" :newest="true"></vue-sort-products>
                 <vue-per-page :default-pagination="{{ config('config.products_default_pagination') }}"></vue-per-page>
                 @if($tags->count())

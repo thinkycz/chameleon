@@ -24,10 +24,10 @@
 
         <div class="my-3 text-right text-sm">
             <vue-button method="post"
-                    action="{{ route('basket.empty_basket') }}"
-                    :confirm="true"
-                    label="{{ trans('basket.empty_basket') }}"
-                    button-class="btn-text text-grey-darker" >
+                action="{{ route('basket.empty_basket') }}"
+                :confirm="true"
+                label="{{ trans('basket.empty_basket') }}"
+                button-class="btn-text text-danger-light" >
             </vue-button>
         </div>
     </div>

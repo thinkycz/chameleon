@@ -1,5 +1,5 @@
 .breadcrumb {
-    @apply list-reset flex;
+    @apply list-reset flex flex-wrap;
 
     li {
         @apply inline mr-4;

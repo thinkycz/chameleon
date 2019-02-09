@@ -24,7 +24,7 @@
             </vue-orders>
 
         </div>
-        <div class="col-half sm:hidden md:block">
+        <div class="col-half hidden md:block">
             <div class="overflow-hidden w-2/3 mx-auto h-full">
                 <img img-src="svg/overview.svg" />
             </div>

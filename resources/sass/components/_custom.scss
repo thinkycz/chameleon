@@ -137,3 +137,11 @@ label.text-sm {
         transform: rotate(359deg);
     }
 }
+
+.md-inline-block {
+    @apply hidden;
+
+    @screen md {
+        @apply inline-block;
+    }
+}

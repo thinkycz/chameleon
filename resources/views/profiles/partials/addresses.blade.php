@@ -1,7 +1,7 @@
 <div class="p-8">
     <div class="row">
         <div class="col-half">
-            <h3 class="mb-2">{{ trans('profiles.address_book') }}</h3>
+            <h3 class="mb-2">{{ trans('profiles.addressses') }}</h3>
             <p class="mb-6">{{ trans('profiles.address_book_info') }}</p>
 
             <vue-addresses :new="{{ booleanToString($errors->count() && isCurrentView('address_book')) }}" inline-template>
@@ -24,7 +24,7 @@
             </vue-addresses>
 
         </div>
-        <div class="col-half sm:hidden md:block">
+        <div class="col-half hidden md:block">
             <div class="overflow-hidden w-2/3 mx-auto h-full">
                 <img img-src="svg/address_book.svg" />
             </div>

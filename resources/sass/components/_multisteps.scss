@@ -10,7 +10,7 @@ Basic Style
 -------------------------------- */
 
 .multisteps {
-    @apply w-full px-2 pb-4 mb-4 mx-auto bg-grey-lightest flex items-center rounded justify-center;
+    @apply w-full px-2 pb-4 mb-4 mx-auto bg-grey-lightest flex flex-wrap items-center rounded justify-center;
 
     @screen md {
         width: 90%;

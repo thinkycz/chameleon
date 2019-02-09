@@ -7,7 +7,8 @@
                         v-for="partial in partials"
                         :key="partial"
                         @click.prevent="change(partial)"
-                        :class="{'active': partial == component}">{{ $trans(`profiles.${partial}`) }}</a>
+                        :class="{'active': partial == component}"
+                        v-html="$trans(`profiles.${partial}`)"></a>
                 </div>
                 <transition name="fade"
                     mode="out-in">
@@ -31,12 +32,14 @@
                 default: 'overview',
             },
         },
+
         data() {
             return {
                 component: this.current,
                 partials: ['account_overview', 'account_details', 'address_book', 'account_privacy'],
             };
         },
+
         methods: {
             change(component) {
                 window.updateQueryStringParam('current', component);

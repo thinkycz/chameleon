@@ -19,7 +19,7 @@
 
             </div>
         </div>
-        <div class="col-half sm:hidden md:block">
+        <div class="col-half hidden md:block">
             <div class="overflow-hidden w-2/3 mx-auto h-full pt-16">
                 <img img-src="svg/privacy_policy.svg" />
             </div>

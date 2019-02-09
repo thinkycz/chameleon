@@ -1,5 +1,5 @@
 <template>
-    <div class="basket-item-quantity">
+    <div class="basket-item-quantity flex">
         <div class="quantity mb-2">
             <input :name="`quantities[${item.id}]`"
                 type="number"
@@ -14,9 +14,15 @@
                     @click.stop.prevent="decreaseQuantity">-</div>
             </div>
         </div>
-        <div class="flex justify-end cursor-pointer">
-            <span class="text-accent mx-2 icon-sm" @click="update"><icon-sync></icon-sync></span>
-            <span class="text-danger mx-2 icon-sm" @click="remove"><icon-trash></icon-trash></span>
+        <div class="ml-4 text-center">
+            <span class="text-accent mb-2 icon-sm inline-block w-full"
+                @click="update">
+                <icon-sync></icon-sync>
+            </span>
+            <span class="text-danger icon-sm inline-block w-full"
+                @click="remove">
+                <icon-trash></icon-trash>
+            </span>
         </div>
     </div>
 </template>

@@ -46,7 +46,7 @@ return [
     'company_information'              => 'Vaše firemní informace, jestli jste vytvořili obchod pro firmu',
     'products_sold_info'               => 'Informace o produktech, které jste prodali na našem tržišti.',
     'let_us_know'                      => 'Pokud máte nějaké dotazy, dejte nám vědět a my vám rádi pomůžeme.',
-    'request_a_complete_deletion'      => 'Chcete-li žádat o úplné mazání vašeho účtu, prosím zaemailujte na <a href="mailto:team@nulisec.com">team@nulisec.com</a>',
+    'request_a_complete_deletion'      => 'Chcete-li žádat o úplné mazání vašeho účtu, prosím zaemailujte na ',
     'process_within_30_days'           => 'Zpracujeme vaši žádost do 30 dnů od příjmu zprávy.',
 
     // Forms

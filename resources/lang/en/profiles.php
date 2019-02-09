@@ -8,6 +8,7 @@ return [
     'profile_updated'                  => 'Your profile has been successfully updated.',
 
     'make_default'                     => 'Make default',
+    'addresses'                        => 'Addresses',
     'address_created'                  => 'Your new address was created',
     'address_updated'                  => 'Your address was updated',
     'address_deleted'                  => 'Address was deleted',
@@ -46,7 +47,7 @@ return [
     'company_information'              => 'Your company information, if you created a store for that company',
     'products_sold_info'               => 'Information about products you sold on our marketplace',
     'let_us_know'                      => 'Please let us know if you have any questions about this, and we\'d be happy to help.',
-    'request_a_complete_deletion'      => 'To request a complete deletion of your account, please email <a href="mailto:team@nulisec.com">team@nulisec.com</a>',
+    'request_a_complete_deletion'      => 'To request a complete deletion of your account, please email ',
     'process_within_30_days'           => 'We will process your request within 30 days of receiving your email',
 
     // Forms
@@ -82,7 +83,7 @@ return [
 
     // Partials
     'account_overview'                 => 'Overview',
-    'account_details'                  => 'Account Details',
-    'address_book'                     => 'Address Book',
-    'account_privacy'                  => 'Account Privacy',
+    'account_details'                  => '<span class="md-inline-block">Account</span> Details',
+    'address_book'                     => 'Address <span class="md-inline-block">Book</span>',
+    'account_privacy'                  => '<span class="md-inline-block">Account</span> Privacy',
 ];

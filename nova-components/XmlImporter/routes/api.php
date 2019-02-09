@@ -19,3 +19,4 @@ Route::get('status', [XmlImporterController::class, 'status']);
 
 Route::post('save-configuration', [XmlImporterController::class, 'saveConfiguration']);
 Route::post('sync', [XmlImporterController::class, 'sync']);
+Route::post('validate-parser', [XmlImporterController::class, 'validateParser']);

@@ -7,6 +7,9 @@ use App\Jobs\ProcessXmlFile;
 use App\Models\Setting;
 use App\Services\SyncStatus;
 use Illuminate\Http\Request;
+use Nulisec\XmlImporter\Services\XmlProductProcessor;
+use Prewk\XmlStringStreamer;
+use Storage;
 
 class XmlImporterController extends Controller
 {
@@ -59,6 +62,27 @@ class XmlImporterController extends Controller
         $this->dispatch(new ProcessXmlFile());
 
         return $this->ajaxWithPayload([]);
+    }
+
+    public function validateParser(Request $request)
+    {
+        $filePath = Storage::disk('local')->putFileAs("xml_importer", $request->file('xmlfile'), 'uploaded.xml');
+        $filePath = Storage::disk('local')->path($filePath);
+
+        $config = Setting::loadConfiguration('xml_importer');
+        $settings = Setting::loadConfiguration('xml_importer_settings');
+
+        $streamer = XmlStringStreamer::createStringWalkerParser($filePath, ['captureDepth' => intval($settings['tag_depth']), 'expectGT' => true]);
+        $product = null;
+
+        while ($node = $streamer->getNode()) {
+            if (XmlProductProcessor::validateElement($node, $settings['tag_name'])) {
+                $product = (object) XmlProductProcessor::processNode(XmlProductProcessor::convertToUtf8(XmlProductProcessor::detectFileEncoding($filePath), $node), $config);
+                break;
+            }
+        }
+
+        return $this->ajaxWithPayload(compact('product'));
     }
 
     public function status()

@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Jobs;
+namespace Nulisec\XmlImporter\Jobs;
 
 use App\Enums\RemoteType;
 use App\Models\Product;
-use App\Models\Store;
 use App\Models\Unit;
 use App\Services\XmlProductProcessor;
 use Illuminate\Bus\Queueable;
@@ -52,18 +51,12 @@ class ProcessXmlFile implements ShouldQueue
      */
     protected $settings;
 
-    /**
-     * @var bool
-     */
-    protected $resyncPhotos;
-
-    public function __construct(string $filePath, Store $store, $resyncPhotos = false)
+    public function __construct(string $filePath)
     {
         $this->filePath = $filePath;
         $this->encoding = XmlProductProcessor::detectFileEncoding($filePath);
         $this->store = $store;
         $this->settings = $store->loadDataObject('xml_importer_settings');
-        $this->resyncPhotos = $resyncPhotos;
     }
 
     public function handle()

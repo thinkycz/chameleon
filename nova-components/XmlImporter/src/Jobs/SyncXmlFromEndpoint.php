@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace Nulisec\XmlImporter\Jobs;
 
 use App\Abstracts\SyncJob;
 use App\Models\Store;

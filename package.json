@@ -13,7 +13,11 @@
         "build-bulk-image-upload": "cd nova-components/BulkImageUpload && npm run dev",
         "build-bulk-image-upload-prod": "cd nova-components/BulkImageUpload && npm run prod",
         "build-xml-importer": "cd nova-components/XmlImporter && npm run dev",
-        "build-xml-importer-prod": "cd nova-components/XmlImporter && npm run prod"
+        "build-xml-importer-prod": "cd nova-components/XmlImporter && npm run prod",
+        "build-latest-orders": "cd nova-components/LatestOrders && npm run dev",
+        "build-latest-orders-prod": "cd nova-components/LatestOrders && npm run prod",
+        "build-latest-users": "cd nova-components/LatestUsers && npm run dev",
+        "build-latest-users-prod": "cd nova-components/LatestUsers && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18.0",

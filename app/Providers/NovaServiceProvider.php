@@ -16,6 +16,8 @@ use Laravel\Nova\Tools\Dashboard;
 use Nulisec\BulkImageUpload\BulkImageUpload;
 use Nulisec\GoogleSheetsImporter\GoogleSheetsImporter;
 use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
+use Nulisec\LatestOrders\LatestOrders;
+use Nulisec\LatestUsers\LatestUsers;
 use Nulisec\XmlImporter\XmlImporter;
 use Silvanite\NovaToolPermissions\NovaToolPermissions;
 
@@ -78,6 +80,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             (new NumberOfUsers()),
             (new OrdersPerDay()),
             (new ProductsPerCategory()),
+            (new LatestOrders()),
+            (new LatestUsers()),
         ];
     }
 

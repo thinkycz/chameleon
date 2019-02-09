@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76c4f2fa845510bf8ec68169211c9075",
+    "content-hash": "097dd5ae9153a6f11f7113f10d432061",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -4012,6 +4012,74 @@
                 "MIT"
             ],
             "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
+            "name": "nulisec/latest-orders",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/LatestOrders",
+                "reference": "9d78f78dd810c6679b2e0d25b4d5b6553b727511",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\LatestOrders\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\LatestOrders\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
+            "name": "nulisec/latest-users",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/LatestUsers",
+                "reference": "281deca7c22ee269cc46c912ffc5d70c37708800",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nulisec\\LatestUsers\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nulisec\\LatestUsers\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card.",
             "keywords": [
                 "laravel",
                 "nova"

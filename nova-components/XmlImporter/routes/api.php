@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Nulisec\XmlImporter\Http\Controllers\XmlImporterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+Route::get('settings', [XmlImporterController::class, 'settings']);
+Route::get('status', [XmlImporterController::class, 'status']);
+
+Route::post('save-configuration', [XmlImporterController::class, 'saveConfiguration']);
+Route::post('sync', [XmlImporterController::class, 'sync']);

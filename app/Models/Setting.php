@@ -42,7 +42,7 @@ class Setting extends Model
                 $data[$name] = $data[$name] == 'true';
             } elseif ($property['type'] == 'number') {
                 $data[$name] = floatval($data[$name]);
-            } else {
+            } elseif ($property['type'] == 'string') {
                 $data[$name] = trim($data[$name]);
             }
         }
@@ -64,12 +64,12 @@ class Setting extends Model
         return optional($setting)->data;
     }
 
-    public static function saveConfiguration(string $code, array $data, string $namespace = '')
+    public static function saveConfiguration(string $code, array $data, string $namespace = '', string $type = 'string')
     {
         $schema = [
             'type'       => 'object',
-            'properties' => collect($data)->keys()->mapWithKeys(function ($value) {
-                return [$value => ['type' => 'string']];
+            'properties' => collect($data)->keys()->mapWithKeys(function ($value) use ($type) {
+                return [$value => compact('type')];
             }),
         ];
 

@@ -920,7 +920,11 @@ export default {
             "order_was_placed": "Your order has been placed!",
             "no_delivery_methods_available": "No delivery methods are available at the moment",
             "no_payment_methods_available": "No payment methods are available at the moment",
-            "please_select_delivery_method": "Please select delivery method first"
+            "please_select_delivery_method": "Please select delivery method first",
+            "order": "Order",
+            "placed_at": "Placed at {date}",
+            "invoice": "Invoice",
+            "issuer": "Issuer: {name}"
         },
         "update_quantities": "Update Quantities",
         "empty_basket": "Empty Basket",
@@ -1380,7 +1384,9 @@ export default {
             "cancel": "Cancel",
             "locales.en": "English",
             "locales.vi": "Vietnamese",
-            "locales.cs": "Czech"
+            "locales.cs": "Czech",
+            "print": "Print",
+            "print_preview": "Print Preview"
         },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
@@ -1792,6 +1798,15 @@ export default {
             "account_overview": "Overview",
             "account_details": "Account Details",
             "account_privacy": "Account Privacy"
+        },
+        "syncstatus": {
+            "now": "Now",
+            "never": "Never",
+            "failed": "Failed",
+            "pending": "Pending",
+            "reserved": "In Progress",
+            "completed": "Completed",
+            "not_active_yet": "Not Active Yet"
         },
         "pages": {
             "created_at": "Created at {date}"

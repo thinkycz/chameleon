@@ -5,13 +5,11 @@ Nova.booting((Vue, router) => {
             path: '/jetsoft-shopconnector',
             component: require('./components/Tool'),
         },
-    ]);
-
-    router.addRoutes([
         {
             name: 'jetsoft-shopconnector-configure',
             path: '/jetsoft-shopconnector/configure',
             component: require('./components/Configure'),
         },
-    ]);
+
+    ])
 });

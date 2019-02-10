@@ -1,5 +1,5 @@
 {
-    "name": "nulisec/latest-users",
+    "name": "nulisec/latest-orders",
     "description": "A Laravel Nova card.",
     "keywords": [
         "laravel",
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Nulisec\\LatestUsers\\": "src/"
+            "Nulisec\\LatestOrders\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Nulisec\\LatestUsers\\CardServiceProvider"
+                "Nulisec\\LatestOrders\\CardServiceProvider"
             ]
         }
     },

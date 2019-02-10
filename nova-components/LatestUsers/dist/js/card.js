@@ -251,6 +251,67 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -259,8 +320,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
 
+    data: function data() {
+        return {
+            users: [],
+            loading: true
+        };
+    },
+
     mounted: function mounted() {
-        //
+        var _this = this;
+
+        Nova.request().get('/nova-vendor/latest-users/latest').then(function (_ref) {
+            var data = _ref.data;
+
+            _this.users = data.data;
+            _this.loading = false;
+        });
     }
 });
 
@@ -279,9 +354,153 @@ var render = function() {
         _vm._v(_vm._s(_vm.__("latest_users")))
       ]),
       _vm._v(" "),
-      _c("card", { staticClass: "flex flex-col items-center justify-center" }, [
-        _c("div", { staticClass: "px-3 py-3" })
-      ])
+      _c(
+        "loading-card",
+        {
+          ref: "card",
+          staticClass:
+            "card relative border border-lg border-50 overflow-hidden px-0 py-0",
+          attrs: { loading: _vm.loading }
+        },
+        [
+          _vm.loading
+            ? _c("div", { staticStyle: { height: "100px" } })
+            : _vm._e(),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "overflow-hidden overflow-x-auto relative" },
+            [
+              _c(
+                "table",
+                {
+                  staticClass: "table w-full",
+                  attrs: {
+                    cellpadding: "0",
+                    cellspacing: "0",
+                    "data-testid": "resource-table"
+                  }
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("user_id")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(" ")])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("user_name")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("order_email")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("order_phone")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("user_price_level")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("user_is_active")))])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.users, function(user, index) {
+                      return _c("tr", { key: "users-" + index }, [
+                        _c("td", [
+                          _c(
+                            "span",
+                            { staticClass: "whitespace-no-wrap text-left" },
+                            [_vm._v(_vm._s(user.id))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("p", { staticClass: "text-center" }, [
+                            _c("img", {
+                              staticClass: "rounded-full w-8 h-8",
+                              staticStyle: { "object-fit": "cover" },
+                              attrs: { src: user.image }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "span",
+                            { staticClass: "whitespace-no-wrap text-left" },
+                            [_vm._v(_vm._s(user.name))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "div",
+                            { staticClass: "whitespace-no-wrap text-left" },
+                            [_c("span", [_vm._v(_vm._s(user.email))])]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "no-underline text-primary text-left",
+                              attrs: { href: "tel:+" + user.phone }
+                            },
+                            [_vm._v(_vm._s(user.phone))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          user.price_level
+                            ? _c(
+                                "span",
+                                { staticClass: "whitespace-no-wrap text-left" },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(user.price_level.name) +
+                                      "\n                            "
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("div", { staticClass: "text-center" }, [
+                            _c("span", {
+                              staticClass: "inline-block rounded-full w-2 h-2",
+                              class: {
+                                "bg-success": user.is_active,
+                                "bg-danger": !user.is_active
+                              }
+                            })
+                          ])
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]
+          )
+        ]
+      )
     ],
     1
   )

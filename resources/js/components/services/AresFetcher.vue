@@ -3,8 +3,9 @@
         :class="{'loading': loading}"
         @click.stop.prevent="fetch">
         <span style="top: 4px">
-            <span v-if="loading">
-                <icon-syncspin ></icon-syncspin>
+            <span v-if="loading"
+                class="icon-loading">
+                <icon-sync></icon-sync>
             </span>
             <span v-show="!loading">
                 <icon-magic></icon-magic>

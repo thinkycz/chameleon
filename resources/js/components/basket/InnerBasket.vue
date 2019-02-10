@@ -15,8 +15,10 @@
                                 class="text-grey-darkest">{{ item.name }}</a>
                         </p>
                         <div class="text-left text-xs">
-                            <div class="my-1">{{ item.quantity_ordered }}&nbsp;&times;&nbsp;<strong>{{ item.formatted_price }}</strong></div>
-                            <div class="my-1">{{ $trans('basket.total') }}&nbsp;<strong class="text-primary">{{ item.formatted_total_price }}</strong></div>
+                            <div class="my-1">
+                                <span>{{ item.quantity_ordered }}&nbsp;&times;&nbsp;<strong>{{ item.formatted_price }}</strong></span>
+                                <span class="ml-4">{{ $trans('basket.total') }}&nbsp;<strong class="text-primary">{{ item.formatted_total_price }}</strong></span>
+                            </div>
                         </div>
                     </div>
                     <div class="inline-block w-1/3">
@@ -28,8 +30,10 @@
             </li>
         </ul>
         <div class="flex justify-between items-center p-5">
-            <a href="/basket" class="btn-text btn-primary">{{ $trans('header.view_basket') }}</a>
-            <a href="/checkout" class="btn btn-primary">{{ $trans('header.checkout') }}</a>
+            <a href="/basket"
+                class="btn-text btn-primary">{{ $trans('header.view_basket') }}</a>
+            <a href="/checkout"
+                class="btn btn-primary">{{ $trans('header.checkout') }}</a>
         </div>
     </div>
 </template>

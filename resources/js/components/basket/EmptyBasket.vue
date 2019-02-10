@@ -4,7 +4,7 @@
             <icon-sad></icon-sad>
         </span>
         <h3 class="text-center block text-grey-darkest w-full">{{ $trans('basket.basket_empty') }}</h3>
-        <p class="mt-4 text-center w-full"><a href="/"
+        <p class="mt-4 text-center w-full"><a href="/categories"
                 class="btn btn-primary">{{ $trans('header.start_shopping') }}</a></p>
     </div>
 </template>

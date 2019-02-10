@@ -1,9 +1,8 @@
 <div class="card p-4">
     <div class="row -mt-4">
-        <vue-checkout-delivery-payment
-                :delivery-methods="{{ json_encode($deliveryMethods) }}"
-                current-delivery="{{ old('delivery_method_id') }}"
-                current-payment="{{ old('payment_method_id') }}">
+        <vue-checkout-delivery-payment :delivery-methods="{{ json_encode($deliveryMethods) }}"
+            current-delivery="{{ old('delivery_method_id') }}"
+            current-payment="{{ old('payment_method_id') }}">
         </vue-checkout-delivery-payment>
 
         <div class="col-12 my-4">

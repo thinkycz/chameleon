@@ -18,7 +18,7 @@
             <div class="col-12 my-4">
                 <h2 class="font-normal text-grey-darkest mb-4">{{ trans('checkout.billing_and_shipping_details') }}</h2>
 
-                <template v-if="addresses.length">
+                <template v-if="currentAddresses.length">
                     <vue-checkout-address-selector name="billing_detail_id"></vue-checkout-address-selector>
 
                     <vue-checkout-shipping-details>

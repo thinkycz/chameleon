@@ -94,12 +94,27 @@
 
         .basket-header {
             @apply flex flex-wrap text-sm text-grey-darkest justify-between p-4 items-center bg-primary-lightest;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01);
         }
 
         .basket-items {
             @apply list-reset overflow-y-auto;
             max-height: 350px;
+
+            .basket-item-quantity {
+                @apply shadow-none;
+
+                .icon {
+                    @apply cursor-pointer;
+                }
+
+                .icon-smaller {
+                    .icon {
+                        @apply w-5 h-5;
+                    }
+                }
+            }
+
             li {
                 @apply p-4 relative;
                 @include transition(background-color);

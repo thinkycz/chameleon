@@ -11,7 +11,7 @@ use App\Nova\Filters\UserPriceLevel;
 use App\Nova\Metrics\NumberOfUsers;
 use App\Nova\Metrics\UsersPerDay;
 use App\Nova\Metrics\UsersPerPriceLevel;
-use Nulisec\PhoneField\PhoneNumber;
+use Illuminate\Http\Request;
 use Inspheric\Fields\Email;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -20,12 +20,12 @@ use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\Password;
 use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
+use Nulisec\PhoneField\PhoneNumber;
 use Silvanite\NovaToolPermissions\Role;
 
 class User extends Resource
@@ -55,7 +55,7 @@ class User extends Resource
         'first_name',
         'last_name',
         'email',
-        'phone'
+        'phone',
     ];
 
     /**
@@ -69,7 +69,7 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make(),
+            Image::make('image')->hideFromIndex(),
 
             Text::make('Name')
                 ->onlyOnIndex(),
@@ -130,7 +130,7 @@ class User extends Resource
         return [
             (new NumberOfUsers),
             (new UsersPerDay),
-            (new UsersPerPriceLevel)
+            (new UsersPerPriceLevel),
         ];
     }
 

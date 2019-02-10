@@ -4023,7 +4023,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/LatestOrders",
-                "reference": "9d78f78dd810c6679b2e0d25b4d5b6553b727511",
+                "reference": "4c4822f5e52e5d9bfaa230bd5c693fc9035845a5",
                 "shasum": null
             },
             "require": {
@@ -4236,7 +4236,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/XmlImporter",
-                "reference": "f7a9009cc0575651d0d4bc8dca6e3368d0de71d5",
+                "reference": "9a06e0b7ccaf8fb24d6e590e0597cf627eb3d47b",
                 "shasum": null
             },
             "require": {

@@ -14,18 +14,6 @@ class LatestUsers extends Card
     public $width = 'full';
 
     /**
-     * Indicates that the analytics should show current visitors.
-     *
-     * @return $this
-     */
-    public function orders()
-    {
-        $orders = Order::whereNotNull('placed_at')->latest()->take(6);
-
-        return $this->withMeta(['orders' => $orders]);
-    }
-
-    /**
      * Get the component name for the element.
      *
      * @return string

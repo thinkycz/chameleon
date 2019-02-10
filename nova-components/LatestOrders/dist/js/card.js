@@ -251,6 +251,59 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -259,8 +312,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
 
+    data: function data() {
+        return {
+            orders: [],
+            locale: null,
+            loading: true
+        };
+    },
+
+    created: function created() {
+        this.locale = Nova.config.currentLocale;
+    },
     mounted: function mounted() {
-        //
+        var _this = this;
+
+        Nova.request().get('/nova-vendor/latest-orders/latest').then(function (_ref) {
+            var data = _ref.data;
+
+            _this.orders = data.data;
+            _this.loading = false;
+        });
     }
 });
 
@@ -279,9 +350,145 @@ var render = function() {
         _vm._v(_vm._s(_vm.__("latest_orders")))
       ]),
       _vm._v(" "),
-      _c("card", { staticClass: "flex flex-col items-center justify-center" }, [
-        _c("div", { staticClass: "px-3 py-3" })
-      ])
+      _c(
+        "loading-card",
+        {
+          ref: "card",
+          staticClass:
+            "card relative border border-lg border-50 overflow-hidden px-0 py-0",
+          attrs: { loading: _vm.loading }
+        },
+        [
+          _vm.loading
+            ? _c("div", { staticStyle: { height: "100px" } })
+            : _vm._e(),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "overflow-hidden overflow-x-auto relative" },
+            [
+              _c(
+                "table",
+                {
+                  staticClass: "table w-full",
+                  attrs: {
+                    cellpadding: "0",
+                    cellspacing: "0",
+                    "data-testid": "resource-table"
+                  }
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [
+                          _vm._v(_vm._s(_vm.__("order_order_number")))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("placed_at")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("order_user")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("order_email")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("order_phone")))])
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-left" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.__("order_status")))])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.orders, function(order, index) {
+                      return _c("tr", { key: "orders-" + index }, [
+                        _c("td", [
+                          _c(
+                            "span",
+                            { staticClass: "whitespace-no-wrap text-left" },
+                            [_vm._v(_vm._s(order.order_number))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "span",
+                            { staticClass: "whitespace-no-wrap text-left" },
+                            [_vm._v(_vm._s(order.placed_at))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          order.user
+                            ? _c(
+                                "span",
+                                { staticClass: "whitespace-no-wrap text-left" },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(order.user.name) +
+                                      "\n                            "
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "div",
+                            { staticClass: "whitespace-no-wrap text-left" },
+                            [_c("span", [_vm._v(_vm._s(order.email))])]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "no-underline text-primary text-left",
+                              attrs: { href: "tel:+" + order.phone }
+                            },
+                            [_vm._v(_vm._s(order.phone))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          order.status
+                            ? _c(
+                                "span",
+                                { staticClass: "whitespace-no-wrap text-left" },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(order.status.name[_vm.locale]) +
+                                      "\n                            "
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]
+          )
+        ]
+      )
     ],
     1
   )

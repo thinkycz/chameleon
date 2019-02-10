@@ -24,6 +24,10 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     use UserHasGetters;
     use ModelHasDateFormatted;
 
+    protected $appends = [
+        'name',
+    ];
+
     protected $fillable = [
         'first_name',
         'last_name',

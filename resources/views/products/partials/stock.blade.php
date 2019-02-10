@@ -8,8 +8,13 @@
     </div>
 
     <div class="icon-wrap my-5">
+        <icon-cubes></icon-cubes>
+        <span>{!! trans('products.in_stock_unit', ['unit' => $product->unit_or_default->abbr, 'stock' => $product->quantity_in_stock]) !!}</span>
+    </div>
+
+    <div class="icon-wrap my-5">
         <icon-basket></icon-basket>
-        <span>{!! trans('products.in_stock_moq', ['unit' => $product->unit_or_default->abbr, 'moq' => $product->minimum_order_quantity, 'stock' => $product->quantity_in_stock]) !!}</span>
+        <span>{!! trans('products.buy_at_least', ['unit' => $product->unit_or_default->abbr, 'moq' => $product->minimum_order_quantity]) !!}</span>
     </div>
 
     @auth

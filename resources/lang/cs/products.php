@@ -20,6 +20,6 @@ return [
 
     'this_product_is_stock' => 'Tento produkt je teďka v <strong> :stock.</strong>',
     'total_times_ordered'   => 'Tento produkt je objednán <strong> :total krát.</strong>',
-    'in_stock_moq'          => 'Jsou tu<strong> :stock </strong> :unit ve skladě, a minimální množství je <strong> :moq.</strong>',
+    'in_stock_unit'          => 'Jsou tu<strong> :stock </strong> :unit ve skladě, a minimální množství je <strong> :moq.</strong>',
 
 ];

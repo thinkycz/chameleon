@@ -13,7 +13,7 @@ return [
     'address_updated'                  => 'Your address was updated',
     'address_deleted'                  => 'Address was deleted',
     'address_book'                     => 'Your address book',
-    'address_book_info'                => 'You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new one by clicking on the blank address box.',
+    'address_book_info'                => 'You can add your addresses here so you can use them to checkout faster. You can edit an address by clicking on it, or add a new by clicking on the blank address box.',
 
     'billing_details'                  => 'Billing:',
     'shipping_details'                 => 'Shipping:',
@@ -26,7 +26,7 @@ return [
     'privacy_policy_info'              => 'In this section you can set your privacy policy settings, read our terms of usage, request exporting your account data that we store on our servers and also request account deletion. We care about and respect your privacy.',
 
     'overview'                         => 'Your account overview',
-    'overview_info'                    => 'Here, we are going to show you the most important information about your account. You can click on any of the orders to see more details about it. ',
+    'overview_info'                    => 'Here we are going to show you the most important information about your account. You can click on any of the orders to see more details about it. ',
 
     'your_price_level'                 => 'Your price level is <strong class="text-primary"> :level </strong>',
     'your_total_orders'                => 'You made total of <strong class="text-primary"> :total </strong> orders',

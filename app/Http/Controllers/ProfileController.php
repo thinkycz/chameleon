@@ -41,7 +41,7 @@ class ProfileController extends Controller
 
     public function downloadAccountData()
     {
-        $this->dispatch(new ExportUserData(currentUser()));
+        $this->dispatch(new ExportUserData(currentUser(false)));
 
         snackbar()->success(trans('profiles.preparing_your_data'));
 

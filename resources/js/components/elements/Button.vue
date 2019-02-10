@@ -4,8 +4,10 @@
         :disabled="isDisabled"
         type="button"
         @click.stop.prevent="click">
-        <span>{{ label }}
-            <span v-if="isDisabled" class="icon-loading icon-sm ml-2">
+        <span class="icon-wrap">
+            <span>{{ label }}</span>
+            <span v-if="isDisabled"
+                class="icon-loading icon-sm ml-2">
                 <icon-sync></icon-sync>
             </span>
         </span>

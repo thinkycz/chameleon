@@ -16,9 +16,14 @@
     @endauth
 
     <div class="product-stock">
-        <span class="icon-wrap">
+        <span class="icon-wrap mb-4">
             <icon-cubes></icon-cubes>
-            <span>{!! trans('products.in_stock_moq', ['moq' => $product->minimum_order_quantity, 'unit' => $product->unit_or_default->abbr, 'stock' => $product->public_stock_quantity]) !!}</span>
+            <span>{!! trans('products.in_stock_unit', ['unit' => $product->unit_or_default->abbr, 'stock' => $product->public_stock_quantity]) !!}</span>
+        </span>
+
+        <span class="icon-wrap">
+            <icon-cart></icon-cart>
+            <span>{!! trans('products.buy_at_least', ['moq' => $product->minimum_order_quantity, 'unit' => $product->unit_or_default->abbr]) !!}</span>
         </span>
     </div>
 

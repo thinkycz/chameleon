@@ -772,7 +772,7 @@ export default {
             "company_information": "Vaše firemní informace, jestli jste vytvořili obchod pro firmu",
             "products_sold_info": "Informace o produktech, které jste prodali na našem tržišti.",
             "let_us_know": "Pokud máte nějaké dotazy, dejte nám vědět a my vám rádi pomůžeme.",
-            "request_a_complete_deletion": "Chcete-li žádat o úplné mazání vašeho účtu, prosím zaemailujte na <a href=\"mailto:team@nulisec.com\">team@nulisec.com</a>",
+            "request_a_complete_deletion": "Chcete-li žádat o úplné mazání vašeho účtu, prosím zaemailujte na ",
             "process_within_30_days": "Zpracujeme vaši žádost do 30 dnů od příjmu zprávy.",
             "first_name": "Křestní jméno",
             "first_name_label": "Vaše křestní jméno",
@@ -956,10 +956,17 @@ export default {
             "successfully_updated": "Successfully updated",
             "basket": "Basket",
             "confirmation": "Confirmation",
-            "order_placed": "Order Placed"
+            "order_placed": "Order Placed",
+            "incl_vat": "incl. Vat"
         },
         "order_placed": "Order Placed",
-        "home": "Home",
+        "home": {
+            "welcome": "Welcome to our shop!",
+            "subheading": "Thank you for visiting our shop. You can start exploring our offer and start your shopping experience with us. Enjoy your stay!",
+            "explore_now": "Explore now",
+            "what_waiting": "What are you waiting for?",
+            "register_with_us": "Its easy to register - it takes only few seconds. With your account you can start your ordering process on our shop."
+        },
         "categories": {
             "products_count": "{count} products"
         },
@@ -1738,6 +1745,7 @@ export default {
             "update_personal_info": "You can update your personal information using the form below. ",
             "profile_updated": "Your profile has been successfully updated.",
             "make_default": "Make default",
+            "addresses": "Addresses",
             "address_created": "Your new address was created",
             "address_updated": "Your address was updated",
             "address_deleted": "Address was deleted",
@@ -1768,7 +1776,7 @@ export default {
             "company_information": "Your company information, if you created a store for that company",
             "products_sold_info": "Information about products you sold on our marketplace",
             "let_us_know": "Please let us know if you have any questions about this, and we'd be happy to help.",
-            "request_a_complete_deletion": "To request a complete deletion of your account, please email <a href=\"mailto:team@nulisec.com\">team@nulisec.com</a>",
+            "request_a_complete_deletion": "To request a complete deletion of your account, please email ",
             "process_within_30_days": "We will process your request within 30 days of receiving your email",
             "first_name": "First name",
             "first_name_label": "Your First name",
@@ -1802,15 +1810,6 @@ export default {
             "account_overview": "Overview",
             "account_details": "<span class=\"md-inline-block\">Account</span> Details",
             "account_privacy": "<span class=\"md-inline-block\">Account</span> Privacy"
-        },
-        "syncstatus": {
-            "now": "Now",
-            "never": "Never",
-            "failed": "Failed",
-            "pending": "Pending",
-            "reserved": "In Progress",
-            "completed": "Completed",
-            "not_active_yet": "Not Active Yet"
         },
         "syncstatus": {
             "now": "Now",

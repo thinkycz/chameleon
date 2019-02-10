@@ -138,6 +138,10 @@ label.text-sm {
     }
 }
 
+.index-categories:first-of-type {
+    @apply bg-grey-lightest;
+}
+
 .md-inline-block {
     @apply hidden;
 

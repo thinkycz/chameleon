@@ -33,13 +33,42 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
+        Setting::updateOrCreate(['code' => 'homepage'], [
+            'schema' => [
+                'type'       => 'object',
+                'required'   => [],
+                'properties' => [
+                    'heading'            => ['type' => 'string'],
+                    'subheading'         => ['type' => 'string'],
+                    'image'              => ['type' => 'string'],
+                    'category_1'         => ['type' => 'string'],
+                    'category_2'         => ['type' => 'string'],
+                    'banner_heading'     => ['type' => 'string'],
+                    'banner_subheading'  => ['type' => 'string'],
+                    'banner_action_link' => ['type' => 'string'],
+                    'banner_action_text' => ['type' => 'string'],
+                ],
+            ],
+            'data'   => [
+                'heading'            => 'Welcome to our shop!',
+                'subheading'         => 'Thank you for visiting our shop. You can start exploring our offer and start your shopping experience with us. Enjoy your stay!',
+                'image'              => 'svg/home.svg',
+                'category_1'         => '',
+                'category_2'         => '',
+                'banner_heading'     => 'Placing your order with us is easy.',
+                'banner_subheading'  => 'You can browse products through categories, and you can also use the search bar to look for products using barcodes and SKUs. When you find the goods you need, add them to your basket and complete the checkout process to place your order',
+                'banner_action_text' => 'Shop Now',
+                'banner_action_link' => '/categories',
+            ],
+        ]);
+
         Setting::updateOrCreate(['code' => 'company_details'], [
             'schema' => [
                 'type'       => 'object',
                 'required'   => ['name'],
                 'properties' => [
                     'name'       => ['type' => 'string'],
-                    'about'      => ['type' => 'textarea'],
+                    'about'      => ['type' => 'string'],
                     'street'     => ['type' => 'string'],
                     'city'       => ['type' => 'string'],
                     'zipcode'    => ['type' => 'string'],
@@ -48,7 +77,7 @@ class SettingSeeder extends Seeder
                     'email'      => ['type' => 'string'],
                     'phone'      => ['type' => 'string'],
                     'vat_payer'  => ['type' => 'boolean'],
-                    'google_map' => ['type' => 'textarea'],
+                    'google_map' => ['type' => 'string'],
                 ],
             ],
             'data'   => [

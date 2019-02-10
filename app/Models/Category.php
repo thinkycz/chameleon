@@ -21,7 +21,7 @@ class Category extends Model implements HasMedia
 
     public $fillable = [
         'name',
-        'enabled'
+        'enabled',
     ];
 
     public $translatable = [
@@ -29,11 +29,22 @@ class Category extends Model implements HasMedia
     ];
 
     public $attributes = [
-        'position' => 0
+        'position' => 0,
     ];
 
     public function products()
     {
         return $this->belongsToMany(Product::class);
+    }
+
+    public static function findBySlugOrId($value)
+    {
+        if (!$value) {
+            return null;
+        }
+
+        return static::where('slug', $value)
+            ->orWhere('id', $value)
+            ->first();
     }
 }

@@ -62,6 +62,11 @@ class SettingsRepository extends InstanceCache
         return $this->configuration('custom_footer_link_2');
     }
 
+    public function getHomepage()
+    {
+        return $this->configuration('homepage');
+    }
+
     public function get($code, $key)
     {
         return $this->getOrFetch(__CLASS__, $key, function () use ($key, $code) {

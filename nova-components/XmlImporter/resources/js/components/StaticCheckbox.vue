@@ -5,7 +5,7 @@
             :checked="value"
             :id="name"
             :name="name">
-        <label :for="name" class="text-90 text-sm mx-2">Static Text</label>
+        <label :for="name" class="text-90 text-sm mx-2">{{__('static_text')}}</label>
     </checkbox>
 </template>
 

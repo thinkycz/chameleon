@@ -142,6 +142,7 @@
         ],
         "init-dev": [
             "php artisan key:generate",
+            "php artisan strings:generate",
             "php artisan migrate:fresh",
             "php artisan passport:install",
             "php artisan cache:clear",

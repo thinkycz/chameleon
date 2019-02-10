@@ -870,6 +870,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -900,7 +904,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.$toasted.success(_this.__('syncing_in_progress'));
                 setTimeout(_this.refresh, 2000);
             }).catch(function (err) {
-                _this.$toasted.success(_this.__('please_check_config'));
+                _this.$toasted.error(err);
             });
         },
         validate: function validate() {
@@ -918,6 +922,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
                 _this2.validationResponse = data.payload;
                 _this2.modalOpen = true;
+            }).catch(function (err) {
+                _this2.$toasted.error(err);
             });
         },
         refresh: function refresh() {
@@ -1089,7 +1095,9 @@ var render = function() {
                                 "flex items-center justify-between w-full"
                             },
                             [
-                              _c("strong", [_vm._v("Validation result")]),
+                              _c("strong", [
+                                _vm._v(_vm._s(_vm.__("validation_result")))
+                              ]),
                               _vm._v(" "),
                               _c(
                                 "button",
@@ -1104,364 +1112,410 @@ var render = function() {
                                     }
                                   }
                                 },
-                                [_vm._v("× Close")]
+                                [_vm._v("× " + _vm._s(_vm.__("close")))]
                               )
                             ]
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "p-6" }, [
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Name\n                                "
+                        _vm.validationResponse.product
+                          ? _c("div", { staticClass: "p-6" }, [
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("name")) +
+                                            "\n                                "
+                                        )
+                                      ]
                                     )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("name")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
                                     _vm._v(
-                                      "\n                                    Description\n                                "
+                                      "\n                                " +
+                                        _vm._s(_vm.getProductField("name")) +
+                                        "\n                            "
                                     )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("description")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Details\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("details")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Catalogue Number\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(
-                                      _vm.getProductField("catalogue_number")
-                                    ) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Barcode\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("barcode")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Quantity In Stock\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(
-                                      _vm.getProductField("quantity_in_stock")
-                                    ) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Minimum Order Quantity\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(
-                                      _vm.getProductField(
-                                        "minimum_order_quantity"
-                                      )
-                                    ) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    VAT Rate\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("vatrate")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Price\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("price")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Category\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("category")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Unit\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("unit")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Photo\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "w-3/4 py-4" }, [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(_vm.getProductField("photo")) +
-                                    "\n                            "
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "flex border-b border-40" },
-                            [
-                              _c("div", { staticClass: "w-1/4 py-4" }, [
-                                _c(
-                                  "h4",
-                                  { staticClass: "font-normal text-80" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    RAW Data\n                                "
-                                    )
-                                  ]
-                                )
-                              ]),
+                                  ])
+                                ]
+                              ),
                               _vm._v(" "),
                               _c(
                                 "div",
-                                { staticClass: "w-3/4 py-4" },
+                                { staticClass: "flex border-b border-40" },
                                 [
-                                  _c("code-area", {
-                                    attrs: {
-                                      value: _vm.validationResponse.json
-                                    }
-                                  })
-                                ],
-                                1
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("description")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(
+                                          _vm.getProductField("description")
+                                        ) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("details")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(_vm.getProductField("details")) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("catalogue_number")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(
+                                          _vm.getProductField(
+                                            "catalogue_number"
+                                          )
+                                        ) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("barcode")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(_vm.getProductField("barcode")) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(
+                                              _vm.__("quantity_in_stock")
+                                            ) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(
+                                          _vm.getProductField(
+                                            "quantity_in_stock"
+                                          )
+                                        ) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(
+                                              _vm.__("minimum_order_quantity")
+                                            ) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(
+                                          _vm.getProductField(
+                                            "minimum_order_quantity"
+                                          )
+                                        ) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("vatrate")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(_vm.getProductField("vatrate")) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("price")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(_vm.getProductField("price")) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("category")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(
+                                          _vm.getProductField("category")
+                                        ) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("unit")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(_vm.getProductField("unit")) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("photo")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-3/4 py-4" }, [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(_vm.getProductField("photo")) +
+                                        "\n                            "
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "flex border-b border-40" },
+                                [
+                                  _c("div", { staticClass: "w-1/4 py-4" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "font-normal text-80" },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(_vm.__("raw_data")) +
+                                            "\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "w-3/4 py-4" },
+                                    [
+                                      _c("code-area", {
+                                        attrs: {
+                                          value: _vm.validationResponse.json
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        ])
+                            ])
+                          : _c("div", { staticClass: "p-6" }, [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(_vm.__("no_entities_found")) +
+                                  "\n                    "
+                              )
+                            ])
                       ]
                     )
                   ])
@@ -1936,48 +1990,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var settings = data.payload.settings;
 
-            _this2.tag_name = settings.tag_name ? settings.tag_name : null;
-            _this2.tag_depth = settings.tag_depth ? settings.tag_depth : null;
-            _this2.identifier = settings.identifier ? settings.identifier : null;
-            _this2.price_multiplier = settings.price_multiplier ? settings.price_multiplier : null;
+            if (settings) {
+                _this2.tag_name = settings.tag_name ? settings.tag_name : null;
+                _this2.tag_depth = settings.tag_depth ? settings.tag_depth : null;
+                _this2.identifier = settings.identifier ? settings.identifier : null;
+                _this2.price_multiplier = settings.price_multiplier ? settings.price_multiplier : null;
+            }
 
             var config = data.payload.config;
 
-            _this2.name_static = !_.isObject(config.name);
-            _this2.name = _this2.name_static ? config.name : config.name.uses;
+            if (config) {
+                _this2.name_static = !_.isObject(config.name);
+                _this2.name = _this2.name_static ? config.name : config.name.uses;
 
-            _this2.description_static = !_.isObject(config.description);
-            _this2.description = _this2.description_static ? config.description : config.description.uses;
+                _this2.description_static = !_.isObject(config.description);
+                _this2.description = _this2.description_static ? config.description : config.description.uses;
 
-            _this2.details_static = !_.isObject(config.details);
-            _this2.details = _this2.details_static ? config.details : config.details.uses;
+                _this2.details_static = !_.isObject(config.details);
+                _this2.details = _this2.details_static ? config.details : config.details.uses;
 
-            _this2.catalogue_number_static = !_.isObject(config.catalogue_number);
-            _this2.catalogue_number = _this2.catalogue_number_static ? config.catalogue_number : config.catalogue_number.uses;
+                _this2.catalogue_number_static = !_.isObject(config.catalogue_number);
+                _this2.catalogue_number = _this2.catalogue_number_static ? config.catalogue_number : config.catalogue_number.uses;
 
-            _this2.barcode_static = !_.isObject(config.barcode);
-            _this2.barcode = _this2.barcode_static ? config.barcode : config.barcode.uses;
+                _this2.barcode_static = !_.isObject(config.barcode);
+                _this2.barcode = _this2.barcode_static ? config.barcode : config.barcode.uses;
 
-            _this2.quantity_in_stock_static = !_.isObject(config.quantity_in_stock);
-            _this2.quantity_in_stock = _this2.quantity_in_stock_static ? config.quantity_in_stock : config.quantity_in_stock.uses;
+                _this2.quantity_in_stock_static = !_.isObject(config.quantity_in_stock);
+                _this2.quantity_in_stock = _this2.quantity_in_stock_static ? config.quantity_in_stock : config.quantity_in_stock.uses;
 
-            _this2.minimum_order_quantity_static = !_.isObject(config.minimum_order_quantity);
-            _this2.minimum_order_quantity = _this2.minimum_order_quantity_static ? config.minimum_order_quantity : config.minimum_order_quantity.uses;
+                _this2.minimum_order_quantity_static = !_.isObject(config.minimum_order_quantity);
+                _this2.minimum_order_quantity = _this2.minimum_order_quantity_static ? config.minimum_order_quantity : config.minimum_order_quantity.uses;
 
-            _this2.vatrate_static = !_.isObject(config.vatrate);
-            _this2.vatrate = _this2.vatrate_static ? config.vatrate : config.vatrate.uses;
+                _this2.vatrate_static = !_.isObject(config.vatrate);
+                _this2.vatrate = _this2.vatrate_static ? config.vatrate : config.vatrate.uses;
 
-            _this2.price_static = !_.isObject(config.price);
-            _this2.price = _this2.price_static ? config.price : config.price.uses;
+                _this2.price_static = !_.isObject(config.price);
+                _this2.price = _this2.price_static ? config.price : config.price.uses;
 
-            _this2.category_static = !_.isObject(config.category);
-            _this2.category = _this2.category_static ? config.category : config.category.uses;
+                _this2.category_static = !_.isObject(config.category);
+                _this2.category = _this2.category_static ? config.category : config.category.uses;
 
-            _this2.unit_static = !_.isObject(config.unit);
-            _this2.unit = _this2.unit_static ? config.unit : config.unit.uses;
+                _this2.unit_static = !_.isObject(config.unit);
+                _this2.unit = _this2.unit_static ? config.unit : config.unit.uses;
 
-            _this2.photo_static = !_.isObject(config.photo);
-            _this2.photo = _this2.photo_static ? config.photo : config.photo.uses;
+                _this2.photo_static = !_.isObject(config.photo);
+                _this2.photo = _this2.photo_static ? config.photo : config.photo.uses;
+            }
         });
     },
 
@@ -2081,7 +2139,7 @@ var render = function() {
       _c(
         "label",
         { staticClass: "text-90 text-sm mx-2", attrs: { for: _vm.name } },
-        [_vm._v("Static Text")]
+        [_vm._v(_vm._s(_vm.__("static_text")))]
       )
     ]
   )

@@ -44,21 +44,12 @@ class XmlImporterController extends Controller
         return $this->ajaxWithPayload([]);
     }
 
-    private function generateConfig(Request $request)
-    {
-        $result = [];
-
-        foreach ($this->fields as $field) {
-            $result = array_merge($result, [
-                $field => $request->get("{$field}_static") ? $request->get($field) : ['uses' => $request->get($field)],
-            ]);
-        }
-
-        return $result;
-    }
-
     public function sync(Request $request)
     {
+        $request->validate([
+            'xmlfile' => 'required|file'
+        ]);
+
         $filePath = Storage::disk('local')->putFileAs("xml_importer", $request->file('xmlfile'), 'uploaded.xml');
         $filePath = Storage::disk('local')->path($filePath);
 
@@ -71,6 +62,10 @@ class XmlImporterController extends Controller
 
     public function validateParser(Request $request)
     {
+        $request->validate([
+            'xmlfile' => 'required|file'
+        ]);
+
         $filePath = Storage::disk('local')->putFileAs("xml_importer", $request->file('xmlfile'), 'uploaded.xml');
         $filePath = Storage::disk('local')->path($filePath);
 
@@ -102,5 +97,18 @@ class XmlImporterController extends Controller
             'status' => $status->status(),
             'job' => $status->job()
         ]);
+    }
+
+    private function generateConfig(Request $request)
+    {
+        $result = [];
+
+        foreach ($this->fields as $field) {
+            $result = array_merge($result, [
+                $field => $request->get("{$field}_static") ? $request->get($field) : ['uses' => $request->get($field)],
+            ]);
+        }
+
+        return $result;
     }
 }

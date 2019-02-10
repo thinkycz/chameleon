@@ -60,16 +60,16 @@
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden" style="width: 1000px;">
                         <div class="bg-30 px-6 py-3 flex">
                             <div class="flex items-center justify-between w-full">
-                                <strong>Validation result</strong>
-                                <button type="button" @click.prevent="modalOpen = false" class="btn text-80 font-normal h-9 px-3 mr-3 btn-link">&times; Close</button>
+                                <strong>{{__('validation_result')}}</strong>
+                                <button type="button" @click.prevent="modalOpen = false" class="btn text-80 font-normal h-9 px-3 mr-3 btn-link">&times; {{__('close')}}</button>
                             </div>
                         </div>
 
-                        <div class="p-6">
+                        <div v-if="validationResponse.product" class="p-6">
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Name
+                                        {{__('name')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -79,7 +79,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Description
+                                        {{__('description')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -89,7 +89,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Details
+                                        {{__('details')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -99,7 +99,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Catalogue Number
+                                        {{__('catalogue_number')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -109,7 +109,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Barcode
+                                        {{__('barcode')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -119,7 +119,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Quantity In Stock
+                                        {{__('quantity_in_stock')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -129,7 +129,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Minimum Order Quantity
+                                        {{__('minimum_order_quantity')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -139,7 +139,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        VAT Rate
+                                        {{__('vatrate')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -149,7 +149,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Price
+                                        {{__('price')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -159,7 +159,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Category
+                                        {{__('category')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -169,7 +169,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Unit
+                                        {{__('unit')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -179,7 +179,7 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        Photo
+                                        {{__('photo')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
@@ -189,13 +189,17 @@
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
-                                        RAW Data
+                                        {{__('raw_data')}}
                                     </h4>
                                 </div>
                                 <div class="w-3/4 py-4">
                                     <code-area :value="validationResponse.json"></code-area>
                                 </div>
                             </div>
+                        </div>
+
+                        <div v-else class="p-6">
+                            {{__('no_entities_found')}}
                         </div>
                     </div>
                 </modal>
@@ -234,7 +238,7 @@
                         setTimeout(this.refresh, 2000);
                     })
                     .catch(err => {
-                        this.$toasted.success(this.__('please_check_config'));
+                        this.$toasted.error(err);
                     });
             },
 
@@ -252,6 +256,9 @@
                         this.validationResponse = data.payload;
                         this.modalOpen = true;
                     })
+                    .catch(err => {
+                        this.$toasted.error(err);
+                    });
             },
 
             refresh() {

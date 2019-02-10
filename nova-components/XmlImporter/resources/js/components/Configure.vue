@@ -367,51 +367,55 @@
         mounted() {
             Nova.request()
                 .get('/nova-vendor/xml-importer/settings')
-                .then(({ data }) => {
+                .then(({data}) => {
                     let settings = data.payload.settings;
 
-                    this.tag_name = settings.tag_name ? settings.tag_name : null;
-                    this.tag_depth = settings.tag_depth ? settings.tag_depth : null;
-                    this.identifier = settings.identifier ? settings.identifier : null;
-                    this.price_multiplier = settings.price_multiplier ? settings.price_multiplier : null;
+                    if (settings) {
+                        this.tag_name = settings.tag_name ? settings.tag_name : null;
+                        this.tag_depth = settings.tag_depth ? settings.tag_depth : null;
+                        this.identifier = settings.identifier ? settings.identifier : null;
+                        this.price_multiplier = settings.price_multiplier ? settings.price_multiplier : null;
+                    }
 
                     let config = data.payload.config;
 
-                    this.name_static = !_.isObject(config.name);
-                    this.name = this.name_static ? config.name : config.name.uses;
+                    if (config) {
+                        this.name_static = !_.isObject(config.name);
+                        this.name = this.name_static ? config.name : config.name.uses;
 
-                    this.description_static = !_.isObject(config.description);
-                    this.description = this.description_static ? config.description : config.description.uses;
+                        this.description_static = !_.isObject(config.description);
+                        this.description = this.description_static ? config.description : config.description.uses;
 
-                    this.details_static = !_.isObject(config.details);
-                    this.details = this.details_static ? config.details : config.details.uses;
+                        this.details_static = !_.isObject(config.details);
+                        this.details = this.details_static ? config.details : config.details.uses;
 
-                    this.catalogue_number_static = !_.isObject(config.catalogue_number);
-                    this.catalogue_number = this.catalogue_number_static ? config.catalogue_number : config.catalogue_number.uses;
+                        this.catalogue_number_static = !_.isObject(config.catalogue_number);
+                        this.catalogue_number = this.catalogue_number_static ? config.catalogue_number : config.catalogue_number.uses;
 
-                    this.barcode_static = !_.isObject(config.barcode);
-                    this.barcode = this.barcode_static ? config.barcode : config.barcode.uses;
+                        this.barcode_static = !_.isObject(config.barcode);
+                        this.barcode = this.barcode_static ? config.barcode : config.barcode.uses;
 
-                    this.quantity_in_stock_static = !_.isObject(config.quantity_in_stock);
-                    this.quantity_in_stock = this.quantity_in_stock_static ? config.quantity_in_stock : config.quantity_in_stock.uses;
+                        this.quantity_in_stock_static = !_.isObject(config.quantity_in_stock);
+                        this.quantity_in_stock = this.quantity_in_stock_static ? config.quantity_in_stock : config.quantity_in_stock.uses;
 
-                    this.minimum_order_quantity_static = !_.isObject(config.minimum_order_quantity);
-                    this.minimum_order_quantity = this.minimum_order_quantity_static ? config.minimum_order_quantity : config.minimum_order_quantity.uses;
+                        this.minimum_order_quantity_static = !_.isObject(config.minimum_order_quantity);
+                        this.minimum_order_quantity = this.minimum_order_quantity_static ? config.minimum_order_quantity : config.minimum_order_quantity.uses;
 
-                    this.vatrate_static = !_.isObject(config.vatrate);
-                    this.vatrate = this.vatrate_static ? config.vatrate : config.vatrate.uses;
+                        this.vatrate_static = !_.isObject(config.vatrate);
+                        this.vatrate = this.vatrate_static ? config.vatrate : config.vatrate.uses;
 
-                    this.price_static = !_.isObject(config.price);
-                    this.price = this.price_static ? config.price : config.price.uses;
+                        this.price_static = !_.isObject(config.price);
+                        this.price = this.price_static ? config.price : config.price.uses;
 
-                    this.category_static = !_.isObject(config.category);
-                    this.category = this.category_static ? config.category : config.category.uses;
+                        this.category_static = !_.isObject(config.category);
+                        this.category = this.category_static ? config.category : config.category.uses;
 
-                    this.unit_static = !_.isObject(config.unit);
-                    this.unit = this.unit_static ? config.unit : config.unit.uses;
+                        this.unit_static = !_.isObject(config.unit);
+                        this.unit = this.unit_static ? config.unit : config.unit.uses;
 
-                    this.photo_static = !_.isObject(config.photo);
-                    this.photo = this.photo_static ? config.photo : config.photo.uses;
+                        this.photo_static = !_.isObject(config.photo);
+                        this.photo = this.photo_static ? config.photo : config.photo.uses;
+                    }
                 });
         },
 

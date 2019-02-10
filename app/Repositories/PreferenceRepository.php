@@ -10,6 +10,7 @@ use App\Models\Page;
 use App\Models\Preference;
 use App\Models\StoreStatus;
 use App\Models\Unit;
+use App\Nova\PriceLevel;
 use App\Services\InstanceCache;
 
 class PreferenceRepository extends InstanceCache
@@ -103,7 +104,7 @@ class PreferenceRepository extends InstanceCache
     }
 
     /**
-     * @return OrderStatus
+     * @return PriceLevel
      */
     public function getDefaultPriceLevel()
     {

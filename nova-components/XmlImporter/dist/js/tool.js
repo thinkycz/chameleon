@@ -889,9 +889,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sync: function sync() {
             var _this = this;
 
-            Nova.request().post('/nova-vendor/xml-importer/sync').then(function () {
+            var formData = new FormData();
+            formData.append('xmlfile', this.$refs.file.files[0]);
+
+            Nova.request().post('/nova-vendor/xml-importer/sync', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(function () {
                 _this.$toasted.success(_this.__('syncing_in_progress'));
-                setTimeout(_this.refresh, 1000);
+                setTimeout(_this.refresh, 2000);
             }).catch(function (err) {
                 _this.$toasted.success(_this.__('please_check_config'));
             });

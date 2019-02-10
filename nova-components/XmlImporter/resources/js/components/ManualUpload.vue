@@ -220,11 +220,18 @@
         },
         methods: {
             sync() {
+                let formData = new FormData();
+                formData.append('xmlfile', this.$refs.file.files[0]);
+
                 Nova.request()
-                    .post('/nova-vendor/xml-importer/sync')
+                    .post('/nova-vendor/xml-importer/sync', formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    })
                     .then(() => {
                         this.$toasted.success(this.__('syncing_in_progress'));
-                        setTimeout(this.refresh, 1000);
+                        setTimeout(this.refresh, 2000);
                     })
                     .catch(err => {
                         this.$toasted.success(this.__('please_check_config'));

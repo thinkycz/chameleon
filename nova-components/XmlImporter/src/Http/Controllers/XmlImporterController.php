@@ -3,10 +3,10 @@
 namespace Nulisec\XmlImporter\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\ProcessXmlFile;
 use App\Models\Setting;
 use App\Services\SyncStatus;
 use Illuminate\Http\Request;
+use Nulisec\XmlImporter\Jobs\ProcessXmlFile;
 use Nulisec\XmlImporter\Services\XmlProductProcessor;
 use Prewk\XmlStringStreamer;
 use Storage;
@@ -57,9 +57,14 @@ class XmlImporterController extends Controller
         return $result;
     }
 
-    public function sync()
+    public function sync(Request $request)
     {
-        $this->dispatch(new ProcessXmlFile());
+        $filePath = Storage::disk('local')->putFileAs("xml_importer", $request->file('xmlfile'), 'uploaded.xml');
+        $filePath = Storage::disk('local')->path($filePath);
+
+        $jobId = $this->dispatch(new ProcessXmlFile($filePath));
+
+        SyncStatus::log('xml_importer_status', $jobId);
 
         return $this->ajaxWithPayload([]);
     }

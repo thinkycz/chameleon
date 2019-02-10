@@ -73,16 +73,18 @@ class XmlImporterController extends Controller
         $settings = Setting::loadConfiguration('xml_importer_settings');
 
         $streamer = XmlStringStreamer::createStringWalkerParser($filePath, ['captureDepth' => intval($settings['tag_depth']), 'expectGT' => true]);
-        $product = null;
+        $product = $json = null;
 
         while ($node = $streamer->getNode()) {
             if (XmlProductProcessor::validateElement($node, $settings['tag_name'])) {
-                $product = (object) XmlProductProcessor::processNode(XmlProductProcessor::convertToUtf8(XmlProductProcessor::detectFileEncoding($filePath), $node), $config);
+                $raw = XmlProductProcessor::convertToUtf8(XmlProductProcessor::detectFileEncoding($filePath), $node);
+                $json = json_encode(simplexml_load_string($raw), JSON_PRETTY_PRINT);
+                $product = XmlProductProcessor::processNode($raw, $config);
                 break;
             }
         }
 
-        return $this->ajaxWithPayload(compact('product'));
+        return $this->ajaxWithPayload(compact('product', 'json'));
     }
 
     public function status()

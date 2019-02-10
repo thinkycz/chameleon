@@ -1,6 +1,7 @@
 <template>
     <div class="header-cart">
-        <span @click="toggle">
+        <span @click="toggle"
+            :class="{'is-disabled': isDisabled}">
             <icon-cart></icon-cart>
             <span class="cart-total">{{ basketItems.length }}</span>
         </span>
@@ -13,8 +14,10 @@
             <div class="basker-inner">
                 <div class="basket-header">
                     <span class="font-semibold">
-                        <span @click="close" class="cursor-pointer mr-2 text-xl">&times;</span>
-                        <a href="/basket" class="btn-text uppercase text-grey-darker">{{ $trans('header.your_basket') }}</a>
+                        <span @click="close"
+                            class="cursor-pointer mr-2 text-xl">&times;</span>
+                        <a href="/basket"
+                            class="btn-text uppercase text-grey-darker">{{ $trans('header.your_basket') }}</a>
                     </span>
                     <span v-if="basketItems.length"
                         class="text-grey-dark">

@@ -90,6 +90,9 @@ header {
                     & > span > .icon {
                         @apply w-10 h-10 text-primary;
                     }
+                    & > span.is-disabled > .icon {
+                        color: var(--grey) !important;
+                    }
                     .cart-total {
                         @apply absolute p-1 font-bold border-white border-2 rounded-full bg-danger text-white text-xs;
                         top: -5px;

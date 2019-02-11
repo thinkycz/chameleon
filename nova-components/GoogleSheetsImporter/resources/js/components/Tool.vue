@@ -60,7 +60,7 @@
                     .post('/nova-vendor/google-sheets-importer/sync')
                     .then(() => {
                         this.$toasted.success(this.__('syncing_in_progress'));
-                        setTimeout(this.refresh, 1000);
+                        setTimeout(this.refresh, 2000);
                     })
                     .catch(err => {
                         this.$toasted.success(this.__('please_check_config'));

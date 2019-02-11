@@ -1,19 +1,19 @@
 <template>
-    <div>
+    <div class="mt-6">
         <div class="flex">
-            <heading class="mb-6 flex-no-shrink">{{ __('jetsoft_shopconnector') }}</heading>
+            <heading class="my-6 flex-no-shrink">{{__('ftp_sync')}}</heading>
 
-            <div class="w-full flex items-center mb-6">
+            <div class="w-full flex items-center my-6">
                 <div class="flex w-full justify-end items-center mx-3"></div>
                 <div class="flex-no-shrink ml-auto">
-                    <router-link to="/jetsoft-shopconnector/configure"
-                        class="btn btn-default btn-primary">{{ __('configuration') }}</router-link>
+                    <router-link to="/xml-importer/ftp/configure" class="btn btn-default btn-primary">
+                        {{ __('configure_ftp') }}
+                    </router-link>
                 </div>
             </div>
         </div>
 
         <card class="flex flex-col p-8">
-
             <div class="flex my-4">
                 <div class="w-1/4 font-bold">{{ __('last_update') }}</div>
                 <div class="w-3/4">{{ lastUpdate }}</div>
@@ -32,52 +32,56 @@
             <div class="flex my-4">
                 <div class="w-3/4 ml-auto">
                     <button type="button"
-                        class="btn btn-default btn-primary"
-                        @click="sync">{{ __('sync_now') }}</button>
+                            class="btn btn-default btn-primary"
+                            @click="sync">{{ __('sync_now') }}
+                    </button>
                     <button type="button"
-                        class="btn btn-default btn-primary"
-                        @click="refresh">{{ __('refresh_status') }}</button>
+                            class="btn btn-default btn-primary"
+                            @click="refresh">{{ __('refresh_status') }}
+                    </button>
                 </div>
             </div>
-
         </card>
     </div>
 </template>
 
 <script>
     export default {
-        data: () => ({
-            lastUpdate: null,
-            duration: null,
-            status: null,
-        }),
-
+        data() {
+            return {
+                lastUpdate: null,
+                duration: null,
+                status: null,
+                modalOpen: false,
+                validationResponse: null,
+            };
+        },
         methods: {
             sync() {
                 Nova.request()
-                    .post('/nova-vendor/jetsoft-shopconnector/sync')
+                    .post('/nova-vendor/xml-importer/ftp/sync')
                     .then(() => {
                         this.$toasted.success(this.__('syncing_in_progress'));
                         setTimeout(this.refresh, 2000);
                     })
                     .catch(err => {
-                        this.$toasted.error(this.__('please_check_config'));
+                        this.$toasted.error(err);
                     });
             },
 
             refresh() {
                 Nova.request()
-                    .get('/nova-vendor/jetsoft-shopconnector/status')
-                    .then(({ data }) => {
+                    .get('/nova-vendor/xml-importer/ftp/status')
+                    .then(({data}) => {
                         this.lastUpdate = data.payload.lastUpdate;
                         this.duration = data.payload.duration;
                         this.status = data.payload.status;
                     });
-            },
+            }
         },
-
         created() {
             this.refresh();
         },
     };
 </script>
+

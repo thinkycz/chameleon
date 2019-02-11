@@ -3,7 +3,7 @@
 namespace Nulisec\XmlImporter\Jobs;
 
 use App\Abstracts\SyncJob;
-use App\Models\Store;
+use App\Models\Setting;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Storage;
 
@@ -29,31 +29,19 @@ class SyncXmlFromEndpoint extends SyncJob implements ShouldQueue
      */
     protected $endpoint;
 
-    /**
-     * @var bool
-     */
-    protected $resyncPhotos;
-
-    public function __construct(Store $store, $resyncPhotos = false)
-    {
-        parent::__construct($store);
-
-        $this->resyncPhotos = $resyncPhotos;
-    }
-
     protected function prepare()
     {
         parent::prepare();
 
-        $this->settings = $this->store->loadDataObject('xml_importer_endpoint_settings');
-        $this->endpoint = $this->settings->endpoint_url;
+        $this->settings = Setting::loadConfiguration('xml_importer_endpoint_settings');
+        $this->endpoint = $this->settings['endpoint_url'];
     }
 
     public function handle()
     {
         $this->prepare();
 
-        dispatch(new ProcessXmlFile($this->getFile(), $this->store, $this->resyncPhotos))->onConnection('sync');
+        dispatch(new ProcessXmlFile($this->getFile()))->onConnection('sync');
 
         $this->logJobSucceeded();
     }
@@ -65,7 +53,7 @@ class SyncXmlFromEndpoint extends SyncJob implements ShouldQueue
 
     private function getFile()
     {
-        $path = "xml_importer/{$this->store->id}";
+        $path = "xml_importer";
         Storage::disk('local')->createDir($path);
         $file = Storage::disk('local')->path("{$path}/endpoint.xml");
 

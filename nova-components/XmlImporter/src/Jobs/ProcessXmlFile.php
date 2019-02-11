@@ -59,7 +59,9 @@ class ProcessXmlFile extends SyncJob implements ShouldQueue
     {
         $this->data = $data;
 
-        $product = Product::updateOrCreate([$this->settings['identifier'] => $data[$this->settings['identifier']]], $data);
+        $identifier = $this->settings['identifier'];
+
+        $product = Product::updateOrCreate([$identifier => $data[$identifier]], $data);
 
         $this->handleProductCategories($product)
             ->handleProductStock($product)

@@ -29447,7 +29447,7 @@ var render = function() {
                     _vm._v(_vm._s(_vm.__("barcode")))
                   ]),
                   _vm._v(" "),
-                  _c("option", { attrs: { value: "catalogueNumber" } }, [
+                  _c("option", { attrs: { value: "catalogue_number" } }, [
                     _vm._v(_vm._s(_vm.__("catalogue_number")))
                   ])
                 ]

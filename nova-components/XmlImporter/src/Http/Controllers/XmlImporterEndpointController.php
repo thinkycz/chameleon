@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use App\Services\SyncStatus;
 use Illuminate\Http\Request;
-use Nulisec\XmlImporter\Jobs\ProcessXmlFile;
+use Nulisec\XmlImporter\Jobs\SyncXmlFromEndpoint;
 
 class XmlImporterEndpointController extends Controller
 {
@@ -26,7 +26,7 @@ class XmlImporterEndpointController extends Controller
 
     public function sync()
     {
-        $this->dispatch(new ProcessXmlFile($filePath));
+        $this->dispatch(new SyncXmlFromEndpoint());
 
         return $this->ajaxWithPayload([]);
     }

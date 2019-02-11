@@ -8,7 +8,8 @@
     "license": "MIT",
     "require": {
         "php": ">=7.1.0",
-        "prewk/xml-string-streamer": "^0.11.0"
+        "prewk/xml-string-streamer": "^0.11.0",
+        "anchu/ftp": "~2.0"
     },
     "autoload": {
         "psr-4": {
@@ -18,7 +19,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Nulisec\\XmlImporter\\ToolServiceProvider"
+                "Nulisec\\XmlImporter\\ToolServiceProvider",
+                "Anchu\\Ftp\\FtpServiceProvider"
             ]
         }
     },

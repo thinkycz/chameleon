@@ -2,9 +2,9 @@
 
 namespace Nulisec\XmlImporter\Jobs;
 
-use App\Abstracts\SyncJob;
 use Anchu\Ftp\Facades\Ftp;
-use App\Models\Store;
+use App\Abstracts\SyncJob;
+use App\Models\Setting;
 use Config;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Storage;
@@ -32,23 +32,11 @@ class SyncXmlFromFtp extends SyncJob implements ShouldQueue
      */
     protected $settings;
 
-    /**
-     * @var bool
-     */
-    protected $resyncPhotos;
-
-    public function __construct(Store $store, $resyncPhotos = false)
-    {
-        parent::__construct($store);
-
-        $this->resyncPhotos = $resyncPhotos;
-    }
-
     protected function prepare()
     {
         parent::prepare();
 
-        $this->settings = $this->store->loadDataObject('xml_importer_ftp_settings');
+        $this->settings = Setting::loadConfiguration('xml_importer_ftp_settings');
         $this->ftpconnection = $this->createConnection();
     }
 
@@ -60,7 +48,7 @@ class SyncXmlFromFtp extends SyncJob implements ShouldQueue
 
         if (!$path) throw new \Exception('Could not download XML file from FTP');
 
-        dispatch(new ProcessXmlFile($path, $this->store, $this->resyncPhotos))->onConnection('sync');
+        dispatch(new ProcessXmlFile($path))->onConnection('sync');
 
         $this->logJobSucceeded();
     }
@@ -72,8 +60,8 @@ class SyncXmlFromFtp extends SyncJob implements ShouldQueue
 
     private function download()
     {
-        $filename = basename($this->settings->ftp_filepath);
-        $path = "xml_importer/{$this->store->id}";
+        $filename = basename($this->settings['ftp_filepath']);
+        $path = "xml_importer";
         $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
         if (!in_array($extension, ['xml', 'zip'])) return false;
@@ -81,7 +69,7 @@ class SyncXmlFromFtp extends SyncJob implements ShouldQueue
         $destination = Storage::disk('local')->path("{$path}/{$filename}");
 
         Storage::disk('local')->createDir($path);
-        if (!Ftp::connection($this->ftpconnection)->downloadFile($this->settings->ftp_filepath, $destination)) return false;
+        if (!Ftp::connection($this->ftpconnection)->downloadFile($this->settings['ftp_filepath'], $destination)) return false;
 
         if ($extension == 'zip') {
             $this->unzip($destination);
@@ -104,11 +92,11 @@ class SyncXmlFromFtp extends SyncJob implements ShouldQueue
 
     private function createConnection()
     {
-        return tap("store.{$this->store->id}", function ($connection) {
+        return tap("xml_ftp_sync", function ($connection) {
             Config::set("ftp.connections.$connection", [
-                'host'     => $this->settings->ftp_host,
-                'username' => $this->settings->ftp_username,
-                'password' => $this->settings->ftp_password,
+                'host'     => $this->settings['ftp_host'],
+                'username' => $this->settings['ftp_username'],
+                'password' => $this->settings['ftp_password'],
                 'passive'  => true
             ]);
         });

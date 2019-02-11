@@ -50,7 +50,7 @@
                                 required="required"
                                 class="w-full form-control form-select">
                             <option value="barcode" selected>{{ __('barcode') }}</option>
-                            <option value="catalogueNumber">{{ __('catalogue_number') }}</option>
+                            <option value="catalogue_number">{{ __('catalogue_number') }}</option>
                         </select>
                     </div>
                 </div>

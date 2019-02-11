@@ -1,6 +1,15 @@
 <template>
     <div>
-        <h1 class="mb-6 text-90 font-normal text-2xl">{{ __('latest_orders') }}</h1>
+        <div class="flex">
+            <h1 class="my-6 text-90 font-normal text-2xl flex-no-shrink">{{ __('latest_orders') }}</h1>
+            <div class="w-full flex items-center my-6">
+                <div class="flex w-full justify-end items-center mx-3"></div>
+                <div class="flex-no-shrink ml-auto">
+                    <router-link to="/resources/orders" class="btn btn-default btn-primary">{{ __('all_orders') }}</router-link>
+                </div>
+            </div>
+        </div>
+
         <loading-card ref="card"
             :loading="loading"
             class="card relative border border-lg border-50 overflow-hidden px-0 py-0">
@@ -15,7 +24,7 @@
                     <thead>
                         <tr>
                             <th class="text-left"><span>{{ __('order_order_number') }}</span></th>
-                            <th class="text-left"><span>{{ __('placed_at') }}</span></th>
+                            <th class="text-left"><span>{{ __('order_placed') }}</span></th>
                             <th class="text-left"><span>{{ __('order_user') }}</span></th>
                             <th class="text-left"><span>{{ __('order_email') }}</span></th>
                             <th class="text-left"><span>{{ __('order_phone') }}</span></th>

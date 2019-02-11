@@ -304,6 +304,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -346,8 +355,34 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h1", { staticClass: "mb-6 text-90 font-normal text-2xl" }, [
-        _vm._v(_vm._s(_vm.__("latest_orders")))
+      _c("div", { staticClass: "flex" }, [
+        _c(
+          "h1",
+          { staticClass: "my-6 text-90 font-normal text-2xl flex-no-shrink" },
+          [_vm._v(_vm._s(_vm.__("latest_orders")))]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-full flex items-center my-6" }, [
+          _c("div", {
+            staticClass: "flex w-full justify-end items-center mx-3"
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "flex-no-shrink ml-auto" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: { to: "/resources/orders" }
+                },
+                [_vm._v(_vm._s(_vm.__("all_orders")))]
+              )
+            ],
+            1
+          )
+        ])
       ]),
       _vm._v(" "),
       _c(
@@ -387,7 +422,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-left" }, [
-                        _c("span", [_vm._v(_vm._s(_vm.__("placed_at")))])
+                        _c("span", [_vm._v(_vm._s(_vm.__("order_placed")))])
                       ]),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-left" }, [

@@ -16,6 +16,8 @@ class CardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'latest-users');
+
         $this->app->booted(function () {
             $this->routes();
         });

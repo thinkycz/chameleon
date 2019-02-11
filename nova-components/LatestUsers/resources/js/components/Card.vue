@@ -1,11 +1,19 @@
 <template>
     <div>
-        <h1 class="mb-6 text-90 font-normal text-2xl">{{ __('latest_users') }}</h1>
+        <div class="flex">
+            <h1 class="my-6 text-90 font-normal text-2xl flex-no-shrink">{{ __('latest_users') }}</h1>
+            <div class="w-full flex items-center my-6">
+                <div class="flex w-full justify-end items-center mx-3"></div>
+                <div class="flex-no-shrink ml-auto">
+                    <router-link to="/resources/users" class="btn btn-default btn-primary">{{ __('all_users') }}</router-link>
+                </div>
+            </div>
+        </div>
+
         <loading-card ref="card"
             :loading="loading"
             class="card relative border border-lg border-50 overflow-hidden px-0 py-0">
-            <div v-if="loading"
-                style="height: 100px" />
+            <div v-if="loading" style="height: 100px" />
 
             <div class="overflow-hidden overflow-x-auto relative">
                 <table cellpadding="0"
@@ -20,7 +28,7 @@
                             <th class="text-left"><span>{{ __('order_email') }}</span></th>
                             <th class="text-left"><span>{{ __('order_phone') }}</span></th>
                             <th class="text-left"><span>{{ __('user_price_level') }}</span></th>
-                            <th class="text-left"><span>{{ __('user_is_active') }}</span></th>
+                            <th class="text-center"><span>{{ __('user_is_active') }}</span></th>
                         </tr>
                     </thead>
                     <tbody>

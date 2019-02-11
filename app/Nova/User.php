@@ -59,6 +59,26 @@ class User extends Resource
     ];
 
     /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('resources.users');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('resources.user');
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -113,7 +133,7 @@ class User extends Resource
 
             DateTime::make('Activated At')->hideFromIndex(),
 
-            HasMany::make('Addresses'),
+            HasMany::make('Addresses')->singularLabel(__('resources.address')),
 
             BelongsToMany::make('Roles', 'roles', Role::class),
         ];

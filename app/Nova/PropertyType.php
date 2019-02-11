@@ -35,9 +35,24 @@ class PropertyType extends Resource
      */
     public static $search = ['name_v'];
 
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
     public static function label()
     {
-        return 'Property Types';
+        return __('resources.property_types');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('resources.property_type');
     }
 
     /**

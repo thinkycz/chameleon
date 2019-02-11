@@ -36,9 +36,24 @@ class PaymentMethod extends Resource
      */
     public static $search = ['name_v'];
 
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
     public static function label()
     {
-        return 'Payment Methods';
+        return __('resources.payment_methods');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('resources.payment_method');
     }
 
     /**

@@ -58,6 +58,26 @@ class Product extends Resource
         'catalogue_number',
     ];
 
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('resources.products');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('resources.product');
+    }
+
     public function subtitle()
     {
         if ($this->barcode) {

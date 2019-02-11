@@ -36,9 +36,24 @@ class PriceLevel extends Resource
      */
     public static $search = ['name_v'];
 
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
     public static function label()
     {
-        return 'Price Levels';
+        return __('resources.price_levels');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('resources.price_level');
     }
 
     /**

@@ -75,10 +75,12 @@ class ProcessXmlFile extends SyncJob implements ShouldQueue
     protected function handleProductCategories(Product $product)
     {
         $categories = explode('|', $this->data['category']);
+        $categoryName = trim(end($categories));
 
-        $category = Category::firstOrCreate(['name' => trim(end($categories))]);
-
-        $product->categories()->sync($category->id);
+        if ($categoryName) {
+            $category = Category::firstOrCreate(['name' => $categoryName]);
+            $product->categories()->sync($category->id);
+        }
 
         return $this;
     }

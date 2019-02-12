@@ -73,31 +73,31 @@ class Address extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Company Name'),
+            Text::make(__('resources.company_name'), 'company_name'),
 
-            Text::make('First Name'),
+            Text::make(__('resources.first_name'), 'first_name'),
 
-            Text::make('Last Name'),
+            Text::make(__('resources.last_name'), 'last_name'),
 
-            Place::make('Street')
+            Place::make(__('resources.street'), 'street')
                 ->city('city')
                 ->postalCode('zipcode'),
 
-            Text::make('City'),
+            Text::make(__('resources.city'), 'city'),
 
-            Text::make('Zipcode'),
+            Text::make(__('resources.zipcode'), 'zipcode'),
 
-            PhoneNumber::make('Phone'),
+            PhoneNumber::make(__('resources.phone'), 'phone'),
 
-            Text::make('Company ID'),
+            Text::make(__('resources.company_id'), 'company_id'),
 
-            Text::make('VAT ID'),
+            Text::make(__('resources.vat_id'), 'vat_id'),
 
-            Boolean::make('Is Default'),
+            Boolean::make(__('resources.is_default'), 'is_default'),
 
-            BelongsTo::make('Country')->searchable(),
+            BelongsTo::make(__('resources.country'), 'country', Country::class)->searchable(),
 
-            BelongsTo::make('User')->searchable(),
+            BelongsTo::make(__('resources.user'), 'user', User::class)->searchable(),
         ];
     }
 

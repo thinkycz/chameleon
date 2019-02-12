@@ -139,6 +139,7 @@ class UserResource extends Resource
     {
         return [
             new UserLens,
+            new GroupingUserLens,
             new PaginatingUserLens,
         ];
     }
@@ -170,6 +171,8 @@ class UserResource extends Resource
                 return false;
             }),
             new UpdateStatusAction,
+            new NoopActionWithoutActionable,
+            new HandleResultAction,
         ];
     }
 
@@ -186,8 +189,16 @@ class UserResource extends Resource
                 return $_SERVER['nova.idFilter.canSee'] ?? true;
             }),
 
+            (new CustomKeyFilter)->canSee(function ($request) {
+                return $_SERVER['nova.customKeyFilter.canSee'] ?? true;
+            }),
+
             (new ColumnFilter('id'))->canSee(function ($request) {
                 return $_SERVER['nova.columnFilter.canSee'] ?? true;
+            }),
+
+            (new CreateDateFilter)->firstDayOfWeek(4)->canSee(function ($request) {
+                return $_SERVER['nova.dateFilter.canSee'] ?? true;
             }),
         ];
     }

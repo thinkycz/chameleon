@@ -100,31 +100,31 @@ class Product extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name'),
+            Text::make(__('resources.name'), 'name'),
 
-            Text::make('Slug')->onlyOnDetail(),
+            Text::make(__('resources.slug'), 'slug')->onlyOnDetail(),
 
-            Textarea::make('Description'),
+            Textarea::make(__('resources.description'), 'description'),
 
-            Trix::make('Details'),
+            Trix::make(__('resources.details'), 'details'),
 
-            Number::make('VAT Rate', 'vatrate')->hideFromIndex(),
+            Number::make(__('resources.vat_rate'), 'vatrate')->hideFromIndex(),
 
-            BelongsTo::make('Parent', 'parent', static::class)->nullable()->searchable()->hideFromIndex(),
+            BelongsTo::make(__('resources.parent'), 'parent', Product::class)->nullable()->searchable()->hideFromIndex(),
 
-            new Panel('Inventory Options', $this->inventoryOptionsFields()),
+            new Panel(__('resources.inventory_options'), $this->inventoryOptionsFields()),
 
-            new Panel('Stock Options', $this->stockOptionsFields()),
+            new Panel(__('resources.stock_options'), $this->stockOptionsFields()),
 
-            Boolean::make('Enabled'),
+            Boolean::make(__('resources.enabled')),
 
-            BelongsToMany::make('Categories'),
+            BelongsToMany::make(__('resources.categories'), 'categories', Category::class),
 
-            HasMany::make('Prices'),
+            HasMany::make(__('resources.prices'), 'prices', Price::class),
 
-            HasMany::make('Properties'),
+            HasMany::make(__('resources.properties'), 'properties', Property::class),
 
-            DropzoneField::make('Product Images')->onlyOnDetail(),
+            DropzoneField::make(__('resources.images'))->onlyOnDetail(),
 
 //            HasMany::make('Subproducts', 'children', static::class),
 
@@ -135,26 +135,26 @@ class Product extends Resource
     protected function stockOptionsFields()
     {
         return [
-            Number::make('Quantity In Stock'),
+            Number::make(__('resources.quantity_in_stock'), 'quantity_in_stock'),
 
-            Number::make('Minimum Order Quantity')->hideFromIndex(),
+            Number::make(__('resources.minimum_order_quantity'), 'minimum_order_quantity')->hideFromIndex(),
 
-            Boolean::make('Multiply of MOQ only'),
+            Boolean::make(__('resources.multiply_of_moq_only'), 'multiply_of_moq_only'),
 
-            BelongsTo::make('Availability'),
+            BelongsTo::make(__('resources.availability'), 'availability', Availability::class),
 
-            BelongsTo::make('Unit')->hideFromIndex(),
+            BelongsTo::make(__('resources.unit'), 'unit', Unit::class)->hideFromIndex(),
         ];
     }
 
     protected function inventoryOptionsFields()
     {
         return [
-            Text::make('Catalogue Number'),
+            Text::make(__('resources.catalogue_number'), 'catalogue_number'),
 
-            Text::make('Barcode'),
+            Text::make(__('resources.barcode'), 'Barcode'),
 
-            Tags::make('Tags')->hideFromIndex(),
+            Tags::make(__('resources.tags'), 'Tags')->hideFromIndex(),
         ];
     }
 

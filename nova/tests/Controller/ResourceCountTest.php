@@ -3,6 +3,7 @@
 namespace Laravel\Nova\Tests\Controller;
 
 use Laravel\Nova\Nova;
+use Laravel\Nova\Tests\Fixtures\Role;
 use Laravel\Nova\Tests\Fixtures\User;
 use Laravel\Nova\Tests\IntegrationTest;
 use Laravel\Nova\Tests\Fixtures\IdFilter;
@@ -31,12 +32,12 @@ class ResourceCountTest extends IntegrationTest
 
     public function test_can_count_a_resource_via_search()
     {
-        factory(User::class)->create();
-        factory(User::class)->create();
-        factory(User::class)->create();
+        $user = factory(User::class)->create();
+        $user2 = factory(User::class)->create();
+        $user3 = factory(User::class)->create();
 
         $response = $this->withExceptionHandling()
-                        ->getJson('/nova-api/users/count?search=1');
+                        ->getJson('/nova-api/users/count?search='.$user->email);
 
         $response->assertStatus(200);
         $this->assertEquals(1, $response->original['count']);
@@ -60,5 +61,22 @@ class ResourceCountTest extends IntegrationTest
 
         $response->assertStatus(200);
         $this->assertEquals(1, $response->original['count']);
+    }
+
+    public function test_can_count_a_resource_with_grouping()
+    {
+        $roles = factory(Role::class, 2)->create();
+
+        factory(User::class, 3)
+           ->create()
+           ->each(function ($user) use ($roles) {
+               $user->roles()->sync($roles);
+           });
+
+        $response = $this->withExceptionHandling()
+                        ->getJson('/nova-api/grouped-users/count');
+
+        $response->assertStatus(200);
+        $this->assertEquals(3, $response->original['count']);
     }
 }

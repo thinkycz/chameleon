@@ -71,23 +71,23 @@ class Category extends Resource
     public function fields(Request $request)
     {
         return [
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            Text::make('Slug')->onlyOnDetail(),
+            Text::make(__('resources.slug'), 'slug')->onlyOnDetail(),
 
-            Number::make('Position'),
+            Number::make(__('resources.position'), 'position'),
 
-            Number::make('Products Count', function () {
+            Number::make(__('resources.products_count'), function () {
                 return $this->products->count();
             }),
 
-            BelongsTo::make('Parent', 'parent', static::class)->nullable()->searchable()->hideFromIndex(),
+            Boolean::make(__('resources.enabled'), 'enabled'),
 
-            HasMany::make('Subcategories', 'children', static::class),
+            BelongsTo::make(__('resources.parent'), 'parent', Category::class)->nullable()->searchable()->hideFromIndex(),
 
-            Boolean::make('Enabled'),
+            HasMany::make(__('resources.subcategories'), 'children', Category::class),
 
-            BelongsToMany::make('Products')
+            BelongsToMany::make(__('resources.products'), 'products', Product::class)
         ];
     }
 

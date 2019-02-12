@@ -352,16 +352,16 @@
         },
         {
             "name": "cakephp/chronos",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/chronos.git",
-                "reference": "395110125ff577f080fa064dca5c5608a4e77ee1"
+                "reference": "ebda7326d4a65e53bc5bb915ebbbeee98f1926b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/chronos/zipball/395110125ff577f080fa064dca5c5608a4e77ee1",
-                "reference": "395110125ff577f080fa064dca5c5608a4e77ee1",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/ebda7326d4a65e53bc5bb915ebbbeee98f1926b0",
+                "reference": "ebda7326d4a65e53bc5bb915ebbbeee98f1926b0",
                 "shasum": ""
             },
             "require": {
@@ -405,7 +405,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-10-18T22:02:21+00:00"
+            "time": "2019-02-11T02:08:31+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -2330,16 +2330,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v2.0.3",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "104a43c49b77c9f3b6b378d8d3d0514ceef6723f"
+                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/104a43c49b77c9f3b6b378d8d3d0514ceef6723f",
-                "reference": "104a43c49b77c9f3b6b378d8d3d0514ceef6723f",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
+                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
                 "shasum": ""
             },
             "require": {
@@ -2394,7 +2394,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-01-22T14:26:48+00:00"
+            "time": "2019-02-11T18:25:13+00:00"
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -2459,22 +2459,22 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "6b34fd3882e3cff2dc99d288393e92025bc93094",
+                "reference": "2eaed30cbaac85b72bfe6e2e5d6bed416e5913a2",
                 "shasum": null
             },
             "require": {
-                "cakephp/chronos": "~1.0",
+                "cakephp/chronos": "^1.0",
                 "illuminate/support": "5.6.*|5.7.*",
                 "moontoast/math": "^1.1",
                 "php": ">=7.1.0",
                 "spatie/once": "^1.1",
-                "symfony/finder": "~4.0"
+                "symfony/finder": "^4.0"
             },
             "require-dev": {
-                "mockery/mockery": "~1.0",
+                "mockery/mockery": "^1.0",
                 "orchestra/database": "3.7.*",
                 "orchestra/testbench": "3.7.*",
-                "phpunit/phpunit": "~7.0",
+                "phpunit/phpunit": "^7.0",
                 "predis/predis": "^1.1"
             },
             "type": "library",

@@ -72,29 +72,29 @@ class BillingDetail extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Company Name'),
+            Text::make(__('resources.company_name'), 'Company Name'),
 
-            Text::make('First Name'),
+            Text::make(__('resources.first_name'), 'First Name'),
 
-            Text::make('Last Name'),
+            Text::make(__('resources.last_name'), 'Last Name'),
 
-            Place::make('Street')
+            Place::make(__('resources.street'), 'Street')
                 ->city('city')
                 ->postalCode('zipcode'),
 
-            Text::make('City'),
+            Text::make(__('resources.city'), 'City'),
 
-            Text::make('Zipcode'),
+            Text::make(__('resources.zipcode'), 'Zipcode'),
 
-            PhoneNumber::make('Phone'),
+            PhoneNumber::make(__('resources.phone'), 'Phone'),
 
-            Text::make('Company ID'),
+            Text::make(__('resources.company_id'), 'Company ID'),
 
-            Text::make('VAT ID'),
+            Text::make(__('resources.vat_id'), 'VAT ID'),
 
-            BelongsTo::make('Country')->searchable(),
+            BelongsTo::make(__('resources.country'), 'country', Country::class)->searchable(),
 
-            BelongsTo::make('User')->searchable()
+            BelongsTo::make(__('resources.user'), 'user', User::class)->searchable()
         ];
     }
 

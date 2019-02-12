@@ -3,12 +3,12 @@
 namespace Laravel\Nova;
 
 use Illuminate\Support\Carbon;
+use Laravel\Nova\Tools\Dashboard;
+use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Nova\Actions\ActionResource;
-use Laravel\Nova\Events\ServingNova;
-use Laravel\Nova\Tools\Dashboard;
 use Laravel\Nova\Tools\ResourceManager;
+use Laravel\Nova\Actions\ActionResource;
 
 class NovaServiceProvider extends ServiceProvider
 {
@@ -39,27 +39,27 @@ class NovaServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         $this->publishes([
-            __DIR__ . '/Console/stubs/NovaServiceProvider.stub' => app_path('Providers/NovaServiceProvider.php'),
+            __DIR__.'/Console/stubs/NovaServiceProvider.stub' => app_path('Providers/NovaServiceProvider.php'),
         ], 'nova-provider');
 
         $this->publishes([
-            __DIR__ . '/../config/nova.php' => config_path('nova.php'),
+            __DIR__.'/../config/nova.php' => config_path('nova.php'),
         ], 'nova-config');
 
         $this->publishes([
-            __DIR__ . '/../public' => public_path('vendor/nova'),
+            __DIR__.'/../public' => public_path('vendor/nova'),
         ], 'nova-assets');
 
         $this->publishes([
-            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/nova'),
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/nova'),
         ], 'nova-lang');
 
         $this->publishes([
-            __DIR__ . '/../resources/views/partials' => resource_path('views/vendor/nova/partials'),
+            __DIR__.'/../resources/views/partials' => resource_path('views/vendor/nova/partials'),
         ], 'nova-views');
 
         $this->publishes([
-            __DIR__ . '/../database/migrations' => database_path('migrations'),
+            __DIR__.'/../database/migrations' => database_path('migrations'),
         ], 'nova-migrations');
     }
 
@@ -70,12 +70,12 @@ class NovaServiceProvider extends ServiceProvider
      */
     protected function registerResources()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova');
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'nova');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'nova');
         $this->loadJsonTranslationsFrom(resource_path('lang/vendor/nova'));
 
         if (Nova::runsMigrations()) {
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+            $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         }
 
         $this->registerRoutes();
@@ -89,7 +89,7 @@ class NovaServiceProvider extends ServiceProvider
     protected function registerRoutes()
     {
         Route::group($this->routeConfiguration(), function () {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+            $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         });
     }
 
@@ -101,10 +101,10 @@ class NovaServiceProvider extends ServiceProvider
     protected function routeConfiguration()
     {
         return [
-            'namespace'  => 'Laravel\Nova\Http\Controllers',
-            'domain'     => config('nova.domain', null),
-            'as'         => 'nova.api.',
-            'prefix'     => 'nova-api',
+            'namespace' => 'Laravel\Nova\Http\Controllers',
+            'domain' => config('nova.domain', null),
+            'as' => 'nova.api.',
+            'prefix' => 'nova-api',
             'middleware' => 'nova',
         ];
     }
@@ -142,7 +142,7 @@ class NovaServiceProvider extends ServiceProvider
     {
         Nova::serving(function (ServingNova $event) {
             Nova::provideToScript([
-                'timezone'     => config('app.timezone', 'UTC'),
+                'timezone' => config('app.timezone', 'UTC'),
                 'translations' => $this->getTranslations(),
                 'userTimezone' => Nova::resolveUserTimezone($event->request),
             ]);
@@ -185,25 +185,12 @@ class NovaServiceProvider extends ServiceProvider
      */
     private static function getTranslations()
     {
-        $locale = app()->getLocale();
-        $translationFile = resource_path("lang/vendor/nova/{$locale}.json");
+        $translationFile = resource_path('lang/vendor/nova/'.app()->getLocale().'.json');
 
-        $strings = [];
-
-        if (is_readable($translationFile)) {
-            $strings = json_decode(file_get_contents($translationFile), true);
+        if (! is_readable($translationFile)) {
+            return [];
         }
 
-        $packageDirectoriesPath = realpath(base_path('nova-components'));
-
-        foreach (glob("{$packageDirectoriesPath}/*", GLOB_ONLYDIR) as $package) {
-            $translationFile = "{$package}/resources/lang/{$locale}.json";
-
-            if (is_readable($translationFile)) {
-                $strings = array_merge($strings, json_decode(file_get_contents($translationFile), true));
-            }
-        }
-
-        return $strings;
+        return json_decode(file_get_contents($translationFile), true);
     }
 }

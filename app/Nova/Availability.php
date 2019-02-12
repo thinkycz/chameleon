@@ -67,15 +67,15 @@ class Availability extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            TranslatableTextarea::make('Description'),
+            TranslatableTextarea::make(__('resources.description'), 'description'),
 
-            Boolean::make('Allow Orders'),
+            Boolean::make(__('resources.allow_orders'), 'allow_orders'),
 
-            Boolean::make('Allow Negative Quantity'),
+            Boolean::make(__('resources.allow_negative_quantity'), 'allow_negative_quantity'),
 
-            Boolean::make('Products Visible'),
+            Boolean::make(__('resources.products_visible'), 'products_visible'),
         ];
     }
 

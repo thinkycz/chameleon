@@ -67,17 +67,17 @@ class Currency extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            Text::make('ISO Code', 'isocode'),
+            Text::make(__('resources.isocode3'), 'isocode'),
 
-            Text::make('Symbol'),
+            Text::make(__('resources.symbol'), 'symbol'),
 
-            Number::make('Exchange Rate')->step(0.01),
+            Number::make(__('resources.exchange_rate'), 'exchange_rate')->step(0.01),
 
-            Boolean::make('Symbol Is Before')->hideFromIndex(),
+            Boolean::make(__('resources.symbol_is_before'), 'symbol_is_before')->hideFromIndex(),
 
-            Boolean::make('Enabled'),
+            Boolean::make(__('resources.enabled'), 'enabled'),
         ];
     }
 

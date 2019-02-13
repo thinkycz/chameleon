@@ -68,27 +68,27 @@ class Coupon extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Code'),
+            Text::make(__('resources.code'), 'code'),
 
-            Text::make('Type'),
+            Text::make(__('resources.type'), 'type'),
 
-            Textarea::make('Description'),
+            Textarea::make(__('resources.description'), 'description'),
 
-            Code::make('Parameters')->json(),
+            Code::make(__('resources.parameters'), 'parameters')->json(),
 
-            Number::make('Times Used'),
+            Number::make(__('resources.times_used'), 'times_used'),
 
-            Number::make('Max Usage'),
+            Number::make(__('resources.max_usage'), 'max_usage'),
 
-            Date::make('Valid From'),
+            Date::make(__('resources.valid_from'), 'valid_from'),
 
-            Date::make('Valid To'),
+            Date::make(__('resources.valid_to'), 'valid_to'),
 
-            Boolean::make('Enabled'),
+            Boolean::make(__('resources.enabled'), 'enabled'),
 
-            Boolean::make('Once Per User'),
+            Boolean::make(__('resources.once_per_user'), 'once_per_user'),
 
-            Boolean::make('Can Be Combined'),
+            Boolean::make(__('resources.can_be_combined'), 'can_be_combined'),
         ];
     }
 

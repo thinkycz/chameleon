@@ -68,9 +68,9 @@ class Unit extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            TranslatableText::make('Abbreviation', 'abbr'),
+            TranslatableText::make(__('resources.abbr'), 'abbr'),
         ];
     }
 

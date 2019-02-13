@@ -67,13 +67,13 @@ class Country extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            Text::make('ISO Code 2', 'isocode2'),
+            Text::make(__('resources.isocode2'), 'isocode2'),
 
-            Text::make('ISO Code 3', 'isocode3'),
+            Text::make(__('resources.isocode3'), 'isocode3'),
 
-            Boolean::make('Enabled'),
+            Boolean::make(__('resources.enabled'), 'enabled'),
 
         ];
     }

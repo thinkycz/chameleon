@@ -68,19 +68,19 @@ class DeliveryMethod extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            Number::make('Price'),
+            Number::make(__('resources.price'), 'price'),
 
-            Number::make('Minimal Order Amount'),
+            Number::make(__('resources.minimal_order_amount'), 'minimal_order_amount'),
 
-            Boolean::make('Needs Shipping Address'),
+            Boolean::make(__('resources.needs_shipping_address'), 'needs_shipping_address'),
 
-            Boolean::make('Price Will Be Calculated'),
+            Boolean::make(__('resources.price_will_be_calculated'), 'price_will_be_calculated'),
 
-            Boolean::make('Enabled'),
+            Boolean::make(__('resources.enabled'), 'enabled'),
 
-            HasMany::make('Payment Methods', 'paymentMethods'),
+            HasMany::make(__('resources.payment_methods'), 'paymentMethods', PaymentMethod::class),
         ];
     }
 

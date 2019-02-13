@@ -67,15 +67,15 @@ class Comment extends Resource
         return [
             ID::make()->sortable(),
 
-            Textarea::make('Content'),
+            Textarea::make(__('resources.content'), 'content'),
 
-            BelongsTo::make('Parent', 'parent', static::class)->nullable()->hideFromIndex(),
+            BelongsTo::make(__('resources.parent'), 'parent', Comment::class)->nullable()->hideFromIndex(),
 
-            HasMany::make('Subcomments', 'children', static::class),
+            HasMany::make(__('resources.subcomments'), 'children', Comment::class),
 
-            BelongsTo::make('Product'),
+            BelongsTo::make(__('resources.product'), 'product', Product::class),
 
-            BelongsTo::make('User'),
+            BelongsTo::make(__('resources.user'), 'user', User::class),
         ];
     }
 

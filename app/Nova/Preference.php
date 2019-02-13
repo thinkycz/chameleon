@@ -61,11 +61,11 @@ class Preference extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Name', function () { return $this->name; }),
+            Text::make(__('resources.name'), function () { return $this->name; }),
 
-            Text::make('Description', function () { return $this->description; })->onlyOnDetail(),
+            Text::make(__('resources.description'), function () { return $this->description; })->onlyOnDetail(),
 
-            MorphTo::make('Preferable')->types([
+            MorphTo::make(__('resources.preference'), 'preferable')->types([
                 Availability::class,
                 Country::class,
                 Currency::class,

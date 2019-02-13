@@ -63,13 +63,13 @@ class Price extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Product')->searchable(),
+            BelongsTo::make(__('resources.product'), 'product', Product::class)->searchable(),
 
-            BelongsTo::make('Price Level', 'priceLevel'),
+            BelongsTo::make(__('resources.price_level'), 'priceLevel', PriceLevel::class),
 
-            Currency::make('Price'),
+            Currency::make(__('resources.price'), 'price'),
 
-            Currency::make('Old Price'),
+            Currency::make(__('resources.old_price'), 'old_price'),
         ];
     }
 

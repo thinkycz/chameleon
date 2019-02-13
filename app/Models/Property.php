@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     protected $with = [
-        'property_type',
-        'property_value',
+        'propertyType',
+        'propertyValue',
     ];
 
     public function product()

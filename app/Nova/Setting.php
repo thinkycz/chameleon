@@ -64,17 +64,19 @@ class Setting extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Name', function () { return $this->name; }),
+            Text::make(__('resources.name'), function () { return $this->name; }),
 
-            JsonSchema::make('Data', $this->schema),
+            Text::make(__('resources.code'))->exceptOnForms()->sortable(),
 
-            Code::make('RAW Data', 'data')->json()
+            JsonSchema::make(__('resources.data'), $this->schema),
+
+            Code::make(__('resources.raw_data'), 'data')->json()
                 ->rules('json')
                 ->onlyOnDetail(),
 
-//            Code::make('Schema')->json()
-//                ->rules('json')
-//                ->hideWhenUpdating(),
+            Code::make(__('resources.schema'))->json()
+                ->rules('json')
+                ->hideWhenUpdating(),
 
             $this->getValue()->onlyOnIndex(),
         ];
@@ -83,9 +85,9 @@ class Setting extends Resource
     public function getValue()
     {
         if (is_bool($this->value)) {
-            return Boolean::make('Value', function () { return $this->value; });
+            return Boolean::make(__('resources.value'), function () { return $this->value; });
         } else {
-            return CenteredText::make('Value', function () { return $this->value; });
+            return CenteredText::make(__('resources.value'), function () { return $this->value; });
         }
     }
 

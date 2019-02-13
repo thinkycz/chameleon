@@ -66,13 +66,13 @@ class Property extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Product')->searchable(),
+            BelongsTo::make(__('resources.product'), 'product', Product::class)->searchable(),
 
-            BelongsTo::make('Property Type', 'propertyType')->searchable(),
+            BelongsTo::make(__('resources.property_type'), 'propertyType', PropertyType::class)->searchable(),
 
-            PropertyValue::make('Property Value'),
+            PropertyValue::make(__('resources.property_value'), 'propertyValue'),
 
-            Boolean::make('Is Option'),
+            Boolean::make(__('resources.is_option'), 'is_option'),
         ];
     }
 

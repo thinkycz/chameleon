@@ -59,7 +59,7 @@ class Tag extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Name')->sortable(),
+            Text::make(__('resources.name'), 'name')->sortable(),
         ];
     }
 

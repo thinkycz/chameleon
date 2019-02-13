@@ -62,11 +62,11 @@ class Page extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Title'),
+            Text::make(__('resources.title'), 'title'),
 
-            Text::make('Slug')->onlyOnDetail(),
+            Text::make(__('resources.slug'), 'slug')->onlyOnDetail(),
 
-            Trix::make('Content'),
+            Trix::make(__('resources.content'), 'content'),
         ];
     }
 

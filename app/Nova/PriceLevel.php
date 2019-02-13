@@ -67,15 +67,15 @@ class PriceLevel extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name'),
+            Text::make(__('resources.name'), 'name'),
 
-            Text::make('Import Code', 'import_code')->exceptOnForms(),
+            Text::make(__('resources.import_code'), 'import_code')->exceptOnForms(),
 
-            Boolean::make('Enabled'),
+            Boolean::make(__('resources.enabled'), 'enabled'),
 
-            Boolean::make('Has Quantity Discounts'),
+            Boolean::make(__('resources.has_quantity_discounts'), 'has_quantity_discounts'),
 
-            HasMany::make('Users'),
+            HasMany::make(__('resources.users'), 'users'),
         ];
     }
 

@@ -69,34 +69,34 @@ class OrderedItem extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Name'),
+            Text::make(__('resources.name'), 'name'),
 
-            Textarea::make('Description'),
+            Textarea::make(__('resources.description'), 'Description'),
 
-            Trix::make('Details'),
+            Trix::make(__('resources.details'), 'Details'),
 
-            Number::make('Quantity Ordered'),
+            Number::make(__('resources.quantity_ordered'), 'quantity_ordered'),
 
-            Currency::make('Price'),
+            Currency::make(__('resources.price'), 'price'),
 
-            Number::make('VAT Rate', 'vatrate'),
+            Number::make(__('resources.vat_rate'), 'vatrate'),
 
-            new Panel('Inventory Options', $this->inventoryOptionsFields()),
+            new Panel(__('resources.inventory_options'), $this->inventoryOptionsFields()),
 
-            BelongsTo::make('Order'),
+            BelongsTo::make(__('resources.order'), 'order', Order::class),
 
-            BelongsTo::make('Product'),
+            BelongsTo::make(__('resources.product'), 'product', Product::class),
 
-            Code::make('Options'),
+            Code::make(__('resources.options'), 'options'),
         ];
     }
 
     protected function inventoryOptionsFields()
     {
         return [
-            Text::make('Catalogue Number'),
+            Text::make(__('resources.catalogue_number'), 'catalogue_number'),
 
-            Text::make('Barcode'),
+            Text::make(__('resources.barcode'), 'barcode'),
         ];
     }
 

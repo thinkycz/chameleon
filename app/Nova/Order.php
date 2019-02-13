@@ -53,7 +53,7 @@ class Order extends Resource
 
     public function subtitle()
     {
-        return "Customer: {$this->user->name}";
+        return __('resources.customer') . ": {$this->user->name}";
     }
 
     /**
@@ -85,53 +85,53 @@ class Order extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Order Number'),
+            Text::make(__('resources.order_number'), 'order_number'),
 
-            Text::make('Invoice Number')->onlyOnDetail(),
+            Text::make(__('resources.invoice_number'), 'invoice_number')->onlyOnDetail(),
 
-            Text::make('Variable Symbol')->onlyOnDetail(),
+            Text::make(__('resources.variable_symbol'), 'variable_symbol')->onlyOnDetail(),
 
-            BelongsTo::make('Delivery Method', 'deliveryMethod')->onlyOnDetail(),
+            BelongsTo::make(__('resources.delivery_method'), 'deliveryMethod', DeliveryMethod::class)->onlyOnDetail(),
 
-            BelongsTo::make('Payment Method', 'paymentMethod')->onlyOnDetail(),
+            BelongsTo::make(__('resources.payment_method'), 'paymentMethod', PaymentMethod::class)->onlyOnDetail(),
 
-            new Panel('Dates', $this->datesFields()),
+            new Panel(__('resources.dates'), $this->datesFields()),
 
-            new Panel('Customer Details', $this->customerDetailsFields()),
+            new Panel(__('resources.customer_details'), $this->customerDetailsFields()),
 
-            BelongsTo::make('Status'),
+            BelongsTo::make(__('resources.status'), 'status', Status::class),
 
-            Textarea::make('Notes'),
+            Textarea::make(__('resources.notes'), 'notes'),
 
-            HasMany::make('Items', 'orderedItems', OrderedItem::class),
+            HasMany::make(__('resources.ordered_items'), 'orderedItems', OrderedItem::class),
         ];
     }
 
     protected function datesFields()
     {
         return [
-            Date::make('Placed At'),
+            Date::make(__('resources.placed_at'), 'placed_at'),
 
-            Date::make('Tax Date')->onlyOnDetail(),
+            Date::make(__('resources.tax_date'), 'tax_date')->onlyOnDetail(),
 
-            Date::make('Due Date')->onlyOnDetail(),
+            Date::make(__('resources.due_date'), 'due_date')->onlyOnDetail(),
         ];
     }
 
     protected function customerDetailsFields()
     {
         return [
-            BelongsTo::make('User')->searchable(),
+            BelongsTo::make(__('resources.user'), 'user', User::class)->searchable(),
 
-            Email::make('Email')->clickable(),
+            Email::make(__('resources.email'), 'email')->clickable(),
 
-            PhoneNumber::make('Phone'),
+            PhoneNumber::make(__('resources.phone'), 'phone'),
 
-            BelongsTo::make('Shipping Details', 'shippingDetail')->onlyOnDetail(),
+            BelongsTo::make(__('resources.shipping_details'), 'shippingDetail', ShippingDetail::class)->onlyOnDetail(),
 
-            BelongsTo::make('Billing Details', 'billingDetail')->onlyOnDetail(),
+            BelongsTo::make(__('resources.billing_details'), 'billingDetail', BillingDetail::class)->onlyOnDetail(),
 
-            Textarea::make('Customer Note'),
+            Textarea::make(__('resources.customer_note'), 'customer_note'),
         ];
     }
 
@@ -144,9 +144,9 @@ class Order extends Resource
     public function cards(Request $request)
     {
         return [
-            (new NumberOfOrders),
-            (new OrdersPerDay),
-            (new OrdersPerStatus),
+            (new NumberOfOrders()),
+            (new OrdersPerDay()),
+            (new OrdersPerStatus()),
         ];
     }
 

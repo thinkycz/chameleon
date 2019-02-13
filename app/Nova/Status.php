@@ -69,15 +69,15 @@ class Status extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            TranslatableTextarea::make('Description'),
+            TranslatableTextarea::make(__('resources.description'), 'description'),
 
-            Text::make('Code')->hideFromIndex(),
+            Text::make(__('resources.code'), 'code')->hideFromIndex(),
 
-            Color::make('Color'),
+            Color::make(__('resources.color'), 'color'),
 
-            Boolean::make('Is Final'),
+            Boolean::make(__('resources.is_final'), 'is_final'),
         ];
     }
 

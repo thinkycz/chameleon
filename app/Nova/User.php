@@ -89,53 +89,53 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Image::make('image')->hideFromIndex(),
+            Image::make(__('resources.image'), 'image')->hideFromIndex(),
 
-            Text::make('Name')
+            Text::make(__('resources.name'), 'name')
                 ->onlyOnIndex(),
 
-            Text::make('First Name')
+            Text::make(__('resources.first_name'), 'first_name')
                 ->sortable()
                 ->rules('required', 'max:255')
                 ->hideFromIndex(),
 
-            Text::make('Last Name')
+            Text::make(__('resources.last_name'), 'last_name')
                 ->sortable()
                 ->rules('required', 'max:255')
                 ->hideFromIndex(),
 
-            Date::make('Birth Date')
+            Date::make(__('resources.birth_date'), 'birth_date')
                 ->format('DD.MM.YYYY')
                 ->hideFromIndex(),
 
-            Email::make('Email')
+            Email::make(__('resources.email'), 'email')
                 ->sortable()
                 ->clickable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-            PhoneNumber::make('Phone'),
+            PhoneNumber::make(__('resources.phone'), 'phone'),
 
-            Select::make('Locale')
+            Select::make(__('resources.locale'), 'locale')
                 ->options(Locale::all())
                 ->displayUsingLabels()
                 ->hideFromIndex(),
 
-            Password::make('Password')
+            Password::make(__('resources.password'), 'password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
 
-            BelongsTo::make('Price Level', 'priceLevel'),
+            BelongsTo::make(__('resources.price_level'), 'priceLevel', PriceLevel::class),
 
-            Boolean::make('Is Active')->onlyOnIndex(),
+            Boolean::make(__('resources.is_active'), 'is_active')->onlyOnIndex(),
 
-            DateTime::make('Activated At')->hideFromIndex(),
+            DateTime::make(__('resources.activated_at'), 'activated_at')->hideFromIndex(),
 
-            HasMany::make('Addresses')->singularLabel(__('resources.address')),
+            HasMany::make(__('resources.addresses'), 'addresses', Address::class),
 
-            BelongsToMany::make('Roles', 'roles', Role::class),
+            BelongsToMany::make(__('resources.roles'), 'roles', Role::class),
         ];
     }
 

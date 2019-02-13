@@ -126,9 +126,9 @@ class Product extends Resource
 
             DropzoneField::make(__('resources.images'))->onlyOnDetail(),
 
-//            HasMany::make('Subproducts', 'children', static::class),
+//            HasMany::make(__('resources.subproducts'), 'children', Product::class),
 
-//            HasMany::make('Comments'),
+//            HasMany::make(__('resources.comments'), 'comments', Comment::class),
         ];
     }
 
@@ -152,9 +152,9 @@ class Product extends Resource
         return [
             Text::make(__('resources.catalogue_number'), 'catalogue_number'),
 
-            Text::make(__('resources.barcode'), 'Barcode'),
+            Text::make(__('resources.barcode'), 'barcode'),
 
-            Tags::make(__('resources.tags'), 'Tags')->hideFromIndex(),
+            Tags::make(__('resources.tags'), 'tags')->hideFromIndex(),
         ];
     }
 

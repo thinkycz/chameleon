@@ -66,11 +66,11 @@ class PropertyType extends Resource
         return [
             ID::make()->sortable(),
 
-            TranslatableText::make('Name'),
+            TranslatableText::make(__('resources.name'), 'name'),
 
-            Boolean::make('Is Hidden'),
+            Boolean::make(__('resources.is_hidden'), 'is_hidden'),
 
-            Boolean::make('Is Sortable'),
+            Boolean::make(__('resources.is_sortable'), 'is_sortable'),
         ];
     }
 

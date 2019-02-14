@@ -83,9 +83,9 @@ class OrderedItem extends Resource
 
             new Panel(__('resources.inventory_options'), $this->inventoryOptionsFields()),
 
-            BelongsTo::make(__('resources.order'), 'order', Order::class),
+            BelongsTo::make(__('resources.order'), 'order', Order::class)->searchable(),
 
-            BelongsTo::make(__('resources.product'), 'product', Product::class),
+            BelongsTo::make(__('resources.product'), 'product', Product::class)->searchable(),
 
             Code::make(__('resources.options'), 'options'),
         ];

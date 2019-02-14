@@ -6,14 +6,12 @@ abstract class Locale
 {
     const CZECH = 'cs';
     const ENGLISH = 'en';
-    const VIETNAMESE = 'vi';
 
     public static function all()
     {
         return [
             static::ENGLISH    => trans('global.locales.en'),
             static::CZECH      => trans('global.locales.cs'),
-            static::VIETNAMESE => trans('global.locales.vi'),
         ];
     }
 

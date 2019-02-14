@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Enums\Locale;
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
 class GenerateNovaStrings extends Command
@@ -23,12 +24,9 @@ class GenerateNovaStrings extends Command
     protected $description = 'Generates strings for Nova and Nova Packages.';
 
     /**
-     * Create a new command instance.
+     * @var Collection
      */
-    public function __construct()
-    {
-        parent::__construct();
-    }
+    protected $translations;
 
     /**
      * Execute the console command.
@@ -37,28 +35,39 @@ class GenerateNovaStrings extends Command
      */
     public function handle()
     {
-        $packageDirectories = $this->fetchPackageDirectories();
+        collect(Locale::codes())->each(function ($language) {
+            $this->translations = collect();
+            $path = resource_path("lang/vendor/nova/{$language}.json");
 
-        collect(Locale::codes())->each(function ($language) use ($packageDirectories) {
-            $this->generatePackageStrings($language, $packageDirectories);
+            $this->mergeBaseTranslations($language);
+            $this->generatePackageStrings($language);
             $this->generateGlobalStrings($language);
+
+            file_put_contents($path, $this->translations->toJson(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+            $this->info("{$path} was generated.");
         });
     }
 
-    private function generatePackageStrings($language, $packageDirectories)
+    private function mergeBaseTranslations($language)
     {
-        foreach ($packageDirectories as $directory) {
-            $path = "{$directory}/resources/lang/{$language}";
+        $translationFile = resource_path('lang/vendor/nova/base/'.$language.'.json');
+        $translations = is_readable($translationFile) ? json_decode(file_get_contents($translationFile), true) : [];
 
-            $this->generateStringsBasedOnPath($path, $directory);
+        $this->translations = $this->translations->merge($translations);
+    }
+
+    private function generatePackageStrings($language)
+    {
+        $packages = $this->fetchPackageDirectories();
+
+        foreach ($packages as $package) {
+            $this->generateStringsBasedOnPath("{$package}/resources/lang/{$language}", $package);
         }
     }
 
     private function generateGlobalStrings($language)
     {
-        $path = resource_path("lang/{$language}");
-
-        $this->generateStringsBasedOnPath($path);
+        $this->generateStringsBasedOnPath(resource_path("lang/{$language}"));
     }
 
     private function fetchPackageDirectories()
@@ -83,9 +92,6 @@ class GenerateNovaStrings extends Command
             });
         }
 
-        if ($translations->isNotEmpty()) {
-            file_put_contents("$path.json", $translations->toJson(JSON_PRETTY_PRINT));
-            $this->info("{$path}.json was generated.");
-        }
+        $this->translations = $this->translations->merge($translations);
     }
 }

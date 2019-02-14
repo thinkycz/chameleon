@@ -12,7 +12,6 @@ use Kristories\Novassport\Novassport;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
-use Laravel\Nova\Tools\Dashboard;
 use Nulisec\BulkImageUpload\BulkImageUpload;
 use Nulisec\GoogleSheetsImporter\GoogleSheetsImporter;
 use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
@@ -94,7 +93,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             (new JetsoftShopconnector()),
-//            (new HorizonLink()),
             (new NovaToolPermissions()),
             (new GoogleSheetsImporter()),
             (new XmlImporter()),

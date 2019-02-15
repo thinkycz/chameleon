@@ -14,7 +14,9 @@ class HomeController extends Controller
     public function index()
     {
         $homepage = settingsRepository()->getHomepage();
-        $categories = Category::withCount('products')->whereEnabled(true)->whereNull('parent_id')->get();
+        $categories = Category::with(['products' => function ($q) {
+            $q->inRandomOrder()->take(4);
+        }])->inRandomOrder()->whereEnabled(true)->whereNull('parent_id')->take(4)->get();
 
         $firstCategory = Category::findBySlugOrId($homepage['category_1']);
         $secondCategory = Category::findBySlugOrId($homepage['category_2']);

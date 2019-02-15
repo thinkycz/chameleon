@@ -243,16 +243,16 @@
         },
         {
             "name": "benjaminhirsch/nova-slug-field",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/benjaminhirsch/nova-slug-field.git",
-                "reference": "592fe6940758334b911fc6bdc191026ab0d6a2ba"
+                "reference": "6fa734c45d47e28095c5b221f68b69f2b0c00839"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benjaminhirsch/nova-slug-field/zipball/592fe6940758334b911fc6bdc191026ab0d6a2ba",
-                "reference": "592fe6940758334b911fc6bdc191026ab0d6a2ba",
+                "url": "https://api.github.com/repos/benjaminhirsch/nova-slug-field/zipball/6fa734c45d47e28095c5b221f68b69f2b0c00839",
+                "reference": "6fa734c45d47e28095c5b221f68b69f2b0c00839",
                 "shasum": ""
             },
             "require": {
@@ -288,7 +288,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2018-10-10T18:18:24+00:00"
+            "time": "2019-02-14T19:05:06+00:00"
         },
         {
             "name": "beyondcode/laravel-tag-helper",
@@ -2184,16 +2184,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.25",
+            "version": "v5.7.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f8fb354878064b94a3ff09a6ffd48ee9a8d712cf"
+                "reference": "ca3bc9769969e8af3bd9878a3e0242051c74dae4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f8fb354878064b94a3ff09a6ffd48ee9a8d712cf",
-                "reference": "f8fb354878064b94a3ff09a6ffd48ee9a8d712cf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ca3bc9769969e8af3bd9878a3e0242051c74dae4",
+                "reference": "ca3bc9769969e8af3bd9878a3e0242051c74dae4",
                 "shasum": ""
             },
             "require": {
@@ -2326,39 +2326,39 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-02-05T14:28:43+00:00"
+            "time": "2019-02-12T14:52:21+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4"
+                "reference": "9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
-                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b",
+                "reference": "9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b",
                 "shasum": ""
             },
             "require": {
                 "cakephp/chronos": "^1.0",
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "illuminate/contracts": "~5.5",
-                "illuminate/queue": "~5.5",
-                "illuminate/support": "~5.5",
+                "illuminate/contracts": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/queue": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "php": ">=7.1.0",
                 "predis/predis": "^1.1",
                 "ramsey/uuid": "^3.5",
                 "symfony/debug": "~3.3|~4.0"
             },
             "require-dev": {
-                "mockery/mockery": "~1.0",
-                "orchestra/database": "~3.5",
-                "orchestra/testbench": "~3.5",
-                "phpunit/phpunit": "~6.0"
+                "mockery/mockery": "^1.0",
+                "orchestra/database": "^3.7",
+                "orchestra/testbench": "^3.7",
+                "phpunit/phpunit": "^7.0"
             },
             "type": "library",
             "extra": {
@@ -2394,7 +2394,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-02-11T18:25:13+00:00"
+            "time": "2019-02-12T15:39:05+00:00"
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -2459,7 +2459,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "2eaed30cbaac85b72bfe6e2e5d6bed416e5913a2",
+                "reference": "7199dc0c3164c8aa93614071daedf8e417d59a53",
                 "shasum": null
             },
             "require": {
@@ -2518,30 +2518,30 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v7.1.0",
+            "version": "v7.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "b0c0dcbb8d7d61ba814b1e2cb404dbb4e1d8a852"
+                "reference": "56330509283d465acaaff842637e539d03bcf9ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/b0c0dcbb8d7d61ba814b1e2cb404dbb4e1d8a852",
-                "reference": "b0c0dcbb8d7d61ba814b1e2cb404dbb4e1d8a852",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/56330509283d465acaaff842637e539d03bcf9ca",
+                "reference": "56330509283d465acaaff842637e539d03bcf9ca",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "firebase/php-jwt": "~3.0|~4.0|~5.0",
                 "guzzlehttp/guzzle": "~6.0",
-                "illuminate/auth": "~5.6",
-                "illuminate/console": "~5.6",
-                "illuminate/container": "~5.6",
-                "illuminate/contracts": "~5.6",
-                "illuminate/database": "~5.6",
-                "illuminate/encryption": "~5.6",
-                "illuminate/http": "~5.6",
-                "illuminate/support": "~5.6",
+                "illuminate/auth": "~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/console": "~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/container": "~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/contracts": "~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/encryption": "~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/http": "~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0",
                 "league/oauth2-server": "^7.0",
                 "php": ">=7.1",
                 "phpseclib/phpseclib": "^2.0",
@@ -2584,7 +2584,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2019-01-22T14:41:41+00:00"
+            "time": "2019-02-14T16:29:26+00:00"
         },
         {
             "name": "laravel/scout",
@@ -3103,29 +3103,29 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "3.1.6",
+            "version": "3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "d5e51dca5ed845c1ce605a7a1d9882d5b57e270d"
+                "reference": "b9bf4ca1ec698010192fbe1694df65ecef3b2502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/d5e51dca5ed845c1ce605a7a1d9882d5b57e270d",
-                "reference": "d5e51dca5ed845c1ce605a7a1d9882d5b57e270d",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/b9bf4ca1ec698010192fbe1694df65ecef3b2502",
+                "reference": "b9bf4ca1ec698010192fbe1694df65ecef3b2502",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/support": "5.5.* || 5.6.* || 5.7.*",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*",
                 "php": "^7.0",
-                "phpoffice/phpspreadsheet": "^1.4"
+                "phpoffice/phpspreadsheet": "^1.6"
             },
             "require-dev": {
                 "mockery/mockery": "^1.1",
-                "orchestra/database": "^3.6",
-                "orchestra/testbench": "^3.6",
-                "phpunit/phpunit": "^7.0",
+                "orchestra/database": "^3.7",
+                "orchestra/testbench": "^3.7",
+                "phpunit/phpunit": "^7.5",
                 "predis/predis": "^1.1"
             },
             "type": "library",
@@ -3166,7 +3166,7 @@
                 "php",
                 "phpspreadsheet"
             ],
-            "time": "2019-01-30T19:01:33+00:00"
+            "time": "2019-02-14T18:17:58+00:00"
         },
         {
             "name": "maatwebsite/laravel-nova-excel",
@@ -3897,7 +3897,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/BulkImageUpload",
-                "reference": "18db550cee045f21835937ad175867c5dd291835",
+                "reference": "6dbe6a45cb861573ab086242e4d06d1f3b2c2b91",
                 "shasum": null
             },
             "require": {
@@ -3931,7 +3931,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/DropzoneField",
-                "reference": "f8617f7a0669aa1b42506177fece511d76a26e43",
+                "reference": "3a78b05ca9cfbcf897b48827e5b1905645ebcdd6",
                 "shasum": null
             },
             "require": {
@@ -3965,7 +3965,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/GoogleSheetsImporter",
-                "reference": "0748005a450a766d918bdc5d74d9cc19d46c1c64",
+                "reference": "4982c818a5e5cbd7393b871d9dcc4392c3ee4e69",
                 "shasum": null
             },
             "require": {
@@ -3999,7 +3999,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/JetsoftShopconnector",
-                "reference": "0f80f4d6fac569172bb39c9c4d8b0877a6992415",
+                "reference": "8760d6af31de9d7d819f80a3a88343cb69883cb3",
                 "shasum": null
             },
             "require": {
@@ -4033,7 +4033,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/JsonSchema",
-                "reference": "3564eab20d1f9b37ad23945995ab7c33d1b179b4",
+                "reference": "00226f9fd7233c703fffb01cb50eec9d054e10bd",
                 "shasum": null
             },
             "require": {
@@ -4067,7 +4067,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/LatestOrders",
-                "reference": "9d78f78dd810c6679b2e0d25b4d5b6553b727511",
+                "reference": "4c4822f5e52e5d9bfaa230bd5c693fc9035845a5",
                 "shasum": null
             },
             "require": {
@@ -4135,7 +4135,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/PhoneField",
-                "reference": "87a55167b170e2e8cc4042c622417f0176b523ca",
+                "reference": "e77db7d3ba1d07130ffb92a731c2c7db86bf0e78",
                 "shasum": null
             },
             "require": {
@@ -4169,7 +4169,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/scoutelastic",
-                "reference": "8fcaa6ad36694fc032ad2798e56373d90848462b",
+                "reference": "41fcd922492968a7b4e8fb671e38a1a141b85f13",
                 "shasum": null
             },
             "require": {
@@ -4212,7 +4212,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TranslatableText",
-                "reference": "bcf29436bbadb86fe08a6c76c4117ae3979eb7cd",
+                "reference": "d1983c83f1acfcbf08359dbe47f581d58e51b7f5",
                 "shasum": null
             },
             "require": {
@@ -4246,7 +4246,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/TranslatableTextarea",
-                "reference": "247523b0680b8aab8046d04bfc07605c22c3a923",
+                "reference": "05f654891d33f9fab44e9a4bb858ad63c7aac5bb",
                 "shasum": null
             },
             "require": {
@@ -4280,7 +4280,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/XmlImporter",
-                "reference": "fa4bf7eb1e7bd012e5c16d32d4e3dcf50ce217e2",
+                "reference": "c9fc308a4a43996f4c363ed027ae630e0116b172",
                 "shasum": null
             },
             "require": {
@@ -4317,7 +4317,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/xmlparser",
-                "reference": "a026c77c589aa1a813af4e7bf789d926f788148f",
+                "reference": "9ff3682c1db48632208e822cc36719803da8c812",
                 "shasum": null
             },
             "require": {
@@ -5834,16 +5834,16 @@
         },
         {
             "name": "spatie/laravel-sluggable",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "77b67b701ec0cbf9d5ec7f91da25f69db119b2a5"
+                "reference": "031a5f1c7cee4128849a288625ce67d29be57aee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/77b67b701ec0cbf9d5ec7f91da25f69db119b2a5",
-                "reference": "77b67b701ec0cbf9d5ec7f91da25f69db119b2a5",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/031a5f1c7cee4128849a288625ce67d29be57aee",
+                "reference": "031a5f1c7cee4128849a288625ce67d29be57aee",
                 "shasum": ""
             },
             "require": {
@@ -5879,7 +5879,7 @@
                 "laravel-sluggable",
                 "spatie"
             ],
-            "time": "2019-01-10T08:17:22+00:00"
+            "time": "2019-02-14T13:23:51+00:00"
         },
         {
             "name": "spatie/laravel-tags",
@@ -7510,16 +7510,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.7.25",
+            "version": "v5.7.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "bcdb1d4ca989a3aaa74aeac67c8e44ccf1761b9d"
+                "reference": "c1a36a2a8a0aa731c1acdcd83f57724ffe630d00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/bcdb1d4ca989a3aaa74aeac67c8e44ccf1761b9d",
-                "reference": "bcdb1d4ca989a3aaa74aeac67c8e44ccf1761b9d",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/c1a36a2a8a0aa731c1acdcd83f57724ffe630d00",
+                "reference": "c1a36a2a8a0aa731c1acdcd83f57724ffe630d00",
                 "shasum": ""
             },
             "require": {
@@ -7556,7 +7556,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2019-02-05T15:00:41+00:00"
+            "time": "2019-02-13T19:40:13+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -8100,16 +8100,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "dc4f10b6b1148744facb784015e4b339d7feec23"
+                "reference": "0eb0b48c3f07b3b89f5169ce005b7d05b18cf1d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/dc4f10b6b1148744facb784015e4b339d7feec23",
-                "reference": "dc4f10b6b1148744facb784015e4b339d7feec23",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/0eb0b48c3f07b3b89f5169ce005b7d05b18cf1d2",
+                "reference": "0eb0b48c3f07b3b89f5169ce005b7d05b18cf1d2",
                 "shasum": ""
             },
             "require": {
@@ -8161,7 +8161,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2019-02-08T14:43:54+00:00"
+            "time": "2019-02-13T09:37:52+00:00"
         },
         {
             "name": "myclabs/deep-copy",

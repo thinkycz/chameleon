@@ -10,5 +10,5 @@ return [
     'moq_not_reached'               => 'You need to order at least minimum order quantity',
     'moq_multiplies_only'           => 'You can order only multiplies of minimum order quantity',
     'options_missing'               => 'Please select all product options',
-    'mov_for_store_is'              => 'Minimum order value for store :store is :amount',
+    'mov_for_store_is'              => 'Minimum order value is :amount',
 ];

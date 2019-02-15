@@ -7,6 +7,7 @@ return [
     'delete'           => 'Smazat',
     'close'            => 'Zavřít',
     'updated'          => 'Aktualizace dokončena.',
+    'submit'           => 'Odeslat',
     'no_price'         => 'Bez ceny',
 
     'no_results_found' => 'Nebyli nalezeny žádné výsledky odpovídající vašim dotazům.',
@@ -15,6 +16,7 @@ return [
     'confirm_action'   => 'Prosím potvrťe vaši akci',
     'confirm'          => 'Potvrdit',
     'cancel'           => 'Zrušit',
+    'no_file_selected' => 'Nebyl vybrán soubor',
 
     // Locales
     'locales.en'       => 'Angličtina',

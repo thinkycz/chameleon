@@ -8,7 +8,6 @@ return [
     'order'            => 'Order',
     'ordered_items'    => 'Ordered Items',
     'personal'         => 'Personal',
-
     'company_name'     => 'Company Name',
     'first_name'       => 'First Name',
     'last_name'        => 'Last Name',
@@ -18,7 +17,6 @@ return [
     'phone'            => 'Phone',
     'company_id'       => 'Company ID',
     'vat_number'       => 'Vat Number',
-
     'name'             => 'Name',
     'catalogue_number' => 'Catalogue Number',
     'barcode'          => 'Barcode',
@@ -28,11 +26,9 @@ return [
     'discount'         => 'Discount',
     'vat_rate'         => 'VAT Rate',
     'type'             => 'Type',
-
     'order_number'     => 'Order Number',
     'invoice_number'   => 'Invoice Number',
     'variable_symbol'  => 'Variable Symbol',
     'placed_at'        => 'Placed at',
     'email'            => 'Email',
-    'total'            => 'Total',
 ];

@@ -13,8 +13,10 @@
 
 Auth::routes(['verify' => true]);
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::redirect('access-admin', config('nova.path'))->name('admin');
+
+Route::get('', 'HomeController@index')->name('home');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('search', 'SearchController@index')->name('search');
 Route::get('about-us', 'AboutController@index')->name('about');

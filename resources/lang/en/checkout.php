@@ -26,8 +26,6 @@ return [
     'no_delivery_methods_available' => 'No delivery methods are available at the moment',
     'no_payment_methods_available'  => 'No payment methods are available at the moment',
     'please_select_delivery_method' => 'Please select delivery method first',
-
-    // TODO:: translation
     'order'                         => 'Order',
     'placed_at'                     => 'Placed at :date',
     'invoice'                       => 'Invoice',

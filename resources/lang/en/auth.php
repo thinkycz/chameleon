@@ -50,8 +50,6 @@ return [
     'reset_password'            => 'Reset password',
     'password_reset'            => 'Your password was updated!',
 
-    'send_password_reset'       => 'Send password reset',
-
     'register_heading'          => '<span>Do you</span> want to join us?',
     'register_subheading'       => 'Register on our website to get your own personalized shopping experience online. Register by filling in the details below. Its simple and easy!',
     'register'                  => 'Register',

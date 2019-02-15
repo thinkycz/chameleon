@@ -1,35 +1,33 @@
 <?php
 
 return [
-    'billing_details'              => 'Detail faktury',
-    'shipping_details'             => 'Podrobnosti o dopravě',
-    'contact_information'          => 'Informace o kontaktu',
-
-    'delivery_method'              => 'Způsob dopravy',
-    'payment_method'               => 'Způsob platby',
-
-    'additional_notes'             => 'Další poznámky',
-    'notes'                        => 'Poznámky',
-    'additional_information_note'  => 'Jestli nám potřebujete poslat další informace nebo se chcete zeptat, napište je prosím zde.',
-    'write_your_notes_here'        => 'Napište vaše poznámky zde',
-
-    'confirmation'                 => 'Potvrzení',
-
-    'contact_information'          => 'Informace o kontaktu',
-
-    'select_shipping_address'      => 'Vybrat adresu dopravy',
-    'ship_to_billing'              => 'Dopravit na adrasu formuláře',
-    'ship_to_different'            => 'Dopravit na jinou adresu',
-
-    'email_address'                => 'Emailová adresa',
-    'email_address_note'           => 'Prosím napište legitivní emailovou adresu, jelikož sem pošleme informace vaší objenávky. A ještě bychom prosili o vaši tel.číslo v případě ,že bychom potřebovali další informace.',
-
-    'billing_and_shipping_details' => 'Detail platby a dopravy',
-    'select_existing_address'      => 'Vybrat existující adresu',
-    'addresses_empty'              => 'Nemáte zde uloženou žádnou adresu na vašem účtu. Prosím přidejte novou, kliknutím tlačítka dole, a vyberte adresu kvůli informacím dopravy/platby.',
-    'add_new_address'              => 'Přidat novou adresu',
-
-    'ordered_items'                => 'Objednané předměty',
-    'complete_order'               => 'Dokončit objednávku',
-    'order_was_placed'             => 'Vaše objednávka byla vystavena!',
+    'billing_details'               => 'Fakturační údaje',
+    'shipping_details'              => 'Dodací údaje',
+    'contact_information'           => 'Kontaktní informace',
+    'delivery_method'               => 'Způsob přepravy',
+    'payment_method'                => 'Způsob platby',
+    'additional_notes'              => 'Další poznámky',
+    'notes'                         => 'Poznámky',
+    'additional_information_note'   => 'Pokud poutřebujete poslat další informace nebo dotaz ohledně objednávky, napište je prosím zde.',
+    'write_your_notes_here'         => 'Napište vaše poznámky zde',
+    'confirmation'                  => 'Potvrzení',
+    'select_shipping_address'       => 'Vyberte dodací adresu',
+    'ship_to_billing'               => 'Dodat na fakturační adresu',
+    'ship_to_different'             => 'Dodat na jinou adresu',
+    'email_address'                 => 'Emailová adresa',
+    'email_address_note'            => 'Prosím napište platnou emailovou adresu. Na tuto adresu vám pošleme potvrzení vaší objenávky. A také prosím zkontrolujte, že zadané telefonní číslo je platné.',
+    'billing_and_shipping_details'  => 'Fakturační a dodací údaje',
+    'select_existing_address'       => 'Vybrat existující adresu',
+    'addresses_empty'               => 'Nemáte ještě uloženou žádnou adresu. Kliknutím na tlačítko dole přidejte prosím novou adresu.',
+    'add_new_address'               => 'Přidat novou adresu',
+    'ordered_items'                 => 'Objednané položky',
+    'complete_order'                => 'Dokončit objednávku',
+    'order_was_placed'              => 'Vaše objednávka byla zadána!',
+    'no_delivery_methods_available' => 'Momentálně nejsou k dispozici žádné způsoby doručení',
+    'no_payment_methods_available'  => 'NMomentálně nejsou k dispozici žádné způsoby platby',
+    'please_select_delivery_method' => 'Nejprve prosím vyberte způsob doručení',
+    'order'                         => 'Objednávka',
+    'placed_at'                     => 'Zadáno :date',
+    'invoice'                       => 'Faktura',
+    'issuer'                        => 'Vystavil: :name',
 ];

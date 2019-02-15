@@ -7,6 +7,7 @@ import Locales from './locales.js';
 Vue.use(vuexI18n.plugin, store);
 
 Vue.i18n.add('en', Locales.en);
+Vue.i18n.add('cs', Locales.cs);
 
 // set the start locale to use
 Vue.i18n.set(window.currentLocale);

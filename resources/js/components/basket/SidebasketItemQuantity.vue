@@ -14,15 +14,9 @@
                     @click.stop.prevent="decreaseQuantity">-</div>
             </div>
         </div>
-        <div class="ml-3 text-center">
-            <span class="text-accent mb-2 block w-4 text-center relative"
-                style="left: -4px;"
-                @click="update">
+        <div class="mx-3 text-center">
+            <span class="text-warning mb-2 block w-4 text-center relative" @click="update">
                 <icon-sync></icon-sync>
-            </span>
-            <span class="text-danger block w-4 text-center icon-smaller"
-                @click="remove">
-                <icon-trash></icon-trash>
             </span>
         </div>
     </div>

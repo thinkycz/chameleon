@@ -20,13 +20,13 @@ return [
     'password'                  => 'Heslo',
     'your_email'                => 'Váš email',
     'your_password'             => 'Vaše heslo',
-    'your_first_name'           => 'Vaše křestní jméno',
+    'your_first_name'           => 'Vaše jméno',
     'your_last_name'            => 'Vaše příjmení',
 
-    'have_an_account'           => 'Máte už u nás účet?',
-    'forgot_your_password'      => 'Zapoměli jste heslo?',
+    'have_an_account'           => 'Máte již u nás účet?',
+    'forgot_your_password'      => 'Zapomněli jste heslo?',
 
-    'first_name'                => 'Křestní jméno',
+    'first_name'                => 'Jméno',
     'last_name'                 => 'Příjmení',
     'confirmation'              => 'Potvrzení',
     'confirm_password'          => 'Potvrdťe vaše heslo',
@@ -35,8 +35,8 @@ return [
 
     'send_password_reset'       => 'Poslat odkaz na obnovu hesla',
 
-    'verified'                  => 'Děkujeme vám, za ověření vaší emailové adresy!',
-    'registered'                => 'Děkujeme vám, za registraci. Ověření vám bylo posláno do vaší emailové schránky.',
+    'verified'                  => 'Děkujeme vám za ověření vaší emailové adresy!',
+    'registered'                => 'Děkujeme vám za registraci. Ověřovací email vám byl odeslán do vaší emailové schránky.',
 
     'login_heading'             => '<span>Máte u nás</span> existující účet?',
     'login_subheading'          => 'Využitím vašich údajů, prosím přihlašte se na našem systému. Váš zážitek s online nakupováním s námi začíná zde!',
@@ -49,8 +49,6 @@ return [
     'reset_password_subheading' => 'Aktualizujete vaše heslo vyplněním formuláře dole.',
     'reset_password'            => 'Obnovit heslo',
     'password_reset'            => 'Vaše heslo bylo aktualizováno!',
-
-    'send_password_reset'       => 'Poslat reset na heslo',
 
     'register_heading'          => '<span>Chcete</span> se k nám připojit',
     'register_subheading'       => 'Zaregistrujte se na naší stránce a získáte svojí vlastní personalizovaný zážitek v online nakupování.  Zaregistujete se vyplněním formuláře dole. Jednoduché a snadné!',

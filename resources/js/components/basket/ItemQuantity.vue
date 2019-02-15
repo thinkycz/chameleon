@@ -1,6 +1,6 @@
 <template>
     <div class="basket-item-quantity">
-        <div class="quantity mb-2">
+        <div class="quantity mb-1">
             <input :name="`quantities[${item.id}]`"
                 type="number"
                 :class="{'border border-danger': hasError}"
@@ -17,12 +17,12 @@
                     @click.stop.prevent="decreaseQuantity">-</div>
             </div>
         </div>
-        <p class="text-danger text-xs text-center mb-0">
+        <p class="text-xs text-right mb-0">
             <vue-button method="delete"
                 :action="`/basket/ordered-items/${item.id}`"
                 :confirm="true"
                 :label="$trans('basket.delete_item')"
-                button-class="btn-text btn-danger font-normal text-xs">
+                button-class="btn-text text-grey-darker text-xs">
             </vue-button>
         </p>
     </div>

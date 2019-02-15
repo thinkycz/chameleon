@@ -93,6 +93,9 @@ header {
                     & > span.is-disabled > .icon {
                         color: var(--grey) !important;
                     }
+                    & > span.is-disabled > .cart-total {
+                        background-color: var(--grey-dark) !important;
+                    }
                     .cart-total {
                         @apply absolute p-1 font-bold border-white border-2 rounded-full bg-danger text-white text-xs;
                         top: -5px;

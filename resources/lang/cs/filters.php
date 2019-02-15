@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'hide_without_prices' => 'Schovat bez cen',
-    'in_stock_only'       => 'Pouze na skladě',
+    'hide_without_prices' => 'Skrýt produkty bez ceny',
+    'in_stock_only'       => 'Pouze skladem',
 
     'per_page'            => 'Na stránku',
 
-    'relevance'           => 'Revelantnost',
+    'relevance'           => 'Relevance',
     'alphabetically'      => 'Abecedně',
     'newest'              => 'Nejnovější',
 
-    'more_filters'        => 'Více filtrů',
+    'more_filters'        => 'Další filtry',
 
     'filter'              => 'Filtr',
     'filter_by_price'     => 'Filtrovat podle ceny',
@@ -21,8 +21,8 @@ return [
     'tags'                => 'Tagy',
     'subcategories'       => 'Podkategorie',
 
-    'order_by_date_added' => 'Seřadit podle datumu přidán',
-    'order_by_price_desc' => 'Seřadit podle klesající ceny',
-    'order_by_price_asc'  => 'Seřadit podle rostoucí ceny',
-    'order_by_alphabet'   => 'Seřadit abecedně',
+    'order_by_date_added' => 'Podle data přidání',
+    'order_by_price_desc' => 'Od nejdražšího',
+    'order_by_price_asc'  => 'Od nejlevnějšího',
+    'order_by_alphabet'   => 'Abecedně',
 ];

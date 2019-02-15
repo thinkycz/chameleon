@@ -438,7 +438,9 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-left" }, [
-                        _c("span", [_vm._v(_vm._s(_vm.__("order_status")))])
+                        _c("span", [
+                          _vm._v(_vm._s(_vm.__("order_current_status")))
+                        ])
                       ])
                     ])
                   ]),

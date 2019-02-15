@@ -28,7 +28,7 @@
                             <th class="text-left"><span>{{ __('order_user') }}</span></th>
                             <th class="text-left"><span>{{ __('order_email') }}</span></th>
                             <th class="text-left"><span>{{ __('order_phone') }}</span></th>
-                            <th class="text-left"><span>{{ __('order_status') }}</span></th>
+                            <th class="text-left"><span>{{ __('order_current_status') }}</span></th>
                         </tr>
                     </thead>
                     <tbody>

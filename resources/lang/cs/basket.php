@@ -22,5 +22,5 @@ return [
     // Steps
     'basket'                     => 'Košík',
     'confirmation'               => 'Potvrzení',
-    'order_placed'               => 'Objednávka zadán',
+    'order_placed'               => 'Objednávka zadána',
 ];

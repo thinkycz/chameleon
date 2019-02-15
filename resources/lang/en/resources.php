@@ -127,6 +127,7 @@ return [
     'is_option'                => 'Is Option',
     'is_hidden'                => 'Is Hidden',
     'is_sortable'              => 'Is Sortable',
+    'is_active'                => 'Is Active',
     'data'                     => 'Data',
     'raw_data'                 => 'Raw Data',
     'schema'                   => 'Schema',

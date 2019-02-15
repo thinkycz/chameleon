@@ -25,7 +25,6 @@
         "laravel/passport": "^7.0",
         "laravel/tinker": "^1.0",
         "maatwebsite/laravel-nova-excel": "^1.1",
-        "mad-web/nova-horizon-link": "^2.0",
         "martinlindhe/laravel-vue-i18n-generator": "^0.1.34",
         "nulisec/bulk-image-upload": "*",
         "nulisec/google-sheets-importer": "*",

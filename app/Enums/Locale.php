@@ -6,6 +6,7 @@ abstract class Locale
 {
     const CZECH = 'cs';
     const ENGLISH = 'en';
+    const VIETNAMESE = 'vi';
 
     public static function all()
     {

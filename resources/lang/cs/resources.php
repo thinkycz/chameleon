@@ -127,6 +127,7 @@ return [
     'is_option'                => 'Výběrová možnost',
     'is_hidden'                => 'Skrýt na stránce',
     'is_sortable'              => 'Řazení povoleno',
+    'is_active'                => 'Aktivní',
     'data'                     => 'Data',
     'raw_data'                 => 'Surová data',
     'schema'                   => 'Schéma',

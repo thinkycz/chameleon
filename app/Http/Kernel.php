@@ -64,7 +64,6 @@ class Kernel extends HttpKernel
         'verified'              => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'basket_is_not_empty'   => \App\Http\Middleware\BasketIsNotEmpty::class,
         'category_is_enabled'   => \App\Http\Middleware\CategoryIsEnabled::class,
-        'access_administration' => \App\Http\Middleware\AccessAdministrationMiddleware::class,
     ];
 
     /**

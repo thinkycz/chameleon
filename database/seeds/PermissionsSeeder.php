@@ -16,11 +16,6 @@ class PermissionsSeeder extends Seeder
             'slug' => 'administrator',
         ]);
 
-        $administratorPermission = Silvanite\Brandenburg\Permission::create([
-            'role_id'         => $administratorRole->id,
-            'permission_slug' => 'access-administration',
-        ]);
-
-        $administratorRole->grant($administratorPermission->permission_slug);
+        $administratorRole->grant('viewNova');
     }
 }

@@ -18,6 +18,11 @@
                     <div class="user-dropdown-menu" v-if="visible" v-click-outside="close" @click.stop="blank">
                         <icon-dropdown></icon-dropdown>
                         <ul class="list-reset">
+                            @can('access-administration', auth()->user())
+                                <li>
+                                    <a href="{{ route('nova') }}">{{ trans('header.admin') }}</a>
+                                </li>
+                            @endcan
                             <li>
                                 <a href="{{ route('profiles.show') }}">{{ trans('header.my_profile') }}</a>
                             </li>

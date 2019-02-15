@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "097dd5ae9153a6f11f7113f10d432061",
+    "content-hash": "e4d7f8acfbb3b36785c2a6a7639d81e5",
     "packages": [
         {
             "name": "anchu/ftp",
@@ -3221,60 +3221,6 @@
                 "phpspreadsheet"
             ],
             "time": "2019-02-11T14:59:34+00:00"
-        },
-        {
-            "name": "mad-web/nova-horizon-link",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mad-web/nova-horizon-link.git",
-                "reference": "aa4852595f68f160ad510fa5d14477c1a8698726"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mad-web/nova-horizon-link/zipball/aa4852595f68f160ad510fa5d14477c1a8698726",
-                "reference": "aa4852595f68f160ad510fa5d14477c1a8698726",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/horizon": "^1.0|^2.0",
-                "laravel/nova": "*",
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "MadWeb\\NovaHorizonLink\\LinkServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "MadWeb\\NovaHorizonLink\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mad Web",
-                    "email": "madweb.dev@gmail.com",
-                    "homepage": "https://github.com/mad-web",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Smart Link for Laravel Nova to Horizon Dashboard.",
-            "homepage": "https://github.com/mad-web/nova-horizon-link",
-            "keywords": [
-                "horizon",
-                "laravel",
-                "link",
-                "nova"
-            ],
-            "time": "2018-11-14T20:30:45+00:00"
         },
         {
             "name": "maennchen/zipstream-php",

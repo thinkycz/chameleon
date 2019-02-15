@@ -4,7 +4,11 @@
     @include('home.partials.hero')
     @includeWhen($categories->isNotEmpty(), 'home.partials.categories')
     @includeWhen($firstCategory, 'home.partials.category', ['category' => $firstCategory])
-    @includeWhen($homepage['banner_heading'], 'home.partials.banner')
     @includeWhen($secondCategory, 'home.partials.category', ['category' => $secondCategory])
-    @includeWhen(!auth()->check(), 'home.partials.auth_banner')
+
+    @auth
+        @includeWhen($homepage['banner_heading'], 'home.partials.banner')
+    @else
+        @include('home.partials.auth_banner')
+    @endauth
 @stop

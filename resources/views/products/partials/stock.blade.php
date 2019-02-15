@@ -3,13 +3,13 @@
     <div class="alert my-5 {{ $product->availability_or_default->allow_orders ? 'success' : 'danger' }}">
         <span class="icon-wrap">
             <icon-cube></icon-cube>
-            <p class="mb-0">{!! trans('products.this_product_is_stock', ['stock' => $product->availability_or_default->name]) !!}</p>
+            <p class="mb-0 flex-1">{!! trans('products.this_product_is_stock', ['stock' => $product->availability_or_default->name]) !!}</p>
         </span>
     </div>
 
     <div class="icon-wrap my-5">
         <icon-cubes></icon-cubes>
-        <span>{!! trans('products.in_stock_unit', ['unit' => $product->unit_or_default->abbr, 'stock' => $product->quantity_in_stock]) !!}</span>
+        <span>{!! trans('products.in_stock_unit', ['unit' => $product->unit_or_default->abbr, 'stock' => $product->public_stock_quantity]) !!}</span>
     </div>
 
     <div class="icon-wrap my-5">

@@ -6,8 +6,7 @@ return [
     'quantity'                     => 'Quantity',
     'total'                        => 'Total',
     'grand_total'                  => 'Grand Total',
-    'excl_vat'                     => 'Excl. vat',
-
+    'excl_vat'                     => 'excl. VAT',
     'ordered_item.COUPON'          => 'Coupon',
     'ordered_item.CUSTOM'          => 'Custom',
     'ordered_item.PRODUCT'         => 'Product',

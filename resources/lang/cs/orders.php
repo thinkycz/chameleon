@@ -1,17 +1,15 @@
 <?php
 
 return [
-    'name'                         => 'Jméno',
+    'name'                         => 'Název',
     'price'                        => 'Cena',
     'quantity'                     => 'Množství',
-    'total'                        => 'Celkově',
+    'total'                        => 'Celkem',
     'grand_total'                  => 'Celkový součet',
-    'excl_vat'                     => 'bez',
-
-    // TODO::Translations
-    'ordered_item.COUPON'          => 'Coupon',
-    'ordered_item.CUSTOM'          => 'Custom',
-    'ordered_item.PRODUCT'         => 'Product',
-    'ordered_item.PAYMENT_METHOD'  => 'Payment Fee',
-    'ordered_item.DELIVERY_METHOD' => 'Delivery Fee',
+    'excl_vat'                     => 'bez DPH',
+    'ordered_item.COUPON'          => 'Kupon',
+    'ordered_item.CUSTOM'          => 'Jiné',
+    'ordered_item.PRODUCT'         => 'Produkt',
+    'ordered_item.PAYMENT_METHOD'  => 'Poplatek za platbu',
+    'ordered_item.DELIVERY_METHOD' => 'Dopravné',
 ];

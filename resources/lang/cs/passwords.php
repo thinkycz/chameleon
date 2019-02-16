@@ -13,10 +13,9 @@ return [
     |
     */
 
-    'password' => 'Heslo musí být aspoň 6 charakterů dlouhé a má být totožné jako potvrzovací heslo.',
-    'reset' => 'Vaše heslo bylo resetován!',
-    'sent' => 'Poslali jsme na váš email adresu pro resetování hesla!',
-    'token' => 'Token resetu pro heslo je invalidní.',
-    'user' => "Nemůžeme najít uživatele s touto emailovou adresou.",
-
+    'password' => 'Heslo musí být alespoň 6 znaků dlouhé a musí se shodovat s potvrzením.',
+    'reset'    => 'Vaše heslo bylo obnoveno!',
+    'sent'     => 'Poslali jsme na váš emailovou adresu odkaz pro obnovení hesla!',
+    'token'    => 'Tento token je neplatný.',
+    'user'     => 'Uživatel s touto emailovou adresou nebyl nalezen.',
 ];

@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'created_at' => 'Vytvořen :date',
+    'created_at' => 'Ze dne :date',
 ];

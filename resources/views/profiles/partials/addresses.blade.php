@@ -1,7 +1,7 @@
 <div class="p-8">
     <div class="row">
         <div class="col-half">
-            <h3 class="mb-2">{{ trans('profiles.addressses') }}</h3>
+            <h3 class="mb-2">{{ trans('profiles.addresses') }}</h3>
             <p class="mb-6">{{ trans('profiles.address_book_info') }}</p>
 
             <vue-addresses :new="{{ booleanToString($errors->count() && isCurrentView('address_book')) }}" inline-template>

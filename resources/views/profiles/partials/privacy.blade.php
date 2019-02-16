@@ -46,10 +46,7 @@
                 </ul>
 
                 <p>{{ trans('profiles.let_us_know') }} </p>
-                @php
-                    $emailAddress = config('mail.from.address');
-                @endphp
-                <p class="font-bold">{{ trans('profiles.request_a_complete_deletion') }} <a href="mailto:{{ $emailAddress }}">{{ $emailAddress }}</a></p>
+                <p class="font-bold">{{ trans('profiles.request_a_complete_deletion') }} <a href="mailto:{{ settingsRepository()->getCompanyEmail() }}">{{ settingsRepository()->getCompanyEmail() }}</a></p>
                 <p>{{ trans('profiles.process_within_30_days') }}</p>
             </div>
         </div>

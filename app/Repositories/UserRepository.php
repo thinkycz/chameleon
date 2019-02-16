@@ -3,16 +3,14 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use Silvanite\Brandenburg\Permission;
 
 class UserRepository
 {
-    protected static $admins = [
-        'team@nulisec.com',
-    ];
-
     public static function admins()
     {
-        // TODO:: Should be changed with nova permissions
-        return User::whereEmail(static::$admins)->get();
+        return User::whereHas('roles', function ($query) {
+            return $query->whereIn('id', optional(optional(Permission::find('viewNova'))->roles)->pluck('id') ?: []);
+        })->get();
     }
 }

@@ -65,7 +65,8 @@
                     <div class="py-6 px-8 w-1/2">
                         <input v-model="price_multiplier"
                                 id="price_multiplier"
-                                type="text"
+                                type="number"
+                                step="0.01"
                                 :placeholder="__('price_multiplier')"
                                 class="w-full form-control form-input form-input-bordered">
                     </div>

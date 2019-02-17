@@ -182,6 +182,7 @@ return [
         App\Providers\MacroServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
+        App\Providers\TaskSchedulerServiceProvider::class,
 
     ],
 

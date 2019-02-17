@@ -86,3 +86,12 @@ if (!function_exists('novaResourceAction')) {
         return "${nova}/${resourceName}/${resource}";
     }
 }
+
+if (!function_exists('getPageTitle')) {
+    function getPageTitle($title)
+    {
+        $appName = config('app.name');
+
+        return "{$title} | {$appName}";
+    }
+}

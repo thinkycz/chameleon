@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', getPageTitle(__('footer.contact')))
+
 @section('content')
     <div class="container pb-16">
 

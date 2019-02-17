@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', getPageTitle(__('basket.confirmation')))
+
 @section('content')
     <div class="container py-16">
         <div class="row">

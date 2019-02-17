@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', getPageTitle(__('home.all_categories')))
+
 @section('content')
     <div class="container pb-16">
 

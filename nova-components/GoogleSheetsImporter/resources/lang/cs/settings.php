@@ -33,4 +33,7 @@ return [
     'supported_columns'                    => 'Podporované sloupce',
     'barcode'                              => 'Čárový kód',
     'catalogue'                            => 'Katalogové číslo',
+    'run_daily'                            => 'Spouštět denně',
+    'enabled'                              => 'Povoleno',
+    'disabled'                             => 'Zakázáno',
 ];

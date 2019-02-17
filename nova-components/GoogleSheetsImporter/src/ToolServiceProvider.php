@@ -2,11 +2,14 @@
 
 namespace Nulisec\GoogleSheetsImporter;
 
+use App\Models\Setting;
+use App\Repositories\ScheduledTasksRepository;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Nulisec\GoogleSheetsImporter\Http\Middleware\Authorize;
+use Nulisec\GoogleSheetsImporter\Jobs\SyncFromGoogleSheets;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,10 @@ class ToolServiceProvider extends ServiceProvider
         $this->app->booted(function () {
             $this->routes();
         });
+
+        if (stringToBoolean(Setting::fetch('google_sheets_importer', 'run_daily'))) {
+            $this->app->make(ScheduledTasksRepository::class)->register(new SyncFromGoogleSheets());
+        }
 
         Nova::serving(function (ServingNova $event) {
             //

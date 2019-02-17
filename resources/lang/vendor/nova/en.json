@@ -955,6 +955,8 @@
     "save_configuration": "Save Configuration",
     "supported_columns": "Supported Columns",
     "catalogue": "Catalogue number",
+    "run_daily": "Run Daily",
+    "disabled": "Disabled",
     "shopconnector": "Jetsoft Shopconnector",
     "jetsoft_shopconnector": "Jetsoft Shopconnector",
     "jetsoft_shopconnector_config": "Jetsoft Shopconnector Configuration",

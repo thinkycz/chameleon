@@ -33,4 +33,7 @@ return [
     'supported_columns'                    => 'Supported Columns',
     'barcode'                              => 'Barcode',
     'catalogue'                            => 'Catalogue number',
+    'run_daily'                            => 'Run Daily',
+    'enabled'                              => 'Enabled',
+    'disabled'                             => 'Disabled',
 ];

@@ -933,6 +933,8 @@
     "save_configuration": "Uložit konfiguraci",
     "supported_columns": "Podporované sloupce",
     "catalogue": "Katalogové číslo",
+    "run_daily": "Spouštět denně",
+    "disabled": "Zakázáno",
     "shopconnector": "Jetsoft Shopconnector",
     "jetsoft_shopconnector": "Jetsoft Shopconnector",
     "jetsoft_shopconnector_config": "Jetsoft Shopconnector Konfigurace",

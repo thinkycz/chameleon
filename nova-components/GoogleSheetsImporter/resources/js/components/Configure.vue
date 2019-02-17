@@ -24,19 +24,37 @@
                 <div class="flex border-b border-40">
                     <div class="w-1/5 py-6 px-8">
                         <label class="inline-block text-80 pt-2 leading-tight"
-                            for="identifier">
+                                for="identifier">
                             {{__('identifier')}}
                         </label>
                     </div>
                     <div class="py-6 px-8 w-1/2">
                         <select v-model="identifier"
-                            name="identifier"
-                            id="identifier"
-                            required="required"
-                            class="w-full form-control form-select">
-                            <option value="barcode"
-                                selected>{{__('barcode')}}</option>
+                                name="identifier"
+                                id="identifier"
+                                required="required"
+                                class="w-full form-control form-select">
+                            <option value="barcode">{{__('barcode')}}</option>
                             <option value="catalogueNumber">{{__('catalogue')}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex border-b border-40">
+                    <div class="w-1/5 py-6 px-8">
+                        <label class="inline-block text-80 pt-2 leading-tight"
+                                for="identifier">
+                            {{__('run_daily')}}
+                        </label>
+                    </div>
+                    <div class="py-6 px-8 w-1/2">
+                        <select v-model="run_daily"
+                                name="run_daily"
+                                id="run_daily"
+                                required="required"
+                                class="w-full form-control form-select">
+                            <option value="false">{{__('disabled')}}</option>
+                            <option value="true">{{__('enabled')}}</option>
                         </select>
                     </div>
                 </div>
@@ -126,6 +144,7 @@
             return {
                 link: null,
                 identifier: 'barcode',
+                run_daily: false
             };
         },
 
@@ -146,6 +165,7 @@
                 .then(({ data }) => {
                     this.link = data.payload ? data.payload.link : this.link;
                     this.identifier = data.payload ? data.payload.identifier : this.identifier;
+                    this.run_daily = data.payload ? data.payload.run_daily : this.run_daily;
                 });
         },
     };

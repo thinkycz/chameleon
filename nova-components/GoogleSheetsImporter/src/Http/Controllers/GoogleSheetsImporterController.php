@@ -20,7 +20,7 @@ class GoogleSheetsImporterController extends Controller
 
     public function saveConfiguration(Request $request)
     {
-        Setting::saveConfiguration('google_sheets_importer', $request->only('link', 'identifier'));
+        Setting::saveConfiguration('google_sheets_importer', $request->only('link', 'identifier', 'run_daily'));
 
         return $this->ajaxWithPayload([]);
     }
@@ -40,12 +40,14 @@ class GoogleSheetsImporterController extends Controller
     public function status()
     {
         $status = SyncStatus::get('google_sheets_status');
+        $run_daily = Setting::fetch('google_sheets_importer', 'run_daily');
 
         return $this->ajaxWithPayload([
             'lastUpdate' => $status->lastUpdate(),
             'duration' => $status->duration(),
             'status' => $status->status(),
-            'job' => $status->job()
+            'job' => $status->job(),
+            'run_daily' => $run_daily
         ]);
     }
 }

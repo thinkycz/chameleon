@@ -1213,7 +1213,7 @@ var render = function() {
                 "label",
                 {
                   staticClass: "inline-block text-80 pt-2 leading-tight",
-                  attrs: { for: "identifier" }
+                  attrs: { for: "run_daily" }
                 },
                 [
                   _vm._v(

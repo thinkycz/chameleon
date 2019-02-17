@@ -28,9 +28,10 @@ class ToolServiceProvider extends ServiceProvider
             $this->database();
         });
 
-        if (stringToBoolean(Setting::fetch('shopconnector', 'run_daily'))) {
-            $this->app->make(ScheduledTasksRepository::class)->register(new SyncronizeProducts());
-        }
+        $this->app->make(ScheduledTasksRepository::class)->registerWhen(
+            stringToBoolean(Setting::fetch('shopconnector', 'run_daily')),
+            new SyncronizeProducts()
+        );
 
         Nova::serving(function (ServingNova $event) {
             //

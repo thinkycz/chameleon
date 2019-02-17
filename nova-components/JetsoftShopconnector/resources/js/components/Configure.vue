@@ -123,7 +123,7 @@
                 <div class="flex border-b border-40">
                     <div class="w-1/5 py-6 px-8">
                         <label class="inline-block text-80 pt-2 leading-tight"
-                                for="identifier">
+                                for="run_daily">
                             {{__('run_daily')}}
                         </label>
                     </div>

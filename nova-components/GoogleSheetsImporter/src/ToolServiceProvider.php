@@ -27,9 +27,10 @@ class ToolServiceProvider extends ServiceProvider
             $this->routes();
         });
 
-        if (stringToBoolean(Setting::fetch('google_sheets_importer', 'run_daily'))) {
-            $this->app->make(ScheduledTasksRepository::class)->register(new SyncFromGoogleSheets());
-        }
+        $this->app->make(ScheduledTasksRepository::class)->registerWhen(
+            stringToBoolean(Setting::fetch('google_sheets_importer', 'run_daily')),
+            new SyncFromGoogleSheets()
+        );
 
         Nova::serving(function (ServingNova $event) {
             //

@@ -28499,6 +28499,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -28507,7 +28512,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             duration: null,
             status: null,
             modalOpen: false,
-            validationResponse: null
+            validationResponse: null,
+            run_daily: false
         };
     },
 
@@ -28531,6 +28537,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.lastUpdate = data.payload.lastUpdate;
                 _this2.duration = data.payload.duration;
                 _this2.status = data.payload.status;
+                _this2.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
             });
         }
     },
@@ -28613,6 +28620,16 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.status))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v(_vm._s(_vm.__("run_daily")))
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-3/4" }, [
+            _vm._v(_vm._s(_vm.__(_vm.run_daily)))
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
@@ -28753,6 +28770,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -28761,7 +28783,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             duration: null,
             status: null,
             modalOpen: false,
-            validationResponse: null
+            validationResponse: null,
+            run_daily: false
         };
     },
 
@@ -28785,6 +28808,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.lastUpdate = data.payload.lastUpdate;
                 _this2.duration = data.payload.duration;
                 _this2.status = data.payload.status;
+                _this2.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
             });
         }
     },
@@ -28867,6 +28891,16 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-3/4" }, [_vm._v(_vm._s(_vm.status))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex my-4" }, [
+          _c("div", { staticClass: "w-1/4 font-bold" }, [
+            _vm._v(_vm._s(_vm.__("run_daily")))
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-3/4" }, [
+            _vm._v(_vm._s(_vm.__(_vm.run_daily)))
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
@@ -30718,6 +30752,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -30725,7 +30778,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             ftp_host: '',
             ftp_username: '',
             ftp_password: '',
-            ftp_filepath: ''
+            ftp_filepath: '',
+            run_daily: false
         };
     },
 
@@ -30747,14 +30801,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Nova.request().get('/nova-vendor/xml-importer/ftp/settings').then(function (_ref) {
             var data = _ref.data;
 
-            var settings = data.payload.settings;
-
-            if (settings) {
-                _this2.ftp_host = settings.ftp_host ? settings.ftp_host : null;
-                _this2.ftp_username = settings.ftp_username ? settings.ftp_username : null;
-                _this2.ftp_password = settings.ftp_password ? settings.ftp_password : null;
-                _this2.ftp_filepath = settings.ftp_filepath ? settings.ftp_filepath : null;
-            }
+            _this2.ftp_host = data.payload ? data.payload.ftp_host : _this2.ftp_host;
+            _this2.ftp_username = data.payload ? data.payload.ftp_username : _this2.ftp_username;
+            _this2.ftp_password = data.payload ? data.payload.ftp_password : _this2.ftp_password;
+            _this2.ftp_filepath = data.payload ? data.payload.ftp_filepath : _this2.ftp_filepath;
+            _this2.run_daily = data.payload ? data.payload.run_daily : _this2.run_daily;
         });
     }
 });
@@ -30968,6 +31019,71 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
+          _c("div", { staticClass: "flex border-b border-40" }, [
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "run_daily" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("run_daily")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.run_daily,
+                      expression: "run_daily"
+                    }
+                  ],
+                  staticClass: "w-full form-control form-select",
+                  attrs: {
+                    name: "run_daily",
+                    id: "run_daily",
+                    required: "required"
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.run_daily = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "false" } }, [
+                    _vm._v(_vm._s(_vm.__("disabled")))
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "true" } }, [
+                    _vm._v(_vm._s(_vm.__("enabled")))
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "bg-30 flex px-8 py-4" }, [
             _c(
               "button",
@@ -31083,11 +31199,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            endpoint_url: ''
+            endpoint_url: '',
+            run_daily: false
         };
     },
 
@@ -31109,11 +31245,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Nova.request().get('/nova-vendor/xml-importer/endpoint/settings').then(function (_ref) {
             var data = _ref.data;
 
-            var settings = data.payload.settings;
-
-            if (settings) {
-                _this2.endpoint_url = settings.endpoint_url ? settings.endpoint_url : null;
-            }
+            _this2.endpoint_url = data.payload ? data.payload.endpoint_url : _this2.endpoint_url;
+            _this2.run_daily = data.payload ? data.payload.run_daily : _this2.run_daily;
         });
     }
 });
@@ -31180,6 +31313,71 @@ var render = function() {
                   }
                 }
               })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex border-b border-40" }, [
+            _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "inline-block text-80 pt-2 leading-tight",
+                  attrs: { for: "run_daily" }
+                },
+                [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.__("run_daily")) +
+                      "\n                    "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.run_daily,
+                      expression: "run_daily"
+                    }
+                  ],
+                  staticClass: "w-full form-control form-select",
+                  attrs: {
+                    name: "run_daily",
+                    id: "run_daily",
+                    required: "required"
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.run_daily = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "false" } }, [
+                    _vm._v(_vm._s(_vm.__("disabled")))
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "true" } }, [
+                    _vm._v(_vm._s(_vm.__("enabled")))
+                  ])
+                ]
+              )
             ])
           ]),
           _vm._v(" "),

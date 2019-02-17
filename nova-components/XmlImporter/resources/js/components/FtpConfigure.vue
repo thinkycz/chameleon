@@ -68,6 +68,25 @@
                     </div>
                 </div>
 
+                <div class="flex border-b border-40">
+                    <div class="w-1/5 py-6 px-8">
+                        <label class="inline-block text-80 pt-2 leading-tight"
+                                for="run_daily">
+                            {{__('run_daily')}}
+                        </label>
+                    </div>
+                    <div class="py-6 px-8 w-1/2">
+                        <select v-model="run_daily"
+                                name="run_daily"
+                                id="run_daily"
+                                required="required"
+                                class="w-full form-control form-select">
+                            <option value="false">{{__('disabled')}}</option>
+                            <option value="true">{{__('enabled')}}</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="bg-30 flex px-8 py-4">
                     <button type="button"
                             class="btn btn-default btn-primary inline-flex items-center relative ml-auto mr-3"
@@ -87,7 +106,8 @@
                 ftp_host: '',
                 ftp_username: '',
                 ftp_password: '',
-                ftp_filepath: ''
+                ftp_filepath: '',
+                run_daily: false
             };
         },
 
@@ -106,14 +126,11 @@
             Nova.request()
                 .get('/nova-vendor/xml-importer/ftp/settings')
                 .then(({data}) => {
-                    let settings = data.payload.settings;
-
-                    if (settings) {
-                        this.ftp_host = settings.ftp_host ? settings.ftp_host : null;
-                        this.ftp_username = settings.ftp_username ? settings.ftp_username : null;
-                        this.ftp_password = settings.ftp_password ? settings.ftp_password : null;
-                        this.ftp_filepath = settings.ftp_filepath ? settings.ftp_filepath : null;
-                    }
+                    this.ftp_host = data.payload ? data.payload.ftp_host : this.ftp_host;
+                    this.ftp_username = data.payload ? data.payload.ftp_username : this.ftp_username;
+                    this.ftp_password = data.payload ? data.payload.ftp_password : this.ftp_password;
+                    this.ftp_filepath = data.payload ? data.payload.ftp_filepath : this.ftp_filepath;
+                    this.run_daily = data.payload ? data.payload.run_daily : this.run_daily;
                 });
         }
     };

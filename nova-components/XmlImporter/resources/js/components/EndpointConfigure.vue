@@ -20,6 +20,25 @@
                     </div>
                 </div>
 
+                <div class="flex border-b border-40">
+                    <div class="w-1/5 py-6 px-8">
+                        <label class="inline-block text-80 pt-2 leading-tight"
+                                for="run_daily">
+                            {{__('run_daily')}}
+                        </label>
+                    </div>
+                    <div class="py-6 px-8 w-1/2">
+                        <select v-model="run_daily"
+                                name="run_daily"
+                                id="run_daily"
+                                required="required"
+                                class="w-full form-control form-select">
+                            <option value="false">{{__('disabled')}}</option>
+                            <option value="true">{{__('enabled')}}</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="bg-30 flex px-8 py-4">
                     <button type="button"
                             class="btn btn-default btn-primary inline-flex items-center relative ml-auto mr-3"
@@ -37,6 +56,7 @@
         data() {
             return {
                 endpoint_url: '',
+                run_daily: false
             };
         },
 
@@ -55,11 +75,8 @@
             Nova.request()
                 .get('/nova-vendor/xml-importer/endpoint/settings')
                 .then(({data}) => {
-                    let settings = data.payload.settings;
-
-                    if (settings) {
-                        this.endpoint_url = settings.endpoint_url ? settings.endpoint_url : null;
-                    }
+                    this.endpoint_url = data.payload ? data.payload.endpoint_url : this.endpoint_url;
+                    this.run_daily = data.payload ? data.payload.run_daily : this.run_daily;
                 });
         }
     };

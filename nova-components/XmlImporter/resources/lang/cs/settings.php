@@ -43,6 +43,8 @@ return [
     'photo'                        => 'Obrázek',
     'raw_data'                     => 'Surová data',
     'no_entities_found'            => 'Entita produktu nebyla nalezena. Zkontrolujte prosím konfiguraci parseru.',
-
+    'run_daily'                    => 'Spouštět denně',
+    'enabled'                      => 'Povoleno',
+    'disabled'                     => 'Zakázáno',
 
 ];

@@ -43,6 +43,8 @@ return [
     'photo'                        => 'Photo',
     'raw_data'                     => 'RAW Data',
     'no_entities_found'            => 'Could not find any product entity. Please check your configuration.',
-
+    'run_daily'                    => 'Run Daily',
+    'enabled'                      => 'Enabled',
+    'disabled'                     => 'Disabled',
 
 ];

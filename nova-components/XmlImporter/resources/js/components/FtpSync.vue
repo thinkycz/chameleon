@@ -30,6 +30,11 @@
             </div>
 
             <div class="flex my-4">
+                <div class="w-1/4 font-bold">{{ __('run_daily') }}</div>
+                <div class="w-3/4">{{ __(run_daily) }}</div>
+            </div>
+
+            <div class="flex my-4">
                 <div class="w-3/4 ml-auto">
                     <button type="button"
                             class="btn btn-default btn-primary"
@@ -54,6 +59,7 @@
                 status: null,
                 modalOpen: false,
                 validationResponse: null,
+                run_daily: false
             };
         },
         methods: {
@@ -76,6 +82,7 @@
                         this.lastUpdate = data.payload.lastUpdate;
                         this.duration = data.payload.duration;
                         this.status = data.payload.status;
+                        this.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
                     });
             }
         },

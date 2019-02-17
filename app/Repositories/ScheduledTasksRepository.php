@@ -15,19 +15,24 @@ class ScheduledTasksRepository
 
     public function register($task)
     {
-        $this->tasks->push($task);
+        return $this->tasks->push($task);
+    }
+
+    public function registerWhen($condition, $task)
+    {
+        return $condition ? $this->tasks->push($task) : null;
     }
 
     public function dispatch()
     {
-        $this->tasks->each(function ($task) {
+        return $this->tasks->each(function ($task) {
             dispatch($task);
         });
     }
 
     public function schedule(Schedule $schedule)
     {
-        $this->tasks->each(function ($task) use ($schedule) {
+        return $this->tasks->each(function ($task) use ($schedule) {
             $schedule->job($task)->everyMinute();
         });
     }

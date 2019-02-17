@@ -14,12 +14,12 @@ class XmlImporterFtpController extends Controller
     {
         $settings = Setting::loadConfiguration('xml_importer_ftp_settings');
 
-        return $this->ajaxWithPayload(compact('settings'));
+        return $this->ajaxWithPayload($settings);
     }
 
     public function saveConfiguration(Request $request)
     {
-        Setting::saveConfiguration('xml_importer_ftp_settings', $request->all());
+        Setting::saveConfiguration('xml_importer_ftp_settings', $request->only('ftp_host', 'ftp_username', 'ftp_password', 'ftp_filepath', 'run_daily'));
 
         return $this->ajaxWithPayload([]);
     }
@@ -34,12 +34,14 @@ class XmlImporterFtpController extends Controller
     public function status()
     {
         $status = SyncStatus::get('xml_importer_ftp_status');
+        $run_daily = Setting::fetch('xml_importer_ftp_settings', 'run_daily');
 
         return $this->ajaxWithPayload([
             'lastUpdate' => $status->lastUpdate(),
             'duration' => $status->duration(),
             'status' => $status->status(),
-            'job' => $status->job()
+            'job' => $status->job(),
+            'run_daily' => $run_daily
         ]);
     }
 }

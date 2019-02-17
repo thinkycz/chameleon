@@ -33,7 +33,7 @@ class ScheduledTasksRepository
     public function schedule(Schedule $schedule)
     {
         return $this->tasks->each(function ($task) use ($schedule) {
-            $schedule->job($task)->everyMinute();
+            $schedule->job($task)->daily();
         });
     }
 }

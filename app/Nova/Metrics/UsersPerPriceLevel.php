@@ -9,6 +9,16 @@ use Laravel\Nova\Metrics\Partition;
 class UsersPerPriceLevel extends Partition
 {
     /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('metrics.users_per_price_level');
+    }
+
+    /**
      * Calculate the value of the metric.
      *
      * @param  \Illuminate\Http\Request  $request

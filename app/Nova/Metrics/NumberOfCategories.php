@@ -9,9 +9,19 @@ use Laravel\Nova\Metrics\Value;
 class NumberOfCategories extends Value
 {
     /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('metrics.number_of_categories');
+    }
+
+    /**
      * Calculate the value of the metric.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return mixed
      */
     public function calculate(Request $request)
@@ -27,12 +37,12 @@ class NumberOfCategories extends Value
     public function ranges()
     {
         return [
-            30 => '30 Days',
-            60 => '60 Days',
-            365 => '365 Days',
-            'MTD' => 'Month To Date',
-            'QTD' => 'Quarter To Date',
-            'YTD' => 'Year To Date',
+            30    => __('metrics.30_days'),
+            60    => __('metrics.60_days'),
+            365   => __('metrics.365_days'),
+            'MTD' => __('metrics.month_to_date'),
+            'QTD' => __('metrics.quarter_to_date'),
+            'YTD' => __('metrics.year_to_date'),
         ];
     }
 

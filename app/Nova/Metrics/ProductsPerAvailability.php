@@ -9,6 +9,16 @@ use Laravel\Nova\Metrics\Partition;
 class ProductsPerAvailability extends Partition
 {
     /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('metrics.products_per_availability');
+    }
+
+    /**
      * Calculate the value of the metric.
      *
      * @param  \Illuminate\Http\Request  $request

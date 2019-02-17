@@ -9,6 +9,16 @@ use Laravel\Nova\Metrics\Trend;
 class UsersPerDay extends Trend
 {
     /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('metrics.users_per_day');
+    }
+
+    /**
      * Calculate the value of the metric.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -27,9 +37,9 @@ class UsersPerDay extends Trend
     public function ranges()
     {
         return [
-            30 => '30 Days',
-            60 => '60 Days',
-            90 => '90 Days',
+            30 => __('metrics.30_days'),
+            60 => __('metrics.60_days'),
+            90 => __('metrics.90_days'),
         ];
     }
 

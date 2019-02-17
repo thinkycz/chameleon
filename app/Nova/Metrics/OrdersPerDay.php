@@ -9,9 +9,19 @@ use Laravel\Nova\Metrics\Trend;
 class OrdersPerDay extends Trend
 {
     /**
+     * Get the displayable name of the metric.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('metrics.orders_per_day');
+    }
+
+    /**
      * Calculate the value of the metric.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return mixed
      */
     public function calculate(Request $request)
@@ -27,9 +37,9 @@ class OrdersPerDay extends Trend
     public function ranges()
     {
         return [
-            30 => '30 Days',
-            60 => '60 Days',
-            90 => '90 Days',
+            30 => __('metrics.30_days'),
+            60 => __('metrics.60_days'),
+            90 => __('metrics.90_days'),
         ];
     }
 
@@ -40,7 +50,7 @@ class OrdersPerDay extends Trend
      */
     public function cacheFor()
     {
-         return now()->addMinutes(5);
+        return now()->addMinutes(5);
     }
 
     /**

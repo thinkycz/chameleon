@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form csrf action="{{ route('login') }}" method="post">
+                        <form csrf form-action="login" method="post">
                             <div class="row pb-4">
                                 <div class="col-full">
                                     <div class="input-wrap">

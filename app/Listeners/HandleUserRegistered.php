@@ -17,6 +17,6 @@ class HandleUserRegistered
     {
         $user = $event->user;
 
-        Notification::send(UserRepository::admins(), new UserRegistered($user));
+        \Notification::send(UserRepository::admins(), new UserRegistered($user));
     }
 }

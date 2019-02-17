@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="">
+                        <form csrf form-action="register" method="post">
                             <div class="row pb-4">
 
                                 <div class="col-half">

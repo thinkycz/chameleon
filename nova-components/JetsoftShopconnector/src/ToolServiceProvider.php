@@ -3,11 +3,13 @@
 namespace Nulisec\JetsoftShopconnector;
 
 use App\Models\Setting;
+use App\Repositories\ScheduledTasksRepository;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Nulisec\JetsoftShopconnector\Http\Middleware\Authorize;
+use Nulisec\JetsoftShopconnector\Jobs\SyncronizeProducts;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,10 @@ class ToolServiceProvider extends ServiceProvider
             $this->routes();
             $this->database();
         });
+
+        if (stringToBoolean(Setting::fetch('shopconnector', 'run_daily'))) {
+            $this->app->make(ScheduledTasksRepository::class)->register(new SyncronizeProducts());
+        }
 
         Nova::serving(function (ServingNova $event) {
             //

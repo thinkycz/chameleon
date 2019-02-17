@@ -19,4 +19,7 @@ return [
     'duration'                     => 'Trvání',
     'status'                       => 'Stav',
     'syncing_in_progress'          => 'Probíhá synchronizace...',
+    'run_daily'                    => 'Spouštět denně',
+    'enabled'                      => 'Povoleno',
+    'disabled'                     => 'Zakázáno',
 ];

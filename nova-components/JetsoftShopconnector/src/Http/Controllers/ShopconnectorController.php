@@ -19,7 +19,7 @@ class ShopconnectorController extends Controller
 
     public function saveConfiguration(Request $request)
     {
-        Setting::saveConfiguration('shopconnector', $request->only('eshopname', 'identifier', 'host', 'port', 'database', 'username', 'password'), 'jetsoft-shopconnector');
+        Setting::saveConfiguration('shopconnector', $request->only('eshopname', 'identifier', 'host', 'port', 'database', 'username', 'password', 'run_daily'), 'jetsoft-shopconnector');
 
         return $this->ajaxWithPayload([]);
     }
@@ -34,12 +34,14 @@ class ShopconnectorController extends Controller
     public function status()
     {
         $status = SyncStatus::get('shopconnector_status');
+        $run_daily = Setting::fetch('shopconnector', 'run_daily');
 
         return $this->ajaxWithPayload([
             'lastUpdate' => $status->lastUpdate(),
             'duration' => $status->duration(),
             'status' => $status->status(),
-            'job' => $status->job()
+            'job' => $status->job(),
+            'run_daily' => $run_daily,
         ]);
     }
 }

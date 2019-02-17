@@ -120,6 +120,25 @@
                     </div>
                 </div>
 
+                <div class="flex border-b border-40">
+                    <div class="w-1/5 py-6 px-8">
+                        <label class="inline-block text-80 pt-2 leading-tight"
+                                for="identifier">
+                            {{__('run_daily')}}
+                        </label>
+                    </div>
+                    <div class="py-6 px-8 w-1/2">
+                        <select v-model="run_daily"
+                                name="run_daily"
+                                id="run_daily"
+                                required="required"
+                                class="w-full form-control form-select">
+                            <option value="false">{{__('disabled')}}</option>
+                            <option value="true">{{__('enabled')}}</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="bg-30 flex px-8 py-4">
                     <button type="button"
                         class="btn btn-default btn-primary inline-flex items-center relative ml-auto mr-3"
@@ -143,6 +162,7 @@
                 database: '',
                 username: '',
                 password: '',
+                run_daily: false,
             };
         },
 
@@ -168,6 +188,7 @@
                     this.database = data.payload ? data.payload.database : this.database;
                     this.username = data.payload ? data.payload.username : this.username;
                     this.password = data.payload ? data.payload.password : this.password;
+                    this.run_daily = data.payload ? data.payload.run_daily : this.run_daily;
                 });
         },
     };

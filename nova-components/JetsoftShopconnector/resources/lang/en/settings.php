@@ -19,4 +19,7 @@ return [
     'duration'                     => 'Duration',
     'status'                       => 'Status',
     'syncing_in_progress'          => 'Syncing in progress...',
+    'run_daily'                    => 'Run Daily',
+    'enabled'                      => 'Enabled',
+    'disabled'                     => 'Disabled',
 ];

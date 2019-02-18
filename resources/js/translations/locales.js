@@ -9,7 +9,7 @@ export default {
             "updated": "Aktualizace dokončena.",
             "submit": "Odeslat",
             "no_price": "Bez ceny",
-            "no_results_found": "Nebyli nalezeny žádné výsledky odpovídající vašim dotazům.",
+            "no_results_found": "Pro zadaný výraz nebyl nalezen žádný výsledek.",
             "free": "Zdarma",
             "confirm_action": "Prosím potvrťe vaši akci",
             "confirm": "Potvrdit",
@@ -17,7 +17,10 @@ export default {
             "no_file_selected": "Nebyl vybrán soubor",
             "locales.en": "Angličtina",
             "locales.vi": "Vietnamština",
-            "locales.cs": "Čeština"
+            "locales.cs": "Čeština",
+            "print": "Vytisknout",
+            "print_preview": "Náhled tisku",
+            "search_results": "Výsledek vyhledávání"
         },
         "passwords": {
             "password": "Heslo musí být alespoň 6 znaků dlouhé a musí se shodovat s potvrzením.",
@@ -420,6 +423,25 @@ export default {
             "activated_at": "Aktivováno",
             "roles": "Role"
         },
+        "metrics": {
+            "number_of_categories": "Počet kategorií",
+            "number_of_orders": "Počet objednávek",
+            "number_of_products": "Počet produktů",
+            "number_of_users": "Počet uživatelů",
+            "orders_per_day": "Objednávky za den",
+            "orders_per_status": "Objednávky podle stavu",
+            "products_per_availability": "Produkty podle dostupnosti",
+            "products_per_category": "Produkty podle kategorie",
+            "users_per_day": "Uživatelé za den",
+            "users_per_price_level": "Uživatelé podle cenové úrovně",
+            "30_days": "30 dní",
+            "60_days": "60 dní",
+            "90_days": "90 dní",
+            "365_days": "365 dní",
+            "month_to_date": "Tento měsíc",
+            "quarter_to_date": "Tento kvartál",
+            "year_to_date": "Tento rok"
+        },
         "products": {
             "add_to_basket": "Přidat do košíku",
             "update_quantity": "Aktualizovat množství",
@@ -735,7 +757,8 @@ export default {
             "locales.vi": "Vietnamese",
             "locales.cs": "Czech",
             "print": "Print",
-            "print_preview": "Print Preview"
+            "print_preview": "Print Preview",
+            "search_results": "Search Results"
         },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
@@ -1164,6 +1187,25 @@ export default {
             "locale": "Locale",
             "activated_at": "Activated At",
             "roles": "Roles"
+        },
+        "metrics": {
+            "number_of_categories": "Number Of Categories",
+            "number_of_orders": "Number Of Orders",
+            "number_of_products": "Number Of Products",
+            "number_of_users": "Number Of Users",
+            "orders_per_day": "Orders Per Day",
+            "orders_per_status": "Orders Per Status",
+            "products_per_availability": "Products Per Availability",
+            "products_per_category": "Products Per Category",
+            "users_per_day": "Users Per Day",
+            "users_per_price_level": "Users Per Price Level",
+            "30_days": "30 Days",
+            "60_days": "60 Days",
+            "90_days": "90 Days",
+            "365_days": "365 Days",
+            "month_to_date": "Month To Date",
+            "quarter_to_date": "Quarter To Date",
+            "year_to_date": "Year To Date"
         },
         "products": {
             "add_to_basket": "Add to basket",

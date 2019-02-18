@@ -218,5 +218,30 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
+        Setting::updateOrCreate(['code' => 'mail_configuration'], [
+            'schema' => [
+                'type'       => 'object',
+                'required'   => [],
+                'properties' => [
+                    'host'         => ['type' => 'string'],
+                    'port'         => ['type' => 'string'],
+                    'from_address' => ['type' => 'string'],
+                    'from_name'    => ['type' => 'string'],
+                    'username'     => ['type' => 'string'],
+                    'password'     => ['type' => 'string'],
+                    'encryption'   => ['type' => 'string'],
+                ],
+            ],
+            'data'   => [
+                'host'         => 'smtp.mailtrap.io',
+                'port'         => '2525',
+                'from_address' => 'email@chameleon.com',
+                'from_name'    => 'Chameleon',
+                'username'     => null,
+                'password'     => null,
+                'encryption'   => null,
+            ],
+        ]);
+
     }
 }

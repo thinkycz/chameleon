@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\ModelHasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 
-class Setting extends Model
+class Setting extends Model implements HasMedia
 {
+    use ModelHasMedia;
+
     public $timestamps = false;
 
     protected $fillable = [

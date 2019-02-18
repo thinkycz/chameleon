@@ -21,7 +21,7 @@ class SettingSeeder extends Seeder
                     'description' => ['type' => 'string'],
                     'keywords'    => ['type' => 'string'],
                     'logo'        => ['type' => 'image'],
-                    'favicon'     => ['type' => 'string'],
+                    'favicon'     => ['type' => 'image'],
                 ],
             ],
             'data'   => [

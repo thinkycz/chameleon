@@ -6,7 +6,8 @@
             <div class="w-full flex items-center mb-6">
                 <div class="flex w-full justify-end items-center mx-3"></div>
                 <div class="flex-no-shrink ml-auto">
-                    <router-link to="/xml-importer/configure" class="btn btn-default btn-primary">
+                    <router-link to="/xml-importer/configure"
+                        class="btn btn-default btn-primary">
                         {{ __('configuration') }}
                     </router-link>
                 </div>
@@ -32,23 +33,26 @@
             <div class="flex my-4">
                 <div class="w-1/4 font-bold">{{ __('manual_upload') }}</div>
                 <div class="w-3/4">
-                    <input type="file" name="file" ref="file" accept="text/xml">
+                    <input type="file"
+                        name="file"
+                        ref="file"
+                        accept="text/xml">
                 </div>
             </div>
 
             <div class="flex my-4">
                 <div class="w-3/4 ml-auto">
                     <button type="button"
-                            class="btn btn-default btn-primary"
-                            @click="sync">{{ __('sync_now') }}
+                        class="btn btn-default btn-primary"
+                        @click="sync">{{ __('sync_now') }}
                     </button>
                     <button type="button"
-                            class="btn btn-default btn-primary"
-                            @click="validate">{{ __('validate_parser') }}
+                        class="btn btn-default btn-primary"
+                        @click="validate">{{ __('validate_parser') }}
                     </button>
                     <button type="button"
-                            class="btn btn-default btn-primary"
-                            @click="refresh">{{ __('refresh_status') }}
+                        class="btn btn-default btn-primary"
+                        @click="refresh">{{ __('refresh_status') }}
                     </button>
                 </div>
             </div>
@@ -57,15 +61,19 @@
         <portal to="modals">
             <transition name="fade">
                 <modal v-if="modalOpen">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" style="width: 1000px;">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden"
+                        style="width: 1000px;">
                         <div class="bg-30 px-6 py-3 flex">
                             <div class="flex items-center justify-between w-full">
                                 <strong>{{__('validation_result')}}</strong>
-                                <button type="button" @click.prevent="modalOpen = false" class="btn text-80 font-normal h-9 px-3 mr-3 btn-link">&times; {{__('close')}}</button>
+                                <button type="button"
+                                    @click.prevent="modalOpen = false"
+                                    class="btn text-80 font-normal h-9 px-3 mr-3 btn-link">&times; {{__('close')}}</button>
                             </div>
                         </div>
 
-                        <div v-if="validationResponse.product" class="p-6">
+                        <div v-if="validationResponse.product"
+                            class="p-6">
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 py-4">
                                     <h4 class="font-normal text-80">
@@ -198,7 +206,8 @@
                             </div>
                         </div>
 
-                        <div v-else class="p-6">
+                        <div v-else
+                            class="p-6">
                             {{__('no_entities_found')}}
                         </div>
                     </div>
@@ -209,10 +218,10 @@
 </template>
 
 <script>
-    import CodeArea from "./CodeArea";
+    import CodeArea from './CodeArea';
 
     export default {
-        components: {CodeArea},
+        components: { CodeArea },
         data() {
             return {
                 lastUpdate: null,
@@ -230,8 +239,8 @@
                 Nova.request()
                     .post('/nova-vendor/xml-importer/sync', formData, {
                         headers: {
-                            'Content-Type': 'multipart/form-data'
-                        }
+                            'Content-Type': 'multipart/form-data',
+                        },
                     })
                     .then(() => {
                         this.$toasted.success(this.__('syncing_in_progress'));
@@ -249,10 +258,10 @@
                 Nova.request()
                     .post('/nova-vendor/xml-importer/validate-parser', formData, {
                         headers: {
-                            'Content-Type': 'multipart/form-data'
-                        }
+                            'Content-Type': 'multipart/form-data',
+                        },
                     })
-                    .then(({data}) => {
+                    .then(({ data }) => {
                         this.validationResponse = data.payload;
                         this.modalOpen = true;
                     })
@@ -264,7 +273,7 @@
             refresh() {
                 Nova.request()
                     .get('/nova-vendor/xml-importer/status')
-                    .then(({data}) => {
+                    .then(({ data }) => {
                         this.lastUpdate = data.payload.lastUpdate;
                         this.duration = data.payload.duration;
                         this.status = data.payload.status;
@@ -272,12 +281,13 @@
             },
 
             getProductField(field) {
-                return _.isObject(this.validationResponse.product[field]) ? this.validationResponse.product[field][0] : this.validationResponse.product[field];
-            }
+                return _.isObject(this.validationResponse.product[field])
+                    ? this.validationResponse.product[field][0]
+                    : this.validationResponse.product[field];
+            },
         },
         created() {
             this.refresh();
         },
     };
 </script>
-

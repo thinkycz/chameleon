@@ -30,13 +30,37 @@
                     :class="errorClasses"
                     :placeholder="this._.capitalize(key)"
                     v-model="value[key]"></textarea>
-                <input v-if="property.type === 'image'"
-                    :id="key"
-                    type="file"
-                    accept="images/*"
-                    class="w-full form-control form-input form-input-bordered"
-                    :class="errorClasses"
-                    :placeholder="this._.capitalize(key)" />
+                <div v-if="property.type === 'image'"
+                    class="flex justify-between">
+                    <input :id="key"
+                        type="text"
+                        class="w-full form-control form-input form-input-bordered"
+                        :class="errorClasses"
+                        :placeholder="this._.capitalize(key)"
+                        v-model="value[key]" />
+                    <div class="upload-button ml-4">
+                        <label :for="`file-${key}`"
+                            class="button-file-upload">
+                            <span class="btn btn-primary rounded p-1">
+                                <icon class="rotate-180"
+                                    type="download"
+                                    view-box="0 0 24 24"
+                                    width="40"
+                                    height="22" />
+                            </span>
+                            <input type="file"
+                                :id="`file-${key}`"
+                                accept="images/*"
+                                @change="handleFileChange($event, key)"
+                                name="file">
+                        </label>
+                    </div>
+                    <span v-if="uploadedFiles[key]"
+                        class="ml-2 mt-2 cursor-pointer text-primary font-bold"
+                        @click="handleFileUpload(key)">
+                        {{ __('upload_and_use') }}
+                    </span>
+                </div>
                 <checkbox v-if="property.type === 'boolean'"
                     class="py-2"
                     @input="toggle(key)"
@@ -55,6 +79,10 @@
         mixins: [FormField, HandlesValidationErrors],
 
         props: ['resourceName', 'resourceId', 'field'],
+
+        data: () => ({
+            uploadedFiles: null,
+        }),
 
         methods: {
             /*
@@ -80,6 +108,23 @@
                 this.value = value;
             },
 
+            handleFileChange(e, key) {
+                this.uploadedFiles[key] = e.currentTarget.files[0];
+            },
+
+            handleFileUpload(key) {
+                let formData = new FormData();
+                formData.append('file', this.uploadedFiles[key]);
+                formData.append('collection', key);
+
+                Nova.request()
+                    .post('/nova-vendor/json-schema/upload-file', formData)
+                    .then(({ data }) => {
+                        this.value[key] = `${Nova.config.baseURL}${data.payload.media.url}`;
+                        this.uploadedFiles[key] = null;
+                    });
+            },
+
             toggle(key) {
                 this.value[key] = !this.value[key];
             },
@@ -90,5 +135,30 @@
                 return this.field.options.schema.properties;
             },
         },
+
+        created() {
+            let files = {};
+            Object.keys(this.properties).forEach(key => {
+                if (['image', 'file'].indexOf(this.properties[key].type) < 0) {
+                    return;
+                }
+
+                files[key] = null;
+            });
+
+            this.uploadedFiles = files;
+        },
     };
 </script>
+
+<style lang="scss" scoped>
+    .button-file-upload {
+        display: block;
+        overflow: hidden;
+
+        input[type='file'] {
+            left: -1000px;
+            position: fixed;
+        }
+    }
+</style>

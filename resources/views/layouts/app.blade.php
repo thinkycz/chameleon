@@ -7,6 +7,11 @@
 
     <title>@yield('title', config('app.name'))</title>
 
+    <meta name="description" content="{{ settingsRepository()->getCompanyAbout() }}">
+    <meta name="keywords" content="{{ settingsRepository()->getCompanyName() }}">
+    <meta name="author" content="{{ settingsRepository()->getCompanyName() }}">
+
+    <link rel="icon" href="{{ settingsRepository()->getFaviconImage() }}">
     <script>
         window.baseURL = '{{ url('/') }}';
         window.currentLocale = '{{ app()->getLocale() }}';

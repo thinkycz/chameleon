@@ -14,13 +14,19 @@ class HomeController extends Controller
     public function index()
     {
         $homepage = settingsRepository()->getHomepage();
-        $categories = Category::whereHas('products')->with(['products' => function ($q) {
-            $q->inRandomOrder()->take(4);
-        }])->inRandomOrder()
+        $categories = Category::with('products')
             ->whereEnabled(true)
             ->whereNull('parent_id')
-            ->take(config('config.category_showcase_count'))
-            ->get();
+            ->get()
+            ->filter(function ($category) {
+                return $category->products->count() > 3;
+            })
+            ->map(function ($category) {
+                $category->setRelation('products', $category->products->shuffle()->take(3));
+                return $category;
+            })
+            ->shuffle()
+            ->take(config('config.category_showcase_count'));
 
         $firstCategory = Category::findBySlugOrId($homepage['category_1']);
         $secondCategory = Category::findBySlugOrId($homepage['category_2']);

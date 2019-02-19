@@ -37,6 +37,6 @@ abstract class Locale
 
     public static function fallback()
     {
-        return config('app.fallback_locale', static::CZECH);
+        return config('app.fallback_locale', static::ENGLISH);
     }
 }

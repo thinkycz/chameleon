@@ -13739,6 +13739,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -13750,7 +13772,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             duration: null,
             status: null,
             modalOpen: false,
-            validationResponse: null
+            validationResponse: null,
+            loading: false
         };
     },
 
@@ -13758,6 +13781,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sync: function sync() {
             var _this = this;
 
+            this.loading = true;
             var formData = new FormData();
             formData.append('xmlfile', this.$refs.file.files[0]);
 
@@ -13770,11 +13794,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 setTimeout(_this.refresh, 2000);
             }).catch(function (err) {
                 _this.$toasted.error(err);
+            }).then(function () {
+                _this.loading = false;
             });
         },
         validate: function validate() {
             var _this2 = this;
 
+            this.loading = true;
             var formData = new FormData();
             formData.append('xmlfile', this.$refs.file.files[0]);
 
@@ -13789,17 +13816,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.modalOpen = true;
             }).catch(function (err) {
                 _this2.$toasted.error(err);
+            }).then(function () {
+                _this2.loading = false;
             });
         },
         refresh: function refresh() {
             var _this3 = this;
 
+            this.loading = true;
             Nova.request().get('/nova-vendor/xml-importer/status').then(function (_ref2) {
                 var data = _ref2.data;
 
                 _this3.lastUpdate = data.payload.lastUpdate;
                 _this3.duration = data.payload.duration;
                 _this3.status = data.payload.status;
+            }).then(function () {
+                _this3.loading = false;
             });
         },
         getProductField: function getProductField(field) {
@@ -16226,7 +16258,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.CodeMirror {\n    min-height: 50px;\n    font: 14px/1.5 Menlo, Consolas, Monaco, 'Andale Mono', monospace;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    height: auto;\n    margin: auto;\n    position: relative;\n    z-index: 0;\n    width: 100%;\n}\n.CodeMirror-wrap {\n    padding: 0.5rem;\n}\n.CodeMirror-scroll {\n    height: auto;\n    overflow: visible;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n", ""]);
+exports.push([module.i, "\n.CodeMirror {\r\n    min-height: 50px;\r\n    font: 14px/1.5 Menlo, Consolas, Monaco, 'Andale Mono', monospace;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    height: auto;\r\n    margin: auto;\r\n    position: relative;\r\n    z-index: 0;\r\n    width: 100%;\n}\n.CodeMirror-wrap {\r\n    padding: 0.5rem;\n}\n.CodeMirror-scroll {\r\n    height: auto;\r\n    overflow: visible;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\n}\r\n", ""]);
 
 // exports
 
@@ -27894,37 +27926,84 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
-          _c("div", { staticClass: "w-3/4 ml-auto" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.sync }
-              },
-              [_vm._v(_vm._s(_vm.__("sync_now")) + "\n                ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.validate }
-              },
-              [_vm._v(_vm._s(_vm.__("validate_parser")) + "\n                ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.refresh }
-              },
-              [_vm._v(_vm._s(_vm.__("refresh_status")) + "\n                ")]
-            )
-          ])
+          _c(
+            "div",
+            { staticClass: "w-3/4 ml-auto" },
+            [
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "sync-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.sync($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("sync_now")) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "validate-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.validate($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("validate_parser")) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "refresh-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.refresh($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("refresh_status")) +
+                      "\n                "
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       ]),
       _vm._v(" "),
@@ -28504,6 +28583,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -28513,7 +28601,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             status: null,
             modalOpen: false,
             validationResponse: null,
-            run_daily: false
+            run_daily: false,
+            loading: false
         };
     },
 
@@ -28521,15 +28610,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sync: function sync() {
             var _this = this;
 
+            this.loading = true;
+
             Nova.request().post('/nova-vendor/xml-importer/ftp/sync').then(function () {
                 _this.$toasted.success(_this.__('syncing_in_progress'));
                 setTimeout(_this.refresh, 2000);
             }).catch(function (err) {
                 _this.$toasted.error(err);
+            }).then(function () {
+                _this.loading = false;
             });
         },
         refresh: function refresh() {
             var _this2 = this;
+
+            this.loading = true;
 
             Nova.request().get('/nova-vendor/xml-importer/ftp/status').then(function (_ref) {
                 var data = _ref.data;
@@ -28538,6 +28633,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.duration = data.payload.duration;
                 _this2.status = data.payload.status;
                 _this2.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
+            }).then(function () {
+                _this2.loading = false;
             });
         }
     },
@@ -28633,27 +28730,60 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
-          _c("div", { staticClass: "w-3/4 ml-auto" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.sync }
-              },
-              [_vm._v(_vm._s(_vm.__("sync_now")) + "\n                ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.refresh }
-              },
-              [_vm._v(_vm._s(_vm.__("refresh_status")) + "\n                ")]
-            )
-          ])
+          _c(
+            "div",
+            { staticClass: "w-3/4 ml-auto" },
+            [
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "sync-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.sync($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("sync_now")) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "refresh-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.refresh($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("refresh_status")) +
+                      "\n                "
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       ])
     ],
@@ -28775,6 +28905,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -28784,7 +28924,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             status: null,
             modalOpen: false,
             validationResponse: null,
-            run_daily: false
+            run_daily: false,
+            loading: false
         };
     },
 
@@ -28792,15 +28933,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sync: function sync() {
             var _this = this;
 
+            this.loading = true;
+
             Nova.request().post('/nova-vendor/xml-importer/endpoint/sync').then(function () {
                 _this.$toasted.success(_this.__('syncing_in_progress'));
                 setTimeout(_this.refresh, 2000);
             }).catch(function (err) {
                 _this.$toasted.error(err);
+            }).then(function () {
+                _this.loading = false;
             });
         },
         refresh: function refresh() {
             var _this2 = this;
+
+            this.loading = true;
 
             Nova.request().get('/nova-vendor/xml-importer/endpoint/status').then(function (_ref) {
                 var data = _ref.data;
@@ -28809,6 +28956,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.duration = data.payload.duration;
                 _this2.status = data.payload.status;
                 _this2.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
+            }).then(function () {
+                _this2.loading = false;
             });
         }
     },
@@ -28904,27 +29053,60 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
-          _c("div", { staticClass: "w-3/4 ml-auto" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.sync }
-              },
-              [_vm._v(_vm._s(_vm.__("sync_now")) + "\n                ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.refresh }
-              },
-              [_vm._v(_vm._s(_vm.__("refresh_status")) + "\n                ")]
-            )
-          ])
+          _c(
+            "div",
+            { staticClass: "w-3/4 ml-auto" },
+            [
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "sync-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.sync($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("sync_now")) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "refresh-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.refresh($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("refresh_status")) +
+                      "\n                "
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       ])
     ],

@@ -36,12 +36,23 @@
 
             <div class="flex my-4">
                 <div class="w-3/4 ml-auto">
-                    <button type="button"
+
+                    <progress-button dusk="sync-button"
                         class="btn btn-default btn-primary"
-                        @click="sync">{{ __('sync_now') }}</button>
-                    <button type="button"
+                        @click.native="sync"
+                        :disabled="loading"
+                        :processing="loading">
+                        {{ __('sync_now') }}
+                    </progress-button>
+
+                    <progress-button dusk="refresh-button"
                         class="btn btn-default btn-primary"
-                        @click="refresh">{{ __('refresh_status') }}</button>
+                        @click.native="refresh"
+                        :disabled="loading"
+                        :processing="loading">
+                        {{ __('refresh_status') }}
+                    </progress-button>
+
                 </div>
             </div>
 
@@ -56,10 +67,13 @@
             duration: null,
             status: null,
             run_daily: null,
+            loading: false,
         }),
 
         methods: {
             sync() {
+                this.loading = true;
+
                 Nova.request()
                     .post('/nova-vendor/jetsoft-shopconnector/sync')
                     .then(() => {
@@ -68,10 +82,15 @@
                     })
                     .catch(err => {
                         this.$toasted.error(this.__('please_check_config'));
+                    })
+                    .then(() => {
+                        this.loading = false;
                     });
             },
 
             refresh() {
+                this.loading = true;
+
                 Nova.request()
                     .get('/nova-vendor/jetsoft-shopconnector/status')
                     .then(({ data }) => {
@@ -79,6 +98,9 @@
                         this.duration = data.payload.duration;
                         this.status = data.payload.status;
                         this.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
+                    })
+                    .then(() => {
+                        this.loading = false;
                     });
             },
         },

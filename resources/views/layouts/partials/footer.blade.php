@@ -26,7 +26,7 @@
                     @auth
                         <li><a href="{{ route('about') }}">{{ trans('footer.about') }}</a></li>
                         <li><a href="{{ route('contact.index') }}">{{ trans('footer.contact') }}</a></li>
-                        <li><a href="{{ route('profiles.show', currentUser(false)) }}">{{ trans('footer.my_profile') }}</a></li>
+                        <li><a href="{{ route('profiles.show') }}">{{ trans('footer.my_profile') }}</a></li>
 
                         @if(activeBasket()->hasOrderedItems())
                             <li><a href="{{ route('basket.show') }}">{{ trans('footer.basket') }}</a></li>

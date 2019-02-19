@@ -300,6 +300,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -307,7 +318,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             lastUpdate: null,
             duration: null,
             status: null,
-            run_daily: null
+            run_daily: null,
+            loading: false
         };
     },
 
@@ -315,15 +327,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         sync: function sync() {
             var _this = this;
 
+            this.loading = true;
+
             Nova.request().post('/nova-vendor/jetsoft-shopconnector/sync').then(function () {
                 _this.$toasted.success(_this.__('syncing_in_progress'));
                 setTimeout(_this.refresh, 2000);
             }).catch(function (err) {
                 _this.$toasted.error(_this.__('please_check_config'));
+            }).then(function () {
+                _this.loading = false;
             });
         },
         refresh: function refresh() {
             var _this2 = this;
+
+            this.loading = true;
 
             Nova.request().get('/nova-vendor/jetsoft-shopconnector/status').then(function (_ref) {
                 var data = _ref.data;
@@ -332,6 +350,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.duration = data.payload.duration;
                 _this2.status = data.payload.status;
                 _this2.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
+            }).then(function () {
+                _this2.loading = false;
             });
         }
     },
@@ -421,27 +441,60 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "flex my-4" }, [
-          _c("div", { staticClass: "w-3/4 ml-auto" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.sync }
-              },
-              [_vm._v(_vm._s(_vm.__("sync_now")))]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default btn-primary",
-                attrs: { type: "button" },
-                on: { click: _vm.refresh }
-              },
-              [_vm._v(_vm._s(_vm.__("refresh_status")))]
-            )
-          ])
+          _c(
+            "div",
+            { staticClass: "w-3/4 ml-auto" },
+            [
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "sync-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.sync($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("sync_now")) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "progress-button",
+                {
+                  staticClass: "btn btn-default btn-primary",
+                  attrs: {
+                    dusk: "refresh-button",
+                    disabled: _vm.loading,
+                    processing: _vm.loading
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.refresh($event)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.__("refresh_status")) +
+                      "\n                "
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       ])
     ],

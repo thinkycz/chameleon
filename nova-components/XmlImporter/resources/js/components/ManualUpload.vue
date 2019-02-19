@@ -42,18 +42,31 @@
 
             <div class="flex my-4">
                 <div class="w-3/4 ml-auto">
-                    <button type="button"
+
+                    <progress-button dusk="sync-button"
                         class="btn btn-default btn-primary"
-                        @click="sync">{{ __('sync_now') }}
-                    </button>
-                    <button type="button"
+                        @click.native="sync"
+                        :disabled="loading"
+                        :processing="loading">
+                        {{ __('sync_now') }}
+                    </progress-button>
+
+                    <progress-button dusk="validate-button"
                         class="btn btn-default btn-primary"
-                        @click="validate">{{ __('validate_parser') }}
-                    </button>
-                    <button type="button"
+                        @click.native="validate"
+                        :disabled="loading"
+                        :processing="loading">
+                        {{ __('validate_parser') }}
+                    </progress-button>
+
+                    <progress-button dusk="refresh-button"
                         class="btn btn-default btn-primary"
-                        @click="refresh">{{ __('refresh_status') }}
-                    </button>
+                        @click.native="refresh"
+                        :disabled="loading"
+                        :processing="loading">
+                        {{ __('refresh_status') }}
+                    </progress-button>
+
                 </div>
             </div>
         </card>
@@ -229,10 +242,12 @@
                 status: null,
                 modalOpen: false,
                 validationResponse: null,
+                loading: false,
             };
         },
         methods: {
             sync() {
+                this.loading = true;
                 let formData = new FormData();
                 formData.append('xmlfile', this.$refs.file.files[0]);
 
@@ -248,10 +263,14 @@
                     })
                     .catch(err => {
                         this.$toasted.error(err);
+                    })
+                    .then(() => {
+                        this.loading = false;
                     });
             },
 
             validate() {
+                this.loading = true;
                 let formData = new FormData();
                 formData.append('xmlfile', this.$refs.file.files[0]);
 
@@ -267,16 +286,23 @@
                     })
                     .catch(err => {
                         this.$toasted.error(err);
+                    })
+                    .then(() => {
+                        this.loading = false;
                     });
             },
 
             refresh() {
+                this.loading = true;
                 Nova.request()
                     .get('/nova-vendor/xml-importer/status')
                     .then(({ data }) => {
                         this.lastUpdate = data.payload.lastUpdate;
                         this.duration = data.payload.duration;
                         this.status = data.payload.status;
+                    })
+                    .then(() => {
+                        this.loading = false;
                     });
             },
 

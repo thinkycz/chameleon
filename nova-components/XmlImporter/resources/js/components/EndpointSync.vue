@@ -6,7 +6,8 @@
             <div class="w-full flex items-center my-6">
                 <div class="flex w-full justify-end items-center mx-3"></div>
                 <div class="flex-no-shrink ml-auto">
-                    <router-link to="/xml-importer/endpoint/configure" class="btn btn-default btn-primary">
+                    <router-link to="/xml-importer/endpoint/configure"
+                        class="btn btn-default btn-primary">
                         {{ __('configure_endpoint') }}
                     </router-link>
                 </div>
@@ -36,14 +37,23 @@
 
             <div class="flex my-4">
                 <div class="w-3/4 ml-auto">
-                    <button type="button"
-                            class="btn btn-default btn-primary"
-                            @click="sync">{{ __('sync_now') }}
-                    </button>
-                    <button type="button"
-                            class="btn btn-default btn-primary"
-                            @click="refresh">{{ __('refresh_status') }}
-                    </button>
+
+                    <progress-button dusk="sync-button"
+                        class="btn btn-default btn-primary"
+                        @click.native="sync"
+                        :disabled="loading"
+                        :processing="loading">
+                        {{ __('sync_now') }}
+                    </progress-button>
+
+                    <progress-button dusk="refresh-button"
+                        class="btn btn-default btn-primary"
+                        @click.native="refresh"
+                        :disabled="loading"
+                        :processing="loading">
+                        {{ __('refresh_status') }}
+                    </progress-button>
+
                 </div>
             </div>
         </card>
@@ -59,11 +69,14 @@
                 status: null,
                 modalOpen: false,
                 validationResponse: null,
-                run_daily: false
+                run_daily: false,
+                loading: false,
             };
         },
         methods: {
             sync() {
+                this.loading = true;
+
                 Nova.request()
                     .post('/nova-vendor/xml-importer/endpoint/sync')
                     .then(() => {
@@ -72,23 +85,30 @@
                     })
                     .catch(err => {
                         this.$toasted.error(err);
+                    })
+                    .then(() => {
+                        this.loading = false;
                     });
             },
 
             refresh() {
+                this.loading = true;
+
                 Nova.request()
                     .get('/nova-vendor/xml-importer/endpoint/status')
-                    .then(({data}) => {
+                    .then(({ data }) => {
                         this.lastUpdate = data.payload.lastUpdate;
                         this.duration = data.payload.duration;
                         this.status = data.payload.status;
                         this.run_daily = data.payload.run_daily == 'true' ? 'enabled' : 'disabled';
+                    })
+                    .then(() => {
+                        this.loading = false;
                     });
-            }
+            },
         },
         created() {
             this.refresh();
         },
     };
 </script>
-

@@ -30,4 +30,9 @@ return [
      * Number if results in search autocomplete suggestion box
      */
     'autocomplete_results_count'  => env('AUTOCOMPLETE_RESULTS_COUNT', 8),
+
+    /**
+     * Number of categories for the category showcase
+     */
+    'category_showcase_count'     => 6,
 ];

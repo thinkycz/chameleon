@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\AccountActivated;
 use App\Traits\ModelHasDateFormatted;
 use App\Traits\User\UserHasGetters;
 use App\Traits\User\UserHasMedia;
@@ -67,6 +68,13 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return $address->update([
             'is_default' => true,
         ]);
+    }
+
+    public function activate($activated)
+    {
+        $this->update(['activated_at' => $activated]);
+
+        return $this->notify(new AccountActivated());
     }
 
     public function priceLevel()

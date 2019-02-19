@@ -16,7 +16,7 @@ class UserObserver
      */
     public function updating(User $user)
     {
-        if ($user->isDirty('activated_at') && !$user->is_active) {
+        if ($user->isDirty('activated_at') && !$user->getOriginal('activated_at')) {
             $user->notify(new AccountActivated());
         }
     }

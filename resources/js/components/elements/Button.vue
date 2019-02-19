@@ -7,7 +7,7 @@
         <span class="icon-wrap flex justify-center items-center">
             <span>{{ label }}</span>
             <span v-if="isDisabled"
-                class="icon-loading icon-sm ml-2">
+                class="icon-loading icon-md ml-2">
                 <icon-sync></icon-sync>
             </span>
         </span>

@@ -7,18 +7,18 @@
                     <div class="mb-8">
                         <p class="p-big mb-2">{{ trans('checkout.delivery_method') }}</p>
                         <p class="p-small flex justify-between">
-            <span class="icon-wrap">
-                <icon-cube></icon-cube>&nbsp; <strong>{{ $basket->deliveryMethod->name }}</strong>
-            </span>
+                            <span class="icon-wrap">
+                                <icon-cube></icon-cube>&nbsp; <strong>{{ $basket->deliveryMethod->name }}</strong>
+                            </span>
                             <span class="ml-2 text-primary">{{ $basket->deliveryMethod->formatted_price }}</span>
                         </p>
                     </div>
                     <div class="my-8">
                         <p class="p-big mb-2">{{ trans('checkout.payment_method') }}</p>
                         <p class="p-small flex justify-between">
-            <span class="icon-wrap">
-                <icon-card></icon-card>&nbsp; <strong>{{ $basket->paymentMethod->name }}</strong>
-            </span>
+                            <span class="icon-wrap">
+                                <icon-card></icon-card>&nbsp; <strong>{{ $basket->paymentMethod->name }}</strong>
+                            </span>
                             <span class="ml-2 text-primary">{{ $basket->deliveryMethod->formatted_price }}</span>
                         </p>
                     </div>
@@ -40,8 +40,8 @@
                 </div>
 
                 <vue-button form-selector="#complete-checkout"
-                        label="{{ trans('checkout.complete_order') }}"
-                        button-class="btn btn-primary text-center w-full btn-lg rounded-t-none">
+                    label="{{ trans('checkout.complete_order') }}"
+                    button-class="btn btn-primary text-center w-full btn-lg rounded-t-none">
                 </vue-button>
             </div>
 

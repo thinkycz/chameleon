@@ -83,7 +83,7 @@
 .icon-wrap {
     @apply flex items-center;
     .icon {
-        @apply mr-2 align-bottom;
+        @apply mr-2 align-middle;
     }
     &.right-icon {
         .icon {
@@ -109,6 +109,11 @@
 .icon-sm {
     .icon {
         @apply w-4 h-4;
+    }
+}
+.icon-md {
+    .icon {
+        @apply w-5 h-5;
     }
 }
 .icon-2x {

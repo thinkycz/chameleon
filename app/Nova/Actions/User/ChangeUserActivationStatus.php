@@ -3,7 +3,6 @@
 namespace App\Nova\Actions\User;
 
 use App\Models\User;
-use App\Notifications\AccountActivated;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
@@ -25,11 +24,10 @@ class ChangeUserActivationStatus extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        $activated = $fields->is_active ? now() : null;
+        $activated_at = $fields->is_active ? now() : null;
 
-        $models->each(function (User $user) use ($activated) {
-            $user->update(['activated_at' => $activated]);
-            $user->notify(new AccountActivated());
+        $models->each(function (User $user) use ($activated_at) {
+            $user->activate($activated_at);
         });
     }
 
@@ -41,7 +39,7 @@ class ChangeUserActivationStatus extends Action
     public function fields()
     {
         return [
-            Boolean::make('Is Active')
+            Boolean::make('Is Active'),
         ];
     }
 }

@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form csrf action="{{ route('contact.contact') }}" method="post">
+                        <form csrf action="{{ route('contact.contact') }}" method="post" id="contact-form">
                             <div class="row pb-4">
 
                                 <div class="col-full">
@@ -45,7 +45,10 @@
 
                             </div>
 
-                            <button type="submit" class="btn btn-primary">{{ trans('global.submit') }}</button>
+                            <vue-button form-selector="#contact-form"
+                                label="{{ trans('global.submit') }}"
+                                button-class="btn btn-primary">
+                            </vue-button>
 
                         </form>
                     </div>

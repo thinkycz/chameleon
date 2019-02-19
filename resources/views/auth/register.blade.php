@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form csrf form-action="register" method="post">
+                        <form csrf form-action="register" method="post" id="register-form">
                             <div class="row pb-4">
 
                                 <div class="col-half">
@@ -60,10 +60,13 @@
 
                             </div>
 
-                            <button type="submit" class="btn btn-primary">{{ trans('auth.register') }}</button>
+                            <vue-button form-selector="#register-form"
+                                label="{{ trans('auth.register') }}"
+                                button-class="btn btn-primary">
+                            </vue-button>
+
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>

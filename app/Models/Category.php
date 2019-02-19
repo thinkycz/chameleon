@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Locale;
 use App\Traits\ModelHasMedia;
 use App\Traits\ModelHasSlug;
 use Illuminate\Database\Eloquent\Model;
@@ -46,5 +47,15 @@ class Category extends Model implements HasMedia
         return static::where('slug', $value)
             ->orWhere('id', $value)
             ->first();
+    }
+
+    public static function firstOrCreateByName($name)
+    {
+        $locale = Locale::fallback();
+        if ($category = static::where("name->{$locale}", $name)->first()) {
+            return $category;
+        }
+
+        return static::create(compact('name'));
     }
 }

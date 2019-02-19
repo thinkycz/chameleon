@@ -7,15 +7,13 @@ use App\Nova\Filters\CategoryEnabled;
 use App\Nova\Filters\CategoryShowSubcategories;
 use App\Nova\Metrics\NumberOfCategories;
 use App\Nova\Metrics\ProductsPerCategory;
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\HasMany;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Nulisec\TranslatableText\TranslatableText;
 
 class Category extends Resource
 {
@@ -71,7 +69,7 @@ class Category extends Resource
     public function fields(Request $request)
     {
         return [
-            TranslatableText::make(__('resources.name'), 'name'),
+            Text::make(__('resources.name'), 'name'),
 
             Text::make(__('resources.slug'), 'slug')->onlyOnDetail(),
 
@@ -87,7 +85,7 @@ class Category extends Resource
 
             HasMany::make(__('resources.subcategories'), 'children', Category::class),
 
-            BelongsToMany::make(__('resources.products'), 'products', Product::class)
+            BelongsToMany::make(__('resources.products'), 'products', Product::class),
         ];
     }
 

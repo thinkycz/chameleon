@@ -6,13 +6,12 @@ abstract class Locale
 {
     const CZECH = 'cs';
     const ENGLISH = 'en';
-    const VIETNAMESE = 'vi';
 
     public static function all()
     {
         return [
-            static::ENGLISH    => trans('global.locales.en'),
-            static::CZECH      => trans('global.locales.cs'),
+            static::ENGLISH => trans('global.locales.en'),
+            static::CZECH   => trans('global.locales.cs'),
         ];
     }
 
@@ -38,6 +37,6 @@ abstract class Locale
 
     public static function fallback()
     {
-        return config('app.fallback_locale', static::ENGLISH);
+        return config('app.fallback_locale', static::CZECH);
     }
 }

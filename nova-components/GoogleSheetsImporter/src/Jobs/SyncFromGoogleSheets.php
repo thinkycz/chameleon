@@ -101,7 +101,7 @@ class SyncFromGoogleSheets extends SyncJob implements ShouldQueue
                     return !empty($name);
                 })
                 ->map(function ($name) {
-                    return Category::firstOrCreate(compact('name'))->id;
+                    return Category::firstOrCreateByName($name)->id;
                 })
                 ->unique();
 

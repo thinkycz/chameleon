@@ -3,7 +3,6 @@
 namespace Nulisec\XmlImporter\Jobs;
 
 use App\Abstracts\SyncJob;
-use App\Enums\RemoteType;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Setting;
@@ -78,7 +77,7 @@ class ProcessXmlFile extends SyncJob implements ShouldQueue
         $categoryName = trim(end($categories));
 
         if ($categoryName) {
-            $category = Category::firstOrCreate(['name' => $categoryName]);
+            $category = Category::firstOrCreateByName($categoryName);
             $product->categories()->sync($category->id);
         }
 

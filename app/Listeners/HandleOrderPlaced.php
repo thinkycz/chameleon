@@ -2,10 +2,11 @@
 
 namespace App\Listeners;
 
+use App\Mail\OrderConfirmation;
 use App\Models\Order;
 use App\Notifications\OrderPlacedToAdmins;
-use App\Notifications\OrderPlacedToCustomer;
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 
 class HandleOrderPlaced
@@ -21,7 +22,10 @@ class HandleOrderPlaced
         /** @var Order $order */
         $order = $event->order;
 
-        Notification::send($order->user, new OrderPlacedToCustomer($order));
+        Mail::to($order->email)
+            ->locale($order->user->locale)
+            ->send(new OrderConfirmation($order));
+
         Notification::send(UserRepository::admins(), new OrderPlacedToAdmins($order));
     }
 }

@@ -39,13 +39,11 @@ class CheckoutController extends Controller
     public function complete()
     {
         $basket = activeBasket();
-        $basket->complete();
-
-        snackbar()->success(trans('checkout.order_was_placed'));
-
-        $order = $basket->load('orderedItems.product', 'status', 'deliveryMethod', 'billingDetail', 'paymentMethod', 'shippingDetail');
+        $order = $basket->complete();
 
         event(new OrderPlaced($order));
+
+        snackbar()->success(trans('checkout.order_was_placed'));
 
         return redirect()->route('profiles.show', ['order' => $order->id]);
     }

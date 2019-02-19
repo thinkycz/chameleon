@@ -131,7 +131,8 @@ class Order extends Model
     public function complete()
     {
         $this->setStatus(preferenceRepository()->getCreatedOrderStatus());
+        $this->update(['placed_at' => Carbon::now()]);
 
-        return $this->update(['placed_at' => Carbon::now()]);
+        return $this->fresh()->load('orderedItems.product', 'status', 'deliveryMethod', 'billingDetail', 'paymentMethod', 'shippingDetail');
     }
 }

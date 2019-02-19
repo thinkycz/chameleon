@@ -56,7 +56,7 @@
                         </label>
                     </div>
                     <span v-if="uploadedFiles[key]"
-                        class="ml-2 mt-2 cursor-pointer text-primary font-bold"
+                        class="ml-2 cursor-pointer text-primary font-bold"
                         @click="handleFileUpload(key)">
                         {{ __('upload_and_use') }}
                     </span>
@@ -139,11 +139,9 @@
         created() {
             let files = {};
             Object.keys(this.properties).forEach(key => {
-                if (['image', 'file'].indexOf(this.properties[key].type) < 0) {
-                    return;
+                if (['image', 'file'].indexOf(this.properties[key].type) > -1) {
+                    files[key] = null;
                 }
-
-                files[key] = null;
             });
 
             this.uploadedFiles = files;

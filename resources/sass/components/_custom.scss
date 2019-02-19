@@ -112,6 +112,22 @@
     }
 }
 
+.categories-list {
+    @apply list-reset;
+
+    li {
+        @apply cursor-pointer text-grey-darkest mb-3 tracking-tight capitalize;
+
+        &.active {
+            @apply font-bold;
+        }
+
+        &:last-of-type {
+            @apply mb-0;
+        }
+    }
+}
+
 label.text-sm {
     font-size: 0.875rem !important;
 }

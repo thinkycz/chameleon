@@ -3,29 +3,30 @@
 
         <vue-categoriesshowcase :categories="{{ json_encode($categories->values()) }}" inline-template>
             <div class="row">
-                <div class="col-full">
-                    <h2 class="text-grey-darkest mb-3 text-2xl w-full">{{ trans('home.categories_showcase') }}</h2>
-                </div>
 
-                <div class="col-full">
-                    <div class="flex flex-wrap justify-start mb-6">
-                        <span class="badge accent mr-4 cursor-pointer" v-for="category in categories" @click="change(category.id)">@{{ category.name[locale] }}</span>
+                <div class="col-small-sidebar">
+                    <div class="card p-4">
+                        <h2 class="text-grey-darkest mb-4 pb-2 text-lg w-full border-b">{{ trans('home.categories_showcase') }}</h2>
+
+                        <ul class="list-reset categories-list">
+                            <li :class="{'active': current === category.id}" v-for="category in categories" @click="change(category.id)">@{{ category.name[locale] }}</li>
+                        </ul>
                     </div>
                 </div>
 
-                <template name="fade" mode="out-in">
+                <div class="col-big-content">
                     @foreach($categories as $category)
-                        <div class="col-full" v-if="current == {{ $category->id }}" key="category-{{ $category->id }}">
-                            <div class="row">
-                                @foreach($category->products as $product)
-                                    <div class="col-product">
-                                        @include('products.partials.card')
-                                    </div>
-                                @endforeach
-                            </div>
+                    <template name="fade" mode="out-in">
+                        <div class="row" v-if="current == {{ $category->id }}" key="category-{{ $category->id }}">
+                            @foreach($category->products as $product)
+                                <div class="col-third">
+                                    @include('products.partials.card')
+                                </div>
+                            @endforeach
                         </div>
+                    </template>
                     @endforeach
-                </template>
+                </div>
 
             </div>
         </vue-categoriesshowcase>

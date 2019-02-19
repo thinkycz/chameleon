@@ -64,4 +64,16 @@
             @apply w-1/3;
         }
     }
+    .col-small-sidebar {
+        @apply w-full;
+        @screen md {
+            @apply w-1/5;
+        }
+    }
+    .col-big-content {
+        @apply w-full;
+        @screen md {
+            @apply w-4/5;
+        }
+    }
 }

@@ -14,10 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $homepage = settingsRepository()->getHomepage();
-        $categories = Category::with('products')
-            ->whereEnabled(true)
-            ->whereNull('parent_id')
-            ->get()
+        $categories = Category::getShowcaseCategories()
             ->filter(function ($category) {
                 return $category->products->count() > 3;
             })

@@ -58,4 +58,12 @@ class Category extends Model implements HasMedia
 
         return static::create(compact('name'));
     }
+
+    public static function getShowcaseCategories()
+    {
+        return static::with('products')
+            ->whereEnabled(true)
+            ->whereNull('parent_id')
+            ->get();
+    }
 }

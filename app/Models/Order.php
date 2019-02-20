@@ -31,7 +31,7 @@ class Order extends Model
         'due_date',
         'email',
         'phone',
-        'noted',
+        'notes',
         'customer_note',
         'status_id',
         'delivery_method_id',

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePreferencesTable extends Migration
 {
@@ -17,7 +17,7 @@ class CreatePreferencesTable extends Migration
             $table->increments('id');
             $table->string('code');
 
-            $table->unsignedInteger('preferable_id');
+            $table->unsignedInteger('preferable_id')->nullable();
             $table->string('preferable_type');
         });
     }

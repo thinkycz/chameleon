@@ -45,47 +45,38 @@ class PreferenceSeeder extends Seeder
         ]);
 
         Preference::updateOrCreate(['code' => 'default_quantitative_unit'], [
-            'preferable_id'   => Unit::whereCode('piece')->first()->id,
             'preferable_type' => Unit::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'created_order_status'], [
-            'preferable_id'   => Status::whereCode('waiting-for-confirmation')->first()->id,
             'preferable_type' => Status::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'confirmed_order_status'], [
-            'preferable_id'   => Status::whereCode('confirmed')->first()->id,
             'preferable_type' => Status::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'cancelled_order_status'], [
-            'preferable_id'   => Status::whereCode('cancelled')->first()->id,
             'preferable_type' => Status::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'completed_order_status'], [
-            'preferable_id'   => Status::whereCode('completed')->first()->id,
             'preferable_type' => Status::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'terms_conditions_page'], [
-            'preferable_id'   => Page::where('title', 'Obchodní Podmínky')->first()->id,
             'preferable_type' => Page::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'privacy_policy_page'], [
-            'preferable_id'   => Page::where('title', 'Ochrana osobních údajů')->first()->id,
             'preferable_type' => Page::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'return_refund_page'], [
-            'preferable_id'   => Page::where('title', 'Reklamační řád')->first()->id,
             'preferable_type' => Page::class,
         ]);
 
         Preference::updateOrCreate(['code' => 'frequently_asked_questions_page'], [
-            'preferable_id'   => Page::where('title', 'Často kladené otázky')->first()->id,
             'preferable_type' => Page::class,
         ]);
     }

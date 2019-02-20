@@ -6,16 +6,16 @@
                 <h4>{{ trans('footer.information') }}</h4>
                 <ul class="list-reset">
                     <li>
-                        <a href="{{ preferenceRepository()->getTermsPage()->showRoute() }}">{{ trans('footer.terms_of_use') }}</a>
+                        <a href="{{ optional(preferenceRepository()->getTermsPage())->showRoute() }}">{{ trans('footer.terms_of_use') }}</a>
                     </li>
                     <li>
-                        <a href="{{ preferenceRepository()->getPrivacyPage()->showRoute() }}">{{ trans('footer.privacy_policy') }}</a>
+                        <a href="{{ optional(preferenceRepository()->getPrivacyPage())->showRoute() }}">{{ trans('footer.privacy_policy') }}</a>
                     </li>
                     <li>
-                        <a href="{{ preferenceRepository()->getRefundsPage()->showRoute() }}">{{ trans('footer.returns_and_refunds') }}</a>
+                        <a href="{{ optional(preferenceRepository()->getRefundsPage())->showRoute() }}">{{ trans('footer.returns_and_refunds') }}</a>
                     </li>
                     <li>
-                        <a href="{{ preferenceRepository()->getFaqPage()->showRoute() }}">{{ trans('footer.faqs') }}</a>
+                        <a href="{{ optional(preferenceRepository()->getFaqPage())->showRoute() }}">{{ trans('footer.faqs') }}</a>
                     </li>
                 </ul>
             </div>

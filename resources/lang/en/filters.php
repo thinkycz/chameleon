@@ -3,26 +3,32 @@
 return [
     'hide_without_prices' => 'Hide without prices',
     'in_stock_only'       => 'In stock only',
-
     'per_page'            => 'Per Page',
-
     'relevance'           => 'Relevance',
     'alphabetically'      => 'Alphabetically',
     'newest'              => 'Newest',
-
     'more_filters'        => 'More Filters',
-
     'filter'              => 'Filter',
     'filter_by_price'     => 'Filter by price',
-
-    'price_min' => 'Min price',
-    'price_max' => 'Max price',
-
+    'price_min'           => 'Min price',
+    'price_max'           => 'Max price',
     'tags'                => 'Tags',
     'subcategories'       => 'Subcategories',
-
     'order_by_date_added' => 'Order by date added',
     'order_by_price_desc' => 'Order by price descending',
     'order_by_price_asc'  => 'Order by price ascending',
     'order_by_alphabet'   => 'Order alphabetically',
+    'enabled'             => 'Enabled',
+    'disabled'            => 'Disabled',
+    'show_subcategories'  => 'Show Subcategories',
+    'delivery_method'     => 'Delivery Method',
+    'payment_method'      => 'Payment Method',
+    'order_placed'        => 'Order Placed',
+    'status'              => 'Status',
+    'availability'        => 'Availability',
+    'unit'                => 'Unit',
+    'active'              => 'Active',
+    'inactive'            => 'Inactive',
+    'price_level'         => 'Price Level',
+
 ];

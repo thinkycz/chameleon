@@ -8,7 +8,15 @@ use Laravel\Nova\Filters\Filter;
 
 class OrderPaymentMethod extends Filter
 {
-    public $name = 'Payment Method';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.payment_method');
+    }
 
     /**
      * The filter's component.

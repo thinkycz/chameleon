@@ -8,7 +8,15 @@ use Laravel\Nova\Filters\Filter;
 
 class OrderDeliveryMethod extends Filter
 {
-    public $name = 'Delivery Method';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.delivery_method');
+    }
 
     /**
      * The filter's component.

@@ -8,7 +8,15 @@ use Laravel\Nova\Filters\Filter;
 
 class ProductUnit extends Filter
 {
-    public $name = 'Unit';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.unit');
+    }
 
     /**
      * The filter's component.

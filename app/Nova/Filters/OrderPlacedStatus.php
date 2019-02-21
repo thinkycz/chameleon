@@ -7,7 +7,15 @@ use Laravel\Nova\Filters\Filter;
 
 class OrderPlacedStatus extends Filter
 {
-    public $name = 'Order Placed';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.order_placed');
+    }
 
     /**
      * The filter's component.

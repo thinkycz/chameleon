@@ -9,7 +9,15 @@ use Laravel\Nova\Filters\Filter;
 
 class UserPriceLevel extends Filter
 {
-    public $name = 'Price Level';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.price_level');
+    }
 
     /**
      * The filter's component.

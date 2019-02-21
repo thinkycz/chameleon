@@ -7,14 +7,22 @@ use Laravel\Nova\Filters\Filter;
 
 class CategoryEnabled extends Filter
 {
-    public $name = 'Enabled';
-
     /**
      * The filter's component.
      *
      * @var string
      */
     public $component = 'select-filter';
+
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.enabled');
+    }
 
     /**
      * Apply the filter to the given query.
@@ -44,8 +52,8 @@ class CategoryEnabled extends Filter
     public function options(Request $request)
     {
         return [
-            'Enabled'  => 'enabled',
-            'Disabled' => 'disabled'
+            __('filters.enabled')  => 'enabled',
+            __('filters.disabled') => 'disabled'
         ];
     }
 }

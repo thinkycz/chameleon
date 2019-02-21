@@ -8,7 +8,15 @@ use Laravel\Nova\Filters\Filter;
 
 class ProductAvailability extends Filter
 {
-    public $name = 'Availability';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.availability');
+    }
 
     /**
      * The filter's component.

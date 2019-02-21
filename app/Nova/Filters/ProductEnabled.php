@@ -7,7 +7,15 @@ use Laravel\Nova\Filters\Filter;
 
 class ProductEnabled extends Filter
 {
-    public $name = 'Enabled';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.enabled');
+    }
 
     /**
      * The filter's component.
@@ -44,8 +52,8 @@ class ProductEnabled extends Filter
     public function options(Request $request)
     {
         return [
-            'Enabled'  => 'enabled',
-            'Disabled' => 'disabled'
+            __('filters.enabled')  => 'enabled',
+            __('filters.disabled') => 'disabled'
         ];
     }
 }

@@ -7,7 +7,15 @@ use Laravel\Nova\Filters\Filter;
 
 class UserActive extends Filter
 {
-    public $name = 'Active';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.active');
+    }
 
     /**
      * The filter's component.
@@ -44,8 +52,8 @@ class UserActive extends Filter
     public function options(Request $request)
     {
         return [
-            'Active'  => 'active',
-            'Inactive' => 'inactive'
+            __('filters.active')   => 'active',
+            __('filters.inactive') => 'inactive'
         ];
     }
 }

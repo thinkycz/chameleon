@@ -8,7 +8,15 @@ use Laravel\Nova\Filters\Filter;
 
 class OrderStatus extends Filter
 {
-    public $name = 'Status';
+    /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('filters.status');
+    }
 
     /**
      * The filter's component.

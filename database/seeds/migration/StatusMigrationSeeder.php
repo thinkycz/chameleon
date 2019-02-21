@@ -28,13 +28,12 @@ class StatusMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'is_final' => $item->get('is_final') ?: false,
             ]);
-        });
 
-        Status::insert($data->toArray());
+            Status::insert($item->toArray());
+        });
     }
 }

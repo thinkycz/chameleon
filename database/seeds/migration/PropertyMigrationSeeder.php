@@ -57,7 +57,12 @@ class PropertyMigrationSeeder extends BaseMigrationSeeder
                     'product_id'        => $property->product_id,
                     'is_option'         => false,
                 ];
-                Property::insert($data);
+
+                try {
+                    Property::insert($data);
+                } catch (\Exception $e) {
+                    //
+                }
             }
         });
     }

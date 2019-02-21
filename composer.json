@@ -156,7 +156,7 @@
             "php artisan ide-helper:models",
             "php artisan ide-helper:meta"
         ],
-        "init-existing-prod": [
+        "init-existing": [
             "php artisan key:generate",
             "php artisan strings:generate",
             "php artisan migrate:fresh",

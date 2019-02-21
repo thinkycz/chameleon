@@ -14,244 +14,224 @@ class CurrencySeeder extends Seeder
     public function run()
     {
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Czech Koruna',
-                Locale::CZECH => 'Česká koruna',
-                Locale::VIETNAMESE => 'Koruna Séc'
+                Locale::CZECH   => 'Česká koruna',
             ],
-            'isocode' => 'CZK',
-            'symbol' => 'Kč',
+            'isocode'          => 'CZK',
+            'symbol'           => 'Kč',
             'symbol_is_before' => false,
-            'exchange_rate' => 1,
-            'enabled' => true
+            'exchange_rate'    => 1,
+            'enabled'          => true,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'United States Dollar',
-                Locale::CZECH => 'Americký dolar',
-                Locale::VIETNAMESE => 'Đô la mỹ'
+                Locale::CZECH   => 'Americký dolar',
             ],
-            'isocode' => 'USD',
-            'symbol' => '$',
+            'isocode'          => 'USD',
+            'symbol'           => '$',
             'symbol_is_before' => true,
-            'exchange_rate' => 21.88,
-            'enabled' => false
+            'exchange_rate'    => 21.88,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Euro',
-                Locale::CZECH => 'Euro',
-                Locale::VIETNAMESE => 'Euro'
+                Locale::CZECH   => 'Euro',
             ],
-            'isocode' => 'EUR',
-            'symbol' => '€',
+            'isocode'          => 'EUR',
+            'symbol'           => '€',
             'symbol_is_before' => false,
-            'exchange_rate' => 26.10,
-            'enabled' => false
+            'exchange_rate'    => 26.10,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'United Kingdom Pound',
-                Locale::CZECH => 'Britská libra',
-                Locale::VIETNAMESE => 'Đồng bảng Anh'
+                Locale::CZECH   => 'Britská libra',
             ],
-            'isocode' => 'GBP',
-            'symbol' => '£',
+            'isocode'          => 'GBP',
+            'symbol'           => '£',
             'symbol_is_before' => true,
-            'exchange_rate' => 28.25,
-            'enabled' => false
+            'exchange_rate'    => 28.25,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Indian Rupee',
-                Locale::CZECH => 'Indická rupie',
-                Locale::VIETNAMESE => 'Rupee Ấn Độ'
+                Locale::CZECH   => 'Indická rupie',
             ],
-            'isocode' => 'INR',
-            'symbol' => '₹',
+            'isocode'          => 'INR',
+            'symbol'           => '₹',
             'symbol_is_before' => true,
-            'exchange_rate' => 0.34,
-            'enabled' => false
+            'exchange_rate'    => 0.34,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Australian Dollar',
-                Locale::CZECH => 'Australský dolar',
-                Locale::VIETNAMESE => 'Đô la Úc'
+                Locale::CZECH   => 'Australský dolar',
             ],
-            'isocode' => 'AUD',
-            'symbol' => 'A$',
+            'isocode'          => 'AUD',
+            'symbol'           => 'A$',
             'symbol_is_before' => true,
-            'exchange_rate' => 17.38,
-            'enabled' => false
+            'exchange_rate'    => 17.38,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Canadian Dollar',
-                Locale::CZECH => 'Kanadský dolar',
-                Locale::VIETNAMESE => 'Đô la Canada'
+                Locale::CZECH   => 'Kanadský dolar',
             ],
-            'isocode' => 'CAD',
-            'symbol' => 'C$',
+            'isocode'          => 'CAD',
+            'symbol'           => 'C$',
             'symbol_is_before' => true,
-            'exchange_rate' => 17.57,
-            'enabled' => false
+            'exchange_rate'    => 17.57,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Singapore Dollar',
-                Locale::CZECH => 'Singapurský dolar',
-                Locale::VIETNAMESE => 'Đô la Singapore'
+                Locale::CZECH   => 'Singapurský dolar',
             ],
-            'isocode' => 'SGD',
-            'symbol' => 'S$',
+            'isocode'          => 'SGD',
+            'symbol'           => 'S$',
             'symbol_is_before' => true,
-            'exchange_rate' => 16.15,
-            'enabled' => false
+            'exchange_rate'    => 16.15,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Swiss Franc',
-                Locale::CZECH => 'Švýcarský frank',
-                Locale::VIETNAMESE => 'Franc Thụy Sĩ'
+                Locale::CZECH   => 'Švýcarský frank',
             ],
-            'isocode' => 'CHF',
-            'symbol' => 'CHF',
+            'isocode'          => 'CHF',
+            'symbol'           => 'CHF',
             'symbol_is_before' => false,
-            'exchange_rate' => 22.92,
-            'enabled' => false
+            'exchange_rate'    => 22.92,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Malaysian Ringgit',
-                Locale::CZECH => 'Malajsijský ringgit',
-                Locale::VIETNAMESE => 'Đồng Ringgit Mã Lai'
+                Locale::CZECH   => 'Malajsijský ringgit',
             ],
-            'isocode' => 'MYR',
-            'symbol' => 'RM',
+            'isocode'          => 'MYR',
+            'symbol'           => 'RM',
             'symbol_is_before' => false,
-            'exchange_rate' => 5.12,
-            'enabled' => false
+            'exchange_rate'    => 5.12,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Japanese Yen',
-                Locale::CZECH => 'Japonský jen',
-                Locale::VIETNAMESE => 'Yen Nhật'
+                Locale::CZECH   => 'Japonský jen',
             ],
-            'isocode' => 'JPY',
-            'symbol' => '¥',
+            'isocode'          => 'JPY',
+            'symbol'           => '¥',
             'symbol_is_before' => true,
-            'exchange_rate' => 0.20,
-            'enabled' => false
+            'exchange_rate'    => 0.20,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Chinese Yuan Renminbi',
-                Locale::CZECH => 'Čínský jen',
-                Locale::VIETNAMESE => 'Nhân dân tệ Trung Quốc'
+                Locale::CZECH   => 'Čínský jen',
             ],
-            'isocode' => 'CNY',
-            'symbol' => '¥',
+            'isocode'          => 'CNY',
+            'symbol'           => '¥',
             'symbol_is_before' => true,
-            'exchange_rate' => 3.30,
-            'enabled' => false
+            'exchange_rate'    => 3.30,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Swedish Krona',
-                Locale::CZECH => 'Švédská koruna',
-                Locale::VIETNAMESE => 'curon Thụy Điển'
+                Locale::CZECH   => 'Švédská koruna',
             ],
-            'isocode' => 'SEK',
-            'symbol' => 'kr',
+            'isocode'          => 'SEK',
+            'symbol'           => 'kr',
             'symbol_is_before' => false,
-            'exchange_rate' => 2.74,
-            'enabled' => false
+            'exchange_rate'    => 2.74,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'New Zealand Dollar',
-                Locale::CZECH => 'Novozélandský dolar',
-                Locale::VIETNAMESE => 'Đô la New Zealand'
+                Locale::CZECH   => 'Novozélandský dolar',
             ],
-            'isocode' => 'NZD',
-            'symbol' => 'NZ$',
+            'isocode'          => 'NZD',
+            'symbol'           => 'NZ$',
             'symbol_is_before' => true,
-            'exchange_rate' => 15.83,
-            'enabled' => false
+            'exchange_rate'    => 15.83,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Mexican Peso',
-                Locale::CZECH => 'Mexické peso',
-                Locale::VIETNAMESE => 'Đồng peso Mexican'
+                Locale::CZECH   => 'Mexické peso',
             ],
-            'isocode' => 'MXN',
-            'symbol' => 'MEX$',
+            'isocode'          => 'MXN',
+            'symbol'           => 'MEX$',
             'symbol_is_before' => true,
-            'exchange_rate' => 15.83,
-            'enabled' => false
+            'exchange_rate'    => 15.83,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Hong Kong Dollar',
-                Locale::CZECH => 'Hongkongský dolar',
-                Locale::VIETNAMESE => 'Đô la Hong Kong'
+                Locale::CZECH   => 'Hongkongský dolar',
             ],
-            'isocode' => 'HKD',
-            'symbol' => 'HK$',
+            'isocode'          => 'HKD',
+            'symbol'           => 'HK$',
             'symbol_is_before' => true,
-            'exchange_rate' => 2.80,
-            'enabled' => false
+            'exchange_rate'    => 2.80,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Norwegian Krone',
-                Locale::CZECH => 'Norská koruna',
-                Locale::VIETNAMESE => 'Krone Na Uy'
+                Locale::CZECH   => 'Norská koruna',
             ],
-            'isocode' => 'NOK',
-            'symbol' => 'kr',
+            'isocode'          => 'NOK',
+            'symbol'           => 'kr',
             'symbol_is_before' => false,
-            'exchange_rate' => 2.81,
-            'enabled' => false
+            'exchange_rate'    => 2.81,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'South Korean Won',
-                Locale::CZECH => 'Jihokorejský won',
-                Locale::VIETNAMESE => 'Won Hàn Quốc'
+                Locale::CZECH   => 'Jihokorejský won',
             ],
-            'isocode' => 'KRW',
-            'symbol' => '₩',
+            'isocode'          => 'KRW',
+            'symbol'           => '₩',
             'symbol_is_before' => true,
-            'exchange_rate' => 0.020,
-            'enabled' => false
+            'exchange_rate'    => 0.020,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Turkish Lira',
-                Locale::CZECH => 'Turská lira',
-                Locale::VIETNAMESE => 'Lira Thổ Nhĩ Kỳ'
+                Locale::CZECH   => 'Turská lira',
             ],
-            'isocode' => 'TRY',
-            'symbol' => '₺',
+            'isocode'          => 'TRY',
+            'symbol'           => '₺',
             'symbol_is_before' => true,
-            'exchange_rate' => 6.34,
-            'enabled' => false
+            'exchange_rate'    => 6.34,
+            'enabled'          => false,
         ]);
         Currency::create([
-            'name' => [
+            'name'             => [
                 Locale::ENGLISH => 'Russian Ruble',
-                Locale::CZECH => 'Ruský rubl',
-                Locale::VIETNAMESE => 'Đồng rúp Nga'
+                Locale::CZECH   => 'Ruský rubl',
             ],
-            'isocode' => 'RUB',
-            'symbol' => '₽',
+            'isocode'          => 'RUB',
+            'symbol'           => '₽',
             'symbol_is_before' => true,
-            'exchange_rate' => 0.37,
-            'enabled' => false
+            'exchange_rate'    => 0.37,
+            'enabled'          => false,
         ]);
     }
 }

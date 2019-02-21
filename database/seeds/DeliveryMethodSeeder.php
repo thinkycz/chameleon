@@ -15,9 +15,8 @@ class DeliveryMethodSeeder extends Seeder
     {
         DeliveryMethod::create([
             'name'                   => [
-                Locale::ENGLISH    => 'Click and Collect',
-                Locale::CZECH      => 'Vyzvednout na prodejně',
-                Locale::VIETNAMESE => 'Nhận hàng tại tiệm'
+                Locale::ENGLISH => 'Click and Collect',
+                Locale::CZECH   => 'Vyzvednout na prodejně',
             ],
             'needs_shipping_address' => false,
         ]);

@@ -21,7 +21,7 @@
                     <a v-for="(image, index) in images"
                         href="#!"
                         @click.prevent="select(index)"
-                        :key="'thumb-' + image.id"><img :src="image.thumb"
+                        :key="'thumb-' + image.id"><img :src="image.thumbnail"
                             :alt="image.name"></a>
                 </div>
             </div>

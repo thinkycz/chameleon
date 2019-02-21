@@ -7,7 +7,7 @@
         <vue-dropdown inline-template>
             <div class="user-dropdown relative" @click.stop="toggle">
                 <div class="user-icon">
-                    <img src="{{ currentUser()->thumb }}" alt="{{ currentUser()->name }}">
+                    <img src="{{ currentUser()->thumbnail }}" alt="{{ currentUser()->name }}">
                 </div>
                 <div class="user-info">
                     <p class="p-big">{{ currentUser()->email }}</p>

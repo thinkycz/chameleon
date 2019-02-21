@@ -8,7 +8,7 @@ class Media extends BaseMedia
 {
     protected $appends = [
         'url',
-        'thumb',
+        'thumbnail',
         'optimized',
     ];
 
@@ -17,9 +17,9 @@ class Media extends BaseMedia
         return $this->getUrl();
     }
 
-    public function getThumbAttribute(): string
+    public function getThumbnailAttribute(): string
     {
-        return $this->getUrl('thumb');
+        return $this->getUrl('thumbnail');
     }
 
     public function getOptimizedAttribute(): string

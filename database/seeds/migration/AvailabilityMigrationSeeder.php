@@ -28,17 +28,16 @@ class AvailabilityMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
+        $this->execute(function ($item) {
             $name = json_decode($item->get('name'));
-            return $item->merge([
+            $item = $item->merge([
                 'allow_orders'            => $item->get('allow_orders') ?: false,
                 'allow_negative_quantity' => !is_null($item->get('allow_negative_quantity')) ?: false,
                 'products_visible'        => !is_null($item->get('products_visible')) ?: false,
                 'code'                    => str_slug($name->en),
             ]);
-        });
 
-        Availability::insert($data->toArray());
+            Availability::insert($item->toArray());
+        });
     }
 }

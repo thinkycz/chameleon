@@ -40,26 +40,26 @@ class ProductMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            $name = json_decode($item->get('name'));
-            $details = json_decode($item->get('details'));
-            $description = json_decode($item->get('description'));
+        $this->execute(function ($data) {
+            $name = json_decode($data->get('name'));
+            $details = json_decode($data->get('details'));
+            $description = json_decode($data->get('description'));
 
-            return $item->merge([
-                'name'                 => property_exists($name, 'cs') ? $name->cs : $name->en,
-                'details'              => property_exists($details, 'cs') ? $details->cs : $details->en,
-                'description'          => property_exists($description, 'cs') ? $description->cs : $description->en,
-                'multiply_of_moq_only' => $item->get('multiply_of_moq_only') ?: false,
-                'quantity_in_stock'    => $item->get('quantity_in_stock') ?: 0,
+            $data = $data->merge([
+                'name'                   => $name ? property_exists($name, 'cs') ? $name->cs : $name->en : '',
+                'details'                => $details ? property_exists($details, 'cs') ? $details->cs : $details->en : '',
+                'description'            => $description ? property_exists($description, 'cs') ? $description->cs : $description->en : '',
+                'multiply_of_moq_only'   => $data->get('multiply_of_moq_only') ?: false,
+                'quantity_in_stock'      => $data->get('quantity_in_stock') ?: 0,
+                'minimum_order_quantity' => $data->get('minimum_order_quantity') ?: 1,
             ]);
+
+            Product::insert($data->toArray());
         });
 
-        Product::insert($data->toArray());
-
         $this->prices();
+
         $this->categories();
-        $this->properties();
     }
 
     private function prices()
@@ -86,10 +86,5 @@ class ProductMigrationSeeder extends BaseMigrationSeeder
                 'product_id'  => $category->product_id,
             ]);
         });
-    }
-
-    private function properties()
-    {
-        //
     }
 }

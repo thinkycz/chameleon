@@ -3,7 +3,7 @@
         class="list-item col-half">
         <div class="image">
             <img class="rounded-lg-img"
-                :src="product.thumb"
+                :src="product.thumbnail"
                 :alt="product.slug">
         </div>
         <div class="data">

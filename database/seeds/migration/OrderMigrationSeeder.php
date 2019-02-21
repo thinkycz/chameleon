@@ -39,6 +39,8 @@ class OrderMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        Order::insert($this->prepare());
+        $this->execute(function ($item) {
+            Order::insert($item->toArray());
+        });
     }
 }

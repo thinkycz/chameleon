@@ -26,17 +26,16 @@ class PriceLevelMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
+        $this->execute(function ($item) {
             $name = json_decode($item->get('name'));
 
-            return $item->merge([
+            $item = $item->merge([
                 'name'                   => property_exists($name, 'cs') ? $name->cs : $name->en,
                 'enabled'                => $item->get('enabled') ?: false,
                 'has_quantity_discounts' => !is_null($item->get('has_quantity_discounts')) ?: false,
             ]);
-        });
 
-        PriceLevel::insert($data->toArray());
+            PriceLevel::insert($item->toArray());
+        });
     }
 }

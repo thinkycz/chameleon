@@ -1,6 +1,6 @@
 <div class="basket-item flex">
     <div class="image">
-        <img src="{{ $orderedItem->product->thumb }}">
+        <img src="{{ $orderedItem->product->thumbnail }}">
     </div>
     <div class="name">
         <p class="p-big">

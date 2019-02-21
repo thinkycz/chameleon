@@ -33,13 +33,12 @@ class ShippingDetailMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'country_id' => Country::whereIsocode3($item->get('country_id'))->first()->id,
-            ]);;
-        });
+            ]);
 
-        ShippingDetail::insert($data->toArray());
+            ShippingDetail::insert($item->toArray());
+        });
     }
 }

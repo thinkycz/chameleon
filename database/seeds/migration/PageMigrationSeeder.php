@@ -26,17 +26,16 @@ class PageMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
+        $this->execute(function ($item) {
             $title = json_decode($item->get('title'));
             $content = json_decode($item->get('content'));
 
-            return $item->merge([
+            $item = $item->merge([
                 'title'   => property_exists($title, 'cs') ? $title->cs : $title->en,
                 'content' => property_exists($content, 'cs') ? $content->cs : $content->en,
             ]);
-        });
 
-        Page::insert($data->toArray());
+            Page::insert($item->toArray());
+        });
     }
 }

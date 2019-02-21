@@ -46,7 +46,7 @@ class Product extends Model implements HasMedia
     use ProductCanBeSearched;
 
     protected $appends = [
-        'thumb',
+        'thumbnail',
         'purchasable',
         'show_path',
         'formatted_price',

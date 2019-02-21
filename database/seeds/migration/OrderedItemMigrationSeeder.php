@@ -34,13 +34,12 @@ class OrderedItemMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'quantity_ordered' => $item->get('quantity_ordered') ?: 1,
             ]);
-        });
 
-        OrderedItem::insert($data->toArray());
+            OrderedItem::insert($item->toArray());
+        });
     }
 }

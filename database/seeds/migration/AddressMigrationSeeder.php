@@ -35,13 +35,12 @@ class AddressMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'is_default' => $item->get('is_default') ?: false,
             ]);
-        });
 
-        Address::insert($data->toArray());
+            Address::insert($item->toArray());
+        });
     }
 }

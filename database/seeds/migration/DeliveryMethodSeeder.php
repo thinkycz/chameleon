@@ -27,15 +27,14 @@ class DeliveryMethodMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'enabled'                  => !is_null($item->get('enabled')) ?: false,
                 'needs_shipping_address'   => true,
                 'price_will_be_calculated' => false,
             ]);
-        });
 
-        DeliveryMethod::insert($data->toArray());
+            DeliveryMethod::insert($item->toArray());
+        });
     }
 }

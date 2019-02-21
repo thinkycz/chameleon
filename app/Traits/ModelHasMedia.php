@@ -11,7 +11,7 @@ trait ModelHasMedia
 
     public function registerMediaConversions(Media $media = null)
     {
-        $this->addMediaConversion('thumb')
+        $this->addMediaConversion('thumbnail')
             ->width(300)
             ->height(300)
             ->optimize()
@@ -31,8 +31,8 @@ trait ModelHasMedia
         return $this->getMedia('images');
     }
 
-    public function getThumbAttribute()
+    public function getThumbnailAttribute()
     {
-        return $this->images->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumb') : placeholderImage();
+        return $this->images->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumbnail') : placeholderImage();
     }
 }

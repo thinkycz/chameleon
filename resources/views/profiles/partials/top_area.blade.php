@@ -3,7 +3,7 @@
         <div class="user-bar card">
             <div class="user-image">
                 <div class="rounded-img">
-                    <img src="{{ $user->thumb }}" alt="{{ $user->name }}">
+                    <img src="{{ $user->thumbnail }}" alt="{{ $user->name }}">
                 </div>
                 <div class="user-image__data">
                     <p class="font-bold">{{ $user->email }}</p>

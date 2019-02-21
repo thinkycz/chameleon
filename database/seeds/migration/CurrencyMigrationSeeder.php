@@ -29,15 +29,13 @@ class CurrencyMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'enabled'          => $item->get('enabled') ?: false,
                 'symbol_is_before' => !is_null($item->get('symbol_is_before')) ?: false,
             ]);
+
+            Currency::insert($item->toArray());
         });
-
-        Currency::insert($data->toArray());
-
     }
 }

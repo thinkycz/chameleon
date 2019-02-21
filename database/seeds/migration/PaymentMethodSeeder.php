@@ -29,20 +29,20 @@ class PaymentMethodMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
+        $this->execute(function ($item) {
             $deliveryMethod = DB::connection('old_mysql')
                 ->table('delivery_method_payment_method')
                 ->where('p_method_id', $item->get('id'))
                 ->first();
 
-            return $item->merge([
+            $item = $item->merge([
                 'enabled'                  => !is_null($item->get('enabled')) ?: false,
                 'price_will_be_calculated' => false,
                 'delivery_method_id'       => $deliveryMethod ? $deliveryMethod->d_method_id : DeliveryMethod::first()->id,
             ]);
+
+            PaymentMethod::insert($item->toArray());
         });
 
-        PaymentMethod::insert($data->toArray());
     }
 }

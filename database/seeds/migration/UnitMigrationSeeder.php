@@ -25,6 +25,8 @@ class UnitMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        Unit::insert($this->prepare());
+        $this->execute(function ($item) {
+            Unit::insert($item->toArray());
+        });
     }
 }

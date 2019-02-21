@@ -35,16 +35,15 @@ class UserMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'birth_date'        => $item->get('birth_date') ? $item->get('birth_date') : null,
                 'email_verified_at' => $item->get('email_verified_at') ? $item->get('created_at') : null,
                 'activated_at'      => $item->get('activated_at') ? $item->get('created_at') : null,
                 'locale'            => $item->get('locale') !== 'vi' ?: 'cs',
             ]);
-        });
 
-        User::insert($data->toArray());
+            User::insert($item->toArray());
+        });
     }
 }

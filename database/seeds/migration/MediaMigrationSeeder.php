@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Media;
 use Illuminate\Support\Facades\DB;
 
 class MediaMigrationSeeder extends BaseMigrationSeeder
@@ -26,17 +25,16 @@ class MediaMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = Spatie\MediaLibrary\Models\Media::hydrate(DB::connection('old_mysql')->table('media')->get()->toArray());
-
-        $data->each(function ($media) {
-            $media = $media->toArray();
-            $media = array_merge($media, [
-                'custom_properties' => json_encode($media['custom_properties']),
-                'manipulations'     => json_encode($media['manipulations']),
-                'responsive_images' => json_encode([]),
-            ]);
-
-            DB::table('media')->insert($media);
+        DB::connection('old_mysql')->table($this->oldTableName)->orderBy('id')->chunk(200, function ($medias) {
+            $medias->each(function ($media) {
+                $media = json_decode(json_encode($media, JSON_UNESCAPED_SLASHES), true);
+                $media = array_merge($media, [
+                    'custom_properties' => $media['custom_properties'],
+                    'manipulations'     => $media['manipulations'],
+                    'responsive_images' => json_encode([]),
+                ]);
+                DB::table('media')->insert($media);
+            });
         });
     }
 }

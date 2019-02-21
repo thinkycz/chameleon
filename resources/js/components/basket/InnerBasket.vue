@@ -5,7 +5,7 @@
                 :key="'basket-item-' + item.id">
                 <div class="flex justify-left items-center">
                     <div class="inline-block mr-4">
-                        <img :src="item.product.thumb"
+                        <img :src="item.product.thumbnail"
                             :alt="item.name"
                             class="rounded-lg-img">
                     </div>

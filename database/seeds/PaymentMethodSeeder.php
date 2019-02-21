@@ -15,12 +15,11 @@ class PaymentMethodSeeder extends Seeder
     public function run()
     {
         PaymentMethod::create([
-            'name' => [
-                Locale::ENGLISH    => 'Pay at the store',
-                Locale::CZECH      => 'Platba na prodejně',
-                Locale::VIETNAMESE => 'Trả tiền tại tiệm'
+            'name'               => [
+                Locale::ENGLISH => 'Pay at the store',
+                Locale::CZECH   => 'Platba na prodejně',
             ],
-            'delivery_method_id' => DeliveryMethod::first()->id
+            'delivery_method_id' => DeliveryMethod::first()->id,
         ]);
     }
 }

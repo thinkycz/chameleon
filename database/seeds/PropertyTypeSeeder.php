@@ -16,171 +16,147 @@ class PropertyTypeSeeder extends Seeder
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Color',
-                Locale::CZECH => 'Barva',
-                Locale::VIETNAMESE => 'Màu',
+                Locale::CZECH   => 'Barva',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Height',
-                Locale::CZECH => 'Výška',
-                Locale::VIETNAMESE => 'Chiều cao',
+                Locale::CZECH   => 'Výška',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Width',
-                Locale::CZECH => 'Šířka',
-                Locale::VIETNAMESE => 'Chiều rộng',
+                Locale::CZECH   => 'Šířka',
             ],
         ]);
         PropertyType::create([
-           'name' => [
+            'name' => [
                 Locale::ENGLISH => 'Depth',
-                Locale::CZECH => 'Hloubka',
-                Locale::VIETNAMESE => 'Độ sâu',
+                Locale::CZECH   => 'Hloubka',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Unit per box',
-                Locale::CZECH => 'Množství v balení',
-                Locale::VIETNAMESE => 'Số lượng trong thùng',
+                Locale::CZECH   => 'Množství v balení',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Weight per box',
-                Locale::CZECH => 'Hmotnost balení',
-                Locale::VIETNAMESE => 'Trọng lượng mỗi hộp',
+                Locale::CZECH   => 'Hmotnost balení',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Boxes per pallet',
-                Locale::CZECH => 'Počet krabic na paletě',
-                Locale::VIETNAMESE => 'Số hộp trên palet',
+                Locale::CZECH   => 'Počet krabic na paletě',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Expiration',
-                Locale::CZECH => 'Datum spotřeby',
-                Locale::VIETNAMESE => 'Hạn',
+                Locale::CZECH   => 'Datum spotřeby',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Size',
-                Locale::CZECH => 'Velikost',
-                Locale::VIETNAMESE => 'Kích thước',
+                Locale::CZECH   => 'Velikost',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Volume',
-                Locale::CZECH => 'Objem',
-                Locale::VIETNAMESE => 'Thể tích',
+                Locale::CZECH   => 'Objem',
             ],
         ]);
 //        electronics
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Type',
-                Locale::CZECH => 'Typ',
-                Locale::VIETNAMESE => 'Kiểu',
+                Locale::CZECH   => 'Typ',
             ],
         ]);
         PropertyType::create([
-           'name' => [
+            'name' => [
                 Locale::ENGLISH => 'Performance',
-                Locale::CZECH => 'Výkon',
-                Locale::VIETNAMESE => 'Chức năng',
+                Locale::CZECH   => 'Výkon',
             ],
         ]);
         PropertyType::create([
-           'name' => [
+            'name' => [
                 Locale::ENGLISH => 'Model Name',
-                Locale::CZECH => 'Název modelu',
-                Locale::VIETNAMESE => 'Tên mô hình',
+                Locale::CZECH   => 'Název modelu',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Features',
-                Locale::CZECH => 'Vlastnosti',
-                Locale::VIETNAMESE => 'Chi tiết',
+                Locale::CZECH   => 'Vlastnosti',
             ],
         ]);
         PropertyType::create([
-           'name' => [
+            'name' => [
                 Locale::ENGLISH => 'Function',
-                Locale::CZECH => 'Funkce',
-                Locale::VIETNAMESE => 'Chức năng',
+                Locale::CZECH   => 'Funkce',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Storage',
-                Locale::CZECH => 'Skladování',
-                Locale::VIETNAMESE => 'Lưu trữ',
+                Locale::CZECH   => 'Skladování',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Compatible',
-                Locale::CZECH => 'Kompatibilita',
-                Locale::VIETNAMESE => 'Tương thích',
+                Locale::CZECH   => 'Kompatibilita',
             ],
         ]);
 //        Clothing
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Season',
-                Locale::CZECH => 'Sezóna',
-                Locale::VIETNAMESE => 'Mùa',
+                Locale::CZECH   => 'Sezóna',
             ],
         ]);
         PropertyType::create([
-           'name' => [
+            'name' => [
                 Locale::ENGLISH => 'Sleeve Style',
-                Locale::CZECH => 'Styl rukáv',
-                Locale::VIETNAMESE => 'Kiểu tay áo',
+                Locale::CZECH   => 'Styl rukáv',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Waistline',
-                Locale::CZECH => 'Objem pasu',
-                Locale::VIETNAMESE => 'Vòng eo',
+                Locale::CZECH   => 'Objem pasu',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Decoration',
-                Locale::CZECH => 'Dekorace',
-                Locale::VIETNAMESE => 'Trang trí',
+                Locale::CZECH   => 'Dekorace',
             ],
         ]);
         PropertyType::create([
-           'name' => [
+            'name' => [
                 Locale::ENGLISH => 'Dress Length',
-                Locale::CZECH => 'Délka šat',
-                Locale::VIETNAMESE => 'Chiều dài đầm',
+                Locale::CZECH   => 'Délka šat',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Gender',
-                Locale::CZECH => 'Pohlaví',
-                Locale::VIETNAMESE => 'Giới tính',
+                Locale::CZECH   => 'Pohlaví',
             ],
         ]);
         PropertyType::create([
             'name' => [
                 Locale::ENGLISH => 'Material',
-                Locale::CZECH => 'Materiál',
-                Locale::VIETNAMESE => 'Vật chất',
+                Locale::CZECH   => 'Materiál',
             ],
         ]);
     }

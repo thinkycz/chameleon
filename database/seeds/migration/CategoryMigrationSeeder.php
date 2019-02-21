@@ -30,14 +30,13 @@ class CategoryMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'enabled'  => true,
                 'position' => $item->get('position') ?: 0,
             ]);
-        });
 
-        Category::insert($data->toArray());
+            Category::insert($item->toArray());
+        });
     }
 }

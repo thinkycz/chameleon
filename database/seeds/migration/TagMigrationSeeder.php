@@ -27,16 +27,15 @@ class TagMigrationSeeder extends BaseMigrationSeeder
      */
     public function run()
     {
-        $data = $this->prepare($array = false);
-        $data = $data->map(function ($item) {
-            return $item->merge([
+        $this->execute(function ($item) {
+            $item = $item->merge([
                 'type' => $item->get('type') ? 'badge' : null,
                 'name' => json_encode([Locale::fallback() => $item->get('name')]),
                 'slug' => json_encode([Locale::fallback() => str_slug($item->get('name'))]),
             ]);
-        });
 
-        Tag::insert($data->toArray());
+            Tag::insert($item->toArray());
+        });
 
         $this->taggables();
     }

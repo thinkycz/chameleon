@@ -12,7 +12,7 @@ trait UserHasMedia
 
     public function registerMediaConversions(Media $media = null)
     {
-        $this->addMediaConversion('thumb')
+        $this->addMediaConversion('thumbnail')
             ->width(300)
             ->height(300)
             ->optimize()
@@ -37,6 +37,6 @@ trait UserHasMedia
     {
         $images = $this->getMedia('images');
 
-        return $images->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumb') : placeholderImage();
+        return $images->isNotEmpty() ? $this->getFirstMediaUrl('images', 'thumbnail') : placeholderImage();
     }
 }

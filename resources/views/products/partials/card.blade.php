@@ -1,6 +1,6 @@
 <div class="card product-card">
     <div class="product-image">
-        <a href="{{ route('products.show', $product) }}"><img src="{{ $product->thumb }}" alt="{{ $product->name }}"></a>
+        <a href="{{ route('products.show', $product) }}"><img src="{{ $product->thumbnail }}" alt="{{ $product->name }}"></a>
         @if(!$product->availability_or_default->allow_orders)
             <span class="badge text-xs danger">{{ $product->availability_or_default->name }}</span>
         @endif

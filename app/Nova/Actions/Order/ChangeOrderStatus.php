@@ -18,6 +18,16 @@ class ChangeOrderStatus extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.change_order_status');
+    }
+
+    /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields $fields
@@ -41,7 +51,7 @@ class ChangeOrderStatus extends Action
         $statuses = Status::pluck('name', 'id');
 
         return [
-            Select::make('Status')->options($statuses->toArray())
+            Select::make(__('actions.status'))->options($statuses->toArray())
         ];
     }
 }

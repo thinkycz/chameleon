@@ -17,6 +17,16 @@ class SetStockQuantity extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.set_stock_quantity');
+    }
+
+    /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields  $fields
@@ -38,7 +48,7 @@ class SetStockQuantity extends Action
     public function fields()
     {
         return [
-            Number::make('Quantity In Stock')
+            Number::make(__('actions.quantity_in_stock'))
         ];
     }
 }

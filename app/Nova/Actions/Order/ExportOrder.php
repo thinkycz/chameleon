@@ -20,11 +20,22 @@ class ExportOrder extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.export_order');
+    }
+
+    /**
      * Perform the action on the given models.
      *
-     * @param  \Laravel\Nova\Fields\ActionFields  $fields
-     * @param  \Illuminate\Support\Collection  $models
+     * @param  \Laravel\Nova\Fields\ActionFields $fields
+     * @param  \Illuminate\Support\Collection $models
      * @return mixed
+     * @throws \Exception
      */
     public function handle(ActionFields $fields, Collection $models)
     {
@@ -53,8 +64,9 @@ class ExportOrder extends Action
      * files from the orders. Then we delete the files, and return the
      * path to the zip file.
      *
-     * @param Illuminate\Support\Collection $files
-     * @return Illuminate\Support\Collection
+     * @param \Illuminate\Support\Collection $files
+     * @return \Illuminate\Support\Collection
+     * @throws \Exception
      */
     private function zipFiles($files)
     {

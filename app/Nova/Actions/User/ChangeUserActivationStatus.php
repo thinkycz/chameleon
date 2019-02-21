@@ -16,6 +16,16 @@ class ChangeUserActivationStatus extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.change_user_activation_status');
+    }
+
+    /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields $fields
@@ -39,7 +49,7 @@ class ChangeUserActivationStatus extends Action
     public function fields()
     {
         return [
-            Boolean::make('Is Active'),
+            Boolean::make(__('actions.is_active')),
         ];
     }
 }

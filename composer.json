@@ -156,22 +156,29 @@
             "php artisan ide-helper:models",
             "php artisan ide-helper:meta"
         ],
-        "init-existing": [
+        "init-prod": [
             "php artisan key:generate",
-            "php artisan strings:generate",
+            "php artisan storage:link",
+            "php artisan touch:files",
             "php artisan migrate:fresh",
             "php artisan passport:install",
             "php artisan cache:clear",
+            "php artisan db:seed"
+        ],
+        "post-update": [
+            "yarn",
+            "yarn run prod",
+            "php artisan storage:link",
+            "php artisan cache:clear",
             "php artisan config:clear",
             "php artisan view:clear",
+            "php artisan strings:generate",
+            "php artisan vue-i18n:generate"
+        ],
+        "init-existing-db": [
+            "php artisan migrate:fresh",
             "php artisan db:seed --class=MigrationSeeder",
-            "php artisan db:seed --class=ExistingDatabaseSeeder",
-            "php artisan scout:import 'App\\Models\\Product'",
-            "php artisan vue-i18n:generate",
-            "php artisan link:directories",
-            "php artisan ide-helper:generate",
-            "php artisan ide-helper:models",
-            "php artisan ide-helper:meta"
+            "php artisan db:seed --class=ExistingDatabaseSeeder"
         ]
     }
 }

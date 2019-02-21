@@ -17,6 +17,16 @@ class ChangeProductUnit extends Action
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.change_product_unit');
+    }
+
     public function handle(ActionFields $fields, Collection $models)
     {
         $models->each(function (Product $product) use ($fields) {
@@ -27,7 +37,7 @@ class ChangeProductUnit extends Action
     public function fields()
     {
         return [
-            Select::make('Unit')
+            Select::make(__('actions.unit'))
                 ->options(Unit::pluck('name', 'id')->toArray())
                 ->displayUsingLabels(),
         ];

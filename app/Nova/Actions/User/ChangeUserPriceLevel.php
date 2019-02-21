@@ -16,6 +16,16 @@ class ChangeUserPriceLevel extends Action
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.change_user_price_level');
+    }
+
     public function handle(ActionFields $fields, Collection $models)
     {
         $models->each(function (User $user) use ($fields) {
@@ -26,7 +36,7 @@ class ChangeUserPriceLevel extends Action
     public function fields()
     {
         return [
-            Select::make('Price Level')
+            Select::make(__('actions.price_level'))
                 ->options(PriceLevel::pluck('name', 'id')->toArray())
                 ->displayUsingLabels(),
         ];

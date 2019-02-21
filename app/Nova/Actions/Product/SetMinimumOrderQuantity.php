@@ -17,6 +17,16 @@ class SetMinimumOrderQuantity extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.set_minimum_order_quantity');
+    }
+
+    /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields  $fields
@@ -38,7 +48,7 @@ class SetMinimumOrderQuantity extends Action
     public function fields()
     {
         return [
-            Number::make('Minimum Order Quantity')
+            Number::make(__('actions.minimum_order_quantity'))
         ];
     }
 }

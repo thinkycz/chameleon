@@ -17,6 +17,16 @@ class ChangeCategoryEnabledStatus extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.change_category_enabled_status');
+    }
+
+    /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields  $fields
@@ -38,7 +48,7 @@ class ChangeCategoryEnabledStatus extends Action
     public function fields()
     {
         return [
-            Boolean::make('Enabled')
+            Boolean::make(__('actions.enabled'))
         ];
     }
 }

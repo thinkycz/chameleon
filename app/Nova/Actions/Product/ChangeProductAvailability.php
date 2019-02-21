@@ -17,6 +17,16 @@ class ChangeProductAvailability extends Action
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.change_product_availability');
+    }
+
     public function handle(ActionFields $fields, Collection $models)
     {
         $models->each(function (Product $product) use ($fields) {
@@ -27,7 +37,7 @@ class ChangeProductAvailability extends Action
     public function fields()
     {
         return [
-            Select::make('Availability')
+            Select::make(__('actions.availability'))
                 ->options(Availability::pluck('name', 'id')->toArray())
                 ->displayUsingLabels(),
         ];

@@ -17,6 +17,16 @@ class SetVatRate extends Action
     use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return __('actions.set_vat_rate');
+    }
+
+    /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields  $fields
@@ -38,7 +48,7 @@ class SetVatRate extends Action
     public function fields()
     {
         return [
-            Number::make('VAT Rate')
+            Number::make(__('actions.vat_rate'))
         ];
     }
 }

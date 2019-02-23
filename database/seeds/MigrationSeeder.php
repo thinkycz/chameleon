@@ -32,8 +32,11 @@ class MigrationSeeder extends Seeder
      */
     public function run()
     {
-        /** Testing purposes only. Comment when done. */
-        // $this->truncateExistingData();
+        /*
+         ** Testing purposes only. Comment when done.
+         ** $this->truncateExistingData();
+         **
+         */
 
         $this->call(CurrencyMigrationSeeder::class);
         $this->call(PriceLevelMigrationSeeder::class);

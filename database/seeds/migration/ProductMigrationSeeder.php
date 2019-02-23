@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Price;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
@@ -67,12 +68,14 @@ class ProductMigrationSeeder extends BaseMigrationSeeder
         $prices = Price::hydrate(DB::connection('old_mysql')->table('prices')->get()->toArray());
 
         $prices->each(function ($price) {
-            DB::table('prices')->insert([
-                'price'          => $price->price,
-                'old_price'      => $price->old_price,
-                'price_level_id' => $price->price_level_id,
-                'product_id'     => $price->product_id,
-            ]);
+            if (Product::find($price->product_id)) {
+                DB::table('prices')->insert([
+                    'price'          => $price->price,
+                    'old_price'      => $price->old_price,
+                    'price_level_id' => $price->price_level_id,
+                    'product_id'     => $price->product_id,
+                ]);
+            }
         });
     }
 
@@ -81,10 +84,12 @@ class ProductMigrationSeeder extends BaseMigrationSeeder
         $categories = DB::connection('old_mysql')->table('category_product')->get();
 
         $categories->each(function ($category) {
-            DB::table('category_product')->insert([
-                'category_id' => $category->category_id,
-                'product_id'  => $category->product_id,
-            ]);
+            if (Product::find($category->product_id) && Category::find($category->category_id)) {
+                DB::table('category_product')->insert([
+                    'category_id' => $category->category_id,
+                    'product_id'  => $category->product_id,
+                ]);
+            }
         });
     }
 }

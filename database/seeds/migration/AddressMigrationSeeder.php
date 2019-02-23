@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Address;
+use App\Models\User;
 
 class AddressMigrationSeeder extends BaseMigrationSeeder
 {
@@ -40,7 +41,9 @@ class AddressMigrationSeeder extends BaseMigrationSeeder
                 'is_default' => $item->get('is_default') ?: false,
             ]);
 
-            Address::insert($item->toArray());
+            if (User::find($item->get('user_id'))) {
+                Address::insert($item->toArray());
+            }
         });
     }
 }

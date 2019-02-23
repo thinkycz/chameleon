@@ -22,21 +22,23 @@ class AppServiceProvider extends ServiceProvider
 
     protected function mail()
     {
-        if (config('mail.driver') != 'smtp') return;
+        if (config('mail.driver') != 'smtp') {
+            return;
+        }
 
         $config = Setting::loadConfiguration('mail_configuration');
 
         Config::set('mail', array_merge(config('mail'), [
-                'host'       => $config['host'] ?? '',
-                'port'       => $config['port'] ?? '',
-                'encryption' => $config['encryption'] ?? '',
-                'username'   => $config['username'] ?? '',
-                'password'   => $config['password'] ?? '',
-                'from'       => [
-                    'address' => $config['from_address'] ?? '',
-                    'name'    => $config['from_name'] ?? '',
-                ],
-            ])
+            'host'       => $config['host'] ?? '',
+            'port'       => $config['port'] ?? '',
+            'encryption' => $config['encryption'] ?? '',
+            'username'   => $config['username'] ?? '',
+            'password'   => $config['password'] ?? '',
+            'from'       => [
+                'address' => $config['from_address'] ?? '',
+                'name'    => $config['from_name'] ?? '',
+            ],
+        ])
         );
     }
 

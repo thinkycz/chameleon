@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Models\PriceLevel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;

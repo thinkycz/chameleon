@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\ModelHasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 

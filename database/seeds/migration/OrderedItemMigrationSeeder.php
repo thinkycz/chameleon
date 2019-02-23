@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Order;
 use App\Models\OrderedItem;
+use App\Models\Product;
 
 class OrderedItemMigrationSeeder extends BaseMigrationSeeder
 {
@@ -35,11 +37,22 @@ class OrderedItemMigrationSeeder extends BaseMigrationSeeder
     public function run()
     {
         $this->execute(function ($item) {
-            $item = $item->merge([
-                'quantity_ordered' => $item->get('quantity_ordered') ?: 1,
-            ]);
+            if (Order::find($item->get('order_id'))) {
 
-            OrderedItem::insert($item->toArray());
+                if ($item->get('type') == 'PRODUCT') {
+                    if (!(Product::find($item->get('product_id')))) {
+                        $item = $item->merge([
+                            'product_id' => null,
+                        ]);
+                    }
+                }
+
+                $item = $item->merge([
+                    'quantity_ordered' => $item->get('quantity_ordered') ?: 1,
+                ]);
+
+                OrderedItem::insert($item->toArray());
+            }
         });
     }
 }

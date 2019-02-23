@@ -4,10 +4,10 @@ namespace Nulisec\JetsoftShopconnector;
 
 use App\Models\Setting;
 use App\Repositories\ScheduledTasksRepository;
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Nulisec\JetsoftShopconnector\Http\Middleware\Authorize;
 use Nulisec\JetsoftShopconnector\Jobs\SyncronizeProducts;
 
@@ -20,7 +20,7 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'jetsoft-shopconnector');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'jetsoft-shopconnector');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'jetsoft-shopconnector');
 
         $this->app->booted(function () {
@@ -43,17 +43,17 @@ class ToolServiceProvider extends ServiceProvider
         $config = Setting::loadConfiguration('shopconnector');
 
         \Config::set("database.connections.shopconnector", [
-            'driver' => 'sqlsrv',
-            'host' => $config['host'] ?? '',
-            'port' => $config['port'] ?? '',
+            'driver'   => 'sqlsrv',
+            'host'     => $config['host'] ?? '',
+            'port'     => $config['port'] ?? '',
             'database' => $config['database'] ?? '',
             'username' => $config['username'] ?? '',
             'password' => $config['password'] ?? '',
-            'charset' => 'utf8',
-            'prefix' => '',
-            'options' => [
-                \PDO::DBLIB_ATTR_STRINGIFY_UNIQUEIDENTIFIER => true
-            ]
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'options'  => [
+                \PDO::DBLIB_ATTR_STRINGIFY_UNIQUEIDENTIFIER => true,
+            ],
         ]);
     }
 
@@ -69,8 +69,8 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/jetsoft-shopconnector')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/jetsoft-shopconnector')
+            ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**

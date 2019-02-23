@@ -4,10 +4,10 @@ namespace Nulisec\XmlImporter;
 
 use App\Models\Setting;
 use App\Repositories\ScheduledTasksRepository;
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Nulisec\XmlImporter\Http\Middleware\Authorize;
 use Nulisec\XmlImporter\Jobs\SyncXmlFromEndpoint;
 use Nulisec\XmlImporter\Jobs\SyncXmlFromFtp;
@@ -21,7 +21,7 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'xml-importer');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'xml-importer');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'xml-importer');
 
         $this->app->booted(function () {
@@ -55,8 +55,8 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/xml-importer')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/xml-importer')
+            ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**

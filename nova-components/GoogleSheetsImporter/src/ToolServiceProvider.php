@@ -4,10 +4,10 @@ namespace Nulisec\GoogleSheetsImporter;
 
 use App\Models\Setting;
 use App\Repositories\ScheduledTasksRepository;
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Nulisec\GoogleSheetsImporter\Http\Middleware\Authorize;
 use Nulisec\GoogleSheetsImporter\Jobs\SyncFromGoogleSheets;
 
@@ -20,8 +20,8 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'google-sheets-importer');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'google-sheets-importer');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'google-sheets-importer');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'google-sheets-importer');
 
         $this->app->booted(function () {
             $this->routes();
@@ -49,8 +49,8 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/google-sheets-importer')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/google-sheets-importer')
+            ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**

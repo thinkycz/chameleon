@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 abstract class BaseMigrationSeeder extends Seeder
 {
@@ -18,24 +19,28 @@ abstract class BaseMigrationSeeder extends Seeder
     protected function execute($callback)
     {
         $pairs = collect($this->pairs);
-
-        DB::connection('old_mysql')
+        $query = DB::connection('old_mysql')
             ->table($this->oldTableName)
-            ->orderBy('id')
-            ->chunk(200,
-                function ($items) use ($callback, $pairs) {
-                    $items->each(function ($item) use ($callback, $pairs) {
-                        $result = collect();
-                        $pairs->map(function ($old, $new) use ($item, &$result) {
-                            if ($old && property_exists($item, $old) && ($value = $item->{$old})) {
-                                $result->put($new, $value);
-                            } else {
-                                $result->put($new, null);
-                            }
-                        });
+            ->orderBy('id');
 
-                        $callback($result);
+        if (Schema::connection('old_mysql')->hasColumn($this->oldTableName, 'deleted_at')) {
+            $query = $query->whereNull('deleted_at');
+        }
+
+        $query->chunk(200,
+            function ($items) use ($callback, $pairs) {
+                $items->each(function ($item) use ($callback, $pairs) {
+                    $result = collect();
+                    $pairs->map(function ($old, $new) use ($item, &$result) {
+                        if ($old && property_exists($item, $old) && ($value = $item->{$old})) {
+                            $result->put($new, $value);
+                        } else {
+                            $result->put($new, null);
+                        }
                     });
+
+                    $callback($result);
                 });
+            });
     }
 }

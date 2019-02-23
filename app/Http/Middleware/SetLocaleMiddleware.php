@@ -59,7 +59,7 @@ class SetLocaleMiddleware
         $locale = $requestedLang ?: Session::get('lang') ?: optional($this->user)->locale ?: Locale::app();
 
         if (!in_array($locale, Locale::codes())) {
-            return $next($request);
+            return abort(403);
         }
 
         if ($requestedLang && auth()->check()) {

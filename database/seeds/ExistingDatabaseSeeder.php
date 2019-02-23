@@ -24,10 +24,10 @@ class ExistingDatabaseSeeder extends Seeder
          * $this->call(PropertyTypeSeeder::class);
          * $this->call(StatusSeeder::class);
          * $this->call(UnitSeeder::class);
-         * $this->call(PermissionsSeeder::class);
          * $this->call(UserSeeder::class);
          */
 
+        $this->call(PermissionsSeeder::class);
         $this->call(PreferenceSeeder::class);
         $this->call(SettingSeeder::class);
     }

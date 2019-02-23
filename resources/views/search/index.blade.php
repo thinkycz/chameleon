@@ -16,5 +16,9 @@
                 @include('partials.no_results_found')
             @endforelse
         </div>
+
+        <div class="pagination-area">
+            {{ $products->appends(request()->query())->links('partials.pagination') }}
+        </div>
     </div>
 @stop

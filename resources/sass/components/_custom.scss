@@ -93,6 +93,58 @@
     }
 }
 
+.pagination-area {
+    @apply pb-0 pt-4 flex justify-center;
+    .pagination {
+        @apply list-reset p-0;
+        li {
+            @apply inline text-center;
+            a,
+            span {
+                @apply float-left block py-2 px-4 border text-primary bg-white cursor-pointer;
+                margin-left: -1px;
+                line-height: 1.5;
+                @include transition(background-color, color, border-color);
+                &:active {
+                    outline: none;
+                }
+
+                &:hover {
+                    @apply bg-primary text-grey-darkest bg-grey-lightest;
+                }
+            }
+
+            &.active {
+                a,
+                span {
+                    @apply bg-primary text-white;
+                }
+            }
+
+            &.disabled {
+                a,
+                span {
+                    @apply cursor-not-allowed;
+                }
+            }
+
+            &:first-child {
+                a,
+                span {
+                    @apply rounded-l;
+                }
+            }
+
+            &:last-child {
+                a,
+                span {
+                    @apply rounded-r;
+                }
+            }
+        }
+    }
+}
+
 .filters {
     .dropdown {
         @apply mr-4;

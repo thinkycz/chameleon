@@ -38,7 +38,7 @@
         @apply w-full text-center overflow-hidden rounded-t relative;
         height: $product-image-height;
         img {
-            @apply w-full object-cover;
+            @apply w-full object-scale-down;
             height: $product-image-height;
         }
         .badge {

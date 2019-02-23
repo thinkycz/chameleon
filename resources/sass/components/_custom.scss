@@ -84,6 +84,8 @@
 .dropdown-categories {
     .dropdown-menu {
         left: -35px !important;
+        max-height: 275px;
+        overflow-y: auto;
 
         svg {
             left: 2rem !important;

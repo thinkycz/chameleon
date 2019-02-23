@@ -29,6 +29,7 @@ class MediaMigrationSeeder extends BaseMigrationSeeder
             $medias->each(function ($media) {
                 $media = json_decode(json_encode($media, JSON_UNESCAPED_SLASHES), true);
                 $media = array_merge($media, [
+                    'collection_name'   => 'images',
                     'custom_properties' => $media['custom_properties'],
                     'manipulations'     => $media['manipulations'],
                     'responsive_images' => json_encode([]),

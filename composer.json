@@ -159,7 +159,6 @@
         "init-prod": [
             "php artisan key:generate",
             "php artisan storage:link",
-            "php artisan touch:files",
             "php artisan migrate:fresh",
             "php artisan passport:install",
             "php artisan cache:clear",

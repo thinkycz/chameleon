@@ -2,10 +2,10 @@
 
 namespace App\Nova;
 
+use App\Models\PriceLevel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Preference extends Resource
 {
@@ -61,9 +61,9 @@ class Preference extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('resources.name'), function () { return $this->name; }),
+            Text::make(__('resources.name'), function () {return $this->name;}),
 
-            Text::make(__('resources.description'), function () { return $this->description; })->onlyOnDetail(),
+            Text::make(__('resources.description'), function () {return $this->description;})->onlyOnDetail(),
 
             MorphTo::make(__('resources.preference'), 'preferable')->types([
                 Availability::class,
@@ -71,8 +71,9 @@ class Preference extends Resource
                 Currency::class,
                 Page::class,
                 Status::class,
-                Unit::class
-            ])
+                Unit::class,
+                PriceLevel::class,
+            ]),
         ];
     }
 

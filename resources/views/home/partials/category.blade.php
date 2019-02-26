@@ -1,15 +1,13 @@
-@php
-    $products = $category->products()->inRandomOrder()->take(8)->get();
-@endphp
-
-<section id="category-{{ $category->id }}" class="py-16 {{ $category->is($firstCategory)  ? 'bg-white' : 'bg-grey-lighest' }}">
+<section id="category-{{ $category->id }}" class="my-16">
     <div class="container">
         <div class="row">
             <div class="col-full">
-                <h2 class="text-grey-darkest mb-3 text-2xl w-full">{{ $category->name }}</h2>
+                <h2 class="mb-4 text-2xl w-full">
+                    <a href="{{ route('categories.show', $category) }}" class="text-grey-darkest hover:text-grey-darker">{{ $category->name }}</a>
+                </h2>
 
                 <div class="row">
-                    @forelse($products as $product)
+                    @forelse($category->products()->inRandomOrder()->take(4)->get() as $product)
                         <div class="col-product">
                             @include('products.partials.card')
                         </div>

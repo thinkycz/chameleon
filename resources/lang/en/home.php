@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'categories_showcase' => 'Categories Showcase',
-    'welcome'             => 'Welcome to our shop!',
-    'subheading'          => 'Thank you for visiting our shop. You can start exploring our offer and start your shopping experience with us. Enjoy your stay!',
-    'explore_now'         => 'Explore now',
-    'what_waiting'        => 'What are you waiting for?',
-    'all_categories'      => 'All Categories',
-    'register_with_us'    => 'Its easy to register - it takes only few seconds. With your account you can start your ordering process on our shop.',
+    'subcategories'    => 'Subcategories',
+    'welcome'          => 'Welcome to your shop!',
+    'subheading'       => 'Thank you for choosing our ecommerce platform. You can start by configuring your store, adding categories and importing your products.',
+    'explore_now'      => 'Explore now',
+    'what_waiting'     => 'Only logged in users can see prices and make purchases',
+    'register_with_us' => 'In order to see product prices and make purchases, please log in or create your account. It\'s easy, start by clicking here.',
+    'all_categories'   => 'All Categories',
 ];

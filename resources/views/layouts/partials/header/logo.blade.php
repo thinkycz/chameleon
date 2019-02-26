@@ -15,6 +15,9 @@
                     <div class="dropdown-menu" v-if="visible" v-click-outside="close" @click.stop="blank">
                         <icon-dropdown></icon-dropdown>
                         <ul class="list-reset">
+                            <li class="flex justify-between items-center">
+                                <a href="{{ route('categories.index') }}">{{ __('home.all_categories') }}</a>
+                            </li>
                             @foreach($categories as $category)
                                 <li class="flex justify-between items-center">
                                     <a href="{{ route('categories.show', $category) }}">{{ $category->name }}</a>

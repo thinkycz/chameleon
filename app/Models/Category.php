@@ -38,17 +38,6 @@ class Category extends Model implements HasMedia
         return $this->belongsToMany(Product::class);
     }
 
-    public static function findBySlugOrId($value)
-    {
-        if (!$value) {
-            return null;
-        }
-
-        return static::where('slug', $value)
-            ->orWhere('id', $value)
-            ->first();
-    }
-
     public static function firstOrCreateByName($name)
     {
         $locale = Locale::fallback();
@@ -57,13 +46,5 @@ class Category extends Model implements HasMedia
         }
 
         return static::create(compact('name'));
-    }
-
-    public static function getShowcaseCategories()
-    {
-        return static::with('products')
-            ->whereEnabled(true)
-            ->whereNull('parent_id')
-            ->get();
     }
 }

@@ -177,6 +177,14 @@ export default {
             "login": "Přihlášení",
             "register": "Registrace"
         },
+        "home": {
+            "subcategories": "Podkategorie",
+            "welcome": "Vítejte ve vašem obchodě!",
+            "subheading": "Děkujeme, že jste si vybrali naši platformu pro váš eshop. Začněte tím, že nastavíte informace o vašem obchodě, přidáte kategorie a importováním vašich produktů.",
+            "explore_now": "Začít nyní",
+            "what_waiting": "Pro zobrazení cen a nákup se prosím přihlašte",
+            "register_with_us": "Pouze registrovaní a přihlášení uživatelé mohou vidět ceny a provádět objednávky. Zaregistrujte se nyní, je to snadné!"
+        },
         "eligibilities": {
             "cannot_make_purchases": "Nemáte povolení na nákup",
             "no_price_defined": "Tento produkt nemá definovanou cenu",
@@ -987,13 +995,12 @@ export default {
             "register": "Register"
         },
         "home": {
-            "categories_showcase": "Categories Showcase",
-            "welcome": "Welcome to our shop!",
-            "subheading": "Thank you for visiting our shop. You can start exploring our offer and start your shopping experience with us. Enjoy your stay!",
+            "subcategories": "Subcategories",
+            "welcome": "Welcome to your shop!",
+            "subheading": "Thank you for choosing our ecommerce platform. You can start by configuring your store, adding categories and importing your products.",
             "explore_now": "Explore now",
-            "what_waiting": "What are you waiting for?",
-            "all_categories": "All Categories",
-            "register_with_us": "Its easy to register - it takes only few seconds. With your account you can start your ordering process on our shop."
+            "what_waiting": "Only logged in users can see prices and make purchases",
+            "register_with_us": "In order to see product prices and make purchases, please log in or create your account. It's easy, start by clicking here."
         },
         "eligibilities": {
             "cannot_make_purchases": "You are not eligible to make purchases",

@@ -20,7 +20,7 @@ return [
     'order_by_alphabet'   => 'Order alphabetically',
     'enabled'             => 'Enabled',
     'disabled'            => 'Disabled',
-    'show_subcategories'  => 'Show Subcategories',
+    'hide_subcategories'  => 'Hide Subcategories',
     'delivery_method'     => 'Delivery Method',
     'payment_method'      => 'Payment Method',
     'order_placed'        => 'Order Placed',

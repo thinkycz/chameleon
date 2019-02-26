@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Laravel\Nova\Filters\BooleanFilter;
 
-class CategoryShowSubcategories extends BooleanFilter
+class CategoryHideSubcategories extends BooleanFilter
 {
     /**
      * Get the displayable name of the filter.
@@ -15,7 +15,7 @@ class CategoryShowSubcategories extends BooleanFilter
      */
     public function name()
     {
-        return __('filters.show_subcategories');
+        return __('filters.hide_subcategories');
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryShowSubcategories extends BooleanFilter
      */
     public function apply(Request $request, $query, $value)
     {
-        return $query->when(!$value['show_subcategories'], function ($query) {
+        return $query->when($value['hide_subcategories'], function ($query) {
             return $query->whereNull('parent_id');
         });
     }
@@ -42,7 +42,7 @@ class CategoryShowSubcategories extends BooleanFilter
     public function options(Request $request)
     {
         return [
-            __('filters.show_subcategories') => 'show_subcategories',
+            __('filters.hide_subcategories') => 'hide_subcategories',
         ];
     }
 }

@@ -20,7 +20,7 @@ return [
     'order_by_alphabet'   => 'Abecedně',
     'enabled'             => 'Povoleno',
     'disabled'            => 'Zakázáno',
-    'show_subcategories'  => 'Zobrazit podkategorie',
+    'hide_subcategories'  => 'Skrýt podkategorie',
     'delivery_method'     => 'Přepravní možnost',
     'payment_method'      => 'Platební možnost',
     'order_placed'        => 'Objednávka zadána',

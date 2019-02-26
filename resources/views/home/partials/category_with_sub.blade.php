@@ -14,8 +14,8 @@
                     <h2 class="text-grey-darkest mb-4 pb-2 text-lg w-full border-b">{{ trans('home.subcategories') }}</h2>
 
                     <ul class="categories-list overflow-y-auto" style="max-height: 20rem;">
-                        @foreach($category->children as $subcategory)
-                            <li>{{ $subcategory->name }}</li>
+                        @foreach($category->children->where('enabled', true) as $subcategory)
+                            <li><a href="{{ route('categories.show', $subcategory) }}" class="text-grey-darkest">{{ $subcategory->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>

@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('category_is_enabled');
-    }
-
     public function index()
     {
         $categories = Category::with('media')

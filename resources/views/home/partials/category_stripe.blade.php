@@ -1,2 +1,2 @@
-@includeWhen($category->children->isEmpty(), 'home.partials.category')
-@includeWhen($category->children->isNotEmpty(), 'home.partials.category_with_sub')
+@includeWhen($category->children->where('enabled', true)->isEmpty(), 'home.partials.category')
+@includeWhen($category->children->where('enabled', true)->isNotEmpty(), 'home.partials.category_with_sub')

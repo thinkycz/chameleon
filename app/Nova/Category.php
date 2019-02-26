@@ -4,7 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\Category\ChangeCategoryEnabledStatus;
 use App\Nova\Filters\CategoryEnabled;
-use App\Nova\Filters\CategoryShowSubcategories;
+use App\Nova\Filters\CategoryHideSubcategories;
 use App\Nova\Metrics\NumberOfCategories;
 use App\Nova\Metrics\ProductsPerCategory;
 use Illuminate\Http\Request;
@@ -112,7 +112,7 @@ class Category extends Resource
     public function filters(Request $request)
     {
         return [
-            new CategoryShowSubcategories(),
+            new CategoryHideSubcategories(),
             new CategoryEnabled(),
         ];
     }

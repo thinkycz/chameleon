@@ -10,6 +10,7 @@ class HomeController extends Controller
     {
         $categories = Category::whereHas('products')
             ->whereNull('parent_id')
+            ->whereEnabled(true)
             ->withCount('products')
             ->orderByDesc('products_count')
             ->take(10)

@@ -107,7 +107,7 @@
         .slick-slide {
             img {
                 @apply w-full rounded;
-                object-fit: cover;
+                object-fit: scale-down;
                 max-height: 450px;
                 &:focus {
                     @apply outline-none;

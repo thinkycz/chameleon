@@ -100,9 +100,9 @@ return [
         'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
     ],
 
-    'elasticsearch' => [
+    'elastic' => [
         'hosts' => [
-            env('ELASTICSEARCH_HOST', 'http://localhost'),
+            env('ELASTIC_HOST', 'http://localhost'),
         ],
     ],
 ];

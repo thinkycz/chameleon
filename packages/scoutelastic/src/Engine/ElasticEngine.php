@@ -129,6 +129,8 @@ class ElasticEngine extends Engine
                     'bool' => [
                         'must' => [
                             ['multi_match' => ['query' => $builder->query ?? '', 'fuzziness' => 'AUTO']],
+                        ],
+                        'should' => [
                             ['query_string' => ['query' => $this->parseQuery($builder->query)]]
                         ]
                     ]
@@ -138,7 +140,7 @@ class ElasticEngine extends Engine
 
         if (method_exists($builder->model, 'searchableFields')) {
             $params['body']['query']['bool']['must'][0]['multi_match']['fields'] = $builder->model->searchableFields();
-            $params['body']['query']['bool']['must'][1]['query_string']['fields'] = $builder->model->searchableFields();
+            $params['body']['query']['bool']['should'][0]['query_string']['fields'] = $builder->model->searchableFields();
         }
 
         if ($sort = $this->sort($builder)) {

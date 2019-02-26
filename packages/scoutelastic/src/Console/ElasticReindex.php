@@ -3,8 +3,6 @@
 namespace Nulisec\ScoutElastic\Console;
 
 use App\Models\Product;
-use App\Models\Team;
-use App\Models\User;
 use Elasticsearch\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -50,8 +48,6 @@ class ElasticReindex extends Command
     public function handle()
     {
         $this->reindex(Product::class);
-        $this->reindex(User::class);
-        $this->reindex(Team::class);
 
         return true;
     }

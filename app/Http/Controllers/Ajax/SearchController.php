@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function search(SearchService $search)
     {
-        $products = $search->fetch()->paginate(config('config.autocomplete_results_count'));
+        $products = $search->take(config('config.autocomplete_results_count'))->fetch();
 
         return $products;
     }

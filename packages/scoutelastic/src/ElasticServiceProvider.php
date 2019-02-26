@@ -25,7 +25,7 @@ class ElasticServiceProvider extends ServiceProvider
         }
 
         $this->app->singleton(Client::class, function () {
-            return ClientBuilder::create()->setHosts(config('scout.elasticsearch.hosts'))->build();
+            return ClientBuilder::create()->setHosts(config('scout.elastic.hosts'))->build();
         });
     }
 }

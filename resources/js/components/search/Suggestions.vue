@@ -47,7 +47,7 @@
         methods: {
             getItems: throttle(function() {
                 axios.get(`/ajax/search?query=${this.query}`).then(({ data }) => {
-                    this.products = data.data;
+                    this.products = data;
                 });
             }, 1000),
 

@@ -13,8 +13,8 @@
                 <div class="card p-4">
                     <h2 class="text-grey-darkest mb-4 pb-2 text-lg w-full border-b">{{ trans('home.subcategories') }}</h2>
 
-                    <ul class="categories-list">
-                        @foreach($category->children()->take(8)->get() as $subcategory)
+                    <ul class="categories-list overflow-y-auto" style="max-height: 20rem;">
+                        @foreach($category->children as $subcategory)
                             <li>{{ $subcategory->name }}</li>
                         @endforeach
                     </ul>

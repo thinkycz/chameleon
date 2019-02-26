@@ -38,11 +38,6 @@ class SettingSeeder extends Seeder
                 'type'       => 'object',
                 'required'   => [],
                 'properties' => [
-                    'heading'            => ['type' => 'string'],
-                    'subheading'         => ['type' => 'string'],
-                    'image'              => ['type' => 'string'],
-                    'category_1'         => ['type' => 'string'],
-                    'category_2'         => ['type' => 'string'],
                     'banner_heading'     => ['type' => 'string'],
                     'banner_subheading'  => ['type' => 'string'],
                     'banner_action_link' => ['type' => 'string'],
@@ -50,11 +45,6 @@ class SettingSeeder extends Seeder
                 ],
             ],
             'data'   => [
-                'heading'            => 'Welcome to our shop!',
-                'subheading'         => 'Thank you for visiting our shop. You can start exploring our offer and start your shopping experience with us. Enjoy your stay!',
-                'image'              => 'svg/home.svg',
-                'category_1'         => '',
-                'category_2'         => '',
                 'banner_heading'     => 'Placing your order with us is easy.',
                 'banner_subheading'  => 'You can browse products through categories, and you can also use the search bar to look for products using barcodes and SKUs. When you find the goods you need, add them to your basket and complete the checkout process to place your order',
                 'banner_action_text' => 'Shop Now',

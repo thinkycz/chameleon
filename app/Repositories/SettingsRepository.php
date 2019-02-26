@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Enums\CurrencyConversionMethod;
 use App\Models\Setting;
 use App\Services\InstanceCache;
 
@@ -57,6 +58,11 @@ class SettingsRepository extends InstanceCache
         return $this->get('store_settings', 'favicon') ?: asset('favicon.ico');
     }
 
+    public function getCurrencyConversionMethod()
+    {
+        return $this->get('exchange_rate_multiply') ? CurrencyConversionMethod::MULTIPLY_BY_EXCHANGE_RATE : CurrencyConversionMethod::DIVIDE_BY_EXCHANGE_RATE;
+    }
+
     public function getCustomLink1()
     {
         return $this->configuration('custom_footer_link_1');
@@ -67,14 +73,9 @@ class SettingsRepository extends InstanceCache
         return $this->configuration('custom_footer_link_2');
     }
 
-    public function getHomepage()
+    public function get($code, $key = 'value')
     {
-        return $this->configuration('homepage');
-    }
-
-    public function get($code, $key)
-    {
-        return $this->getOrFetch(__CLASS__, $key, function () use ($key, $code) {
+        return $this->getOrFetch(__CLASS__, "{$code}.{$key}", function () use ($key, $code) {
             $configuration = $this->configuration($code);
 
             return $configuration[$key] ?? null;

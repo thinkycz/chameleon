@@ -80,7 +80,7 @@ if (!function_exists('formatPrice')) {
     function formatPrice(Currency $currency = null, $price)
     {
         if ($currency->symbol) {
-            $result = $currency->symbolIsBefore ? "{$currency->symbol} {$price}" : "{$price} {$currency->symbol}";
+            $result = $currency->symbol_is_before ? "{$currency->symbol} {$price}" : "{$price} {$currency->symbol}";
         } else {
             $result = "{$price} {$currency->isocode}";
         }

@@ -188,6 +188,19 @@ class SettingSeeder extends Seeder
             ],
         ]);
 
+        Setting::updateOrCreate(['code' => 'exchange_rate_multiply'], [
+            'schema' => [
+                'type'       => 'object',
+                'required'   => ['value'],
+                'properties' => [
+                    'value' => ['type' => 'boolean'],
+                ],
+            ],
+            'data'   => [
+                'value' => false,
+            ],
+        ]);
+
         Setting::updateOrCreate(['code' => 'custom_footer_link_1'], [
             'schema' => [
                 'type'       => 'object',

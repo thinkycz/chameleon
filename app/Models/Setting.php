@@ -55,7 +55,7 @@ class Setting extends Model implements HasMedia
         $this->attributes['data'] = json_encode($data);
     }
 
-    public static function fetch($code, $key)
+    public static function fetch($code, $key = 'value')
     {
         $settings = static::loadConfiguration($code);
 

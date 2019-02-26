@@ -11,18 +11,14 @@ class HeaderComposer
 {
     public function compose(View $view)
     {
-        $categories = cache()->remember('header_categories', 3600, function () {
-            return Category::withCount('products')
-                ->whereEnabled(true)
-                ->whereIsRoot()
-                ->get();
-        });
+        $categories = Category::withCount('products')
+            ->whereEnabled(true)
+            ->whereIsRoot()
+            ->get();
 
         $locales = Locale::all();
 
-        $currencies = cache()->remember('currencies', 3600, function () {
-            return Currency::whereEnabled(true)->get();
-        });
+        $currencies = Currency::whereEnabled(true)->get();
 
         $view->with(compact('categories', 'currencies', 'locales'));
     }

@@ -70,13 +70,13 @@ class Setting extends Resource
 
             JsonSchema::make(__('resources.data'), $this->schema),
 
-            Code::make(__('resources.raw_data'), 'data')->json()
-                ->rules('json')
-                ->onlyOnDetail(),
-
-            Code::make(__('resources.schema'))->json()
-                ->rules('json')
-                ->hideWhenUpdating(),
+//            Code::make(__('resources.raw_data'), 'data')->json()
+//                ->rules('json')
+//                ->onlyOnDetail(),
+//
+//            Code::make(__('resources.schema'), 'schema')->json()
+//                ->rules('json')
+//                ->hideWhenUpdating(),
 
             $this->getValue()->onlyOnIndex(),
         ];

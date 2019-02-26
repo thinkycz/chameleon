@@ -183,7 +183,8 @@ export default {
             "subheading": "Děkujeme, že jste si vybrali naši platformu pro váš eshop. Začněte tím, že nastavíte informace o vašem obchodě, přidáte kategorie a importováním vašich produktů.",
             "explore_now": "Začít nyní",
             "what_waiting": "Pro zobrazení cen a nákup se prosím přihlašte",
-            "register_with_us": "Pouze registrovaní a přihlášení uživatelé mohou vidět ceny a provádět objednávky. Zaregistrujte se nyní, je to snadné!"
+            "register_with_us": "Pouze registrovaní a přihlášení uživatelé mohou vidět ceny a provádět objednávky. Zaregistrujte se nyní, je to snadné!",
+            "all_categories": "Všechny kategorie"
         },
         "eligibilities": {
             "cannot_make_purchases": "Nemáte povolení na nákup",
@@ -1000,7 +1001,8 @@ export default {
             "subheading": "Thank you for choosing our ecommerce platform. You can start by configuring your store, adding categories and importing your products.",
             "explore_now": "Explore now",
             "what_waiting": "Only logged in users can see prices and make purchases",
-            "register_with_us": "In order to see product prices and make purchases, please log in or create your account. It's easy, start by clicking here."
+            "register_with_us": "In order to see product prices and make purchases, please log in or create your account. It's easy, start by clicking here.",
+            "all_categories": "All Categories"
         },
         "eligibilities": {
             "cannot_make_purchases": "You are not eligible to make purchases",

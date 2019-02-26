@@ -10,7 +10,9 @@ trait ProductHasPrices
     {
         $priceLevel = $priceLevel ?? currentUser()->getPriceLevel();
 
-        return $priceLevel ? $this->prices->where('price_level_id', $priceLevel->id)->first() : null;
+        $price = $priceLevel ? $this->prices->where('price_level_id', $priceLevel->id)->first() : null;
+
+        return $price ? $price->convertToCurrency(currentCurrency()) : null;
     }
 
     public function getPriceAttribute()

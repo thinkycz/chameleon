@@ -13,6 +13,7 @@ use App\Nova\Metrics\UsersPerDay;
 use App\Nova\Metrics\UsersPerPriceLevel;
 use Illuminate\Http\Request;
 use Inspheric\Fields\Email;
+use KABBOUCHI\NovaImpersonate\Impersonate;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
@@ -136,6 +137,8 @@ class User extends Resource
             HasMany::make(__('resources.addresses'), 'addresses', Address::class),
 
             BelongsToMany::make(__('resources.roles'), 'roles', Role::class),
+
+            Impersonate::make($this),
         ];
     }
 

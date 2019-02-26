@@ -77,6 +77,11 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         return $this->notify(new AccountActivated());
     }
 
+    public function canImpersonate()
+    {
+        return $this->hasRoleWithPermission('viewNova');
+    }
+
     public function priceLevel()
     {
         return $this->belongsTo(PriceLevel::class);

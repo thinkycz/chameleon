@@ -167,12 +167,13 @@
         "post-update": [
             "yarn",
             "yarn run prod",
+            "php artisan link:directories",
+            "php artisan strings:generate",
+            "php artisan vue-i18n:generate",
             "php artisan storage:link",
             "php artisan cache:clear",
             "php artisan config:clear",
-            "php artisan view:clear",
-            "php artisan strings:generate",
-            "php artisan vue-i18n:generate"
+            "php artisan view:clear"
         ],
         "init-existing-db": [
             "php artisan migrate:fresh",

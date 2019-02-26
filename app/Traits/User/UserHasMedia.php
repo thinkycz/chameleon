@@ -33,7 +33,7 @@ trait UserHasMedia
         }
     }
 
-    public function getThumbAttribute()
+    public function getThumbnailAttribute()
     {
         $images = $this->getMedia('images');
 

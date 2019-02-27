@@ -15,7 +15,7 @@
                         <input v-model="eshopname"
                             id="eshopname"
                             type="text"
-                            :placeholder="__(eshop_name)"
+                            :placeholder="__('eshop_name')"
                             class="w-full form-control form-input form-input-bordered">
                     </div>
                 </div>

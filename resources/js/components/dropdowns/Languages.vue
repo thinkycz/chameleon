@@ -20,7 +20,7 @@
 
         computed: {
             current() {
-                return this.locales[window.currentLocale];
+                return window.currentLocale in this.locales ? this.locales[window.currentLocale] : this.locales[window.fallbackLocale];
             },
         },
 

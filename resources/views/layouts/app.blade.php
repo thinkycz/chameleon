@@ -14,8 +14,8 @@
     <link rel="icon" href="{{ settingsRepository()->getFaviconImage() }}">
     <script>
         window.baseURL = '{{ url('/') }}';
-        window.currentLocale = '{{ app()->getLocale() }}';
-        window.fallbackLocale = 'en';
+        window.currentLocale = '{{ \App\Enums\Locale::app() }}';
+        window.fallbackLocale = '{{ \App\Enums\Locale::fallback() }}';
     </script>
     <link href="{{ mix('css/app.css')}}" rel="stylesheet">
 </head>

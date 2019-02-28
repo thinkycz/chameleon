@@ -88,11 +88,12 @@ class SyncronizeProducts extends SyncJob implements ShouldQueue
     {
         foreach (PriceLevel::all() as $priceLevel) {
             $cenik = $this->data->cenikyCeny->where('GUIPriceList', $this->resolvePriceLevel($priceLevel->import_code))->first();
+            $vat = normalizeNumber($this->data->nDPH);
 
             if ($cenik) {
                 $product->prices()->updateOrCreate(['price_level_id' => $priceLevel->id], [
-                    'price'     => $cenik->nPrice ? normalizeNumber($cenik->nPrice) : null,
-                    'old_price' => $cenik->nMarketPrice ? normalizeNumber($cenik->nMarketPrice) : null,
+                    'price'     => $cenik->nPrice ? normalizeNumber($cenik->nPrice) * ($vat + 100) / 100 : null,
+                    'old_price' => $cenik->nMarketPrice ? normalizeNumber($cenik->nMarketPrice) * ($vat + 100) / 100 : null,
                 ]);
             }
         }

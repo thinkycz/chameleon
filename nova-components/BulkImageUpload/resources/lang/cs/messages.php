@@ -9,5 +9,6 @@ return [
     'identifier'              => 'Identifikátor',
     'barcode'                 => 'Čárový kód',
     'catalogue_number'        => 'Katalogové číslo',
-    'bulk_images_upload_note' => 'Nástroj vyhledá produkt s tímto identifikátorem (jméno obrázku by mělo být totožné s identifikátorem produktů) a automaticky přidá obrázek k tomuto produktu. Máte-li pro produkt několik obrázků, například je-li čárový kód produktu 12345, pak by měly být obrázky pojmenovány 12345, 12345|2, 12345|3, 12345|4...',
+    'separator'               => 'Oddělovač',
+    'bulk_images_upload_note' => 'Název obrázku by měl být totožný s identifikátorem produktu. Importer vyhledá produkt s tímto identifikátorem a automaticky přiřadí obrázek k tomuto produktu. Pro přiřazení více obrázků ke stejnému produktu, použijte oddělovač v názvu produktu.',
 ];

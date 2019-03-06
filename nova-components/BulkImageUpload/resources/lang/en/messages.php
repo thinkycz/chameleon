@@ -9,5 +9,6 @@ return [
     'identifier'              => 'Identifier',
     'barcode'                 => 'Barcode',
     'catalogue_number'        => 'Catalogue Number',
-    'bulk_images_upload_note' => 'Importer will look for a product with this identifier (the image name should be same as the products idenfitier) and it will add the image to that product automatically. If you have multiple images for a product, for example: Product Barcode: 12345, then the images should be 12345, 12345|2, 12345|3, 12345|4...',
+    'separator'               => 'Separator',
+    'bulk_images_upload_note' => 'The image name should be same as the product idenfitier. Importer will look for a product with this identifier and it will attacy the image to that product automatically. If you have multiple images for a product, use a separator in the image name.',
 ];

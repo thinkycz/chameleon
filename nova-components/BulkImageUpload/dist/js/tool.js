@@ -257,10 +257,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -323,8 +319,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dropzone__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dropzone__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ImageDropzone__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ImageDropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ImageDropzone__);
 //
 //
 //
@@ -366,6 +362,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 var route = '/nova-vendor/bulk-image-upload';
@@ -374,13 +389,14 @@ var route = '/nova-vendor/bulk-image-upload';
     data: function data() {
         return {
             identifier: 'barcode',
+            separator: '|',
             route: route + '/upload',
             deleteRoute: route + '/destroy'
         };
     },
 
     components: {
-        ImageDropzone: __WEBPACK_IMPORTED_MODULE_0__dropzone___default.a
+        ImageDropzone: __WEBPACK_IMPORTED_MODULE_0__ImageDropzone___default.a
     }
 });
 
@@ -403,7 +419,7 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-6201852b"
+var __vue_scopeId__ = "data-v-6ce2263b"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -414,7 +430,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "DropzoneField/resources/js/components/ImageDropzone.vue"
+Component.options.__file = "resources/js/components/ImageDropzone.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -423,9 +439,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6201852b", Component.options)
+    hotAPI.createRecord("data-v-6ce2263b", Component.options)
   } else {
-    hotAPI.reload("data-v-6201852b", Component.options)
+    hotAPI.reload("data-v-6ce2263b", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -446,13 +462,13 @@ var content = __webpack_require__(9);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(11)("7d9ee7a6", content, false, {});
+var update = __webpack_require__(11)("1f210b66", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../../BulkImageUpload/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6201852b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../../BulkImageUpload/node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ImageDropzone.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../../BulkImageUpload/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6201852b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../../BulkImageUpload/node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ImageDropzone.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6ce2263b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ImageDropzone.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6ce2263b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ImageDropzone.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -470,7 +486,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "\n.vue-dropzone[data-v-6201852b] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  min-height: 250px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n  background: #fff;\n  padding: 20px;\n  border-radius: 0.25rem;\n}\n.vue-dropzone *[data-v-6201852b] {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n.vue-dropzone.dz-clickable[data-v-6201852b] {\n    cursor: pointer;\n}\n.vue-dropzone.dz-clickable *[data-v-6201852b] {\n      cursor: default;\n}\n.vue-dropzone.dz-clickable .dz-message[data-v-6201852b] {\n      cursor: pointer;\n}\n.vue-dropzone.dz-clickable .dz-message *[data-v-6201852b] {\n        cursor: pointer;\n}\n.vue-dropzone.dz-started[data-v-6201852b] .dz-message {\n    display: none;\n}\n.vue-dropzone.dz-drag-hover[data-v-6201852b] {\n    border-style: solid;\n}\n.vue-dropzone.dz-drag-hover .dz-message[data-v-6201852b] {\n      opacity: 0.5;\n}\n.vue-dropzone[data-v-6201852b] .dz-message {\n    text-align: center;\n    margin: 2em 0;\n    font-size: 1.6rem;\n}\n.vue-dropzone[data-v-6201852b] {\n  border: 1px solid #e5e5e5;\n  letter-spacing: 0.2px;\n  color: #777;\n  -webkit-transition: background-color 0.2s linear;\n  transition: background-color 0.2s linear;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);\n          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);\n}\n.vue-dropzone[data-v-6201852b] .dz-preview {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n    margin: 16px;\n    min-height: 100px;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview:hover {\n      z-index: 1000;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-file-preview .dz-image {\n      border-radius: 20px;\n      background: #999;\n      background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));\n      background: linear-gradient(180deg, #eee, #ddd);\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-file-preview .dz-details {\n      opacity: 1;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-image-preview {\n      background: #fff;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-image-preview .dz-details {\n        -webkit-transition: opacity 0.2s linear;\n        transition: opacity 0.2s linear;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-remove {\n      font-size: 14px;\n      text-align: center;\n      display: block;\n      cursor: pointer;\n      border: none;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-remove:hover {\n        text-decoration: underline;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview:hover .dz-details {\n      opacity: 1;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details {\n      z-index: 20;\n      position: absolute;\n      top: 0;\n      left: 0;\n      opacity: 0;\n      font-size: 13px;\n      min-width: 100%;\n      max-width: 100%;\n      padding: 2em 1em;\n      text-align: center;\n      color: rgba(0, 0, 0, 0.9);\n      line-height: 150%;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-size {\n        margin-bottom: 1em;\n        font-size: 16px;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-filename {\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-filename:hover span {\n          border: 1px solid rgba(199, 199, 199, 0.8);\n          background-color: rgba(255, 255, 255, 0.8);\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-filename:not(:hover) span {\n          border: 1px solid transparent;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-filename span {\n          background-color: rgba(255, 255, 255, 0.4);\n          padding: 0 0.4em;\n          border-radius: 3px;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-size span {\n        background-color: rgba(255, 255, 255, 0.4);\n        padding: 0 0.4em;\n        border-radius: 3px;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview:hover .dz-image img {\n      -webkit-transform: scale(1.05);\n      transform: scale(1.05);\n      -webkit-filter: blur(8px);\n      filter: blur(8px);\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-image {\n      border-radius: 20px;\n      overflow: hidden;\n      width: 160px;\n      height: 160px;\n      position: relative;\n      display: block;\n      z-index: 10;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-image img {\n        display: block;\n        max-width: 160px;\n        height: 160px !important;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-success .dz-success-mark {\n      -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-error .dz-error-mark {\n      opacity: 1;\n      -webkit-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-error-mark,\n    .vue-dropzone[data-v-6201852b] .dz-preview .dz-success-mark {\n      pointer-events: none;\n      opacity: 0;\n      z-index: 500;\n      position: absolute;\n      display: block;\n      top: 50%;\n      left: 50%;\n      margin-left: -27px;\n      margin-top: -27px;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-error-mark svg,\n    .vue-dropzone[data-v-6201852b] .dz-preview .dz-success-mark svg {\n      display: block;\n      width: 54px;\n      height: 54px;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-processing .dz-progress {\n      opacity: 1;\n      -webkit-transition: all 0.2s linear;\n      transition: all 0.2s linear;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-complete .dz-progress {\n      opacity: 0;\n      -webkit-transition: opacity 0.4s ease-in;\n      transition: opacity 0.4s ease-in;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview:not(.dz-processing) .dz-progress {\n      -webkit-animation: pulse 6s ease infinite;\n      animation: pulse 6s ease infinite;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-progress {\n      opacity: 1;\n      z-index: 1000;\n      pointer-events: none;\n      position: absolute;\n      height: 16px;\n      left: 50%;\n      top: 50%;\n      margin-top: -8px;\n      width: 80px;\n      margin-left: -40px;\n      background: rgba(255, 255, 255, 0.9);\n      -webkit-transform: scale(1);\n      border-radius: 8px;\n      overflow: hidden;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-progress .dz-upload {\n        background: #333;\n        background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#444));\n        background: linear-gradient(180deg, #666, #444);\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: 0;\n        width: 0;\n        -webkit-transition: width 0.3s ease-in-out;\n        transition: width 0.3s ease-in-out;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-error .dz-error-message {\n      display: block;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview.dz-error:hover .dz-error-message {\n      opacity: 1;\n      pointer-events: auto;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-error-message {\n      pointer-events: none;\n      z-index: 1000;\n      position: absolute;\n      opacity: 0;\n      -webkit-transition: opacity 0.3s ease;\n      transition: opacity 0.3s ease;\n      border-radius: 8px;\n      font-size: 13px;\n      top: 130px;\n      left: -10px;\n      width: 140px;\n      background: #be2626;\n      background: -webkit-gradient(linear, left top, left bottom, from(#be2626), to(#a92222));\n      background: linear-gradient(180deg, #be2626, #a92222);\n      padding: 0.5em 1.2em;\n      color: #fff;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-error-message:after {\n        content: '';\n        position: absolute;\n        top: -6px;\n        left: 64px;\n        width: 0;\n        height: 0;\n        border-left: 6px solid transparent;\n        border-right: 6px solid transparent;\n        border-bottom: 6px solid #be2626;\n}\n.vue-dropzone[data-v-6201852b]:hover {\n    background-color: #f6f6f6;\n}\n.vue-dropzone i[data-v-6201852b] {\n    color: #ccc;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-image img {\n    -o-object-fit: contain !important;\n       object-fit: contain !important;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-image:hover img {\n    -webkit-transform: none;\n            transform: none;\n    -webkit-filter: none;\n            filter: none;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details {\n    bottom: 0;\n    top: 0;\n    color: #fff;\n    background-color: rgba(33, 150, 243, 0.8);\n    -webkit-transition: opacity 0.2s linear;\n    transition: opacity 0.2s linear;\n    text-align: left;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-filename span,\n    .vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-size span {\n      background-color: transparent;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-filename:not(:hover) span {\n      border: none;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-details .dz-filename:hover span {\n      background-color: transparent;\n      border: none;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-progress .dz-upload {\n    background: #ccc;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-remove {\n    position: absolute;\n    z-index: 30;\n    color: #fff;\n    margin: 0 15px;\n    padding: 10px;\n    top: inherit;\n    bottom: 15px;\n    border: 2px solid #fff;\n    text-decoration: none;\n    text-transform: uppercase;\n    font-size: 0.8rem;\n    font-weight: 800;\n    letter-spacing: 1.1px;\n    opacity: 0;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview:hover .dz-remove {\n    opacity: 1;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview /deep/ .dz-error-mark,\n  .vue-dropzone[data-v-6201852b] .dz-preview /deep/ .dz-success-mark {\n    margin-left: auto !important;\n    margin-top: auto !important;\n    width: 100% !important;\n    top: 30% !important;\n    left: 35% !important;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview /deep/ .dz-error-mark i,\n  .vue-dropzone[data-v-6201852b] .dz-preview /deep/ .dz-success-mark i {\n    color: #fff !important;\n    font-size: 5rem !important;\n}\n.vue-dropzone[data-v-6201852b] .dz-preview .dz-error-message {\n    top: 75%;\n    left: 15%;\n}\n", ""]);
+exports.push([module.i, "\n.vue-dropzone[data-v-6ce2263b] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  min-height: 250px;\n  border: 1px solid rgba(0, 0, 0, 0.3);\n  background: #fff;\n  padding: 20px;\n  border-radius: 0.25rem;\n}\n.vue-dropzone *[data-v-6ce2263b] {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n.vue-dropzone.dz-clickable[data-v-6ce2263b] {\n    cursor: pointer;\n}\n.vue-dropzone.dz-clickable *[data-v-6ce2263b] {\n      cursor: default;\n}\n.vue-dropzone.dz-clickable .dz-message[data-v-6ce2263b] {\n      cursor: pointer;\n}\n.vue-dropzone.dz-clickable .dz-message *[data-v-6ce2263b] {\n        cursor: pointer;\n}\n.vue-dropzone.dz-started[data-v-6ce2263b] .dz-message {\n    display: none;\n}\n.vue-dropzone.dz-drag-hover[data-v-6ce2263b] {\n    border-style: solid;\n}\n.vue-dropzone.dz-drag-hover .dz-message[data-v-6ce2263b] {\n      opacity: 0.5;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-message {\n    text-align: center;\n    margin: 2em 0;\n    font-size: 1.6rem;\n}\n.vue-dropzone[data-v-6ce2263b] {\n  border: 1px solid #e5e5e5;\n  letter-spacing: 0.2px;\n  color: #777;\n  -webkit-transition: background-color 0.2s linear;\n  transition: background-color 0.2s linear;\n  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);\n          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n    margin: 16px;\n    min-height: 100px;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview:hover {\n      z-index: 1000;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-file-preview .dz-image {\n      border-radius: 20px;\n      background: #999;\n      background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));\n      background: linear-gradient(180deg, #eee, #ddd);\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-file-preview .dz-details {\n      opacity: 1;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-image-preview {\n      background: #fff;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-image-preview .dz-details {\n        -webkit-transition: opacity 0.2s linear;\n        transition: opacity 0.2s linear;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-remove {\n      font-size: 14px;\n      text-align: center;\n      display: block;\n      cursor: pointer;\n      border: none;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-remove:hover {\n        text-decoration: underline;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview:hover .dz-details {\n      opacity: 1;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details {\n      z-index: 20;\n      position: absolute;\n      top: 0;\n      left: 0;\n      opacity: 0;\n      font-size: 13px;\n      min-width: 100%;\n      max-width: 100%;\n      padding: 2em 1em;\n      text-align: center;\n      color: rgba(0, 0, 0, 0.9);\n      line-height: 150%;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-size {\n        margin-bottom: 1em;\n        font-size: 16px;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-filename {\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-filename:hover span {\n          border: 1px solid rgba(199, 199, 199, 0.8);\n          background-color: rgba(255, 255, 255, 0.8);\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-filename:not(:hover) span {\n          border: 1px solid transparent;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-filename span {\n          background-color: rgba(255, 255, 255, 0.4);\n          padding: 0 0.4em;\n          border-radius: 3px;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-size span {\n        background-color: rgba(255, 255, 255, 0.4);\n        padding: 0 0.4em;\n        border-radius: 3px;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview:hover .dz-image img {\n      -webkit-transform: scale(1.05);\n      transform: scale(1.05);\n      -webkit-filter: blur(8px);\n      filter: blur(8px);\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-image {\n      border-radius: 20px;\n      overflow: hidden;\n      width: 160px;\n      height: 160px;\n      position: relative;\n      display: block;\n      z-index: 10;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-image img {\n        display: block;\n        max-width: 160px;\n        height: 160px !important;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-success .dz-success-mark {\n      -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-error .dz-error-mark {\n      opacity: 1;\n      -webkit-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-error-mark,\n    .vue-dropzone[data-v-6ce2263b] .dz-preview .dz-success-mark {\n      pointer-events: none;\n      opacity: 0;\n      z-index: 500;\n      position: absolute;\n      display: block;\n      top: 50%;\n      left: 50%;\n      margin-left: -27px;\n      margin-top: -27px;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-error-mark svg,\n    .vue-dropzone[data-v-6ce2263b] .dz-preview .dz-success-mark svg {\n      display: block;\n      width: 54px;\n      height: 54px;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-processing .dz-progress {\n      opacity: 1;\n      -webkit-transition: all 0.2s linear;\n      transition: all 0.2s linear;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-complete .dz-progress {\n      opacity: 0;\n      -webkit-transition: opacity 0.4s ease-in;\n      transition: opacity 0.4s ease-in;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview:not(.dz-processing) .dz-progress {\n      -webkit-animation: pulse 6s ease infinite;\n      animation: pulse 6s ease infinite;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-progress {\n      opacity: 1;\n      z-index: 1000;\n      pointer-events: none;\n      position: absolute;\n      height: 16px;\n      left: 50%;\n      top: 50%;\n      margin-top: -8px;\n      width: 80px;\n      margin-left: -40px;\n      background: rgba(255, 255, 255, 0.9);\n      -webkit-transform: scale(1);\n      border-radius: 8px;\n      overflow: hidden;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-progress .dz-upload {\n        background: #333;\n        background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#444));\n        background: linear-gradient(180deg, #666, #444);\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: 0;\n        width: 0;\n        -webkit-transition: width 0.3s ease-in-out;\n        transition: width 0.3s ease-in-out;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-error .dz-error-message {\n      display: block;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview.dz-error:hover .dz-error-message {\n      opacity: 1;\n      pointer-events: auto;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-error-message {\n      pointer-events: none;\n      z-index: 1000;\n      position: absolute;\n      opacity: 0;\n      -webkit-transition: opacity 0.3s ease;\n      transition: opacity 0.3s ease;\n      border-radius: 8px;\n      font-size: 13px;\n      top: 130px;\n      left: -10px;\n      width: 140px;\n      background: #be2626;\n      background: -webkit-gradient(linear, left top, left bottom, from(#be2626), to(#a92222));\n      background: linear-gradient(180deg, #be2626, #a92222);\n      padding: 0.5em 1.2em;\n      color: #fff;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-error-message:after {\n        content: '';\n        position: absolute;\n        top: -6px;\n        left: 64px;\n        width: 0;\n        height: 0;\n        border-left: 6px solid transparent;\n        border-right: 6px solid transparent;\n        border-bottom: 6px solid #be2626;\n}\n.vue-dropzone[data-v-6ce2263b]:hover {\n    background-color: #f6f6f6;\n}\n.vue-dropzone i[data-v-6ce2263b] {\n    color: #ccc;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-image img {\n    -o-object-fit: contain !important;\n       object-fit: contain !important;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-image:hover img {\n    -webkit-transform: none;\n            transform: none;\n    -webkit-filter: none;\n            filter: none;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details {\n    bottom: 0;\n    top: 0;\n    color: #fff;\n    background-color: rgba(33, 150, 243, 0.8);\n    -webkit-transition: opacity 0.2s linear;\n    transition: opacity 0.2s linear;\n    text-align: left;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-filename span,\n    .vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-size span {\n      background-color: transparent;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-filename:not(:hover) span {\n      border: none;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-details .dz-filename:hover span {\n      background-color: transparent;\n      border: none;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-progress .dz-upload {\n    background: #ccc;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-remove {\n    position: absolute;\n    z-index: 30;\n    color: #fff;\n    margin: 0 15px;\n    padding: 10px;\n    top: inherit;\n    bottom: 15px;\n    border: 2px solid #fff;\n    text-decoration: none;\n    text-transform: uppercase;\n    font-size: 0.8rem;\n    font-weight: 800;\n    letter-spacing: 1.1px;\n    opacity: 0;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview:hover .dz-remove {\n    opacity: 1;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview /deep/ .dz-error-mark,\n  .vue-dropzone[data-v-6ce2263b] .dz-preview /deep/ .dz-success-mark {\n    margin-left: auto !important;\n    margin-top: auto !important;\n    width: 100% !important;\n    top: 30% !important;\n    left: 35% !important;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview /deep/ .dz-error-mark i,\n  .vue-dropzone[data-v-6ce2263b] .dz-preview /deep/ .dz-success-mark i {\n    color: #fff !important;\n    font-size: 5rem !important;\n}\n.vue-dropzone[data-v-6ce2263b] .dz-preview .dz-error-message {\n    top: 75%;\n    left: 15%;\n}\n", ""]);
 
 // exports
 
@@ -888,6 +904,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         identifier: {
             required: false,
             default: null
+        },
+
+        separator: {
+            required: false,
+            default: null
         }
     },
 
@@ -901,6 +922,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
             if (this.identifier) {
                 formData.append('identifier', this.identifier);
+            }
+
+            if (this.separator) {
+                formData.append('separator', this.separator);
             }
         },
         removeFile: function removeFile(file, xhr, formData) {
@@ -999,7 +1024,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6201852b", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6ce2263b", module.exports)
   }
 }
 
@@ -1011,103 +1036,163 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w-full" }, [
-    _c("div", { staticClass: "flex justify-center" }, [
-      _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
-        _c(
-          "label",
-          {
-            staticClass: "inline-block text-80 pt-2 leading-tight",
-            attrs: { for: "identifier" }
-          },
-          [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm.__("identifier")) +
-                "\n            "
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "card overflow-hidden mb-6" }, [
+        _c("div", { staticClass: "flex border-b border-40" }, [
+          _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+            _c(
+              "label",
+              {
+                staticClass: "inline-block text-80 pt-2 leading-tight",
+                attrs: { for: "identifier" }
+              },
+              [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.__("identifier")) +
+                    "\n                "
+                )
+              ]
             )
-          ]
-        )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.identifier,
+                    expression: "identifier"
+                  }
+                ],
+                staticClass: "w-full form-control form-select",
+                attrs: {
+                  name: "identifier",
+                  id: "identifier",
+                  required: "required"
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.identifier = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c(
+                  "option",
+                  { attrs: { value: "barcode", selected: "selected" } },
+                  [_vm._v(_vm._s(_vm.__("barcode")) + "\n                    ")]
+                ),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "catalogue_number" } }, [
+                  _vm._v(_vm._s(_vm.__("catalogue_number")))
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex border-b border-40" }, [
+          _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+            _c(
+              "label",
+              {
+                staticClass: "inline-block text-80 pt-2 leading-tight",
+                attrs: { for: "separator" }
+              },
+              [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.__("separator")) +
+                    "\n                "
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.separator,
+                    expression: "separator"
+                  }
+                ],
+                staticClass: "w-full form-control form-select",
+                attrs: {
+                  name: "separator",
+                  id: "separator",
+                  required: "required"
+                },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.separator = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { value: "|", selected: "selected" } }, [
+                  _vm._v(_vm._s("|"))
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "=" } }, [_vm._v(_vm._s("="))])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex border-b border-40" }, [
+          _c("div", { staticClass: "py-6 px-8 w-full" }, [
+            _c("p", { staticClass: "mb-4 text-sm text-80" }, [
+              _vm._v(_vm._s(_vm.__("bulk_images_upload_note")))
+            ])
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "py-6 px-8 w-1/2" }, [
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.identifier,
-                expression: "identifier"
-              }
-            ],
-            staticClass: "w-full form-control form-select",
-            attrs: {
-              name: "identifier",
-              id: "identifier",
-              required: "required"
-            },
-            on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.identifier = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              }
-            }
-          },
-          [
-            _c(
-              "option",
-              { attrs: { value: "barcode", selected: "selected" } },
-              [_vm._v(_vm._s(_vm.__("barcode")))]
-            ),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "catalogue_number" } }, [
-              _vm._v(_vm._s(_vm.__("catalogue_number")))
-            ])
-          ]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "px-6 text-center max-w-lg border-b border-40 mx-auto" },
-      [
-        _c("p", { staticClass: "mb-4 text-sm text-80" }, [
-          _vm._v(_vm._s(_vm.__("bulk_images_upload_note")))
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "flex justify-center" }, [
-      _c(
-        "div",
-        { staticClass: "w-full max-w-md py-6" },
-        [
-          _c("image-dropzone", {
-            attrs: {
-              identifier: _vm.identifier,
-              "delete-route": _vm.deleteRoute,
-              "max-images": 100,
-              "element-id": "dropzone" + _vm._uid,
-              route: _vm.route
-            }
-          })
-        ],
-        1
-      )
-    ])
-  ])
+      _c("image-dropzone", {
+        staticClass: "w-full",
+        attrs: {
+          identifier: _vm.identifier,
+          separator: _vm.separator,
+          "delete-route": _vm.deleteRoute,
+          "max-images": 100,
+          "element-id": "dropzone" + _vm._uid,
+          route: _vm.route
+        }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1141,15 +1226,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "card",
-        {
-          staticClass: "flex flex-col items-center justify-center",
-          staticStyle: { "min-height": "300px" }
-        },
-        [_c("image-upload")],
-        1
-      )
+      _c("image-upload")
     ],
     1
   )

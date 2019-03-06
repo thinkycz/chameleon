@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('access_administration');
-    }
-
     public function index(Request $request)
     {
         $orders = explode(',', $request->get('orders'));

@@ -30,5 +30,6 @@ return [
     'active'              => 'Active',
     'inactive'            => 'Inactive',
     'price_level'         => 'Price Level',
-
+    'has_images'          => 'Has Images',
+    'hasnt_images'        => 'Has No Images',
 ];

@@ -30,5 +30,6 @@ return [
     'active'              => 'Aktivní',
     'inactive'            => 'Neaktivní',
     'price_level'         => 'Cenová úroveň',
-
+    'has_images'          => 'Obsahuje obrázky',
+    'hasnt_images'        => 'Neobsahuje obrázky',
 ];

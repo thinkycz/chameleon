@@ -11,6 +11,7 @@ use App\Nova\Actions\Product\SetStockQuantity;
 use App\Nova\Actions\Product\SetVatRate;
 use App\Nova\Filters\ProductAvailability;
 use App\Nova\Filters\ProductEnabled;
+use App\Nova\Filters\ProductHasImages;
 use App\Nova\Filters\ProductUnit;
 use App\Nova\Metrics\NumberOfProducts;
 use App\Nova\Metrics\ProductsPerAvailability;
@@ -184,6 +185,7 @@ class Product extends Resource
             new ProductAvailability(),
             new ProductUnit(),
             new ProductEnabled(),
+            new ProductHasImages(),
         ];
     }
 

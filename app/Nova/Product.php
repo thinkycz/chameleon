@@ -113,11 +113,13 @@ class Product extends Resource
 
             BelongsTo::make(__('resources.parent'), 'parent', Product::class)->nullable()->searchable()->hideFromIndex(),
 
+            new Panel(__('resources.images'), $this->images()),
+
             new Panel(__('resources.inventory_options'), $this->inventoryOptionsFields()),
 
             new Panel(__('resources.stock_options'), $this->stockOptionsFields()),
 
-            Boolean::make(__('resources.enabled')),
+            Boolean::make(__('resources.enabled'), 'enabled'),
 
             BelongsToMany::make(__('resources.categories'), 'categories', Category::class),
 
@@ -125,11 +127,16 @@ class Product extends Resource
 
             HasMany::make(__('resources.properties'), 'properties', Property::class),
 
-            DropzoneField::make(__('resources.images'))->onlyOnDetail(),
-
 //            HasMany::make(__('resources.subproducts'), 'children', Product::class),
 
 //            HasMany::make(__('resources.comments'), 'comments', Comment::class),
+        ];
+    }
+
+    protected function images()
+    {
+        return [
+            DropzoneField::make(__('resources.images'))->onlyOnDetail(),
         ];
     }
 

@@ -46,6 +46,20 @@
 
                                 <div class="col-half">
                                     <div class="input-wrap">
+                                        <label for="company_id">{{ trans('auth.company_id') }} *</label>
+                                        <input type="text" name="company_id" id="company_id" required class="input" value="{{ old('company_id') }}" placeholder="{{ trans('auth.your_company_id') }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-half">
+                                    <div class="input-wrap">
+                                        <label for="phone">{{ trans('auth.phone') }}</label>
+                                        <input type="text" name="phone" id="phone" class="input" value="{{ old('phone') }}" placeholder="{{ trans('auth.your_phone') }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-half">
+                                    <div class="input-wrap">
                                         <label for="password">{{ trans('auth.password') }} *</label>
                                         <input type="password" name="password" id="password" required class="input" placeholder="{{ trans('auth.your_password') }}">
                                     </div>

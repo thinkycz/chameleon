@@ -23,6 +23,11 @@ return [
     'your_first_name'           => 'Your first name',
     'your_last_name'            => 'Your last name',
 
+    'company_id'                => 'Company ID',
+    'your_company_id'           => 'Your Company ID',
+    'phone'                     => 'Phone',
+    'your_phone'                => 'Phone number',
+
     'have_an_account'           => 'Already have an account?',
     'forgot_your_password'      => 'Forgot your password?',
 

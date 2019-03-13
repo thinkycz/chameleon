@@ -100,6 +100,9 @@ class User extends Resource
                 ->rules('required', 'max:255')
                 ->hideFromIndex(),
 
+            Text::make(__('resources.company_id'), 'company_id')
+                ->rules('required', 'max:255'),
+
             Text::make(__('resources.last_name'), 'last_name')
                 ->sortable()
                 ->rules('required', 'max:255')

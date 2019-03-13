@@ -1,5 +1,5 @@
 <template>
-    <dropzone :destroyDropzone="true"
+    <dropzone :destroyDropzone="false"
         :ref="elementId"
         @vdropzone-sending="sendingEvent"
         @vdropzone-removed-file="removeFile"

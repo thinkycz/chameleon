@@ -19,6 +19,7 @@ use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
 use Nulisec\PhoneField\PhoneNumber;
 
@@ -74,6 +75,11 @@ class Order extends Resource
     public static function singularLabel()
     {
         return __('resources.order');
+    }
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->whereNotNull('placed_at');
     }
 
     /**
@@ -164,17 +170,6 @@ class Order extends Resource
             new OrderDeliveryMethod(),
             new OrderPaymentMethod(),
         ];
-    }
-
-    /**
-     * Get the lenses available for the resource.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return array
-     */
-    public function lenses(Request $request)
-    {
-        return [];
     }
 
     /**

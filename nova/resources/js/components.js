@@ -54,6 +54,7 @@ import PaginationLinks from '@/components/PaginationLinks'
 import PanelItem from '@/components/PanelItem'
 import PartitionMetric from '@/components/Metrics/PartitionMetric'
 import Play from '@/components/Icons/Play'
+import ProgressButton from '@/components/ProgressButton'
 import Refresh from '@/components/Icons/Refresh'
 import ResourceTable from '@/components/ResourceTable'
 import ResourceTableRow from '@/components/Index/ResourceTableRow'
@@ -72,6 +73,9 @@ import SelectFilter from '@/components/Filters/SelectFilter'
 import BooleanFilter from '@/components/Filters/BooleanFilter'
 import DateFilter from '@/components/Filters/DateFilter'
 
+import SelectControl from '@/components/Controls/SelectControl'
+import DateTimePicker from '@/components/DateTimePicker'
+
 Vue.component('action-selector', ActionSelector)
 Vue.component('base-partition-metric', BasePartitionMetric)
 Vue.component('base-trend-metric', BaseTrendMetric)
@@ -88,7 +92,6 @@ Vue.component('custom-detail-header', CustomDetailHeader)
 Vue.component('custom-detail-toolbar', CustomDetailToolbar)
 Vue.component('custom-index-header', CustomIndexHeader)
 Vue.component('custom-index-toolbar', CustomIndexToolbar)
-Vue.component('date-filter', DateFilter)
 Vue.component('delete-menu', DeleteMenu)
 Vue.component('delete-resource-modal', DeleteResourceModal)
 Vue.component('dropdown', Dropdown)
@@ -129,6 +132,7 @@ Vue.component('modal', Modal)
 Vue.component('pagination-links', PaginationLinks)
 Vue.component('panel-item', PanelItem)
 Vue.component('partition-metric', PartitionMetric)
+Vue.component('progress-button', ProgressButton)
 Vue.component('resource-index', Index)
 Vue.component('resource-table', ResourceTable)
 Vue.component('resource-table-row', ResourceTableRow)
@@ -140,5 +144,9 @@ Vue.component('trend-metric', TrendMetric)
 Vue.component('validation-errors', ValidationErrors)
 Vue.component('value-metric', ValueMetric)
 
+Vue.component('date-filter', DateFilter)
 Vue.component('select-filter', SelectFilter)
 Vue.component('boolean-filter', BooleanFilter)
+
+Vue.component('select-control', SelectControl)
+Vue.component('date-time-picker', DateTimePicker)

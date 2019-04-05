@@ -1,0 +1,24 @@
+@import "caret";
+
+.input-group {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+
+  .input-group-append {
+    display: flex;
+    margin-left: -1px;
+  }
+}
+
+.dropdown-toggle {
+  @include caret(down);
+  &::after {
+    vertical-align: middle;
+  }
+}

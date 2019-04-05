@@ -3,6 +3,7 @@
 namespace Laravel\Nova\Tests\Controller;
 
 use Laravel\Nova\Nova;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Tests\Fixtures\Post;
 use Laravel\Nova\Tests\Fixtures\Role;
@@ -11,6 +12,7 @@ use Laravel\Nova\Tests\IntegrationTest;
 use Laravel\Nova\Tests\Fixtures\IdFilter;
 use Laravel\Nova\Tests\Fixtures\UserPolicy;
 use Laravel\Nova\Tests\Fixtures\ColumnFilter;
+use Laravel\Nova\Tests\Fixtures\CustomKeyFilter;
 
 class ResourceIndexTest extends IntegrationTest
 {
@@ -228,6 +230,27 @@ class ResourceIndexTest extends IntegrationTest
         $response->assertJsonCount(1, 'resources');
     }
 
+    public function test_can_filter_resources_with_a_custom_key()
+    {
+        factory(User::class)->create();
+        factory(User::class)->create();
+        factory(User::class)->create();
+
+        $filters = base64_encode(json_encode([
+            [
+                'class' => (new CustomKeyFilter)->key(),
+                'value' => 2,
+            ],
+        ]));
+
+        $response = $this->withExceptionHandling()
+                        ->getJson('/nova-api/users?filters='.$filters);
+
+        $this->assertEquals(2, $response->original['resources'][0]['id']->value);
+
+        $response->assertJsonCount(1, 'resources');
+    }
+
     public function test_filters_can_have_constructor_parameters()
     {
         factory(User::class)->create();
@@ -346,5 +369,31 @@ class ResourceIndexTest extends IntegrationTest
                         ->getJson('/nova-api/forbidden-users');
 
         $response->assertStatus(200);
+    }
+
+    public function test_eager_belongs_to()
+    {
+        $user = factory(User::class)->create();
+        $user->posts()->saveMany(factory(Post::class, 3)->create());
+
+        DB::enableQueryLog();
+        $count = count(DB::getQueryLog());
+
+        $response = $this->withExceptionHandling()
+            ->getJson('/nova-api/posts');
+
+        $response->assertStatus(200);
+        $this->assertEquals(count(DB::getQueryLog()) - $count, 1 + 3);
+
+        $count = count(DB::getQueryLog());
+        $_SERVER['nova.post.useEagerUser'] = true;
+        $response = $this->withExceptionHandling()
+            ->getJson('/nova-api/posts');
+        unset($_SERVER['nova.post.useEagerUser']);
+
+        $response->assertStatus(200);
+        $this->assertEquals(count(DB::getQueryLog()) - $count, 1 + 1);
+
+        DB::disableQueryLog();
     }
 }

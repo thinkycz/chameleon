@@ -1,7 +1,15 @@
 /node_modules
 /public/hot
 /public/storage
+/public/fonts
+/public/images
+/public/js
+/public/images
+/public/css
 /storage/*.key
+/storage/*.index
+/storage/medialibrary/
+/resources/js/translations/locales.js
 /vendor
 /.idea
 /.vscode
@@ -14,5 +22,6 @@ yarn-error.log
 .env
 .phpunit.result.cache
 .phpstorm.meta.php
+composer.lock
 _ide_helper.php
 _ide_helper_models.php

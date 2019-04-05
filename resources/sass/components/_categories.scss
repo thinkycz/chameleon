@@ -1,0 +1,31 @@
+.category-card {
+    @apply overflow-hidden relative mb-6;
+    .category-image {
+        @apply w-full text-center overflow-hidden rounded-t relative;
+        height: $product-image-height;
+        img {
+            @apply w-full object-scale-down;
+            height: $product-image-height;
+        }
+        .badge {
+            @apply truncate rounded absolute shadow;
+            right: 5px;
+            top: 5px;
+            max-width: 125px;
+        }
+    }
+    .category-data {
+        @apply relative px-4 pt-2 mb-4;
+        .badge {
+            @apply absolute;
+            top: -15px;
+            right: 5px;
+        }
+        h3 {
+            @apply text-left text-base pt-2 tracking-tight cursor-pointer;
+            a {
+                @apply font-normal text-black;
+            }
+        }
+    }
+}

@@ -2,9 +2,7 @@
     <div v-on-clickaway="close" class="dropdown relative">
         <slot :toggle="toggle" />
 
-        <transition name="fade">
-            <slot v-if="visible" name="menu" />
-        </transition>
+        <transition name="fade"> <slot v-if="visible" name="menu" /> </transition>
     </div>
 </template>
 
@@ -43,7 +41,7 @@ export default {
 function pathIncludesClass(event, className) {
     return composedPath(event)
         .filter(el => el !== document && el !== window)
-        .flatMap(e => [...e.classList])
+        .reduce((acc, e) => acc.concat([...e.classList]), [])
         .includes(className)
 }
 </script>

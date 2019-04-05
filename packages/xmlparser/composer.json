@@ -1,0 +1,31 @@
+{
+    "name": "nulisec/xmlparser",
+    "description": "XML Document Parser for PHP",
+    "keywords": ["xml", "parser"],
+    "license": "proprietary",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Long Do",
+            "email": "leo@nulisec.com",
+            "homepage": "https://nulisec.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Nulisec\\XmlParser\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "tightenco/collect": "^5.6.16"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nulisec\\XmlParser\\XmlParserServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

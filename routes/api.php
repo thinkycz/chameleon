@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\NulisecController;
 use Illuminate\Http\Request;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'auth:api', 'prefix' => 'nulisec'], function () {
+    Route::get('preferences', [NulisecController::class, 'preferences'])->name('api_nulisec_preferences');
+    Route::get('products', [NulisecController::class, 'products'])->name('api_nulisec_products');
+    Route::get('categories', [NulisecController::class, 'categories'])->name('api_nulisec_categories');
+    Route::get('price-levels', [NulisecController::class, 'priceLevels'])->name('api_nulisec_price_levels');
 });

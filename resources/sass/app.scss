@@ -1,14 +1,25 @@
+// Tailwind
+@tailwind preflight;
+@tailwind components;
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import './variables';
+@import './mixins';
+@import './components/typography';
+@import './components/app';
+@import './components/custom';
+@import './components/components';
+@import './components/products';
+@import './components/categories';
+@import './components/forms';
+@import './components/columns';
+@import './components/header';
+@import './components/footer';
+@import './components/profile';
+@import './components/basket';
+@import './components/search';
+@import './components/lightbox';
+@import './components/breadcrumbs';
+@import './components/multisteps';
+@import './components/responsive';
 
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+@tailwind utilities;

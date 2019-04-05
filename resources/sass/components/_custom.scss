@@ -1,0 +1,225 @@
+.slide-enter-active,
+.slide-leave-active {
+    @include transition(opacity, transform);
+}
+.slide-enter,
+.slide-leave-to {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    @include transition(opacity);
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-shrink-in-enter-active,
+.fade-shrink-in-leave-active {
+    @include transition(opacity, transform);
+}
+
+.fade-shrink-in-enter,
+.fade-shrink-in-leave-to {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.list-item {
+    display: block;
+}
+.list-enter-active,
+.list-leave-active {
+    transition: opacity 1s ease, transform 1s ease;
+}
+.list-enter,
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.toasted.bubble.info {
+    background-color: var(--accent) !important;
+}
+.toasted-container .toasted {
+    font-weight: bold !important;
+}
+.toasted-container .toasted.bubble {
+    padding: 10px 25px !important;
+}
+.toasted-container .toasted.confirm-action {
+    @apply text-white bg-accent flex items-center;
+    a.action {
+        @apply text-white relative font-bold border-b;
+        font-weight: bold;
+        top: 2px;
+        padding: 0 0px;
+        margin: 5px 2px 5px 7px;
+
+        &:last-of-type {
+            @apply text-grey-light;
+        }
+
+        &:first-of-type {
+            @apply ml-4;
+        }
+    }
+}
+
+.has-dropdown {
+    @apply appearance-none pr-8;
+    background-repeat: no-repeat;
+    background-size: 10px 6px;
+    background-position: center right 0.75rem;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="%233183c8" fill-rule="nonzero" d="M8.293.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 1.707.293L5 3.586 8.293.293z"/></svg>');
+
+    &.default {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="%2370767b" fill-rule="nonzero" d="M8.293.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 1.707.293L5 3.586 8.293.293z"/></svg>');
+    }
+}
+
+.dropdown-categories {
+    .dropdown-menu {
+        left: -35px !important;
+        max-height: 275px;
+        overflow-y: auto;
+
+        svg {
+            left: 2rem !important;
+        }
+    }
+}
+
+.pagination-area {
+    @apply pb-0 pt-4 flex justify-center;
+    .pagination {
+        @apply list-reset p-0;
+        li {
+            @apply inline text-center;
+            a,
+            span {
+                @apply float-left block py-2 px-4 border text-primary bg-white cursor-pointer;
+                margin-left: -1px;
+                line-height: 1.5;
+                @include transition(background-color, color, border-color);
+                &:active {
+                    outline: none;
+                }
+
+                &:hover {
+                    @apply bg-primary text-grey-darkest bg-grey-lightest;
+                }
+            }
+
+            &.active {
+                a,
+                span {
+                    @apply bg-primary text-white;
+                }
+            }
+
+            &.disabled {
+                a,
+                span {
+                    @apply cursor-not-allowed;
+                }
+            }
+
+            &:first-child {
+                a,
+                span {
+                    @apply rounded-l;
+                }
+            }
+
+            &:last-child {
+                a,
+                span {
+                    @apply rounded-r;
+                }
+            }
+        }
+    }
+}
+
+.filters {
+    .dropdown {
+        @apply mr-4;
+
+        &:last-of-type {
+            @apply mr-0;
+        }
+    }
+
+    .subcategories,
+    .tags {
+        .dropdown {
+            .dropdown-menu {
+                svg {
+                    top: -1.35rem;
+                }
+            }
+        }
+    }
+}
+
+.categories-list {
+    @apply list-reset;
+
+    li {
+        @apply cursor-pointer text-grey-darkest mb-3 tracking-tight capitalize;
+
+        &.active {
+            @apply font-bold;
+        }
+
+        &:last-of-type {
+            @apply mb-0;
+        }
+    }
+}
+
+label.text-sm {
+    font-size: 0.875rem !important;
+}
+
+.about-icons {
+    @apply mb-8;
+    p {
+        @apply mb-2 text-sm text-grey-darkest;
+    }
+}
+
+.google-map {
+    @apply border rounded overflow-hidden w-full;
+
+    iframe {
+        @apply w-full;
+        height: 250px;
+        margin-bottom: -8px;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.index-categories:first-of-type {
+    @apply bg-grey-lightest;
+}
+
+.md-inline-block {
+    @apply hidden;
+
+    @screen md {
+        @apply inline-block;
+    }
+}

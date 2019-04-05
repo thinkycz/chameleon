@@ -21,21 +21,31 @@ class ActionRequest extends NovaRequest
     {
         return once(function () {
             return $this->availableActions()->first(function ($action) {
-                return $action->uriKey() == $this->action;
+                return $action->uriKey() == $this->query('action');
             }) ?: abort($this->actionExists() ? 403 : 404);
         });
     }
 
     /**
+     * Get the all actions for the request.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function resolveActions()
+    {
+        return $this->isPivotAction()
+                    ? $this->newResource()->resolvePivotActions($this)
+                    : $this->newResource()->resolveActions($this);
+    }
+
+    /**
      * Get the possible actions for the request.
      *
-     * @return \Illuminate\Support\Collections
+     * @return \Illuminate\Support\Collection
      */
     protected function availableActions()
     {
-        return $this->isPivotAction()
-                    ? $this->newResource()->availablePivotActions($this)
-                    : $this->newResource()->availableActions($this);
+        return $this->resolveActions()->filter->authorizedToSee($this)->values();
     }
 
     /**
@@ -45,12 +55,8 @@ class ActionRequest extends NovaRequest
      */
     protected function actionExists()
     {
-        $actions = $this->isPivotAction()
-                    ? $this->newResource()->resolvePivotActions($this)
-                    : $this->newResource()->resolveActions($this);
-
-        return $actions->contains(function ($action) {
-            return $action->uriKey() == $this->action;
+        return $this->resolveActions()->contains(function ($action) {
+            return $action->uriKey() == $this->query('action');
         });
     }
 
@@ -73,15 +79,15 @@ class ActionRequest extends NovaRequest
      */
     public function chunks($count, Closure $callback)
     {
-        $output = null;
+        $output = [];
 
         $this->toSelectedResourceQuery()->when(! $this->forAllMatchingResources(), function ($query) {
             $query->whereKey(explode(',', $this->resources));
         })->latest($this->model()->getKeyName())->chunk($count, function ($chunk) use ($callback, &$output) {
-            $output = $callback($this->mapChunk($chunk));
+            $output[] = $callback($this->mapChunk($chunk));
         });
 
-        return $this->forAllMatchingResources() ? null : $output;
+        return $output;
     }
 
     /**

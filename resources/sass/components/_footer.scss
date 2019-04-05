@@ -1,0 +1,38 @@
+footer {
+    @apply bg-white shadow-lg pt-6 pb-2 w-full;
+    h4 {
+        @apply font-bold text-grey-darkest mb-4 text-lg;
+    }
+    ul {
+        @apply list-reset;
+        li {
+            @apply mb-2;
+        }
+        a {
+            @apply text-grey-darkest text-sm;
+
+            &:hover {
+                @apply text-black;
+            }
+        }
+    }
+    .footer-info {
+        img {
+            width: $footer-logo-width;
+        }
+
+        p {
+            svg {
+                @apply w-4 h-4;
+            }
+
+            &.p-big {
+                @apply mb-4;
+            }
+
+            &.p-small {
+                @apply mb-1;
+            }
+        }
+    }
+}

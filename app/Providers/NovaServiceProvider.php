@@ -2,10 +2,23 @@
 
 namespace App\Providers;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Cards\Help;
+use App\Enums\Locale;
+use App\Models\User;
+use App\Nova\Metrics\NumberOfUsers;
+use App\Nova\Metrics\OrdersPerDay;
+use App\Nova\Metrics\ProductsPerCategory;
 use Illuminate\Support\Facades\Gate;
+use Kristories\Novassport\Novassport;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Nulisec\BulkImageUpload\BulkImageUpload;
+use Nulisec\GoogleSheetsImporter\GoogleSheetsImporter;
+use Nulisec\JetsoftShopconnector\JetsoftShopconnector;
+use Nulisec\LatestOrders\LatestOrders;
+use Nulisec\LatestUsers\LatestUsers;
+use Nulisec\XmlImporter\XmlImporter;
+use Silvanite\NovaToolPermissions\NovaToolPermissions;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -17,6 +30,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Nova::serving(function (ServingNova $event) {
+            Nova::provideToScript([
+                'locales'       => Locale::all(),
+                'currentLocale' => Locale::current(),
+                'flagsPath'     => asset('/images/flags'),
+                'baseURL'       => config('app.url'),
+            ]);
+        });
     }
 
     /**
@@ -27,9 +49,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function routes()
     {
         Nova::routes()
-                ->withAuthenticationRoutes()
-                ->withPasswordResetRoutes()
-                ->register();
+            ->withAuthenticationRoutes()
+            ->withPasswordResetRoutes()
+            ->register();
     }
 
     /**
@@ -41,10 +63,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function gate()
     {
-        Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+        Gate::define('viewNova', function (User $user) {
+            return $user->hasRoleWithPermission('viewNova');
         });
     }
 
@@ -56,7 +76,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            (new NumberOfUsers()),
+            (new OrdersPerDay()),
+            (new ProductsPerCategory()),
+            (new LatestOrders()),
+            (new LatestUsers()),
         ];
     }
 
@@ -67,7 +91,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            (new JetsoftShopconnector()),
+            (new NovaToolPermissions()),
+            (new GoogleSheetsImporter()),
+            (new XmlImporter()),
+            (new BulkImageUpload()),
+            (new Novassport()),
+        ];
     }
 
     /**

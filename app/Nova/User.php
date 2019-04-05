@@ -2,11 +2,32 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\ID;
+use App\Enums\Locale;
+use App\Nova\Actions\User\ChangeUserActivationStatus;
+use App\Nova\Actions\User\ChangeUserLocale;
+use App\Nova\Actions\User\ChangeUserPriceLevel;
+use App\Nova\Filters\UserActive;
+use App\Nova\Filters\UserPriceLevel;
+use App\Nova\Metrics\NumberOfUsers;
+use App\Nova\Metrics\UsersPerDay;
+use App\Nova\Metrics\UsersPerPriceLevel;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
+use Inspheric\Fields\Email;
+use KABBOUCHI\NovaImpersonate\Impersonate;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
+use Nulisec\PhoneField\PhoneNumber;
+use Silvanite\NovaToolPermissions\Role;
 
 class User extends Resource
 {
@@ -15,7 +36,9 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = 'App\\User';
+    public static $model = \App\Models\User::class;
+
+    public static $group = 'Admin';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -30,8 +53,31 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'first_name',
+        'last_name',
+        'email',
+        'phone',
     ];
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('resources.users');
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('resources.user');
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -44,22 +90,58 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make(),
+            Image::make(__('resources.image'), 'image')->hideFromIndex(),
 
-            Text::make('Name')
+            Text::make(__('resources.name'), 'name')
+                ->onlyOnIndex(),
+
+            Text::make(__('resources.first_name'), 'first_name')
                 ->sortable()
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
+
+            Text::make(__('resources.company_id'), 'company_id')
                 ->rules('required', 'max:255'),
 
-            Text::make('Email')
+            Text::make(__('resources.last_name'), 'last_name')
                 ->sortable()
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
+
+            Date::make(__('resources.birth_date'), 'birth_date')
+                ->format('DD.MM.YYYY')
+                ->hideFromIndex(),
+
+            Email::make(__('resources.email'), 'email')
+                ->sortable()
+                ->clickable()
                 ->rules('required', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Password::make('Password')
+            PhoneNumber::make(__('resources.phone'), 'phone'),
+
+            Select::make(__('resources.locale'), 'locale')
+                ->options(Locale::all())
+                ->displayUsingLabels()
+                ->hideFromIndex(),
+
+            Password::make(__('resources.password'), 'password')
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            BelongsTo::make(__('resources.price_level'), 'priceLevel', PriceLevel::class),
+
+            Boolean::make(__('resources.is_active'), 'is_active')->onlyOnIndex(),
+
+            DateTime::make(__('resources.activated_at'), 'activated_at')->hideFromIndex(),
+
+            HasMany::make(__('resources.addresses'), 'addresses', Address::class),
+
+            BelongsToMany::make(__('resources.roles'), 'roles', Role::class),
+
+            Impersonate::make($this),
         ];
     }
 
@@ -71,7 +153,11 @@ class User extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new NumberOfUsers),
+            (new UsersPerDay),
+            (new UsersPerPriceLevel),
+        ];
     }
 
     /**
@@ -82,7 +168,10 @@ class User extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new UserPriceLevel(),
+            new UserActive(),
+        ];
     }
 
     /**
@@ -104,6 +193,11 @@ class User extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new ChangeUserActivationStatus()),
+            (new ChangeUserPriceLevel()),
+            (new ChangeUserLocale()),
+            (new DownloadExcel()),
+        ];
     }
 }

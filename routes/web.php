@@ -9,8 +9,30 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes(['verify' => true]);
+
+Route::redirect('access-admin', config('nova.path'))->name('admin');
+
+Route::get('', 'HomeController@index')->name('home');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('search', 'SearchController@index')->name('search');
+Route::get('about-us', 'AboutController@index')->name('about');
+
+Route::get('contact', 'ContactController@index')->name('contact.index');
+Route::post('contact/contact', 'ContactController@contact')->name('contact.contact');
+
+Route::get('invoices', 'InvoiceController@index')->name('invoices.index');
+
+Route::get('profile', 'ProfileController@show')->name('profiles.show');
+Route::patch('profile/update', 'ProfileController@update')->name('profiles.update');
+Route::post('profile/download-account-data', 'ProfileController@downloadAccountData')->name('profiles.download_account_data');
+
+Route::post('addresses/{address}/make-default', 'AddressController@makeDefault');
+Route::resource('addresses', 'AddressController', ['as' => 'profiles'])->only('store', 'update', 'destroy');
+
+Route::resource('pages', 'PageController')->only('show');
+Route::resource('products', 'ProductController')->only('show');
+Route::resource('categories', 'CategoryController')->only('index', 'show');

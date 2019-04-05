@@ -1,31 +1,27 @@
 <template>
     <loading-view :loading="loading">
-        <heading class="mb-3">{{__('Update')}} {{ relatedResourceLabel }}</heading>
+        <heading class="mb-3">{{ __('Update') }} {{ relatedResourceLabel }}</heading>
 
         <card class="overflow-hidden">
             <form v-if="field" @submit.prevent="updateAttachedResource" autocomplete="off">
                 <!-- Related Resource -->
                 <default-field :field="field" :errors="validationErrors">
                     <template slot="field">
-                       <select
+                        <select-control
                             class="form-control form-select mb-3 w-full"
                             dusk="attachable-select"
                             :class="{ 'border-danger': validationErrors.has(field.attribute) }"
                             :data-testid="`${field.resourceName}-select`"
                             @change="selectResourceFromSelectControl"
                             disabled
+                            :options="availableResources"
+                            :label="'display'"
+                            :selected="selectedResourceId"
                         >
-                            <option value="" disabled selected>{{__('Choose')}} {{ field.name }}</option>
-
-                            <option
-                                v-for="resource in availableResources"
-                                :key="resource.value"
-                                :value="resource.value"
-                                :selected="selectedResourceId == resource.value"
+                            <option value="" disabled selected
+                                >{{ __('Choose') }} {{ field.name }}</option
                             >
-                                {{ resource.display}}
-                            </option>
-                        </select>
+                        </select-control>
                     </template>
                 </default-field>
 
@@ -47,13 +43,24 @@
 
                 <!-- Attach Button -->
                 <div class="bg-30 flex px-8 py-4">
-                    <button dusk="update-and-continue-editing-button" type="button" @click="updateAndContinueEditing" class="ml-auto btn btn-default btn-primary mr-3">
-                        {{__('Update & Continue Editing')}}
-                    </button>
+                    <progress-button
+                        class="ml-auto mr-3"
+                        dusk="update-and-continue-editing-button"
+                        @click.native="updateAndContinueEditing"
+                        :disabled="isWorking"
+                        :processing="submittedViaUpdateAndContinueEditing"
+                    >
+                        {{ __('Update & Continue Editing') }}
+                    </progress-button>
 
-                    <button dusk="update-button" class="btn btn-default btn-primary">
-                        {{__('Update')}} {{ relatedResourceLabel }}
-                    </button>
+                    <progress-button
+                        dusk="update-button"
+                        type="submit"
+                        :disabled="isWorking"
+                        :processing="submittedViaUpdateAttachedResource"
+                    >
+                        {{ __('Update') }} {{ relatedResourceLabel }}
+                    </progress-button>
                 </div>
             </form>
         </card>
@@ -98,6 +105,8 @@ export default {
 
     data: () => ({
         loading: true,
+        submittedViaUpdateAndContinueEditing: false,
+        submittedViaUpdateAttachedResource: false,
         field: null,
         softDeletes: false,
         fields: [],
@@ -106,6 +115,10 @@ export default {
         selectedResourceId: null,
         lastRetrievedAt: null,
     }),
+
+    created() {
+        if (Nova.missingResource(this.resourceName)) return this.$router.push({ name: '404' })
+    },
 
     /**
      * Mount the component.
@@ -222,8 +235,12 @@ export default {
          * Update the attached resource.
          */
         async updateAttachedResource() {
+            this.submittedViaUpdateAttachedResource = true
+
             try {
                 await this.updateRequest()
+
+                this.submittedViaUpdateAttachedResource = false
 
                 this.$toasted.show(this.__('The resource was updated!'), { type: 'success' })
 
@@ -235,7 +252,8 @@ export default {
                     },
                 })
             } catch (error) {
-                console.log(error)
+                this.submittedViaUpdateAttachedResource = false
+
                 if (error.response.status == 422) {
                     this.validationErrors = new Errors(error.response.data.errors)
                 }
@@ -255,15 +273,20 @@ export default {
          * Update the resource and reset the form
          */
         async updateAndContinueEditing() {
+            this.submittedViaUpdateAndContinueEditing = true
+
             try {
                 await this.updateRequest()
+
+                this.submittedViaUpdateAndContinueEditing = false
 
                 this.$toasted.show(this.__('The resource was updated!'), { type: 'success' })
 
                 // Reset the form by refetching the fields
                 this.initializeComponent()
             } catch (error) {
-                console.log(error)
+                this.submittedViaUpdateAndContinueEditing = false
+
                 if (error.response.status == 422) {
                     this.validationErrors = new Errors(error.response.data.errors)
                 }
@@ -386,6 +409,15 @@ export default {
          */
         isSearchable() {
             return this.field.searchable
+        },
+
+        /**
+         * Determine if the form is being processed
+         */
+        isWorking() {
+            return (
+                this.submittedViaUpdateAttachedResource || this.submittedViaUpdateAndContinueEditing
+            )
         },
     },
 }

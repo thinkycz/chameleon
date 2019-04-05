@@ -81,6 +81,7 @@
                                         </li>
                                         <li class="flex items-center">
                                             <checkbox-with-label
+                                                dusk="select-all-matching-button"
                                                 :checked="selectAllMatchingChecked"
                                                 @change="toggleSelectAllMatching"
                                             >
@@ -122,9 +123,7 @@
                     <!-- Lenses -->
                     <dropdown class="bg-30 hover:bg-40 mr-3 rounded" v-if="lenses.length > 0">
                         <dropdown-trigger
-                            slot-scope="{
-                                toggle,
-                            }"
+                            slot-scope="{ toggle }"
                             :handle-click="toggle"
                             class="px-3"
                         >
@@ -143,7 +142,7 @@
 
                     <!-- Filters -->
                     <filter-menu
-                        :resourceName="resourceName"
+                        :resource-name="resourceName"
                         :soft-deletes="softDeletes"
                         :via-resource="viaResource"
                         :via-has-one="viaHasOne"
@@ -222,7 +221,7 @@
                     </h3>
 
                     <create-resource-button
-                        classes="btn btn-sm btn-outline"
+                        classes="btn btn-sm btn-outline inline-flex items-center"
                         :singular-name="singularName"
                         :resource-name="resourceName"
                         :via-resource="viaResource"
@@ -355,6 +354,8 @@ export default {
      * Mount the component and retrieve its initial data.
      */
     async created() {
+        if (Nova.missingResource(this.resourceName)) return this.$router.push({ name: '404' })
+
         // Bind the keydown even listener when the router is visited if this
         // component is not a relation on a Detail page
         if (!this.viaResource && !this.viaResourceId) {
@@ -366,7 +367,7 @@ export default {
         this.initializeTrashedFromQueryString()
         this.initializeOrderingFromQueryString()
 
-        this.initializeFilters()
+        await this.initializeFilters()
         await this.getResources()
         await this.getAuthorizationToRelate()
 
@@ -610,10 +611,6 @@ export default {
          * Get the count of all of the matching resources.
          */
         getAllMatchingResourceCount() {
-            if (this.resourceName == 'action-events') {
-                return
-            }
-
             Nova.request()
                 .get('/nova-api/' + this.resourceName + '/count', {
                     params: this.resourceRequestQueryString,
@@ -681,7 +678,7 @@ export default {
          * Determine if the resource has any filters
          */
         hasFilters() {
-            return this.$store.getters.hasFilters
+            return this.$store.getters[`${this.resourceName}/hasFilters`]
         },
 
         /**
@@ -1002,12 +999,11 @@ export default {
          * Return the resource count label
          */
         resourceCountLabel() {
+            let label = this.resources.length > 1 ? this.__('resources') : this.__('resource')
+
             return (
                 this.resources.length &&
-                `${this.resources.length}/${this.allMatchingResourceCount} ${SingularOrPlural(
-                    this.allMatchingResourceCount,
-                    this.__('resource')
-                )}`
+                `${this.resources.length}/${this.allMatchingResourceCount} ${label}`
             )
         },
 
@@ -1015,7 +1011,7 @@ export default {
          * Return the currently encoded filter string from the store
          */
         encodedFilters() {
-            return this.$store.getters.currentEncodedFilters
+            return this.$store.getters[`${this.resourceName}/currentEncodedFilters`]
         },
 
         /**

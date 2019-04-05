@@ -21,13 +21,21 @@ trait DecodesFilters
 
         return collect($filters)->map(function ($filter) use ($availableFilters) {
             $matchingFilter = $availableFilters->first(function ($availableFilter) use ($filter) {
-                return $filter['class'] === get_class($availableFilter);
+                return $filter['class'] === $availableFilter->key();
             });
 
             if ($matchingFilter) {
                 return ['filter' => $matchingFilter, 'value' => $filter['value']];
             }
-        })->filter()->map(function ($filter) {
+        })->reject(function ($filter) {
+            if (is_array($filter['value'])) {
+                return count($filter['value']) < 1;
+            } elseif (is_string($filter['value'])) {
+                return trim($filter['value']) === '';
+            }
+
+            return is_null($filter['value']);
+        })->map(function ($filter) {
             return new ApplyFilter($filter['filter'], $filter['value']);
         })->values();
     }

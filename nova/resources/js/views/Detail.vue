@@ -50,7 +50,7 @@
                         <custom-detail-toolbar
                             :resource="resource"
                             :resource-name="resourceName"
-                            :resource-id="resourceName"
+                            :resource-id="resourceId"
                         />
 
                         <!-- Actions -->
@@ -78,7 +78,7 @@
                             dusk="open-delete-modal-button"
                             @click="openDeleteModal"
                             class="btn btn-default btn-icon btn-white mr-3"
-                            title="Delete"
+                            :title="__('Delete')"
                         >
                             <icon type="delete" class="text-80" />
                         </button>
@@ -89,7 +89,7 @@
                             dusk="open-restore-modal-button"
                             @click="openRestoreModal"
                             class="btn btn-default btn-icon btn-white mr-3"
-                            title="Restore"
+                            :title="__('Restore')"
                         >
                             <icon type="restore" class="text-80" />
                         </button>
@@ -100,7 +100,7 @@
                             dusk="open-force-delete-modal-button"
                             @click="openForceDeleteModal"
                             class="btn btn-default btn-icon btn-white mr-3"
-                            title="Force Delete"
+                            :title="__('Force Delete')"
                         >
                             <icon type="force-delete" class="text-80" />
                         </button>
@@ -143,7 +143,7 @@
                             dusk="edit-resource-button"
                             :to="{ name: 'edit', params: { id: resource.id } }"
                             class="btn btn-default btn-icon bg-primary"
-                            title="Edit"
+                            :title="__('Edit')"
                         >
                             <icon
                                 type="edit"
@@ -197,6 +197,8 @@ export default {
      * Bind the keydown even listener when the component is created
      */
     created() {
+        if (Nova.missingResource(this.resourceName)) return this.$router.push({ name: '404' })
+
         document.addEventListener('keydown', this.handleKeydown)
     },
 
@@ -288,9 +290,15 @@ export default {
             this.actions = []
 
             return Nova.request()
-                .get('/nova-api/' + this.resourceName + '/actions')
+                .get('/nova-api/' + this.resourceName + '/actions', {
+                    params: {
+                        resourceId: this.resourceId,
+                    },
+                })
                 .then(response => {
-                    this.actions = response.data.actions
+                    this.actions = _.filter(response.data.actions, action => {
+                        return !action.onlyOnIndex
+                    })
                 })
         },
 

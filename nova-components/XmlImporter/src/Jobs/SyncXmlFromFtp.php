@@ -1,0 +1,117 @@
+<?php
+
+namespace Nulisec\XmlImporter\Jobs;
+
+use Anchu\Ftp\Facades\Ftp;
+use App\Abstracts\SyncJob;
+use App\Models\Setting;
+use Config;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Storage;
+use ZipArchive;
+
+class SyncXmlFromFtp extends SyncJob implements ShouldQueue
+{
+    /**
+     * @var string
+     */
+    public static $jobName = 'XML FTP Sync';
+
+    /**
+     * @var string
+     */
+    protected $statusCode = 'xml_importer_ftp_status';
+
+    /**
+     * @var string
+     */
+    protected $ftpconnection;
+
+    /**
+     * @var object
+     */
+    protected $settings;
+
+    protected function prepare()
+    {
+        parent::prepare();
+
+        $this->settings = Setting::loadConfiguration('xml_importer_ftp_settings');
+        $this->ftpconnection = $this->createConnection();
+    }
+
+    public function handle()
+    {
+        $this->prepare();
+
+        $path = $this->download();
+
+        if (!$path) throw new \Exception('Could not download XML file from FTP');
+
+        dispatch(new ProcessXmlFile($path))->onConnection('sync');
+
+        $this->logJobSucceeded();
+    }
+
+    public function failed()
+    {
+        $this->logJobFailed();
+    }
+
+    private function download()
+    {
+        $filename = basename($this->settings['ftp_filepath']);
+        $path = "xml_importer";
+        $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+
+        if (!in_array($extension, ['xml', 'zip'])) return false;
+
+        $destination = Storage::disk('local')->path("{$path}/{$filename}");
+
+        Storage::disk('local')->createDir($path);
+        if (!Ftp::connection($this->ftpconnection)->downloadFile($this->settings['ftp_filepath'], $destination)) return false;
+
+        if ($extension == 'zip') {
+            $this->unzip($destination);
+            foreach (Storage::disk('local')->files("{$path}/unzipped") as $file) {
+                if (pathinfo($file, PATHINFO_EXTENSION) == 'xml') {
+                    Storage::disk('local')->delete("{$path}/ftp.xml");
+                    Storage::disk('local')->copy($file, "{$path}/ftp.xml");
+                    Storage::disk('local')->deleteDir("{$path}/unzipped");
+                    Storage::disk('local')->delete("{$path}/{$filename}");
+                    break;
+                }
+            }
+        } else {
+            Storage::disk('local')->delete("{$path}/ftp.xml");
+            Storage::disk('local')->move("{$path}/{$filename}", "{$path}/ftp.xml");
+        }
+
+        return Storage::disk('local')->path("{$path}/ftp.xml");
+    }
+
+    private function createConnection()
+    {
+        return tap("xml_ftp_sync", function ($connection) {
+            Config::set("ftp.connections.$connection", [
+                'host'     => $this->settings['ftp_host'],
+                'username' => $this->settings['ftp_username'],
+                'password' => $this->settings['ftp_password'],
+                'passive'  => true
+            ]);
+        });
+    }
+
+    private function unzip($filePath)
+    {
+        return tap(pathinfo($filePath, PATHINFO_DIRNAME) . '/unzipped', function ($destination) use ($filePath) {
+            $zip = new ZipArchive;
+
+            if (!($zip->open($filePath) === true)) return false;
+
+            $zip->extractTo($destination);
+
+            return $zip->close();
+        });
+    }
+}

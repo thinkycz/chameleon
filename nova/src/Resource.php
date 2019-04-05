@@ -230,11 +230,11 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
     /**
      * Get the search result subtitle for the resource.
      *
-     * @return string
+     * @return string|null
      */
     public function subtitle()
     {
-        return null;
+        //
     }
 
     /**
@@ -256,7 +256,7 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
      */
     public static function uriKey()
     {
-        return Str::plural(Str::snake(class_basename(get_called_class()), '-'));
+        return Str::plural(Str::kebab(class_basename(get_called_class())));
     }
 
     /**

@@ -1,0 +1,155 @@
+.input-wrap {
+    @apply mb-4 relative;
+    .input {
+        outline: none;
+        @apply shadow w-full rounded bg-white border pl-3 w-full h-10 text-sm text-grey-darkest;
+        @include placeholder {
+            @apply text-grey-darker opacity-100;
+        }
+        @include transition(border-color);
+        &:focus {
+            @apply border-primary;
+        }
+        &.invalid {
+            @apply border-danger;
+        }
+        &.valid {
+            @apply border-success;
+        }
+        &.has-btn {
+            @apply pr-12;
+        }
+        &.input-sm {
+            @apply h-8 text-xs;
+        }
+    }
+    label {
+        @apply text-xs text-grey-darkest font-semibold mb-1 leading-loose;
+    }
+    &.has-icon {
+        .input {
+            @apply pl-10;
+        }
+        .icon {
+            @apply absolute;
+            top: 4px;
+            left: 4px;
+        }
+    }
+    &.has-addon {
+        .input {
+            @apply pr-10;
+        }
+        .addon {
+            @apply border-l absolute h-full leading-normal text-sm pin-t pin-r px-2;
+            span {
+                @apply relative;
+                top: 5px;
+            }
+        }
+    }
+    select {
+        &.input {
+            @apply appearance-none pr-8;
+            background-repeat: no-repeat;
+            background-size: 10px 6px;
+            background-position: center right 0.75rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="%2335393C" fill-rule="nonzero" d="M8.293.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 1.707.293L5 3.586 8.293.293z"/></svg>');
+        }
+    }
+    textarea {
+        &.input {
+            @apply h-24 pt-4;
+        }
+    }
+
+    .radio {
+        @apply m-2;
+        input[type='radio'] {
+            @apply absolute opacity-0;
+            + .radio-label {
+                &:before {
+                    content: '';
+                    @apply bg-grey-lightest rounded-full border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
+                    top: -0.2em;
+                    @include transition(all);
+                }
+            }
+            &:checked {
+                + .radio-label {
+                    &:before {
+                        @apply bg-primary;
+                        box-shadow: inset 0 0 0 4px var(--grey-lightest);
+                    }
+                }
+            }
+            &:focus {
+                + .radio-label {
+                    &:before {
+                        @apply outline-none;
+                    }
+                }
+            }
+            &:disabled {
+                + .radio-label {
+                    &:before {
+                        box-shadow: inset 0 0 0 4px var(--grey-lightest);
+                        @apply bg-grey-darker border-grey-darker;
+                    }
+                }
+            }
+            + .radio-label {
+                &:empty {
+                    &:before {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .checkbox {
+        @apply m-2;
+        input[type='checkbox'] {
+            @apply absolute opacity-0;
+            + .checkbox-label {
+                &:before {
+                    content: '';
+                    @apply bg-grey-lightest rounded border inline-block w-6 h-6 relative mr-4 align-middle text-center cursor-pointer;
+                    top: -0.2em;
+                    @include transition(all);
+                }
+            }
+            &:checked {
+                + .checkbox-label {
+                    &:before {
+                        @apply bg-primary;
+                        box-shadow: inset 0 0 0 4px var(--grey-lightest);
+                    }
+                }
+            }
+            &:focus {
+                + .checkbox-label {
+                    &:before {
+                        @apply outline-none;
+                    }
+                }
+            }
+            &:disabled {
+                + .checkbox-label {
+                    &:before {
+                        box-shadow: inset 0 0 0 4px var(--grey-lighter);
+                        @apply bg-grey-dark border-grey-dark;
+                    }
+                }
+            }
+            + .checkbox-label {
+                &:empty {
+                    &:before {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

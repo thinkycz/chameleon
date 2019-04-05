@@ -7,6 +7,7 @@ use JsonSerializable;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\ProxiesCanSeeToGate;
 use Laravel\Nova\Http\Requests\ActionRequest;
 use Laravel\Nova\Exceptions\MissingActionHandlerException;
@@ -23,11 +24,39 @@ class Action implements JsonSerializable
     public $name;
 
     /**
+     * The action's component.
+     *
+     * @var string
+     */
+    public $component = 'confirm-action-modal';
+
+    /**
+     * Indicates if need to skip log action events for models.
+     *
+     * @var bool
+     */
+    public $withoutActionEvents = false;
+
+    /**
      * Indicates if this action is available to run against the entire resource.
      *
      * @var bool
      */
     public $availableForEntireResource = false;
+
+    /**
+     * Determine where the action redirection should be without confirmation.
+     *
+     * @var bool
+     */
+    public $withoutConfirmation = false;
+
+    /**
+     * Indicates if this action is only available on the resource detail view.
+     *
+     * @var bool
+     */
+    public $onlyOnIndex = false;
 
     /**
      * Indicates if this action is only available on the resource detail view.
@@ -159,23 +188,40 @@ class Action implements JsonSerializable
 
         $wasExecuted = false;
 
-        $result = $request->chunks(static::$chunkCount, function ($models) use ($request, $method, &$wasExecuted) {
-            $models = $models->filterForExecution($request);
+        $fields = $request->resolveFields();
 
-            if (count($models) > 0) {
-                $wasExecuted = true;
+        $results = $request->chunks(
+            static::$chunkCount, function ($models) use ($fields, $request, $method, &$wasExecuted) {
+                $models = $models->filterForExecution($request);
+
+                if (count($models) > 0) {
+                    $wasExecuted = true;
+                }
+
+                return DispatchAction::forModels(
+                    $request, $this, $method, $models, $fields
+                );
             }
-
-            return DispatchAction::forModels(
-                $request, $this, $method, $models
-            );
-        });
+        );
 
         if (! $wasExecuted) {
             return static::danger(__('Sorry! You are not authorized to perform this action.'));
         }
 
-        return $result;
+        return $this->handleResult($fields, $results);
+    }
+
+    /**
+     * Handle chunk results.
+     *
+     * @param  \Laravel\Nova\Fields\ActionFields $fields
+     * @param  array $results
+     *
+     * @return mixed
+     */
+    public function handleResult(ActionFields $fields, $results)
+    {
+        return count($results) ? end($results) : null;
     }
 
     /**
@@ -225,6 +271,20 @@ class Action implements JsonSerializable
     }
 
     /**
+     * Indicate that this action is only available on the resource index view.
+     *
+     * @param  bool  $value
+     * @return $this
+     */
+    public function onlyOnIndex($value = true)
+    {
+        $this->onlyOnIndex = $value;
+        $this->onlyOnDetail = ! $value;
+
+        return $this;
+    }
+
+    /**
      * Indicate that this action is only available on the resource detail view.
      *
      * @param  bool  $value
@@ -233,6 +293,7 @@ class Action implements JsonSerializable
     public function onlyOnDetail($value = true)
     {
         $this->onlyOnDetail = $value;
+        $this->onlyOnIndex = ! $value;
 
         return $this;
     }
@@ -277,6 +338,16 @@ class Action implements JsonSerializable
     }
 
     /**
+     * Get the component name for the action.
+     *
+     * @return string
+     */
+    public function component()
+    {
+        return $this->component;
+    }
+
+    /**
      * Get the displayable name of the action.
      *
      * @return string
@@ -297,6 +368,30 @@ class Action implements JsonSerializable
     }
 
     /**
+     * Set the action to execute instantly.
+     *
+     * @return string
+     */
+    public function withoutConfirmation()
+    {
+        $this->withoutConfirmation = true;
+
+        return $this;
+    }
+
+    /**
+     * Set the action to skip action events for models.
+     *
+     * @return $this
+     */
+    public function withoutActionEvents()
+    {
+        $this->withoutActionEvents = true;
+
+        return $this;
+    }
+
+    /**
      * Prepare the action for JSON serialization.
      *
      * @return array
@@ -304,7 +399,7 @@ class Action implements JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'class' => get_class($this),
+            'component' => $this->component(),
             'destructive' => $this instanceof DestructiveAction,
             'name' => $this->name(),
             'uriKey' => $this->uriKey(),
@@ -312,6 +407,8 @@ class Action implements JsonSerializable
             })->all(),
             'availableForEntireResource' => $this->availableForEntireResource,
             'onlyOnDetail' => $this->onlyOnDetail,
+            'onlyOnIndex' => $this->onlyOnIndex,
+            'withoutConfirmation' => $this->withoutConfirmation,
         ];
     }
 }

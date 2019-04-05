@@ -37,7 +37,7 @@
             <!-- Content -->
             <div class="content">
                 <div class="flex items-center relative shadow h-header bg-white z-20 px-6">
-                    <a href="{{ Config::get('nova.url') }}" class="no-underline dim font-bold text-90 mr-6">
+                    <a v-if="'{{ Nova::name() }}'" href="{{ Config::get('nova.url') }}" class="no-underline dim font-bold text-90 mr-6">
                         {{ Nova::name() }}
                     </a>
 
@@ -45,7 +45,7 @@
                         <global-search></global-search>
                     @endif
 
-                    <dropdown class="ml-auto h-9 flex items-center" style="right: 20px">
+                    <dropdown class="ml-auto h-9 flex items-center dropdown-right">
                         @include('nova::partials.user')
                     </dropdown>
                 </div>
@@ -53,13 +53,7 @@
                 <div data-testid="content" class="px-view py-view mx-auto">
                     @yield('content')
 
-                    <p class="mt-8 text-center text-xs text-80">
-                        <a href="http://nova.laravel.com" class="text-primary dim no-underline">Laravel Nova</a>
-                        <span class="px-1">&middot;</span>
-                        &copy; {{ date('Y') }} Laravel LLC - By Taylor Otwell, David Hemphill, and Steve Schoger.
-                        <span class="px-1">&middot;</span>
-                        v{{ Laravel\Nova\Nova::version() }}
-                    </p>
+                    @include('nova::partials.footer')
                 </div>
             </div>
         </div>

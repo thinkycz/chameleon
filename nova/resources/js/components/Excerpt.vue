@@ -1,9 +1,18 @@
 <template>
     <div v-if="shouldShow && hasContent">
-        <div class="markdown leading-normal" v-html="content" />
+        <div
+            class="markdown leading-normal"
+            :class="{ 'whitespace-pre-wrap': plainText }"
+            v-html="content"
+        />
     </div>
     <div v-else-if="hasContent">
-        <div v-if="expanded" class="markdown leading-normal" v-html="content" />
+        <div
+            v-if="expanded"
+            class="markdown leading-normal"
+            :class="{ 'whitespace-pre-wrap': plainText }"
+            v-html="content"
+        />
 
         <a
             v-if="!shouldShow"
@@ -15,14 +24,16 @@
             {{ showHideLabel }}
         </a>
     </div>
-    <div v-else>
-        &mdash;
-    </div>
+    <div v-else>&mdash;</div>
 </template>
 
 <script>
 export default {
     props: {
+        plainText: {
+            type: Boolean,
+            default: false,
+        },
         shouldShow: {
             type: Boolean,
             default: false,

@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'default_country'                               => 'Výchozí země',
+    'default_currency'                              => 'Výchozí měna',
+    'default_price_level'                           => 'Výchozí úroveň ceny',
+    'default_availability_in_stock'                 => 'Dostupnost skladem',
+    'default_availability_out_of_stock'             => 'Dostupnost vyprodáno',
+    'default_quantitative_unit'                     => 'Výchozí měrná jednotka',
+    'created_order_status'                          => 'Stav objednávky při vytvoření',
+    'confirmed_order_status'                        => 'Stav objednávky při potvrzení',
+    'cancelled_order_status'                        => 'Stav objednávky při zrušení',
+    'completed_order_status'                        => 'Stav objednávky při dokončení',
+    'terms_conditions_page'                         => 'Stránka smluvních podmínek',
+    'privacy_policy_page'                           => 'Stránka ochrany osobních údajů',
+    'return_refund_page'                            => 'Stránka reklamačního řádu',
+    'frequently_asked_questions_page'               => 'Stránka častých dotazů',
+
+    'default_country.description'                   => 'Nastavit zemi tohoto obchodu.',
+    'default_currency.description'                  => 'Nastavit měnu tohoto obchodu.',
+    'default_price_level.description'               => 'Nastavit cenovou úroveň pro zákazníky tohoto obchodu.',
+    'default_availability_in_stock.description'     => 'Nastavit dostupnost při naskladnění produktu.',
+    'default_availability_out_of_stock.description' => 'Nastavit dostupnost při vyprodání produktu.',
+    'default_quantitative_unit.description'         => 'Tato jednotka bude nastavena při vytvoření produktu.',
+    'created_order_status.description'              => 'Tento stav objednávky bude automaticky nastaven při vytvoření objednávky.',
+    'confirmed_order_status.description'            => 'Tento stav objednávky bude automaticky nastaven při vystavení objednávky.',
+    'cancelled_order_status.description'            => 'Tento stav objednávky bude automaticky nastaven při zrušení objednávky.',
+    'completed_order_status.description'            => 'Tento stav objednávky bude automaticky nastaven při dokončení objednávky.',
+    'terms_conditions_page.description'             => 'Toto je výchozí stránka smluvních podmínek',
+    'privacy_policy_page.description'               => 'Toto je výchozí stránka ochrany osobních údajů',
+    'return_refund_page.description'                => 'Toto je výchozí stránka reklamačního řádu',
+    'frequently_asked_questions_page.description'   => 'Toto je výchozí stránka častých dotazů',
+];

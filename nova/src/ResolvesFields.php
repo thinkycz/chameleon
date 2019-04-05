@@ -2,6 +2,7 @@
 
 namespace Laravel\Nova;
 
+use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\MorphTo;
 use Illuminate\Support\Collection;
@@ -55,7 +56,7 @@ trait ResolvesFields
         return $this->resolveFields($request)->reject(function ($field) use ($request) {
             return ! $field->showOnDetail || ! $field->authorize($request);
         })->when(in_array(Actionable::class, class_uses_recursive(static::newModel())), function ($fields) {
-            return $fields->push(MorphMany::make('Actions', 'actions', ActionResource::class));
+            return $fields->push(MorphMany::make(__('Actions'), 'actions', ActionResource::class));
         })->each(function ($field) use ($request) {
             if ($field instanceof Resolvable && ! $field->pivot) {
                 $field->resolveForDisplay($this->resource);
@@ -104,7 +105,7 @@ trait ResolvesFields
         return $fields->reject(function ($field) {
             return $field instanceof ListableField ||
                    $field instanceof ResourceToolElement ||
-                   $field->attribute === $this->resource->getKeyName() ||
+                   ($field instanceof ID && $field->attribute === $this->resource->getKeyName()) ||
                    $field->attribute === 'ComputedField' ||
                    ! $field->showOnCreation;
         });
@@ -146,7 +147,7 @@ trait ResolvesFields
         return $fields->reject(function ($field) {
             return $field instanceof ListableField ||
                    $field instanceof ResourceToolElement ||
-                   $field->attribute === $this->resource->getKeyName() ||
+                   ($field instanceof ID && $field->attribute === $this->resource->getKeyName()) ||
                    $field->attribute === 'ComputedField' ||
                    ! $field->showOnUpdate;
         });

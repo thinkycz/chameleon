@@ -1,0 +1,124 @@
+.search-overlay {
+    @apply block fixed z-50 pin-l pin-t h-full w-full opacity-0 invisible;
+    background: var(--black-transparent-50);
+    @include transition(opacity, visibility);
+    &.show {
+        @apply opacity-100 visible;
+    }
+}
+
+.search-suggestions {
+    @apply hidden flex justify-between absolute pin-l w-full m-0 z-75 bg-white shadow opacity-0 invisible shadow rounded;
+    @include transition(opacity, visibility);
+
+    @screen md {
+        @apply block;
+        top: 50px;
+        padding: 1.2em;
+
+        .quick-links {
+            @apply text-left inline-block;
+        }
+
+        .search-items {
+            @apply w-full;
+            ul {
+                @apply list-reset mx-0;
+                justify-content: flex-start !important;
+            }
+        }
+
+        h3 {
+            @apply text-left mb-2 uppercase text-grey-darkest text-xs font-bold tracking-wide;
+        }
+
+        h4 {
+            @apply font-bold text-sm leading-none mb-1;
+
+            a {
+                @apply truncate max-w-full pb-0;
+            }
+        }
+
+        a {
+            @apply text-primary inline-block;
+
+            .no-touch &:hover {
+                @apply opacity-75;
+            }
+        }
+
+        .time,
+        .type,
+        .price {
+            @apply text-xs;
+        }
+        .time {
+            @apply text-primary-light;
+        }
+
+        .type,
+        .price {
+            @apply px-2 py-px text-white rounded;
+        }
+        .type {
+            @apply bg-primary;
+        }
+        .price {
+            @apply bg-accent;
+        }
+
+        .search-items li {
+            @apply relative flex mb-6 overflow-hidden;
+
+            .image {
+                @apply mr-4;
+                min-width: 60px;
+                height: 60px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+            .data {
+                width: calc(100% - 60px);
+            }
+
+            &:last-of-type,
+            &.second-last {
+                margin-bottom: 0;
+            }
+        }
+
+        &.show {
+            @apply opacity-100 visible;
+            transform-origin: center top;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            animation: search-3d-rotation 0.5s 0.3s;
+            animation-fill-mode: backwards;
+        }
+    }
+}
+
+@keyframes (slide-in) {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes (search-3d-rotation) {
+    0% {
+        transform: perspective(1000px) rotateX(-90deg);
+    }
+
+    100% {
+        transform: perspective(1000px) translateY(0);
+    }
+}

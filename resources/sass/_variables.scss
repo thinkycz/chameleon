@@ -1,20 +1,63 @@
+$logo-width: 150px;
+$footer-logo-width: 100px;
+$dropdown-min-width: 175px;
+$product-image-height: 175px;
 
-// Body
-$body-bg: #f8fafc;
+// Color variables
+:root {
+    --black: #18191a;
+    --black-transparent-25: rgba(24, 25, 26, 0.25);
+    --black-transparent-50: rgba(24, 25, 26, 0.5);
+    --black-transparent-75: rgba(24, 25, 26, 0.75);
+    --grey-darkest: #383b3e;
+    --grey-darker: #70767b;
+    --grey-dark: #a7b0b9;
+    --grey: #bac4cd;
+    --grey-light: #cfd6dc;
+    --grey-lighter: #e3e7eb;
+    --grey-lightest: #f8f9fa;
+    --white: #ffffff;
 
-// Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+    --success-darkest: #1d3a23;
+    --success-darker: #3b7445;
+    --success-dark: #58af68;
+    --success: #62c273;
+    --success-light: #91d49d;
+    --success-lighter: #c0e7c7;
+    --success-lightest: #eff9f1;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+    --warning-darkest: #493d1e;
+    --warning-darker: #92793c;
+    --warning-dark: #dcb65a;
+    --warning: #f4ca64;
+    --warning-light: #f7da93;
+    --warning-lighter: #fbeac1;
+    --warning-lightest: #fefaf0;
+
+    --danger-darkest: #42120e;
+    --danger-darker: #85231d;
+    --danger-dark: #c7352b;
+    --danger: #dd3b30;
+    --danger-light: #e7766e;
+    --danger-lighter: #f1b1ac;
+    --danger-lightest: #fcebea;
+
+    --accent-darkest: #193431;
+    --accent-darker: #316862;
+    --accent-dark: #4a9d93;
+    --accent: #52aea3;
+    --accent-light: #86c6bf;
+    --accent-lighter: #badfda;
+    --accent-lightest: #eef7f6;
+
+    --primary-darkest: #0f273c;
+    --primary-darker: #1d4f78;
+    --primary-dark: #2c76b4;
+    --primary: #3183c8;
+    --primary-transparent-25: rgba(49, 131, 200, 0.25);
+    --primary-transparent-50: rgba(49, 131, 200, 0.5);
+    --primary-transparent-75: rgba(49, 131, 200, 0.75);
+    --primary-light: #6fa8d9;
+    --primary-lighter: #adcde9;
+    --primary-lightest: #eaf3fa;
+}

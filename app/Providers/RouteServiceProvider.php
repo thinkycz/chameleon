@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
+use App\Models\Category;
+use App\Models\Page;
+use App\Models\Product;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -23,7 +26,23 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::bind('product', function ($value) {
+            return Product::where('slug', $value)->firstOr(function () use ($value) {
+                return Product::find($value);
+            });
+        });
+
+        Route::bind('category', function ($value) {
+            return Category::where('slug', $value)->firstOr(function () use ($value) {
+                return Category::find($value);
+            });
+        });
+
+        Route::bind('page', function ($value) {
+            return Page::where('slug', $value)->firstOr(function () use ($value) {
+                return Page::find($value);
+            });
+        });
 
         parent::boot();
     }
@@ -39,35 +58,49 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapAjaxRoutes();
+
+        $this->mapAuthRoutes();
+
+        $this->mapTestRoutes();
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
     }
 
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
+    protected function mapAuthRoutes()
+    {
+        Route::middleware(['web', 'auth'])
+            ->namespace($this->namespace)
+            ->group(base_path('routes/auth.php'));
+    }
+
+    protected function mapAjaxRoutes()
+    {
+        Route::middleware('web')
+            ->namespace("$this->namespace\Ajax")
+            ->prefix('ajax')
+            ->group(base_path('routes/ajax.php'));
+    }
+
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->middleware('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapTestRoutes()
+    {
+        if (config('app.env') == 'local' || config('app.debug') == true) {
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/test.php'));
+        }
     }
 }

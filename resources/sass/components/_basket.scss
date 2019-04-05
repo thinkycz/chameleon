@@ -1,0 +1,278 @@
+/* .basket {
+    @apply z-75 absolute pin-r h-full pin-t invisible opacity-0 overflow-hidden shadow;
+    @include transition(opacity, visibility);
+    width: 75%;
+
+    @screen md {
+        width: 35%;
+    }
+
+    .basket-overlay {
+        @apply fixed min-h-full w-full pin-t pin-l cursor-pointer z-20 hidden;
+        background: var(--black-transparent-50);
+    }
+
+    .basket-wrapper {
+        @apply bg-white h-full z-30 relative w-full shadow;
+        @include transition(right);
+        right: -100%;
+        .basket-wrapper__inner {
+            .basket-items {
+                @apply list-reset overflow-y-auto;
+                max-height: calc(100vh - 250px);
+                li {
+                    @apply p-6 border-b relative;
+
+                    .item-price {
+                        @apply mt-1 mb-0 text-grey-darkest;
+                    }
+
+                    .item-remove {
+                        @apply absolute;
+                        right: 25px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        @include transition(color);
+                        &:hover {
+                            @apply text-danger;
+                        }
+                    }
+                }
+            }
+
+            .basket-total {
+                @apply px-6 text-lg text-black flex border-t py-4 mb-4 justify-between flex-wrap;
+            }
+        }
+    }
+
+    &.active {
+        @apply visible opacity-100;
+        .basket-overlay {
+            @apply block;
+            animation: basket-fade-in 0.3s;
+        }
+        .basket-wrapper {
+            right: 0;
+        }
+    }
+}
+@keyframes basket-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+*/
+
+.basket {
+    @apply invisible opacity-0 absolute z-100 cursor-default;
+    left: auto;
+    right: -20px;
+    top: 60px;
+    @include transition(opacity, visibility);
+
+    & > svg {
+        @apply absolute;
+        width: 46px;
+        height: 23px;
+        top: -22px;
+        right: 15px;
+        z-index: 76;
+        .dropdown-svg-path {
+            stroke: var(--grey-light);
+        }
+    }
+
+    .basker-inner {
+        @apply bg-white shadow-lg rounded border h-auto z-75 relative;
+        width: 90vw;
+        max-width: 475px;
+
+        .basket-header {
+            @apply flex flex-wrap text-sm text-grey-darkest justify-between p-4 items-center bg-primary-lightest;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01);
+        }
+
+        .basket-items {
+            @apply list-reset overflow-y-auto;
+            max-height: 350px;
+
+            .basket-item-quantity {
+                @apply shadow-none;
+
+                .icon {
+                    @apply cursor-pointer;
+                }
+
+                .icon-smaller {
+                    .icon {
+                        @apply w-5 h-5;
+                    }
+                }
+            }
+
+            li {
+                @apply p-4 relative;
+                @include transition(background-color);
+
+                .item-price {
+                    @apply mt-1 mb-0 text-grey-darkest;
+                }
+
+                .item-remove {
+                    @apply absolute;
+                    right: 25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    @include transition(color);
+                    &:hover {
+                        @apply text-danger;
+                    }
+                }
+
+                &:nth-of-type(even) {
+                    @apply bg-grey-lightest;
+                }
+            }
+        }
+    }
+
+    .basket-overlay {
+        @apply fixed min-h-full w-full pin-t pin-l cursor-pointer hidden;
+        z-index: 74;
+        background: var(--black-transparent-50);
+    }
+
+    &.active {
+        @apply visible opacity-100;
+        .basket-overlay {
+            @apply block;
+            animation: basket-fade-in 0.3s;
+        }
+    }
+}
+
+@keyframes basket-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.quantity {
+    @apply flex select-none relative shadow rounded-r-lg;
+    margin-left: -10px;
+    @include transition(all);
+
+    .overlay {
+        @apply z-10 absolute w-full h-full select-none;
+        background: rgba(0, 0, 0, 0.02);
+    }
+
+    .increment,
+    .decrement {
+        @apply text-center float-left cursor-pointer text-lg bg-white border text-grey-darkest;
+        width: 30px;
+        vertical-align: middle;
+        line-height: 15px;
+        height: 20px;
+    }
+
+    .increment {
+        @apply border-b-0 rounded-tr-lg;
+    }
+
+    .decrement {
+        @apply rounded-br-lg;
+    }
+
+    .quantity-nav {
+        @apply inline-block w-full;
+        height: 40px;
+        max-width: 30px;
+    }
+
+    input[type='number'] {
+        @apply text-center border border-r-0 px-2 appearance-none m-0 outline-none;
+        width: 50px;
+        height: 40px;
+        line-height: 40px;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+}
+
+.basket-sidebar {
+    .inner[style^='position: fixed'] {
+        @apply px-2;
+    }
+}
+
+.main-basket {
+    .card {
+        @apply overflow-x-auto;
+    }
+    .basket-item {
+        @apply overflow-x-auto py-6 px-4 items-center flex-no-wrap;
+        min-width: 600px;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+
+        .image {
+            @apply text-center overflow-hidden relative w-16 mr-6;
+
+            img {
+                @apply w-full object-cover h-auto rounded-lg;
+            }
+        }
+
+        .name {
+            width: 33%;
+            @apply mr-6;
+        }
+
+        .basket-item-quantity,
+        .ordered,
+        .total {
+            @apply mr-6;
+            width: 20%;
+        }
+
+        .basket-item-quantity {
+            .quantity {
+                @apply -ml-0 rounded-l-lg;
+
+                input {
+                    @apply rounded-l-lg;
+                    width: calc(100% - 30px);
+                }
+            }
+        }
+
+        &:nth-of-type(even) {
+            @apply bg-grey-lightest;
+        }
+    }
+}
+
+.basket-items {
+    .basket-item-quantity {
+        .quantity {
+            @apply -ml-0 rounded-l-lg;
+
+            input {
+                @apply rounded-l-lg;
+                width: calc(100% - 30px);
+            }
+        }
+    }
+}
